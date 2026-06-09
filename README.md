@@ -48,7 +48,7 @@ docs/               # Project memos and written planning documents
 outputs/            # Local generated outputs, plots and tables, not committed
 ```
 
-## Current short-term tasks
+## Current tasks
 
 1. Audit Polymarket temperature-market data availability.
 2. Check available historical and real-time Polymarket price/order-book data.
@@ -56,7 +56,3 @@ outputs/            # Local generated outputs, plots and tables, not committed
 4. Audit weather forecast sources for 2m temperature and lead-time consistency.
 5. Build one complete mini-pipeline for a single temperature contract.
 6. Prepare narrowed scope and data-feasibility notes before the next supervisor meetings.
-
-## Notes
-
-Raw data, processed data, API keys and large output files should not be committed to this repository. They should be stored locally or in an agreed external storage location.
