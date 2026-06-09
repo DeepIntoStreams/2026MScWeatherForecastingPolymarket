@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+api_keys.*
+credentials*.json
+secrets.*
+
+# Raw and processed data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Outputs
+outputs/*
+!outputs/.gitkeep
+
+# System files
+.DS_Store
+
+# Large files
+*.zip
+*.tar
+*.gz
+*.parquet
+*.pkl
+*.h5
+*.nc
+*.grib
+*.grib2
