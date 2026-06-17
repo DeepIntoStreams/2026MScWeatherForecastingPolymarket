@@ -12,30 +12,29 @@ However, this conversion should not be treated as the final probability model. T
 
 The single-market mini-pipeline used a point forecast for daily maximum temperature and assumed an error distribution around that point forecast. Under a normal approximation, the probability of a temperature bin was calculated by integrating the assumed normal predictive distribution over the relevant interval.
 
-For example, if the model forecast for the daily maximum temperature is $\hat{T}$, and the assumed forecast error standard deviation is $\sigma$, then the prototype predictive distribution can be written as
+For example, if the model forecast for the daily maximum temperature is denoted by hat T, and the assumed forecast error standard deviation is denoted by sigma, then the prototype predictive distribution can be written as
 
-$$
+```math
 T = \hat{T} + \varepsilon, \qquad \varepsilon \sim N(0,\sigma^2).
-$$
+```
 
-For a bin $[a,b)$, the model-implied probability is then
+For a bin from a to b, where the lower bound is included and the upper bound is excluded, the model-implied probability is then
 
-$$
+```math
 \mathbb{P}(a \leq T < b)
-========================
-
-## \Phi\left(\frac{b-\hat{T}}{\sigma}\right)
-
+=
+\Phi\left(\frac{b-\hat{T}}{\sigma}\right)
+-
 \Phi\left(\frac{a-\hat{T}}{\sigma}\right),
-$$
+```
 
-where $\Phi$ denotes the standard normal cumulative distribution function.
+where Phi denotes the standard normal cumulative distribution function.
 
 This approach was useful for checking the mechanics of the project, but it is mathematically restrictive if used without further validation.
 
 ## Limitations of the Gaussian conversion
 
-The Gaussian conversion requires several assumptions. First, the forecast errors must be centred around zero, or any systematic bias must be estimated and corrected. Second, the error variance must be estimated from historical data rather than chosen arbitrarily. Third, if a single constant $\sigma$ is used, the method assumes homoskedastic forecast errors, even though temperature forecast uncertainty may vary with lead time, season, location and weather regime. Fourth, the normality assumption should be checked empirically because temperature forecast errors may show skewness, heavy tails or regime dependence.
+The Gaussian conversion requires several assumptions. First, the forecast errors must be centred around zero, or any systematic bias must be estimated and corrected. Second, the error variance must be estimated from historical data rather than chosen arbitrarily. Third, if a single constant sigma is used, the method assumes homoskedastic forecast errors, even though temperature forecast uncertainty may vary with lead time, season, location and weather regime. Fourth, the normality assumption should be checked empirically because temperature forecast errors may show skewness, heavy tails or regime dependence.
 
 The method also assumes that the forecast error distribution is stable over time. This is a strong assumption in a setting where the underlying data source, forecast model, location and season may all affect error behaviour. For daily maximum temperature contracts, there is an additional complication because the target is a daily maximum over a local calendar day rather than a single forecast valid time. This makes the mapping from model output to settlement variable non-trivial.
 
@@ -45,13 +44,13 @@ Therefore, the prototype normal approximation should not be presented as the dis
 
 A Gaussian residual model could still be used as a benchmark if the assumptions are made explicit and tested. A more rigorous version would require historical forecast and realised settlement-source data. Forecast errors would be defined as
 
-$$
-e_t = T_t^{\text{settlement}} - \hat{T}_t^{\text{forecast}},
-$$
+```math
+e_t = T_t^{\mathrm{settlement}} - \hat{T}_t^{\mathrm{forecast}},
+```
 
-where $T_t^{\text{settlement}}$ is the official realised value from the settlement source and $\hat{T}_t^{\text{forecast}}$ is the forecast available at the chosen information time.
+where the settlement term is the official realised value from the settlement source and the forecast term is the forecast available at the chosen information time.
 
-The mean, variance and distributional shape of $e_t$ would need to be examined. At minimum, the analysis should estimate bias, residual variance and calibration by lead time. It should also inspect whether errors differ across forecast issue times, locations and months. If the residuals are not approximately Gaussian, or if the estimated variance changes materially with lead time or weather conditions, then a simple normal residual model would be insufficient.
+The mean, variance and distributional shape of the forecast error would need to be examined. At minimum, the analysis should estimate bias, residual variance and calibration by lead time. It should also inspect whether errors differ across forecast issue times, locations and months. If the residuals are not approximately Gaussian, or if the estimated variance changes materially with lead time or weather conditions, then a simple normal residual model would be insufficient.
 
 For this reason, the Gaussian approach is best treated as an interpretable benchmark rather than the central contribution.
 
@@ -61,20 +60,19 @@ The revised methodology should move towards probability estimates that are direc
 
 For binary threshold markets, the target variable can be defined as
 
-$$
-Y_t^{(K)} = \mathbf{1}{T_t^{\text{settlement}} \geq K},
-$$
+```math
+Y_t^{(K)} = \mathbf{1}\{T_t^{\mathrm{settlement}} \geq K\},
+```
 
-where $K$ is the temperature threshold specified by the market. The modelling task then becomes a supervised probability-estimation problem:
+where K is the temperature threshold specified by the market. The modelling task then becomes a supervised probability-estimation problem:
 
-$$
+```math
 p_t^{(K)}
-=========
-
+=
 \mathbb{P}\left(Y_t^{(K)} = 1 \mid \mathcal{F}_t\right),
-$$
+```
 
-where $\mathcal{F}_t$ represents the information available at the forecast issue time.
+where the information set represents the information available at the forecast issue time.
 
 This formulation is better aligned with Polymarket temperature contracts because the model outputs a probability for the same event that the market is pricing. It also avoids imposing a full continuous temperature distribution when the trading decision only requires a threshold-exceedance probability.
 
