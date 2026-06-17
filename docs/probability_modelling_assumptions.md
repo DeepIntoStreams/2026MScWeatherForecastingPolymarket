@@ -98,6 +98,3 @@ The realised official temperature should only be used after the event for scorin
 The Gaussian conversion in the mini-pipeline was a useful prototype for testing the end-to-end workflow, but it should not be treated as the final probability-modelling method. A rigorous dissertation methodology should either estimate and validate the residual distribution carefully, or move towards probability models that are directly trained for the market payoff.
 
 The preferred direction is to use AI weather forecasts and official settlement-source data to build supervised post-processing models for threshold-exceedance or bin probabilities. This better matches the structure of Polymarket contracts, reduces reliance on arbitrary distributional assumptions and provides a stronger basis for probability scoring and trading evaluation.
-
-
-
