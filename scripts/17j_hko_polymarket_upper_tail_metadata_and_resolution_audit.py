@@ -1,4 +1,3 @@
-# %% [markdown]
 #
 # # 17j Hong Kong Polymarket upper-tail metadata and resolution audit
 #
@@ -20,7 +19,6 @@
 #
 # Run this from the dissertation repository root with live internet access.
 
-# %%
 
 # 0. Imports and paths
 import json
@@ -36,7 +34,17 @@ import numpy as np
 import pandas as pd
 import requests
 
-ROOT = Path.cwd()
+def find_repo_root(start: Path) -> Path:
+    """Return nearest parent containing .git; fallback to cwd."""
+    cur = start.resolve()
+    for p in [cur] + list(cur.parents):
+        if (p / ".git").exists():
+            return p
+    return cur
+
+ROOT = find_repo_root(Path.cwd())
+print("Repository root:", ROOT)
+
 DATA_RAW = ROOT / "data" / "raw"
 DATA_INTERIM = ROOT / "data" / "interim"
 DATA_PROCESSED = ROOT / "data" / "processed"
@@ -49,13 +57,12 @@ RUN_TS = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 RUN_TS
 
 
-# %% [markdown]
+
 #
 # ## 1. Configuration
 #
 # `KNOWN_EVENT_SLUGS` contains high-value reference pages already identified during manual review. The broad search/pagination cells below also try to discover additional Hong Kong markets automatically.
 
-# %%
 
 GAMMA_BASE = "https://gamma-api.polymarket.com"
 CLOB_BASE = "https://clob.polymarket.com"
@@ -89,7 +96,7 @@ KNOWN_EVENT_URLS = [f"https://polymarket.com/event/{slug}" for slug in KNOWN_EVE
 KNOWN_EVENT_URLS
 
 
-# %%
+
 
 # 2. Utility functions
 
@@ -293,13 +300,12 @@ def classify_rule_family(text):
     return "unknown_or_other"
 
 
-# %% [markdown]
+
 #
 # ## 3. Download and standardise HKO official daily maximum temperature
 #
 # This gives the realised target. The Polymarket audit compares terminal outcomes against this realised HKO maximum. First-publication historical-file verification is treated separately below as a later robustness/certification layer.
 
-# %%
 
 # 3.1 Download current HKO daily maximum temperature CSV
 r = safe_get(HKO_MAX_TEMP_URL)
@@ -310,7 +316,7 @@ print(raw_hko_text[:1000])
 print("Saved:", raw_hko_path)
 
 
-# %%
+
 
 # 3.2 Robust parser for HKO CSV
 
@@ -384,27 +390,39 @@ def read_hko_clmmaxt(raw_text):
             else:
                 raise ValueError("Could not identify HKO date columns")
 
-    # Temperature column. Prefer named maximum/value columns, otherwise final numeric column.
+    # Temperature column. Prefer the actual value column.
+    # Important: do NOT select the "data completeness" column merely because it contains "data".
     temp_candidates = []
+    priority_tokens = ["value", "數值", "maximum", "max", "temperature", "temp", "氣溫"]
+    reject_tokens = ["completeness", "完整性"]
+
     for c in df.columns:
         if c == "date":
             continue
         lc = c.lower()
-        if any(tok in lc for tok in ["max", "maximum", "temp", "temperature", "value", "data", "氣溫", "數值"]):
-            temp_candidates.append(c)
+        if any(tok in lc for tok in priority_tokens) and not any(tok in lc for tok in reject_tokens):
+            s = pd.to_numeric(df[c], errors="coerce")
+            if s.notna().sum() > len(df) * 0.5:
+                temp_candidates.append(c)
+
     if not temp_candidates:
         numeric_cols = []
         for c in df.columns:
             if c == "date":
                 continue
+            lc = c.lower()
+            if any(tok in lc for tok in reject_tokens):
+                continue
             s = pd.to_numeric(df[c], errors="coerce")
             if s.notna().sum() > len(df) * 0.5:
                 numeric_cols.append(c)
         temp_candidates = numeric_cols[-1:]
+
     if not temp_candidates:
         raise ValueError("Could not identify HKO temperature/value column")
 
-    temp_col = temp_candidates[-1]
+    # The first matching value column is safest for HKO CLMMAXT: 數值/Value.
+    temp_col = temp_candidates[0]
     out = df[["date", temp_col]].copy()
     out = out.rename(columns={temp_col: "hko_tmax_C"})
     out["date"] = pd.to_datetime(out["date"], errors="coerce").dt.date.astype(str)
@@ -414,11 +432,15 @@ def read_hko_clmmaxt(raw_text):
     return out
 
 hko = read_hko_clmmaxt(raw_hko_text)
+if hko.empty:
+    raise ValueError("Parsed HKO daily maximum table is empty. Check CSV header and value-column selection.")
+print("Parsed HKO rows:", len(hko))
+print("HKO date range:", hko["date"].min(), "to", hko["date"].max())
 hko.to_csv(DATA_PROCESSED / "hko_daily_max_temperature_targets.csv", index=False)
 hko.tail(20)
 
 
-# %% [markdown]
+
 #
 # ## 4. Retrieve Polymarket Hong Kong event and child-market metadata
 #
@@ -430,7 +452,6 @@ hko.tail(20)
 #
 # If any route fails because Polymarket changes a non-core endpoint, the other routes should still provide enough data for the audit.
 
-# %%
 
 # 4.1 Event retrieval helpers
 
@@ -491,7 +512,7 @@ print("Known events fetched:", len(known_events))
 Path(DATA_RAW / f"polymarket_known_event_fetch_logs_{RUN_TS}.json").write_text(json.dumps(known_logs, indent=2), encoding="utf-8")
 
 
-# %%
+
 
 # 4.2 Public search discovery
 search_events = []
@@ -515,7 +536,7 @@ print("Search events extracted:", len(search_events))
 (DATA_RAW / f"polymarket_search_logs_{RUN_TS}.json").write_text(json.dumps(search_logs, indent=2), encoding="utf-8")
 
 
-# %%
+
 
 # 4.3 Broad event pagination, then local filter. Safe to stop early if too slow.
 
@@ -574,7 +595,7 @@ print("Broad keyset events:", len(broad_events_1), "Broad offset events:", len(b
 )
 
 
-# %%
+
 
 # 4.4 Combine and filter Hong Kong temperature events
 all_events = known_events + search_events + broad_events_1 + broad_events_2
@@ -619,13 +640,12 @@ print("Total events:", len(events_index), "HK candidate events:", len(hk_events_
 hk_events_index[["event_slug", "event_title", "n_markets", "contains_hko", "contains_daily_extract", "contains_absolute_daily_max"]].head(50)
 
 
-# %% [markdown]
+
 #
 # ## 5. Flatten child markets and classify rule families
 #
 # This is the core metadata table. It preserves both raw and cleaned rule text. Do not manually edit this output; make manual exclusions only by adding decision rules later.
 
-# %%
 
 # 5. Flatten event -> child market rows
 hk_event_slugs = set(hk_events_index["event_slug"].dropna().astype(str))
@@ -712,7 +732,7 @@ print(markets.shape)
 markets[["event_date", "event_slug", "question", "parsed_threshold_K", "parsed_kind", "rule_family", "terminal_yes_from_outcomePrices", "volume", "metadata_mentions_K_in_boundary_fields"]].head(100)
 
 
-# %%
+
 
 # 5.2 Strict retained family and explicit exclusions
 markets["exclude_reason"] = ""
@@ -730,13 +750,12 @@ print("Strict HKO Daily Extract one-decimal child markets:", len(strict))
 print(markets["rule_family"].value_counts(dropna=False))
 
 
-# %% [markdown]
+
 #
 # ## 6. Merge with HKO values and test realised payoff parity
 #
 # For each child market with date and threshold, compare observed terminal YES/NO with the expected payoff under HKO floor-bin semantics.
 
-# %%
 
 # 6. Merge strict child markets with HKO realised daily max
 strict2 = strict.merge(hko, left_on="event_date", right_on="date", how="left")
@@ -766,7 +785,7 @@ strict2.to_csv(DATA_INTERIM / f"17j_strict_hko_child_markets_with_hko_parity_{RU
 strict2[["event_date", "question", "parsed_kind", "parsed_threshold_K", "hko_tmax_C", "terminal_yes_from_outcomePrices", "expected_yes_floor", "matches_floor_expected", "volume", "metadata_mentions_K_in_boundary_fields"]].head(100)
 
 
-# %%
+
 
 # 6.2 Interior floor-summary: does the terminal interior winner match floor, nearest, or ceiling?
 interior = strict2[strict2["parsed_kind"].eq("interior")].copy()
@@ -787,14 +806,22 @@ print("Saved", out_path)
 interior_summary
 
 
-# %%
+
 
 # 6.3 Upper-tail summary
 upper_tail = strict2[strict2["parsed_kind"].eq("upper_tail")].copy()
-upper_tail["expected_tail_event_Y_ge_K"] = upper_tail["hko_tmax_C"] >= upper_tail["parsed_threshold_K"]
+upper_tail["expected_tail_event_Y_ge_K"] = np.nan
+valid_tail = upper_tail["hko_tmax_C"].notna() & upper_tail["parsed_threshold_K"].notna()
+upper_tail.loc[valid_tail, "expected_tail_event_Y_ge_K"] = (
+    upper_tail.loc[valid_tail, "hko_tmax_C"] >= upper_tail.loc[valid_tail, "parsed_threshold_K"]
+)
 upper_tail["observed_tail_yes"] = upper_tail["terminal_yes_from_outcomePrices"]
-upper_tail["tail_matches_hko_threshold"] = upper_tail["observed_tail_yes"].astype("object") == upper_tail["expected_tail_event_Y_ge_K"].astype("object")
-upper_tail.loc[upper_tail["observed_tail_yes"].isna() | upper_tail["expected_tail_event_Y_ge_K"].isna(), "tail_matches_hko_threshold"] = np.nan
+upper_tail["tail_matches_hko_threshold"] = np.nan
+valid_match = upper_tail["observed_tail_yes"].notna() & upper_tail["expected_tail_event_Y_ge_K"].notna()
+upper_tail.loc[valid_match, "tail_matches_hko_threshold"] = (
+    upper_tail.loc[valid_match, "observed_tail_yes"].astype(bool).to_numpy()
+    == upper_tail.loc[valid_match, "expected_tail_event_Y_ge_K"].astype(bool).to_numpy()
+)
 
 upper_tail_summary = upper_tail[[
     "event_date", "event_slug", "market_slug", "question", "parsed_threshold_K", "hko_tmax_C",
@@ -810,7 +837,7 @@ print("Saved", out_path)
 upper_tail_summary.head(100)
 
 
-# %% [markdown]
+
 #
 # ## 7. Boundary-bracket audit
 #
@@ -822,7 +849,6 @@ upper_tail_summary.head(100)
 #
 # The exact one-decimal grid boundary is identified only if the closest observed No is \(K-0.1\) and the closest observed Yes is \(K.0\). In practice we may only get strong support rather than exact identification.
 
-# %%
 
 # 7. Boundary brackets for each upper-tail threshold
 bracket_rows = []
@@ -859,7 +885,7 @@ print("Saved", out_path)
 boundary_brackets
 
 
-# %% [markdown]
+
 #
 # ## 8. Fail-closed admissibility decision
 #
@@ -870,7 +896,6 @@ boundary_brackets
 # - `descriptive_only`: strict family exists, but there is missing/zero volume, missing terminal outcome, missing HKO value, or insufficient audit information.
 # - `excluded`: non-strict rule family or realised payoff mismatch.
 
-# %%
 
 # 8. Admissibility decision
 ad = upper_tail_summary.copy()
@@ -885,7 +910,7 @@ def decide(row):
         return "descriptive_only", "HKO realised max missing"
     if pd.isna(row.get("observed_tail_yes")):
         return "descriptive_only", "terminal Yes/No outcome not inferred"
-    if bool(row.get("tail_matches_hko_threshold")) is False:
+    if pd.notna(row.get("tail_matches_hko_threshold")) and bool(row.get("tail_matches_hko_threshold")) is False:
         return "excluded", "tail payoff mismatches HKO threshold event"
     if to_float(row.get("volume")) <= MIN_VOLUME_FOR_ADMISSIBLE:
         return "descriptive_only", "zero or missing volume; exclude from price-based empirical work"
@@ -908,13 +933,12 @@ print(ad["admissibility_status"].value_counts(dropna=False) if len(ad) else "No 
 ad[["event_date", "threshold_K", "hko_tmax_C", "observed_tail_yes", "tail_matches_hko_threshold", "metadata_mentions_K_in_boundary_fields", "volume", "admissibility_status", "admissibility_reason", "market_slug"]].head(200)
 
 
-# %% [markdown]
+
 #
 # ## 9. Optional: CLOB price-history terminal check
 #
 # Use this only if Gamma terminal outcome fields are insufficient. This cell is not a trading backtest. It only attempts to read final historical prices for the YES token as an additional terminal-outcome proxy.
 
-# %%
 
 # 9. Optional CLOB terminal price check
 
@@ -958,13 +982,12 @@ else:
     print("Skipped. Set FETCH_CLOB_HISTORY_FOR_TERMINAL_PRICE=True if needed.")
 
 
-# %% [markdown]
+
 #
 # ## 10. Optional: DATA.GOV.HK historical archive version hooks
 #
 # This is mainly Step 4, not Step 3. It is included here as a ready hook because Polymarket rule text may exclude later revisions. Use it after the child-market audit has identified the retained dates. DATA.GOV.HK’s historical archive API can list file versions and retrieve a specified historical file version.
 
-# %%
 
 # 10. DATA.GOV.HK historical archive hooks. Run after checking retained dates.
 DATA_GOV_HK_LIST_VERSIONS = "https://app.data.gov.hk/v1/historical-archive/list-file-versions"
@@ -990,13 +1013,12 @@ def get_historical_file(file_url, time_yyyymmdd):
 print("Historical archive helpers defined. Use in Step 4 after the 17j audit output is inspected.")
 
 
-# %% [markdown]
+
 #
 # ## 11. One-page audit summary for thesis notes
 #
 # This final cell writes a short machine-generated summary. Do not paste it directly into the thesis without reading the CSV outputs and checking exclusions.
 
-# %%
 
 # 11. Write a short audit summary
 summary_lines = []
