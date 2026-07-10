@@ -1,0 +1,7 @@
+check,passed,detail
+main_role_present,True,formally_certified_upper_tail_threshold
+probabilities_in_unit_interval,True,"All p_market values should lie in [0,1]."
+binary_outcomes,True,All Y_ge_K values should be binary.
+non_negative_scores,True,Brier and log scores should be non-negative.
+no_lookahead_timestamps,True,Max decision minus cutoff seconds: -3541.0
+formal_certified_subset_nonempty,True,Formal upper-tail rows: 73

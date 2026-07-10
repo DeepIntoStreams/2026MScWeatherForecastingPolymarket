@@ -1,0 +1,17 @@
+metric,value,note
+hko_rows,92,Official HKO Daily Extract / metob maximum-temperature observations.
+hko_start_date,2026-03-01,
+hko_end_date,2026-05-31,
+polymarket_event_slugs_swept,80,Deterministic daily Hong Kong highest-temperature event slugs.
+gamma_events_found,75,
+web_pages_found,75,
+flattened_child_market_rows,821,
+upper_tail_threshold_rows,75,
+formally_certified_upper_tail_rows,73,
+non_certified_upper_tail_candidate_rows,2,
+price_observation_rows,753,Recovered CLOB narrow-window price observations.
+no_lookahead_decision_rows,273,Rows after no-lookahead price cutoffs.
+scoring_ready_rows,273,Rows with market probability and realised HKO binary outcome.
+main_formally_certified_scoring_rows,265,
+clob_diagnostic_endpoint_attempts,603,
+diagnostic_attempts_with_history,273,

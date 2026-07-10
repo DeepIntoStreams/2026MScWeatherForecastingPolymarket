@@ -1,0 +1,5 @@
+decision_rule,n,unique_contracts,median_staleness_hours,mean_staleness_hours,max_staleness_hours,mean_price_query_lookback_hours,decision_label
+last_price_before_24h_prior,61,61,0.9975,1.419408014571949,7.985277777777778,3.442622950819672,24h prior
+last_price_before_12h_prior,68,68,0.9977777777777778,1.8607924836601306,19.985277777777775,3.838235294117647,12h prior
+last_price_before_6h_prior,68,68,0.9977777777777778,1.5813766339869282,12.987222222222222,3.7058823529411766,6h prior
+last_price_before_event_day_hkt,68,68,0.9975,1.919718137254902,18.987222222222226,4.411764705882353,Event-day open
