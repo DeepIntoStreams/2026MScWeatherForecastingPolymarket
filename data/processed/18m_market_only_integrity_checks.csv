@@ -1,0 +1,10 @@
+check,passed,detail
+scoring_panel_nonempty,True,rows=2921
+decision_panel_nonempty,True,rows=2921
+book_metrics_nonempty,True,rows=267
+categorical_summary_nonempty,True,rows=4
+probabilities_in_unit_interval,True,bad_probabilities=0
+non_negative_staleness,True,negative_staleness=0
+categorical_scored_books_have_one_winner,True,bad_scored_books=0; unscored_books=0
+some_full_books_observed,True,full_book_rate=0.9813
+upstream_18l_integrity_checks_passed,True,failed_18l_checks=0
