@@ -1,0 +1,4 @@
+contract_event_type_v2,rows,ready_rows,yes_rows,outcome_rate,unique_dates
+interior_bin,657,657,60,0.091324200913242,73
+lower_tail_endpoint,73,73,0,0.0,73
+upper_tail,73,73,13,0.1780821917808219,73

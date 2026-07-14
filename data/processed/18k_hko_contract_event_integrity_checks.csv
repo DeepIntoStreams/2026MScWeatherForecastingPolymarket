@@ -1,0 +1,10 @@
+check,passed,detail
+input_universe_nonempty,True,input rows=803
+admissible_universe_nonempty,True,admissible rows=803
+all_admissible_have_hko_value,True,missing HKO rows=0
+all_admissible_have_binary_payoff,True,missing Y rows=0
+all_dates_exactly_one_yes,True,bad dates=0
+all_dates_have_partition_endpoints,True,missing endpoint dates=0
+no_partition_gaps_or_overlaps,True,gap dates=0; overlap dates=0
+no_hko_value_conflicts,True,conflict dates=0
+target_panel_ready_nonempty,True,ready rows=803
