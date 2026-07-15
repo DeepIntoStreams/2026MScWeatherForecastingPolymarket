@@ -1,0 +1,17 @@
+check,passed,detail
+matrix_nonempty,True,rows=1975
+development_nonempty,True,rows=1535
+holdout_nonempty,True,rows=440
+development_precedes_holdout,True,"development_end=2026-05-21, holdout_start=2026-05-22"
+holdout_dates_exactly_frozen,True,dates=10
+frozen_catboost_manifest_used,True,"feature_set=market_only, candidate=cb_d3_lr03_l2_8"
+frozen_platt_calibration_used,True,method=platt
+platt_fit_uses_development_oof_only,True,oof_dates=22
+holdout_predictions_present,True,missing=0
+holdout_probabilities_in_unit_interval,True,checked all probability columns
+common_support_nonempty,True,"rows=2640, models=6"
+common_support_keys_unique,True,duplicates=0
+all_models_same_common_support,True,"{'catboost_platt': 440, 'catboost_raw': 440, 'ecmwf_bias_adaptive_sigma': 440, 'ecmwf_bias_fixed_sigma': 440, 'ecmwf_raw': 440, 'market': 440}"
+scored_books_have_one_winner,True,books=240
+normalised_books_sum_to_one,True,checked
+single_locked_holdout_evaluation,True,20e is designated as the one locked final evaluation

@@ -1,0 +1,35 @@
+{
+  "step": "20e",
+  "evaluation_status": "single_locked_final_holdout",
+  "feature_set": "market_only",
+  "candidate_id": "cb_d3_lr03_l2_8",
+  "hyperparameters": {
+    "candidate_id": "cb_d3_lr03_l2_8",
+    "depth": 3,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 8.0,
+    "iterations": 350
+  },
+  "calibration_method": "platt",
+  "development_start_date": "2026-04-10",
+  "development_end_date": "2026-05-21",
+  "holdout_start_date": "2026-05-22",
+  "holdout_end_date": "2026-05-31",
+  "n_development_dates": 38,
+  "n_holdout_dates": 10,
+  "n_development_rows": 1535,
+  "n_holdout_rows": 440,
+  "n_features": 30,
+  "categorical_features": [],
+  "probability_mapping": {
+    "market": "p_market",
+    "ecmwf_raw": "p_ecmwf_raw",
+    "ecmwf_bias_fixed_sigma": "p_ecmwf_bias_fixed_sigma",
+    "ecmwf_bias_adaptive_sigma": "p_ecmwf_bias_scale"
+  },
+  "n_platt_training_rows": 935,
+  "n_platt_training_dates": 22,
+  "platt_intercept": -0.5767455264255434,
+  "platt_slope": 0.5806849914233748,
+  "model_changes_after_holdout_forbidden": true
+}
