@@ -1,0 +1,6 @@
+model,threshold,n_opportunities,n_dates,n_decision_rules,n_trades,trade_rate,total_net_pnl,mean_net_pnl_per_opportunity,mean_net_pnl_per_trade,hit_rate_trades,is_primary_threshold,strategy_scope
+catboost_platt,0.05,440,10,4,201,0.45681818181818185,-2.791999999999999,-0.006345454545454543,-0.013890547263681587,0.13432835820895522,True,pooled_across_decision_rules_diagnostic_only
+catboost_raw,0.05,440,10,4,176,0.4,-2.202000000000001,-0.005004545454545457,-0.012511363636363633,0.2215909090909091,True,pooled_across_decision_rules_diagnostic_only
+ecmwf_bias_adaptive_sigma,0.05,440,10,4,118,0.2681818181818182,5.738500000000002,0.013042045454545459,0.04863135593220339,0.4491525423728814,True,pooled_across_decision_rules_diagnostic_only
+ecmwf_bias_fixed_sigma,0.05,440,10,4,137,0.31136363636363634,5.133000000000001,0.011665909090909093,0.03746715328467154,0.3722627737226277,True,pooled_across_decision_rules_diagnostic_only
+ecmwf_raw,0.05,440,10,4,228,0.5181818181818182,-3.9779999999999993,-0.009040909090909089,-0.017447368421052628,0.25877192982456143,True,pooled_across_decision_rules_diagnostic_only

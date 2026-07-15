@@ -1,0 +1,45 @@
+{
+  "step": "21a",
+  "input_step": "20e",
+  "evaluation_sample": "locked_final_holdout",
+  "development_start_date": "2026-04-10",
+  "development_end_date": "2026-05-21",
+  "holdout_start_date": "2026-05-22",
+  "holdout_end_date": "2026-05-31",
+  "n_holdout_dates": 10,
+  "n_holdout_rows": 440,
+  "model_columns_used": {
+    "catboost_raw": "p_catboost_raw_holdout",
+    "catboost_platt": "p_catboost_platt_holdout",
+    "ecmwf_raw": "p_ecmwf_raw",
+    "ecmwf_bias_fixed_sigma": "p_ecmwf_bias_fixed_sigma",
+    "ecmwf_bias_adaptive_sigma": "p_ecmwf_bias_adaptive_sigma"
+  },
+  "threshold_grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "primary_threshold": 0.05,
+  "trade_cost_per_contract": 0.0,
+  "position_size": "one_unit",
+  "market_probability_source": "p_market",
+  "frozen_feature_set": "market_only",
+  "frozen_candidate_id": "cb_d3_lr03_l2_8",
+  "frozen_calibration_method": "platt",
+  "forecast_specification_changed": false,
+  "headline_strategy_scope": "standalone_model_by_decision_rule",
+  "pooled_across_decision_rules_is_diagnostic_only": true,
+  "execution_price_assumption": "observed_market_probability_as_frictionless_proxy",
+  "excluded_execution_frictions": [
+    "bid_ask_spread",
+    "fees",
+    "slippage",
+    "liquidity_constraints",
+    "partial_fills",
+    "market_impact",
+    "capital_limits",
+    "position_netting"
+  ]
+}

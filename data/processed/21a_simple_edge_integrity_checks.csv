@@ -1,0 +1,20 @@
+check,passed,detail
+prediction_panel_nonempty,True,rows=440
+trade_panel_nonempty,True,rows=8800
+primary_threshold_present,True,primary_threshold=0.05
+market_probability_in_unit_interval,True,checked
+model_and_market_probabilities_in_unit_interval,True,checked
+positions_restricted_to_yes_no_flat,True,"['FLAT', 'NO', 'YES']"
+trade_indicator_matches_position,True,checked
+yes_no_positions_mutually_exclusive,True,checked
+yes_trade_pnl_formula_correct,True,checked
+no_trade_pnl_formula_correct,True,checked
+flat_trade_pnl_zero,True,checked
+threshold_summary_nonempty,True,rows=20
+daily_panel_nonempty,True,rows=800
+threshold_grid_preserved,True,"observed=[0.0, 0.02, 0.05, 0.1]"
+model_count_expected,True,"models=['catboost_platt', 'catboost_raw', 'ecmwf_bias_adaptive_sigma', 'ecmwf_bias_fixed_sigma', 'ecmwf_raw']"
+holdout_dates_preserved,True,dates=10
+primary_threshold_flag_correct,True,flagged_rows=5
+headline_strategies_keep_one_decision_rule,True,headline_rows=20
+headline_does_not_pool_decision_rules,True,headline is model × decision-rule specific
