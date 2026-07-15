@@ -1,0 +1,13 @@
+check,passed,detail
+target_panel_nonempty,True,target rows=803
+request_plan_nonempty,True,request rows=292
+selected_runs_before_cutoff,True,violations=0
+fetch_inventory_nonempty,True,inventory rows=223
+some_runs_fetched_successfully,True,success=202
+hourly_forecast_nonempty,True,hourly rows=48480
+daily_max_forecast_nonempty,True,ready daily rows=256
+probability_panel_nonempty,True,probability rows=3212
+probability_ready_rows_nonempty,True,ready probability rows=2816
+probabilities_in_unit_interval,True,bad probabilities=0
+target_rows_have_binary_payoff,True,missing Y=0
+issue_table_written,True,issue rows=57
