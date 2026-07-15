@@ -1,0 +1,7 @@
+block,metric,value,model_or_source,decision_rule,sample
+Market baseline,Best binary Brier,0.0651585073627844,Polymarket,12h_prior,full available HKO market panel
+Market baseline,Best binary log score,0.2075588032231654,Polymarket,event_day_open,full available HKO market panel
+Common-support forecast comparison,Largest market Brier advantage over raw ECMWF,0.017609345611503402,Polymarket versus raw ECMWF proxy,12h_prior,exact common support
+Locked holdout forecasting,Best holdout Brier,0.04595892886143558,ecmwf_bias_adaptive_sigma,event_day_open,22–31 May 2026 locked holdout
+Frictionless trading,Best primary standalone PnL,2.4515,"21a: ecmwf_bias_fixed_sigma, binary_contract_edge",24h_prior,22–31 May 2026 locked holdout
+Robustness trading,Best cost-and-staleness adjusted PnL,2.201,"21a: ecmwf_bias_fixed_sigma, binary_contract_edge",12h_prior,22–31 May 2026 locked holdout

@@ -1,0 +1,8 @@
+step,integrity_file,checks_passed,checks_total,all_checks_passed
+18m,data/processed/18m_market_only_integrity_checks.csv,9,9,True
+19b,data/processed/19b_common_support_integrity_checks.csv,11,11,True
+19c,data/processed/19c_integrity_checks.csv,14,14,True
+20e,data/processed/20e_locked_holdout_integrity_checks.csv,16,16,True
+21a,data/processed/21a_simple_edge_integrity_checks.csv,19,19,True
+21b,data/processed/21b_full_event_book_integrity_checks.csv,19,19,True
+21c,data/processed/21c_integrity_checks.csv,30,30,True

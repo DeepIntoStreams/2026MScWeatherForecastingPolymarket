@@ -1,0 +1,45 @@
+{
+  "step": "21d",
+  "source_steps": [
+    "18m",
+    "19b",
+    "19c",
+    "20e",
+    "21a",
+    "21b",
+    "21c"
+  ],
+  "purpose": "dissertation_ready_empirical_consolidation",
+  "forecast_specification_changed": false,
+  "calibration_specification_changed": false,
+  "validation_design_changed": false,
+  "trading_specification_changed": false,
+  "all_available_integrity_blocks_pass": true,
+  "integrity_steps_validated": [
+    "18m",
+    "19b",
+    "19c",
+    "20e",
+    "21a",
+    "21b",
+    "21c"
+  ],
+  "integrity_block_count": 7,
+  "all_declared_integrity_blocks_present": true,
+  "used_input_files": [
+    "data/processed/18m_supervisor_market_only_key_table.csv",
+    "data/processed/19b_common_support_binary_score_summary.csv",
+    "data/processed/19c_binary_score_summary.csv",
+    "data/processed/20e_locked_holdout_long_model_panel.csv",
+    "data/processed/21a_simple_edge_primary_standalone_strategy_summary.csv",
+    "data/processed/21b_full_event_book_primary_standalone_summary.csv",
+    "data/processed/21c_primary_robustness_summary.csv",
+    "data/processed/18m_market_only_integrity_checks.csv",
+    "data/processed/19b_common_support_integrity_checks.csv",
+    "data/processed/19c_integrity_checks.csv",
+    "data/processed/20e_locked_holdout_integrity_checks.csv",
+    "data/processed/21a_simple_edge_integrity_checks.csv",
+    "data/processed/21b_full_event_book_integrity_checks.csv",
+    "data/processed/21c_integrity_checks.csv"
+  ]
+}

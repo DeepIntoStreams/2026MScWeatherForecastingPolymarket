@@ -1,0 +1,11 @@
+check,passed,detail
+market_baseline_nonempty,True,rows=4
+common_support_nonempty,True,rows=4
+corrected_ecmwf_nonempty,True,rows=16
+locked_holdout_nonempty,True,rows=24
+trading_headline_nonempty,True,rows=60
+robustness_headline_nonempty,True,rows=60
+all_available_integrity_blocks_pass,True,"[{'step': '18m', 'integrity_file': 'data/processed/18m_market_only_integrity_checks.csv', 'checks_passed': 9, 'checks_total': 9, 'all_checks_passed': True}, {'step': '19b', 'integrity_file': 'data/processed/19b_common_support_integrity_checks.csv', 'checks_passed': 11, 'checks_total': 11, 'all_checks_passed': True}, {'step': '19c', 'integrity_file': 'data/processed/19c_integrity_checks.csv', 'checks_passed': 14, 'checks_total': 14, 'all_checks_passed': True}, {'step': '20e', 'integrity_file': 'data/processed/20e_locked_holdout_integrity_checks.csv', 'checks_passed': 16, 'checks_total': 16, 'all_checks_passed': True}, {'step': '21a', 'integrity_file': 'data/processed/21a_simple_edge_integrity_checks.csv', 'checks_passed': 19, 'checks_total': 19, 'all_checks_passed': True}, {'step': '21b', 'integrity_file': 'data/processed/21b_full_event_book_integrity_checks.csv', 'checks_passed': 19, 'checks_total': 19, 'all_checks_passed': True}, {'step': '21c', 'integrity_file': 'data/processed/21c_integrity_checks.csv', 'checks_passed': 30, 'checks_total': 30, 'all_checks_passed': True}]"
+all_seven_declared_integrity_blocks_present,True,"steps=['18m', '19b', '19c', '20e', '21a', '21b', '21c']; n_blocks=7"
+locked_holdout_sample_label_preserved,True,checked
+21d_does_not_change_specifications,True,consolidation only
