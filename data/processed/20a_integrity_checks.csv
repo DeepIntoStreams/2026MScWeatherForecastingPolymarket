@@ -1,0 +1,19 @@
+check,passed,detail
+upstream_19c_checks_passed,True,passed=14/14
+source_panel_nonempty,True,rows=2635
+calibration_ready_matrix_nonempty,True,rows=1975
+unique_contract_date_decision_key,True,duplicates=0
+binary_target,True,bad=0
+source_probabilities_in_unit_interval,True,bad=0
+no_infinite_numeric_features,True,infinite=0
+one_date_group_per_event_date,True,bad_dates=0
+one_event_date_per_date_group,True,bad_groups=0
+calibration_training_strictly_historical,True,bad_rows=0
+selected_forecast_run_no_later_than_cutoff,True,bad_rows=0
+no_outcome_derived_predictors,True,forbidden=[]
+all_declared_features_present,True,missing=[]
+weather_feature_set_nonempty,True,n=58
+market_feature_set_nonempty,True,n=30
+combined_feature_set_nonempty,True,n=77
+all_expected_decision_rules_present,True,"observed=['12h_prior', '24h_prior', '6h_prior', 'event_day_open']"
+all_expected_event_types_present,True,"observed=['interior_bin', 'lower_tail_endpoint', 'upper_tail']"

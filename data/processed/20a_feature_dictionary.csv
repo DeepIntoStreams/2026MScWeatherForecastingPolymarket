@@ -1,0 +1,78 @@
+feature,family,dtype,role,availability,description
+decision_horizon_hours,structural,float,predictor,decision cutoff,Nominal hours before the event-day reference point.
+decision_is_24h_prior,structural,int,predictor,decision cutoff,One-hot indicator for decision rule 24h_prior.
+decision_is_12h_prior,structural,int,predictor,decision cutoff,One-hot indicator for decision rule 12h_prior.
+decision_is_6h_prior,structural,int,predictor,decision cutoff,One-hot indicator for decision rule 6h_prior.
+decision_is_event_day_open,structural,int,predictor,decision cutoff,One-hot indicator for decision rule event_day_open.
+event_type_is_lower_tail_endpoint,structural,int,predictor,decision cutoff,One-hot indicator for event type lower_tail_endpoint.
+event_type_is_interior_bin,structural,int,predictor,decision cutoff,One-hot indicator for event type interior_bin.
+event_type_is_upper_tail,structural,int,predictor,decision cutoff,One-hot indicator for event type upper_tail.
+event_lower_C_finite,structural,float,predictor,decision cutoff,Finite lower event boundary in degrees Celsius; missing for a lower tail.
+event_upper_C_finite,structural,float,predictor,decision cutoff,Finite upper event boundary in degrees Celsius; missing for an upper tail.
+event_has_lower_bound,structural,int,predictor,decision cutoff,Indicator that the event has a finite lower boundary.
+event_has_upper_bound,structural,int,predictor,decision cutoff,Indicator that the event has a finite upper boundary.
+event_width_C,structural,float,predictor,decision cutoff,Width of a bounded event interval; missing for tail events.
+event_midpoint_C,structural,float,predictor,decision cutoff,Midpoint of a bounded event interval; missing for tail events.
+calendar_day_index,temporal,int,predictor,decision cutoff,Number of days since the first eligible event date.
+calendar_month,temporal,int,predictor,decision cutoff,Calendar month of the HKO settlement date.
+calendar_day_of_month,temporal,int,predictor,decision cutoff,Day of month of the HKO settlement date.
+calendar_day_of_year,temporal,int,predictor,decision cutoff,Day of year of the HKO settlement date.
+calendar_doy_sin,temporal,float,predictor,decision cutoff,Sine transform of day of year.
+calendar_doy_cos,temporal,float,predictor,decision cutoff,Cosine transform of day of year.
+forecast_hko_daily_max_C,weather,float,predictor,decision cutoff,Raw ECMWF single-run Hong Kong local-day maximum forecast.
+corrected_forecast_hko_daily_max_C,weather,float,predictor,decision cutoff,Expanding-window additive-bias-corrected local-day maximum forecast.
+bias_correction_C,weather,float,predictor,decision cutoff,Expanding-window additive local bias estimate.
+sigma_used_C,weather,float,predictor,decision cutoff,Expanding-window residual Gaussian scale.
+n_train_dates,weather,int,predictor,decision cutoff,Number of historical dates used by the leakage-controlled calibration.
+p_ecmwf_raw,weather,float,predictor,decision cutoff,Raw fixed-scale Gaussian event probability.
+p_ecmwf_bias_fixed_sigma,weather,float,predictor,decision cutoff,Bias-corrected event probability with fixed sigma.
+p_ecmwf_bias_scale,weather,float,predictor,decision cutoff,Bias-and-scale post-processed event probability.
+logit_p_ecmwf_raw,weather,float,predictor,decision cutoff,Clipped logit of the raw ECMWF proxy probability.
+logit_p_ecmwf_bias_fixed_sigma,weather,float,predictor,decision cutoff,Clipped logit of the bias-corrected fixed-scale probability.
+logit_p_ecmwf_bias_scale,weather,float,predictor,decision cutoff,Clipped logit of the bias-and-scale probability.
+raw_forecast_minus_lower_C,weather,float,predictor,decision cutoff,Raw forecast minus finite lower event boundary.
+upper_minus_raw_forecast_C,weather,float,predictor,decision cutoff,Finite upper event boundary minus raw forecast.
+corrected_forecast_minus_lower_C,weather,float,predictor,decision cutoff,Corrected forecast minus finite lower event boundary.
+upper_minus_corrected_forecast_C,weather,float,predictor,decision cutoff,Finite upper event boundary minus corrected forecast.
+standardised_corrected_minus_lower,weather,float,predictor,decision cutoff,Corrected lower-bound margin divided by sigma.
+standardised_upper_minus_corrected,weather,float,predictor,decision cutoff,Corrected upper-bound margin divided by sigma.
+p_market,market,float,predictor,decision cutoff,Latest no-lookahead Polymarket YES price at the decision cutoff.
+logit_p_market,market,float,predictor,decision cutoff,Clipped logit of the market-implied probability.
+price_staleness_hours,market,float,predictor,decision cutoff,Hours between the selected CLOB observation and decision cutoff.
+market_book_total_probability,book,float,predictor,decision cutoff,Sum of market probabilities over the observed event book.
+market_book_probability_normalised,book,float,predictor,decision cutoff,Contract market probability normalised within the event book.
+market_book_rank_desc,book,float,predictor,decision cutoff,Descending probability rank within the market event book.
+market_book_top_probability,book,float,predictor,decision cutoff,Largest market probability in the event book.
+market_book_gap_to_top,book,float,predictor,decision cutoff,Gap between the book maximum and this contract's market probability.
+market_book_contract_count,book,int,predictor,decision cutoff,Number of common-support contracts in the market book.
+market_book_normalised_entropy,book,float,predictor,decision cutoff,Entropy of the normalised market event-book distribution.
+ecmwf_raw_book_total_probability,book,float,predictor,decision cutoff,Sum of raw ECMWF probabilities over the observed event book.
+ecmwf_raw_book_probability_normalised,book,float,predictor,decision cutoff,Contract raw ECMWF probability normalised within the event book.
+ecmwf_raw_book_rank_desc,book,float,predictor,decision cutoff,Descending probability rank within the raw ECMWF event book.
+ecmwf_raw_book_top_probability,book,float,predictor,decision cutoff,Largest raw ECMWF probability in the event book.
+ecmwf_raw_book_gap_to_top,book,float,predictor,decision cutoff,Gap between the book maximum and this contract's raw ECMWF probability.
+ecmwf_raw_book_contract_count,book,int,predictor,decision cutoff,Number of common-support contracts in the raw ECMWF book.
+ecmwf_raw_book_normalised_entropy,book,float,predictor,decision cutoff,Entropy of the normalised raw ECMWF event-book distribution.
+ecmwf_bias_fixed_sigma_book_total_probability,book,float,predictor,decision cutoff,Sum of bias-corrected fixed-scale ECMWF probabilities over the observed event book.
+ecmwf_bias_fixed_sigma_book_probability_normalised,book,float,predictor,decision cutoff,Contract bias-corrected fixed-scale ECMWF probability normalised within the event book.
+ecmwf_bias_fixed_sigma_book_rank_desc,book,float,predictor,decision cutoff,Descending probability rank within the bias-corrected fixed-scale ECMWF event book.
+ecmwf_bias_fixed_sigma_book_top_probability,book,float,predictor,decision cutoff,Largest bias-corrected fixed-scale ECMWF probability in the event book.
+ecmwf_bias_fixed_sigma_book_gap_to_top,book,float,predictor,decision cutoff,Gap between the book maximum and this contract's bias-corrected fixed-scale ECMWF probability.
+ecmwf_bias_fixed_sigma_book_contract_count,book,int,predictor,decision cutoff,Number of common-support contracts in the bias-corrected fixed-scale ECMWF book.
+ecmwf_bias_fixed_sigma_book_normalised_entropy,book,float,predictor,decision cutoff,Entropy of the normalised bias-corrected fixed-scale ECMWF event-book distribution.
+ecmwf_bias_scale_book_total_probability,book,float,predictor,decision cutoff,Sum of bias-and-scale ECMWF probabilities over the observed event book.
+ecmwf_bias_scale_book_probability_normalised,book,float,predictor,decision cutoff,Contract bias-and-scale ECMWF probability normalised within the event book.
+ecmwf_bias_scale_book_rank_desc,book,float,predictor,decision cutoff,Descending probability rank within the bias-and-scale ECMWF event book.
+ecmwf_bias_scale_book_top_probability,book,float,predictor,decision cutoff,Largest bias-and-scale ECMWF probability in the event book.
+ecmwf_bias_scale_book_gap_to_top,book,float,predictor,decision cutoff,Gap between the book maximum and this contract's bias-and-scale ECMWF probability.
+ecmwf_bias_scale_book_contract_count,book,int,predictor,decision cutoff,Number of common-support contracts in the bias-and-scale ECMWF book.
+ecmwf_bias_scale_book_normalised_entropy,book,float,predictor,decision cutoff,Entropy of the normalised bias-and-scale ECMWF event-book distribution.
+market_minus_ecmwf_raw,interaction,float,predictor,decision cutoff,Market probability minus raw ECMWF probability.
+abs_market_minus_ecmwf_raw,interaction,float,predictor,decision cutoff,Absolute market-versus-raw ECMWF probability discrepancy.
+logit_market_minus_ecmwf_raw,interaction,float,predictor,decision cutoff,Market logit minus raw ECMWF logit.
+market_minus_ecmwf_bias_fixed_sigma,interaction,float,predictor,decision cutoff,Market probability minus bias-corrected fixed-scale ECMWF probability.
+abs_market_minus_ecmwf_bias_fixed_sigma,interaction,float,predictor,decision cutoff,Absolute market-versus-bias-corrected fixed-scale ECMWF probability discrepancy.
+logit_market_minus_ecmwf_bias_fixed_sigma,interaction,float,predictor,decision cutoff,Market logit minus bias-corrected fixed-scale ECMWF logit.
+market_minus_ecmwf_bias_scale,interaction,float,predictor,decision cutoff,Market probability minus bias-and-scale ECMWF probability.
+abs_market_minus_ecmwf_bias_scale,interaction,float,predictor,decision cutoff,Absolute market-versus-bias-and-scale ECMWF probability discrepancy.
+logit_market_minus_ecmwf_bias_scale,interaction,float,predictor,decision cutoff,Market logit minus bias-and-scale ECMWF logit.

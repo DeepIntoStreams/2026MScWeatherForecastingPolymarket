@@ -1,0 +1,12 @@
+issue_type,feature,detail,n_rows,share
+feature_missingness,event_midpoint_C,Midpoint of a bounded event interval; missing for tail events.,359,0.18177215189873416
+feature_missingness,event_width_C,Width of a bounded event interval; missing for tail events.,359,0.18177215189873416
+feature_missingness,event_lower_C_finite,Finite lower event boundary in degrees Celsius; missing for a lower tail.,180,0.09113924050632911
+feature_missingness,corrected_forecast_minus_lower_C,Corrected forecast minus finite lower event boundary.,180,0.09113924050632911
+feature_missingness,raw_forecast_minus_lower_C,Raw forecast minus finite lower event boundary.,180,0.09113924050632911
+feature_missingness,standardised_corrected_minus_lower,Corrected lower-bound margin divided by sigma.,180,0.09113924050632911
+feature_missingness,event_upper_C_finite,Finite upper event boundary in degrees Celsius; missing for an upper tail.,179,0.09063291139240506
+feature_missingness,standardised_upper_minus_corrected,Corrected upper-bound margin divided by sigma.,179,0.09063291139240506
+feature_missingness,upper_minus_corrected_forecast_C,Finite upper event boundary minus corrected forecast.,179,0.09063291139240506
+feature_missingness,upper_minus_raw_forecast_C,Finite upper event boundary minus raw forecast.,179,0.09063291139240506
+incomplete_common_support_books,,Book-normalised features should be treated cautiously or omitted for these date-decision groups.,5,0.027624309392265192

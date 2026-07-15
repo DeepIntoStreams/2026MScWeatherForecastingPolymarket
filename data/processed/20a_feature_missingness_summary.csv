@@ -1,0 +1,78 @@
+feature,missing_count,missing_share,n_unique_nonmissing,family,description
+event_midpoint_C,359,0.18177215189873416,18,structural,Midpoint of a bounded event interval; missing for tail events.
+event_width_C,359,0.18177215189873416,1,structural,Width of a bounded event interval; missing for tail events.
+event_lower_C_finite,180,0.09113924050632911,19,structural,Finite lower event boundary in degrees Celsius; missing for a lower tail.
+corrected_forecast_minus_lower_C,180,0.09113924050632911,1743,weather,Corrected forecast minus finite lower event boundary.
+raw_forecast_minus_lower_C,180,0.09113924050632911,167,weather,Raw forecast minus finite lower event boundary.
+standardised_corrected_minus_lower,180,0.09113924050632911,1795,weather,Corrected lower-bound margin divided by sigma.
+event_upper_C_finite,179,0.09063291139240506,19,structural,Finite upper event boundary in degrees Celsius; missing for an upper tail.
+standardised_upper_minus_corrected,179,0.09063291139240506,1796,weather,Corrected upper-bound margin divided by sigma.
+upper_minus_corrected_forecast_C,179,0.09063291139240506,1744,weather,Finite upper event boundary minus corrected forecast.
+upper_minus_raw_forecast_C,179,0.09063291139240506,167,weather,Finite upper event boundary minus raw forecast.
+ecmwf_bias_fixed_sigma_book_contract_count,0,0.0,4,book,Number of common-support contracts in the bias-corrected fixed-scale ECMWF book.
+ecmwf_bias_fixed_sigma_book_gap_to_top,0,0.0,1764,book,Gap between the book maximum and this contract's bias-corrected fixed-scale ECMWF probability.
+ecmwf_bias_fixed_sigma_book_normalised_entropy,0,0.0,180,book,Entropy of the normalised bias-corrected fixed-scale ECMWF event-book distribution.
+ecmwf_bias_fixed_sigma_book_probability_normalised,0,0.0,1946,book,Contract bias-corrected fixed-scale ECMWF probability normalised within the event book.
+ecmwf_bias_fixed_sigma_book_rank_desc,0,0.0,11,book,Descending probability rank within the bias-corrected fixed-scale ECMWF event book.
+ecmwf_bias_fixed_sigma_book_top_probability,0,0.0,177,book,Largest bias-corrected fixed-scale ECMWF probability in the event book.
+ecmwf_bias_fixed_sigma_book_total_probability,0,0.0,11,book,Sum of bias-corrected fixed-scale ECMWF probabilities over the observed event book.
+ecmwf_bias_scale_book_contract_count,0,0.0,4,book,Number of common-support contracts in the bias-and-scale ECMWF book.
+ecmwf_bias_scale_book_gap_to_top,0,0.0,1758,book,Gap between the book maximum and this contract's bias-and-scale ECMWF probability.
+ecmwf_bias_scale_book_normalised_entropy,0,0.0,181,book,Entropy of the normalised bias-and-scale ECMWF event-book distribution.
+ecmwf_bias_scale_book_probability_normalised,0,0.0,1867,book,Contract bias-and-scale ECMWF probability normalised within the event book.
+ecmwf_bias_scale_book_rank_desc,0,0.0,11,book,Descending probability rank within the bias-and-scale ECMWF event book.
+ecmwf_bias_scale_book_top_probability,0,0.0,181,book,Largest bias-and-scale ECMWF probability in the event book.
+ecmwf_bias_scale_book_total_probability,0,0.0,10,book,Sum of bias-and-scale ECMWF probabilities over the observed event book.
+ecmwf_raw_book_contract_count,0,0.0,4,book,Number of common-support contracts in the raw ECMWF book.
+ecmwf_raw_book_gap_to_top,0,0.0,293,book,Gap between the book maximum and this contract's raw ECMWF probability.
+ecmwf_raw_book_normalised_entropy,0,0.0,85,book,Entropy of the normalised raw ECMWF event-book distribution.
+ecmwf_raw_book_probability_normalised,0,0.0,391,book,Contract raw ECMWF probability normalised within the event book.
+ecmwf_raw_book_rank_desc,0,0.0,11,book,Descending probability rank within the raw ECMWF event book.
+ecmwf_raw_book_top_probability,0,0.0,20,book,Largest raw ECMWF probability in the event book.
+ecmwf_raw_book_total_probability,0,0.0,11,book,Sum of raw ECMWF probabilities over the observed event book.
+market_book_contract_count,0,0.0,4,book,Number of common-support contracts in the market book.
+market_book_gap_to_top,0,0.0,646,book,Gap between the book maximum and this contract's market probability.
+market_book_normalised_entropy,0,0.0,181,book,Entropy of the normalised market event-book distribution.
+market_book_probability_normalised,0,0.0,1515,book,Contract market probability normalised within the event book.
+market_book_rank_desc,0,0.0,11,book,Descending probability rank within the market event book.
+market_book_top_probability,0,0.0,60,book,Largest market probability in the event book.
+market_book_total_probability,0,0.0,138,book,Sum of market probabilities over the observed event book.
+abs_market_minus_ecmwf_bias_fixed_sigma,0,0.0,1971,interaction,Absolute market-versus-bias-corrected fixed-scale ECMWF probability discrepancy.
+abs_market_minus_ecmwf_bias_scale,0,0.0,1878,interaction,Absolute market-versus-bias-and-scale ECMWF probability discrepancy.
+abs_market_minus_ecmwf_raw,0,0.0,1470,interaction,Absolute market-versus-raw ECMWF probability discrepancy.
+logit_market_minus_ecmwf_bias_fixed_sigma,0,0.0,1810,interaction,Market logit minus bias-corrected fixed-scale ECMWF logit.
+logit_market_minus_ecmwf_bias_scale,0,0.0,1392,interaction,Market logit minus bias-and-scale ECMWF logit.
+logit_market_minus_ecmwf_raw,0,0.0,1441,interaction,Market logit minus raw ECMWF logit.
+market_minus_ecmwf_bias_fixed_sigma,0,0.0,1971,interaction,Market probability minus bias-corrected fixed-scale ECMWF probability.
+market_minus_ecmwf_bias_scale,0,0.0,1878,interaction,Market probability minus bias-and-scale ECMWF probability.
+market_minus_ecmwf_raw,0,0.0,1470,interaction,Market probability minus raw ECMWF probability.
+logit_p_market,0,0.0,244,market,Clipped logit of the market-implied probability.
+p_market,0,0.0,244,market,Latest no-lookahead Polymarket YES price at the decision cutoff.
+price_staleness_hours,0,0.0,198,market,Hours between the selected CLOB observation and decision cutoff.
+decision_horizon_hours,0,0.0,4,structural,Nominal hours before the event-day reference point.
+decision_is_12h_prior,0,0.0,2,structural,One-hot indicator for decision rule 12h_prior.
+decision_is_24h_prior,0,0.0,2,structural,One-hot indicator for decision rule 24h_prior.
+decision_is_6h_prior,0,0.0,2,structural,One-hot indicator for decision rule 6h_prior.
+decision_is_event_day_open,0,0.0,2,structural,One-hot indicator for decision rule event_day_open.
+event_has_lower_bound,0,0.0,2,structural,Indicator that the event has a finite lower boundary.
+event_has_upper_bound,0,0.0,2,structural,Indicator that the event has a finite upper boundary.
+event_type_is_interior_bin,0,0.0,2,structural,One-hot indicator for event type interior_bin.
+event_type_is_lower_tail_endpoint,0,0.0,2,structural,One-hot indicator for event type lower_tail_endpoint.
+event_type_is_upper_tail,0,0.0,2,structural,One-hot indicator for event type upper_tail.
+calendar_day_index,0,0.0,48,temporal,Number of days since the first eligible event date.
+calendar_day_of_month,0,0.0,31,temporal,Day of month of the HKO settlement date.
+calendar_day_of_year,0,0.0,48,temporal,Day of year of the HKO settlement date.
+calendar_doy_cos,0,0.0,48,temporal,Cosine transform of day of year.
+calendar_doy_sin,0,0.0,48,temporal,Sine transform of day of year.
+calendar_month,0,0.0,2,temporal,Calendar month of the HKO settlement date.
+bias_correction_C,0,0.0,178,weather,Expanding-window additive local bias estimate.
+corrected_forecast_hko_daily_max_C,0,0.0,179,weather,Expanding-window additive-bias-corrected local-day maximum forecast.
+forecast_hko_daily_max_C,0,0.0,78,weather,Raw ECMWF single-run Hong Kong local-day maximum forecast.
+logit_p_ecmwf_bias_fixed_sigma,0,0.0,1761,weather,Clipped logit of the bias-corrected fixed-scale probability.
+logit_p_ecmwf_bias_scale,0,0.0,1374,weather,Clipped logit of the bias-and-scale probability.
+logit_p_ecmwf_raw,0,0.0,167,weather,Clipped logit of the raw ECMWF proxy probability.
+n_train_dates,0,0.0,50,weather,Number of historical dates used by the leakage-controlled calibration.
+p_ecmwf_bias_fixed_sigma,0,0.0,1928,weather,Bias-corrected event probability with fixed sigma.
+p_ecmwf_bias_scale,0,0.0,1861,weather,Bias-and-scale post-processed event probability.
+p_ecmwf_raw,0,0.0,191,weather,Raw fixed-scale Gaussian event probability.
+sigma_used_C,0,0.0,181,weather,Expanding-window residual Gaussian scale.
