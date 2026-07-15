@@ -1,0 +1,35 @@
+{
+  "step": "20c",
+  "selection_scope": "development_oof_only",
+  "final_holdout_evaluated": false,
+  "feature_set": "market_only",
+  "candidate_id": "cb_d3_lr03_l2_8",
+  "selection_metric_primary": "mean_date_brier",
+  "selection_metric_secondary": "mean_date_log_score",
+  "mean_date_brier": 0.0758555217989319,
+  "mean_date_log_score": 0.25998360372531987,
+  "hyperparameters": {
+    "candidate_id": "cb_d3_lr03_l2_8",
+    "depth": 3,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 8.0,
+    "iterations": 350
+  },
+  "requires_20d_calibration": true,
+  "requires_20d_event_book_coherence": true,
+  "model_label": "best_catboost_specification",
+  "resolved_probability_columns": {
+    "market": "p_market",
+    "ecmwf_raw": "p_ecmwf_raw",
+    "ecmwf_bias_fixed_sigma": "p_ecmwf_bias_fixed_sigma",
+    "ecmwf_bias_adaptive_sigma": "p_ecmwf_bias_scale"
+  },
+  "expected_direct_benchmarks": [
+    "market",
+    "ecmwf_raw",
+    "ecmwf_bias_fixed_sigma",
+    "ecmwf_bias_adaptive_sigma"
+  ],
+  "all_expected_direct_benchmarks_present": true,
+  "catboost_is_best_overall_probability_model": false
+}

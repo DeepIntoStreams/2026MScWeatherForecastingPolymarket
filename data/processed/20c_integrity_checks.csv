@@ -1,0 +1,16 @@
+check,passed,detail
+matrix_nonempty,True,rows=1975
+oof_nonempty,True,rows=11220
+final_holdout_absent_from_oof,True,holdout_overlap=0
+oof_dates_subset_of_development,True,oof_dates=22
+oof_probabilities_present,True,missing=0
+oof_probabilities_in_unit_interval,True,checked selected probabilities
+oof_keys_unique,True,duplicates=0
+binary_target_valid,True,bad=0
+ranking_nonempty,True,rows=12
+exactly_one_selected_specification,True,selected=1
+benchmark_panel_nonempty,True,rows=4675
+all_expected_direct_benchmarks_present,True,missing=none
+resolved_benchmark_columns_recorded,True,"{""ecmwf_bias_adaptive_sigma"": ""p_ecmwf_bias_scale"", ""ecmwf_bias_fixed_sigma"": ""p_ecmwf_bias_fixed_sigma"", ""ecmwf_raw"": ""p_ecmwf_raw"", ""market"": ""p_market""}"
+holdout_never_scored,True,final holdout remains sealed
+cv_train_precedes_validation,True,all folds chronological

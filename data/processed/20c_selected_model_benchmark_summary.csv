@@ -1,0 +1,6 @@
+model,n_rows,n_dates,mean_brier,mean_log_score,catboost_beats_any_direct_brier,catboost_beats_any_direct_log
+ecmwf_bias_fixed_sigma,935,22,0.06677222650783342,0.2139349786568298,True,True
+ecmwf_bias_adaptive_sigma,935,22,0.06955679431266719,0.22102311981097583,True,True
+market,935,22,0.0720862719251337,0.23152456842296545,True,True
+catboost_selected,935,22,0.07598781286174527,0.2567597526026344,True,True
+ecmwf_raw,935,22,0.08136124983452694,0.29347253266731205,True,True
