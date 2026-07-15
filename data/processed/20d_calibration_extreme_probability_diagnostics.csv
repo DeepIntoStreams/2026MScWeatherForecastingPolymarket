@@ -1,0 +1,4 @@
+calibration_method,n_probabilities,n_at_lower_clip,n_at_upper_clip,share_at_clip_bounds,share_below_0_001,share_above_0_999,minimum_probability,maximum_probability
+identity,594,0,0,0.0,0.1111111111111111,0.0,0.0005315248605953,0.9152926588586252
+isotonic,594,100,0,0.16835016835016836,0.16835016835016836,0.0,1e-06,0.75
+platt,594,0,0,0.0,0.0,0.0,0.0028175156637893963,0.729266375584698

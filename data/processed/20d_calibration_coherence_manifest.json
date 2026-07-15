@@ -1,0 +1,16 @@
+{
+  "step": "20d",
+  "input_20c_candidate_id": "cb_d3_lr03_l2_8",
+  "input_20c_feature_set": "market_only",
+  "selected_calibration_method": "platt",
+  "selection_scope": "development_oof_only",
+  "final_holdout_evaluated": false,
+  "min_calibration_dates": 8,
+  "selection_metric_primary": "mean_date_log_score",
+  "selection_metric_secondary": "mean_date_brier",
+  "extreme_probability_guard_max_clip_share": 0.05,
+  "selected_method_passes_extreme_probability_guard": true,
+  "binary_scores_use_raw_contract_probabilities": true,
+  "categorical_scores_use_within_book_normalised_probabilities": true,
+  "requires_locked_final_holdout_evaluation": true
+}

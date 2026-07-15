@@ -1,0 +1,14 @@
+check,passed,detail
+selected_oof_nonempty,True,rows=935
+calibration_panel_nonempty,True,rows=2123
+selected_calibrated_nonempty,True,rows=594
+exactly_one_calibration_method_selected,True,selected=1
+calibrated_probabilities_in_unit_interval,True,checked
+selected_calibration_extreme_probability_guard,True,"clip_share=0.000000, maximum=0.05"
+calibration_uses_prior_dates_only,True,expanding-date design
+common_support_nonempty,True,"rows=2970, models=5"
+common_support_keys_unique,True,duplicates=0
+book_panel_nonempty,True,rows=2970
+scored_books_have_one_winner,True,scored_books=270
+normalised_books_sum_to_one,True,checked scored books
+final_holdout_still_sealed,True,20d reads development OOF files only
