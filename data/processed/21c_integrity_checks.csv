@@ -1,0 +1,31 @@
+check,passed,detail
+21a_input_nonempty,True,rows=8800
+21b_allocation_input_nonempty,True,rows=8800
+staleness_column_resolved,True,price_staleness_hours
+21a_staleness_attached,True,coverage=1.000000
+21b_staleness_attached,True,coverage=1.000000
+staleness_nonnegative,True,checked
+21a_robustness_panel_nonempty,True,rows=165000
+21b_robustness_panel_nonempty,True,rows=30000
+21a_summary_nonempty,True,rows=1500
+21b_summary_nonempty,True,rows=3000
+cost_grid_preserved_21a,True,"[0.0, 0.005, 0.01, 0.02, 0.05]"
+cost_grid_preserved_21b,True,"[0.0, 0.005, 0.01, 0.02, 0.05]"
+empirical_staleness_rules_preserved_21a,True,"['empirical_q25', 'empirical_q50', 'empirical_q75', 'empirical_q90', 'unrestricted']"
+empirical_staleness_rules_preserved_21b,True,"['empirical_q25', 'empirical_q50', 'empirical_q75', 'empirical_q90', 'unrestricted']"
+staleness_distribution_reported,True,"{'n_snapshot_observations': 440, 'n_holdout_dates': 10, 'minimum_event_date': '2026-05-22', 'maximum_event_date': '2026-05-31', 'minimum_hours': 0.9941666666666666, 'p10_hours': 0.9966666666666668, 'p25_hours': 0.9975, 'median_hours': 0.9980555555555556, 'p75_hours': 0.9986111111111112, 'p90_hours': 0.9991666666666666, 'p95_hours': 0.9991666666666666, 'maximum_hours': 0.9991666666666666, 'mean_hours': 0.9979217171717172, 'standard_deviation_hours': 0.0010393370030836796, 'n_distinct_staleness_values': 19}"
+canonical_staleness_snapshot_count_is_440,True,n_snapshot_observations=440
+canonical_snapshot_table_has_440_unique_rows,True,rows=440
+canonical_staleness_dates_match_locked_holdout,True,"observed=['2026-05-22', '2026-05-23', '2026-05-24', '2026-05-25', '2026-05-26', '2026-05-27', '2026-05-28', '2026-05-29', '2026-05-30', '2026-05-31']; expected=['2026-05-22', '2026-05-23', '2026-05-24', '2026-05-25', '2026-05-26', '2026-05-27', '2026-05-28', '2026-05-29', '2026-05-30', '2026-05-31']"
+canonical_staleness_rows_equal_10x4x11,True,rows=440
+empirical_caps_monotone,True,checked
+unrestricted_staleness_case_present,True,checked
+finite_caps_are_tie_aware_valid,True,"[{'staleness_rule': 'empirical_q25', 'staleness_quantile': 0.25, 'observed_share_admitted': 0.2636363636363636, 'tie_mass_at_cap': 0.0659090909090909, 'admission_excess_over_target': 0.013636363636363613}, {'staleness_rule': 'empirical_q50', 'staleness_quantile': 0.5, 'observed_share_admitted': 0.5477272727272727, 'tie_mass_at_cap': 0.11818181818181818, 'admission_excess_over_target': 0.04772727272727273}, {'staleness_rule': 'empirical_q75', 'staleness_quantile': 0.75, 'observed_share_admitted': 0.8022727272727272, 'tie_mass_at_cap': 0.12954545454545455, 'admission_excess_over_target': 0.05227272727272725}, {'staleness_rule': 'empirical_q90', 'staleness_quantile': 0.9, 'observed_share_admitted': 1.0, 'tie_mass_at_cap': 0.10681818181818181, 'admission_excess_over_target': 0.09999999999999998}]"
+admitted_share_at_least_requested_quantile,True,checked
+admission_excess_bounded_by_tie_mass,True,checked
+q90_empirical_cap_is_tie_aware_valid,True,"{'staleness_rule': 'empirical_q90', 'staleness_quantile': 0.9, 'max_staleness_hours': 0.9991666666666666, 'unrestricted': False, 'observed_share_admitted': 1.0, 'tie_mass_at_cap': 0.10681818181818181, 'admission_excess_over_target': 0.09999999999999998, 'tie_aware_valid': True, 'cap_equals_observed_maximum': True}"
+threshold_grid_preserved,True,"(0.02, 0.05, 0.1)"
+primary_summary_nonempty,True,rows=60
+primary_specification_exact,True,checked
+standalone_decision_rules_preserved,True,checked
+forecast_specification_unchanged,True,21c modifies trading assumptions only

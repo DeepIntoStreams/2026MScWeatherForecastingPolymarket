@@ -1,0 +1,59 @@
+{
+  "step": "21c",
+  "inputs": [
+    "21a",
+    "21b"
+  ],
+  "evaluation_sample": "locked_final_holdout",
+  "holdout_start_date": "2026-05-22",
+  "holdout_end_date": "2026-05-31",
+  "cost_grid": [
+    0.0,
+    0.005,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "staleness_quantiles": [
+    0.25,
+    0.5,
+    0.75,
+    0.9
+  ],
+  "staleness_rules": [
+    "empirical_q25",
+    "empirical_q50",
+    "empirical_q75",
+    "empirical_q90",
+    "unrestricted"
+  ],
+  "threshold_grid": [
+    0.02,
+    0.05,
+    0.1
+  ],
+  "primary_cost": 0.01,
+  "primary_staleness_quantile": 0.5,
+  "primary_staleness_rule": "empirical_q50",
+  "primary_staleness_cap_hours": 0.9980555555555556,
+  "primary_threshold": 0.05,
+  "staleness_source_file": "data/processed/20a_supervised_feature_matrix.csv",
+  "staleness_source_column": "price_staleness_hours",
+  "staleness_unit_after_conversion": "hours",
+  "canonical_staleness_snapshot_key": [
+    "event_date",
+    "decision_rule",
+    "market_slug"
+  ],
+  "canonical_staleness_snapshot_count": 440,
+  "canonical_staleness_holdout_filter_applied": true,
+  "canonical_staleness_holdout_start_date": "2026-05-22",
+  "canonical_staleness_holdout_end_date": "2026-05-31",
+  "staleness_quantile_tie_handling": "admitted_share_may_exceed_quantile_by_at_most_tie_mass_at_cap",
+  "q90_interpretation": "q90_cap_is_empirical_and_tie_aware; full admission is not required",
+  "cost_interpretation": "reduced_form_cost_per_opened_position",
+  "headline_scope": "standalone_model_by_decision_rule_by_strategy",
+  "pooled_across_decision_rules": false,
+  "forecast_specification_changed": false,
+  "trading_rule_changed": false
+}

@@ -1,0 +1,2 @@
+n_snapshot_observations,n_holdout_dates,minimum_event_date,maximum_event_date,minimum_hours,p10_hours,p25_hours,median_hours,p75_hours,p90_hours,p95_hours,maximum_hours,mean_hours,standard_deviation_hours,n_distinct_staleness_values
+440,10,2026-05-22,2026-05-31,0.9941666666666666,0.9966666666666668,0.9975,0.9980555555555556,0.9986111111111112,0.9991666666666666,0.9991666666666666,0.9991666666666666,0.9979217171717172,0.0010393370030836796,19
