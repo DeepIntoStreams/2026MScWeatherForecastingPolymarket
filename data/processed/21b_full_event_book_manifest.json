@@ -1,0 +1,43 @@
+{
+  "step": "21b",
+  "input_step": "20e",
+  "evaluation_sample": "locked_final_holdout",
+  "holdout_start_date": "2026-05-22",
+  "holdout_end_date": "2026-05-31",
+  "n_holdout_dates": 10,
+  "n_source_rows": 440,
+  "models": {
+    "catboost_raw": "p_catboost_raw_holdout",
+    "catboost_platt": "p_catboost_platt_holdout",
+    "ecmwf_raw": "p_ecmwf_raw",
+    "ecmwf_bias_fixed_sigma": "p_ecmwf_bias_fixed_sigma",
+    "ecmwf_bias_adaptive_sigma": "p_ecmwf_bias_adaptive_sigma"
+  },
+  "threshold_grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "primary_threshold": 0.05,
+  "trade_cost_per_position": 0.0,
+  "strategies": [
+    "single_best_edge",
+    "proportional_positive_edge"
+  ],
+  "book_normalisation": "within_event_date_decision_rule",
+  "headline_scope": "standalone_model_by_decision_rule_by_strategy",
+  "pooled_across_decision_rules_is_diagnostic_only": true,
+  "execution_price_assumption": "observed_market_yes_probability_as_frictionless_proxy",
+  "excluded_execution_frictions": [
+    "bid_ask_spread",
+    "fees",
+    "slippage",
+    "liquidity_constraints",
+    "partial_fills",
+    "market_impact",
+    "capital_limits",
+    "dynamic_position_netting"
+  ],
+  "forecast_specification_changed": false
+}

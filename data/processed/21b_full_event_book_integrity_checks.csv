@@ -1,0 +1,20 @@
+check,passed,detail
+source_panel_nonempty,True,rows=440
+complete_books_nonempty,True,rows=2200
+complete_book_inventory_nonempty,True,rows=200
+all_used_books_have_one_winner,True,checked
+normalised_market_books_sum_to_one,True,checked
+normalised_model_books_sum_to_one,True,checked
+normalised_edges_sum_to_zero,True,checked
+book_results_nonempty,True,rows=1600
+strategies_exactly_prespecified,True,"['proportional_positive_edge', 'single_best_edge']"
+threshold_grid_preserved,True,"[0.0, 0.02, 0.05, 0.1]"
+single_best_has_at_most_one_position,True,checked
+proportional_stake_is_zero_or_one,True,checked
+allocation_weights_nonnegative,True,checked
+allocation_weights_match_book_stake,True,checked
+standalone_summary_preserves_decision_rule,True,rows=160
+pooled_table_labelled_diagnostic,True,rows=40
+primary_threshold_present,True,primary=0.05
+holdout_dates_preserved,True,dates=10
+model_count_expected,True,"['catboost_platt', 'catboost_raw', 'ecmwf_bias_adaptive_sigma', 'ecmwf_bias_fixed_sigma', 'ecmwf_raw']"
