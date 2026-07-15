@@ -1,0 +1,38 @@
+{
+  "step": "21e",
+  "release_name": "hko_empirical_release_v1",
+  "generated_at_utc": "2026-07-15T06:05:10.907958+00:00",
+  "git_branch": "edward-17j-hko-upper-tail-audit",
+  "git_commit": "63bf40d3e6911773fad9afbcf7ac089cc7282a55",
+  "git_commit_subject": "Add dissertation-ready empirical consolidation",
+  "declared_steps": [
+    "18m",
+    "19b",
+    "19c",
+    "20a",
+    "20b",
+    "20c",
+    "20d",
+    "20e",
+    "21a",
+    "21b",
+    "21c",
+    "21d"
+  ],
+  "headline_source": "data/processed/21d_empirical_headline.csv",
+  "indexed_file_count": 233,
+  "indexed_total_bytes": 463132484,
+  "missing_core_files": [],
+  "resolved_core_alternatives": {
+    "20a_supervised_feature_matrix": "data/processed/20a_supervised_feature_matrix.csv"
+  },
+  "tracked_worktree_clean": true,
+  "all_recorded_integrity_checks_pass": true,
+  "forecast_specification_changed": false,
+  "calibration_specification_changed": false,
+  "validation_design_changed": false,
+  "trading_specification_changed": false,
+  "hash_algorithm": "SHA-256",
+  "paths_are_repository_relative": true,
+  "release_is_a_freeze_not_a_new_model": true
+}
