@@ -1,0 +1,10 @@
+issue_type,decision_rule,n_warmup_date_rules,first_event_date,last_warmup_event_date,event_date,detail,n_contracts_common,expected_n_contracts,n_yes
+calibration_warmup_summary,12h_prior,16.0,2026-03-18,2026-04-12,,,,,
+calibration_warmup_summary,24h_prior,16.0,2026-03-16,2026-04-09,,,,,
+calibration_warmup_summary,6h_prior,16.0,2026-03-17,2026-04-13,,,,,
+calibration_warmup_summary,event_day_open,15.0,2026-03-22,2026-04-09,,,,,
+categorical_book_not_ready,24h_prior,,,,2026-04-18,incomplete_common_book common=6 expected=11,6.0,11.0,1.0
+categorical_book_not_ready,24h_prior,,,,2026-04-17,incomplete_common_book common=6 expected=11,6.0,11.0,1.0
+categorical_book_not_ready,24h_prior,,,,2026-04-14,incomplete_common_book common=7 expected=11,7.0,11.0,1.0
+categorical_book_not_ready,12h_prior,,,,2026-04-16,incomplete_common_book common=10 expected=11,10.0,11.0,1.0
+categorical_book_not_ready,6h_prior,,,,2026-04-16,incomplete_common_book common=10 expected=11,10.0,11.0,1.0

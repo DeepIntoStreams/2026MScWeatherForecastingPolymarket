@@ -1,0 +1,15 @@
+check,passed,detail
+common_input_nonempty,True,rows=2635
+date_level_parameters_nonempty,True,rows=256
+some_out_of_sample_dates_ready,True,ready_date_rules=193
+training_uses_only_available_outcomes,True,last assumed outcome availability <= decision cutoff
+training_uses_strictly_earlier_event_dates,True,training_end_date < event_date
+corrected_probabilities_present_on_ready_rows,True,ready_rows=1975
+all_ready_probabilities_in_unit_interval,True,checked all four models
+adaptive_sigma_within_bounds,True,"bounds=[0.5,3.0]"
+binary_summary_complete,True,rows=16
+categorical_panel_nonempty,True,rows=241
+some_categorical_books_ready,True,ready=176
+categorical_ready_books_have_one_winner,True,checked ready books
+gaussian_complete_books_sum_to_one,True,raw and corrected Gaussian books
+categorical_summary_complete,True,rows=16
