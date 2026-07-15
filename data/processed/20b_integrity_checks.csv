@@ -1,0 +1,15 @@
+check,passed,detail
+matrix_nonempty,True,rows=1975
+unique_date_group_mapping,True,"dates=48, groups=48"
+holdout_nonempty,True,holdout_dates=10
+holdout_strictly_after_development,True,"development_end=2026-05-21, holdout_start=2026-05-22"
+minimum_development_dates,True,"development_dates=38, minimum=16"
+all_rows_assigned,True,missing=0
+no_date_split_between_development_and_holdout,True,each date has one final partition
+cv_fold_count,True,folds=4
+cv_train_precedes_validation,True,violating_folds=0
+cv_train_validation_disjoint,True,overlap_dates=0
+each_post_initial_date_validated_once,True,validated_dates=22
+holdout_excluded_from_cv,True,final holdout dates do not appear in CV assignments
+binary_target_valid,True,bad=0
+holdout_contains_event_types,True,event_types=3
