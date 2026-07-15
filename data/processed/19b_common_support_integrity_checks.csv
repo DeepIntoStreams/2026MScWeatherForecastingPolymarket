@@ -1,0 +1,12 @@
+check,passed,detail
+market_input_nonempty,True,rows=2921
+ecmwf_input_nonempty,True,rows=3212
+common_support_nonempty,True,rows=2635
+common_rows_have_probabilities,True,missing=0
+common_probabilities_in_unit_interval,True,checked both sources
+common_rows_have_binary_outcome,True,bad=0
+market_ecmwf_outcomes_match,True,mismatches=0
+binary_summary_nonempty,True,rows=4
+categorical_panel_nonempty,True,rows=241
+some_categorical_books_ready,True,ready=236
+issue_table_written,True,issue rows=5

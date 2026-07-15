@@ -1,0 +1,6 @@
+issue_type,event_date,decision_rule,detail,n_contracts_common,expected_n_contracts,n_yes
+categorical_book_not_ready,2026-04-14,24h_prior,common=7 expected=11,7,11,1.0
+categorical_book_not_ready,2026-04-17,24h_prior,common=6 expected=11,6,11,1.0
+categorical_book_not_ready,2026-04-18,24h_prior,common=6 expected=11,6,11,1.0
+categorical_book_not_ready,2026-04-16,12h_prior,common=10 expected=11,10,11,1.0
+categorical_book_not_ready,2026-04-16,6h_prior,common=10 expected=11,10,11,1.0
