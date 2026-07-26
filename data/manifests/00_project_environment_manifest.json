@@ -1,0 +1,106 @@
+{
+  "configuration_files": {
+    "config/analysis.yaml": {
+      "sha256": "217694c6abe2e2520b8a8b93a390f60ed141af506126272d29d26e3e0a0589c9",
+      "size_bytes": 1357
+    },
+    "config/data_sources.yaml": {
+      "sha256": "5c3e0108686ec2e8b23d47e1742441c08826f6c0698baa050fd899444fdba221",
+      "size_bytes": 1681
+    },
+    "config/models.yaml": {
+      "sha256": "c3eb681ccb813b992cf79e13bbd2e8522e1e3cc4df3526b7422069d422dbda56",
+      "size_bytes": 1014
+    }
+  },
+  "created_utc": "2026-07-26T08:36:24.385282+00:00",
+  "declared_analysis": {
+    "availability": {
+      "forecast_operational_delay_hours": 6,
+      "hko_outcome_policy": "documented_time_else_conservative_working_day_embargo",
+      "require_complete_hkt_day": true,
+      "required_unique_local_hours": 24
+    },
+    "dates": {
+      "development_end": "2026-07-31",
+      "external_end_requested": "2026-08-31",
+      "external_start": "2026-08-01",
+      "final_retrieval_cutoff": "2026-09-01T12:00:00+08:00"
+    },
+    "decision_rules": [
+      "24h_prior",
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "evaluation": {
+      "categorical_scores": [
+        "categorical_log_loss",
+        "multiclass_brier"
+      ],
+      "chronological_folds": true,
+      "date_balanced_scores": true,
+      "exact_common_support": true,
+      "paired_inference_unit": "settlement_date",
+      "primary_continuous_score": "crps"
+    },
+    "particles": {
+      "primary_grid_end": 0.99,
+      "primary_grid_start": 0.01,
+      "primary_grid_step": 0.01,
+      "sensitivity_particle_counts": [
+        199,
+        999
+      ]
+    },
+    "project": {
+      "name": "weather_forecasting_polymarket_trading",
+      "timezone": "Asia/Hong_Kong",
+      "uncertainty_unit": "settlement_date"
+    },
+    "reproducibility": {
+      "final_run_id": "pending",
+      "global_seed": 20260721
+    },
+    "trading": {
+      "position_size_yes_shares": 1,
+      "primary_cost_per_share": 0.01,
+      "report_positive_drawdown_magnitude": true,
+      "select_rule_on_development_only": true,
+      "select_threshold_on_development_only": true
+    },
+    "training": {
+      "allow_non_market_weather_dates": true,
+      "minimum_same_rule_history": 16,
+      "require_outcome_admissibility": true,
+      "require_product_compatibility": true
+    }
+  },
+  "packages": {
+    "PyYAML": "6.0.1",
+    "catboost": "1.2.10",
+    "matplotlib": "3.8.4",
+    "nbconvert": "7.10.0",
+    "nbformat": "5.9.2",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.4.2",
+    "scipy": "1.13.1"
+  },
+  "platform": {
+    "machine": "x86_64",
+    "release": "25.5.0",
+    "system": "Darwin"
+  },
+  "python": {
+    "executable": "/opt/anaconda3/bin/python",
+    "implementation": "CPython",
+    "version": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]"
+  },
+  "repository": {
+    "branch": "edward-final-empirical-2026",
+    "commit": "fce94d4dd1da3f0733b8f0a00aed1b9ff116d8be",
+    "status_porcelain": [],
+    "working_tree_clean": true
+  }
+}

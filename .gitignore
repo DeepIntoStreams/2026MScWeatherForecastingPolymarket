@@ -22,7 +22,6 @@ data/processed/*
 !data/processed/.gitkeep
 
 # Outputs
-outputs/*
 !outputs/.gitkeep
 
 # System files
@@ -54,3 +53,31 @@ scripts/*_old_*.py
 # Raw and intermediate data remain local unless explicitly admitted
 data/interim/*
 !data/interim/.gitkeep
+
+# BEGIN CANONICAL OUTPUT POLICY
+# Development and external prediction files remain local.
+outputs/development/*
+!outputs/development/.gitkeep
+outputs/external/*
+!outputs/external/.gitkeep
+
+# Diagnostic reports supporting integrity checks are versioned.
+outputs/diagnostics/*
+!outputs/diagnostics/.gitkeep
+!outputs/diagnostics/*.json
+!outputs/diagnostics/*.csv
+!outputs/diagnostics/*.md
+
+# Final thesis tables and figures are versioned.
+outputs/final_tables/*
+!outputs/final_tables/.gitkeep
+!outputs/final_tables/*.csv
+!outputs/final_tables/*.tex
+!outputs/final_tables/*.json
+!outputs/final_tables/*.md
+outputs/final_figures/*
+!outputs/final_figures/.gitkeep
+!outputs/final_figures/*.png
+!outputs/final_figures/*.pdf
+!outputs/final_figures/*.svg
+# END CANONICAL OUTPUT POLICY

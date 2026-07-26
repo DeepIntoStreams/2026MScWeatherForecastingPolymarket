@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-07-26T08:36:26.680975+00:00",
+  "status": "SOURCE_ADAPTER_MIGRATION_PENDING",
+  "synthetic_boundary_tests_passed": true,
+  "expected_inputs": {
+    "contract_definitions": {
+      "path": "/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/interim/canonical_contract_definitions.csv",
+      "exists": false
+    },
+    "hko_daily_max": {
+      "path": "/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/interim/hko_daily_max.csv",
+      "exists": false
+    }
+  },
+  "settlement_convention": {
+    "lower_tail": "(-infinity, k+1)",
+    "interior": "[k, k+1)",
+    "upper_tail": "[K, infinity)",
+    "round_hko_to_integer": false
+  }
+}
