@@ -1,17 +1,36 @@
 # Historical Notebook Migration Status
 
-Archive branch: `archive/17j-plus-18n-18y-20260726`
+Archive branch:
 
-Historical notebooks inspected: **72**
+`archive/17j-plus-18n-18y-20260726`
 
-## Current state
+Historical notebooks inspected:
 
-- Complete notebook inventory: complete.
-- Structural notebook inspection: complete.
-- Automatic migration classification: complete.
-- Manual review items: **0**.
-- Historical notebooks copied into clean branch: **0**.
+**72**
 
-## Next action
+## Completed
 
-Build canonical Notebook 00 and Notebook 01 by extracting only the approved logic listed in the migration map.
+- Complete archive branch and tag.
+- Clean empirical branch.
+- Exact notebook inventory.
+- Migration classification.
+- Notebook 00–01 archive source audit.
+- Canonical configuration and manifest modules.
+- Canonical settlement engine.
+- Configuration and settlement tests.
+- Canonical Notebook 00.
+- Canonical Notebook 01 certification framework.
+
+## Not yet claimed
+
+- Real HKO source migration.
+- Real Polymarket contract certification.
+- Final July or August data.
+- Expanded weather training panel.
+- Any new empirical score or PnL result.
+
+## Next implementation task
+
+Migrate the latest valid HKO and contract source adapters into Notebook 01,
+then build the deterministic forecast and expanded weather-training panel in
+Notebook 02.
