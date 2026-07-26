@@ -1,42 +1,50 @@
-# Notebook 02 Support and Chronology Audit
+# Notebook 02 Support and Chronology
 
-Status: `SUPPORT_EXPANSION_REQUIRED`
+## Statistical support
 
-## Current empirical support
+The certified market universe contains 103 dates and 412 possible date-rule
+combinations.
 
-- Weather training rows: 119.
-- Weather training dates: 30.
-- Training period: 2026-06-01 to 2026-06-30.
-- Market evaluation rows: 119.
-- Market evaluation dates: 30.
-- Weather-only training dates: 0.
+The verified deterministic forecast panel contains 375 combinations over 102
+dates.
 
-The software architecture separates model training from market evaluation, but the current realised date sets are identical. The empirical separation requested by the supervisors has therefore not yet been achieved.
+Thirty-six historical requests lack an independently verified complete hourly
+forecast path. One June combination is also unavailable.
 
-## June support gap
+## Chronological design
 
-- 2026-06-24, `6h_prior`: `NO_HOURLY_CANDIDATE_GROUP`; candidate groups=0; maximum local hours=0; reasons=not recorded.
+The calendar boundaries are declared before fitting probabilistic candidates:
 
-## Earlier and later support
+- warm-up training: dates no later than 11 April 2026;
+- development validation: 12 April to 21 May 2026;
+- holdout: 22 May to 31 May 2026;
+- external test: 1 June to 30 June 2026.
 
-The source inventory tests only whether the request, hourly forecast and HKO sources contain the same date-rule keys. This is a recovery signal, not proof that a path is admissible.
+The actual number of available dates in each block is calculated from the
+verified panel rather than assumed from the complete calendar.
 
-- Source-level pre-June candidate dates: 0.
-- Source-level June candidate dates: 30.
-- Source-level post-June candidate dates with existing HKO outcomes: 0.
-- Post-June HKO dates found in preserved local or Git sources: 4.
+## Development validation
 
-## Chronology decision
+Available development dates are divided into four consecutive folds of
+approximately equal size.
 
-No training, development, holdout or external-test dates are assigned at this stage. Assigning them from a single 30-day month would create an arbitrary and weak validation design.
+For each fold:
 
-Model fitting remains blocked until:
+1. all training dates precede the validation dates;
+2. the settlement date is the uncertainty unit;
+3. all decision-rule rows for one date remain together;
+4. candidate continuous distributions are compared by CRPS.
 
-1. an earlier weather-training period is recovered or acquired;
-2. a later untouched period can be reserved;
-3. the split dates are declared before fitting;
-4. date-grouped chronological validation can be implemented.
+## Locked periods
 
-The formal gate is recorded in:
+Holdout and external outcomes cannot affect model selection, calibration or
+the trading rule.
 
-`config/chronology_policy.yaml`
+The model fitted before the holdout is transferred to June without refitting
+after the holdout outcomes are observed.
+
+## Later data
+
+July and August observations may be added as a later external temporal
+extension. They cannot retroactively alter a model selected from the declared
+development period.

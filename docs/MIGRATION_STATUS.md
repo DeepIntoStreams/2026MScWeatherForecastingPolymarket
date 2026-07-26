@@ -96,3 +96,21 @@ Notebook 02.
 - Random split: prohibited.
 - Model fitting: blocked pending support expansion.
 - Next task: recover earlier admissible forecast-HKO pairs.
+
+## Verified historical forecast panel
+
+- False HKO-name outcome classification: corrected.
+- Verified historical forecast column: forecast_hko_daily_max_C.
+- Historical hourly paths retained: 256.
+- Historical dates retained: 72.
+- Stored-versus-reconstructed discrepancy: zero.
+- Unsupported historical request rows excluded: 36.
+- Certified June rows retained: 119.
+- Combined verified rows: 375.
+- Combined verified dates: 102.
+- Full 103-date support matrix: recorded.
+- Chronological blocks: assigned from actual available dates.
+- Four expanding development folds: certified.
+- Holdout and external outcomes: locked.
+- Model fitting: permitted.
+- Next task: construct the simple probabilistic model families.

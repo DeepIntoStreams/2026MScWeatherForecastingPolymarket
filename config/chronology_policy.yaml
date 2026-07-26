@@ -1,33 +1,77 @@
-status: BLOCKED_PENDING_SUPPORT_EXPANSION
-model_fitting_permitted: false
-reason: The current usable sample contains only June 2026, and the weather-training
-  and market-evaluation date sets are identical.
-current_support:
-  weather_training_rows: 119
-  weather_training_dates: 30
-  weather_training_start: '2026-06-01'
-  weather_training_end: '2026-06-30'
-  market_evaluation_rows: 119
-  market_evaluation_dates: 30
-  weather_only_training_dates: 0
-principles:
-  training_requires_market: false
-  market_evaluation_requires_market: true
-  random_split_permitted: false
-  date_grouping_required: true
-  chronological_blocks_required: true
-  market_comparison_requires_exact_common_support: true
-  external_test_must_remain_untouched_until_all_choices_are_locked: true
-activation_conditions:
-- Recover or acquire a materially earlier forecast-HKO training period.
-- Reserve a later contiguous period that is untouched during model and calibration
-  selection.
-- Record the exact split dates before fitting candidate probabilistic models.
-- Ensure each selected rule has sufficient chronological support in the development
-  calculations.
-- Keep the settlement date as the uncertainty and resampling unit.
-block_assignments:
-  training: NOT_ASSIGNED
-  development_validation: NOT_ASSIGNED
-  holdout: NOT_ASSIGNED
-  external_test: NOT_ASSIGNED
+status: CHRONOLOGY_ASSIGNED
+model_fitting_permitted: true
+uncertainty_unit: settlement_date
+random_split_permitted: false
+available_settlement_dates: 102
+certified_market_dates: 103
+blocks:
+- chronology_block: warmup_training
+  dates: 24
+  start_date: '2026-03-16'
+  end_date: '2026-04-11'
+  date_rule_rows: 64
+- chronology_block: development_validation
+  dates: 38
+  start_date: '2026-04-12'
+  end_date: '2026-05-21'
+  date_rule_rows: 152
+- chronology_block: holdout
+  dates: 10
+  start_date: '2026-05-22'
+  end_date: '2026-05-31'
+  date_rule_rows: 40
+- chronology_block: external_test
+  dates: 30
+  start_date: '2026-06-01'
+  end_date: '2026-06-30'
+  date_rule_rows: 119
+development_folds:
+- fold: 1
+  training_dates: 24
+  training_start: '2026-03-16'
+  training_end: '2026-04-11'
+  validation_dates: 10
+  validation_start: '2026-04-12'
+  validation_end: '2026-04-21'
+  date_sets_disjoint: true
+  training_precedes_validation: true
+- fold: 2
+  training_dates: 34
+  training_start: '2026-03-16'
+  training_end: '2026-04-21'
+  validation_dates: 10
+  validation_start: '2026-04-22'
+  validation_end: '2026-05-01'
+  date_sets_disjoint: true
+  training_precedes_validation: true
+- fold: 3
+  training_dates: 44
+  training_start: '2026-03-16'
+  training_end: '2026-05-01'
+  validation_dates: 9
+  validation_start: '2026-05-02'
+  validation_end: '2026-05-10'
+  date_sets_disjoint: true
+  training_precedes_validation: true
+- fold: 4
+  training_dates: 53
+  training_start: '2026-03-16'
+  training_end: '2026-05-10'
+  validation_dates: 9
+  validation_start: '2026-05-11'
+  validation_end: '2026-05-21'
+  date_sets_disjoint: true
+  training_precedes_validation: true
+selection_protocol:
+  primary_continuous_distribution_score: date-grouped expanding out-of-fold CRPS
+  warmup_outcomes_may_influence_selection: true
+  development_outcomes_may_influence_selection: true
+  holdout_outcomes_may_influence_selection: false
+  external_outcomes_may_influence_selection: false
+  final_fit_before_holdout: all available warmup and development dates
+  refit_after_holdout_before_external_test: false
+  external_model_identical_to_holdout_model: true
+future_extension:
+  july_august_may_be_appended: true
+  role: additional external temporal extension
+  may_retroactively_change_model_selection: false

@@ -1,0 +1,17 @@
+{
+  "automatic_292_row_historical_panel_permitted": false,
+  "created_utc": "2026-07-26T23:34:06.499911+00:00",
+  "daily_source": "data/interim/notebook02_sources/daily_max_forecasts/10_19a_hko_ecmwf_single_run_daily_max_forecasts.csv",
+  "exact_hko_share": 0.00390625,
+  "false_negative_reason": "The earlier audit treated every column name containing 'hko' as an outcome. Here 'hko' identifies the forecast location and the column is explicitly forecast-labelled.",
+  "historical_dates_retained": 72,
+  "historical_request_rows_not_promoted": 36,
+  "historical_rows_retained": 256,
+  "hko_mae_c": 1.797265625,
+  "hourly_mae_c": 0.0,
+  "hourly_max_absolute_error_c": 0.0,
+  "hourly_overlap_rows": 256,
+  "selected_forecast_column": "forecast_hko_daily_max_C",
+  "selected_forecast_normalised_column": "forecast_hko_daily_max_c",
+  "status": "USE_256_INDEPENDENTLY_VERIFIED_HISTORICAL_ROWS"
+}

@@ -1,0 +1,10 @@
+check,passed,value
+selected_rows_equal_375,True,375
+selected_dates_equal_102,True,102
+historical_rows_equal_256,True,256
+june_rows_equal_119,True,119
+daily_hourly_reconciliation_exact,True,0.0
+all_paths_have_24_local_hours,True,True
+all_forecasts_available_by_decision,True,True
+unsupported_historical_rows_equal_36,True,36
+unsupported_june_rows_equal_1,True,1

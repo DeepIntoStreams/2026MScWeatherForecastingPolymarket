@@ -1,0 +1,5 @@
+chronology_block,dates,start_date,end_date,date_rule_rows
+warmup_training,24,2026-03-16,2026-04-11,64
+development_validation,38,2026-04-12,2026-05-21,152
+holdout,10,2026-05-22,2026-05-31,40
+external_test,30,2026-06-01,2026-06-30,119

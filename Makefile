@@ -1,4 +1,4 @@
-.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02
+.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03
 
 test:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
@@ -36,3 +36,13 @@ execute-02:
 
 support-audit-02:
 	python3 tools/audit_notebook02_support.py
+
+verified-panel-02:
+	python3 tools/build_verified_notebook02_panel.py
+
+create-notebooks-02-03:
+	python3 tools/create_verified_notebooks_02_03.py
+
+execute-02-03:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/final/02_deterministic_weather_training_panel.ipynb
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/final/03_chronological_design.ipynb

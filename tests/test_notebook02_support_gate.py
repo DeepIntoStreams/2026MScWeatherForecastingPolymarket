@@ -4,7 +4,6 @@ import json
 import unittest
 from pathlib import Path
 
-import pandas as pd
 import yaml
 
 
@@ -13,16 +12,16 @@ class Notebook02SupportGateTests(
 ):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.manifest = json.loads(
+        cls.decision = json.loads(
             Path(
                 "data/manifests/"
-                "02_support_and_chronology_manifest.json"
+                "02_verified_historical_forecast_decision.json"
             ).read_text(
                 encoding="utf-8"
             )
         )
 
-        cls.chronology = yaml.safe_load(
+        cls.policy = yaml.safe_load(
             Path(
                 "config/"
                 "chronology_policy.yaml"
@@ -31,113 +30,56 @@ class Notebook02SupportGateTests(
             )
         )
 
-        cls.support = pd.read_csv(
-            "outputs/diagnostics/"
-            "02_date_rule_support_matrix.csv"
+    def test_verified_historical_decision(self) -> None:
+        self.assertEqual(
+            self.decision["status"],
+            "USE_256_INDEPENDENTLY_VERIFIED_HISTORICAL_ROWS",
         )
 
-    def test_support_expansion_is_required(
-        self,
-    ) -> None:
         self.assertEqual(
-            self.manifest["status"],
-            "SUPPORT_EXPANSION_REQUIRED",
+            self.decision[
+                "historical_rows_retained"
+            ],
+            256,
+        )
+
+        self.assertEqual(
+            self.decision[
+                "historical_request_rows_not_promoted"
+            ],
+            36,
         )
 
         self.assertFalse(
-            self.manifest[
-                "model_fitting_permitted"
+            self.decision[
+                "automatic_292_row_historical_panel_permitted"
             ]
         )
 
-    def test_chronology_is_not_assigned_prematurely(
-        self,
-    ) -> None:
+    def test_chronology_is_assigned(self) -> None:
         self.assertEqual(
-            self.chronology["status"],
-            "BLOCKED_PENDING_SUPPORT_EXPANSION",
+            self.policy["status"],
+            "CHRONOLOGY_ASSIGNED",
         )
-
-        self.assertFalse(
-            self.chronology[
-                "model_fitting_permitted"
-            ]
-        )
-
-        assignments = self.chronology[
-            "block_assignments"
-        ]
 
         self.assertTrue(
-            all(
-                value == "NOT_ASSIGNED"
-                for value in assignments.values()
-            )
+            self.policy[
+                "model_fitting_permitted"
+            ]
         )
 
-    def test_june_support_is_audited(
-        self,
-    ) -> None:
-        june = self.support.loc[
-            self.support[
-                "target_date"
-            ].between(
-                "2026-06-01",
-                "2026-06-30",
-            )
-        ]
-
-        self.assertEqual(
-            len(june),
-            120,
+    def test_random_split_is_prohibited(self) -> None:
+        self.assertFalse(
+            self.policy[
+                "random_split_permitted"
+            ]
         )
 
         self.assertEqual(
-            int(
-                june[
-                    "selected_forecast_present"
-                ].sum()
-            ),
-            119,
-        )
-
-        self.assertEqual(
-            int(
-                (
-                    ~june[
-                        "selected_forecast_present"
-                    ]
-                ).sum()
-            ),
-            1,
-        )
-
-    def test_training_and_evaluation_dates_are_currently_identical(
-        self,
-    ) -> None:
-        training = self.manifest[
-            "current_training"
-        ]
-
-        evaluation = self.manifest[
-            "current_evaluation"
-        ]
-
-        self.assertEqual(
-            training["dates"],
-            30,
-        )
-
-        self.assertEqual(
-            evaluation["dates"],
-            30,
-        )
-
-        self.assertEqual(
-            training[
-                "weather_only_dates"
+            self.policy[
+                "uncertainty_unit"
             ],
-            0,
+            "settlement_date",
         )
 
 

@@ -1,0 +1,87 @@
+{
+  "available_dates": 102,
+  "block_summary": [
+    {
+      "chronology_block": "warmup_training",
+      "date_rule_rows": 64,
+      "dates": 24,
+      "end_date": "2026-04-11",
+      "start_date": "2026-03-16"
+    },
+    {
+      "chronology_block": "development_validation",
+      "date_rule_rows": 152,
+      "dates": 38,
+      "end_date": "2026-05-21",
+      "start_date": "2026-04-12"
+    },
+    {
+      "chronology_block": "holdout",
+      "date_rule_rows": 40,
+      "dates": 10,
+      "end_date": "2026-05-31",
+      "start_date": "2026-05-22"
+    },
+    {
+      "chronology_block": "external_test",
+      "date_rule_rows": 119,
+      "dates": 30,
+      "end_date": "2026-06-30",
+      "start_date": "2026-06-01"
+    }
+  ],
+  "created_utc": "2026-07-26T23:34:06.561404+00:00",
+  "development_folds": [
+    {
+      "date_sets_disjoint": true,
+      "fold": 1,
+      "training_dates": 24,
+      "training_end": "2026-04-11",
+      "training_precedes_validation": true,
+      "training_start": "2026-03-16",
+      "validation_dates": 10,
+      "validation_end": "2026-04-21",
+      "validation_start": "2026-04-12"
+    },
+    {
+      "date_sets_disjoint": true,
+      "fold": 2,
+      "training_dates": 34,
+      "training_end": "2026-04-21",
+      "training_precedes_validation": true,
+      "training_start": "2026-03-16",
+      "validation_dates": 10,
+      "validation_end": "2026-05-01",
+      "validation_start": "2026-04-22"
+    },
+    {
+      "date_sets_disjoint": true,
+      "fold": 3,
+      "training_dates": 44,
+      "training_end": "2026-05-01",
+      "training_precedes_validation": true,
+      "training_start": "2026-03-16",
+      "validation_dates": 9,
+      "validation_end": "2026-05-10",
+      "validation_start": "2026-05-02"
+    },
+    {
+      "date_sets_disjoint": true,
+      "fold": 4,
+      "training_dates": 53,
+      "training_end": "2026-05-10",
+      "training_precedes_validation": true,
+      "training_start": "2026-03-16",
+      "validation_dates": 9,
+      "validation_end": "2026-05-21",
+      "validation_start": "2026-05-11"
+    }
+  ],
+  "external_test_locked": true,
+  "holdout_locked": true,
+  "integrity_checks_passed": true,
+  "model_fitting_permitted": true,
+  "refit_before_external_test": false,
+  "selection_criterion": "date-grouped expanding out-of-fold CRPS",
+  "status": "CHRONOLOGY_ASSIGNED"
+}

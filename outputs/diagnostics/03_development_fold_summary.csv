@@ -1,0 +1,5 @@
+fold,training_dates,training_start,training_end,validation_dates,validation_start,validation_end,date_sets_disjoint,training_precedes_validation
+1,24,2026-03-16,2026-04-11,10,2026-04-12,2026-04-21,True,True
+2,34,2026-03-16,2026-04-21,10,2026-04-22,2026-05-01,True,True
+3,44,2026-03-16,2026-05-01,9,2026-05-02,2026-05-10,True,True
+4,53,2026-03-16,2026-05-10,9,2026-05-11,2026-05-21,True,True

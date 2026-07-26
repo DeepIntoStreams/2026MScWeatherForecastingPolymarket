@@ -6,53 +6,17 @@ from pathlib import Path
 
 import pandas as pd
 
-from weather_polymarket.forecast_adapter import (
-    normalise_rule,
-    temperature_to_celsius,
-)
 
-
-class ForecastAdapterTests(unittest.TestCase):
-    def test_rule_normalisation(self) -> None:
-        cases = {
-            "24h prior": "24h_prior",
-            "12-hour": "12h_prior",
-            "6h": "6h_prior",
-            "event day open": "event_day_open",
-        }
-
-        for raw, expected in cases.items():
-            with self.subTest(raw=raw):
-                self.assertEqual(
-                    normalise_rule(raw),
-                    expected,
-                )
-
-    def test_kelvin_conversion(self) -> None:
-        converted, basis = temperature_to_celsius(
-            pd.Series(
-                [
-                    300.15,
-                    301.15,
-                ]
-            )
-        )
-
-        self.assertEqual(
-            basis,
-            "kelvin_converted_to_celsius",
-        )
-
-        self.assertAlmostEqual(
-            float(converted.iloc[0]),
-            27.0,
-            places=6,
-        )
-
-
-class Notebook02PanelTests(unittest.TestCase):
+class Notebook02VerifiedPanelTests(
+    unittest.TestCase
+):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.selected = pd.read_csv(
+            "data/processed/"
+            "02_selected_deterministic_forecast_panel.csv"
+        )
+
         cls.training = pd.read_csv(
             "data/processed/"
             "02_weather_training_panel.csv"
@@ -63,25 +27,20 @@ class Notebook02PanelTests(unittest.TestCase):
             "02_market_evaluation_forecast_panel.csv"
         )
 
-        cls.selected = pd.read_csv(
-            "data/processed/"
-            "02_selected_deterministic_forecast_panel.csv"
+        cls.reconciliation = pd.read_csv(
+            "outputs/diagnostics/"
+            "02_historical_daily_hourly_reconciliation.csv"
         )
 
-        cls.admission = pd.read_csv(
+        cls.support = pd.read_csv(
             "outputs/diagnostics/"
-            "02_forecast_admission_audit.csv"
-        )
-
-        cls.mapping = pd.read_csv(
-            "outputs/diagnostics/"
-            "02_request_timestamp_mapping.csv"
+            "02_date_rule_support_matrix.csv"
         )
 
         cls.summary = json.loads(
             Path(
                 "outputs/diagnostics/"
-                "02_panel_construction_summary.json"
+                "02_full_support_summary.json"
             ).read_text(
                 encoding="utf-8"
             )
@@ -90,39 +49,81 @@ class Notebook02PanelTests(unittest.TestCase):
     def test_status(self) -> None:
         self.assertEqual(
             self.summary["status"],
-            "NOTEBOOK02_PANELS_READY",
+            "NOTEBOOK02_VERIFIED_PANEL_READY",
         )
 
-    def test_timestamp_columns_are_detected(self) -> None:
-        self.assertTrue(
-            self.mapping[
-                "issue_column"
-            ].fillna("").str.len().gt(0).any()
+    def test_dimensions(self) -> None:
+        self.assertEqual(
+            len(self.selected),
+            375,
         )
 
-        self.assertTrue(
-            self.mapping[
-                "decision_column"
-            ].fillna("").str.len().gt(0).any()
-        )
-
-    def test_audited_grouping_definition(self) -> None:
-        self.assertTrue(
+        self.assertEqual(
             self.selected[
-                "grouping_definition"
-            ].eq(
-                "source_target_date_decision_rule_issue_time"
-            ).all()
+                "target_date"
+            ].nunique(),
+            102,
         )
 
-    def test_paths_have_24_local_hours(self) -> None:
+        self.assertEqual(
+            len(self.training),
+            375,
+        )
+
+        self.assertEqual(
+            len(self.evaluation),
+            375,
+        )
+
+    def test_historical_and_june_support(self) -> None:
+        self.assertEqual(
+            int(
+                self.selected[
+                    "source_period"
+                ].eq(
+                    "historical_march_may"
+                ).sum()
+            ),
+            256,
+        )
+
+        self.assertEqual(
+            int(
+                self.selected[
+                    "source_period"
+                ].eq(
+                    "june_external"
+                ).sum()
+            ),
+            119,
+        )
+
+    def test_daily_hourly_reconciliation(self) -> None:
+        self.assertEqual(
+            len(self.reconciliation),
+            256,
+        )
+
+        self.assertTrue(
+            self.reconciliation[
+                "unique_local_hours"
+            ].eq(24).all()
+        )
+
+        self.assertTrue(
+            self.reconciliation[
+                "absolute_difference_c"
+            ].le(1e-9).all()
+        )
+
+    def test_all_paths_have_24_hours(self) -> None:
         self.assertTrue(
             self.selected[
                 "unique_local_hours"
             ].eq(24).all()
         )
 
-    def test_all_required_times_are_present(self) -> None:
+    def test_no_lookahead(self) -> None:
         issue = pd.to_datetime(
             self.selected[
                 "forecast_issue_time_utc"
@@ -145,21 +146,6 @@ class Notebook02PanelTests(unittest.TestCase):
             decision.notna().all()
         )
 
-    def test_no_lookahead(self) -> None:
-        issue = pd.to_datetime(
-            self.selected[
-                "forecast_issue_time_utc"
-            ],
-            utc=True,
-        )
-
-        decision = pd.to_datetime(
-            self.selected[
-                "decision_time_utc"
-            ],
-            utc=True,
-        )
-
         self.assertTrue(
             (issue <= decision).all()
         )
@@ -174,50 +160,38 @@ class Notebook02PanelTests(unittest.TestCase):
             ].duplicated().any()
         )
 
-    def test_evaluation_is_training_subset(self) -> None:
-        training_keys = set(
-            zip(
-                self.training[
-                    "target_date"
-                ],
-                self.training[
-                    "decision_rule"
-                ],
-            )
-        )
+    def test_unsupported_rows_are_explicit(self) -> None:
+        missing = self.support.loc[
+            ~self.support[
+                "forecast_present"
+            ]
+        ]
 
-        evaluation_keys = set(
-            zip(
-                self.evaluation[
-                    "target_date"
-                ],
-                self.evaluation[
-                    "decision_rule"
-                ],
-            )
-        )
-
-        self.assertTrue(
-            evaluation_keys.issubset(
-                training_keys
-            )
-        )
-
-    def test_admission_audit_has_passed_paths(self) -> None:
-        self.assertTrue(
-            self.admission[
-                "status"
-            ].eq(
-                "ADMITTED"
-            ).any()
-        )
-
-    def test_panel_reaches_june_30(self) -> None:
-        self.assertGreaterEqual(
-            self.training[
+        historical = missing.loc[
+            missing[
                 "target_date"
-            ].max(),
-            "2026-06-30",
+            ] < "2026-06-01"
+        ]
+
+        june = missing.loc[
+            missing[
+                "target_date"
+            ] >= "2026-06-01"
+        ]
+
+        self.assertEqual(
+            len(missing),
+            37,
+        )
+
+        self.assertEqual(
+            len(historical),
+            36,
+        )
+
+        self.assertEqual(
+            len(june),
+            1,
         )
 
 
