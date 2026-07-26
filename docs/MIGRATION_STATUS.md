@@ -1,37 +1,17 @@
 # Historical Notebook Migration Status
 
-Archive branch:
+Archive branch: `archive/17j-plus-18n-18y-20260726`
 
-`archive/17j-plus-18n-18y-20260726`
+Historical notebooks inspected: **72**
 
-Clean working branch:
+## Current state
 
-`edward-final-empirical-2026`
+- Complete notebook inventory: complete.
+- Structural notebook inspection: complete.
+- Automatic migration classification: complete.
+- Manual review items: **0**.
+- Historical notebooks copied into clean branch: **0**.
 
-Historical notebooks preserved in the archive:
+## Next action
 
-**72**
-
-The archived notebooks will be reviewed and classified as:
-
-- logic to migrate;
-- diagnostic reference;
-- superseded;
-- temporary;
-- manual review required.
-
-Only current dissertation logic will enter the canonical notebooks and
-package modules on the clean branch.
-
-The clean branch must eventually contain only:
-
-1. project configuration and manifests;
-2. HKO settlement and event certification;
-3. weather training-panel construction;
-4. market evaluation-panel construction;
-5. Gaussian-process implementation audit;
-6. model fitting and chronological selection;
-7. quantile and event-probability construction;
-8. external evaluation and paired inference;
-9. final trading and PnL;
-10. thesis tables, figures and numerical audit.
+Build canonical Notebook 00 and Notebook 01 by extracting only the approved logic listed in the migration map.
