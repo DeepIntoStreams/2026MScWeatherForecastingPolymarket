@@ -1,0 +1,12 @@
+{
+  "all_dates_have_11_events": true,
+  "all_dates_have_one_winner": true,
+  "certified_dates": 73,
+  "certified_rows": 803,
+  "created_utc": "2026-07-26T16:02:43.354091+00:00",
+  "end_date": "2026-05-31",
+  "selected_contract_source": "data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv",
+  "selected_hko_source": "data/processed/18f_hko_daily_extract_targets_20260301_20260531.csv",
+  "start_date": "2026-03-16",
+  "status": "REAL_EVENT_BOOKS_CERTIFIED"
+}

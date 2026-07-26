@@ -1,0 +1,32 @@
+{
+  "all_dates_have_11_events": true,
+  "all_dates_have_one_winner": true,
+  "certified_dates": 73,
+  "certified_rows": 803,
+  "created_utc": "2026-07-26T16:02:43.354091+00:00",
+  "end_date": "2026-05-31",
+  "inputs": {
+    "data/interim/canonical_contract_definitions.csv": {
+      "rows": 803,
+      "sha256": "78110e95130db507473281633098b9fc339158ac20200d830b05aeab4702ea46"
+    },
+    "data/interim/hko_daily_max.csv": {
+      "rows": 73,
+      "sha256": "9e1d367c9eb45a8682ac3a4efc88e6ebbc8d0423d378e6570294269f59fb6320"
+    }
+  },
+  "outputs": {
+    "data/processed/certified_event_books.csv": {
+      "rows": 803,
+      "sha256": "2eb7772c9592ef5c81740e588a7fb2b36d9e6e3ef5a7573d322dc1a82ca28e19"
+    },
+    "outputs/diagnostics/01_event_book_certification_by_date.csv": {
+      "rows": 73,
+      "sha256": "623046d3938ebc454f0576eca2d46b0b0610a597b335d43f33276b894415eabc"
+    }
+  },
+  "selected_contract_source": "data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv",
+  "selected_hko_source": "data/processed/18f_hko_daily_extract_targets_20260301_20260531.csv",
+  "start_date": "2026-03-16",
+  "status": "REAL_EVENT_BOOKS_CERTIFIED"
+}
