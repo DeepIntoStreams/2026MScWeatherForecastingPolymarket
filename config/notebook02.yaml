@@ -1,0 +1,43 @@
+notebook:
+  number: "02"
+  title: "Deterministic Weather Source and Sample Construction"
+
+objective:
+  target: "hko_daily_max_c"
+  target_unit: "degrees Celsius"
+  uncertainty_unit: "settlement_date"
+
+timezone:
+  local: "Asia/Hong_Kong"
+  utc_offset_hours: 8
+
+decision_rules:
+  - "24h_prior"
+  - "12h_prior"
+  - "6h_prior"
+  - "event_day_open"
+
+weather_training_panel:
+  requires_polymarket_market: false
+  requires_deterministic_forecast: true
+  requires_hko_outcome: true
+  purpose: "fit and compare probabilistic post-processing models"
+
+market_evaluation_panel:
+  requires_polymarket_market: true
+  requires_certified_event_book: true
+  requires_deterministic_forecast: true
+  requires_hko_outcome: true
+  purpose: "compare model and market probabilities on exact common support"
+
+forecast_admission:
+  require_issue_time_before_decision_time: true
+  require_complete_hong_kong_local_day: true
+  required_unique_local_hours: 24
+  prohibit_later_run_substitution: true
+  prohibit_future_information: true
+
+chronology:
+  random_split_permitted: false
+  group_observations_by_date: true
+  realised_hko_is_target_not_input: true

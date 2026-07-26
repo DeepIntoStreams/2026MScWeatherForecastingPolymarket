@@ -1,4 +1,4 @@
-.PHONY: test migration-audit execute-00-01
+.PHONY: test migration-audit execute-00-01 bundle-02
 
 test:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
@@ -19,3 +19,6 @@ python3 -m jupyter nbconvert \
 --inplace \
 --ExecutePreprocessor.timeout=300 \
 notebooks/final/01_hko_settlement_and_event_certification.ipynb
+
+bundle-02:
+	python3 tools/materialise_notebook02_sources.py

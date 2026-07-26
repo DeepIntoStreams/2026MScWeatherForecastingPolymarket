@@ -55,3 +55,16 @@ Notebook 02.
 - Date range: 16 March to 30 June 2026.
 - Eleven events per date: verified.
 - One realised winner per date: verified.
+
+## Notebook 02 ZIP-aware source foundation
+
+- Ordinary forecast files inspected: complete.
+- Preserved ZIP review bundles inspected: complete.
+- June hourly deterministic forecasts: recovered.
+- June daily maximum forecasts: recovered.
+- Request plans and fetch inventories: materialised.
+- Exact source hashes and schemas: recorded.
+- Weather training and market evaluation samples: separated.
+- Twenty-four-hour Hong Kong local path rule: declared.
+- Random train-test splitting: prohibited.
+- Exact issue-time and run-level panel construction: next task.
