@@ -1,0 +1,44 @@
+model_families:
+  raw_deterministic:
+    role: benchmark
+    response: hko_temperature
+    output: point_mass
+
+  mean_residual:
+    role: location_correction_baseline
+    variants:
+      - pooled
+      - rule_specific
+    response: residual
+    output: point_mass
+
+  empirical_residual:
+    role: primary_parsimonious_distribution
+    variants:
+      - pooled
+      - rule_specific
+    response: residual
+    output: empirical_distribution
+
+  gaussian_process:
+    role: smooth_temporal_probabilistic_comparator
+    variants:
+      - rbf
+      - matern_3_2
+    response: residual
+    primary_input:
+      - calendar_time
+    output: gaussian_predictive_distribution
+    implementation_status: code_audit_required
+
+  catboost_quantile:
+    role: nonlinear_feature_dependent_comparator
+    variants:
+      - pooled
+      - rule_specific_sensitivity
+    response: residual
+    output: conditional_quantiles
+
+selection:
+  primary_metric: date_balanced_common_support_crps
+  trading_pnl_may_select_weather_model: false

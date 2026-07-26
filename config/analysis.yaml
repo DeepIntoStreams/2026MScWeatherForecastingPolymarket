@@ -1,0 +1,57 @@
+project:
+  name: weather_forecasting_polymarket_trading
+  timezone: Asia/Hong_Kong
+  uncertainty_unit: settlement_date
+
+dates:
+  development_end: 2026-07-31
+  external_start: 2026-08-01
+  external_end_requested: 2026-08-31
+  final_retrieval_cutoff: 2026-09-01T12:00:00+08:00
+
+decision_rules:
+  - 24h_prior
+  - 12h_prior
+  - 6h_prior
+  - event_day_open
+
+availability:
+  forecast_operational_delay_hours: 6
+  require_complete_hkt_day: true
+  required_unique_local_hours: 24
+  hko_outcome_policy: documented_time_else_conservative_working_day_embargo
+
+training:
+  allow_non_market_weather_dates: true
+  require_product_compatibility: true
+  require_outcome_admissibility: true
+  minimum_same_rule_history: 16
+
+evaluation:
+  chronological_folds: true
+  exact_common_support: true
+  date_balanced_scores: true
+  primary_continuous_score: crps
+  categorical_scores:
+    - categorical_log_loss
+    - multiclass_brier
+  paired_inference_unit: settlement_date
+
+particles:
+  primary_grid_start: 0.01
+  primary_grid_end: 0.99
+  primary_grid_step: 0.01
+  sensitivity_particle_counts:
+    - 199
+    - 999
+
+trading:
+  position_size_yes_shares: 1
+  primary_cost_per_share: 0.01
+  select_rule_on_development_only: true
+  select_threshold_on_development_only: true
+  report_positive_drawdown_magnitude: true
+
+reproducibility:
+  global_seed: 20260721
+  final_run_id: pending

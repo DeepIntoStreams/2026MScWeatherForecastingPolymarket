@@ -1,0 +1,75 @@
+sources:
+  hko_daily_extract:
+    provider: Hong Kong Observatory
+    role:
+      - settlement_target
+      - weather_training_outcome
+    status: core
+    main_limitation: outcome_publication_timing
+
+  open_meteo_single_runs:
+    provider: Open-Meteo
+    underlying_product: ECMWF IFS deterministic forecast
+    role:
+      - historical_weather_input
+    status: core_qualified
+    main_limitation: interface_processing_and_no_native_ensemble
+
+  polymarket_gamma:
+    provider: Polymarket
+    role:
+      - contract_metadata
+      - event_certification
+    status: core
+
+  polymarket_clob_history:
+    provider: Polymarket
+    role:
+      - historical_market_benchmark
+      - reduced_form_fill_proxy
+    status: core_qualified
+    main_limitation: no_verified_spread_depth_or_execution
+
+  polymarketdata:
+    provider: polymarketdata.co
+    role:
+      - possible_execution_sensitivity
+    status: feasibility_pending
+
+  ecmwf_open_data:
+    provider: ECMWF
+    role:
+      - provenance
+      - prospective_collection
+    status: supplementary
+
+  era5_monthly_means:
+    provider: Copernicus Climate Data Store
+    role:
+      - climatological_context
+    status: supplementary_only
+
+  weatherbench_2:
+    provider: Google Research
+    role:
+      - methodological_context
+      - forecast_feasibility
+    status: feasibility_pending
+
+  weathernext:
+    provider: Google DeepMind
+    role:
+      - possible_forecast_extension
+    status: feasibility_pending
+
+  nvidia_earth_2:
+    provider: NVIDIA
+    role:
+      - possible_forecast_extension
+    status: deferred
+
+  aifs_or_ens:
+    provider: ECMWF
+    role:
+      - upstream_probabilistic_extension
+    status: access_pending

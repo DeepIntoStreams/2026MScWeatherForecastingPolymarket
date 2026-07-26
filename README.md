@@ -1,58 +1,46 @@
 # Weather Forecasting and Polymarket Trading
 
-This repository contains code, notes and project materials for the MSc Financial Mathematics project on weather forecasting and Polymarket trading.
+This branch contains the clean empirical implementation supporting the final
+MSc Financial Mathematics dissertation.
 
-## Project aim
+## Research questions
 
-The project studies how weather forecast information can be converted into probabilistic trading signals for weather-related prediction markets, with an initial focus on temperature-based Polymarket contracts.
+1. Can deterministic weather information be converted into a useful
+   predictive distribution for the official HKO daily maximum?
+2. Do the resulting event probabilities compete with the Polymarket book?
+3. Does model–market disagreement produce persistent reduced-form trading
+   value?
 
-The current proposed direction is to focus on city-level temperature contracts, such as daily maximum or minimum temperature events. The project will compare model-implied probabilities derived from weather forecasts with market-implied probabilities from Polymarket prices. The empirical analysis will use proper scoring rules, calibration analysis and simple paper-trading backtests.
+## Empirical design
 
-## Initial research direction
+- Weather training may use compatible forecast–HKO dates without Polymarket
+  contracts.
+- Model and probability choices are selected using pre-August chronological
+  development data.
+- August 2026 is reserved as the principal external evaluation period.
+- Settlement date is the uncertainty and resampling unit.
+- The final model families are raw deterministic, mean residual, empirical
+  residual, Gaussian process regression and CatBoost quantile regression.
 
-The initial empirical pipeline is:
+## Canonical workflow
 
-1. Collect Polymarket weather-contract data.
-2. Identify contract rules, outcome definitions and settlement sources.
-3. Collect relevant weather forecast and realised temperature data.
-4. Convert weather forecasts into predictive temperature distributions.
-5. Convert these distributions into binary or multi-outcome contract probabilities.
-6. Compare model-implied probabilities with Polymarket-implied probabilities.
-7. Evaluate forecast quality using Brier score, log score and calibration analysis.
-8. Test simple paper-trading strategies based on model-market probability discrepancies.
+The final reader-facing notebooks are maintained in `notebooks/final/`.
 
-## Initial scope
+Reusable implementation belongs in `src/weather_polymarket/`.
 
-The first working scope is deliberately narrow and data-dependent:
+Final thesis tables and figures are generated under `outputs/`.
 
-- Weather variable: 2m temperature.
-- Market type: Polymarket temperature contracts.
-- Contract type: daily maximum or minimum temperature; threshold or temperature-bin contracts.
-- Candidate cities: London, New York, Hong Kong, subject to data availability.
-- Main technical focus: probabilistic post-processing from forecast data to contract probabilities.
+## Historical work
 
-The scope may expand later to additional cities, multiple forecast sources, graph-based global-local models, or weather-related energy-market applications if data availability and project timing permit.
+The complete exploratory and superseded notebook history is preserved on:
 
-## Repository structure
+`archive/17j-plus-18n-18y-20260726`
 
-```text
-data/
-  raw/              # Raw local data files, not committed to GitHub
-  processed/        # Processed local data files, not committed to GitHub
+The historical branch is not required to understand or reproduce the final
+analysis.
 
-notebooks/          # Exploratory notebooks and prototypes
-src/                # Reusable Python functions and modules
-literature_notes/   # Paper summaries and literature matrix
-meeting_notes/      # Supervisor meeting notes and project planning
-docs/               # Project memos and written planning documents
-outputs/            # Local generated outputs, plots and tables, not committed
-```
+## Current status
 
-## Current tasks
-
-1. Audit Polymarket temperature-market data availability.
-2. Check available historical and real-time Polymarket price/order-book data.
-3. Identify realised temperature sources used for contract settlement.
-4. Audit weather forecast sources for 2m temperature and lead-time consistency.
-5. Build one complete mini-pipeline for a single temperature contract.
-6. Prepare narrowed scope and data-feasibility notes before the next supervisor meetings.
+The clean empirical rebuild has been initialised. Final numerical results
+will be generated only after the Gaussian-process audit, expanded training
+panel and locked August external evaluation are complete.
