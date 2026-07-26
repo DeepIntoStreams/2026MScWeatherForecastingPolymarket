@@ -1,0 +1,14 @@
+\paragraph{Sample and deterministic forecast diagnostics.}
+The final certified sample contains \NCertifiedContracts{} date-specific contracts arranged into \NSettlementDates{} mutually exclusive and exhaustive contract books. Across the four decision rules, the deterministic forecast has mean error between -1.793$^\circ$C and -1.628$^\circ$C, showing a persistent underforecast of the HKO daily maximum.
+
+\paragraph{Development model selection.}
+The pooled empirical residual distribution achieves the lowest development CRPS (\DevelopmentEmpiricalCRPS{}), compared with \DevelopmentRawCRPS{} for the raw deterministic forecast. This corresponds to a \DevelopmentEmpiricalCRPSReduction\% reduction. The Mat\'{e}rn-$3/2$ Gaussian process is the selected Gaussian-process comparator, while the pooled CatBoost quantile model is the selected tree comparator. All selected probabilistic families under-cover the nominal 80\% interval on development data, with the CatBoost distribution displaying the greatest concentration.
+
+\paragraph{Probability evaluation.}
+On the locked ten-date holdout, the uncalibrated empirical model records a categorical log score of \HoldoutEmpiricalLogScore{}, compared with \HoldoutMarketLogScore{} for the normalised market. This difference is reported descriptively and is not interpreted as statistically significant. On the thirty-date June external block, the normalised market records \ExternalMarketLogScore{} and outperforms every weather-model variant; the best weather-model value is \ExternalBestModelLogScore{} from the calibrated Mat\'{e}rn Gaussian process.
+
+\paragraph{Trading evaluation.}
+The development-frozen primary strategy earns net PnL \PrimaryHoldoutPnL{} on the internal holdout but \PrimaryExternalPnL{} in June, with maximum drawdowns \PrimaryHoldoutDrawdown{} and \PrimaryExternalDrawdown{}, respectively. The Gaussian-process strategy also reverses sign out of time, while the tree strategy is loss-making in both evaluation blocks. Hence positive holdout performance does not persist in June.
+
+\paragraph{Evidential boundary.}
+The HKO availability convention uses an analytical working-day fallback rather than observed publication timestamps. The forecast input is deterministic ECMWF IFS single-run data rather than a genuine ensemble. Trading uses observed pre-cutoff YES prices as fill proxies and does not model spread, liquidity, slippage or market impact. The small holdout and external samples therefore support a cautious empirical conclusion rather than a claim of stable arbitrage profitability.

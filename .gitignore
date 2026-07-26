@@ -38,3 +38,11 @@ outputs/*
 *.nc
 *.grib
 *.grib2
+.virtual_documents/
+**/.ipynb_checkpoints/
+2026MScWeatherForecastingPolymarket_local_backup_*/
+dissertation_notebook_backups/
+logs/
+scripts/*_backup.py
+scripts/*_old_*.py
+.pytest_cache/
