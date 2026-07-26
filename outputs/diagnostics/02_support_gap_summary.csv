@@ -1,0 +1,5 @@
+calendar_period,support_status,date_rule_rows
+June,SELECTED_AND_ADMITTED,119
+June,NO_HOURLY_CANDIDATE_GROUP,1
+March-May,ALL_CANDIDATES_REJECTED:local_hour_count_1,146
+March-May,NO_HOURLY_CANDIDATE_GROUP,146

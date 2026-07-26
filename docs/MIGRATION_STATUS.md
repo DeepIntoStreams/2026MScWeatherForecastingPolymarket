@@ -83,3 +83,16 @@ Notebook 02.
 - Weather training panel: complete.
 - Market evaluation forecast panel: complete.
 - Canonical Notebook 02: generated.
+
+## Notebook 02 support and chronology gate
+
+- Full 103-date by four-rule support matrix: complete.
+- Exact missing June date-rule combination: identified.
+- March-May absence: audited.
+- Preserved forecast source coverage: audited.
+- Preserved HKO extension sources: audited.
+- Source-level recovery candidates: recorded.
+- Chronological blocks: not assigned prematurely.
+- Random split: prohibited.
+- Model fitting: blocked pending support expansion.
+- Next task: recover earlier admissible forecast-HKO pairs.

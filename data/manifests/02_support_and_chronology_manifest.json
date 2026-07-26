@@ -1,0 +1,91 @@
+{
+  "chronology_status": "BLOCKED_PENDING_SUPPORT_EXPANSION",
+  "created_utc": "2026-07-26T22:22:50.506386+00:00",
+  "current_evaluation": {
+    "dates": 30,
+    "end": "2026-06-30",
+    "rows": 119,
+    "start": "2026-06-01"
+  },
+  "current_training": {
+    "dates": 30,
+    "end": "2026-06-30",
+    "rows": 119,
+    "start": "2026-06-01",
+    "weather_only_dates": 0
+  },
+  "hko_statistics": {
+    "hko_candidate_tables": 57,
+    "post_june_hko_dates_found": [
+      "2026-07-08",
+      "2026-07-09",
+      "2026-07-10",
+      "2026-07-11"
+    ]
+  },
+  "inputs": {
+    "data/processed/02_market_evaluation_forecast_panel.csv": "1f741450923803c393817d5039c1871a0ce001b860853f97e23d961ff8d96232",
+    "data/processed/02_selected_deterministic_forecast_panel.csv": "3eb1b1111f5d3ec5b7813ddc2477b8b6703ef16aad3a82ae26104c5dc2630577",
+    "data/processed/02_standardised_request_plan.csv": "896f5a4c9af92704462de7fcf6a0804e9b90a5bc6f70ab015142c19b43a3d557",
+    "data/processed/02_weather_training_panel.csv": "1f741450923803c393817d5039c1871a0ce001b860853f97e23d961ff8d96232",
+    "outputs/diagnostics/02_forecast_admission_audit.csv": "c5dadfaa124c827860d3c392835d652debe242ca81406333a24f4455c4be25a8"
+  },
+  "model_fitting_permitted": false,
+  "source_statistics": {
+    "hourly_date_rule_keys": 120,
+    "request_date_rule_keys": 412,
+    "source_files_inspected": 107,
+    "source_level_common_date_rule_keys": 120,
+    "source_level_june_dates": [
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-05",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-28",
+      "2026-06-29",
+      "2026-06-30"
+    ],
+    "source_level_post_june_dates": [],
+    "source_level_pre_june_dates": []
+  },
+  "status": "SUPPORT_EXPANSION_REQUIRED",
+  "support_statistics": {
+    "certified_market_dates": 103,
+    "expected_june_date_rule_rows": 120,
+    "expected_market_date_rule_rows": 412,
+    "missing_june_date_rule_rows": 1,
+    "missing_june_keys": [
+      {
+        "decision_rule": "6h_prior",
+        "support_status": "NO_HOURLY_CANDIDATE_GROUP",
+        "target_date": "2026-06-24"
+      }
+    ],
+    "missing_market_date_rule_rows": 293,
+    "selected_june_date_rule_rows": 119,
+    "selected_market_date_rule_rows": 119
+  }
+}

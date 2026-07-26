@@ -1,0 +1,33 @@
+status: BLOCKED_PENDING_SUPPORT_EXPANSION
+model_fitting_permitted: false
+reason: The current usable sample contains only June 2026, and the weather-training
+  and market-evaluation date sets are identical.
+current_support:
+  weather_training_rows: 119
+  weather_training_dates: 30
+  weather_training_start: '2026-06-01'
+  weather_training_end: '2026-06-30'
+  market_evaluation_rows: 119
+  market_evaluation_dates: 30
+  weather_only_training_dates: 0
+principles:
+  training_requires_market: false
+  market_evaluation_requires_market: true
+  random_split_permitted: false
+  date_grouping_required: true
+  chronological_blocks_required: true
+  market_comparison_requires_exact_common_support: true
+  external_test_must_remain_untouched_until_all_choices_are_locked: true
+activation_conditions:
+- Recover or acquire a materially earlier forecast-HKO training period.
+- Reserve a later contiguous period that is untouched during model and calibration
+  selection.
+- Record the exact split dates before fitting candidate probabilistic models.
+- Ensure each selected rule has sufficient chronological support in the development
+  calculations.
+- Keep the settlement date as the uncertainty and resampling unit.
+block_assignments:
+  training: NOT_ASSIGNED
+  development_validation: NOT_ASSIGNED
+  holdout: NOT_ASSIGNED
+  external_test: NOT_ASSIGNED
