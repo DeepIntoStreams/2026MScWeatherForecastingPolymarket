@@ -1,0 +1,42 @@
+{
+  "archive_branch": "archive/17j-plus-18n-18y-20260726",
+  "canonical_outputs": {
+    "data/interim/canonical_contract_definitions.csv": {
+      "rows": 803,
+      "sha256": "78110e95130db507473281633098b9fc339158ac20200d830b05aeab4702ea46"
+    },
+    "data/interim/hko_daily_max.csv": {
+      "rows": 73,
+      "sha256": "9e1d367c9eb45a8682ac3a4efc88e6ebbc8d0423d378e6570294269f59fb6320"
+    }
+  },
+  "contract_candidates_found": 3,
+  "created_utc": "2026-07-26T16:02:38.740232+00:00",
+  "hko_candidates_found": 15,
+  "selected_contract_source": {
+    "date_column": "event_date",
+    "label_column": "canonical_label",
+    "lower_column": "lower_bound_c",
+    "source": "data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv",
+    "source_sha256": "b31a5f9e802c2a2d4ddcc83f632f834b798531986e728953e3686cf8acfe32e9",
+    "upper_column": "upper_bound_c",
+    "valid_dates_before_pairing": 103
+  },
+  "selected_hko_source": {
+    "date_column": "event_date",
+    "source": "data/processed/18f_hko_daily_extract_targets_20260301_20260531.csv",
+    "source_sha256": "5fb10c37239c1afec6a6fc945a6fc89d24bb6cfc800cb631136d2d418cc88401",
+    "temperature_column": "hko_tmax_c",
+    "valid_dates_before_pairing": 92
+  },
+  "selected_pair": {
+    "all_dates_have_11_events": true,
+    "all_dates_have_one_winner": true,
+    "common_dates": 73,
+    "contract_rows": 803,
+    "end_date": "2026-05-31",
+    "hko_rows": 73,
+    "start_date": "2026-03-16"
+  },
+  "tables_inspected": 59
+}

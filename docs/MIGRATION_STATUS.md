@@ -34,3 +34,13 @@ Historical notebooks inspected:
 Migrate the latest valid HKO and contract source adapters into Notebook 01,
 then build the deterministic forecast and expanded weather-training panel in
 Notebook 02.
+
+## Notebook 01 real source status
+
+- Exact archive schema audit: complete.
+- Structural date and interval detection: corrected.
+- Canonical contract definitions: complete.
+- Canonical HKO outcomes: complete.
+- Real eleven-event certification: implemented.
+- Forecast-time HKO admissibility: assigned to Notebook 02.
+

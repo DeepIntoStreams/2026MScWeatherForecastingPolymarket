@@ -1,0 +1,12 @@
+{
+  "all_dates_have_11_events": true,
+  "all_dates_have_one_winner": true,
+  "common_dates": 73,
+  "contract_rows": 803,
+  "contract_source": "data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv",
+  "end_date": "2026-05-31",
+  "hko_rows": 73,
+  "hko_source": "data/processed/18f_hko_daily_extract_targets_20260301_20260531.csv",
+  "start_date": "2026-03-16",
+  "status": "REAL_SOURCES_MIGRATED"
+}
