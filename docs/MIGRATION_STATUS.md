@@ -68,3 +68,18 @@ Notebook 02.
 - Twenty-four-hour Hong Kong local path rule: declared.
 - Random train-test splitting: prohibited.
 - Exact issue-time and run-level panel construction: next task.
+
+## Notebook 02 completed panels
+
+- Exact hourly grouping audit: complete.
+- Request-plan issue-time detection: complete.
+- Request-plan decision-time detection: complete.
+- Request timestamps merged by date and decision rule: complete.
+- Twenty-four-hour Hong Kong local paths: enforced.
+- No-lookahead rule: enforced.
+- Latest admissible issue-time selection: implemented.
+- Daily maximum reconstruction: complete.
+- Archived daily maximum reconciliation: complete.
+- Weather training panel: complete.
+- Market evaluation forecast panel: complete.
+- Canonical Notebook 02: generated.

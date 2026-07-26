@@ -1,0 +1,31 @@
+{
+  "all_admitted_paths_have_24_local_hours": true,
+  "all_issue_times_not_later_than_decision_times": true,
+  "certified_market_dates_available": 103,
+  "created_utc": "2026-07-26T22:02:19.441355+00:00",
+  "decision_rules_present": [
+    "12h_prior",
+    "24h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "evaluation_requires_market": true,
+  "forecast_definition": "maximum of 24 unique hourly temperatures over the Hong Kong local target day",
+  "hourly_groups_admitted_before_deduplication": 119,
+  "hourly_groups_audited": 2931,
+  "market_evaluation_dates_with_forecasts": 30,
+  "market_evaluation_rows": 119,
+  "reconciled_rows": 119,
+  "reconciled_within_0_15c": 119,
+  "reconciliation_difference_exceeds_0_15c": 0,
+  "request_rows": 412,
+  "selected_forecast_rows": 119,
+  "status": "NOTEBOOK02_PANELS_READY",
+  "training_requires_market": false,
+  "weather_only_training_date_list": [],
+  "weather_only_training_dates": 0,
+  "weather_training_dates": 30,
+  "weather_training_end": "2026-06-30",
+  "weather_training_rows": 119,
+  "weather_training_start": "2026-06-01"
+}

@@ -1,4 +1,4 @@
-.PHONY: test migration-audit execute-00-01 bundle-02
+.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02
 
 test:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
@@ -22,3 +22,14 @@ notebooks/final/01_hko_settlement_and_event_certification.ipynb
 
 bundle-02:
 	python3 tools/materialise_notebook02_sources.py
+
+panels-02:
+	python3 tools/build_notebook02_panels.py
+
+execute-02:
+	python3 -m jupyter nbconvert \
+		--to notebook \
+		--execute \
+		--inplace \
+		--ExecutePreprocessor.timeout=600 \
+		notebooks/final/02_deterministic_weather_training_panel.ipynb

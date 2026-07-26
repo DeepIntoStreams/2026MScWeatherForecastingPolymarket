@@ -1,0 +1,56 @@
+{
+  "all_admitted_paths_have_24_local_hours": true,
+  "all_issue_times_not_later_than_decision_times": true,
+  "certified_market_dates_available": 103,
+  "created_utc": "2026-07-26T22:02:19.441355+00:00",
+  "decision_rules_present": [
+    "12h_prior",
+    "24h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "evaluation_requires_market": true,
+  "forecast_definition": "maximum of 24 unique hourly temperatures over the Hong Kong local target day",
+  "hourly_groups_admitted_before_deduplication": 119,
+  "hourly_groups_audited": 2931,
+  "inputs": {
+    "data/interim/canonical_contract_definitions.csv": {
+      "sha256": "ea2ffd4983933f93095053d90cc628c3eb10b2f5c0bdd2cd618349251c8c5ded"
+    },
+    "data/interim/hko_daily_max.csv": {
+      "sha256": "6918748f5a70f3512e43fc31f14e5506f6f95fe264898c9534d9b5a48c6c39a4"
+    },
+    "data/manifests/02_weather_source_bundle_manifest.json": {
+      "sha256": "12645cdc2c29a03010d8d86267c0099dd62b5dc596907020395fdb92205a4535"
+    }
+  },
+  "market_evaluation_dates_with_forecasts": 30,
+  "market_evaluation_rows": 119,
+  "outputs": {
+    "data/processed/02_market_evaluation_forecast_panel.csv": {
+      "rows": 119,
+      "sha256": "1f741450923803c393817d5039c1871a0ce001b860853f97e23d961ff8d96232"
+    },
+    "data/processed/02_selected_deterministic_forecast_panel.csv": {
+      "rows": 119,
+      "sha256": "3eb1b1111f5d3ec5b7813ddc2477b8b6703ef16aad3a82ae26104c5dc2630577"
+    },
+    "data/processed/02_weather_training_panel.csv": {
+      "rows": 119,
+      "sha256": "1f741450923803c393817d5039c1871a0ce001b860853f97e23d961ff8d96232"
+    }
+  },
+  "reconciled_rows": 119,
+  "reconciled_within_0_15c": 119,
+  "reconciliation_difference_exceeds_0_15c": 0,
+  "request_rows": 412,
+  "selected_forecast_rows": 119,
+  "status": "NOTEBOOK02_PANELS_READY",
+  "training_requires_market": false,
+  "weather_only_training_date_list": [],
+  "weather_only_training_dates": 0,
+  "weather_training_dates": 30,
+  "weather_training_end": "2026-06-30",
+  "weather_training_rows": 119,
+  "weather_training_start": "2026-06-01"
+}
