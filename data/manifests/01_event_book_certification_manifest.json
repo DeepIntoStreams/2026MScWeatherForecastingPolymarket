@@ -1,32 +1,32 @@
 {
   "all_dates_have_11_events": true,
   "all_dates_have_one_winner": true,
-  "certified_dates": 73,
-  "certified_rows": 803,
-  "created_utc": "2026-07-26T16:02:43.354091+00:00",
-  "end_date": "2026-05-31",
+  "certified_dates": 103,
+  "certified_rows": 1133,
+  "created_utc": "2026-07-26T16:35:08.185561+00:00",
+  "end_date": "2026-06-30",
   "inputs": {
     "data/interim/canonical_contract_definitions.csv": {
-      "rows": 803,
-      "sha256": "78110e95130db507473281633098b9fc339158ac20200d830b05aeab4702ea46"
+      "rows": 1133,
+      "sha256": "ea2ffd4983933f93095053d90cc628c3eb10b2f5c0bdd2cd618349251c8c5ded"
     },
     "data/interim/hko_daily_max.csv": {
-      "rows": 73,
-      "sha256": "9e1d367c9eb45a8682ac3a4efc88e6ebbc8d0423d378e6570294269f59fb6320"
+      "rows": 103,
+      "sha256": "6918748f5a70f3512e43fc31f14e5506f6f95fe264898c9534d9b5a48c6c39a4"
     }
   },
   "outputs": {
     "data/processed/certified_event_books.csv": {
-      "rows": 803,
-      "sha256": "2eb7772c9592ef5c81740e588a7fb2b36d9e6e3ef5a7573d322dc1a82ca28e19"
+      "rows": 1133,
+      "sha256": "58b51e288df864ce359da7c2fb863b935358227c88a192d362a1daca7c489ab1"
     },
     "outputs/diagnostics/01_event_book_certification_by_date.csv": {
-      "rows": 73,
-      "sha256": "623046d3938ebc454f0576eca2d46b0b0610a597b335d43f33276b894415eabc"
+      "rows": 103,
+      "sha256": "0ebcb7973be46051464e903c1c3fce9e251b1840f74d0d345547c3e8e3711127"
     }
   },
-  "selected_contract_source": "data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv",
-  "selected_hko_source": "data/processed/18f_hko_daily_extract_targets_20260301_20260531.csv",
+  "selected_contract_source": "data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv; local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+  "selected_hko_source": "data/processed/18f_hko_daily_extract_targets_20260301_20260531.csv; local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18o_june_2026_hko_realised_outcomes/18o_june_2026_hko_daily_max.csv::table_1",
   "start_date": "2026-03-16",
   "status": "REAL_EVENT_BOOKS_CERTIFIED"
 }
