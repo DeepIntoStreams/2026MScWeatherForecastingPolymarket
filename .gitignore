@@ -46,3 +46,11 @@ logs/
 scripts/*_backup.py
 scripts/*_old_*.py
 .pytest_cache/
+
+# Notebook and Python artefacts
+*.py[cod]
+.mypy_cache/
+
+# Raw and intermediate data remain local unless explicitly admitted
+data/interim/*
+!data/interim/.gitkeep

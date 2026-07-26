@@ -1,8 +1,6 @@
-# Canonical empirical notebooks
+# Canonical Final Notebooks
 
-Only the final dissertation workflow belongs in this directory.
-
-Planned sequence:
+The clean empirical workflow will contain only these notebooks:
 
 1. `00_project_configuration_and_manifest.ipynb`
 2. `01_hko_settlement_and_event_certification.ipynb`
@@ -15,4 +13,5 @@ Planned sequence:
 9. `08_final_trading_and_pnl.ipynb`
 10. `09_thesis_tables_figures_and_audit.ipynb`
 
-Notebooks should call reusable code from `src/weather_polymarket/`.
+Reusable functions belong in `src/weather_polymarket/`, rather than being
+copied between notebooks.
