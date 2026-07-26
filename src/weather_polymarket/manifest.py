@@ -8,7 +8,7 @@ import json
 import platform
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, Optional
 
@@ -96,6 +96,34 @@ def collect_environment_manifest(
     }
 
 
+
+def _json_default(value: Any) -> Any:
+    """Convert common reproducibility objects into stable JSON values."""
+
+    if isinstance(value, (datetime, date)):
+        return value.isoformat()
+
+    if isinstance(value, Path):
+        return str(value)
+
+    if isinstance(value, set):
+        return sorted(value)
+
+    # Support NumPy scalar values without importing NumPy as a dependency.
+    item_method = getattr(value, "item", None)
+
+    if callable(item_method):
+        converted = item_method()
+
+        if converted is not value:
+            return converted
+
+    raise TypeError(
+        f"Object of type {value.__class__.__name__} "
+        "is not JSON serialisable."
+    )
+
+
 def write_json_atomic(
     path: Path,
     payload: Dict[str, Any],
@@ -109,6 +137,7 @@ def write_json_atomic(
             payload,
             indent=2,
             sort_keys=True,
+            default=_json_default,
         )
         + "\n",
         encoding="utf-8",
