@@ -44,3 +44,14 @@ Notebook 02.
 - Real eleven-event certification: implemented.
 - Forecast-time HKO admissibility: assigned to Notebook 02.
 
+## Notebook 01 March-June completion
+
+- March-May certified dates: 73.
+- June contract source: recovered and certified.
+- June HKO Daily Extract outcomes: recovered and certified.
+- June dates added: 30.
+- Final settlement dates: 103.
+- Final contract-event rows: 1,133.
+- Date range: 16 March to 30 June 2026.
+- Eleven events per date: verified.
+- One realised winner per date: verified.

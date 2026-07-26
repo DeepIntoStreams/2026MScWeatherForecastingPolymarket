@@ -1,0 +1,15 @@
+{
+  "candidate_audit": "/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/outputs/diagnostics/01_june_hko_recovery_candidates.csv",
+  "canonical_output": "/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/interim/june_hko_daily_max_recovered.csv",
+  "canonical_output_sha256": "39bfac8b3d6a5c37c979598dd6b0fab8b566c637d078a4a4342348bb64c9aef2",
+  "created_utc": "2026-07-26T16:28:24.008864+00:00",
+  "date_column": "event_date",
+  "end_date": "2026-06-30",
+  "equivalent_complete_sources": 23,
+  "june_dates": 30,
+  "selected_source": "local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18o_june_2026_hko_realised_outcomes/18o_june_2026_hko_daily_max.csv::table_1",
+  "selected_source_sha256": "1f2b6b82cb0cab381a2691c2f6208753acdfb9598726834496a3160f667ae22f",
+  "start_date": "2026-06-01",
+  "status": "JUNE_HKO_SOURCE_RECOVERED",
+  "temperature_column": "hko_daily_max_c"
+}

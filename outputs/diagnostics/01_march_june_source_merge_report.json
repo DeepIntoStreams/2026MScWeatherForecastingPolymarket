@@ -1,0 +1,229 @@
+{
+  "all_dates_have_11_events": true,
+  "all_dates_have_one_winner": true,
+  "base_dates": 73,
+  "canonical_contract_sha256": "ea2ffd4983933f93095053d90cc628c3eb10b2f5c0bdd2cd618349251c8c5ded",
+  "canonical_hko_sha256": "6918748f5a70f3512e43fc31f14e5506f6f95fe264898c9534d9b5a48c6c39a4",
+  "created_utc": "2026-07-26T16:35:04.066322+00:00",
+  "end_date": "2026-06-30",
+  "final_contract_rows": 1133,
+  "final_dates": 103,
+  "final_hko_rows": 103,
+  "june_contract_source": "local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+  "june_date_certification": [
+    {
+      "event_count": 11,
+      "event_date": "2026-06-01",
+      "hko_daily_max_c": 32.3,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-01_event_09"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-02",
+      "hko_daily_max_c": 33.3,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-02_event_09"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-03",
+      "hko_daily_max_c": 34.3,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-03_event_10"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-04",
+      "hko_daily_max_c": 34.2,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-04_event_10"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-05",
+      "hko_daily_max_c": 34.6,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-05_event_08"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-06",
+      "hko_daily_max_c": 30.4,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-06_event_02"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-07",
+      "hko_daily_max_c": 32.0,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-07_event_08"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-08",
+      "hko_daily_max_c": 30.9,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-08_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-09",
+      "hko_daily_max_c": 28.4,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-09_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-10",
+      "hko_daily_max_c": 28.6,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-10_event_04"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-11",
+      "hko_daily_max_c": 29.0,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-11_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-12",
+      "hko_daily_max_c": 30.4,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-12_event_07"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-13",
+      "hko_daily_max_c": 30.6,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-13_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-14",
+      "hko_daily_max_c": 29.5,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-14_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-15",
+      "hko_daily_max_c": 29.9,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-15_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-16",
+      "hko_daily_max_c": 27.1,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-16_event_04"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-17",
+      "hko_daily_max_c": 28.4,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-17_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-18",
+      "hko_daily_max_c": 29.0,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-18_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-19",
+      "hko_daily_max_c": 31.3,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-19_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-20",
+      "hko_daily_max_c": 31.5,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-20_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-21",
+      "hko_daily_max_c": 33.1,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-21_event_07"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-22",
+      "hko_daily_max_c": 33.0,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-22_event_07"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-23",
+      "hko_daily_max_c": 32.2,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-23_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-24",
+      "hko_daily_max_c": 32.8,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-24_event_06"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-25",
+      "hko_daily_max_c": 32.9,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-25_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-26",
+      "hko_daily_max_c": 31.6,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-26_event_04"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-27",
+      "hko_daily_max_c": 30.2,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-27_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-28",
+      "hko_daily_max_c": 30.0,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-28_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-29",
+      "hko_daily_max_c": 31.6,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-29_event_05"
+    },
+    {
+      "event_count": 11,
+      "event_date": "2026-06-30",
+      "hko_daily_max_c": 32.1,
+      "winner_count": 1,
+      "winning_event_id": "2026-06-30_event_06"
+    }
+  ],
+  "june_dates_added": 30,
+  "june_hko_source": "local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18o_june_2026_hko_realised_outcomes/18o_june_2026_hko_daily_max.csv::table_1",
+  "start_date": "2026-03-16",
+  "status": "MARCH_JUNE_SOURCE_PANEL_READY"
+}

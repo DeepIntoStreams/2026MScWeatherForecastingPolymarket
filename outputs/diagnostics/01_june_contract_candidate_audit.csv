@@ -1,0 +1,19 @@
+source,status,june_dates,june_rows,score,reason
+data/processed/18k_full_hko_contract_event_target_panel.csv,INCOMPLETE_JUNE_PANEL,0,0,730100.0,Does not contain 30 complete eleven-event June books.
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_support_exclusions.csv,INCOMPLETE_JUNE_PANEL,4,44,260200.0,Does not contain 30 complete eleven-event June books.
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18r_june_2026_market_weather_common_support/18r_june_2026_support_exclusions.csv,INCOMPLETE_JUNE_PANEL,4,44,40120.0,Does not contain 30 complete eleven-event June books.
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18p_june_2026_clob_market_price_recovery/18p_june_2026_missing_decision_prices.csv,INCOMPLETE_JUNE_PANEL,3,33,30100.0,Does not contain 30 complete eleven-event June books.
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv,PASSED,30,330,1060260.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_support_audit_panel.csv,PASSED,30,330,1040200.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_deterministic_weather_panel.csv,PASSED,30,330,1030200.0,
+data/manual/18w_outcome_free_contract_definitions/18w_outcome_free_contract_definition_panel.csv,PASSED,30,330,1030100.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_market_scoring_panel.csv,PASSED,30,330,990200.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_complete_book_contract_panel.csv,PASSED,30,330,980200.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_exact_common_support_panel.csv,PASSED,30,330,980200.0,
+data/manual/18x_outcome_free_market_prices/18x_outcome_free_market_price_panel.csv,PASSED,30,330,980100.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18n_june_2026_contract_event_audit/18n_june_2026_contract_audit.csv,PASSED,30,330,700190.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18q_june_2026_ecmwf_single_run_forecasts/18q_june_2026_contract_event_membership.csv,PASSED,30,330,440120.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18o_june_2026_hko_realised_outcomes/18o_june_2026_contract_outcomes.csv,PASSED,30,330,390190.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18r_june_2026_market_weather_common_support/18r_june_2026_common_support_contract_panel.csv,PASSED,30,330,310120.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18r_june_2026_market_weather_common_support/18r_june_2026_support_audit_panel.csv,PASSED,30,330,310120.0,
+local:/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket/data/processed/18p_june_2026_clob_market_price_recovery/18p_june_2026_clob_fetch_inventory.csv,PASSED,30,330,310100.0,
