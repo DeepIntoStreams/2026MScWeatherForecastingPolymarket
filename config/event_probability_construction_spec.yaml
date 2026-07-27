@@ -1,0 +1,51 @@
+status: DECLARED_BEFORE_LOCKED_EVENT_PROBABILITY_CONSTRUCTION
+random_seed: 20260721
+
+input_distribution:
+  source: outputs/diagnostics/06_locked_calibrated_predictions.csv
+  quantile_count: 99
+  quantile_levels:
+    first: 0.01
+    last: 0.99
+    increment: 0.01
+  interpretation: equally_weighted_quantile_particles
+  interpretation_is_monte_carlo_sample: false
+
+event_partition:
+  event_count_per_date: 11
+  lower_boundary_inclusive: true
+  upper_boundary_inclusive: false
+  lower_tail_unbounded: true
+  upper_tail_unbounded: true
+  gaps_permitted: false
+  overlaps_permitted: false
+
+probability:
+  formula: particle_count_in_event_divided_by_99
+  minimum_positive_probability: 0.010101010101010102
+  probability_resolution: 0.010101010101010102
+  probability_sum: 1.0
+  zero_probabilities_permitted: true
+  regularisation_applied_here: false
+  renormalisation_expected: false
+
+scope:
+  chronology_blocks:
+    - holdout
+    - external_test
+  expected_prediction_rows: 159
+  expected_prediction_dates: 40
+  expected_output_rows: 1749
+
+evidential_boundary:
+  realised_outcomes_accessed: false
+  scores_calculated: false
+  probability_regularisation_selected: false
+  market_prices_accessed: false
+  trading_returns_calculated: false
+
+next_stage:
+  name: development_only_event_probability_regularisation
+  purpose: >
+    Select any uniform probability mixing using development out-of-fold
+    predictions only, before scoring holdout and external event probabilities.

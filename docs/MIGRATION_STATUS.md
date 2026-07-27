@@ -191,3 +191,23 @@ Notebook 02.
 - Market data not accessed.
 - Trading returns not calculated.
 - Next task: convert the calibrated distributions into event probabilities.
+
+## Locked event probability construction
+
+- Locked calibrated temperature distributions retained.
+- Certified eleven-event definitions retained.
+- Event partitions checked for gaps and overlaps.
+- Lower and upper tails checked.
+- Left-closed and right-open boundary convention retained.
+- Ninety-nine quantiles treated as deterministic equal-weight particles.
+- Every particle assigned to exactly one event.
+- Every date-rule probability vector contains eleven events.
+- Every probability vector sums to one.
+- Probability resolution fixed at one divided by ninety-nine.
+- Exact zero probabilities retained.
+- Probability regularisation not yet selected.
+- Realised outcomes not accessed.
+- Categorical scores not calculated.
+- Market prices not accessed.
+- Trading returns not calculated.
+- Next task: development-only selection of uniform probability mixing.
