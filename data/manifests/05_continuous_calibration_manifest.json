@@ -1,0 +1,50 @@
+{
+  "calibration_applied": true,
+  "calibration_locked": true,
+  "candidate_scale_count": 7,
+  "candidate_scales": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "coverage_used_for_selection": false,
+  "created_utc": "2026-07-27T00:46:31.540821+00:00",
+  "development_dates": 38,
+  "development_rows": 152,
+  "development_rules": 4,
+  "event_probability_regularisation_applied": false,
+  "external_test_accessed": false,
+  "holdout_accessed": false,
+  "identity_mean_date_crps": 0.7533128920786814,
+  "input_hashes": {
+    "config/continuous_calibration_spec.yaml": "49b70d75da9012c7ac9bbc5bad1176a9010f3330964ae72ded48d8dd3f1f3c37",
+    "data/manifests/04_model_selection_manifest.json": "788f5af92e4f999bbb07dbb54f1cf5d393d5c15b08c9684d868659eb80735343",
+    "outputs/diagnostics/04_oof_model_predictions.csv": "2bfa19ca11f3dde6c323fee1ef987e40257eba451e10662be9a51540e62d12aa"
+  },
+  "interval_width_used_for_selection": false,
+  "market_data_accessed": false,
+  "maximum_predictive_median_change_c": 0.0,
+  "output_hashes": {
+    "outputs/diagnostics/05_calibration_candidate_summary.csv": "b792d358dadb2d970d0b0fd1ff93f96703176a2262ebd31070f6d942be8f0061",
+    "outputs/diagnostics/05_selected_oof_calibrated_predictions.csv": "f6de4d1c9194d733a574bdc5265ebef5948212baaa44cc240b7eccfb69abdae5"
+  },
+  "positive_raw_80_interval_width_share": 1.0,
+  "primary_score": "99-quantile date-grouped mean CRPS",
+  "selected_family": "empirical_residual",
+  "selected_mean_date_crps": 0.7364085260499732,
+  "selected_model": "pooled_empirical_residual",
+  "selected_model_fit_warning_count": 0,
+  "selected_model_non_ok_fit_records": 0,
+  "selected_relative_crps_change_vs_identity": 0.02244003282893836,
+  "selected_scale": 1.25,
+  "selected_within_one_standard_error": true,
+  "selection_rule": "paired one-standard-error preference for scale closest to one",
+  "status": "DEVELOPMENT_CONTINUOUS_CALIBRATION_COMPLETE",
+  "strict_crps_winner_mean_date_crps": 0.7330915470494416,
+  "strict_crps_winner_scale": 1.5,
+  "transformation": "median_preserving_dispersion_scaling"
+}

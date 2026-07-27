@@ -1,0 +1,50 @@
+status: DECLARED_BEFORE_CALIBRATION_SELECTION
+random_seed: 20260721
+
+scope:
+  input: selected_model_development_out_of_fold_predictions
+  permitted_chronology_block: development_validation
+  holdout_access_permitted: false
+  external_test_access_permitted: false
+  market_data_required: false
+
+transformation:
+  name: median_preserving_dispersion_scaling
+  formula: calibrated_quantile = median + scale * (raw_quantile - median)
+  preserved_quantity: predictive_median
+  quantile_order_preserved: true
+  identity_scale: 1.0
+
+candidate_scales:
+  - 0.50
+  - 0.75
+  - 1.00
+  - 1.25
+  - 1.50
+  - 1.75
+  - 2.00
+
+selection:
+  primary_score: date_grouped_mean_crps
+  strict_winner: lowest_mean_date_crps
+  parsimony_rule: paired_one_standard_error
+  parsimony_preference: scale_closest_to_one
+  interpretation: >
+    Calibration is retained only when its improvement is sufficiently clear
+    relative to the identity transformation. Among scales within one paired
+    standard error of the strict CRPS winner, select the scale requiring the
+    smallest change from the original predictive distribution.
+  significance_claim_permitted: false
+
+diagnostics:
+  central_interval_coverages:
+    - 0.50
+    - 0.80
+    - 0.90
+  coverage_used_for_selection: false
+  interval_width_used_for_selection: false
+
+later_stages:
+  event_probability_regularisation_included_here: false
+  holdout_evaluation_included_here: false
+  external_test_evaluation_included_here: false

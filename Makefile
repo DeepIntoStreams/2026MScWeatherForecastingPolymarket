@@ -1,4 +1,4 @@
-.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03 models-04 create-notebook-04 execute-04
+.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03 models-04 create-notebook-04 execute-04 calibrate-05 create-notebook-05 execute-05
 
 test:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
@@ -55,3 +55,12 @@ create-notebook-04:
 
 execute-04:
 	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebooks/final/04_probabilistic_model_selection.ipynb
+
+calibrate-05:
+	PYTHONPATH=src python3 tools/calibrate_selected_oof_distribution.py
+
+create-notebook-05:
+	python3 tools/create_notebook05.py
+
+execute-05:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/05_continuous_distribution_calibration.ipynb

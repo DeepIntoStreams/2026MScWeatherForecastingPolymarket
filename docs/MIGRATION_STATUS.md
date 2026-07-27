@@ -130,3 +130,21 @@ Notebook 02.
 - External-test outcomes inaccessible during selection.
 - Selected specification recorded in a manifest.
 - Next task: fit the selected specification and evaluate the locked periods.
+
+## Continuous distribution calibration
+
+- Locked Notebook 04 model used.
+- Development OOF predictions used exclusively.
+- Median-preserving dispersion transformation implemented.
+- Seven scales declared before selection.
+- Identity transformation included.
+- Date-level CRPS retained as the sole selection score.
+- Coverage and interval width treated as diagnostics only.
+- Paired one-standard-error preference for minimal adjustment applied.
+- Predictive median preservation tested.
+- Quantile monotonicity tested.
+- Holdout outcomes inaccessible.
+- External-test outcomes inaccessible.
+- Market data inaccessible.
+- Event-probability regularisation deferred to a separate stage.
+- Next task: fit the locked model and scale, then evaluate locked periods.
