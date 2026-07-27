@@ -1,0 +1,14 @@
+check,passed,value
+canonical_market_source_exists,True,data/processed/18sA_canonical_source_adapters/18sA_canonical_market_panel.csv
+genuine_p_market_column_used,True,p_market
+corroborating_market_source_audited,True,exact_equivalence=False; maximum_price_difference=0.0; canonical_source_precedence=True
+market_prices_in_unit_interval,True,0.0005 to 0.875
+market_books_have_eleven_events,True,1
+market_event_keys_are_unique,True,0
+timing_evidence_passes,True,archived_nonnegative_price_staleness
+common_support_event_join_complete,True,1694
+model_probability_books_sum_to_one,True,5.551115123125783e-16
+normalised_market_books_sum_to_one,True,2.220446049250313e-16
+one_realised_event_per_book,True,1
+both_evaluation_blocks_present,True,external_test;holdout
+all_scores_finite,True,154

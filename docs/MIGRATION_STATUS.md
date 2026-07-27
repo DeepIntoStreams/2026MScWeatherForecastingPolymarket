@@ -242,3 +242,19 @@ Notebook 02.
 - Did not reselect any model or calibration component.
 - Did not access market prices or calculate trading returns.
 - Next stage: common-support market comparison.
+
+## Notebook 11 common-support market comparison
+
+- Status: `COMMON_SUPPORT_MARKET_COMPARISON_COMPLETE`.
+- Certified the canonical `18sA` market source.
+- Certified `p_market` as the historical market-price field.
+- Gave the canonical source precedence over derived copies.
+- Retained 154 complete common-support books.
+- Evaluated 40 settlement dates.
+- Reported 5 model-only books.
+- Reported 1 market-only book.
+- Normalised market prices only for categorical scoring.
+- Preserved raw prices for later trading analysis.
+- Used settlement date as the uncertainty unit.
+- Did not revisit model selection or calibration.
+- Did not calculate trading returns.

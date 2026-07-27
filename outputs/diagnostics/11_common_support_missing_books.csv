@@ -1,0 +1,7 @@
+book_key,target_date,decision_rule,chronology_block,support_status,reason
+2026-06-06|12h_prior,2026-06-06,12h_prior,external_test,model_only,no complete canonical market book
+2026-06-06|24h_prior,2026-06-06,24h_prior,external_test,model_only,no complete canonical market book
+2026-06-07|12h_prior,2026-06-07,12h_prior,external_test,model_only,no complete canonical market book
+2026-06-07|24h_prior,2026-06-07,24h_prior,external_test,model_only,no complete canonical market book
+2026-06-08|24h_prior,2026-06-08,24h_prior,external_test,model_only,no complete canonical market book
+2026-06-24|6h_prior,2026-06-24,6h_prior,,market_only,no locked model prediction book

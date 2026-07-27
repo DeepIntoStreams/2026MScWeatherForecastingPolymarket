@@ -1,0 +1,41 @@
+stage: 11
+name: locked_common_support_market_comparison
+
+model_source:
+  path: outputs/diagnostics/10_locked_event_probability_outcome_panel.csv
+  probability_column: regularised_event_probability
+
+market_source:
+  canonical_path: data/processed/18sA_canonical_source_adapters/18sA_canonical_market_panel.csv
+  corroborating_path: data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_market_scoring_panel.csv
+  date_column: event_date
+  decision_rule_column: decision_rule
+  price_column: p_market
+
+join:
+  keys:
+    - settlement_date
+    - decision_rule
+    - temperature_interval
+  require_unique_event_rows: true
+  require_eleven_events_per_book: true
+  require_one_realised_event_per_book: true
+
+market_probability:
+  normalise_for_categorical_scoring: true
+  retain_raw_price_for_trading: true
+
+evaluation:
+  uncertainty_unit: settlement_date
+  primary_score: categorical_log_score
+  secondary_score: multiclass_brier_score
+  evaluate_blocks:
+    - holdout
+    - external_test
+
+restrictions:
+  model_reselection: false
+  continuous_calibration_reselection: false
+  probability_calibration_reselection: false
+  trading_strategy_selection: false
+  trading_returns_calculation: false

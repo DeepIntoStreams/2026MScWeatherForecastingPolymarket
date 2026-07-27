@@ -109,3 +109,13 @@ python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreproce
 
 test-10:
 PYTHONPATH=src python3 -m unittest tests.test_notebook10_categorical_evaluation -v
+
+evaluate-11:
+python3 tools/audit_notebook11_market_aliases.py
+python3 tools/build_notebook11_market_comparison.py
+
+execute-11:
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/11_common_support_market_comparison.ipynb
+
+test-11:
+PYTHONPATH=src python3 -m unittest tests.test_notebook11_market_comparison -v
