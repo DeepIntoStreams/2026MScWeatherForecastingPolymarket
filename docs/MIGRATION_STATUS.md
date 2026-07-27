@@ -114,3 +114,19 @@ Notebook 02.
 - Holdout and external outcomes: locked.
 - Model fitting: permitted.
 - Next task: construct the simple probabilistic model families.
+
+## Probabilistic model selection
+
+- Candidate specification declared before fitting.
+- Nine numerical candidates implemented.
+- Five conceptual model families documented.
+- Four chronological expanding folds used.
+- Settlement date retained as the uncertainty unit.
+- Ninety-nine quantiles produced for every available prediction.
+- Date-level CRPS used as the primary score.
+- Common-support comparison enforced.
+- Paired one-standard-error parsimony rule implemented.
+- Holdout outcomes inaccessible during selection.
+- External-test outcomes inaccessible during selection.
+- Selected specification recorded in a manifest.
+- Next task: fit the selected specification and evaluate the locked periods.

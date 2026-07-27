@@ -1,0 +1,97 @@
+candidate_model,fold,scope,training_rows,training_dates,training_start,training_end,validation_rows,validation_dates,validation_start,validation_end,status,warning_count,learned_kernel,message,component,covariance
+raw_deterministic,1,pooled,64,24,2026-03-16,2026-04-11,40,10,2026-04-12,2026-04-21,OK,0,,,,
+pooled_mean_residual,1,pooled,64,24,2026-03-16,2026-04-11,40,10,2026-04-12,2026-04-21,OK,0,,mean_residual=1.3875000000,,
+rule_mean_residual,1,12h_prior,15,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 15.,,
+rule_mean_residual,1,24h_prior,18,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,,mean_residual=1.4944444444,,
+rule_mean_residual,1,6h_prior,14,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 14.,,
+rule_mean_residual,1,event_day_open,17,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,,mean_residual=1.3882352941,,
+pooled_empirical_residual,1,pooled,64,24,2026-03-16,2026-04-11,40,10,2026-04-12,2026-04-21,OK,0,,,,
+rule_empirical_residual,1,12h_prior,15,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 15.,,
+rule_empirical_residual,1,24h_prior,18,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,,,,
+rule_empirical_residual,1,6h_prior,14,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 14.,,
+rule_empirical_residual,1,event_day_open,17,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,,,,
+rule_gp_rbf,1,12h_prior,15,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 15.,gaussian_process,rbf
+rule_gp_rbf,1,24h_prior,18,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,0.701**2 * RBF(length_scale=0.0559) + WhiteKernel(noise_level=0.509),,gaussian_process,rbf
+rule_gp_rbf,1,6h_prior,14,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 14.,gaussian_process,rbf
+rule_gp_rbf,1,event_day_open,17,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,2,0.1**2 * RBF(length_scale=0.05) + WhiteKernel(noise_level=0.99),,gaussian_process,rbf
+rule_gp_matern32,1,12h_prior,15,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 15.,gaussian_process,matern32
+rule_gp_matern32,1,24h_prior,18,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,1,"0.109**2 * Matern(length_scale=0.05, nu=1.5) + WhiteKernel(noise_level=0.988)",,gaussian_process,matern32
+rule_gp_matern32,1,6h_prior,14,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 14.,gaussian_process,matern32
+rule_gp_matern32,1,event_day_open,17,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,2,"0.1**2 * Matern(length_scale=0.05, nu=1.5) + WhiteKernel(noise_level=0.99)",,gaussian_process,matern32
+pooled_catboost_quantile,1,pooled,64,24,2026-03-16,2026-04-11,40,10,2026-04-12,2026-04-21,OK,0,,,catboost_quantile,
+rule_catboost_quantile,1,12h_prior,15,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 15.,catboost_quantile,
+rule_catboost_quantile,1,24h_prior,18,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,,,catboost_quantile,
+rule_catboost_quantile,1,6h_prior,14,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,INSUFFICIENT_RULE_TRAINING_ROWS,0,,Required 16; found 14.,catboost_quantile,
+rule_catboost_quantile,1,event_day_open,17,24,2026-03-16,2026-04-11,10,10,2026-04-12,2026-04-21,OK,0,,,catboost_quantile,
+raw_deterministic,2,pooled,104,34,2026-03-16,2026-04-21,40,10,2026-04-22,2026-05-01,OK,0,,,,
+pooled_mean_residual,2,pooled,104,34,2026-03-16,2026-04-21,40,10,2026-04-22,2026-05-01,OK,0,,mean_residual=1.5500000000,,
+rule_mean_residual,2,12h_prior,25,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,mean_residual=1.6080000000,,
+rule_mean_residual,2,24h_prior,28,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,mean_residual=1.6714285714,,
+rule_mean_residual,2,6h_prior,24,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,mean_residual=1.3791666667,,
+rule_mean_residual,2,event_day_open,27,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,mean_residual=1.5222222222,,
+pooled_empirical_residual,2,pooled,104,34,2026-03-16,2026-04-21,40,10,2026-04-22,2026-05-01,OK,0,,,,
+rule_empirical_residual,2,12h_prior,25,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,,
+rule_empirical_residual,2,24h_prior,28,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,,
+rule_empirical_residual,2,6h_prior,24,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,,
+rule_empirical_residual,2,event_day_open,27,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,,
+rule_gp_rbf,2,12h_prior,25,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,2,0.1**2 * RBF(length_scale=0.05) + WhiteKernel(noise_level=0.99),,gaussian_process,rbf
+rule_gp_rbf,2,24h_prior,28,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,1,0.1**2 * RBF(length_scale=0.605) + WhiteKernel(noise_level=0.992),,gaussian_process,rbf
+rule_gp_rbf,2,6h_prior,24,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,2,0.1**2 * RBF(length_scale=0.05) + WhiteKernel(noise_level=0.99),,gaussian_process,rbf
+rule_gp_rbf,2,event_day_open,27,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,2,0.1**2 * RBF(length_scale=0.05) + WhiteKernel(noise_level=0.991),,gaussian_process,rbf
+rule_gp_matern32,2,12h_prior,25,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,2,"0.1**2 * Matern(length_scale=0.05, nu=1.5) + WhiteKernel(noise_level=0.99)",,gaussian_process,matern32
+rule_gp_matern32,2,24h_prior,28,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,1,"0.1**2 * Matern(length_scale=0.562, nu=1.5) + WhiteKernel(noise_level=0.993)",,gaussian_process,matern32
+rule_gp_matern32,2,6h_prior,24,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,2,"0.1**2 * Matern(length_scale=0.05, nu=1.5) + WhiteKernel(noise_level=0.99)",,gaussian_process,matern32
+rule_gp_matern32,2,event_day_open,27,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,2,"0.1**2 * Matern(length_scale=0.05, nu=1.5) + WhiteKernel(noise_level=0.991)",,gaussian_process,matern32
+pooled_catboost_quantile,2,pooled,104,34,2026-03-16,2026-04-21,40,10,2026-04-22,2026-05-01,OK,0,,,catboost_quantile,
+rule_catboost_quantile,2,12h_prior,25,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,catboost_quantile,
+rule_catboost_quantile,2,24h_prior,28,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,catboost_quantile,
+rule_catboost_quantile,2,6h_prior,24,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,catboost_quantile,
+rule_catboost_quantile,2,event_day_open,27,34,2026-03-16,2026-04-21,10,10,2026-04-22,2026-05-01,OK,0,,,catboost_quantile,
+raw_deterministic,3,pooled,144,44,2026-03-16,2026-05-01,36,9,2026-05-02,2026-05-10,OK,0,,,,
+pooled_mean_residual,3,pooled,144,44,2026-03-16,2026-05-01,36,9,2026-05-02,2026-05-10,OK,0,,mean_residual=1.7965277778,,
+rule_mean_residual,3,12h_prior,35,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,mean_residual=1.8685714286,,
+rule_mean_residual,3,24h_prior,38,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,mean_residual=1.9026315789,,
+rule_mean_residual,3,6h_prior,34,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,mean_residual=1.6441176471,,
+rule_mean_residual,3,event_day_open,37,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,mean_residual=1.7594594595,,
+pooled_empirical_residual,3,pooled,144,44,2026-03-16,2026-05-01,36,9,2026-05-02,2026-05-10,OK,0,,,,
+rule_empirical_residual,3,12h_prior,35,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,,
+rule_empirical_residual,3,24h_prior,38,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,,
+rule_empirical_residual,3,6h_prior,34,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,,
+rule_empirical_residual,3,event_day_open,37,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,,
+rule_gp_rbf,3,12h_prior,35,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,0.459**2 * RBF(length_scale=1.27) + WhiteKernel(noise_level=0.859),,gaussian_process,rbf
+rule_gp_rbf,3,24h_prior,38,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,0.524**2 * RBF(length_scale=1.05) + WhiteKernel(noise_level=0.793),,gaussian_process,rbf
+rule_gp_rbf,3,6h_prior,34,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,0.399**2 * RBF(length_scale=1.05) + WhiteKernel(noise_level=0.875),,gaussian_process,rbf
+rule_gp_rbf,3,event_day_open,37,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,0.443**2 * RBF(length_scale=1.4) + WhiteKernel(noise_level=0.876),,gaussian_process,rbf
+rule_gp_matern32,3,12h_prior,35,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,"0.424**2 * Matern(length_scale=1.21, nu=1.5) + WhiteKernel(noise_level=0.863)",,gaussian_process,matern32
+rule_gp_matern32,3,24h_prior,38,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,"0.497**2 * Matern(length_scale=1.07, nu=1.5) + WhiteKernel(noise_level=0.796)",,gaussian_process,matern32
+rule_gp_matern32,3,6h_prior,34,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,"0.383**2 * Matern(length_scale=0.908, nu=1.5) + WhiteKernel(noise_level=0.873)",,gaussian_process,matern32
+rule_gp_matern32,3,event_day_open,37,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,"0.4**2 * Matern(length_scale=1.45, nu=1.5) + WhiteKernel(noise_level=0.885)",,gaussian_process,matern32
+pooled_catboost_quantile,3,pooled,144,44,2026-03-16,2026-05-01,36,9,2026-05-02,2026-05-10,OK,0,,,catboost_quantile,
+rule_catboost_quantile,3,12h_prior,35,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,catboost_quantile,
+rule_catboost_quantile,3,24h_prior,38,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,catboost_quantile,
+rule_catboost_quantile,3,6h_prior,34,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,catboost_quantile,
+rule_catboost_quantile,3,event_day_open,37,44,2026-03-16,2026-05-01,9,9,2026-05-02,2026-05-10,OK,0,,,catboost_quantile,
+raw_deterministic,4,pooled,180,53,2026-03-16,2026-05-10,36,9,2026-05-11,2026-05-21,OK,0,,,,
+pooled_mean_residual,4,pooled,180,53,2026-03-16,2026-05-10,36,9,2026-05-11,2026-05-21,OK,0,,mean_residual=1.6900000000,,
+rule_mean_residual,4,12h_prior,44,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,mean_residual=1.7795454545,,
+rule_mean_residual,4,24h_prior,47,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,mean_residual=1.7787234043,,
+rule_mean_residual,4,6h_prior,43,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,mean_residual=1.5441860465,,
+rule_mean_residual,4,event_day_open,46,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,mean_residual=1.6500000000,,
+pooled_empirical_residual,4,pooled,180,53,2026-03-16,2026-05-10,36,9,2026-05-11,2026-05-21,OK,0,,,,
+rule_empirical_residual,4,12h_prior,44,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,,
+rule_empirical_residual,4,24h_prior,47,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,,
+rule_empirical_residual,4,6h_prior,43,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,,
+rule_empirical_residual,4,event_day_open,46,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,,
+rule_gp_rbf,4,12h_prior,44,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,1,0.278**2 * RBF(length_scale=0.05) + WhiteKernel(noise_level=0.923),,gaussian_process,rbf
+rule_gp_rbf,4,24h_prior,47,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,0.234**2 * RBF(length_scale=0.313) + WhiteKernel(noise_level=0.945),,gaussian_process,rbf
+rule_gp_rbf,4,6h_prior,43,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,0.184**2 * RBF(length_scale=0.234) + WhiteKernel(noise_level=0.966),,gaussian_process,rbf
+rule_gp_rbf,4,event_day_open,46,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,1,0.1**2 * RBF(length_scale=0.174) + WhiteKernel(noise_level=0.991),,gaussian_process,rbf
+rule_gp_matern32,4,12h_prior,44,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,1,"0.268**2 * Matern(length_scale=0.05, nu=1.5) + WhiteKernel(noise_level=0.928)",,gaussian_process,matern32
+rule_gp_matern32,4,24h_prior,47,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,"0.239**2 * Matern(length_scale=0.3, nu=1.5) + WhiteKernel(noise_level=0.943)",,gaussian_process,matern32
+rule_gp_matern32,4,6h_prior,43,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,"0.162**2 * Matern(length_scale=0.243, nu=1.5) + WhiteKernel(noise_level=0.974)",,gaussian_process,matern32
+rule_gp_matern32,4,event_day_open,46,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,1,"0.1**2 * Matern(length_scale=0.151, nu=1.5) + WhiteKernel(noise_level=0.992)",,gaussian_process,matern32
+pooled_catboost_quantile,4,pooled,180,53,2026-03-16,2026-05-10,36,9,2026-05-11,2026-05-21,OK,0,,,catboost_quantile,
+rule_catboost_quantile,4,12h_prior,44,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,catboost_quantile,
+rule_catboost_quantile,4,24h_prior,47,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,catboost_quantile,
+rule_catboost_quantile,4,6h_prior,43,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,catboost_quantile,
+rule_catboost_quantile,4,event_day_open,46,53,2026-03-16,2026-05-10,9,9,2026-05-11,2026-05-21,OK,0,,,catboost_quantile,

@@ -1,0 +1,77 @@
+{
+  "candidate_count": 9,
+  "candidate_support": [
+    {
+      "available_dates": 38,
+      "available_rows": 152,
+      "candidate_model": "pooled_catboost_quantile"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 152,
+      "candidate_model": "pooled_empirical_residual"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 152,
+      "candidate_model": "pooled_mean_residual"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 152,
+      "candidate_model": "raw_deterministic"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 132,
+      "candidate_model": "rule_catboost_quantile"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 132,
+      "candidate_model": "rule_empirical_residual"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 132,
+      "candidate_model": "rule_gp_matern32"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 132,
+      "candidate_model": "rule_gp_rbf"
+    },
+    {
+      "available_dates": 38,
+      "available_rows": 132,
+      "candidate_model": "rule_mean_residual"
+    }
+  ],
+  "common_support_dates": 38,
+  "common_support_rows": 132,
+  "created_utc": "2026-07-27T00:04:36.306123+00:00",
+  "development_fold_count": 4,
+  "external_test_accessed": false,
+  "holdout_accessed": false,
+  "holdout_or_external_outcome_used_for_selection": false,
+  "input_hashes": {
+    "config/probabilistic_model_spec.yaml": "e4466365b8b9b6398b7eeab0baf7e54317956abaa26b90ce9aef7be7cd3719cf",
+    "data/processed/02_chronological_design_panel.csv": "da654f47c3c12caaa031f832c61308df32f96f0caa411923f21ab95852ea5653"
+  },
+  "output_hashes": {
+    "outputs/diagnostics/04_candidate_score_summary.csv": "30b97d2aac43a7a26684cb0f62908a50e6d7273a2c9c521f3682e346f0f4d9d1",
+    "outputs/diagnostics/04_oof_score_panel.csv": "a2f780dcb99d22677a15ab7a8f74bf7fb83b82cd43f3b7334665ddf865a2078c"
+  },
+  "quantile_count": 99,
+  "raw_mean_date_crps": 1.9223684210526315,
+  "score": "99-quantile approximation to CRPS",
+  "selected_complexity_rank": 2,
+  "selected_family": "empirical_residual",
+  "selected_mean_date_crps": 0.7321779904306219,
+  "selected_model": "pooled_empirical_residual",
+  "selected_relative_crps_reduction_vs_raw": 0.6191271233899571,
+  "selection_locked": true,
+  "selection_rule": "paired one-standard-error parsimony rule",
+  "status": "DEVELOPMENT_MODEL_SELECTION_COMPLETE",
+  "strict_crps_winner": "pooled_empirical_residual"
+}

@@ -1,4 +1,4 @@
-.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03
+.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03 models-04 create-notebook-04 execute-04
 
 test:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
@@ -46,3 +46,12 @@ create-notebooks-02-03:
 execute-02-03:
 	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/final/02_deterministic_weather_training_panel.ipynb
 	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/final/03_chronological_design.ipynb
+
+models-04:
+	PYTHONPATH=src python3 tools/run_probabilistic_oof_benchmark.py
+
+create-notebook-04:
+	python3 tools/create_notebook04.py
+
+execute-04:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebooks/final/04_probabilistic_model_selection.ipynb

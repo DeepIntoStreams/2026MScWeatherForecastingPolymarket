@@ -1,0 +1,133 @@
+status: DECLARED_BEFORE_MODEL_FITTING
+random_seed: 20260721
+
+target:
+  outcome: hko_daily_max_c
+  deterministic_forecast: forecast_daily_max_c
+  residual: residual_c
+
+quantile_representation:
+  first_probability: 0.01
+  last_probability: 0.99
+  increment: 0.01
+  number_of_quantiles: 99
+
+validation:
+  uncertainty_unit: settlement_date
+  split_method: chronological_expanding
+  development_fold_count: 4
+  primary_score: date_grouped_mean_crps
+  holdout_access_permitted: false
+  external_test_access_permitted: false
+  minimum_rule_training_rows: 16
+  minimum_common_support_dates: 30
+  minimum_common_support_rows: 120
+
+selection:
+  strict_ranking: lowest_mean_date_crps
+  parsimony_rule: paired_one_standard_error
+  description: >
+    First identify the candidate with the lowest mean date-level CRPS.
+    Then identify candidates whose paired date-level CRPS difference from
+    that candidate is no greater than one standard error of the paired
+    difference. Select the least complex candidate in that set.
+  significance_claim_permitted: false
+
+candidates:
+  - name: raw_deterministic
+    family: raw
+    complexity_rank: 0
+    display_name: Raw deterministic
+
+  - name: pooled_mean_residual
+    family: mean_residual
+    complexity_rank: 1
+    display_name: Pooled mean residual
+
+  - name: rule_mean_residual
+    family: mean_residual
+    complexity_rank: 2
+    display_name: Rule mean residual
+
+  - name: pooled_empirical_residual
+    family: empirical_residual
+    complexity_rank: 2
+    display_name: Pooled empirical residual
+
+  - name: rule_empirical_residual
+    family: empirical_residual
+    complexity_rank: 3
+    display_name: Rule empirical residual
+
+  - name: rule_gp_rbf
+    family: gaussian_process
+    complexity_rank: 4
+    display_name: GP with RBF covariance
+
+  - name: rule_gp_matern32
+    family: gaussian_process
+    complexity_rank: 4
+    display_name: GP with Matern 3/2 covariance
+
+  - name: pooled_catboost_quantile
+    family: catboost_quantile
+    complexity_rank: 5
+    display_name: Pooled CatBoost quantile
+
+  - name: rule_catboost_quantile
+    family: catboost_quantile
+    complexity_rank: 6
+    display_name: Rule CatBoost quantile
+
+gaussian_process:
+  response: residual_c
+  input: calendar_day_index
+  fitting_scope: separate_model_for_each_decision_rule
+  normalise_response: true
+  manual_response_standardisation: false
+  alpha_jitter: 1.0e-8
+  optimiser_restarts: 0
+
+  constant_kernel:
+    initial_value: 1.0
+    lower_bound: 0.01
+    upper_bound: 100.0
+
+  length_scale:
+    initial_value: 1.0
+    lower_bound: 0.05
+    upper_bound: 10.0
+
+  white_noise:
+    initial_value: 0.25
+    lower_bound: 0.001
+    upper_bound: 10.0
+
+catboost:
+  response: residual_c
+  base_quantiles:
+    - 0.05
+    - 0.25
+    - 0.50
+    - 0.75
+    - 0.95
+  interpolation: linear_with_constant_endpoints
+  iterations: 250
+  depth: 3
+  learning_rate: 0.03
+  l2_leaf_reg: 8.0
+  bootstrap_type: No
+  random_strength: 0.0
+  thread_count: 1
+  features:
+    pooled:
+      - deterministic_forecast
+      - calendar_day_index
+      - seasonal_sine
+      - seasonal_cosine
+      - decision_rule_code
+    rule_specific:
+      - deterministic_forecast
+      - calendar_day_index
+      - seasonal_sine
+      - seasonal_cosine
