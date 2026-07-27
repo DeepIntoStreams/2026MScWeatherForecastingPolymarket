@@ -168,3 +168,26 @@ Notebook 02.
 - Market prices not accessed.
 - Trading returns not calculated.
 - Next task: evaluate the locked continuous distributions.
+
+## Locked continuous evaluation
+
+- Locked model choice retained.
+- Locked continuous calibration scale retained.
+- Realised HKO outcomes joined only after predictions were written.
+- Raw deterministic, selected uncalibrated and selected calibrated forecasts
+  evaluated.
+- Holdout and June external results reported separately.
+- Ninety-nine-quantile CRPS used.
+- Settlement date used as the primary uncertainty unit.
+- Median MAE and median bias reported.
+- Central 50, 80 and 90 per cent coverage reported.
+- Interval widths reported.
+- Date-level paired comparisons reported.
+- Paired intervals labelled descriptive rather than formal significance tests.
+- No model refit performed.
+- No model reselection performed.
+- No calibration reselection performed.
+- Event probabilities not yet calculated.
+- Market data not accessed.
+- Trading returns not calculated.
+- Next task: convert the calibrated distributions into event probabilities.

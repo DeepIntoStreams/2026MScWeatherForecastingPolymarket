@@ -1,0 +1,65 @@
+{
+  "calibration_reselected_during_evaluation": false,
+  "created_utc": "2026-07-27T01:18:14.827683+00:00",
+  "evaluation_dates": 40,
+  "evaluation_locked": true,
+  "evaluation_rows_per_variant": 159,
+  "event_probabilities_calculated": false,
+  "external_test_dates": 30,
+  "external_test_results": {
+    "calibrated_80_coverage": 0.9243697478991597,
+    "calibrated_80_width_c": 3.6250000000000036,
+    "calibrated_mean_date_crps": 0.5923688973063972,
+    "calibrated_median_bias_c": -0.01932773109243722,
+    "calibrated_median_mae_c": 0.7941176470588234,
+    "calibrated_relative_reduction_vs_raw": 0.6673642130240165,
+    "raw_mean_date_crps": 1.780833333333333,
+    "uncalibrated_mean_date_crps": 0.577711335578002
+  },
+  "external_test_rows_per_variant": 119,
+  "forecast_variant_count": 3,
+  "forecast_variants": [
+    "raw_deterministic",
+    "selected_uncalibrated",
+    "selected_calibrated"
+  ],
+  "formal_significance_claim_made": false,
+  "holdout_dates": 10,
+  "holdout_results": {
+    "calibrated_80_coverage": 0.95,
+    "calibrated_80_width_c": 3.6250000000000044,
+    "calibrated_mean_date_crps": 0.49892613636363653,
+    "calibrated_median_bias_c": -0.1775000000000005,
+    "calibrated_median_mae_c": 0.6325000000000007,
+    "calibrated_relative_reduction_vs_raw": 0.7377523593358021,
+    "raw_mean_date_crps": 1.9024999999999999,
+    "uncalibrated_mean_date_crps": 0.4704212121212123
+  },
+  "holdout_rows_per_variant": 40,
+  "input_hashes": {
+    "config/continuous_evaluation_spec.yaml": "f958c9bf0a4a318a781b5599c7b2ad6192d022464d79fdd6c227ac8a26cabdca",
+    "data/manifests/04_model_selection_manifest.json": "788f5af92e4f999bbb07dbb54f1cf5d393d5c15b08c9684d868659eb80735343",
+    "data/manifests/05_continuous_calibration_manifest.json": "1ac21b4dbfe7f364048f33e72b20ff3267310ec52d0c35039293f5330dec4f6b",
+    "data/manifests/06_locked_prediction_manifest.json": "d2176272ebf305328b51be131bd3c426c2bafd24b6eac995df136779688490a4",
+    "data/processed/02_chronological_design_panel.csv": "da654f47c3c12caaa031f832c61308df32f96f0caa411923f21ab95852ea5653",
+    "outputs/diagnostics/06_locked_calibrated_predictions.csv": "d7a6e178708d14f2f81f7147c37490bfc76ec7eebe8d37e71eb2c988dd8b9a60",
+    "outputs/diagnostics/06_locked_uncalibrated_predictions.csv": "b6e344d28a2703469257957d6b5ae2b38a53fe55d590dfa496f831a39e9a0d51"
+  },
+  "market_data_accessed": false,
+  "model_refitted_during_evaluation": false,
+  "model_reselected_during_evaluation": false,
+  "output_hashes": {
+    "outputs/diagnostics/07_continuous_block_summary.csv": "ff94fd8187d7a181f8ada9ce7491de16a083227c0c90bf236178b8e6397446ab",
+    "outputs/diagnostics/07_continuous_pairwise_comparison.csv": "97beecd40d8fde95025f5759a687d72f50ae0c06bbfe4110a337cb30e16fd019",
+    "outputs/diagnostics/07_continuous_score_panel.csv": "1d5cee212e477fcdb6d0b9f0f3f7533b80ceb0ffe0eebe1a12ca76a84845ae18"
+  },
+  "paired_interval_interpretation": "descriptive under settlement-date independence",
+  "pairwise_comparison_count": 6,
+  "primary_uncertainty_unit": "settlement_date",
+  "score": "99-quantile approximation to CRPS",
+  "selected_dispersion_scale": 1.25,
+  "selected_family": "empirical_residual",
+  "selected_model": "pooled_empirical_residual",
+  "status": "LOCKED_CONTINUOUS_EVALUATION_COMPLETE",
+  "trading_returns_calculated": false
+}

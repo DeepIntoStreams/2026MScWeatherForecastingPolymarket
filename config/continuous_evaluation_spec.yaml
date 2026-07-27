@@ -1,0 +1,67 @@
+status: DECLARED_BEFORE_LOCKED_CONTINUOUS_EVALUATION
+random_seed: 20260721
+
+forecast_variants:
+  - name: raw_deterministic
+    display_name: Raw deterministic
+    interpretation: point_mass_at_deterministic_forecast
+
+  - name: selected_uncalibrated
+    display_name: Selected uncalibrated
+    interpretation: locked_selected_distribution_before_dispersion_scaling
+
+  - name: selected_calibrated
+    display_name: Selected calibrated
+    interpretation: locked_selected_distribution_after_dispersion_scaling
+
+evaluation_blocks:
+  - holdout
+  - external_test
+
+primary_evaluation:
+  uncertainty_unit: settlement_date
+  score: crps
+  computational_representation: 99_quantiles
+  aggregation:
+    - calculate_score_for_each_date_rule_observation
+    - average_scores_within_settlement_date
+    - average_date_scores_within_evaluation_block
+
+secondary_evaluation:
+  - predictive_median_absolute_error
+  - predictive_median_bias
+  - central_50_interval_coverage
+  - central_50_interval_width
+  - central_80_interval_coverage
+  - central_80_interval_width
+  - central_90_interval_coverage
+  - central_90_interval_width
+
+paired_comparisons:
+  - left: selected_uncalibrated
+    right: raw_deterministic
+
+  - left: selected_calibrated
+    right: raw_deterministic
+
+  - left: selected_calibrated
+    right: selected_uncalibrated
+
+paired_difference:
+  definition: left_date_crps_minus_right_date_crps
+  negative_value_favours: left
+  interval: two_sided_95_percent_t_interval
+  interpretation: descriptive
+  formal_significance_claim_permitted: false
+  limitation: >
+    The interval treats settlement dates as independent and is therefore
+    reported descriptively. Serial dependence and the small holdout sample
+    limit inferential interpretation.
+
+evidential_boundary:
+  model_refitting_permitted: false
+  model_reselection_permitted: false
+  calibration_reselection_permitted: false
+  event_probability_construction_permitted: false
+  market_data_access_permitted: false
+  trading_analysis_permitted: false

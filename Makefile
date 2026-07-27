@@ -1,4 +1,4 @@
-.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03 models-04 create-notebook-04 execute-04 calibrate-05 create-notebook-05 execute-05 predict-06 create-notebook-06 execute-06
+.PHONY: test migration-audit execute-00-01 bundle-02 panels-02 execute-02 support-audit-02 verified-panel-02 create-notebooks-02-03 execute-02-03 models-04 create-notebook-04 execute-04 calibrate-05 create-notebook-05 execute-05 predict-06 create-notebook-06 execute-06 evaluate-07 create-notebook-07 execute-07
 
 test:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
@@ -73,3 +73,12 @@ create-notebook-06:
 
 execute-06:
 	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1200 notebooks/final/06_locked_predictive_distributions.ipynb
+
+evaluate-07:
+	PYTHONPATH=src python3 tools/evaluate_locked_continuous_predictions.py
+
+create-notebook-07:
+	python3 tools/create_notebook07.py
+
+execute-07:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/07_locked_continuous_evaluation.ipynb
