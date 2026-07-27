@@ -1,0 +1,36 @@
+status: DECLARED_BEFORE_LOCKED_CATEGORICAL_EVALUATION
+
+locked_inputs:
+  probability_manifest: data/manifests/09_probability_calibration_manifest.json
+  probability_panel: outputs/diagnostics/09_locked_regularised_event_probability_panel.csv
+  outcome_source: data/processed/certified_event_books.csv
+
+join:
+  primary_probability_key: source_event_label
+  primary_outcome_key: event_label
+  date_key: target_date
+  text_normalisation:
+    - strip_outer_whitespace
+    - convert_to_lower_case
+    - collapse_internal_whitespace
+  structural_verification: event_order_equals_event_index_plus_one
+
+evaluation:
+  blocks:
+    - holdout
+    - external_test
+  primary_score: categorical_log_score
+  secondary_score: multiclass_brier_score
+  uncertainty_unit: settlement_date
+  average_decision_rules_within_date: true
+  evaluate_raw_probability_vector: true
+  evaluate_regularised_probability_vector: true
+  clip_probabilities_for_log_score: false
+
+evidential_boundary:
+  realised_hko_outcomes_accessed: true
+  model_reselected: false
+  continuous_calibration_reselected: false
+  probability_calibration_reselected: false
+  market_prices_accessed: false
+  trading_returns_calculated: false

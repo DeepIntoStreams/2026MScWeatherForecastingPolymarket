@@ -100,3 +100,12 @@ execute-09:
 
 test-09:
 	PYTHONPATH=src python3 -m unittest tests.test_notebook09_probability_calibration -v
+
+evaluate-10:
+python3 tools/evaluate_locked_event_probabilities.py
+
+execute-10:
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/10_locked_categorical_evaluation.ipynb
+
+test-10:
+PYTHONPATH=src python3 -m unittest tests.test_notebook10_categorical_evaluation -v

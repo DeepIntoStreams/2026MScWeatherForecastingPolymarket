@@ -1,0 +1,10 @@
+check,passed,value
+all_probability_rows_joined,True,1749
+label_join_is_unique,True,target_date plus normalised source_event_label
+event_order_matches_event_index_plus_one,True,True
+probability_books_equal_159,True,159
+holdout_dimensions,True,"{'dates': 10, 'probability_books': 40}"
+external_test_dimensions,True,"{'dates': 30, 'probability_books': 119}"
+regularised_scores_are_finite,True,True
+market_prices_not_accessed,True,False
+trading_returns_not_calculated,True,False

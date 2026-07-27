@@ -227,3 +227,18 @@ Notebook 02.
 - Did not use holdout or June outcomes for selection.
 - Did not access market prices or calculate trading returns.
 - Next stage: locked categorical evaluation.
+
+## Notebook 10 locked categorical evaluation
+
+- Joined all 1,749 locked probability rows to certified HKO outcomes.
+- Verified the join using event order and certified event index.
+- Evaluated 40 holdout and 119 June probability books.
+- Treated settlement date as the uncertainty unit.
+- Recorded categorical log score as the primary score.
+- Recorded multiclass Brier score as the secondary score.
+- Found one raw zero probability for a realised June event.
+- Confirmed that the locked 0.01 mixture makes every log score finite.
+- Recorded only a small Brier-score cost from regularisation.
+- Did not reselect any model or calibration component.
+- Did not access market prices or calculate trading returns.
+- Next stage: common-support market comparison.

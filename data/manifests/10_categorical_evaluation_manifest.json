@@ -1,0 +1,43 @@
+{
+  "continuous_calibration_reselected": false,
+  "created_utc": "2026-07-27T05:34:18.786140+00:00",
+  "decision_rules_averaged_within_date": true,
+  "evaluation_dates": 40,
+  "external_test_dates": 30,
+  "external_test_probability_books": 119,
+  "holdout_dates": 10,
+  "holdout_probability_books": 40,
+  "input_hashes": {
+    "config/categorical_evaluation_spec.yaml": "3b1cccc16964f02da11f7e81d28cac8abceec0ded30f114df20f4666505cc357",
+    "data/manifests/09_probability_calibration_manifest.json": "cfe6dbdedfdd675774201c70669adb0b6170702947aedce01eedf139b5592645",
+    "data/processed/certified_event_books.csv": "58b51e288df864ce359da7c2fb863b935358227c88a192d362a1daca7c489ab1",
+    "outputs/diagnostics/09_locked_regularised_event_probability_panel.csv": "bd018bf7a283a485d42526e3fb6d329f0d5e2f81271ef9814c4dc30dda657a23"
+  },
+  "locked_continuous_dispersion_scale": 1.25,
+  "locked_uniform_mixing_lambda": 0.01,
+  "market_prices_accessed": false,
+  "model_reselected": false,
+  "next_stage": "common-support comparison with market probabilities",
+  "output_hashes": {
+    "outputs/diagnostics/10_locked_categorical_date_score_panel.csv": "d5f6689ba66a64af3e495a175aa9c6648d86acdcb63380d616ce1dc0b16c7c5e",
+    "outputs/diagnostics/10_locked_categorical_integrity_checks.csv": "ea1a4f008ec25ff19f4ffa06437c6b6fcebadf0116c57893cf2698b931bcfc72",
+    "outputs/diagnostics/10_locked_categorical_score_panel.csv": "91caa4c7a7752dd799123b8fe4e6b97e8541c7c2cbea107f213dfa45ca98a925",
+    "outputs/final_tables/10_locked_categorical_block_summary.csv": "67dc118543a17b3658b6d62343803d51aedcd118c41eb452eb11f271a2be29a3"
+  },
+  "primary_join": "target_date plus normalised source_event_label to certified event_label",
+  "primary_score": "categorical_log_score",
+  "probabilities_clipped_for_log_score": false,
+  "probability_books": 159,
+  "probability_calibration_reselected": false,
+  "probability_calibration_status": "PROBABILITY_CALIBRATION_LOCKED",
+  "probability_rows": 1749,
+  "raw_and_regularised_probabilities_evaluated": true,
+  "realised_hko_outcomes_accessed": true,
+  "secondary_score": "multiclass_brier_score",
+  "selected_family": "empirical_residual",
+  "selected_model": "pooled_empirical_residual",
+  "status": "LOCKED_CATEGORICAL_EVALUATION_COMPLETE",
+  "structural_join_verification": "event_order equals event_index plus one",
+  "trading_returns_calculated": false,
+  "uncertainty_unit": "settlement_date"
+}
