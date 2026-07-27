@@ -128,3 +128,12 @@ python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreproce
 
 test-12:
 PYTHONPATH=src python3 -m unittest tests.test_notebook12_trading_strategy -v
+
+build-13:
+python3 tools/build_notebook13_uncertainty_analysis.py
+
+execute-13:
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/13_date_level_uncertainty_analysis.ipynb
+
+test-13:
+PYTHONPATH=src python3 -m unittest tests.test_notebook13_uncertainty_analysis -v

@@ -1,0 +1,17 @@
+check,passed,value
+all_declared_sources_exist,True,4
+all_six_estimands_present,True,6
+all_estimand_block_pairs_present,True,12
+date_effect_keys_are_unique,True,0
+all_effects_are_finite,True,240
+minimum_date_count_satisfied,True,10
+bootstrap_intervals_are_ordered,True,True
+bootstrap_probabilities_are_valid,True,True
+sign_flip_p_values_are_valid,True,True
+holdout_not_used_for_reselection,True,False
+external_test_not_used_for_reselection,True,False
+weather_model_not_reselected,True,False
+continuous_calibration_not_reselected,True,False
+probability_calibration_not_reselected,True,False
+trading_strategy_not_reselected,True,False
+strategy_not_refitted_before_external_test,True,False

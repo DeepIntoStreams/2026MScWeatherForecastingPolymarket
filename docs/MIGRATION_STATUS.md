@@ -275,3 +275,21 @@ Notebook 02.
 - Evaluated the holdout and June blocks separately.
 - Added fixed-cost sensitivity without reselection.
 - Retained reduced-form rather than executable-profitability claims.
+
+## Notebook 13 date-level uncertainty analysis
+
+- Status: `DATE_LEVEL_UNCERTAINTY_ANALYSIS_COMPLETE`.
+- Used settlement date as the uncertainty unit.
+- Evaluated 6 distinct estimands.
+- Used 20000 fixed-seed date-bootstrap repetitions.
+- Used exact sign flips for blocks with at most
+  20 dates.
+- Used fixed-seed Monte Carlo sign flips for larger blocks.
+- Kept the weather model unchanged.
+- Kept continuous calibration unchanged.
+- Kept probability calibration unchanged.
+- Kept the trading strategy unchanged.
+- Did not refit before the June external block.
+- Reported holdout and June uncertainty separately.
+- Treated all inference as descriptive finite-sample evidence.
+- Made no executable-profitability or market-inefficiency claim.

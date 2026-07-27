@@ -1,0 +1,13 @@
+estimand,estimand_label,chronology_block,settlement_dates,observed_mean_effect,sign_flip_method,sign_flip_repetitions,sign_flip_two_sided_p_value,interpretation,estimand_order,block_order
+continuous_crps_improvement,Raw minus locked-model CRPS,holdout,10,1.4111127372206909,exact,1024,0.00390625,descriptive paired randomisation diagnostic,0,0
+continuous_crps_improvement,Raw minus locked-model CRPS,external_test,30,1.1960033096112639,monte_carlo,100000,9.99990000099999e-06,descriptive paired randomisation diagnostic,0,1
+categorical_log_score_improvement,Raw minus regularised categorical log score,holdout,10,-0.14071367167779283,exact,1024,0.357421875,descriptive paired randomisation diagnostic,1,0
+categorical_log_score_improvement,Raw minus regularised categorical log score,external_test,30,-0.5219251299701599,monte_carlo,100000,9.99990000099999e-06,descriptive paired randomisation diagnostic,1,1
+categorical_brier_improvement,Raw minus regularised multiclass Brier score,holdout,10,-0.0010899107233955873,exact,1024,0.00390625,descriptive paired randomisation diagnostic,2,0
+categorical_brier_improvement,Raw minus regularised multiclass Brier score,external_test,30,-0.0005767702842112782,monte_carlo,100000,0.023089769102308977,descriptive paired randomisation diagnostic,2,1
+model_minus_market_log_score_improvement,Market minus model categorical log score,holdout,10,-0.049363979948785296,exact,1024,0.6875,descriptive paired randomisation diagnostic,3,0
+model_minus_market_log_score_improvement,Market minus model categorical log score,external_test,30,-0.2897315429597503,monte_carlo,100000,0.0006299937000629993,descriptive paired randomisation diagnostic,3,1
+model_minus_market_brier_improvement,Market minus model multiclass Brier score,holdout,10,0.00078064151625869,exact,1024,0.9921875,descriptive paired randomisation diagnostic,4,0
+model_minus_market_brier_improvement,Market minus model multiclass Brier score,external_test,30,-0.0723386228972962,monte_carlo,100000,0.017439825601743984,descriptive paired randomisation diagnostic,4,1
+trading_net_payoff,Locked strategy net payoff,holdout,10,0.05645,exact,1024,0.75,descriptive paired randomisation diagnostic,5,0
+trading_net_payoff,Locked strategy net payoff,external_test,30,-0.019366666666666664,monte_carlo,100000,0.6865931340686593,descriptive paired randomisation diagnostic,5,1

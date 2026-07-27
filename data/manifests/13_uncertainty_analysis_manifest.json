@@ -1,0 +1,154 @@
+{
+  "all_integrity_checks_passed": true,
+  "bootstrap_confidence_level": 0.95,
+  "bootstrap_method": "nonparametric settlement-date bootstrap",
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260727,
+  "claim_limit": "The uncertainty calculations are descriptive finite-sample diagnostics. They do not establish population-level profitability, executable profitability or market inefficiency.",
+  "continuous_calibration_reselected": false,
+  "created_utc": "2026-07-27T22:34:55.394205+00:00",
+  "date_effect_rows": 240,
+  "effect_convention": "baseline loss minus comparator loss; trading uses realised net payoff",
+  "estimand_block_count": 12,
+  "estimand_count": 6,
+  "estimands": [
+    "continuous_crps_improvement",
+    "categorical_log_score_improvement",
+    "categorical_brier_improvement",
+    "model_minus_market_log_score_improvement",
+    "model_minus_market_brier_improvement",
+    "trading_net_payoff"
+  ],
+  "evaluation_blocks": [
+    "holdout",
+    "external_test"
+  ],
+  "executable_profitability_claimed": false,
+  "external_test_used_for_reselection": false,
+  "formal_population_inference_claimed": false,
+  "holdout_used_for_reselection": false,
+  "input_hashes": {
+    "config/uncertainty_analysis_spec.yaml": "ec2797ae37a24c47fa617f99d74fe32281131812ba72fe3dba9ac68a6569bc13",
+    "outputs/diagnostics/07_continuous_prediction_and_outcome_panel.csv": "37e98b888bb4c9da3b531109c1fc23e2c7a7dfe0a32b5eb78d376fc3dfacfe6e",
+    "outputs/diagnostics/10_locked_categorical_score_panel.csv": "91caa4c7a7752dd799123b8fe4e6b97e8541c7c2cbea107f213dfa45ca98a925",
+    "outputs/diagnostics/11_common_support_book_score_panel.csv": "398c2f500b8dbe0504d932598d783ab01413ece1b99526a31d5dbbab6103b9f5",
+    "outputs/diagnostics/12_locked_trading_date_panel.csv": "8393769bba9d0fa0d4f3a0a715d64e70ac792d1010ca48fc6d9471de189b01fe"
+  },
+  "market_inefficiency_claimed": false,
+  "next_stage": "Consolidate the canonical empirical results, robustness tables and thesis figures.",
+  "output_hashes": {
+    "outputs/diagnostics/13_sign_flip_summary.csv": "b58e0843a30ddcde885223fad8f73e15fe061d1f3d38f4aaa62d6b0228823734",
+    "outputs/diagnostics/13_uncertainty_date_effect_panel.csv": "57c36675857b6be322968dc064531bc65d92c6f609afd43cfc7fdb4eca19ea8a",
+    "outputs/diagnostics/13_uncertainty_date_rule_effect_panel.csv": "03e58d719cdcdb157dc6f43fd5baf1a423c4c33025aba0a5b34870f6fee47e3e",
+    "outputs/diagnostics/13_uncertainty_integrity_checks.csv": "44d44150792446bdecc9e336d378149cf44cf8d67d14794fcb6529629a085fbf",
+    "outputs/diagnostics/13_uncertainty_rule_summary.csv": "d2dc6d60b38a294a6f43c2f25f1dffd5d2267a51cdd21544b5d7a6be6a7c5cd1",
+    "outputs/diagnostics/13_uncertainty_source_resolution.csv": "4baebf3c83dfe465339dd4f2f53b0ab93244a308a03429aaf09bc7e6b3129d1e",
+    "outputs/diagnostics/13_uncertainty_summary.csv": "e74d1492ae7b8948e9e0c8fddf29d7554e1446bcc41b32fba995f2c059ffadaa",
+    "outputs/final_tables/13_uncertainty_main_table.csv": "f298b3997e5dc25de39993c08753ef0a7874a1849aa779bfbf7549e7a9e2d81d",
+    "outputs/final_tables/13_uncertainty_rule_sensitivity.csv": "1eeb32d4f2c9164e95df6d2cf49bc17089fcd03d7e549f0b15d8e63e85d7769f"
+  },
+  "positive_effect_interpretation": "positive values favour the locked weather model or locked strategy",
+  "probability_calibration_reselected": false,
+  "resolved_columns": {
+    "categorical_raw_brier_score": "raw_multiclass_brier_score",
+    "categorical_raw_log_score": "raw_log_score_finite",
+    "categorical_regularised_brier_score": "regularised_multiclass_brier_score",
+    "categorical_regularised_log_score": "regularised_categorical_log_score",
+    "continuous_model_crps": "model_crps_99q_derived",
+    "continuous_raw_crps": "raw_crps_derived",
+    "market_brier_score": "market_multiclass_brier_score",
+    "market_log_score": "market_categorical_log_score",
+    "model_brier_score": "model_multiclass_brier_score",
+    "model_log_score": "model_categorical_log_score",
+    "trading_net_payoff": "net_payoff"
+  },
+  "rule_effect_rows": 825,
+  "sign_flip_exact_maximum_dates": 20,
+  "sign_flip_method": "paired settlement-date sign flip",
+  "sign_flip_monte_carlo_replicates": 100000,
+  "sign_flip_seed": 20260728,
+  "source_metadata": [
+    {
+      "block_column": "chronology_block",
+      "block_source": "chronology_block",
+      "blocks": [
+        "external_test",
+        "holdout"
+      ],
+      "date_column": "target_date",
+      "decision_rules": [
+        "12h_prior",
+        "24h_prior",
+        "6h_prior",
+        "event_day_open"
+      ],
+      "distinct_dates": 40,
+      "path": "outputs/diagnostics/07_continuous_prediction_and_outcome_panel.csv",
+      "rows": 477,
+      "rule_column": "decision_rule",
+      "source_name": "continuous"
+    },
+    {
+      "block_column": "chronology_block",
+      "block_source": "chronology_block",
+      "blocks": [
+        "external_test",
+        "holdout"
+      ],
+      "date_column": "target_date",
+      "decision_rules": [
+        "12h_prior",
+        "24h_prior",
+        "6h_prior",
+        "event_day_open"
+      ],
+      "distinct_dates": 40,
+      "path": "outputs/diagnostics/10_locked_categorical_score_panel.csv",
+      "rows": 159,
+      "rule_column": "decision_rule",
+      "source_name": "categorical_model"
+    },
+    {
+      "block_column": "chronology_block",
+      "block_source": "chronology_block",
+      "blocks": [
+        "external_test",
+        "holdout"
+      ],
+      "date_column": "target_date",
+      "decision_rules": [
+        "12h_prior",
+        "24h_prior",
+        "6h_prior",
+        "event_day_open"
+      ],
+      "distinct_dates": 40,
+      "path": "outputs/diagnostics/11_common_support_book_score_panel.csv",
+      "rows": 154,
+      "rule_column": "decision_rule",
+      "source_name": "model_market"
+    },
+    {
+      "block_column": "chronology_block",
+      "block_source": "chronology_block",
+      "blocks": [
+        "external_test",
+        "holdout"
+      ],
+      "date_column": "target_date",
+      "decision_rules": [
+        "24h_prior"
+      ],
+      "distinct_dates": 40,
+      "path": "outputs/diagnostics/12_locked_trading_date_panel.csv",
+      "rows": 40,
+      "rule_column": "selected_rule",
+      "source_name": "trading"
+    }
+  ],
+  "status": "DATE_LEVEL_UNCERTAINTY_ANALYSIS_COMPLETE",
+  "strategy_refitted_before_external_test": false,
+  "trading_strategy_reselected": false,
+  "uncertainty_unit": "settlement_date",
+  "weather_model_reselected": false
+}

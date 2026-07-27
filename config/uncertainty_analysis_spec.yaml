@@ -1,0 +1,67 @@
+status: DATE_LEVEL_UNCERTAINTY_DESIGN_DECLARED
+
+sources:
+  continuous: outputs/diagnostics/07_continuous_prediction_and_outcome_panel.csv
+  categorical_model: outputs/diagnostics/10_locked_categorical_score_panel.csv
+  model_market: outputs/diagnostics/11_common_support_book_score_panel.csv
+  trading: outputs/diagnostics/12_locked_trading_date_panel.csv
+
+evaluation_blocks:
+  holdout:
+    start: 2026-05-22
+    end: 2026-05-31
+    expected_calendar_dates: 10
+  external_test:
+    start: 2026-06-01
+    end: 2026-06-30
+    expected_calendar_dates: 30
+
+uncertainty_unit: settlement_date
+
+estimands:
+  - continuous_crps_improvement
+  - categorical_log_score_improvement
+  - categorical_brier_improvement
+  - model_minus_market_log_score_improvement
+  - model_minus_market_brier_improvement
+  - trading_net_payoff
+
+effect_convention:
+  loss_scores: baseline_loss_minus_comparator_loss
+  trading: realised_net_payoff
+  interpretation: positive_values_favour_the_locked_weather_model_or_strategy
+
+bootstrap:
+  method: nonparametric_settlement_date_bootstrap
+  replicates: 20000
+  confidence_level: 0.95
+  seed: 20260727
+
+sign_flip:
+  method: paired_settlement_date_sign_flip
+  exact_maximum_dates: 20
+  monte_carlo_replicates: 100000
+  seed: 20260728
+  alternative: two_sided
+  interpretation: descriptive_randomisation_diagnostic
+
+minimum_dates_per_estimand_block: 5
+
+primary_reporting:
+  - mean_effect
+  - standard_error
+  - percentile_bootstrap_interval
+  - median_effect
+  - positive_effect_share
+  - paired_sign_flip_p_value
+
+weather_model_reselected: false
+continuous_calibration_reselected: false
+probability_calibration_reselected: false
+trading_strategy_reselected: false
+strategy_refitted_before_external_test: false
+
+claim_limit: >
+  The uncertainty calculations are descriptive finite-sample diagnostics.
+  They do not establish population-level profitability, executable
+  profitability or market inefficiency.
