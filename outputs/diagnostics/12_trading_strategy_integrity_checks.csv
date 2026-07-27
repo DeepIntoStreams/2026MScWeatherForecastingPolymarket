@@ -1,0 +1,14 @@
+check,passed,value
+development_uses_balanced_four_rule_dates,True,29
+minimum_balanced_dates_satisfied,True,29
+model_probabilities_are_valid,True,True
+raw_market_prices_are_valid,True,True
+minimum_selected_trade_count_satisfied,True,25
+at_most_one_trade_per_evaluation_date,True,0
+holdout_not_used_for_selection,True,False
+external_test_not_used_for_selection,True,False
+weather_model_not_reselected,True,False
+continuous_calibration_not_reselected,True,False
+probability_calibration_not_reselected,True,False
+categorically_normalised_prices_not_used,True,False
+strategy_not_refitted_before_external_test,True,False

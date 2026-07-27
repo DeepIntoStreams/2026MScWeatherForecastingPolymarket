@@ -258,3 +258,20 @@ Notebook 02.
 - Used settlement date as the uncertainty unit.
 - Did not revisit model selection or calibration.
 - Did not calculate trading returns.
+
+## Notebook 12 locked trading strategy
+
+- Status: `TRADING_STRATEGY_LOCKED_AND_EVALUATED`.
+- Used 29 balanced development dates.
+- Compared all four decision rules on identical date support.
+- Used raw market prices rather than categorical normalisation.
+- Selected `24h_prior__tau_0.075`.
+- Locked decision rule: `24h_prior`.
+- Locked edge threshold: `0.075`.
+- Permitted at most one long-YES position per settlement date.
+- Kept the weather model and both calibration stages unchanged.
+- Did not use holdout or June outcomes for strategy selection.
+- Did not refit the strategy before the June external block.
+- Evaluated the holdout and June blocks separately.
+- Added fixed-cost sensitivity without reselection.
+- Retained reduced-form rather than executable-profitability claims.

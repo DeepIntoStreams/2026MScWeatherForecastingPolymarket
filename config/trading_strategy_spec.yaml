@@ -1,0 +1,63 @@
+status: TRADING_STRATEGY_DESIGN_DECLARED
+
+development_probability_source: outputs/diagnostics/09_development_regularised_event_probability_panel.csv
+locked_probability_source: outputs/diagnostics/09_locked_regularised_event_probability_panel.csv
+canonical_market_source: data/processed/18sA_canonical_source_adapters/18sA_canonical_market_panel.csv
+certified_outcome_source: data/processed/certified_event_books.csv
+
+development_period:
+  start: 2026-04-12
+  end: 2026-05-21
+
+evaluation_blocks:
+  - holdout
+  - external_test
+
+decision_rules:
+  - 24h_prior
+  - 12h_prior
+  - 6h_prior
+  - event_day_open
+
+trade_direction: buy_yes_only
+maximum_positions_per_settlement_date: 1
+
+edge_definition: model_probability_minus_raw_market_price
+
+threshold_grid:
+  - 0.00
+  - 0.01
+  - 0.02
+  - 0.03
+  - 0.05
+  - 0.075
+  - 0.10
+  - 0.15
+  - 0.20
+
+selection_cost_per_trade: 0.01
+
+cost_sensitivity_grid:
+  - 0.00
+  - 0.005
+  - 0.01
+  - 0.02
+  - 0.03
+
+minimum_development_trades: 8
+minimum_balanced_development_dates: 20
+
+selection_score: mean_settlement_date_net_payoff
+selection_rule: paired_one_standard_error_conservative_threshold
+uncertainty_unit: settlement_date
+
+market_prices_used_for_weather_model_selection: false
+market_prices_used_for_continuous_calibration: false
+market_prices_used_for_probability_calibration: false
+
+categorically_normalised_market_prices_permitted: false
+raw_market_prices_required: true
+
+holdout_used_for_strategy_selection: false
+external_test_used_for_strategy_selection: false
+strategy_refitted_before_external_test: false
