@@ -211,3 +211,19 @@ Notebook 02.
 - Market prices not accessed.
 - Trading returns not calculated.
 - Next task: development-only selection of uniform probability mixing.
+
+## Notebook 09 probability calibration
+
+- Retained the pooled empirical residual model.
+- Retained the continuous dispersion scale of 1.25.
+- Used 152 calibrated out-of-fold forecasts over 38 development dates.
+- Treated settlement date as the uncertainty unit.
+- Used categorical log score as the primary selection criterion.
+- Retained multiclass Brier score as a secondary diagnostic.
+- Evaluated 101 mixing parameters from 0.00 to 1.00.
+- Obtained a strict development winner of 0.02.
+- Selected 0.01 using the one-standard-error rule.
+- Applied 0.01 unchanged to the holdout and June probability books.
+- Did not use holdout or June outcomes for selection.
+- Did not access market prices or calculate trading returns.
+- Next stage: locked categorical evaluation.

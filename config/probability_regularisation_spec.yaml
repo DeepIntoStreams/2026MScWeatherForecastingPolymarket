@@ -1,0 +1,56 @@
+status: DECLARED_BEFORE_PROBABILITY_CALIBRATION
+random_seed: 20260721
+
+selected_forecast:
+  model: pooled_empirical_residual
+  family: empirical_residual
+  continuous_dispersion_scale: 1.25
+  development_source: outputs/diagnostics/05_selected_oof_calibrated_predictions.csv
+  locked_probability_source: outputs/diagnostics/08_locked_event_probability_panel.csv
+
+development_support:
+  chronology_block: development_validation
+  settlement_dates: 38
+  date_rule_rows: 152
+  event_probability_rows: 1672
+  decision_rules_per_complete_date: 4
+  uncertainty_unit: settlement_date
+  aggregate_rules_within_date: true
+
+event_mapping:
+  event_book_source: data/processed/certified_event_books.csv
+  event_count: 11
+  quantile_particle_count: 99
+  particles_are_independent_draws: false
+  boundary_membership_uses_certified_contract_rules: true
+
+uniform_probability_mixing:
+  formula: p_regularised_equals_one_minus_lambda_times_p_raw_plus_lambda_divided_by_11
+  minimum_lambda: 0.00
+  maximum_lambda: 1.00
+  increment: 0.01
+  candidate_count: 101
+
+selection:
+  primary_score: settlement_date_mean_categorical_log_score
+  secondary_score: settlement_date_mean_multiclass_brier_score
+  rule: smallest_lambda_within_one_standard_error_of_best_mean_log_score
+  tie_breaker: smaller_lambda
+
+locked_application:
+  blocks:
+    - holdout
+    - external_test
+  prediction_books: 159
+  probability_rows: 1749
+  model_refitted: false
+  model_reselected: false
+  continuous_calibration_reselected: false
+
+evidential_boundary:
+  holdout_outcomes_used_for_selection: false
+  external_test_outcomes_used_for_selection: false
+  holdout_scores_calculated: false
+  external_test_scores_calculated: false
+  market_prices_accessed: false
+  trading_returns_calculated: false

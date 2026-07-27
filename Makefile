@@ -91,3 +91,12 @@ create-notebook-08:
 
 execute-08:
 	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/08_locked_event_probabilities.ipynb
+
+calibrate-probabilities-09:
+	python3 tools/calibrate_event_probabilities.py
+
+execute-09:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/09_probability_calibration.ipynb
+
+test-09:
+	PYTHONPATH=src python3 -m unittest tests.test_notebook09_probability_calibration -v
