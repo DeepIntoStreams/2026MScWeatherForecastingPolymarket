@@ -1,0 +1,9 @@
+check,passed,value,detail
+all_required_sources_exist,True,13,All declared manifests and final tables exist.
+all_final_tables_nonempty,True,5,Every final empirical table contains rows.
+all_stage_statuses_complete,True,8,"No status is missing or contains FAILED, ERROR or BLOCKED."
+no_selection_leakage_flags,True,0,"No holdout, June, external-test or market-price selection flag is true."
+selected_model_lineage_consistent,True,1,pooled_empirical_residual
+claim_register_complete,True,10,Each principal empirical conclusion has a stated evidential boundary.
+uncertainty_unit_is_settlement_date,True,1,Notebook 13 and Notebook 14 use settlement date as the uncertainty unit.
+primary_results_register_nonempty,True,513,Principal numerical evidence has been consolidated from locked manifests and tables.

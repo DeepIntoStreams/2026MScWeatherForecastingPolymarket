@@ -293,3 +293,13 @@ Notebook 02.
 - Reported holdout and June uncertainty separately.
 - Treated all inference as descriptive finite-sample evidence.
 - Made no executable-profitability or market-inefficiency claim.
+
+## Notebook 14: Final Empirical Synthesis
+
+Status: complete.
+
+The locked results from Notebooks 04 to 13 have been consolidated
+into a single numerical evidence register and a claim-boundary
+table. No model, calibration parameter or trading strategy was
+reselected. The next empirical stage is the final reproducibility
+and release audit.

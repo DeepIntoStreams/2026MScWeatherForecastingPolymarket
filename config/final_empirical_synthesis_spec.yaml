@@ -1,0 +1,48 @@
+stage: notebook14_final_empirical_synthesis
+status_on_success: FINAL_EMPIRICAL_SYNTHESIS_COMPLETE
+
+purpose:
+  - consolidate the empirical evidence produced by Notebooks 04 to 13
+  - preserve the locked model, calibration and strategy lineage
+  - distinguish supported empirical findings from unsupported claims
+  - prepare thesis-ready evidence registers without rerunning model selection
+
+source_manifests:
+  - data/manifests/04_model_selection_manifest.json
+  - data/manifests/05_continuous_calibration_manifest.json
+  - data/manifests/08_event_probability_manifest.json
+  - data/manifests/09_probability_calibration_manifest.json
+  - data/manifests/10_categorical_evaluation_manifest.json
+  - data/manifests/11_market_comparison_manifest.json
+  - data/manifests/12_trading_strategy_manifest.json
+  - data/manifests/13_uncertainty_analysis_manifest.json
+
+source_final_tables:
+  - outputs/final_tables/10_locked_categorical_block_summary.csv
+  - outputs/final_tables/11_common_support_block_summary.csv
+  - outputs/final_tables/12_trading_strategy_summary.csv
+  - outputs/final_tables/13_uncertainty_main_table.csv
+  - outputs/final_tables/13_uncertainty_rule_sensitivity.csv
+
+uncertainty_unit: settlement_date
+
+prohibited_actions:
+  - model reselection
+  - continuous calibration reselection
+  - probability calibration reselection
+  - trading strategy reselection
+  - external test refitting
+  - retrospective feature construction
+  - executable profitability claims
+  - population level statistical significance claims
+
+required_outputs:
+  - outputs/diagnostics/14_empirical_source_inventory.csv
+  - outputs/diagnostics/14_stage_status_register.csv
+  - outputs/diagnostics/14_manifest_metric_register.csv
+  - outputs/diagnostics/14_final_table_metric_register.csv
+  - outputs/diagnostics/14_empirical_claim_register.csv
+  - outputs/diagnostics/14_empirical_synthesis_integrity_checks.csv
+  - outputs/final_tables/14_primary_empirical_results_register.csv
+  - outputs/final_tables/14_claim_boundary_table.csv
+  - data/manifests/14_final_empirical_synthesis_manifest.json
