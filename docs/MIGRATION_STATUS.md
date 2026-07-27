@@ -148,3 +148,23 @@ Notebook 02.
 - Market data inaccessible.
 - Event-probability regularisation deferred to a separate stage.
 - Next task: fit the locked model and scale, then evaluate locked periods.
+
+## Locked holdout and external predictions
+
+- Notebook 04 model choice retained without alteration.
+- Notebook 05 dispersion scale retained without alteration.
+- Final fitting restricted to warm-up and development observations.
+- Holdout outcomes excluded from final fitting.
+- External outcomes excluded from final fitting.
+- No refit performed after holdout.
+- Ninety-nine quantiles generated for every retained prediction.
+- Uncalibrated and calibrated distributions both retained.
+- Predictive median preservation tested.
+- Quantile monotonicity tested.
+- Forecast issue-time admissibility tested.
+- Realised outcomes excluded from prediction files.
+- Continuous scores not calculated.
+- Event probabilities not calculated.
+- Market prices not accessed.
+- Trading returns not calculated.
+- Next task: evaluate the locked continuous distributions.

@@ -1,0 +1,44 @@
+status: DECLARED_BEFORE_LOCKED_PREDICTION_GENERATION
+random_seed: 20260721
+
+training:
+  permitted_blocks:
+    - warmup_training
+    - development_validation
+  holdout_outcomes_permitted: false
+  external_test_outcomes_permitted: false
+  refit_after_holdout: false
+
+prediction:
+  blocks:
+    - holdout
+    - external_test
+  quantile_count: 99
+  first_quantile: 0.01
+  final_quantile: 0.99
+  include_realised_outcomes: false
+  include_scores: false
+  include_market_data: false
+  include_trading_results: false
+
+lineage:
+  model_selection_manifest:
+    data/manifests/04_model_selection_manifest.json
+  calibration_manifest:
+    data/manifests/05_continuous_calibration_manifest.json
+  deterministic_forecast_panel:
+    data/processed/02_selected_deterministic_forecast_panel.csv
+  chronology_panel:
+    data/processed/02_chronological_design_panel.csv
+
+calibration:
+  transformation: median_preserving_dispersion_scaling
+  scale_source:
+    data/manifests/05_continuous_calibration_manifest.json
+  refitting_permitted: false
+
+evaluation_boundary:
+  continuous_scores_calculated_here: false
+  event_probabilities_calculated_here: false
+  market_prices_accessed_here: false
+  trading_returns_calculated_here: false

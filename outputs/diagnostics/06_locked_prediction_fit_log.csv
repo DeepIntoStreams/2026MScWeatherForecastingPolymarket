@@ -1,0 +1,2 @@
+candidate_model,component,scope,training_rows,training_dates,prediction_rows,status,warning_count,learned_kernel,message,training_start,training_end,selected_family,dispersion_scale
+pooled_empirical_residual,empirical_residual,pooled,216,62,159,OK,0,,Ninety-nine empirical residual quantiles estimated from the full pre-holdout sample.,2026-03-16,2026-05-21,empirical_residual,1.25

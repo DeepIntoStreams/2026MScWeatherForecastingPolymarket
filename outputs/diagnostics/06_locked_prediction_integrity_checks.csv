@@ -1,0 +1,15 @@
+check,passed,value
+training_rows_equal_216,True,216
+training_dates_equal_62,True,62
+prediction_rows_equal_159,True,159
+prediction_dates_equal_40,True,40
+holdout_rows_equal_40,True,40
+external_rows_equal_119,True,119
+training_precedes_holdout,True,2026-05-21 < 2026-05-22
+all_forecasts_available_by_decision,True,True
+all_paths_have_24_local_hours,True,True
+quantiles_finite,True,True
+quantiles_monotone,True,True
+predictive_median_preserved,True,0.0
+no_outcome_or_score_columns,True,True
+all_final_model_fits_ok,True,True
