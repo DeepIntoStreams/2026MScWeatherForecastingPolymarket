@@ -312,3 +312,15 @@ The empirical parent commit has been audited for manifest lineage,
 hash consistency, canonical notebook execution, branch alignment,
 test completion and preservation of all locked choices. The next
 stage is thesis table extraction and final empirical reporting.
+
+## Notebook 16: Thesis Evidence
+
+Status: complete.
+
+The certified empirical release has been converted into compact CSV
+tables, LaTeX tables, figures, a numerical results register and a
+claim-boundary register. No model, calibration parameter or trading
+strategy was changed.
+
+The empirical implementation is ready for integration into the
+dissertation Results, Discussion and Appendix chapters.

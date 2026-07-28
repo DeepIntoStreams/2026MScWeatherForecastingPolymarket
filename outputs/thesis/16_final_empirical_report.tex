@@ -1,0 +1,30 @@
+\subsection{Final empirical evidence}
+
+The selected probabilistic specification is
+\texttt{pooled\_empirical\_residual}, from the
+\texttt{empirical\_residual} family. Model selection used
+date-grouped out-of-fold continuous ranked probability score on the
+development period. Mean date CRPS decreased from
+\(1.922368\) for the raw deterministic forecast to
+\(0.732178\) for the selected model, corresponding to a
+relative reduction of \(61.91\%\).
+
+The selected continuous dispersion scale is
+\(1.25\), while the selected uniform probability-mixing
+parameter is \(0.01\). These quantities were selected
+before the May holdout and June external evaluation blocks were scored.
+
+\paragraph{Interpretation.}
+The results are finite-sample, block-specific comparisons. They do not
+establish population-level significance, universal superiority, market
+inefficiency or executable profitability.
+
+\input{outputs/thesis/16_model_selection_table.tex}
+
+\input{outputs/thesis/16_calibration_table.tex}
+
+\input{outputs/thesis/16_categorical_evaluation_table.tex}
+
+\input{outputs/thesis/16_market_comparison_table.tex}
+
+\input{outputs/thesis/16_trading_evaluation_table.tex}

@@ -1,0 +1,23 @@
+{
+  "all_integrity_checks_passed": true,
+  "continuous_calibration_reselected": false,
+  "created_utc": "2026-07-28T00:27:14.501145+00:00",
+  "figure_count": 3,
+  "inventory_path": "outputs/thesis/16_thesis_output_inventory.csv",
+  "key_results_path": "outputs/thesis/16_key_results.json",
+  "model_reselected": false,
+  "next_stage": "integrate the locked evidence into the dissertation",
+  "output_file_count": 20,
+  "probability_calibration_reselected": false,
+  "release_commit": "019ce05d69561f00b6bc7e8caf1ab885de7d994e",
+  "release_manifest": "data/manifests/15_reproducibility_release_manifest.json",
+  "report_latex_path": "outputs/thesis/16_final_empirical_report.tex",
+  "report_markdown_path": "outputs/thesis/16_final_empirical_report.md",
+  "selected_continuous_scale": 1.25,
+  "selected_family": "empirical_residual",
+  "selected_model": "pooled_empirical_residual",
+  "selected_probability_mixing_lambda": 0.01,
+  "status": "THESIS_EVIDENCE_PACKAGE_COMPLETE",
+  "table_count": 7,
+  "trading_strategy_reselected": false
+}

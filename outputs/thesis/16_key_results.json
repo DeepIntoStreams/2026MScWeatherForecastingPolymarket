@@ -1,0 +1,18 @@
+{
+  "candidate_count": 9,
+  "development_common_support_dates": 38,
+  "development_common_support_rows": 132,
+  "full_test_count_at_release": 156,
+  "raw_mean_date_crps": 1.9223684210526315,
+  "relative_crps_reduction": 0.6191271233899571,
+  "relative_crps_reduction_percent": 61.91271233899571,
+  "release_commit": "019ce05d69561f00b6bc7e8caf1ab885de7d994e",
+  "release_ready": true,
+  "selected_continuous_scale": 1.25,
+  "selected_family": "empirical_residual",
+  "selected_mean_date_crps": 0.7321779904306219,
+  "selected_model": "pooled_empirical_residual",
+  "selected_probability_mixing_lambda": 0.01,
+  "strict_probability_mixing_lambda": 0.02,
+  "uncertainty_unit": "settlement_date"
+}

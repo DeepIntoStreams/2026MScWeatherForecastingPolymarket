@@ -1,0 +1,3 @@
+calibration_stage,selected_value,strict_winner_value,primary_score,selected_mean_score,selection_rule
+continuous dispersion,1.25000000,1.50000000,99-quantile date-grouped mean CRPS,0.73640853,paired one-standard-error preference for scale closest to one
+event probability mixing,0.01000000,0.02000000,settlement-date categorical log score,1.59141741,smallest lambda within one standard error of the best settlement-date mean log score

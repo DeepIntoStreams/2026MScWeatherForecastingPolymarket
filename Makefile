@@ -155,3 +155,12 @@ python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreproce
 
 test-15:
 PYTHONPATH=src python3 -m unittest tests.test_notebook15_release_audit -v
+
+build-16:
+python3 tools/build_notebook16_thesis_evidence.py
+
+execute-16:
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/final/16_thesis_evidence_and_reporting.ipynb
+
+test-16:
+PYTHONPATH=src python3 -m unittest tests.test_notebook16_thesis_evidence -v

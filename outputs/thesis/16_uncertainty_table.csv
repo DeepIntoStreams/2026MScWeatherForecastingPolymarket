@@ -1,0 +1,55 @@
+source_table,estimand,estimand_label,chronology_block,settlement_dates,mean_effect,standard_error,bootstrap_lower,bootstrap_upper,median_effect,positive_effect_share,sign_flip_method,sign_flip_repetitions,sign_flip_two_sided_p_value,positive_effect_interpretation,decision_rule,minimum_effect,maximum_effect
+main,continuous_crps_improvement,Raw minus locked-model CRPS,holdout,10,1.41111274,0.23390791,0.93860327,1.79462639,1.52661463,0.90000000,exact,1024.00000000,0.00390625,positive values favour the locked weather model,,,
+main,continuous_crps_improvement,Raw minus locked-model CRPS,external_test,30,1.19600331,0.14883058,0.90079763,1.48107086,1.21485642,0.90000000,monte_carlo,100000.00000000,0.00001000,positive values favour the locked weather model,,,
+main,categorical_log_score_improvement,Raw minus regularised categorical log score,holdout,10,-0.14071367,0.14641996,-0.38850197,0.14966137,-0.36160662,0.30000000,exact,1024.00000000,0.35742188,positive values favour the locked weather model,,,
+main,categorical_log_score_improvement,Raw minus regularised categorical log score,external_test,30,-0.52192513,0.10503396,-0.74591766,-0.34333818,-0.38071993,0.03333333,monte_carlo,100000.00000000,0.00001000,positive values favour the locked weather model,,,
+main,categorical_brier_improvement,Raw minus regularised multiclass Brier score,holdout,10,-0.00108991,0.00036571,-0.00180999,-0.00045624,-0.00054685,0.10000000,exact,1024.00000000,0.00390625,positive values favour the locked weather model,,,
+main,categorical_brier_improvement,Raw minus regularised multiclass Brier score,external_test,30,-0.00057677,0.00023903,-0.00101562,-0.00009666,-0.00071374,0.26666667,monte_carlo,100000.00000000,0.02308977,positive values favour the locked weather model,,,
+main,model_minus_market_log_score_improvement,Market minus model categorical log score,holdout,10,-0.04936398,0.11549720,-0.24668128,0.18108748,-0.09850526,0.40000000,exact,1024.00000000,0.68750000,positive values favour the locked weather model,,,
+main,model_minus_market_log_score_improvement,Market minus model categorical log score,external_test,30,-0.28973154,0.08880719,-0.47024410,-0.13236772,-0.32512566,0.20000000,monte_carlo,100000.00000000,0.00062999,positive values favour the locked weather model,,,
+main,model_minus_market_brier_improvement,Market minus model multiclass Brier score,holdout,10,0.00078064,0.05486982,-0.09349633,0.10908794,-0.05096808,0.50000000,exact,1024.00000000,0.99218750,positive values favour the locked weather model,,,
+main,model_minus_market_brier_improvement,Market minus model multiclass Brier score,external_test,30,-0.07233862,0.02859684,-0.12537738,-0.01588784,-0.11357756,0.23333333,monte_carlo,100000.00000000,0.01743983,positive values favour the locked weather model,,,
+main,trading_net_payoff,Locked strategy net payoff,holdout,10,0.05645000,0.07696494,-0.06955000,0.21050000,0.00000000,0.20000000,exact,1024.00000000,0.75000000,positive values favour the locked trading strategy,,,
+main,trading_net_payoff,Locked strategy net payoff,external_test,30,-0.01936667,0.04753677,-0.09878333,0.07898333,-0.09500000,0.10000000,monte_carlo,100000.00000000,0.68659313,positive values favour the locked trading strategy,,,
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,holdout,10,1.25908938,0.31779091,,,1.69669039,0.80000000,,,,,24h_prior,-0.42982476,2.21562978
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,holdout,10,1.43128635,0.30371622,,,1.65249847,0.90000000,,,,,12h_prior,-1.00861264,2.35489746
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,holdout,10,1.45136211,0.26032561,,,1.66184190,0.90000000,,,,,6h_prior,-0.42982476,2.21562978
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,holdout,10,1.50271312,0.13208569,,,1.44416514,1.00000000,,,,,event_day_open,0.66373584,2.21562978
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,external_test,30,1.26385369,0.17993316,,,1.44416514,0.90000000,,,,,24h_prior,-1.09245103,2.41184190
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,external_test,30,1.25691766,0.14627025,,,1.34517524,0.90000000,,,,,12h_prior,-0.59952173,2.33570554
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,external_test,29,1.14164859,0.18638310,,,1.39770049,0.86206897,,,,,6h_prior,-1.00861264,2.40174089
+decision_rule,continuous_crps_improvement,Raw minus locked-model CRPS,external_test,30,1.12060874,0.16843740,,,1.23703130,0.86666667,,,,,event_day_open,-0.93866315,2.44378635
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,holdout,10,-0.26661478,0.18329286,,,-0.42333563,0.30000000,,,,,24h_prior,-1.29353526,0.83855002
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,holdout,10,-0.10877857,0.15742741,,,-0.21898945,0.30000000,,,,,12h_prior,-0.70976063,0.92840635
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,holdout,10,-0.11531184,0.14306483,,,-0.25963100,0.30000000,,,,,6h_prior,-0.51000402,0.83855002
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,holdout,10,-0.07214949,0.13409916,,,-0.18567093,0.30000000,,,,,event_day_open,-0.51000402,0.65878928
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,external_test,30,-0.53656173,0.08858107,,,-0.48786760,0.03333333,,,,,24h_prior,-1.97771377,0.75270346
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,external_test,30,-0.40724745,0.06230657,,,-0.38266459,0.03333333,,,,,12h_prior,-1.29353526,0.34782026
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,external_test,29,-0.52141553,0.09520712,,,-0.38266459,0.03448276,,,,,6h_prior,-1.64635663,0.71352931
+decision_rule,categorical_log_score_improvement,Raw minus regularised categorical log score,external_test,30,-0.63108981,0.23746015,,,-0.26972418,0.03333333,,,,,event_day_open,-7.00306546,0.77799217
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,holdout,10,-0.00044789,0.00066484,,,-0.00051666,0.20000000,,,,,24h_prior,-0.00253274,0.00473999
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,holdout,10,-0.00116409,0.00038558,,,-0.00103625,0.10000000,,,,,12h_prior,-0.00353974,0.00061018
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,holdout,10,-0.00121922,0.00037100,,,-0.00072325,0.00000000,,,,,6h_prior,-0.00307889,-0.00001110
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,holdout,10,-0.00152845,0.00041110,,,-0.00124098,0.00000000,,,,,event_day_open,-0.00348185,-0.00001110
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,external_test,30,-0.00027751,0.00027826,,,-0.00017201,0.36666667,,,,,24h_prior,-0.00301988,0.00323645
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,external_test,30,-0.00084453,0.00024745,,,-0.00094000,0.20000000,,,,,12h_prior,-0.00307889,0.00224665
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,external_test,29,-0.00046838,0.00031641,,,-0.00076943,0.31034483,,,,,6h_prior,-0.00325440,0.00271464
+decision_rule,categorical_brier_improvement,Raw minus regularised multiclass Brier score,external_test,30,-0.00068054,0.00032269,,,-0.00112627,0.26666667,,,,,event_day_open,-0.00285540,0.00418969
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,holdout,10,-0.07717307,0.10979727,,,0.00887089,0.50000000,,,,,24h_prior,-0.85944329,0.24305543
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,holdout,10,0.01495911,0.14007504,,,-0.10845521,0.40000000,,,,,12h_prior,-0.42433224,1.01609460
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,holdout,10,-0.02114593,0.19693776,,,-0.23152462,0.40000000,,,,,6h_prior,-0.62380870,1.26607115
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,holdout,10,-0.11409603,0.14966165,,,-0.21333001,0.30000000,,,,,event_day_open,-0.62310658,0.76647259
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,external_test,27,-0.21829452,0.06985018,,,-0.36128365,0.18518519,,,,,24h_prior,-0.70678132,0.84514019
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,external_test,28,-0.10830858,0.08472282,,,-0.16286775,0.28571429,,,,,12h_prior,-0.74869463,1.46593775
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,external_test,29,-0.33406039,0.07731257,,,-0.28207988,0.17241379,,,,,6h_prior,-1.23625668,0.48525604
+decision_rule,model_minus_market_log_score_improvement,Market minus model categorical log score,external_test,30,-0.40796321,0.15123836,,,-0.33550694,0.26666667,,,,,event_day_open,-4.05290127,0.75254597
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,holdout,10,-0.00662558,0.04829872,,,0.04048742,0.70000000,,,,,24h_prior,-0.32040491,0.17742866
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,holdout,10,0.03430512,0.06494135,,,-0.03715343,0.50000000,,,,,12h_prior,-0.17069374,0.43082924
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,holdout,10,0.00326661,0.09560266,,,-0.14299006,0.40000000,,,,,6h_prior,-0.26620956,0.54073086
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,holdout,10,-0.02782359,0.08218708,,,-0.10045439,0.30000000,,,,,event_day_open,-0.28974289,0.50903506
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,external_test,27,-0.07309816,0.03466904,,,-0.11649135,0.25925926,,,,,24h_prior,-0.38464742,0.32761404
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,external_test,28,-0.02987977,0.03680195,,,-0.07946515,0.32142857,,,,,12h_prior,-0.37105002,0.45932070
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,external_test,29,-0.11224011,0.03552190,,,-0.07657864,0.31034483,,,,,6h_prior,-0.44926369,0.28549496
+decision_rule,model_minus_market_brier_improvement,Market minus model multiclass Brier score,external_test,30,-0.09114573,0.03766424,,,-0.14662674,0.30000000,,,,,event_day_open,-0.41814951,0.41982512
+decision_rule,trading_net_payoff,Locked strategy net payoff,holdout,10,0.05645000,0.07696494,,,0.00000000,0.20000000,,,,,24h_prior,-0.32500000,0.61000000
+decision_rule,trading_net_payoff,Locked strategy net payoff,external_test,30,-0.01936667,0.04753677,,,-0.09500000,0.10000000,,,,,24h_prior,-0.24000000,0.86000000

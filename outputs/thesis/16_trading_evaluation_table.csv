@@ -1,0 +1,3 @@
+chronology_block,calendar_dates,market_supported_dates,market_unsupported_dates,selected_strategy,edge_threshold,cost_per_trade,trade_count,trade_share_all_calendar_dates,cumulative_net_payoff,mean_calendar_date_net_payoff,standard_error_calendar_date_net_payoff,mean_supported_date_net_payoff,trade_win_share,maximum_drawdown_net_payoff
+holdout,10,10,0,24h_prior__tau_0.075,0.07500000,0.01000000,4,0.40000000,0.56450000,0.05645000,0.07696494,0.05645000,0.50000000,-0.32500000
+external_test,30,27,3,24h_prior__tau_0.075,0.07500000,0.01000000,26,0.86666667,-0.58100000,-0.01936667,0.04753677,-0.02151852,0.11538462,-1.12200000

@@ -1,0 +1,3 @@
+chronology_block,dates,probability_books,decision_rules,raw_zero_probability_books,mean_date_regularised_log_score,standard_error_date_regularised_log_score,mean_date_raw_brier_score,mean_date_regularised_brier_score,standard_error_date_regularised_brier_score,mean_date_brier_difference_regularised_minus_raw,standard_error_date_brier_difference
+external_test,30,119,4,1,1.51359180,0.09843167,0.71877303,0.71934980,0.02995661,0.00057677,0.00023903
+holdout,10,40,4,0,1.14071367,0.14641996,0.58321600,0.58430591,0.07924061,0.00108991,0.00036571

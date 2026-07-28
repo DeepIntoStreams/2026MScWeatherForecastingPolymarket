@@ -1,0 +1,2 @@
+selected_model,selected_family,candidate_count,development_dates,development_rows,raw_mean_date_crps,selected_mean_date_crps,relative_crps_reduction,relative_crps_reduction_percent,selection_rule
+pooled_empirical_residual,empirical_residual,9,38,132,1.92236842,0.73217799,0.61912712,61.91271234,paired one-standard-error parsimony rule

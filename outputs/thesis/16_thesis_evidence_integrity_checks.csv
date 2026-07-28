@@ -1,0 +1,11 @@
+check,passed
+release_is_certified,True
+release_is_ready,True
+model_selection_remains_locked,True
+continuous_calibration_remains_locked,True
+probability_calibration_remains_locked,True
+no_model_reselection,True
+no_calibration_reselection,True
+no_strategy_reselection,True
+all_tables_nonempty,True
+at_least_one_figure_created,True

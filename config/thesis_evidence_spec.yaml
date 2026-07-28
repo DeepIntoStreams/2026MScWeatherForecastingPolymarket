@@ -1,0 +1,37 @@
+stage: notebook16_thesis_evidence
+status_on_success: THESIS_EVIDENCE_PACKAGE_COMPLETE
+
+purpose:
+  - extract thesis-ready numerical tables from the locked empirical release
+  - preserve the exact model, calibration and evaluation lineage
+  - create LaTeX tables and figures without changing empirical choices
+  - produce a concise final empirical reporting register
+
+release_source:
+  data/manifests/15_reproducibility_release_manifest.json
+
+source_manifests:
+  - data/manifests/04_model_selection_manifest.json
+  - data/manifests/05_continuous_calibration_manifest.json
+  - data/manifests/09_probability_calibration_manifest.json
+  - data/manifests/15_reproducibility_release_manifest.json
+
+source_tables:
+  - outputs/final_tables/10_locked_categorical_block_summary.csv
+  - outputs/final_tables/11_common_support_block_summary.csv
+  - outputs/final_tables/12_trading_strategy_summary.csv
+  - outputs/final_tables/13_uncertainty_main_table.csv
+  - outputs/final_tables/13_uncertainty_rule_sensitivity.csv
+  - outputs/final_tables/14_claim_boundary_table.csv
+
+prohibited_actions:
+  - model reselection
+  - continuous calibration reselection
+  - probability calibration reselection
+  - trading strategy reselection
+  - holdout refitting
+  - external-test refitting
+  - retrospective feature construction
+
+output_directory:
+  outputs/thesis
