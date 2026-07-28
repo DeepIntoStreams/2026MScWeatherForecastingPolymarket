@@ -1,0 +1,34 @@
+{
+  "phase": 6,
+  "source": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+  "target_column": "residual_c",
+  "uncertainty_unit": "target_date",
+  "model_scope": "separate_model_for_each_decision_rule",
+  "feature_columns": [
+    "calendar_time_years",
+    "seasonal_sin",
+    "seasonal_cos",
+    "forecast_daily_max_c"
+  ],
+  "initial_training_dates": 365,
+  "validation_blocks": 4,
+  "validation_block_sizes": [
+    91,
+    91,
+    91,
+    92
+  ],
+  "validation_design": "expanding_chronological",
+  "standardisation": "mean_and_population_standard_deviation_estimated_from_each_training_fold_and_decision_rule",
+  "candidate_covariance_kernels": [
+    "squared_exponential_rbf",
+    "matern_three_halves"
+  ],
+  "market_prices_accessed": false,
+  "polymarket_outcomes_accessed": false,
+  "model_fitting_permitted": false,
+  "hyperparameter_estimation_permitted": false,
+  "model_selection_permitted": false,
+  "calibration_permitted": false,
+  "trading_permitted": false
+}

@@ -192,3 +192,8 @@ phase5-residuals:
 python3 tools/v2/build_weather_only_residual_panel.py
 python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/05_weather_only_forecast_residuals.ipynb
 PYTHONPATH=src python3 -m unittest tests.test_v2_phase5_weather_only_residuals -v
+
+phase6-gp-design:
+python3 tools/v2/build_gp_training_design.py
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/06_gp_training_design.ipynb
+PYTHONPATH=src python3 -m unittest tests.test_v2_phase6_gp_training_design -v

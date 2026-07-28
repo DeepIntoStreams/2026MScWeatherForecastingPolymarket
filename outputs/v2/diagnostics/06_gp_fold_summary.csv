@@ -1,0 +1,5 @@
+fold_id,fold_number,training_start,training_end,validation_start,validation_end,training_dates,validation_dates,training_rows,validation_rows
+fold_01,1,2024-03-16,2025-03-15,2025-03-16,2025-06-14,365,91,1460,364
+fold_02,2,2024-03-16,2025-06-14,2025-06-15,2025-09-13,456,91,1824,364
+fold_03,3,2024-03-16,2025-09-13,2025-09-14,2025-12-13,547,91,2188,364
+fold_04,4,2024-03-16,2025-12-13,2025-12-14,2026-03-15,638,92,2552,368

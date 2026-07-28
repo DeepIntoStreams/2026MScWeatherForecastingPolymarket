@@ -1,0 +1,2 @@
+weather_only_dates,decision_rules,raw_design_rows,initial_training_dates,validation_dates,validation_blocks,validation_block_sizes,fold_matrix_rows,scaling_parameter_rows,gp_target,gp_model_scope,gp_features,candidate_kernels,market_prices_accessed,model_fitted
+730,4,2920,365,365,4,91|91|91|92,9484,64,residual_c,separate_by_decision_rule,calendar_time_years|seasonal_sin|seasonal_cos|forecast_daily_max_c,squared_exponential_rbf|matern_three_halves,False,False

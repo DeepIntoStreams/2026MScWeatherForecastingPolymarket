@@ -1,0 +1,72 @@
+{
+  "calibration_selected": false,
+  "candidate_covariance_kernels": [
+    "squared_exponential_rbf",
+    "matern_three_halves"
+  ],
+  "created_utc": "2026-07-28T07:20:37.153536+00:00",
+  "decision_rules": 4,
+  "each_validation_date_used_once": true,
+  "feature_columns": [
+    "calendar_time_years",
+    "seasonal_sin",
+    "seasonal_cos",
+    "forecast_daily_max_c"
+  ],
+  "fold_matrix_rows": 9484,
+  "hyperparameters_estimated": false,
+  "initial_training_dates": 365,
+  "market_prices_accessed": false,
+  "model_fitted": false,
+  "model_scope": "separate_model_for_each_decision_rule",
+  "model_selected": false,
+  "next_stage": "Fit rule-specific Gaussian-process residual models within the certified chronological folds and produce out-of-fold predictive distributions.",
+  "output_hashes": {
+    "outputs/v2/diagnostics/06_gp_fold_date_assignments.csv": "d7cbc5cd8bebaf5238ec2e25af6eda3e050f555c93c33adaba01c9623234e74a",
+    "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv": "e44685584b368f4cb062c982332cb2544abc187e21c6500afdccee3d91529e43",
+    "outputs/v2/diagnostics/06_gp_fold_scaling_parameters.csv": "ba114825110a861811603a2560b22b113b000d6cc6f0fa2362b3e01d73ccb39e",
+    "outputs/v2/diagnostics/06_gp_fold_summary.csv": "43ff96350238e6feaf8d470bee1f268028ed252848f737aee0ff2e0ce9f0b0ea",
+    "outputs/v2/diagnostics/06_gp_raw_design_panel.csv": "914313c8ffb548aef7930f8bc916f177b49b4bb447cfda692daef6295f0e05bc",
+    "outputs/v2/diagnostics/06_gp_training_design_integrity_checks.csv": "31c2bb97aa4eb31aa9fb3d065e72478050e6143677a010bc1f46a659a5a9e3ee",
+    "outputs/v2/final_tables/06_gp_training_design_summary.csv": "5d5326c2729457151e1ad9eb0f20f0374826a783c77d5f3cf2872ec7ee17ff3e"
+  },
+  "output_paths": [
+    "outputs/v2/diagnostics/06_gp_raw_design_panel.csv",
+    "outputs/v2/diagnostics/06_gp_fold_date_assignments.csv",
+    "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv",
+    "outputs/v2/diagnostics/06_gp_fold_scaling_parameters.csv",
+    "outputs/v2/diagnostics/06_gp_fold_summary.csv",
+    "outputs/v2/diagnostics/06_gp_training_design_integrity_checks.csv",
+    "outputs/v2/final_tables/06_gp_training_design_summary.csv"
+  ],
+  "phase": 6,
+  "phase_status": "PHASE6_GP_TRAINING_DESIGN_COMPLETE",
+  "polymarket_outcomes_accessed": false,
+  "raw_design_rows": 2920,
+  "required_integrity_checks_passed": true,
+  "scaling_parameter_rows": 64,
+  "source": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+  "source_sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48",
+  "standardisation_rule": "training_fold_and_decision_rule_only",
+  "standardised_feature_columns": [
+    "calendar_time_years_z",
+    "seasonal_sin_z",
+    "seasonal_cos_z",
+    "forecast_daily_max_c_z"
+  ],
+  "status": "TWO_YEAR_GP_TRAINING_DESIGN_CERTIFIED",
+  "target_column": "residual_c",
+  "trading_returns_calculated": false,
+  "training_dates_precede_validation_dates": true,
+  "uncertainty_unit": "target_date",
+  "validation_block_sizes": [
+    91,
+    91,
+    91,
+    92
+  ],
+  "validation_blocks": 4,
+  "validation_dates": 365,
+  "validation_rule": "expanding_chronological",
+  "weather_only_dates": 730
+}

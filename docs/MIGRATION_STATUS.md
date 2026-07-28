@@ -378,3 +378,10 @@ calculations were performed.
   deterministic date-rule forecasts have been joined to 730 certified
   HKO observations using the residual definition HKO minus forecast.
   No market information or model fitting was used.
+
+- Phase 6 chronological GP training design: complete. The first 365
+  weather-only dates form the initial training period, while the second
+  365 dates form four consecutive validation blocks of 91, 91, 91 and
+  92 dates. Feature standardisation is estimated separately within
+  each training fold and decision rule. No model or market information
+  was used.
