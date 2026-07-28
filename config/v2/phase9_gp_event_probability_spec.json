@@ -1,0 +1,49 @@
+{
+  "phase": 9,
+  "name": "GP contract-event probability construction and proper-score audit",
+  "inputs": {
+    "phase8_manifest": "data/processed/v2/phase8_clean_gp/phase8_manifest.json",
+    "phase8_predictions": "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv"
+  },
+  "periods": {
+    "market_period_start": "2026-03-16",
+    "weather_plus_market_training_end": "2026-05-31",
+    "out_of_sample_validation_start": "2026-06-01",
+    "out_of_sample_validation_end": "2026-06-30"
+  },
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "expected_support": {
+    "settlement_market_universe_dates": 103,
+    "forecast_supported_dates": 102,
+    "forecast_supported_date_rule_rows": 375,
+    "missing_forecast_date_rule_rows": 37,
+    "weather_plus_market_training_dates": 72,
+    "out_of_sample_validation_dates": 30
+  },
+  "scoring": {
+    "probability_clip": 1e-12,
+    "continuous_score": "normal_crps",
+    "binary_scores": [
+      "brier",
+      "log"
+    ],
+    "categorical_scores": [
+      "categorical_log",
+      "multiclass_brier"
+    ],
+    "uncertainty_unit": "target_date"
+  },
+  "output_directory": "outputs/v2/diagnostics/phase9_gp_event_probabilities",
+  "restrictions": {
+    "use_market_prices": false,
+    "impute_missing_forecasts": false,
+    "refit_gp_models": false,
+    "select_models_using_june": false,
+    "probability_support": "exact_common_support"
+  }
+}

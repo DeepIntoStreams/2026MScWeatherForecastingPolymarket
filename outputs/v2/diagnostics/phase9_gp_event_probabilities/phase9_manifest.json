@@ -1,0 +1,65 @@
+{
+  "phase": 9,
+  "status": "passed",
+  "method": {
+    "temperature_distribution": "Gaussian",
+    "location": "phase8_gp_temperature_mean_c",
+    "scale": "phase8_gp_temperature_std_c",
+    "event_probability": "normal_cdf_interval_mass",
+    "continuous_score": "normal_crps",
+    "probability_support": "exact_common_support",
+    "interval_convention": "[lower_bound_c, upper_bound_c)"
+  },
+  "inputs": {
+    "phase8_manifest": {
+      "path": "data/processed/v2/phase8_clean_gp/phase8_manifest.json",
+      "sha256": "c5a03db91bf16a22f00b3e481c984061000d0f5e24494966e3f75946730b045f"
+    },
+    "phase8_predictions": {
+      "path": "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv",
+      "sha256": "594729e6036db9bb6c1dc2e424430008031429dc6e9e17d84edbeec7a689cc1d"
+    },
+    "certified_contract_panel": {
+      "path": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+      "sha256": "5765e7b5befe0fc5af12df0bb0ce79bd406e831531d9acc7e500bd347300c2c7",
+      "detected_columns": {
+        "date_column": "event_date",
+        "contract_id_column": "condition_id",
+        "label_column": "question",
+        "event_type_column": "event_type",
+        "lower_bound_column": "lower_bound_c",
+        "upper_bound_column": "upper_bound_c",
+        "threshold_column": null,
+        "outcome_column": null,
+        "observed_temperature_column": "hko_daily_max_c"
+      }
+    }
+  },
+  "counts": {
+    "settlement_market_universe_dates": 103,
+    "certified_contract_rows": 1133,
+    "forecast_supported_dates": 102,
+    "forecast_supported_date_rule_rows": 375,
+    "contract_event_probability_rows": 4125,
+    "weather_plus_market_training_dates": 72,
+    "weather_plus_market_event_rows": 2816,
+    "out_of_sample_validation_dates": 30,
+    "out_of_sample_validation_event_rows": 1309,
+    "unsupported_date_rule_rows": 37,
+    "unsupported_contract_rule_rows": 407
+  },
+  "integrity": {
+    "all_contract_books_partition_real_line": true,
+    "all_probability_masses_sum_to_one": true,
+    "maximum_absolute_mass_error": 0.0,
+    "exactly_one_realised_yes_per_date": true,
+    "duplicate_event_probability_keys": 0
+  },
+  "restrictions": {
+    "use_market_prices": false,
+    "impute_missing_forecasts": false,
+    "refit_gp_models": false,
+    "select_models_using_june": false,
+    "probability_support": "exact_common_support"
+  }
+}

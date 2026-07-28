@@ -1,0 +1,408 @@
+target_date,source_contract_id,event_label,source_event_type,lower_bound_c,upper_bound_c,event_type,observed_temperature_c,provided_outcome,contract_key,derived_outcome,realised_yes,decision_rule
+2026-03-16,nan,Will the highest temperature in Hong Kong be 14°C or below on March 16?,lower_tail,-inf,15.0,lower_tail,24.0,,2026-03-16|-inf|15.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 14°C or below on March 16?,lower_tail,-inf,15.0,lower_tail,24.0,,2026-03-16|-inf|15.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 14°C or below on March 16?,lower_tail,-inf,15.0,lower_tail,24.0,,2026-03-16|-inf|15.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 15°C on March 16?,interior,15.0,16.0,interior,24.0,,2026-03-16|15.0|16.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 15°C on March 16?,interior,15.0,16.0,interior,24.0,,2026-03-16|15.0|16.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 15°C on March 16?,interior,15.0,16.0,interior,24.0,,2026-03-16|15.0|16.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 16°C on March 16?,interior,16.0,17.0,interior,24.0,,2026-03-16|16.0|17.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 16°C on March 16?,interior,16.0,17.0,interior,24.0,,2026-03-16|16.0|17.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 16°C on March 16?,interior,16.0,17.0,interior,24.0,,2026-03-16|16.0|17.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 17°C on March 16?,interior,17.0,18.0,interior,24.0,,2026-03-16|17.0|18.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 17°C on March 16?,interior,17.0,18.0,interior,24.0,,2026-03-16|17.0|18.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 17°C on March 16?,interior,17.0,18.0,interior,24.0,,2026-03-16|17.0|18.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 18°C on March 16?,interior,18.0,19.0,interior,24.0,,2026-03-16|18.0|19.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 18°C on March 16?,interior,18.0,19.0,interior,24.0,,2026-03-16|18.0|19.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 18°C on March 16?,interior,18.0,19.0,interior,24.0,,2026-03-16|18.0|19.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 19°C on March 16?,interior,19.0,20.0,interior,24.0,,2026-03-16|19.0|20.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 19°C on March 16?,interior,19.0,20.0,interior,24.0,,2026-03-16|19.0|20.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 19°C on March 16?,interior,19.0,20.0,interior,24.0,,2026-03-16|19.0|20.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 20°C on March 16?,interior,20.0,21.0,interior,24.0,,2026-03-16|20.0|21.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 20°C on March 16?,interior,20.0,21.0,interior,24.0,,2026-03-16|20.0|21.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 20°C on March 16?,interior,20.0,21.0,interior,24.0,,2026-03-16|20.0|21.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 21°C on March 16?,interior,21.0,22.0,interior,24.0,,2026-03-16|21.0|22.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 21°C on March 16?,interior,21.0,22.0,interior,24.0,,2026-03-16|21.0|22.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 21°C on March 16?,interior,21.0,22.0,interior,24.0,,2026-03-16|21.0|22.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 22°C on March 16?,interior,22.0,23.0,interior,24.0,,2026-03-16|22.0|23.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 22°C on March 16?,interior,22.0,23.0,interior,24.0,,2026-03-16|22.0|23.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 22°C on March 16?,interior,22.0,23.0,interior,24.0,,2026-03-16|22.0|23.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 23°C on March 16?,interior,23.0,24.0,interior,24.0,,2026-03-16|23.0|24.0,0.0,0.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 23°C on March 16?,interior,23.0,24.0,interior,24.0,,2026-03-16|23.0|24.0,0.0,0.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 23°C on March 16?,interior,23.0,24.0,interior,24.0,,2026-03-16|23.0|24.0,0.0,0.0,event_day_open
+2026-03-16,nan,Will the highest temperature in Hong Kong be 24°C or higher on March 16?,upper_tail,24.0,inf,upper_tail,24.0,,2026-03-16|24.0|inf,1.0,1.0,12h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 24°C or higher on March 16?,upper_tail,24.0,inf,upper_tail,24.0,,2026-03-16|24.0|inf,1.0,1.0,6h_prior
+2026-03-16,nan,Will the highest temperature in Hong Kong be 24°C or higher on March 16?,upper_tail,24.0,inf,upper_tail,24.0,,2026-03-16|24.0|inf,1.0,1.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 17°C or below on March 17?,lower_tail,-inf,18.0,lower_tail,24.0,,2026-03-17|-inf|18.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 17°C or below on March 17?,lower_tail,-inf,18.0,lower_tail,24.0,,2026-03-17|-inf|18.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 17°C or below on March 17?,lower_tail,-inf,18.0,lower_tail,24.0,,2026-03-17|-inf|18.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 18°C on March 17?,interior,18.0,19.0,interior,24.0,,2026-03-17|18.0|19.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 18°C on March 17?,interior,18.0,19.0,interior,24.0,,2026-03-17|18.0|19.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 18°C on March 17?,interior,18.0,19.0,interior,24.0,,2026-03-17|18.0|19.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 19°C on March 17?,interior,19.0,20.0,interior,24.0,,2026-03-17|19.0|20.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 19°C on March 17?,interior,19.0,20.0,interior,24.0,,2026-03-17|19.0|20.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 19°C on March 17?,interior,19.0,20.0,interior,24.0,,2026-03-17|19.0|20.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 20°C on March 17?,interior,20.0,21.0,interior,24.0,,2026-03-17|20.0|21.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 20°C on March 17?,interior,20.0,21.0,interior,24.0,,2026-03-17|20.0|21.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 20°C on March 17?,interior,20.0,21.0,interior,24.0,,2026-03-17|20.0|21.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 21°C on March 17?,interior,21.0,22.0,interior,24.0,,2026-03-17|21.0|22.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 21°C on March 17?,interior,21.0,22.0,interior,24.0,,2026-03-17|21.0|22.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 21°C on March 17?,interior,21.0,22.0,interior,24.0,,2026-03-17|21.0|22.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 22°C on March 17?,interior,22.0,23.0,interior,24.0,,2026-03-17|22.0|23.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 22°C on March 17?,interior,22.0,23.0,interior,24.0,,2026-03-17|22.0|23.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 22°C on March 17?,interior,22.0,23.0,interior,24.0,,2026-03-17|22.0|23.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 23°C on March 17?,interior,23.0,24.0,interior,24.0,,2026-03-17|23.0|24.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 23°C on March 17?,interior,23.0,24.0,interior,24.0,,2026-03-17|23.0|24.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 23°C on March 17?,interior,23.0,24.0,interior,24.0,,2026-03-17|23.0|24.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 24°C on March 17?,interior,24.0,25.0,interior,24.0,,2026-03-17|24.0|25.0,1.0,1.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 24°C on March 17?,interior,24.0,25.0,interior,24.0,,2026-03-17|24.0|25.0,1.0,1.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 24°C on March 17?,interior,24.0,25.0,interior,24.0,,2026-03-17|24.0|25.0,1.0,1.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 25°C on March 17?,interior,25.0,26.0,interior,24.0,,2026-03-17|25.0|26.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 25°C on March 17?,interior,25.0,26.0,interior,24.0,,2026-03-17|25.0|26.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 25°C on March 17?,interior,25.0,26.0,interior,24.0,,2026-03-17|25.0|26.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 26°C on March 17?,interior,26.0,27.0,interior,24.0,,2026-03-17|26.0|27.0,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 26°C on March 17?,interior,26.0,27.0,interior,24.0,,2026-03-17|26.0|27.0,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 26°C on March 17?,interior,26.0,27.0,interior,24.0,,2026-03-17|26.0|27.0,0.0,0.0,event_day_open
+2026-03-17,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 17?,upper_tail,27.0,inf,upper_tail,24.0,,2026-03-17|27.0|inf,0.0,0.0,24h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 17?,upper_tail,27.0,inf,upper_tail,24.0,,2026-03-17|27.0|inf,0.0,0.0,12h_prior
+2026-03-17,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 17?,upper_tail,27.0,inf,upper_tail,24.0,,2026-03-17|27.0|inf,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 18°C or below on March 18?,lower_tail,-inf,19.0,lower_tail,27.8,,2026-03-18|-inf|19.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 18°C or below on March 18?,lower_tail,-inf,19.0,lower_tail,27.8,,2026-03-18|-inf|19.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 19°C on March 18?,interior,19.0,20.0,interior,27.8,,2026-03-18|19.0|20.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 19°C on March 18?,interior,19.0,20.0,interior,27.8,,2026-03-18|19.0|20.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 20°C on March 18?,interior,20.0,21.0,interior,27.8,,2026-03-18|20.0|21.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 20°C on March 18?,interior,20.0,21.0,interior,27.8,,2026-03-18|20.0|21.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 21°C on March 18?,interior,21.0,22.0,interior,27.8,,2026-03-18|21.0|22.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 21°C on March 18?,interior,21.0,22.0,interior,27.8,,2026-03-18|21.0|22.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 22°C on March 18?,interior,22.0,23.0,interior,27.8,,2026-03-18|22.0|23.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 22°C on March 18?,interior,22.0,23.0,interior,27.8,,2026-03-18|22.0|23.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 23°C on March 18?,interior,23.0,24.0,interior,27.8,,2026-03-18|23.0|24.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 23°C on March 18?,interior,23.0,24.0,interior,27.8,,2026-03-18|23.0|24.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 24°C on March 18?,interior,24.0,25.0,interior,27.8,,2026-03-18|24.0|25.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 24°C on March 18?,interior,24.0,25.0,interior,27.8,,2026-03-18|24.0|25.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 25°C on March 18?,interior,25.0,26.0,interior,27.8,,2026-03-18|25.0|26.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 25°C on March 18?,interior,25.0,26.0,interior,27.8,,2026-03-18|25.0|26.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 26°C on March 18?,interior,26.0,27.0,interior,27.8,,2026-03-18|26.0|27.0,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 26°C on March 18?,interior,26.0,27.0,interior,27.8,,2026-03-18|26.0|27.0,0.0,0.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 27°C on March 18?,interior,27.0,28.0,interior,27.8,,2026-03-18|27.0|28.0,1.0,1.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 27°C on March 18?,interior,27.0,28.0,interior,27.8,,2026-03-18|27.0|28.0,1.0,1.0,event_day_open
+2026-03-18,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 18?,upper_tail,28.0,inf,upper_tail,27.8,,2026-03-18|28.0|inf,0.0,0.0,24h_prior
+2026-03-18,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 18?,upper_tail,28.0,inf,upper_tail,27.8,,2026-03-18|28.0|inf,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 18°C or below on March 19?,lower_tail,-inf,19.0,lower_tail,28.1,,2026-03-19|-inf|19.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 18°C or below on March 19?,lower_tail,-inf,19.0,lower_tail,28.1,,2026-03-19|-inf|19.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 18°C or below on March 19?,lower_tail,-inf,19.0,lower_tail,28.1,,2026-03-19|-inf|19.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 18°C or below on March 19?,lower_tail,-inf,19.0,lower_tail,28.1,,2026-03-19|-inf|19.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 19°C on March 19?,interior,19.0,20.0,interior,28.1,,2026-03-19|19.0|20.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 19°C on March 19?,interior,19.0,20.0,interior,28.1,,2026-03-19|19.0|20.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 19°C on March 19?,interior,19.0,20.0,interior,28.1,,2026-03-19|19.0|20.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 19°C on March 19?,interior,19.0,20.0,interior,28.1,,2026-03-19|19.0|20.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 20°C on March 19?,interior,20.0,21.0,interior,28.1,,2026-03-19|20.0|21.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 20°C on March 19?,interior,20.0,21.0,interior,28.1,,2026-03-19|20.0|21.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 20°C on March 19?,interior,20.0,21.0,interior,28.1,,2026-03-19|20.0|21.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 20°C on March 19?,interior,20.0,21.0,interior,28.1,,2026-03-19|20.0|21.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 21°C on March 19?,interior,21.0,22.0,interior,28.1,,2026-03-19|21.0|22.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 21°C on March 19?,interior,21.0,22.0,interior,28.1,,2026-03-19|21.0|22.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 21°C on March 19?,interior,21.0,22.0,interior,28.1,,2026-03-19|21.0|22.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 21°C on March 19?,interior,21.0,22.0,interior,28.1,,2026-03-19|21.0|22.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 22°C on March 19?,interior,22.0,23.0,interior,28.1,,2026-03-19|22.0|23.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 22°C on March 19?,interior,22.0,23.0,interior,28.1,,2026-03-19|22.0|23.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 22°C on March 19?,interior,22.0,23.0,interior,28.1,,2026-03-19|22.0|23.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 22°C on March 19?,interior,22.0,23.0,interior,28.1,,2026-03-19|22.0|23.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 23°C on March 19?,interior,23.0,24.0,interior,28.1,,2026-03-19|23.0|24.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 23°C on March 19?,interior,23.0,24.0,interior,28.1,,2026-03-19|23.0|24.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 23°C on March 19?,interior,23.0,24.0,interior,28.1,,2026-03-19|23.0|24.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 23°C on March 19?,interior,23.0,24.0,interior,28.1,,2026-03-19|23.0|24.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 24°C on March 19?,interior,24.0,25.0,interior,28.1,,2026-03-19|24.0|25.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 24°C on March 19?,interior,24.0,25.0,interior,28.1,,2026-03-19|24.0|25.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 24°C on March 19?,interior,24.0,25.0,interior,28.1,,2026-03-19|24.0|25.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 24°C on March 19?,interior,24.0,25.0,interior,28.1,,2026-03-19|24.0|25.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 25°C on March 19?,interior,25.0,26.0,interior,28.1,,2026-03-19|25.0|26.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 25°C on March 19?,interior,25.0,26.0,interior,28.1,,2026-03-19|25.0|26.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 25°C on March 19?,interior,25.0,26.0,interior,28.1,,2026-03-19|25.0|26.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 25°C on March 19?,interior,25.0,26.0,interior,28.1,,2026-03-19|25.0|26.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 26°C on March 19?,interior,26.0,27.0,interior,28.1,,2026-03-19|26.0|27.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 26°C on March 19?,interior,26.0,27.0,interior,28.1,,2026-03-19|26.0|27.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 26°C on March 19?,interior,26.0,27.0,interior,28.1,,2026-03-19|26.0|27.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 26°C on March 19?,interior,26.0,27.0,interior,28.1,,2026-03-19|26.0|27.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 27°C on March 19?,interior,27.0,28.0,interior,28.1,,2026-03-19|27.0|28.0,0.0,0.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 27°C on March 19?,interior,27.0,28.0,interior,28.1,,2026-03-19|27.0|28.0,0.0,0.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 27°C on March 19?,interior,27.0,28.0,interior,28.1,,2026-03-19|27.0|28.0,0.0,0.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 27°C on March 19?,interior,27.0,28.0,interior,28.1,,2026-03-19|27.0|28.0,0.0,0.0,event_day_open
+2026-03-19,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 19?,upper_tail,28.0,inf,upper_tail,28.1,,2026-03-19|28.0|inf,1.0,1.0,24h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 19?,upper_tail,28.0,inf,upper_tail,28.1,,2026-03-19|28.0|inf,1.0,1.0,12h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 19?,upper_tail,28.0,inf,upper_tail,28.1,,2026-03-19|28.0|inf,1.0,1.0,6h_prior
+2026-03-19,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 19?,upper_tail,28.0,inf,upper_tail,28.1,,2026-03-19|28.0|inf,1.0,1.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 17°C or below on March 21?,lower_tail,-inf,18.0,lower_tail,22.3,,2026-03-21|-inf|18.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 17°C or below on March 21?,lower_tail,-inf,18.0,lower_tail,22.3,,2026-03-21|-inf|18.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 17°C or below on March 21?,lower_tail,-inf,18.0,lower_tail,22.3,,2026-03-21|-inf|18.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 18°C on March 21?,interior,18.0,19.0,interior,22.3,,2026-03-21|18.0|19.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 18°C on March 21?,interior,18.0,19.0,interior,22.3,,2026-03-21|18.0|19.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 18°C on March 21?,interior,18.0,19.0,interior,22.3,,2026-03-21|18.0|19.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 19°C on March 21?,interior,19.0,20.0,interior,22.3,,2026-03-21|19.0|20.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 19°C on March 21?,interior,19.0,20.0,interior,22.3,,2026-03-21|19.0|20.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 19°C on March 21?,interior,19.0,20.0,interior,22.3,,2026-03-21|19.0|20.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 20°C on March 21?,interior,20.0,21.0,interior,22.3,,2026-03-21|20.0|21.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 20°C on March 21?,interior,20.0,21.0,interior,22.3,,2026-03-21|20.0|21.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 20°C on March 21?,interior,20.0,21.0,interior,22.3,,2026-03-21|20.0|21.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 21°C on March 21?,interior,21.0,22.0,interior,22.3,,2026-03-21|21.0|22.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 21°C on March 21?,interior,21.0,22.0,interior,22.3,,2026-03-21|21.0|22.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 21°C on March 21?,interior,21.0,22.0,interior,22.3,,2026-03-21|21.0|22.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 22°C on March 21?,interior,22.0,23.0,interior,22.3,,2026-03-21|22.0|23.0,1.0,1.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 22°C on March 21?,interior,22.0,23.0,interior,22.3,,2026-03-21|22.0|23.0,1.0,1.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 22°C on March 21?,interior,22.0,23.0,interior,22.3,,2026-03-21|22.0|23.0,1.0,1.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 23°C on March 21?,interior,23.0,24.0,interior,22.3,,2026-03-21|23.0|24.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 23°C on March 21?,interior,23.0,24.0,interior,22.3,,2026-03-21|23.0|24.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 23°C on March 21?,interior,23.0,24.0,interior,22.3,,2026-03-21|23.0|24.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 24°C on March 21?,interior,24.0,25.0,interior,22.3,,2026-03-21|24.0|25.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 24°C on March 21?,interior,24.0,25.0,interior,22.3,,2026-03-21|24.0|25.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 24°C on March 21?,interior,24.0,25.0,interior,22.3,,2026-03-21|24.0|25.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 25°C on March 21?,interior,25.0,26.0,interior,22.3,,2026-03-21|25.0|26.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 25°C on March 21?,interior,25.0,26.0,interior,22.3,,2026-03-21|25.0|26.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 25°C on March 21?,interior,25.0,26.0,interior,22.3,,2026-03-21|25.0|26.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 26°C on March 21?,interior,26.0,27.0,interior,22.3,,2026-03-21|26.0|27.0,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 26°C on March 21?,interior,26.0,27.0,interior,22.3,,2026-03-21|26.0|27.0,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 26°C on March 21?,interior,26.0,27.0,interior,22.3,,2026-03-21|26.0|27.0,0.0,0.0,event_day_open
+2026-03-21,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 21?,upper_tail,27.0,inf,upper_tail,22.3,,2026-03-21|27.0|inf,0.0,0.0,24h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 21?,upper_tail,27.0,inf,upper_tail,22.3,,2026-03-21|27.0|inf,0.0,0.0,6h_prior
+2026-03-21,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 21?,upper_tail,27.0,inf,upper_tail,22.3,,2026-03-21|27.0|inf,0.0,0.0,event_day_open
+2026-03-22,nan,Will the highest temperature in Hong Kong be 17°C or below on March 22?,lower_tail,-inf,18.0,lower_tail,25.4,,2026-03-22|-inf|18.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 17°C or below on March 22?,lower_tail,-inf,18.0,lower_tail,25.4,,2026-03-22|-inf|18.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 18°C on March 22?,interior,18.0,19.0,interior,25.4,,2026-03-22|18.0|19.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 18°C on March 22?,interior,18.0,19.0,interior,25.4,,2026-03-22|18.0|19.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 19°C on March 22?,interior,19.0,20.0,interior,25.4,,2026-03-22|19.0|20.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 19°C on March 22?,interior,19.0,20.0,interior,25.4,,2026-03-22|19.0|20.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 20°C on March 22?,interior,20.0,21.0,interior,25.4,,2026-03-22|20.0|21.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 20°C on March 22?,interior,20.0,21.0,interior,25.4,,2026-03-22|20.0|21.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 21°C on March 22?,interior,21.0,22.0,interior,25.4,,2026-03-22|21.0|22.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 21°C on March 22?,interior,21.0,22.0,interior,25.4,,2026-03-22|21.0|22.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 22°C on March 22?,interior,22.0,23.0,interior,25.4,,2026-03-22|22.0|23.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 22°C on March 22?,interior,22.0,23.0,interior,25.4,,2026-03-22|22.0|23.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 23°C on March 22?,interior,23.0,24.0,interior,25.4,,2026-03-22|23.0|24.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 23°C on March 22?,interior,23.0,24.0,interior,25.4,,2026-03-22|23.0|24.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 24°C on March 22?,interior,24.0,25.0,interior,25.4,,2026-03-22|24.0|25.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 24°C on March 22?,interior,24.0,25.0,interior,25.4,,2026-03-22|24.0|25.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 25°C on March 22?,interior,25.0,26.0,interior,25.4,,2026-03-22|25.0|26.0,1.0,1.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 25°C on March 22?,interior,25.0,26.0,interior,25.4,,2026-03-22|25.0|26.0,1.0,1.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 26°C on March 22?,interior,26.0,27.0,interior,25.4,,2026-03-22|26.0|27.0,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 26°C on March 22?,interior,26.0,27.0,interior,25.4,,2026-03-22|26.0|27.0,0.0,0.0,6h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 22?,upper_tail,27.0,inf,upper_tail,25.4,,2026-03-22|27.0|inf,0.0,0.0,24h_prior
+2026-03-22,nan,Will the highest temperature in Hong Kong be 27°C or higher on March 22?,upper_tail,27.0,inf,upper_tail,25.4,,2026-03-22|27.0|inf,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 18°C or below on March 23?,lower_tail,-inf,19.0,lower_tail,27.4,,2026-03-23|-inf|19.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 19°C on March 23?,interior,19.0,20.0,interior,27.4,,2026-03-23|19.0|20.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 20°C on March 23?,interior,20.0,21.0,interior,27.4,,2026-03-23|20.0|21.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 21°C on March 23?,interior,21.0,22.0,interior,27.4,,2026-03-23|21.0|22.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 22°C on March 23?,interior,22.0,23.0,interior,27.4,,2026-03-23|22.0|23.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 23°C on March 23?,interior,23.0,24.0,interior,27.4,,2026-03-23|23.0|24.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 24°C on March 23?,interior,24.0,25.0,interior,27.4,,2026-03-23|24.0|25.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 25°C on March 23?,interior,25.0,26.0,interior,27.4,,2026-03-23|25.0|26.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 26°C on March 23?,interior,26.0,27.0,interior,27.4,,2026-03-23|26.0|27.0,0.0,0.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 27°C on March 23?,interior,27.0,28.0,interior,27.4,,2026-03-23|27.0|28.0,1.0,1.0,6h_prior
+2026-03-23,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 23?,upper_tail,28.0,inf,upper_tail,27.4,,2026-03-23|28.0|inf,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 18°C or below on March 24?,lower_tail,-inf,19.0,lower_tail,26.9,,2026-03-24|-inf|19.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 18°C or below on March 24?,lower_tail,-inf,19.0,lower_tail,26.9,,2026-03-24|-inf|19.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 19°C on March 24?,interior,19.0,20.0,interior,26.9,,2026-03-24|19.0|20.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 19°C on March 24?,interior,19.0,20.0,interior,26.9,,2026-03-24|19.0|20.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 20°C on March 24?,interior,20.0,21.0,interior,26.9,,2026-03-24|20.0|21.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 20°C on March 24?,interior,20.0,21.0,interior,26.9,,2026-03-24|20.0|21.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 21°C on March 24?,interior,21.0,22.0,interior,26.9,,2026-03-24|21.0|22.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 21°C on March 24?,interior,21.0,22.0,interior,26.9,,2026-03-24|21.0|22.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 22°C on March 24?,interior,22.0,23.0,interior,26.9,,2026-03-24|22.0|23.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 22°C on March 24?,interior,22.0,23.0,interior,26.9,,2026-03-24|22.0|23.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 23°C on March 24?,interior,23.0,24.0,interior,26.9,,2026-03-24|23.0|24.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 23°C on March 24?,interior,23.0,24.0,interior,26.9,,2026-03-24|23.0|24.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 24°C on March 24?,interior,24.0,25.0,interior,26.9,,2026-03-24|24.0|25.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 24°C on March 24?,interior,24.0,25.0,interior,26.9,,2026-03-24|24.0|25.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 25°C on March 24?,interior,25.0,26.0,interior,26.9,,2026-03-24|25.0|26.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 25°C on March 24?,interior,25.0,26.0,interior,26.9,,2026-03-24|25.0|26.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 26°C on March 24?,interior,26.0,27.0,interior,26.9,,2026-03-24|26.0|27.0,1.0,1.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 26°C on March 24?,interior,26.0,27.0,interior,26.9,,2026-03-24|26.0|27.0,1.0,1.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 27°C on March 24?,interior,27.0,28.0,interior,26.9,,2026-03-24|27.0|28.0,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 27°C on March 24?,interior,27.0,28.0,interior,26.9,,2026-03-24|27.0|28.0,0.0,0.0,6h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 24?,upper_tail,28.0,inf,upper_tail,26.9,,2026-03-24|28.0|inf,0.0,0.0,12h_prior
+2026-03-24,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 24?,upper_tail,28.0,inf,upper_tail,26.9,,2026-03-24|28.0|inf,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 18°C or below on March 25?,lower_tail,-inf,19.0,lower_tail,30.0,,2026-03-25|-inf|19.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 18°C or below on March 25?,lower_tail,-inf,19.0,lower_tail,30.0,,2026-03-25|-inf|19.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 18°C or below on March 25?,lower_tail,-inf,19.0,lower_tail,30.0,,2026-03-25|-inf|19.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 19°C on March 25?,interior,19.0,20.0,interior,30.0,,2026-03-25|19.0|20.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 19°C on March 25?,interior,19.0,20.0,interior,30.0,,2026-03-25|19.0|20.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 19°C on March 25?,interior,19.0,20.0,interior,30.0,,2026-03-25|19.0|20.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 20°C on March 25?,interior,20.0,21.0,interior,30.0,,2026-03-25|20.0|21.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 20°C on March 25?,interior,20.0,21.0,interior,30.0,,2026-03-25|20.0|21.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 20°C on March 25?,interior,20.0,21.0,interior,30.0,,2026-03-25|20.0|21.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 21°C on March 25?,interior,21.0,22.0,interior,30.0,,2026-03-25|21.0|22.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 21°C on March 25?,interior,21.0,22.0,interior,30.0,,2026-03-25|21.0|22.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 21°C on March 25?,interior,21.0,22.0,interior,30.0,,2026-03-25|21.0|22.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 22°C on March 25?,interior,22.0,23.0,interior,30.0,,2026-03-25|22.0|23.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 22°C on March 25?,interior,22.0,23.0,interior,30.0,,2026-03-25|22.0|23.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 22°C on March 25?,interior,22.0,23.0,interior,30.0,,2026-03-25|22.0|23.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 23°C on March 25?,interior,23.0,24.0,interior,30.0,,2026-03-25|23.0|24.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 23°C on March 25?,interior,23.0,24.0,interior,30.0,,2026-03-25|23.0|24.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 23°C on March 25?,interior,23.0,24.0,interior,30.0,,2026-03-25|23.0|24.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 24°C on March 25?,interior,24.0,25.0,interior,30.0,,2026-03-25|24.0|25.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 24°C on March 25?,interior,24.0,25.0,interior,30.0,,2026-03-25|24.0|25.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 24°C on March 25?,interior,24.0,25.0,interior,30.0,,2026-03-25|24.0|25.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 25°C on March 25?,interior,25.0,26.0,interior,30.0,,2026-03-25|25.0|26.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 25°C on March 25?,interior,25.0,26.0,interior,30.0,,2026-03-25|25.0|26.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 25°C on March 25?,interior,25.0,26.0,interior,30.0,,2026-03-25|25.0|26.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 26°C on March 25?,interior,26.0,27.0,interior,30.0,,2026-03-25|26.0|27.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 26°C on March 25?,interior,26.0,27.0,interior,30.0,,2026-03-25|26.0|27.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 26°C on March 25?,interior,26.0,27.0,interior,30.0,,2026-03-25|26.0|27.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 27°C on March 25?,interior,27.0,28.0,interior,30.0,,2026-03-25|27.0|28.0,0.0,0.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 27°C on March 25?,interior,27.0,28.0,interior,30.0,,2026-03-25|27.0|28.0,0.0,0.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 27°C on March 25?,interior,27.0,28.0,interior,30.0,,2026-03-25|27.0|28.0,0.0,0.0,event_day_open
+2026-03-25,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 25?,upper_tail,28.0,inf,upper_tail,30.0,,2026-03-25|28.0|inf,1.0,1.0,12h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 25?,upper_tail,28.0,inf,upper_tail,30.0,,2026-03-25|28.0|inf,1.0,1.0,6h_prior
+2026-03-25,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 25?,upper_tail,28.0,inf,upper_tail,30.0,,2026-03-25|28.0|inf,1.0,1.0,event_day_open
+2026-03-26,nan,Will the highest temperature in Hong Kong be 18°C or below on March 26?,lower_tail,-inf,19.0,lower_tail,28.4,,2026-03-26|-inf|19.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 18°C or below on March 26?,lower_tail,-inf,19.0,lower_tail,28.4,,2026-03-26|-inf|19.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 18°C or below on March 26?,lower_tail,-inf,19.0,lower_tail,28.4,,2026-03-26|-inf|19.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 19°C on March 26?,interior,19.0,20.0,interior,28.4,,2026-03-26|19.0|20.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 19°C on March 26?,interior,19.0,20.0,interior,28.4,,2026-03-26|19.0|20.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 19°C on March 26?,interior,19.0,20.0,interior,28.4,,2026-03-26|19.0|20.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 20°C on March 26?,interior,20.0,21.0,interior,28.4,,2026-03-26|20.0|21.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 20°C on March 26?,interior,20.0,21.0,interior,28.4,,2026-03-26|20.0|21.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 20°C on March 26?,interior,20.0,21.0,interior,28.4,,2026-03-26|20.0|21.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 21°C on March 26?,interior,21.0,22.0,interior,28.4,,2026-03-26|21.0|22.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 21°C on March 26?,interior,21.0,22.0,interior,28.4,,2026-03-26|21.0|22.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 21°C on March 26?,interior,21.0,22.0,interior,28.4,,2026-03-26|21.0|22.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 22°C on March 26?,interior,22.0,23.0,interior,28.4,,2026-03-26|22.0|23.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 22°C on March 26?,interior,22.0,23.0,interior,28.4,,2026-03-26|22.0|23.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 22°C on March 26?,interior,22.0,23.0,interior,28.4,,2026-03-26|22.0|23.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 23°C on March 26?,interior,23.0,24.0,interior,28.4,,2026-03-26|23.0|24.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 23°C on March 26?,interior,23.0,24.0,interior,28.4,,2026-03-26|23.0|24.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 23°C on March 26?,interior,23.0,24.0,interior,28.4,,2026-03-26|23.0|24.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 24°C on March 26?,interior,24.0,25.0,interior,28.4,,2026-03-26|24.0|25.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 24°C on March 26?,interior,24.0,25.0,interior,28.4,,2026-03-26|24.0|25.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 24°C on March 26?,interior,24.0,25.0,interior,28.4,,2026-03-26|24.0|25.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 25°C on March 26?,interior,25.0,26.0,interior,28.4,,2026-03-26|25.0|26.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 25°C on March 26?,interior,25.0,26.0,interior,28.4,,2026-03-26|25.0|26.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 25°C on March 26?,interior,25.0,26.0,interior,28.4,,2026-03-26|25.0|26.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 26°C on March 26?,interior,26.0,27.0,interior,28.4,,2026-03-26|26.0|27.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 26°C on March 26?,interior,26.0,27.0,interior,28.4,,2026-03-26|26.0|27.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 26°C on March 26?,interior,26.0,27.0,interior,28.4,,2026-03-26|26.0|27.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 27°C on March 26?,interior,27.0,28.0,interior,28.4,,2026-03-26|27.0|28.0,0.0,0.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 27°C on March 26?,interior,27.0,28.0,interior,28.4,,2026-03-26|27.0|28.0,0.0,0.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 27°C on March 26?,interior,27.0,28.0,interior,28.4,,2026-03-26|27.0|28.0,0.0,0.0,6h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 26?,upper_tail,28.0,inf,upper_tail,28.4,,2026-03-26|28.0|inf,1.0,1.0,24h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 26?,upper_tail,28.0,inf,upper_tail,28.4,,2026-03-26|28.0|inf,1.0,1.0,12h_prior
+2026-03-26,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 26?,upper_tail,28.0,inf,upper_tail,28.4,,2026-03-26|28.0|inf,1.0,1.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 19°C or below on March 27?,lower_tail,-inf,20.0,lower_tail,26.2,,2026-03-27|-inf|20.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 19°C or below on March 27?,lower_tail,-inf,20.0,lower_tail,26.2,,2026-03-27|-inf|20.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 20°C on March 27?,interior,20.0,21.0,interior,26.2,,2026-03-27|20.0|21.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 20°C on March 27?,interior,20.0,21.0,interior,26.2,,2026-03-27|20.0|21.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 21°C on March 27?,interior,21.0,22.0,interior,26.2,,2026-03-27|21.0|22.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 21°C on March 27?,interior,21.0,22.0,interior,26.2,,2026-03-27|21.0|22.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 22°C on March 27?,interior,22.0,23.0,interior,26.2,,2026-03-27|22.0|23.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 22°C on March 27?,interior,22.0,23.0,interior,26.2,,2026-03-27|22.0|23.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 23°C on March 27?,interior,23.0,24.0,interior,26.2,,2026-03-27|23.0|24.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 23°C on March 27?,interior,23.0,24.0,interior,26.2,,2026-03-27|23.0|24.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 24°C on March 27?,interior,24.0,25.0,interior,26.2,,2026-03-27|24.0|25.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 24°C on March 27?,interior,24.0,25.0,interior,26.2,,2026-03-27|24.0|25.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 25°C on March 27?,interior,25.0,26.0,interior,26.2,,2026-03-27|25.0|26.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 25°C on March 27?,interior,25.0,26.0,interior,26.2,,2026-03-27|25.0|26.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 26°C on March 27?,interior,26.0,27.0,interior,26.2,,2026-03-27|26.0|27.0,1.0,1.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 26°C on March 27?,interior,26.0,27.0,interior,26.2,,2026-03-27|26.0|27.0,1.0,1.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 27°C on March 27?,interior,27.0,28.0,interior,26.2,,2026-03-27|27.0|28.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 27°C on March 27?,interior,27.0,28.0,interior,26.2,,2026-03-27|27.0|28.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 28°C on March 27?,interior,28.0,29.0,interior,26.2,,2026-03-27|28.0|29.0,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 28°C on March 27?,interior,28.0,29.0,interior,26.2,,2026-03-27|28.0|29.0,0.0,0.0,6h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 27?,upper_tail,29.0,inf,upper_tail,26.2,,2026-03-27|29.0|inf,0.0,0.0,12h_prior
+2026-03-27,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 27?,upper_tail,29.0,inf,upper_tail,26.2,,2026-03-27|29.0|inf,0.0,0.0,6h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 18°C or below on March 28?,lower_tail,-inf,19.0,lower_tail,27.4,,2026-03-28|-inf|19.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 19°C on March 28?,interior,19.0,20.0,interior,27.4,,2026-03-28|19.0|20.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 20°C on March 28?,interior,20.0,21.0,interior,27.4,,2026-03-28|20.0|21.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 21°C on March 28?,interior,21.0,22.0,interior,27.4,,2026-03-28|21.0|22.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 22°C on March 28?,interior,22.0,23.0,interior,27.4,,2026-03-28|22.0|23.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 23°C on March 28?,interior,23.0,24.0,interior,27.4,,2026-03-28|23.0|24.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 24°C on March 28?,interior,24.0,25.0,interior,27.4,,2026-03-28|24.0|25.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 25°C on March 28?,interior,25.0,26.0,interior,27.4,,2026-03-28|25.0|26.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 26°C on March 28?,interior,26.0,27.0,interior,27.4,,2026-03-28|26.0|27.0,0.0,0.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 27°C on March 28?,interior,27.0,28.0,interior,27.4,,2026-03-28|27.0|28.0,1.0,1.0,12h_prior
+2026-03-28,nan,Will the highest temperature in Hong Kong be 28°C or higher on March 28?,upper_tail,28.0,inf,upper_tail,27.4,,2026-03-28|28.0|inf,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 19°C or below on March 29?,lower_tail,-inf,20.0,lower_tail,25.8,,2026-03-29|-inf|20.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 19°C or below on March 29?,lower_tail,-inf,20.0,lower_tail,25.8,,2026-03-29|-inf|20.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 20°C on March 29?,interior,20.0,21.0,interior,25.8,,2026-03-29|20.0|21.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 20°C on March 29?,interior,20.0,21.0,interior,25.8,,2026-03-29|20.0|21.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 21°C on March 29?,interior,21.0,22.0,interior,25.8,,2026-03-29|21.0|22.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 21°C on March 29?,interior,21.0,22.0,interior,25.8,,2026-03-29|21.0|22.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 22°C on March 29?,interior,22.0,23.0,interior,25.8,,2026-03-29|22.0|23.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 22°C on March 29?,interior,22.0,23.0,interior,25.8,,2026-03-29|22.0|23.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 23°C on March 29?,interior,23.0,24.0,interior,25.8,,2026-03-29|23.0|24.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 23°C on March 29?,interior,23.0,24.0,interior,25.8,,2026-03-29|23.0|24.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 24°C on March 29?,interior,24.0,25.0,interior,25.8,,2026-03-29|24.0|25.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 24°C on March 29?,interior,24.0,25.0,interior,25.8,,2026-03-29|24.0|25.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 25°C on March 29?,interior,25.0,26.0,interior,25.8,,2026-03-29|25.0|26.0,1.0,1.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 25°C on March 29?,interior,25.0,26.0,interior,25.8,,2026-03-29|25.0|26.0,1.0,1.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 26°C on March 29?,interior,26.0,27.0,interior,25.8,,2026-03-29|26.0|27.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 26°C on March 29?,interior,26.0,27.0,interior,25.8,,2026-03-29|26.0|27.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 27°C on March 29?,interior,27.0,28.0,interior,25.8,,2026-03-29|27.0|28.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 27°C on March 29?,interior,27.0,28.0,interior,25.8,,2026-03-29|27.0|28.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 28°C on March 29?,interior,28.0,29.0,interior,25.8,,2026-03-29|28.0|29.0,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 28°C on March 29?,interior,28.0,29.0,interior,25.8,,2026-03-29|28.0|29.0,0.0,0.0,6h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 29?,upper_tail,29.0,inf,upper_tail,25.8,,2026-03-29|29.0|inf,0.0,0.0,12h_prior
+2026-03-29,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 29?,upper_tail,29.0,inf,upper_tail,25.8,,2026-03-29|29.0|inf,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 19°C or below on March 30?,lower_tail,-inf,20.0,lower_tail,28.3,,2026-03-30|-inf|20.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 19°C or below on March 30?,lower_tail,-inf,20.0,lower_tail,28.3,,2026-03-30|-inf|20.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 19°C or below on March 30?,lower_tail,-inf,20.0,lower_tail,28.3,,2026-03-30|-inf|20.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 20°C on March 30?,interior,20.0,21.0,interior,28.3,,2026-03-30|20.0|21.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 20°C on March 30?,interior,20.0,21.0,interior,28.3,,2026-03-30|20.0|21.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 20°C on March 30?,interior,20.0,21.0,interior,28.3,,2026-03-30|20.0|21.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 21°C on March 30?,interior,21.0,22.0,interior,28.3,,2026-03-30|21.0|22.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 21°C on March 30?,interior,21.0,22.0,interior,28.3,,2026-03-30|21.0|22.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 21°C on March 30?,interior,21.0,22.0,interior,28.3,,2026-03-30|21.0|22.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 22°C on March 30?,interior,22.0,23.0,interior,28.3,,2026-03-30|22.0|23.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 22°C on March 30?,interior,22.0,23.0,interior,28.3,,2026-03-30|22.0|23.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 22°C on March 30?,interior,22.0,23.0,interior,28.3,,2026-03-30|22.0|23.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 23°C on March 30?,interior,23.0,24.0,interior,28.3,,2026-03-30|23.0|24.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 23°C on March 30?,interior,23.0,24.0,interior,28.3,,2026-03-30|23.0|24.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 23°C on March 30?,interior,23.0,24.0,interior,28.3,,2026-03-30|23.0|24.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 24°C on March 30?,interior,24.0,25.0,interior,28.3,,2026-03-30|24.0|25.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 24°C on March 30?,interior,24.0,25.0,interior,28.3,,2026-03-30|24.0|25.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 24°C on March 30?,interior,24.0,25.0,interior,28.3,,2026-03-30|24.0|25.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 25°C on March 30?,interior,25.0,26.0,interior,28.3,,2026-03-30|25.0|26.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 25°C on March 30?,interior,25.0,26.0,interior,28.3,,2026-03-30|25.0|26.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 25°C on March 30?,interior,25.0,26.0,interior,28.3,,2026-03-30|25.0|26.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 26°C on March 30?,interior,26.0,27.0,interior,28.3,,2026-03-30|26.0|27.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 26°C on March 30?,interior,26.0,27.0,interior,28.3,,2026-03-30|26.0|27.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 26°C on March 30?,interior,26.0,27.0,interior,28.3,,2026-03-30|26.0|27.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 27°C on March 30?,interior,27.0,28.0,interior,28.3,,2026-03-30|27.0|28.0,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 27°C on March 30?,interior,27.0,28.0,interior,28.3,,2026-03-30|27.0|28.0,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 27°C on March 30?,interior,27.0,28.0,interior,28.3,,2026-03-30|27.0|28.0,0.0,0.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 28°C on March 30?,interior,28.0,29.0,interior,28.3,,2026-03-30|28.0|29.0,1.0,1.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 28°C on March 30?,interior,28.0,29.0,interior,28.3,,2026-03-30|28.0|29.0,1.0,1.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 28°C on March 30?,interior,28.0,29.0,interior,28.3,,2026-03-30|28.0|29.0,1.0,1.0,event_day_open
+2026-03-30,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 30?,upper_tail,29.0,inf,upper_tail,28.3,,2026-03-30|29.0|inf,0.0,0.0,12h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 30?,upper_tail,29.0,inf,upper_tail,28.3,,2026-03-30|29.0|inf,0.0,0.0,6h_prior
+2026-03-30,nan,Will the highest temperature in Hong Kong be 29°C or higher on March 30?,upper_tail,29.0,inf,upper_tail,28.3,,2026-03-30|29.0|inf,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 20°C or below on April 1?,lower_tail,-inf,21.0,lower_tail,27.3,,2026-04-01|-inf|21.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 21°C on April 1?,interior,21.0,22.0,interior,27.3,,2026-04-01|21.0|22.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 22°C on April 1?,interior,22.0,23.0,interior,27.3,,2026-04-01|22.0|23.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 23°C on April 1?,interior,23.0,24.0,interior,27.3,,2026-04-01|23.0|24.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 24°C on April 1?,interior,24.0,25.0,interior,27.3,,2026-04-01|24.0|25.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 25°C on April 1?,interior,25.0,26.0,interior,27.3,,2026-04-01|25.0|26.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 26°C on April 1?,interior,26.0,27.0,interior,27.3,,2026-04-01|26.0|27.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 27°C on April 1?,interior,27.0,28.0,interior,27.3,,2026-04-01|27.0|28.0,1.0,1.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 28°C on April 1?,interior,28.0,29.0,interior,27.3,,2026-04-01|28.0|29.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 29°C on April 1?,interior,29.0,30.0,interior,27.3,,2026-04-01|29.0|30.0,0.0,0.0,event_day_open
+2026-04-01,nan,Will the highest temperature in Hong Kong be 30°C or higher on April 1?,upper_tail,30.0,inf,upper_tail,27.3,,2026-04-01|30.0|inf,0.0,0.0,event_day_open
+2026-04-02,nan,Will the highest temperature in Hong Kong be 18°C or below on April 2?,lower_tail,-inf,19.0,lower_tail,24.0,,2026-04-02|-inf|19.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 19°C on April 2?,interior,19.0,20.0,interior,24.0,,2026-04-02|19.0|20.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 20°C on April 2?,interior,20.0,21.0,interior,24.0,,2026-04-02|20.0|21.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 21°C on April 2?,interior,21.0,22.0,interior,24.0,,2026-04-02|21.0|22.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 22°C on April 2?,interior,22.0,23.0,interior,24.0,,2026-04-02|22.0|23.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 23°C on April 2?,interior,23.0,24.0,interior,24.0,,2026-04-02|23.0|24.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 24°C on April 2?,interior,24.0,25.0,interior,24.0,,2026-04-02|24.0|25.0,1.0,1.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 25°C on April 2?,interior,25.0,26.0,interior,24.0,,2026-04-02|25.0|26.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 26°C on April 2?,interior,26.0,27.0,interior,24.0,,2026-04-02|26.0|27.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 27°C on April 2?,interior,27.0,28.0,interior,24.0,,2026-04-02|27.0|28.0,0.0,0.0,24h_prior
+2026-04-02,nan,Will the highest temperature in Hong Kong be 28°C or higher on April 2?,upper_tail,28.0,inf,upper_tail,24.0,,2026-04-02|28.0|inf,0.0,0.0,24h_prior
+2026-06-24,0xffe2f741874419f77c3841c876ea1882c852e497f3c1490ea8c469a96c0bd314,Will the highest temperature in Hong Kong be 26°C or below on June 24?,lower_tail,-inf,27.0,lower_tail,32.8,,0xffe2f741874419f77c3841c876ea1882c852e497f3c1490ea8c469a96c0bd314,0.0,0.0,6h_prior
+2026-06-24,0xe1457777b74bcb23937e69be6e9094d8035ac1d883c2ff4c5761e8138057ac07,Will the highest temperature in Hong Kong be 27°C on June 24?,interior,27.0,28.0,interior,32.8,,0xe1457777b74bcb23937e69be6e9094d8035ac1d883c2ff4c5761e8138057ac07,0.0,0.0,6h_prior
+2026-06-24,0xfe8b166488c6e8101ee250b3fa428769d56bbc6c6cd3e771723ba194c6b34114,Will the highest temperature in Hong Kong be 28°C on June 24?,interior,28.0,29.0,interior,32.8,,0xfe8b166488c6e8101ee250b3fa428769d56bbc6c6cd3e771723ba194c6b34114,0.0,0.0,6h_prior
+2026-06-24,0x527c5feb37e99c201090bb3eb59918f83e331539748ecb997219b09018501eb3,Will the highest temperature in Hong Kong be 29°C on June 24?,interior,29.0,30.0,interior,32.8,,0x527c5feb37e99c201090bb3eb59918f83e331539748ecb997219b09018501eb3,0.0,0.0,6h_prior
+2026-06-24,0xeaf5f2870b7e46cbb28c64c2d33ad63f045c054190a063cbef40e8dc30545bdd,Will the highest temperature in Hong Kong be 30°C on June 24?,interior,30.0,31.0,interior,32.8,,0xeaf5f2870b7e46cbb28c64c2d33ad63f045c054190a063cbef40e8dc30545bdd,0.0,0.0,6h_prior
+2026-06-24,0x232664d1dff2021e53c08cf78dc613bd68671695c78d30b68ac1cc334c3604e0,Will the highest temperature in Hong Kong be 31°C on June 24?,interior,31.0,32.0,interior,32.8,,0x232664d1dff2021e53c08cf78dc613bd68671695c78d30b68ac1cc334c3604e0,0.0,0.0,6h_prior
+2026-06-24,0x2ae461a814fa0d75fef7f4007894fcba57e8f92eca71d9d15ac53716b7376d9f,Will the highest temperature in Hong Kong be 32°C on June 24?,interior,32.0,33.0,interior,32.8,,0x2ae461a814fa0d75fef7f4007894fcba57e8f92eca71d9d15ac53716b7376d9f,1.0,1.0,6h_prior
+2026-06-24,0x66b8b8591ef60c2477468146dbde3753c345fb6be0cd821c70de9d276bc4499d,Will the highest temperature in Hong Kong be 33°C on June 24?,interior,33.0,34.0,interior,32.8,,0x66b8b8591ef60c2477468146dbde3753c345fb6be0cd821c70de9d276bc4499d,0.0,0.0,6h_prior
+2026-06-24,0x7f1c3fe24e4fed94bda24cc3ccff54fb8caf2fff77a528100dd5163d1be05b32,Will the highest temperature in Hong Kong be 34°C on June 24?,interior,34.0,35.0,interior,32.8,,0x7f1c3fe24e4fed94bda24cc3ccff54fb8caf2fff77a528100dd5163d1be05b32,0.0,0.0,6h_prior
+2026-06-24,0x26931c9eed53e888dbc313e9bfa7becdc15ce99f724f695612cf84b2399cffae,Will the highest temperature in Hong Kong be 35°C on June 24?,interior,35.0,36.0,interior,32.8,,0x26931c9eed53e888dbc313e9bfa7becdc15ce99f724f695612cf84b2399cffae,0.0,0.0,6h_prior
+2026-06-24,0x6fe7779a34f039d464f7add6b6ab0d11a4b07c7cc899262e9f237261bc8e3b59,Will the highest temperature in Hong Kong be 36°C or higher on June 24?,upper_tail,36.0,inf,upper_tail,32.8,,0x6fe7779a34f039d464f7add6b6ab0d11a4b07c7cc899262e9f237261bc8e3b59,0.0,0.0,6h_prior
