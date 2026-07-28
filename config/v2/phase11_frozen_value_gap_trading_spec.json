@@ -1,0 +1,65 @@
+{
+  "phase": 11,
+  "name": "Frozen value-gap trading evaluation",
+  "inputs": {
+    "phase10_manifest": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_manifest.json",
+    "phase10_event_panel": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv"
+  },
+  "periods": {
+    "strategy_selection_period": "weather_plus_market_training",
+    "out_of_sample_validation_period": "out_of_sample_validation",
+    "strategy_selection_end": "2026-05-31",
+    "out_of_sample_start": "2026-06-01",
+    "out_of_sample_end": "2026-06-30"
+  },
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "strategy": {
+    "direction": "long_yes_only",
+    "candidate_within_book": "largest GP probability minus raw Polymarket Yes price",
+    "maximum_trades_per_date_rule_book": 1,
+    "stake_convention": "one Yes share",
+    "gross_value_gap": "gp_event_probability minus market_probability_raw",
+    "gross_pnl_per_trade": "realised_yes minus market_probability_raw",
+    "net_pnl_per_trade": "realised_yes minus market_probability_raw minus transaction_cost_per_share",
+    "capital_committed_per_trade": "market_probability_raw plus transaction_cost_per_share",
+    "no_trade_rule": "maximum gross value gap below the frozen threshold"
+  },
+  "threshold_selection": {
+    "threshold_minimum": 0.0,
+    "threshold_maximum": 0.25,
+    "threshold_increment": 0.01,
+    "reference_transaction_cost": 0.01,
+    "minimum_training_trades": 10,
+    "rule_specific_threshold_method": "largest threshold within one standard error of the best training mean date PnL",
+    "primary_rule_method": "maximum training mean date PnL minus one standard error after rule-specific threshold selection",
+    "june_used_in_selection": false
+  },
+  "transaction_cost_scenarios": [
+    0.0,
+    0.005,
+    0.01,
+    0.02
+  ],
+  "uncertainty": {
+    "unit": "target_date",
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 20260728,
+    "confidence_level": 0.95
+  },
+  "output_directory": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading",
+  "restrictions": {
+    "use_june_for_threshold_selection": false,
+    "use_june_for_decision_rule_selection": false,
+    "retune_after_june": false,
+    "impute_missing_forecasts": false,
+    "impute_missing_market_prices": false,
+    "trade_incomplete_contract_books": false,
+    "allow_more_than_one_trade_per_date_rule_book": false,
+    "allow_short_no_positions": false
+  }
+}

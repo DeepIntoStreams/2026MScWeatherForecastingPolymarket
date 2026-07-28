@@ -1,0 +1,65 @@
+{
+  "phase": 11,
+  "status": "passed",
+  "strategy": {
+    "direction": "long_yes_only",
+    "stake": "one Yes share",
+    "candidate": "largest GP-minus-market gap within each date-rule book",
+    "maximum_trades_per_date_rule_book": 1,
+    "primary_decision_rule": "event_day_open",
+    "primary_frozen_threshold": 0.12,
+    "reference_transaction_cost": 0.01
+  },
+  "selection": {
+    "selection_period": "weather_plus_market_training",
+    "selection_period_maximum_date": "2026-05-31",
+    "june_used_for_threshold_selection": false,
+    "june_used_for_rule_selection": false,
+    "threshold_method": "largest threshold within one standard error of the best training mean date PnL",
+    "primary_rule_method": "maximum training mean date PnL minus one standard error after rule-specific threshold selection"
+  },
+  "inputs": {
+    "phase10_manifest": {
+      "path": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_manifest.json",
+      "sha256": "487251b2ee7e36ef4ec524c56c9fce3b52b138e8e904aacb79aa6eff07a01141"
+    },
+    "phase10_event_panel": {
+      "path": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+      "sha256": "3d795b8aa4d9261383c3ec559894401cb8d68936ef8354db6ab6e2aecd4a2f19"
+    }
+  },
+  "counts": {
+    "training_candidate_dates": 67,
+    "june_candidate_dates": 30,
+    "candidate_date_rule_books": 350,
+    "threshold_grid_rows": 104,
+    "frozen_rule_strategies": 4,
+    "primary_june_dates": 30,
+    "primary_june_trades_at_reference_cost": 16
+  },
+  "primary_june_reference_cost_result": {
+    "transaction_cost_per_share": 0.01,
+    "total_net_pnl": 0.023499999999999917,
+    "mean_date_net_pnl": 0.0007833333333333305,
+    "return_on_committed_capital": 0.024065540194572365,
+    "maximum_drawdown": 0.7964999999999999,
+    "bootstrap_total_ci_lower": -1.2280249999999997,
+    "bootstrap_total_ci_upper": 2.1784999999999997,
+    "bootstrap_probability_total_positive": 0.4705
+  },
+  "figures": [
+    "phase11_training_threshold_selection.png",
+    "phase11_primary_june_cumulative_pnl.png",
+    "phase11_primary_june_value_gap_outcomes.png"
+  ],
+  "restrictions": {
+    "use_june_for_threshold_selection": false,
+    "use_june_for_decision_rule_selection": false,
+    "retune_after_june": false,
+    "impute_missing_forecasts": false,
+    "impute_missing_market_prices": false,
+    "trade_incomplete_contract_books": false,
+    "allow_more_than_one_trade_per_date_rule_book": false,
+    "allow_short_no_positions": false
+  }
+}

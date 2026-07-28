@@ -1,0 +1,5 @@
+sample_period,decision_rule,selected_primary_decision_rule,frozen_threshold,transaction_cost_per_share,dates,trade_count,total_net_pnl,mean_date_net_pnl,bootstrap_mean_ci_lower,bootstrap_mean_ci_upper,bootstrap_total_ci_lower,bootstrap_total_ci_upper,bootstrap_probability_total_positive
+out_of_sample_validation,event_day_open,True,0.12,0.0,30,16,0.18349999999999989,0.006116666666666663,-0.03486666666666667,0.07640041666666665,-1.046,2.2920125,0.5818
+out_of_sample_validation,event_day_open,True,0.12,0.005,30,16,0.10349999999999998,0.0034499999999999995,-0.037599999999999995,0.07423333333333332,-1.128,2.2269999999999994,0.5465
+out_of_sample_validation,event_day_open,True,0.12,0.01,30,16,0.023499999999999917,0.0007833333333333305,-0.04093416666666666,0.07261666666666665,-1.2280249999999997,2.1784999999999997,0.4705
+out_of_sample_validation,event_day_open,True,0.12,0.02,30,16,-0.13650000000000012,-0.004550000000000004,-0.047300833333333334,0.06580041666666665,-1.419025,1.9740124999999997,0.3565

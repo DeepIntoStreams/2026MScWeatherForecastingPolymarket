@@ -1,0 +1,9 @@
+sample_period,decision_rule,dates,candidate_books,mean_maximum_value_gap,median_maximum_value_gap,positive_gap_books
+out_of_sample_validation,12h_prior,28,28,0.10119261635102295,0.09001095620937416,28
+out_of_sample_validation,24h_prior,27,27,0.11536202464914323,0.1091133765763096,27
+out_of_sample_validation,6h_prior,29,29,0.10153285127240277,0.09086612861632279,29
+out_of_sample_validation,event_day_open,30,30,0.12522508979136787,0.12555154107162286,30
+weather_plus_market_training,12h_prior,60,60,0.12025668933607718,0.12152151339825645,60
+weather_plus_market_training,24h_prior,55,55,0.11327496529599301,0.10783623063801809,55
+weather_plus_market_training,6h_prior,58,58,0.14593488757488818,0.13021350849720595,58
+weather_plus_market_training,event_day_open,63,63,0.14677104664396842,0.1348313500995652,63
