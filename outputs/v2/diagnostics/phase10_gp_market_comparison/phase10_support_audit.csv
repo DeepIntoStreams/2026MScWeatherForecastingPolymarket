@@ -1,0 +1,16 @@
+sample_period,decision_rule,gp_supported_dates,gp_supported_date_rule_books,gp_supported_event_rows,market_any_price_date_rule_books,complete_common_support_books,complete_common_support_dates,incomplete_or_missing_books
+weather_plus_market_training,12h_prior,63,63,693,61,60,60,3
+weather_plus_market_training,24h_prior,66,66,726,58,55,55,11
+weather_plus_market_training,6h_prior,62,62,682,59,58,58,4
+weather_plus_market_training,event_day_open,65,65,715,63,63,63,2
+weather_plus_market_training,all_rules,72,256,2816,241,236,67,20
+out_of_sample_validation,12h_prior,30,30,330,28,28,28,2
+out_of_sample_validation,24h_prior,30,30,330,27,27,27,3
+out_of_sample_validation,6h_prior,29,29,319,29,29,29,0
+out_of_sample_validation,event_day_open,30,30,330,30,30,30,0
+out_of_sample_validation,all_rules,30,119,1309,114,114,30,5
+all_period,12h_prior,93,93,1023,89,88,88,5
+all_period,24h_prior,96,96,1056,85,82,82,14
+all_period,6h_prior,91,91,1001,88,87,87,4
+all_period,event_day_open,95,95,1045,93,93,93,2
+all_period,all_rules,102,375,4125,355,350,97,25

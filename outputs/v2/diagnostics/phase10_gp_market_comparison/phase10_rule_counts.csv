@@ -1,0 +1,9 @@
+sample_period,decision_rule,dates,date_rule_books,event_rows
+out_of_sample_validation,12h_prior,28,28,308
+out_of_sample_validation,24h_prior,27,27,297
+out_of_sample_validation,6h_prior,29,29,319
+out_of_sample_validation,event_day_open,30,30,330
+weather_plus_market_training,12h_prior,60,60,660
+weather_plus_market_training,24h_prior,55,55,605
+weather_plus_market_training,6h_prior,58,58,638
+weather_plus_market_training,event_day_open,63,63,693

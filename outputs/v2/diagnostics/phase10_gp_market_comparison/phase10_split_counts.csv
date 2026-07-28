@@ -1,0 +1,3 @@
+sample_period,dates,date_rule_books
+out_of_sample_validation,30,114
+weather_plus_market_training,67,236

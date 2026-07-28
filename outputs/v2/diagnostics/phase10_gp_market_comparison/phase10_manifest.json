@@ -1,0 +1,67 @@
+{
+  "phase": 10,
+  "status": "passed",
+  "comparison": {
+    "common_support": "complete contract books only",
+    "paired_difference": "GP score minus market score",
+    "binary_market_probability": "raw Yes price",
+    "categorical_market_probability": "within-book normalised Yes price",
+    "uncertainty_unit": "target_date",
+    "bootstrap_repetitions": 10000
+  },
+  "inputs": {
+    "phase9_manifest": {
+      "path": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_manifest.json",
+      "sha256": "5002f42fe2dc06da4fe6c546bb7d02e483c35a1820025ea0b6d13b12e8580ffb"
+    },
+    "phase9_event_panel": {
+      "path": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv",
+      "sha256": "f2f0290ea18dc1858e069997f8949339f61ca11018665641ff606bd515596d34"
+    },
+    "market_price_source": {
+      "path": "data/interim/notebook02_sources/daily_max_forecasts/07_18s_expanded_exact_common_support_panel.csv",
+      "sha256": "f502c14ed5b86a702f4e54071dc121e2d1e62b157fd412adbacf4b0db06b4ecd",
+      "date_column": "event_date",
+      "rule_column": "decision_rule",
+      "price_column": "p_market",
+      "format": "long",
+      "matching_strategy": "normalised_event_label"
+    }
+  },
+  "counts": {
+    "phase9_gp_supported_dates": 102,
+    "phase9_gp_supported_date_rule_books": 375,
+    "phase9_gp_supported_event_rows": 4125,
+    "matched_market_price_event_rows": 3889,
+    "complete_common_support_dates": 97,
+    "complete_common_support_date_rule_books": 350,
+    "complete_common_support_event_rows": 3850,
+    "weather_plus_market_training_dates": 67,
+    "out_of_sample_validation_dates": 30,
+    "incomplete_or_missing_date_rule_books": 25
+  },
+  "integrity": {
+    "duplicate_common_support_event_keys": 0,
+    "maximum_gp_probability_mass_error": 7.771561172376096e-16,
+    "maximum_normalised_market_mass_error": 2.220446049250313e-16,
+    "exactly_one_realised_yes_in_every_book": true,
+    "all_four_rules_present_in_june": true
+  },
+  "figures": [
+    "phase10_june_reliability_diagram.png",
+    "phase10_june_binary_brier_raw_paired_difference.png",
+    "phase10_june_binary_log_raw_paired_difference.png",
+    "phase10_june_categorical_log_paired_difference.png",
+    "phase10_june_multiclass_brier_paired_difference.png"
+  ],
+  "restrictions": {
+    "refit_gp_model": false,
+    "recalibrate_gp_probabilities": false,
+    "recalibrate_market_probabilities": false,
+    "select_models_using_june": false,
+    "impute_missing_market_prices": false,
+    "impute_missing_forecasts": false,
+    "use_incomplete_contract_books": false,
+    "common_support": "exact complete-book intersection"
+  }
+}
