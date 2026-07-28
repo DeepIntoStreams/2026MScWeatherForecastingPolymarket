@@ -1,0 +1,5 @@
+run_period,cycle_role,retrieval_selected,request_rows,request_dates,cycles
+support_buffer,core,True,4,2,2
+support_buffer,supplementary,False,4,2,2
+weather_only_training,core,True,1460,730,2
+weather_only_training,supplementary,False,1460,730,2

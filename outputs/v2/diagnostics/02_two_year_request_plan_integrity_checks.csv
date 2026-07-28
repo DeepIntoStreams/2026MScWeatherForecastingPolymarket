@@ -1,0 +1,23 @@
+check,required,passed,detail
+phase2_complete,True,True,PHASE2_COMPLETE
+phase2_pilot_approved,True,True,SINGLE_RUNS_PILOT_APPROVED
+training_date_count,True,True,730
+request_date_count,True,True,732
+total_request_rows,True,True,2928
+selected_core_request_rows,True,True,1464
+supplementary_request_rows,True,True,1464
+request_ids_unique,True,True,2928
+run_initialisations_unique,True,True,2928
+request_urls_unique,True,True,2928
+core_cycles_are_00_and_12,True,True,"[0, 12]"
+supplementary_cycles_are_06_and_18,True,True,"[6, 18]"
+two_core_cycles_per_request_date,True,True,"min=2, max=2"
+four_documented_cycles_per_request_date,True,True,"min=4, max=4"
+support_map_has_all_training_dates,True,True,730
+every_training_date_has_six_core_support_requests,True,True,{6: 730}
+no_market_training_initialisations_in_plan,True,True,2026-03-15
+no_validation_initialisations_in_plan,True,True,2026-03-15
+network_requests_not_made,True,True,0
+market_prices_not_accessed,True,True,0
+outcomes_not_accessed,True,True,0
+supplementary_cycles_not_selected,True,True,0

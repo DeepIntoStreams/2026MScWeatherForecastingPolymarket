@@ -1,0 +1,53 @@
+{
+  "bulk_retrieval_cycles_utc": [
+    0,
+    12
+  ],
+  "categorical_scores_calculated": false,
+  "cell_selection": "land",
+  "core_cycles_utc": [
+    0,
+    12
+  ],
+  "downstream_target_filter": "Weather only training rows must have target dates from 2024-03-16 to 2026-03-15.",
+  "downstream_target_filter_required": true,
+  "endpoint": "https://single-runs-api.open-meteo.com/v1/forecast",
+  "forecast_hours": 240,
+  "future_july_extension_end": "2026-07-31",
+  "future_july_extension_included_now": false,
+  "future_july_extension_planned": true,
+  "hourly_variable": "temperature_2m",
+  "information_unit": "forecast_initialisation",
+  "latitude": 22.3019444444,
+  "longitude": 114.1741666667,
+  "market_prices_accessed": false,
+  "model": "ecmwf_ifs",
+  "model_fitted": false,
+  "model_selected": false,
+  "network_requests_made": false,
+  "out_of_sample_validation_end": "2026-06-30",
+  "out_of_sample_validation_start": "2026-06-01",
+  "phase": 3,
+  "phase2_manifest": "data/manifests/v2/01_single_runs_pilot_manifest.json",
+  "phase2_status": "PHASE2_COMPLETE",
+  "realised_outcomes_accessed": false,
+  "request_initialisation_end": "2026-03-15",
+  "request_initialisation_start": "2024-03-14",
+  "request_selection_policy": "Retrieve 00 and 12 UTC initialisations for every request date. Record 06 and 18 UTC initialisations in the plan but do not select them for bulk retrieval.",
+  "request_support_buffer_days": 2,
+  "status": "TWO_YEAR_REQUEST_PLAN_DECLARED",
+  "supplementary_bulk_retrieval_selected": false,
+  "supplementary_cycles_utc": [
+    6,
+    18
+  ],
+  "support_buffer_reason": "Two initialisation dates before the first training target are retained so that the first target date can later be reconstructed under the earlier decision rules.",
+  "temperature_unit": "celsius",
+  "timezone": "Asia/Hong_Kong",
+  "trading_returns_calculated": false,
+  "training_target_unit": "Hong Kong local date",
+  "weather_only_training_end": "2026-03-15",
+  "weather_only_training_start": "2024-03-16",
+  "weather_plus_market_training_end": "2026-05-31",
+  "weather_plus_market_training_start": "2026-03-16"
+}

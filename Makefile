@@ -173,3 +173,12 @@ execute-v2-notebook-01:
 
 test-v2-phase2:
 	PYTHONPATH=src python3 -m unittest tests.test_v2_phase2_single_runs_pilot -v
+
+build-v2-two-year-request-plan:
+	python3 tools/v2/build_two_year_request_plan.py
+
+execute-v2-notebook-02:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/02_two_year_weather_request_plan.ipynb
+
+test-v2-phase3:
+	PYTHONPATH=src python3 -m unittest tests.test_v2_phase3_two_year_request_plan -v

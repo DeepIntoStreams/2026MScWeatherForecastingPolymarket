@@ -345,3 +345,26 @@ maximum difference from the certified Version 1 forecast was
 No market prices, realised market outcomes, model fitting, model
 selection or trading calculations were used. Version 1 remains
 unchanged.
+
+## Version 2 Phase 3: Two-Year Weather Training Request Plan
+
+Status: complete.
+
+The weather only training target period is 16 March 2024 to
+15 March 2026, comprising 730 dates.
+
+The request initialisation period begins on 14 March 2024 to
+provide a two-day support buffer. It ends on 15 March 2026,
+before the weather plus market training period.
+
+The 00 and 12 UTC cycles are selected as the core historical
+requests. The 06 and 18 UTC cycles are documented but are not
+selected for bulk retrieval.
+
+The certified plan contains 1,464 selected core requests and
+1,464 supplementary rows. Every weather only target date has six
+planned core support requests.
+
+No network requests, market prices, realised outcomes, model
+fitting, model selection, calibration, scoring or trading
+calculations were performed.
