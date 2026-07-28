@@ -1,0 +1,66 @@
+{
+  "phase": 12,
+  "name": "Robustness, attribution and final empirical synthesis",
+  "inputs": {
+    "phase11_manifest": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_manifest.json",
+    "phase11_candidates": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_candidate_contract_by_date_rule.csv",
+    "phase11_training_grid": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_training_threshold_grid.csv",
+    "phase11_selection": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_frozen_strategy_selection.csv",
+    "phase11_performance": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_frozen_strategy_performance.csv",
+    "phase10_paired_summary": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_paired_difference_summary.csv",
+    "phase9_score_summary": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_score_summary.csv"
+  },
+  "sample_periods": {
+    "strategy_selection": "weather_plus_market_training",
+    "out_of_sample_validation": "out_of_sample_validation",
+    "strategy_selection_end": "2026-05-31",
+    "out_of_sample_start": "2026-06-01",
+    "out_of_sample_end": "2026-06-30"
+  },
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "robustness": {
+    "reference_transaction_cost": 0.01,
+    "threshold_neighbourhood_offsets": [
+      -0.05,
+      -0.03,
+      -0.02,
+      -0.01,
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.05
+    ],
+    "minimum_threshold": 0.0,
+    "maximum_threshold": 0.25,
+    "minimum_training_trades": 10,
+    "leave_one_date_out": true,
+    "temperature_bucket_method": "training-period terciles",
+    "fine_cost_minimum": 0.0,
+    "fine_cost_maximum": 0.03,
+    "fine_cost_increment": 0.0025
+  },
+  "multiple_strategy_adjustment": {
+    "unit": "target_date",
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 20260728,
+    "confidence_level": 0.95,
+    "null": "all candidate strategy mean date PnLs are zero",
+    "dependence_preservation": "resample dates jointly across all rule-threshold strategies",
+    "missing_rule_date_return": 0.0
+  },
+  "output_directory": "outputs/v2/diagnostics/phase12_robustness_attribution",
+  "restrictions": {
+    "use_june_for_strategy_selection": false,
+    "alter_phase11_frozen_strategy": false,
+    "impute_missing_prices": false,
+    "impute_missing_forecasts": false,
+    "claim_live_executability": false,
+    "interpret_post_hoc_june_surface_as_selection": false
+  }
+}

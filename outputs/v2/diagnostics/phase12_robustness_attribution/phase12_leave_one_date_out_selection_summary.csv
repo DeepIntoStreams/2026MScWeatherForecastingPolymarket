@@ -1,0 +1,5 @@
+decision_rule,omissions,full_sample_frozen_threshold,mean_leave_one_out_threshold,median_leave_one_out_threshold,minimum_leave_one_out_threshold,maximum_leave_one_out_threshold,standard_deviation_leave_one_out_threshold,frozen_threshold_reselection_fraction,rule_selected_primary_fraction,full_sample_primary_rule,full_primary_rule_reselected_fraction
+24h_prior,67,0.13,0.13029850746268656,0.13,0.12,0.14,0.0024433888871261064,0.9402985074626866,0.07462686567164178,False,0.9253731343283582
+12h_prior,67,0.17,0.16850746268656716,0.17,0.16,0.17,0.0035902778415670355,0.8507462686567164,0.0,False,0.9253731343283582
+6h_prior,67,0.12,0.11999999999999998,0.12,0.1,0.18,0.020225995873897257,0.6268656716417911,0.0,False,0.9253731343283582
+event_day_open,67,0.12,0.12059701492537314,0.12,0.12,0.13,0.0023872115183006318,0.9402985074626866,0.9253731343283582,True,0.9253731343283582

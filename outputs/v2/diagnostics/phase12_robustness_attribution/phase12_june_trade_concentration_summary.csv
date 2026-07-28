@@ -1,0 +1,2 @@
+sample_period,trade_count,total_net_pnl,total_absolute_pnl,winning_trades,losing_trades,largest_winning_trade,largest_losing_trade,largest_positive_contribution_share,largest_absolute_contribution_share,absolute_pnl_herfindahl,minimum_leave_one_trade_out_total_pnl,maximum_leave_one_trade_out_total_pnl,positive_without_best_trade
+out_of_sample_validation,16,0.023499999999999965,1.8464999999999998,1,15,0.9349999999999999,-0.105,1.0,0.5063633901976713,0.2752657617557797,-0.9115,0.12849999999999995,False

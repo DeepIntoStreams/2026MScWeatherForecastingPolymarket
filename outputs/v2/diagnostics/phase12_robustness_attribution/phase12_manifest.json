@@ -1,0 +1,90 @@
+{
+  "phase": 12,
+  "status": "passed",
+  "frozen_strategy": {
+    "decision_rule": "event_day_open",
+    "threshold": 0.12,
+    "reference_transaction_cost": 0.01,
+    "altered_in_phase12": false
+  },
+  "robustness": {
+    "training_dates_omitted_individually": 67,
+    "primary_threshold_reselection_fraction": 0.9402985074626866,
+    "primary_rule_reselection_fraction": 0.9253731343283582,
+    "primary_threshold_leave_one_out_minimum": 0.12,
+    "primary_threshold_leave_one_out_maximum": 0.13,
+    "june_analytical_break_even_cost": 0.011468749999999993
+  },
+  "trade_concentration": {
+    "june_trade_count": 16,
+    "winning_trades": 1,
+    "largest_positive_contribution_share": 1.0,
+    "largest_absolute_contribution_share": 0.5063633901976713,
+    "absolute_pnl_herfindahl": 0.2752657617557797,
+    "positive_without_best_trade": false
+  },
+  "multiple_strategy_adjustment": {
+    "candidate_strategies": 104,
+    "best_observed_strategy": "event_day_open|threshold=0.090",
+    "best_observed_mean_date_pnl": 0.08555223880597015,
+    "adjusted_p_value": 0.0740925907409259,
+    "selection_adjusted_evidence_positive": false
+  },
+  "june_primary_result": {
+    "dates": 30,
+    "trades": 16,
+    "total_net_pnl": 0.023499999999999917,
+    "return_on_committed_capital": 0.024065540194572365,
+    "maximum_drawdown": 0.7964999999999999,
+    "ex_post_rank_among_rule_threshold_candidates": 13,
+    "ex_post_candidate_strategies": 104
+  },
+  "temperature_bucket_cutoffs": {
+    "training_lower_tercile_c": 27.4,
+    "training_upper_tercile_c": 29.23333333333333
+  },
+  "inputs": {
+    "phase11_manifest": {
+      "path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_manifest.json",
+      "sha256": "32ae6e9acb28c3262f25ccfa50a95ceb3b833b1ecf3e0870905738db2bc51cef"
+    },
+    "phase11_candidates": {
+      "path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_candidate_contract_by_date_rule.csv",
+      "sha256": "ca107d0110739ae0dc9faa86ce6c52fa953e1094c452cec1e5869b56352bdad9"
+    },
+    "phase11_training_grid": {
+      "path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_training_threshold_grid.csv",
+      "sha256": "2dfe9fae8d9c6219597e4744beafc1f6fffd0462b08b723ff126816702a8f3e3"
+    },
+    "phase11_selection": {
+      "path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_frozen_strategy_selection.csv",
+      "sha256": "be616ee260714bb829ea498569bfd461b0dd7e3adb115b86b422ea448253f567"
+    },
+    "phase11_performance": {
+      "path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_frozen_strategy_performance.csv",
+      "sha256": "8456b5d334bf9f3dd2b5d1494921507b2a8bb9ba44d7faaaddf35fc0a64c7e03"
+    },
+    "phase10_paired_summary": {
+      "path": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_paired_difference_summary.csv",
+      "sha256": "763a6a9e6ac2b5d052f008b79e3907ed2c52506ac093d2136e0134dc62c8164a"
+    },
+    "phase9_score_summary": {
+      "path": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_score_summary.csv",
+      "sha256": "6c7103a2d7c3bf9de34faebff39ea171ccef8998ec18f2fb4d2b3ebb40f617f6"
+    }
+  },
+  "figures": [
+    "phase12_primary_threshold_neighbourhood.png",
+    "phase12_leave_one_date_out_thresholds.png",
+    "phase12_primary_fine_cost_sensitivity.png",
+    "phase12_june_trade_contributions.png"
+  ],
+  "restrictions": {
+    "use_june_for_strategy_selection": false,
+    "alter_phase11_frozen_strategy": false,
+    "impute_missing_prices": false,
+    "impute_missing_forecasts": false,
+    "claim_live_executability": false,
+    "interpret_post_hoc_june_surface_as_selection": false
+  }
+}
