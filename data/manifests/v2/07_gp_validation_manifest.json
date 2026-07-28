@@ -1,0 +1,68 @@
+{
+  "candidate_kernels": [
+    "rbf",
+    "matern32"
+  ],
+  "created_utc": "2026-07-28T07:45:47.100935+00:00",
+  "date_level_score_rows": 730,
+  "decision_rules": 4,
+  "descriptive_lower_crps_kernel": "matern32",
+  "feature_columns": [
+    "calendar_time_years_z",
+    "seasonal_sin_z",
+    "seasonal_cos_z",
+    "forecast_daily_max_c_z"
+  ],
+  "final_kernel_selected": false,
+  "fitted_models": 32,
+  "initial_training_dates": 365,
+  "kernel_hyperparameters_estimated_by": "log_marginal_likelihood",
+  "market_prices_accessed": false,
+  "model_scope": "separate_model_for_each_decision_rule",
+  "next_stage": "Use date-level CRPS to select the Gaussian-process covariance kernel, fit the selected GP specification on the complete weather-only training period, and construct the weather-plus-market training inputs.",
+  "numerical_jitter": 1e-08,
+  "optimizer_restarts": 0,
+  "output_hashes": {
+    "outputs/v2/diagnostics/07_gp_date_level_scores.csv": "6ac13cb0a8c531c869abeb79036a6b97f25ab690c137a0ba1eaf3075b203ea7f",
+    "outputs/v2/diagnostics/07_gp_kernel_paired_date_comparison.csv": "bdcd0c576125edadc89e2ba9a0094b9dccad15fda86257e10cc25872a268061d",
+    "outputs/v2/diagnostics/07_gp_kernel_rule_summary.csv": "b9106ed1deefeaabbcd03a767f193bc8bdf1094ea471e594790293f9af28d7a1",
+    "outputs/v2/diagnostics/07_gp_model_fit_ledger.csv": "516cf2afc554ee88bdda94e56a8ec0674a41f5f9e4c20e08c6c7e01055869536",
+    "outputs/v2/diagnostics/07_gp_validation_integrity_checks.csv": "f57f40b3b06130957bbe0623a34fc4c4371c02672cfb6c1ca044167bc95b86a8",
+    "outputs/v2/diagnostics/07_gp_validation_predictions.csv": "6cf36d253393d4a752096a79b9113648bd74b69ed12f0e970c8c39346cbbf33e",
+    "outputs/v2/final_tables/07_gp_kernel_validation_summary.csv": "796e5e849db17d720e132bf7764f205de08c73fb6c0898f8be3d2fb7bd265a89"
+  },
+  "output_paths": [
+    "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "outputs/v2/diagnostics/07_gp_model_fit_ledger.csv",
+    "outputs/v2/diagnostics/07_gp_date_level_scores.csv",
+    "outputs/v2/diagnostics/07_gp_kernel_paired_date_comparison.csv",
+    "outputs/v2/diagnostics/07_gp_kernel_rule_summary.csv",
+    "outputs/v2/diagnostics/07_gp_validation_integrity_checks.csv",
+    "outputs/v2/final_tables/07_gp_kernel_validation_summary.csv"
+  ],
+  "paired_validation_dates": 365,
+  "phase": 7,
+  "phase_status": "PHASE7_GP_VALIDATION_COMPLETE",
+  "polymarket_outcomes_accessed": false,
+  "primary_validation_score": "continuous_ranked_probability_score",
+  "probability_calibration_selected": false,
+  "required_integrity_checks_passed": true,
+  "selection_deferred_to_next_phase": true,
+  "source": "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv",
+  "source_sha256": "e44685584b368f4cb062c982332cb2544abc187e21c6500afdccee3d91529e43",
+  "status": "TWO_YEAR_GP_VALIDATION_DISTRIBUTIONS_CERTIFIED",
+  "target_column": "gp_target",
+  "temperature_quantiles_per_prediction": 99,
+  "trading_returns_calculated": false,
+  "training_target_normalised": true,
+  "validation_block_sizes": [
+    91,
+    91,
+    91,
+    92
+  ],
+  "validation_blocks": 4,
+  "validation_dates": 365,
+  "validation_prediction_rows": 2920,
+  "weather_only_dates": 730
+}

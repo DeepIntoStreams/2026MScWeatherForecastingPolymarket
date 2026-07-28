@@ -197,3 +197,8 @@ phase6-gp-design:
 python3 tools/v2/build_gp_training_design.py
 python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/06_gp_training_design.ipynb
 PYTHONPATH=src python3 -m unittest tests.test_v2_phase6_gp_training_design -v
+
+phase7-gp-validation:
+python3 tools/v2/fit_gp_validation_distributions.py
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/07_gp_validation_distributions.ipynb
+PYTHONPATH=src python3 -m unittest tests.test_v2_phase7_gp_validation -v

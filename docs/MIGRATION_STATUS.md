@@ -385,3 +385,10 @@ calculations were performed.
   92 dates. Feature standardisation is estimated separately within
   each training fold and decision rule. No model or market information
   was used.
+
+- Phase 7 Gaussian-process validation distributions: complete. Thirty-two
+  rule-specific Gaussian-process models were fitted across four
+  chronological folds and two covariance kernels. The phase produced
+  probabilistic forecasts for 365 validation dates, including 99
+  temperature quantiles per prediction. CRPS comparisons are recorded,
+  but final covariance-kernel selection remains separate.
