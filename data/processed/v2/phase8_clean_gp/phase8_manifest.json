@@ -1,0 +1,45 @@
+{
+  "phase": 8,
+  "status": "passed",
+  "selected_kernel_family": "matern32",
+  "inputs": {
+    "residual_panel": {
+      "path": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+      "sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48"
+    },
+    "settlement_universe": {
+      "path": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+      "date_column": "event_date",
+      "sha256": "5765e7b5befe0fc5af12df0bb0ce79bd406e831531d9acc7e500bd347300c2c7"
+    },
+    "certified_forecasts": {
+      "path": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_deterministic_weather_panel.csv",
+      "sha256": "049abe248bb7910eb75c21b31edb4ea255640bcce1ffd3c376dc54907c523501",
+      "raw_valid_rows": 4125
+    }
+  },
+  "counts": {
+    "weather_only_training_dates": 730,
+    "weather_only_training_date_rule_rows": 2920,
+    "settlement_market_universe_dates": 103,
+    "theoretical_market_date_rule_rows": 412,
+    "forecast_supported_dates": 102,
+    "forecast_supported_date_rule_rows": 375,
+    "missing_forecast_date_rule_rows": 37,
+    "settlement_dates_without_any_forecast": 1,
+    "weather_plus_market_training_dates": 72,
+    "weather_plus_market_training_rows": 256,
+    "out_of_sample_validation_dates": 30,
+    "out_of_sample_validation_rows": 119
+  },
+  "settlement_dates_without_any_forecast": [
+    "2026-03-19"
+  ],
+  "restrictions": {
+    "use_market_prices": false,
+    "use_market_outcomes": false,
+    "impute_missing_forecasts": false,
+    "refit_or_select_using_june": false,
+    "evaluation_support": "exact_common_support"
+  }
+}

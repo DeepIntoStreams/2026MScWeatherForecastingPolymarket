@@ -1,0 +1,62 @@
+{
+  "phase": 8,
+  "name": "Clean full weather-only GP fit and market-period preparation",
+  "selected_kernel_family": "matern32",
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "periods": {
+    "market_period_start": "2026-03-16",
+    "weather_plus_market_training_end": "2026-05-31",
+    "out_of_sample_validation_start": "2026-06-01",
+    "out_of_sample_validation_end": "2026-06-30"
+  },
+  "expected_counts": {
+    "weather_only_training_dates": 730,
+    "weather_only_training_date_rule_rows": 2920,
+    "settlement_market_universe_dates": 103,
+    "theoretical_market_date_rule_rows": 412,
+    "forecast_supported_dates": 102,
+    "forecast_supported_date_rule_rows": 375,
+    "missing_forecast_date_rule_rows": 37,
+    "weather_plus_market_training_dates": 72,
+    "out_of_sample_validation_dates": 30
+  },
+  "fixed_phase7_kernel_parameters": {
+    "24h_prior": {
+      "amplitude": 0.65,
+      "length_scale": 0.477,
+      "noise_level": 0.612
+    },
+    "12h_prior": {
+      "amplitude": 0.703,
+      "length_scale": 0.983,
+      "noise_level": 0.644
+    },
+    "6h_prior": {
+      "amplitude": 0.703,
+      "length_scale": 1.02,
+      "noise_level": 0.656
+    },
+    "event_day_open": {
+      "amplitude": 0.69,
+      "length_scale": 0.969,
+      "noise_level": 0.632
+    }
+  },
+  "certified_forecast_source": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_deterministic_weather_panel.csv",
+  "outputs": {
+    "data_directory": "data/processed/v2/phase8_clean_gp",
+    "model_directory": "models/v2/phase8_clean_gp"
+  },
+  "restrictions": {
+    "use_market_prices": false,
+    "use_market_outcomes": false,
+    "impute_missing_forecasts": false,
+    "refit_or_select_using_june": false,
+    "evaluation_support": "exact_common_support"
+  }
+}

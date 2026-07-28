@@ -1,0 +1,5 @@
+decision_rule,kernel_family,training_dates,training_rows,training_residual_mean_c,training_residual_mae_c,kernel,model_file
+24h_prior,matern32,730,730,1.4443835616438356,1.7358904109589042,"0.65**2 * Matern(length_scale=0.477, nu=1.5) + WhiteKernel(noise_level=0.612)",24h_prior_matern32_full_fit.joblib
+12h_prior,matern32,730,730,1.422739726027397,1.6742465753424658,"0.703**2 * Matern(length_scale=0.983, nu=1.5) + WhiteKernel(noise_level=0.644)",12h_prior_matern32_full_fit.joblib
+6h_prior,matern32,730,730,1.4335616438356165,1.6784931506849314,"0.703**2 * Matern(length_scale=1.02, nu=1.5) + WhiteKernel(noise_level=0.656)",6h_prior_matern32_full_fit.joblib
+event_day_open,matern32,730,730,1.417945205479452,1.6316438356164382,"0.69**2 * Matern(length_scale=0.969, nu=1.5) + WhiteKernel(noise_level=0.632)",event_day_open_matern32_full_fit.joblib
