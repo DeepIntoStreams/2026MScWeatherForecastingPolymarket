@@ -303,3 +303,12 @@ into a single numerical evidence register and a claim-boundary
 table. No model, calibration parameter or trading strategy was
 reselected. The next empirical stage is the final reproducibility
 and release audit.
+
+## Notebook 15: Reproducibility Release Audit
+
+Status: complete.
+
+The empirical parent commit has been audited for manifest lineage,
+hash consistency, canonical notebook execution, branch alignment,
+test completion and preservation of all locked choices. The next
+stage is thesis table extraction and final empirical reporting.

@@ -1,0 +1,2 @@
+command,return_code,passed,test_count
+PYTHONPATH=src python3 -m unittest discover -s tests -v,0,True,156

@@ -1,0 +1,37 @@
+stage: notebook15_reproducibility_release_audit
+status_on_success: FINAL_EMPIRICAL_RELEASE_CERTIFIED
+
+audited_root_manifest:
+  data/manifests/14_final_empirical_synthesis_manifest.json
+
+required_notebook_numbers:
+  start: 0
+  end: 14
+
+required_branch:
+  edward-final-empirical-2026
+
+audit_requirements:
+  - local and remote commits are identical before certification
+  - all declared lineage hashes are verified
+  - all canonical notebooks from 00 to 14 are present
+  - all canonical notebooks contain no execution errors
+  - all canonical notebook code cells have execution counts
+  - the complete repository test suite passes
+  - no unexpected working-tree changes are present
+  - model and calibration choices remain unchanged
+  - holdout and external-test observations were not used for selection
+
+release_scope:
+  - tracked files at the audited parent commit
+  - locked empirical manifests
+  - canonical notebooks 00 to 14
+  - final tables and diagnostic evidence
+  - source code, tests and configuration
+
+prohibited_claims:
+  - executable profitability
+  - population-level statistical significance
+  - universal model superiority
+  - market inefficiency
+  - implemented AIFS ENS, ECMWF ENS or Earth-2 forecasts

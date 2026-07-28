@@ -1,0 +1,16 @@
+notebook_number,path,code_cells,executed_code_cells,unexecuted_code_cells,error_outputs,execution_complete
+0,notebooks/final/00_project_configuration_and_manifest.ipynb,3,3,0,0,True
+1,notebooks/final/01_hko_settlement_and_event_certification.ipynb,4,4,0,0,True
+2,notebooks/final/02_deterministic_weather_training_panel.ipynb,5,5,0,0,True
+3,notebooks/final/03_chronological_design.ipynb,3,3,0,0,True
+4,notebooks/final/04_probabilistic_model_selection.ipynb,3,3,0,0,True
+5,notebooks/final/05_continuous_distribution_calibration.ipynb,3,3,0,0,True
+6,notebooks/final/06_locked_predictive_distributions.ipynb,4,4,0,0,True
+7,notebooks/final/07_locked_continuous_evaluation.ipynb,4,4,0,0,True
+8,notebooks/final/08_locked_event_probabilities.ipynb,4,4,0,0,True
+9,notebooks/final/09_probability_calibration.ipynb,3,3,0,0,True
+10,notebooks/final/10_locked_categorical_evaluation.ipynb,4,4,0,0,True
+11,notebooks/final/11_common_support_market_comparison.ipynb,6,6,0,0,True
+12,notebooks/final/12_locked_trading_strategy.ipynb,6,6,0,0,True
+13,notebooks/final/13_date_level_uncertainty_analysis.ipynb,7,7,0,0,True
+14,notebooks/final/14_final_empirical_synthesis.ipynb,6,6,0,0,True

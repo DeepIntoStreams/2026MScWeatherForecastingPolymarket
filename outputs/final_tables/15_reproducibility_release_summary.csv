@@ -1,0 +1,13 @@
+audited_commit,check,passed,detail
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,correct_branch,True,edward-final-empirical-2026
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,local_remote_commits_aligned,True,019ce05d69561f00b6bc7e8caf1ab885de7d994e
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,no_unexpected_working_tree_changes,True,
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,root_manifest_complete,True,FINAL_EMPIRICAL_SYNTHESIS_COMPLETE
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,lineage_contains_no_failure_status,True,11
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,all_verifiable_lineage_files_exist,True,114
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,all_lineage_hashes_match,True,114
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,canonical_notebooks_00_to_14_present,True,"00,01,02,03,04,05,06,07,08,09,10,11,12,13,14"
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,canonical_notebooks_executed_without_errors,True,15
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,full_repository_test_suite_passed,True,156
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,locked_selection_lineage_unchanged,True,"{""continuous_calibration_reselected"": false, ""external_test_used_for_selection"": false, ""holdout_used_for_selection"": false, ""model_reselected"": false, ""probability_calibration_reselected"": false, ""trading_strategy_reselected"": false}"
+019ce05d69561f00b6bc7e8caf1ab885de7d994e,tracked_parent_commit_inventory_nonempty,True,470
