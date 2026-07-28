@@ -1,0 +1,24 @@
+{
+  "affected_request_dates": 112,
+  "market_prices_accessed": false,
+  "minimum_usable_response": "at least one complete Asia/Hong_Kong local date with 24 nonmissing hourly temperatures",
+  "model_fitted": false,
+  "model_selected": false,
+  "partial_core_responses_retried": true,
+  "permanently_unavailable_core_runs": 101,
+  "phase": 4,
+  "realised_outcomes_accessed": false,
+  "relaxed_core_retry_requests": 64,
+  "status": "REPAIR_PLAN_DECLARED",
+  "subphase": "4D",
+  "successful_core_requests_retained": 1299,
+  "supplementary_cycles_utc": [
+    6,
+    18
+  ],
+  "supplementary_requests": 224,
+  "total_repair_requests": 288,
+  "trading_returns_calculated": false,
+  "unavailable_core_runs_retried": false,
+  "valid_core_cache_reused": true
+}

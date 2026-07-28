@@ -1,0 +1,38 @@
+{
+  "affected_request_dates": 112,
+  "core_requests_failed": 165,
+  "core_requests_successful": 1299,
+  "created_utc": "2026-07-28T05:26:50.284107+00:00",
+  "dates_with_one_core_run": 59,
+  "dates_with_zero_core_runs": 53,
+  "market_prices_accessed": false,
+  "model_fitted": false,
+  "model_selected": false,
+  "network_requests_made": false,
+  "next_stage": "Execute the 64 relaxed core retries and 224 supplementary-cycle requests.",
+  "output_hashes": {
+    "config/v2/two_year_repair_spec.json": "fc60daf0e5111539fa14d721ef7ce9196ee575b01926709c7eca7fcbc64f5f20",
+    "outputs/v2/diagnostics/03a_core_failure_audit.csv": "e9b3b7658fc7f4ed7a569d04bfa86995b42dc79abd76d6cb204e9770fc9b7ee9",
+    "outputs/v2/diagnostics/03a_relaxed_core_retry_plan.csv": "6d5e050be1abdd4e1af04f4c916f3d53837a18c54aa70ed34882a73f1ffec7ab",
+    "outputs/v2/diagnostics/03a_supplementary_repair_request_plan.csv": "905c5431cf1ed752e94a9f189afd5736a0e871be29775528de000ca96add556c",
+    "outputs/v2/diagnostics/03a_two_year_repair_request_plan.csv": "346ba0011bbc8c298dff56c303d7b80359b369ab1c9dcca05bbb567112f536f5"
+  },
+  "output_paths": [
+    "outputs/v2/diagnostics/03a_core_failure_audit.csv",
+    "outputs/v2/diagnostics/03a_relaxed_core_retry_plan.csv",
+    "outputs/v2/diagnostics/03a_supplementary_repair_request_plan.csv",
+    "outputs/v2/diagnostics/03a_two_year_repair_request_plan.csv",
+    "config/v2/two_year_repair_spec.json"
+  ],
+  "partial_response_failures": 64,
+  "phase": 4,
+  "phase_status": "PHASE4_REPAIR_PLAN_COMPLETE",
+  "realised_outcomes_accessed": false,
+  "relaxed_core_retry_requests": 64,
+  "run_unavailable_failures": 101,
+  "status": "TWO_YEAR_REPAIR_PLAN_CERTIFIED",
+  "subphase": "4D1",
+  "supplementary_repair_requests": 224,
+  "total_repair_requests": 288,
+  "trading_returns_calculated": false
+}

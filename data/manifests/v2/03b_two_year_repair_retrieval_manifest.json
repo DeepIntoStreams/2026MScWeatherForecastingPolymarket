@@ -1,0 +1,48 @@
+{
+  "all_repair_requests_accounted": true,
+  "categorical_scores_calculated": false,
+  "complete_run_inventory_rows": 1391,
+  "complete_run_inventory_unique": true,
+  "continuous_calibration_selected": false,
+  "created_utc": "2026-07-28T05:37:15.647566+00:00",
+  "failed_repair_requests": 196,
+  "failure_type_counts": {
+    "no_complete_local_day": 107,
+    "run_unavailable": 89
+  },
+  "market_prices_accessed": false,
+  "model_fitted": false,
+  "model_selected": false,
+  "next_stage": "Construct target-date and decision-rule support from the complete historical run inventory.",
+  "original_successful_core_requests": 1299,
+  "output_hashes": {
+    "outputs/v2/diagnostics/03b_two_year_complete_run_inventory.csv": "d73be0ea10f6d08e534c25a3a1f8f2910ccd9849db25ef56e101843c1ddfb391",
+    "outputs/v2/diagnostics/03b_two_year_repair_daily_availability.csv": "94849f2352c253ec5f4018143bc5c4b8518e6330cc9202880e56853e953526d1",
+    "outputs/v2/diagnostics/03b_two_year_repair_integrity_checks.csv": "64bdfe5f81a7a0239374c9e8145bac3faba24ecad92ef65bfae12a76e1c73a76",
+    "outputs/v2/diagnostics/03b_two_year_repair_retrieval_ledger.csv": "6ea8fe85879852b7275a23362021dc8d45f440aea0c1190c89270beb6c4ddb59",
+    "outputs/v2/diagnostics/03b_two_year_repair_retrieval_summary.csv": "4d560bb9caaca74eee1165db7e31fe6731ee25bb63b56f8264a7ab05d2be1f0c"
+  },
+  "output_paths": [
+    "outputs/v2/diagnostics/03b_two_year_repair_retrieval_ledger.csv",
+    "outputs/v2/diagnostics/03b_two_year_repair_daily_availability.csv",
+    "outputs/v2/diagnostics/03b_two_year_repair_retrieval_summary.csv",
+    "outputs/v2/diagnostics/03b_two_year_complete_run_inventory.csv",
+    "outputs/v2/diagnostics/03b_two_year_repair_integrity_checks.csv"
+  ],
+  "phase": 4,
+  "phase_status": "PHASE4_REPAIR_RETRIEVAL_COMPLETE",
+  "planned_repair_requests": 288,
+  "probability_calibration_selected": false,
+  "raw_cache_committed_to_git": false,
+  "realised_outcomes_accessed": false,
+  "status": "TWO_YEAR_REPAIR_REQUESTS_ACCOUNTED",
+  "subphase": "4D2",
+  "successful_repair_requests": 92,
+  "successful_repair_role_counts": {
+    "supplementary_cycle_candidate": 92
+  },
+  "successful_responses_require_complete_local_day": true,
+  "trading_returns_calculated": false,
+  "trading_strategy_selected": false,
+  "unavailable_runs_permitted_when_recorded": true
+}

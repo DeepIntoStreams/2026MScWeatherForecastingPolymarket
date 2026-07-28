@@ -1,0 +1,23 @@
+{
+  "calibration_selected": false,
+  "decision_rule_selection": "latest available complete-day forecast issued no later than the decision time",
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "decision_time_source": "data/processed/02_chronological_design_panel.csv",
+  "market_prices_accessed": false,
+  "model_fitted": false,
+  "model_selected": false,
+  "phase": 4,
+  "realised_outcomes_accessed": false,
+  "run_inventory_source": "outputs/v2/diagnostics/03b_two_year_complete_run_inventory.csv",
+  "status": "WEATHER_ONLY_DECISION_SUPPORT_DECLARED",
+  "subphase": "4E",
+  "target_date_source": "outputs/v2/diagnostics/02_two_year_training_target_support_map.csv",
+  "timezone": "Asia/Hong_Kong",
+  "trading_returns_calculated": false,
+  "weather_only_target_dates": 730
+}

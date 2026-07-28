@@ -1,0 +1,21 @@
+{
+  "base_url": "https://data.weather.gov.hk/weatherAPI/opendata/opendata.php",
+  "data_type": "CLMMAXT",
+  "station": "HKO",
+  "return_format": "json",
+  "temperature_unit": "degrees Celsius",
+  "timezone": "Asia/Hong_Kong",
+  "source_name": "Hong Kong Observatory Open Data API",
+  "source_description": "Daily Maximum Temperature, Hong Kong Observatory",
+  "expected_training_dates": 730,
+  "use_only_dates_in_weather_only_support_panel": true,
+  "permit_later_rows_in_source_response": true,
+  "use_later_rows_in_training": false,
+  "request_timeout_seconds": 90,
+  "maximum_attempts": 5,
+  "retry_wait_seconds": 5,
+  "market_prices_accessed": false,
+  "polymarket_outcomes_accessed": false,
+  "model_fitting_permitted": false,
+  "model_selection_permitted": false
+}

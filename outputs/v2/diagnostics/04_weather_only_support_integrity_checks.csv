@@ -1,0 +1,12 @@
+check,required,passed,detail
+target_date_count,True,True,730
+decision_rule_count,True,True,4
+skeleton_row_count,True,True,2920
+selected_keys_unique,True,True,2920
+all_selected_runs_before_decision,True,True,True
+all_selected_runs_complete_local_day,True,True,True
+run_inventory_count,True,True,1391
+market_prices_not_accessed,True,True,False
+outcomes_not_accessed,True,True,False
+model_not_fitted,True,True,False
+model_not_selected,True,True,False

@@ -1,0 +1,12 @@
+check,required,passed,detail
+weather_only_training_date_count,True,True,730
+training_dates_unique,True,True,730
+exact_training_date_interval,True,True,2024-03-16 to 2026-03-15
+all_training_temperatures_present,True,True,0
+training_temperatures_plausible,True,True,14.3 to 35.7
+source_years_complete,True,True,"2024,2025,2026"
+later_source_rows_excluded,True,True,107
+market_prices_not_accessed,True,True,False
+polymarket_outcomes_not_accessed,True,True,False
+model_not_fitted,True,True,False
+model_not_selected,True,True,False

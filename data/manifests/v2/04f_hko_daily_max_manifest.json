@@ -1,0 +1,61 @@
+{
+  "categorical_scores_calculated": false,
+  "continuous_calibration_selected": false,
+  "created_utc": "2026-07-28T06:31:21.197388+00:00",
+  "first_training_date": "2024-03-16",
+  "last_training_date": "2026-03-15",
+  "market_prices_accessed": false,
+  "missing_training_temperatures": 0,
+  "model_fitted": false,
+  "model_selected": false,
+  "next_stage": "Join the certified HKO observations to the 2,920 weather-only forecast rows and construct forecast residuals.",
+  "output_hashes": {
+    "outputs/v2/diagnostics/04f_hko_daily_max_excluded_rows.csv": "cebf881bc5875f02a770b2e342c7266ee3c24c2ce821c5ca576dfda741e91d0b",
+    "outputs/v2/diagnostics/04f_hko_daily_max_integrity_checks.csv": "35dbbe70f92cd5ac351b489e2a146188d0816c9dd02de7de041491486733b1ad",
+    "outputs/v2/diagnostics/04f_hko_daily_max_source_inventory.csv": "9d0ff7d7ddf7754c719b9bcf1a1d8a46b2dd8a49705169bffa4f326a7dc1c682",
+    "outputs/v2/diagnostics/04f_hko_daily_max_training_panel.csv": "b6c93aaf229cd7d656b80b63545e8f9d169a617e712bfe14dd7780da0d1b0074",
+    "outputs/v2/final_tables/04f_hko_daily_max_summary.csv": "b6f8f291a5547fd64003aa9b411a88813fa647b83901d431119df06a0658a784"
+  },
+  "output_paths": [
+    "outputs/v2/diagnostics/04f_hko_daily_max_source_inventory.csv",
+    "outputs/v2/diagnostics/04f_hko_daily_max_training_panel.csv",
+    "outputs/v2/diagnostics/04f_hko_daily_max_excluded_rows.csv",
+    "outputs/v2/diagnostics/04f_hko_daily_max_integrity_checks.csv",
+    "outputs/v2/final_tables/04f_hko_daily_max_summary.csv"
+  ],
+  "phase": 4,
+  "phase_status": "PHASE4_HKO_TRAINING_OBSERVATIONS_COMPLETE",
+  "polymarket_outcomes_accessed": false,
+  "post_training_hko_rows_used": 0,
+  "probability_calibration_selected": false,
+  "raw_hashes": {
+    "data/raw/v2/hko_daily_max_temperature/hko_clmmaxt_2024.json.gz": "9019e648d8c230083cab01c67d5a8ee5517f6e55570ee314e0b8272b78fe05eb",
+    "data/raw/v2/hko_daily_max_temperature/hko_clmmaxt_2025.json.gz": "7c7f5b8d5374776909464fec828fc63a5bea7a42241d8da9fef1cf8907a95ed8",
+    "data/raw/v2/hko_daily_max_temperature/hko_clmmaxt_2026.json.gz": "a7a0b4b886583fa74c95ae74cac6c74f5e07812f7df63a462da40d9ac575a959"
+  },
+  "raw_paths": [
+    "data/raw/v2/hko_daily_max_temperature/hko_clmmaxt_2024.json.gz",
+    "data/raw/v2/hko_daily_max_temperature/hko_clmmaxt_2025.json.gz",
+    "data/raw/v2/hko_daily_max_temperature/hko_clmmaxt_2026.json.gz"
+  ],
+  "required_integrity_checks_passed": true,
+  "source_data_type": "CLMMAXT",
+  "source_name": "Hong Kong Observatory Open Data API",
+  "source_rows_excluded": 182,
+  "source_rows_excluded_after_training": 107,
+  "source_rows_excluded_before_training": 75,
+  "source_rows_received": 912,
+  "source_rows_used": 730,
+  "source_station": "HKO",
+  "source_years": [
+    2024,
+    2025,
+    2026
+  ],
+  "status": "HKO_DAILY_MAXIMUM_TRAINING_PANEL_CERTIFIED",
+  "subphase": "4F",
+  "trading_returns_calculated": false,
+  "trading_strategy_selected": false,
+  "training_hko_observations_accessed": true,
+  "weather_only_training_dates": 730
+}

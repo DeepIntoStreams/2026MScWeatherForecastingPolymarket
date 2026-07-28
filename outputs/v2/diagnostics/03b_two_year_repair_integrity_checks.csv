@@ -1,0 +1,10 @@
+check,required,passed,detail
+repair_request_count,True,True,288
+repair_request_ids_unique,True,True,288
+all_repair_requests_accounted,True,True,288
+successful_responses_have_complete_day,True,True,92
+failed_responses_classified,True,True,196
+original_core_success_count,True,True,1299
+complete_inventory_unique,True,True,1391
+market_prices_not_accessed,True,True,False
+outcomes_not_accessed,True,True,False

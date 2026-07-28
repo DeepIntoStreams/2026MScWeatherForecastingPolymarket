@@ -1,0 +1,5 @@
+repair_role,status,failure_type,requests,complete_local_days,downloaded,cache_reused
+core_partial_response_retry,FAILED,no_complete_local_day,64,0,0,0
+supplementary_cycle_candidate,DOWNLOADED_VALID,,92,460,92,0
+supplementary_cycle_candidate,FAILED,no_complete_local_day,43,0,0,0
+supplementary_cycle_candidate,FAILED,run_unavailable,89,0,0,0

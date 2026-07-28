@@ -1,0 +1,5 @@
+decision_rule,decision_rule_order,supported_rows,supported_dates,minimum_target_date,maximum_target_date,mean_run_age_hours,median_run_age_hours,maximum_run_age_hours,distinct_selected_runs,expected_dates,missing_dates,support_share
+24h_prior,0,730,730,2024-03-16,2026-03-15,5.7095890410958905,4.0,52.0,709,730,0,1.0
+12h_prior,1,730,730,2024-03-16,2026-03-15,5.495890410958904,4.0,46.0,718,730,0,1.0
+6h_prior,2,730,730,2024-03-16,2026-03-15,10.608219178082193,10.0,52.0,709,730,0,1.0
+event_day_open,3,730,730,2024-03-16,2026-03-15,5.7095890410958905,4.0,52.0,709,730,0,1.0

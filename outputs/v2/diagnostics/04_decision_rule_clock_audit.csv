@@ -1,0 +1,5 @@
+decision_rule,decision_rule_order,decision_offset_hours,source_rows,modal_rows,modal_share,example_local_decision_time,source
+24h_prior,0,-24.0,96,96,1.0,2025-12-31T00:00:00+08:00,data/processed/02_chronological_design_panel.csv
+12h_prior,1,-12.0,93,93,1.0,2025-12-31T12:00:00+08:00,data/processed/02_chronological_design_panel.csv
+6h_prior,2,-6.0,91,91,1.0,2025-12-31T18:00:00+08:00,data/processed/02_chronological_design_panel.csv
+event_day_open,3,0.0,95,95,1.0,2026-01-01T00:00:00+08:00,data/processed/02_chronological_design_panel.csv

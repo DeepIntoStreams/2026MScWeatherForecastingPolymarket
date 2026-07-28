@@ -368,3 +368,8 @@ planned core support requests.
 No network requests, market prices, realised outcomes, model
 fitting, model selection, calibration, scoring or trading
 calculations were performed.
+
+- Phase 4F HKO daily maximum temperature: complete. The official HKO
+  daily maximum-temperature series has been restricted to the 730
+  weather-only training dates and certified without market information
+  or model fitting.

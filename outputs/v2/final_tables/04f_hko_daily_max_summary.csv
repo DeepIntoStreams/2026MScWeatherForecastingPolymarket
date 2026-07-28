@@ -1,0 +1,2 @@
+weather_only_training_dates,first_training_date,last_training_date,source_years,minimum_hko_daily_max_c,mean_hko_daily_max_c,maximum_hko_daily_max_c,missing_training_temperatures,source_rows_excluded_before_training,source_rows_excluded_after_training,market_prices_accessed,polymarket_outcomes_accessed,model_fitted,model_selected
+730,2024-03-16,2026-03-15,"2024,2025,2026",14.3,27.28,35.7,0,75,107,False,False,False,False

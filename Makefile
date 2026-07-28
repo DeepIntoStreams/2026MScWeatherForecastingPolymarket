@@ -182,3 +182,8 @@ execute-v2-notebook-02:
 
 test-v2-phase3:
 	PYTHONPATH=src python3 -m unittest tests.test_v2_phase3_two_year_request_plan -v
+
+phase4f-hko:
+python3 tools/v2/retrieve_hko_daily_max_temperature.py --offline
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/04_hko_daily_max_temperature.ipynb
+PYTHONPATH=src python3 -m unittest tests.test_v2_phase4f_hko_daily_max -v
