@@ -1,0 +1,101 @@
+project_version: v2
+stage: phase1_initialisation
+status: COMPLETE
+
+purpose:
+  primary: expand deterministic weather post-processing
+  description: >
+    Add approximately two years of weather-only training data before
+    rerunning the probabilistic weather, market and trading analysis.
+  change_type: expanded_analysis_not_repair
+
+version_1_release:
+  source_branch: edward-final-empirical-2026
+  source_commit: 1ddf22a
+  release_tag: v1-certified-pre-expansion-20260728
+  modification_permitted: false
+
+version_2:
+  branch: edward-v2-two-year-weather-gp
+  versioned_paths_required: true
+
+periods:
+  weather_only_training:
+    start: 2024-03-14
+    end: 2026-03-15
+
+  weather_plus_market_training:
+    start: 2026-03-16
+    end: 2026-05-31
+
+  out_of_sample_validation_june:
+    start: 2026-06-01
+    end: 2026-06-30
+
+  out_of_sample_validation_july:
+    start: 2026-07-01
+    end: 2026-07-31
+
+weather_source:
+  interface: Open-Meteo Single Runs
+  forecast_product: ECMWF IFS deterministic
+  historical_run_reconstruction_required: true
+  preserve_run_initialisation: true
+  preserve_valid_time: true
+  preserve_forecast_step: true
+  information_time_audit_required: true
+
+weather_target:
+  source: Hong Kong Observatory
+  variable: absolute daily maximum temperature
+
+decision_rules:
+  - 24h_prior
+  - 12h_prior
+  - 6h_prior
+  - event_day_open
+
+candidate_models:
+  main:
+    - raw_deterministic
+    - mean_residual_correction
+    - empirical_residual_distribution
+    - gaussian_process_matern32
+    - gaussian_process_rbf
+
+  retained_pending_supervisor_advice:
+    - pooled_catboost_quantile
+    - rule_catboost_quantile
+    - ensemble_and_ai_weather_extensions
+
+excluded_from_active_empirical_plan:
+  - ERA5
+  - direct_ECMWF_Open_Data_ingestion
+  - ECMWF_MARS_fee_waiver_dependency
+  - WeatherNext_execution
+  - Earth2_execution
+  - GraphCast_execution
+  - FourCastNet_execution
+  - additional_cities
+  - additional_weather_stations
+  - large_meteorological_feature_sets
+  - advanced_portfolio_optimisation
+  - order_book_simulation
+
+guardrails:
+  - no Version 1 notebook, manifest or output may be overwritten
+  - all Version 2 artefacts must use versioned paths
+  - all rows from one target date remain in the same fold
+  - training dates precede validation dates
+  - June information cannot enter training or selection
+  - July information cannot enter training or selection
+  - probability calibration uses the weather plus market training period
+  - trading selection uses the weather plus market training period
+  - market comparison uses exact common support
+  - settlement date remains the main uncertainty unit
+
+future_extension:
+  ten_year_weather_training:
+    status: reserved
+    implemented_now: false
+    condition: supervisor request and feasible data access
