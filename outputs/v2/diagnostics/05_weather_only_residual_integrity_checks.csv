@@ -1,0 +1,21 @@
+check,required,passed,detail
+residual_rows_equal_2920,True,True,2920
+unique_dates_equal_730,True,True,730
+four_decision_rules,True,True,4
+four_rules_per_date,True,True,730
+date_rule_keys_unique,True,True,0
+continuous_training_dates,True,True,730
+all_hko_rows_joined,True,True,2920
+forecast_values_present,True,True,0
+hko_values_present,True,True,0
+forecast_values_plausible,True,True,13.400 to 34.600
+hko_values_plausible,True,True,14.300 to 35.700
+residual_algebra_exact,True,True,0.0
+forecast_error_algebra_exact,True,True,0.0
+residual_and_error_are_negatives,True,True,0.0
+market_prices_not_accessed,True,True,False
+polymarket_outcomes_not_accessed,True,True,False
+model_not_fitted,True,True,False
+model_not_selected,True,True,False
+calibration_not_selected,True,True,False
+trading_returns_not_calculated,True,True,False

@@ -373,3 +373,8 @@ calculations were performed.
   daily maximum-temperature series has been restricted to the 730
   weather-only training dates and certified without market information
   or model fitting.
+
+- Phase 5 two-year weather-only residual panel: complete. The 2,920
+  deterministic date-rule forecasts have been joined to 730 certified
+  HKO observations using the residual definition HKO minus forecast.
+  No market information or model fitting was used.

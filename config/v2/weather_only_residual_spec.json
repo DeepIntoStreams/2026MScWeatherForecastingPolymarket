@@ -1,0 +1,21 @@
+{
+  "phase": 5,
+  "weather_only_dates": 730,
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "forecast_source": "outputs/v2/diagnostics/04_weather_only_decision_support_panel.csv",
+  "observation_source": "outputs/v2/diagnostics/04f_hko_daily_max_training_panel.csv",
+  "residual_definition": "hko_daily_max_c minus forecast_daily_max_c",
+  "forecast_error_definition": "forecast_daily_max_c minus hko_daily_max_c",
+  "uncertainty_unit": "target_date",
+  "market_prices_accessed": false,
+  "polymarket_outcomes_accessed": false,
+  "model_fitting_permitted": false,
+  "model_selection_permitted": false,
+  "calibration_permitted": false,
+  "trading_permitted": false
+}

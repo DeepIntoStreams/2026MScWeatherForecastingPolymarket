@@ -187,3 +187,8 @@ phase4f-hko:
 python3 tools/v2/retrieve_hko_daily_max_temperature.py --offline
 python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/04_hko_daily_max_temperature.ipynb
 PYTHONPATH=src python3 -m unittest tests.test_v2_phase4f_hko_daily_max -v
+
+phase5-residuals:
+python3 tools/v2/build_weather_only_residual_panel.py
+python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/05_weather_only_forecast_residuals.ipynb
+PYTHONPATH=src python3 -m unittest tests.test_v2_phase5_weather_only_residuals -v
