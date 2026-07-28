@@ -1,0 +1,70 @@
+{
+  "all_required_checks_passed": true,
+  "archive_probe_runs": 4,
+  "availability_delay_hours": 6,
+  "complete_24_hour_rows": 20,
+  "four_cycle_archive_completeness_assumed": false,
+  "historical_cycle_policy": "The 00 and 12 UTC initialisation cycles form the required two-year historical weather-only archive. The 06 and 18 UTC cycles are supplementary and are retained where available.",
+  "historical_training_core_cycles_utc": [
+    0,
+    12
+  ],
+  "location": {
+    "latitude": 22.3019444444,
+    "longitude": 114.1741666667,
+    "station": "Hong Kong Observatory"
+  },
+  "market_prices_accessed": false,
+  "maximum_absolute_difference_c": 0.0,
+  "median_absolute_difference_c": 0.0,
+  "model": "ecmwf_ifs",
+  "model_fitted": false,
+  "model_selected": false,
+  "next_stage": "Construct and certify the complete two-year weather-only historical request plan.",
+  "output_hashes": {
+    "data/interim/v2/01_single_runs_pilot_request_plan.csv": "f18e6fb85571cd228493d92d359c7b3184d00811b12edbd75b0e5d569a834be9",
+    "data/processed/v2/01_single_runs_overlap_reconstruction.csv": "d390f1ee515e65b4b1109c7805e1e072be43f1c3e2371a39557f51f9f47e9a4a",
+    "outputs/v2/diagnostics/01_single_runs_archive_probe_results.csv": "ab098c66ffdeb50b28ad0edd02c82968c5227bed9fa49730a36dd925aa56f76b",
+    "outputs/v2/diagnostics/01_single_runs_overlap_summary.csv": "2799e9bf4b81237e6d241d25c0882a9a4a14d72b36a1e8be969d29fff4460bec",
+    "outputs/v2/diagnostics/01_single_runs_pilot_integrity_checks.csv": "7f58ed2fcc9dd317f44eda919596f83eafc9bd18ca95555912da948977b5bdff"
+  },
+  "overlap_dates": 5,
+  "overlap_differences_are_diagnostic": true,
+  "overlap_rows": 20,
+  "overlap_window": {
+    "dates": 5,
+    "end": "2026-05-21",
+    "rows": 20,
+    "start": "2026-04-12"
+  },
+  "phase": 2,
+  "phase_status": "PHASE2_COMPLETE",
+  "pilot_approved": true,
+  "raw_cache_file_count": 75,
+  "realised_outcomes_accessed": false,
+  "source": "Open-Meteo Single Runs API",
+  "status": "SINGLE_RUNS_PILOT_APPROVED",
+  "successful_archive_probe_runs": 4,
+  "successful_overlap_rows": 20,
+  "supplementary_cycles_utc": [
+    6,
+    18
+  ],
+  "tracked_evidence_hashes": {
+    "outputs/v2/diagnostics/01_single_runs_archive_boundary_audit.csv": "db6b5e603616ad034314a5f1a439a9281717bc26a26d3f9dc8679cbf5d2a80a7",
+    "outputs/v2/diagnostics/01_single_runs_archive_probe_results.csv": "ab098c66ffdeb50b28ad0edd02c82968c5227bed9fa49730a36dd925aa56f76b",
+    "outputs/v2/diagnostics/01_single_runs_overlap_reconstruction.csv": "d390f1ee515e65b4b1109c7805e1e072be43f1c3e2371a39557f51f9f47e9a4a",
+    "outputs/v2/diagnostics/01_single_runs_overlap_summary.csv": "2799e9bf4b81237e6d241d25c0882a9a4a14d72b36a1e8be969d29fff4460bec",
+    "outputs/v2/diagnostics/01_single_runs_pilot_integrity_checks.csv": "7f58ed2fcc9dd317f44eda919596f83eafc9bd18ca95555912da948977b5bdff",
+    "outputs/v2/diagnostics/01_single_runs_pilot_request_plan.csv": "f18e6fb85571cd228493d92d359c7b3184d00811b12edbd75b0e5d569a834be9"
+  },
+  "tracked_evidence_paths": [
+    "outputs/v2/diagnostics/01_single_runs_archive_boundary_audit.csv",
+    "outputs/v2/diagnostics/01_single_runs_archive_probe_results.csv",
+    "outputs/v2/diagnostics/01_single_runs_pilot_request_plan.csv",
+    "outputs/v2/diagnostics/01_single_runs_overlap_reconstruction.csv",
+    "outputs/v2/diagnostics/01_single_runs_overlap_summary.csv",
+    "outputs/v2/diagnostics/01_single_runs_pilot_integrity_checks.csv"
+  ],
+  "version_1_modified": false
+}

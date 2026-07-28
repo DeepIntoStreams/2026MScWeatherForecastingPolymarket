@@ -1,0 +1,5 @@
+run_init_utc,request_succeeded,hourly_rows,returned_timezone,returned_latitude,returned_longitude,cache_path,error
+2024-03-14T00:00,True,240,Asia/Hong_Kong,22.319859,114.198555,data/raw/v2/open_meteo_single_runs_pilot/20240314T0000.json,
+2024-03-14T12:00,True,240,Asia/Hong_Kong,22.319859,114.198555,data/raw/v2/open_meteo_single_runs_pilot/20240314T1200.json,
+2025-03-15T00:00,True,240,Asia/Hong_Kong,22.319859,114.198555,data/raw/v2/open_meteo_single_runs_pilot/20250315T0000.json,
+2025-03-15T12:00,True,240,Asia/Hong_Kong,22.319859,114.198555,data/raw/v2/open_meteo_single_runs_pilot/20250315T1200.json,

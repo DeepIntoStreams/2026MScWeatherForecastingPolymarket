@@ -1,0 +1,8 @@
+check,required,passed,detail
+archive_probe_requests,True,True,4/4
+overlap_requests,True,True,20/20
+target_dates_have_24_local_hours,True,True,20/20
+runs_available_before_decisions,True,True,20/20
+returned_timezone,True,True,Asia/Hong_Kong
+median_overlap_difference,False,True,0.000000
+maximum_overlap_difference,False,True,0.000000

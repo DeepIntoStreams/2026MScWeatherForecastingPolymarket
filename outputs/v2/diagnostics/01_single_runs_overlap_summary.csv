@@ -1,0 +1,2 @@
+overlap_dates,overlap_rows,successful_rows,complete_24_hour_rows,availability_pass_rows,mean_absolute_difference_c,median_absolute_difference_c,maximum_absolute_difference_c
+5,20,20,20,20,0.0,0.0,0.0

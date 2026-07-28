@@ -164,3 +164,12 @@ python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreproce
 
 test-16:
 PYTHONPATH=src python3 -m unittest tests.test_notebook16_thesis_evidence -v
+
+audit-v2-single-runs-pilot:
+	python3 tools/v2/audit_single_runs_pilot.py
+
+execute-v2-notebook-01:
+	python3 -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=900 notebooks/v2/01_single_runs_source_pilot.ipynb
+
+test-v2-phase2:
+	PYTHONPATH=src python3 -m unittest tests.test_v2_phase2_single_runs_pilot -v

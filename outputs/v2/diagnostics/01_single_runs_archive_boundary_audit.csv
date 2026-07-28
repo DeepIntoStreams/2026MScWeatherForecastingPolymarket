@@ -1,0 +1,105 @@
+window,run_date,cycle_utc,run_init_utc,request_succeeded,hourly_rows,returned_timezone,cache_path,error
+archive_start,2024-03-14,0,2024-03-14T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240314T0000.json,
+archive_start,2024-03-14,6,2024-03-14T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240314T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-14,12,2024-03-14T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240314T1200.json,
+archive_start,2024-03-14,18,2024-03-14T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240314T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-15,0,2024-03-15T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240315T0000.json,
+archive_start,2024-03-15,6,2024-03-15T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240315T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-15,12,2024-03-15T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240315T1200.json,
+archive_start,2024-03-15,18,2024-03-15T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240315T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-16,0,2024-03-16T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240316T0000.json,
+archive_start,2024-03-16,6,2024-03-16T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240316T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-16,12,2024-03-16T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240316T1200.json,
+archive_start,2024-03-16,18,2024-03-16T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240316T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-17,0,2024-03-17T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240317T0000.json,
+archive_start,2024-03-17,6,2024-03-17T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240317T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-17,12,2024-03-17T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240317T1200.json,
+archive_start,2024-03-17,18,2024-03-17T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240317T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-18,0,2024-03-18T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240318T0000.json,
+archive_start,2024-03-18,6,2024-03-18T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240318T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-18,12,2024-03-18T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240318T1200.json,
+archive_start,2024-03-18,18,2024-03-18T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240318T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-19,0,2024-03-19T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240319T0000.json,
+archive_start,2024-03-19,6,2024-03-19T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240319T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-19,12,2024-03-19T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240319T1200.json,
+archive_start,2024-03-19,18,2024-03-19T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240319T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-20,0,2024-03-20T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240320T0000.json,
+archive_start,2024-03-20,6,2024-03-20T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240320T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-20,12,2024-03-20T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240320T1200.json,
+archive_start,2024-03-20,18,2024-03-20T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240320T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-21,0,2024-03-21T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240321T0000.json,
+archive_start,2024-03-21,6,2024-03-21T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240321T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-21,12,2024-03-21T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240321T1200.json,
+archive_start,2024-03-21,18,2024-03-21T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240321T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-22,0,2024-03-22T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240322T0000.json,
+archive_start,2024-03-22,6,2024-03-22T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240322T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-22,12,2024-03-22T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240322T1200.json,
+archive_start,2024-03-22,18,2024-03-22T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240322T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-23,0,2024-03-23T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240323T0000.json,
+archive_start,2024-03-23,6,2024-03-23T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240323T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-23,12,2024-03-23T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240323T1200.json,
+archive_start,2024-03-23,18,2024-03-23T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240323T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-24,0,2024-03-24T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240324T0000.json,
+archive_start,2024-03-24,6,2024-03-24T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240324T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-24,12,2024-03-24T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240324T1200.json,
+archive_start,2024-03-24,18,2024-03-24T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240324T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-25,0,2024-03-25T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240325T0000.json,
+archive_start,2024-03-25,6,2024-03-25T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240325T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-25,12,2024-03-25T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240325T1200.json,
+archive_start,2024-03-25,18,2024-03-25T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240325T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-26,0,2024-03-26T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240326T0000.json,
+archive_start,2024-03-26,6,2024-03-26T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240326T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-26,12,2024-03-26T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240326T1200.json,
+archive_start,2024-03-26,18,2024-03-26T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240326T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-27,0,2024-03-27T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240327T0000.json,
+archive_start,2024-03-27,6,2024-03-27T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240327T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-27,12,2024-03-27T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240327T1200.json,
+archive_start,2024-03-27,18,2024-03-27T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240327T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-28,0,2024-03-28T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240328T0000.json,
+archive_start,2024-03-28,6,2024-03-28T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240328T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-28,12,2024-03-28T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240328T1200.json,
+archive_start,2024-03-28,18,2024-03-28T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240328T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-29,0,2024-03-29T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240329T0000.json,
+archive_start,2024-03-29,6,2024-03-29T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240329T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-29,12,2024-03-29T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240329T1200.json,
+archive_start,2024-03-29,18,2024-03-29T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240329T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-30,0,2024-03-30T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240330T0000.json,
+archive_start,2024-03-30,6,2024-03-30T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240330T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-30,12,2024-03-30T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240330T1200.json,
+archive_start,2024-03-30,18,2024-03-30T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240330T1800.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-31,0,2024-03-31T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240331T0000.json,
+archive_start,2024-03-31,6,2024-03-31T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240331T0600.json,HTTPError: HTTP Error 400: Bad Request
+archive_start,2024-03-31,12,2024-03-31T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20240331T1200.json,
+archive_start,2024-03-31,18,2024-03-31T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20240331T1800.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-15,0,2025-03-15T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250315T0000.json,
+interior_year,2025-03-15,6,2025-03-15T06:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250315T0600.json,
+interior_year,2025-03-15,12,2025-03-15T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250315T1200.json,
+interior_year,2025-03-15,18,2025-03-15T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250315T1800.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-16,0,2025-03-16T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250316T0000.json,
+interior_year,2025-03-16,6,2025-03-16T06:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250316T0600.json,
+interior_year,2025-03-16,12,2025-03-16T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250316T1200.json,
+interior_year,2025-03-16,18,2025-03-16T18:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250316T1800.json,
+interior_year,2025-03-17,0,2025-03-17T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250317T0000.json,
+interior_year,2025-03-17,6,2025-03-17T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250317T0600.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-17,12,2025-03-17T12:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250317T1200.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-17,18,2025-03-17T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250317T1800.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-18,0,2025-03-18T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250318T0000.json,
+interior_year,2025-03-18,6,2025-03-18T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250318T0600.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-18,12,2025-03-18T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250318T1200.json,
+interior_year,2025-03-18,18,2025-03-18T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250318T1800.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-19,0,2025-03-19T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250319T0000.json,
+interior_year,2025-03-19,6,2025-03-19T06:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250319T0600.json,
+interior_year,2025-03-19,12,2025-03-19T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250319T1200.json,
+interior_year,2025-03-19,18,2025-03-19T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250319T1800.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-20,0,2025-03-20T00:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250320T0000.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-20,6,2025-03-20T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250320T0600.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-20,12,2025-03-20T12:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250320T1200.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-20,18,2025-03-20T18:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250320T1800.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-21,0,2025-03-21T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250321T0000.json,
+interior_year,2025-03-21,6,2025-03-21T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250321T0600.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-21,12,2025-03-21T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250321T1200.json,
+interior_year,2025-03-21,18,2025-03-21T18:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250321T1800.json,
+interior_year,2025-03-22,0,2025-03-22T00:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250322T0000.json,
+interior_year,2025-03-22,6,2025-03-22T06:00,False,0,,data/raw/v2/open_meteo_single_runs_pilot/20250322T0600.json,HTTPError: HTTP Error 400: Bad Request
+interior_year,2025-03-22,12,2025-03-22T12:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250322T1200.json,
+interior_year,2025-03-22,18,2025-03-22T18:00,True,240,Asia/Hong_Kong,data/raw/v2/open_meteo_single_runs_pilot/20250322T1800.json,

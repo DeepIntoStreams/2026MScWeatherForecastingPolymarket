@@ -324,3 +324,24 @@ strategy was changed.
 
 The empirical implementation is ready for integration into the
 dissertation Results, Discussion and Appendix chapters.
+
+## Version 2 Phase 2: Historical Forecast Source Pilot
+
+Status: complete.
+
+Open-Meteo Single Runs was approved as the historical forecast
+source for the expanded weather-only training sample.
+
+The archive audit identified 00 and 12 UTC as the required core
+historical cycles. The 06 and 18 UTC cycles are supplementary
+because their historical coverage is incomplete.
+
+Five overlap dates and four decision rules produced twenty exact
+reconstructions. All target days contained twenty-four local hours,
+all forecast runs satisfied the decision-time constraint, and the
+maximum difference from the certified Version 1 forecast was
+0.0 degrees Celsius.
+
+No market prices, realised market outcomes, model fitting, model
+selection or trading calculations were used. Version 1 remains
+unchanged.

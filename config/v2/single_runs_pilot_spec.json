@@ -1,0 +1,50 @@
+{
+  "archive_boundary_audit_path": "outputs/v2/diagnostics/01_single_runs_archive_boundary_audit.csv",
+  "archive_probe_runs": [
+    "2024-03-14T00:00",
+    "2024-03-14T12:00",
+    "2025-03-15T00:00",
+    "2025-03-15T12:00"
+  ],
+  "availability_delay_hours": 6,
+  "cell_selection": "land",
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "diagnostic_tolerances": {
+    "maximum_absolute_difference_c": 1.0,
+    "median_absolute_difference_c": 0.25
+  },
+  "endpoint": "https://single-runs-api.open-meteo.com/v1/forecast",
+  "forecast_hours": 240,
+  "four_cycle_archive_completeness_assumed": false,
+  "historical_cycle_coverage_policy": "The 00 and 12 UTC cycles form the core two-year historical training archive. The 06 and 18 UTC cycles are retained where available but are not required for every historical date.",
+  "historical_training_core_cycles_utc": [
+    0,
+    12
+  ],
+  "hourly_variable": "temperature_2m",
+  "important_note": "Overlap differences from Version 1 are diagnostic and do not by themselves reject the Single Runs source.",
+  "june_or_july_information_used": false,
+  "latitude": 22.3019444444,
+  "longitude": 114.1741666667,
+  "model": "ecmwf_ifs",
+  "overlap_date_count": 5,
+  "overlap_end": "2026-05-21",
+  "overlap_start": "2026-04-12",
+  "overlap_window_changes_training_design": false,
+  "overlap_window_reason": "This period contains complete four-decision-rule support in the certified Version 1 chronological panel.",
+  "station": "Hong Kong Observatory",
+  "status": "PHASE2_PILOT_SPECIFIED",
+  "supplementary_cycles_required_for_pilot": false,
+  "supplementary_cycles_utc": [
+    6,
+    18
+  ],
+  "timezone": "Asia/Hong_Kong",
+  "verified_archive_start_probe_date": "2024-03-14",
+  "verified_interior_probe_date": "2025-03-15"
+}
