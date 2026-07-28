@@ -1,0 +1,5 @@
+phase,boundary
+phase9,"No market price was used. June data were not used to refit the GP, select a kernel, or impute missing forecasts."
+phase10,The comparison concerns only the exact complete-book intersection. Results outside this intersection are not inferred or imputed.
+phase11,"The trading exercise is a frozen historical simulation, not evidence of live executable arbitrage."
+phase12,"This remains a historical simulation. It does not establish live executability, future profitability or causal market efficiency. Recorded prices may not represent obtainable fills. Queue priority, partial execution, market impact, capital competition across simultaneous contracts and operational latency are outside the empirical design.  No missing forecast or price was imputed. No June observation was used to change the frozen strategy."

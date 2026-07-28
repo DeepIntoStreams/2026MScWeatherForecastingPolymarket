@@ -1,0 +1,14 @@
+result_group,metric,value,unit
+phase9_june_gp_scores,mean_binary_brier,0.06793796,
+phase9_june_gp_scores,mean_binary_log,0.22272225,
+phase9_june_gp_scores,mean_continuous_crps,0.61501747,degrees Celsius
+phase10_june_gp_vs_polymarket,Mean binary Brier,0.009324,
+phase10_june_gp_vs_polymarket,Mean binary log,0.038628,
+phase10_june_gp_vs_polymarket,Categorical log,0.357342,
+phase10_june_gp_vs_polymarket,Multiclass Brier,0.10171,
+phase11_primary_trading,decision_rule,event_day_open,
+phase11_primary_trading,frozen_value_gap_threshold,0.12,
+phase11_primary_trading,total_net_pnl,0.0235,
+phase11_primary_trading,bootstrap_probability_positive,0.4705,
+phase12_robustness,post_hoc_rank,13,rank
+phase12_robustness,post_hoc_candidate_count,104,candidates

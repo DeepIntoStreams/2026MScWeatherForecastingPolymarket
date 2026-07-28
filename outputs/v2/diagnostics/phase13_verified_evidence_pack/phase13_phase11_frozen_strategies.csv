@@ -1,0 +1,5 @@
+Decision rule,Frozen threshold,Training trades,Training total net PnL,Selection score,Primary
+12h_prior,0.17,10,0.498,-0.007844,no
+24h_prior,0.13,19,2.668,0.013121,no
+6h_prior,0.12,34,1.2305,-0.009026,no
+event_day_open,0.12,42,4.495,0.032297,yes

@@ -1,0 +1,8 @@
+phase,section,metric,value,unit,note
+phase12,post_hoc_june_ranking,june_trades,,trades,
+phase12,post_hoc_june_ranking,total_net_pnl,0.0235,,
+phase12,post_hoc_june_ranking,mean_date_net_pnl,0.000783,,
+phase12,post_hoc_june_ranking,return_on_committed_capital,0.024066,,
+phase12,post_hoc_june_ranking,maximum_drawdown,0.7965,,
+phase12,post_hoc_june_ranking,post_hoc_candidate_count,104,candidates,
+phase12,post_hoc_june_ranking,post_hoc_rank,13,rank,

@@ -1,0 +1,5 @@
+Metric,GP,Polymarket,Difference,95% bootstrap interval,Dates
+Mean binary Brier,0.065969,0.067283,-0.001314,"[-0.006167, 0.003434]",67
+Mean binary log,0.21241,0.215482,-0.003073,"[-0.020121, 0.013388]",67
+Categorical log,1.501522,1.519731,-0.018209,"[-0.173263, 0.125242]",67
+Multiclass Brier,0.725658,0.738361,-0.012703,"[-0.064421, 0.040248]",67

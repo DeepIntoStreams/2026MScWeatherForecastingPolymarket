@@ -1,0 +1,12 @@
+{
+  "diagnostics_root": "outputs/v2/diagnostics",
+  "phase_prefixes": [
+    "phase9",
+    "phase10",
+    "phase11",
+    "phase12"
+  ],
+  "output_dir": "outputs/v2/diagnostics/phase13_verified_evidence_pack",
+  "report_filename": "phase13_report.md",
+  "manifest_filename": "phase13_manifest.json"
+}

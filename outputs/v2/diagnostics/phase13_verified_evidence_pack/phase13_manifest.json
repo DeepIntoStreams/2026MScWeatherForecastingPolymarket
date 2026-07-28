@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "phase_prefixes": [
+    "phase9",
+    "phase10",
+    "phase11",
+    "phase12"
+  ],
+  "source_directories": [
+    {
+      "phase": "phase9",
+      "directory": "outputs/v2/diagnostics/phase9_gp_event_probabilities",
+      "report_path": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_report.md",
+      "manifest_path": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_manifest.json"
+    },
+    {
+      "phase": "phase10",
+      "directory": "outputs/v2/diagnostics/phase10_gp_market_comparison",
+      "report_path": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_report.md",
+      "manifest_path": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_manifest.json"
+    },
+    {
+      "phase": "phase11",
+      "directory": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading",
+      "report_path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_report.md",
+      "manifest_path": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_manifest.json"
+    },
+    {
+      "phase": "phase12",
+      "directory": "outputs/v2/diagnostics/phase12_robustness_attribution",
+      "report_path": "outputs/v2/diagnostics/phase12_robustness_attribution/phase12_report.md",
+      "manifest_path": "outputs/v2/diagnostics/phase12_robustness_attribution/phase12_manifest.json"
+    }
+  ],
+  "output_directory": "outputs/v2/diagnostics/phase13_verified_evidence_pack",
+  "output_files": [
+    "phase13_evidential_boundaries.csv",
+    "phase13_key_metrics_long.csv",
+    "phase13_main_results_table.csv",
+    "phase13_phase10_june_calibration.csv",
+    "phase13_phase10_june_paired_results.csv",
+    "phase13_phase10_training_paired_results.csv",
+    "phase13_phase11_cost_sensitivity.csv",
+    "phase13_phase11_frozen_strategies.csv",
+    "phase13_phase12_summary.csv",
+    "phase13_phase9_summary.csv",
+    "phase13_report.md",
+    "phase13_source_inventory.csv"
+  ],
+  "key_counts": {
+    "source_phases": 4,
+    "extracted_metrics": 41,
+    "phase10_june_rows": 4,
+    "phase10_training_rows": 4,
+    "phase10_calibration_rows": 2,
+    "phase11_frozen_strategy_rows": 4,
+    "phase11_cost_sensitivity_rows": 4
+  }
+}
