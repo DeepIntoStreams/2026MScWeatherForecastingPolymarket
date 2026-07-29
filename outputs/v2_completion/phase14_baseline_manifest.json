@@ -1,0 +1,362 @@
+{
+  "count_checks": [
+    {
+      "expected": 730,
+      "method": "independent panel scan",
+      "metric": "weather_only_dates",
+      "observed": 730,
+      "source": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 2920,
+      "method": "independent panel scan",
+      "metric": "weather_only_date_rule_rows",
+      "observed": 2920,
+      "source": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 4,
+      "method": "independent panel scan",
+      "metric": "decision_rules",
+      "observed": 4,
+      "source": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 365,
+      "method": "independent panel scan",
+      "metric": "chronological_validation_dates",
+      "observed": 365,
+      "source": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 365,
+      "method": "weather-only dates minus chronological validation dates",
+      "metric": "initial_training_dates",
+      "observed": 365,
+      "source": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv|outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 103,
+      "method": "independent panel scan",
+      "metric": "settlement_market_dates",
+      "observed": 103,
+      "source": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 1133,
+      "method": "independent panel scan",
+      "metric": "canonical_contract_rows",
+      "observed": 1133,
+      "source": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 102,
+      "method": "independent panel scan",
+      "metric": "forecast_supported_dates",
+      "observed": 102,
+      "source": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 375,
+      "method": "independent panel scan",
+      "metric": "forecast_supported_date_rule_rows",
+      "observed": 375,
+      "source": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 412,
+      "method": "settlement dates multiplied by four rules",
+      "metric": "theoretical_market_date_rule_rows",
+      "observed": 412,
+      "source": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 37,
+      "method": "theoretical support minus certified support",
+      "metric": "unsupported_date_rule_rows",
+      "observed": 37,
+      "source": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 97,
+      "method": "independent panel scan",
+      "metric": "exact_common_support_dates",
+      "observed": 97,
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 350,
+      "method": "independent panel scan",
+      "metric": "exact_common_support_date_rule_books",
+      "observed": 350,
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 3850,
+      "method": "independent panel scan",
+      "metric": "exact_common_support_event_rows",
+      "observed": 3850,
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 67,
+      "method": "dates with month at most May",
+      "metric": "weather_plus_market_development_dates",
+      "observed": 67,
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+      "status": "PASSED"
+    },
+    {
+      "expected": 30,
+      "method": "June dates",
+      "metric": "june_external_dates",
+      "observed": 30,
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+      "status": "PASSED"
+    }
+  ],
+  "created_at_utc": "2026-07-29T12:41:20.619755+00:00",
+  "git": {
+    "base_branch": "edward-v2-two-year-weather-gp",
+    "branch": "edward-v2-gp-depth-completion",
+    "commit_before_phase14_commit": "626a7dc4bc746c0dc897db13d949882cace725fa",
+    "origin": "https://github.com/DeepIntoStreams/2026MScWeatherForecastingPolymarket.git",
+    "phase13_commit": "626a7dc4bc746c0dc897db13d949882cace725fa",
+    "phase13_tag": "v2-phase13-certified"
+  },
+  "headline_checks": [
+    {
+      "evidence": "derived mean-date CRPS from 1460 rows, 365 dates, model column kernel, CRPS column crps_c",
+      "expected": "0.877561",
+      "line": "",
+      "method": "derived_from_validation_panel",
+      "metric": "phase7_rbf_mean_date_crps_c",
+      "observed": "0.877561468439",
+      "source": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "derived mean-date CRPS from 1460 rows, 365 dates, model column kernel, CRPS column crps_c",
+      "expected": "0.86334",
+      "line": "",
+      "method": "derived_from_validation_panel",
+      "metric": "phase7_matern32_mean_date_crps_c",
+      "observed": "0.863339998959",
+      "source": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "phase9,overall_proper_scores,mean_binary_brier,0.06664735,,",
+      "expected": "0.06664735",
+      "line": 8,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase9_binary_brier",
+      "observed": "0.06664735",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-08"
+    },
+    {
+      "evidence": "phase9,overall_proper_scores,mean_binary_log,0.21621827,,",
+      "expected": "0.21621827",
+      "line": 9,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase9_binary_log",
+      "observed": "0.21621827",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-08"
+    },
+    {
+      "evidence": "phase9,overall_proper_scores,mean_categorical_log,1.53611577,,",
+      "expected": "1.53611577",
+      "line": 10,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase9_categorical_log",
+      "observed": "1.53611577",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-08"
+    },
+    {
+      "evidence": "phase9,overall_proper_scores,mean_multiclass_brier,0.73312081,,",
+      "expected": "0.73312081",
+      "line": 11,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase9_multiclass_brier",
+      "observed": "0.73312081",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-08"
+    },
+    {
+      "evidence": "phase9,overall_proper_scores,mean_continuous_crps,0.64254297,degrees Celsius,",
+      "expected": "0.64254297",
+      "line": 12,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase9_continuous_crps_c",
+      "observed": "0.64254297",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-08"
+    },
+    {
+      "evidence": "phase9,overall_proper_scores,mean_gp_absolute_error,0.88111502,degrees Celsius,",
+      "expected": "0.88111502",
+      "line": 13,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase9_absolute_error_c",
+      "observed": "0.88111502",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-08"
+    },
+    {
+      "evidence": "| Mean binary Brier | 0.068198 | 0.058874 | 0.009324 | [0.003825, 0.014640] | 30 |",
+      "expected": "0.009324",
+      "line": 53,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase10_june_binary_brier_difference",
+      "observed": "0.009324",
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_report.md",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "| Mean binary log | 0.225029 | 0.186401 | 0.038628 | [0.022004, 0.054204] | 30 |",
+      "expected": "0.038628",
+      "line": 54,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase10_june_binary_log_difference",
+      "observed": "0.038628",
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_report.md",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "| Categorical log | 1.618265 | 1.260923 | 0.357342 | [0.214437, 0.492830] | 30 |",
+      "expected": "0.357342",
+      "line": 55,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase10_june_categorical_log_difference",
+      "observed": "0.357342",
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_report.md",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "| Multiclass Brier | 0.750180 | 0.648471 | 0.101710 | [0.043014, 0.158161] | 30 |",
+      "expected": "0.10171",
+      "line": 56,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase10_june_multiclass_brier_difference",
+      "observed": "0.10171",
+      "source": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_report.md",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "Any revisions to temperatures recorded after data is initially published for this market's timeframe will not be considered for this market's resolution.\",,916.0061999999996,7679.36594,False,True,2026-07-10T12:00:00Z,2026-07-08T04:30:31.941246Z,True,True,True,True,True,True,False,False,True,True,formally_certified_by_contract_rule_text,\"public rule text identifies HKO/Hong Kong Observatory, Absolute Daily Max/Daily Extract, one-decimal convention, and child label is an explicit upper-tail K\u00b0C-or",
+      "expected": "0.12",
+      "line": 91,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase11_selected_threshold",
+      "observed": "0.12",
+      "source": "data/processed/17l_all_formally_certified_rows_for_manual_inspection.csv",
+      "status": "PASSED",
+      "tolerance": "0.0005"
+    },
+    {
+      "evidence": "Any revisions to temperatures recorded after data is finalized for this market's timeframe will not be considered for this market's resolution.\",,60191.08681600005,,True,True,2026-04-24T12:00:00Z,2026-04-22T04:04:42.894676Z,True,True,True,True,True,True,False,False,True,True,formally_certified_by_contract_rule_text,\"public rule text identifies HKO/Hong Kong Observatory, Absolute Daily Max/Daily Extract, one-decimal convention, and child label is an explicit upper-tail K\u00b0C-or-higher outcome\",hong",
+      "expected": "16",
+      "line": 10,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase11_june_trades",
+      "observed": "16",
+      "source": "data/processed/17l_all_formally_certified_rows_for_manual_inspection.csv",
+      "status": "PASSED",
+      "tolerance": "1e-09"
+    },
+    {
+      "evidence": "phase11,primary_june_uncertainty,total_net_pnl,0.0235,,",
+      "expected": "0.0235",
+      "line": 31,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase11_june_net_pnl_cost_0_01",
+      "observed": "0.0235",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_key_metrics_long.csv",
+      "status": "PASSED",
+      "tolerance": "5e-06"
+    },
+    {
+      "evidence": "\"bootstrap_probability_total_positive\": 0.4705",
+      "expected": "0.4705",
+      "line": 48,
+      "method": "matched_certified_text_evidence",
+      "metric": "phase12_probability_positive_total_pnl",
+      "observed": "0.4705",
+      "source": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_manifest.json",
+      "status": "PASSED",
+      "tolerance": "5e-05"
+    },
+    {
+      "evidence": "Phase 12 summary file inventory",
+      "expected": "non-empty Phase 12 summary",
+      "line": "",
+      "method": "tracked_file_inventory",
+      "metric": "phase12_summary_file_present",
+      "observed": "3",
+      "source": "outputs/v2/diagnostics/phase12_robustness_attribution/phase12_june_trade_concentration_summary.csv|outputs/v2/diagnostics/phase12_robustness_attribution/phase12_leave_one_date_out_selection_summary.csv|outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_phase12_summary.csv",
+      "status": "PASSED",
+      "tolerance": ""
+    },
+    {
+      "evidence": "Phase 13 report contains PASSED",
+      "expected": "PASSED",
+      "line": "",
+      "method": "tracked_report_status",
+      "metric": "phase13_report_status",
+      "observed": "PASSED",
+      "source": "outputs/v2/diagnostics/phase13_verified_evidence_pack/phase13_report.md",
+      "status": "PASSED",
+      "tolerance": ""
+    }
+  ],
+  "open_gap_count": 17,
+  "panel_sources": {
+    "canonical_contract_universe": "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv",
+    "chronological_validation_panel": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "phase10_exact_common_support_panel": "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv",
+    "phase9_probability_panel": "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv",
+    "weather_residual_panel": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv"
+  },
+  "phase": 14,
+  "protected_phase_1_13_files_modified": 0,
+  "runtime": {
+    "pandas": "2.2.2",
+    "platform": "macOS-26.5-x86_64-i386-64bit",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]"
+  },
+  "source_inventory": {
+    "file_count": 132,
+    "path": "outputs/v2_completion/phase14_source_inventory.csv",
+    "total_bytes": 46937534
+  },
+  "status": "PASSED"
+}

@@ -1,0 +1,55 @@
+{
+  "allowed_phase14_paths": [
+    "config/v2_completion/",
+    "tools/v2_completion/",
+    "outputs/v2_completion/"
+  ],
+  "base_branch": "edward-v2-two-year-weather-gp",
+  "created_at_utc": "2026-07-29T12:41:08.858444+00:00",
+  "expected_counts": {
+    "canonical_contract_rows": 1133,
+    "chronological_validation_dates": 365,
+    "decision_rules": 4,
+    "exact_common_support_date_rule_books": 350,
+    "exact_common_support_dates": 97,
+    "exact_common_support_event_rows": 3850,
+    "forecast_supported_date_rule_rows": 375,
+    "forecast_supported_dates": 102,
+    "initial_training_dates": 365,
+    "june_external_dates": 30,
+    "settlement_market_dates": 103,
+    "theoretical_market_date_rule_rows": 412,
+    "unsupported_date_rule_rows": 37,
+    "weather_only_date_rule_rows": 2920,
+    "weather_only_dates": 730,
+    "weather_plus_market_development_dates": 67
+  },
+  "expected_headline_results": {
+    "phase10_june_binary_brier_difference": 0.009324,
+    "phase10_june_binary_log_difference": 0.038628,
+    "phase10_june_categorical_log_difference": 0.357342,
+    "phase10_june_multiclass_brier_difference": 0.10171,
+    "phase11_june_net_pnl_cost_0_01": 0.0235,
+    "phase11_june_trades": 16,
+    "phase11_selected_threshold": 0.12,
+    "phase12_probability_positive_total_pnl": 0.4705,
+    "phase7_matern32_mean_date_crps_c": 0.86334,
+    "phase7_rbf_mean_date_crps_c": 0.877561,
+    "phase9_absolute_error_c": 0.88111502,
+    "phase9_binary_brier": 0.06664735,
+    "phase9_binary_log": 0.21621827,
+    "phase9_categorical_log": 1.53611577,
+    "phase9_continuous_crps_c": 0.64254297,
+    "phase9_multiclass_brier": 0.73312081
+  },
+  "name": "Baseline freeze and empirical gap register",
+  "phase": 14,
+  "phase13_commit": "626a7dc4bc746c0dc897db13d949882cace725fa",
+  "phase13_tag": "v2-phase13-certified",
+  "protected_phase_range": [
+    1,
+    13
+  ],
+  "repository_root": "/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket",
+  "work_branch": "edward-v2-gp-depth-completion"
+}

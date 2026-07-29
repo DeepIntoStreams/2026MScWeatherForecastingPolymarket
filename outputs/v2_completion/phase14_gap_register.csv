@@ -1,0 +1,18 @@
+gap_id,unresolved_question,required_source_data,required_computation,expected_output,thesis_section,status
+G01,Static Gaussian chronological benchmark,Phase 5 residual panel and Phase 6 split design,Fit expanding rule-specific Gaussian location-scale laws on identical validation support,Phase 16 raw/static prediction and score panels,Methodology 5.4-5.6; Results 6.3,OPEN
+G02,Raw point forecast chronological benchmark,Phase 5 residual panel and Phase 6 split design,Score point masses with CRPS equal to absolute error,Phase 16 model score tables,Results 6.3,OPEN
+G03,Exact feature formulas and scaling,"Phase 6-8 code, scalers and manifests","Extract calendar, seasonal and deterministic features plus fold-specific transformations",Phase 15 implementation specification,Methodology 5.4; Appendix,OPEN
+G04,Exact response transformation,Phase 6-8 model code,Determine manual and estimator-level centring or scaling and Celsius back-transformation,Phase 15 implementation specification,Methodology 5.5; Appendix,OPEN
+G05,"Observation noise, WhiteKernel and jitter",Phase 7-8 model code and fitted models,"Reconcile statistical noise, numerical jitter and predictive variance",Phase 15 variance test,Preliminaries 4.6; Methodology 5.5,OPEN
+G06,Gaussian CRPS implementation,Phase 7 scoring code and prediction panel,Compare stored score with analytical Gaussian CRPS,Phase 15 CRPS test,Preliminaries 4.5; Methodology 5.6,OPEN
+G07,Rule-specific deterministic error,Phase 5 residual panel,"Calculate bias, spread, MAE, quantiles and underforecast share by rule",Phase 17 rule residual tables,Results 6.2,OPEN
+G08,Rule and validation-block model results,Phase 7 chronological predictions,"Decompose raw, static, RBF and Matérn scores by rule and block",Phase 18 score and paired-difference tables,Results 6.3,OPEN
+G09,GP hyperparameter stability,Phase 7 model registry and Phase 8 full fit,Extract and compare fold-level and full-fit parameters,Phase 18 parameter-stability tables,Results 6.3; Discussion 7.2,OPEN
+G10,Predictive calibration and sharpness,Phase 7 chronological predictions,"Calculate coverage, interval width, PIT and standardised residual diagnostics",Phase 19 diagnostics,Results 6.4; Discussion 7.3,OPEN
+G11,Residual dependence and heteroskedasticity,Phase 7 chronological predictions,"Calculate ACF, lag diagnostics and variance-pattern checks",Phase 19 diagnostics,Results 6.4; Discussion 7.3,OPEN
+G12,Missing forecast support,"Phase 3-4 request, retrieval and integrity outputs plus Phase 9 support",Classify all 37 unsupported date-rule keys,Phase 17 missing-support ledger,Results 6.1; Limitations,OPEN
+G13,Systematic GP-market discrepancy structure,Phase 10 exact-common-support panel,"Analyse signed and absolute gaps by period, rule and event type with date bootstrap",Phase 20 discrepancy tables,Results 6.7; Discussion 7.4,OPEN
+G14,Forecast combination,Phase 10 exact-common-support panel,Select one convex GP-market pool on March-May and evaluate once in June,Phase 21 pooling evidence,Results 6.8; Discussion,OPEN
+G15,Clean-environment reproducibility,All certified inputs and final scripts,"Create one-command build, locked environment and mandatory tests",Phase 22 clean-run manifest,Reproducibility appendix,OPEN
+G16,Consolidated thesis evidence pack,Phase 14-22 outputs,"Generate final tables, figures, question-answer and code-to-number registers",Phase 23 evidence pack,All empirical chapters,OPEN
+G17,Independent final freeze,Complete Version 2 completion branch,"Rebuild, cross-check thesis numbers, tag and freeze",Phase 24 final audit,Submission evidence boundary,OPEN
