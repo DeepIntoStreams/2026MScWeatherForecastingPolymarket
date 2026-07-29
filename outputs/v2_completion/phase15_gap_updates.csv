@@ -1,0 +1,5 @@
+gap_id,gap,phase_closed,status,evidence
+G03,Exact feature formulas and scaling,15,CLOSED,phase15_feature_transformations.csv|phase15_gp_implementation_spec.json
+G04,Exact response transformation,15,CLOSED,phase15_full_fit_model_registry.csv|phase15_gp_implementation_spec.json
+G05,"Observation noise, WhiteKernel and jitter",15,CLOSED,phase15_variance_reconciliation.csv|phase15_gp_implementation_spec.json
+G06,Gaussian CRPS implementation,15,CLOSED,phase15_crps_reconciliation.csv|phase15_gp_implementation_spec.json

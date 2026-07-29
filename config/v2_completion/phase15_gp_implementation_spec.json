@@ -1,0 +1,108 @@
+{
+  "created_at_utc": "2026-07-29T13:11:41.473782+00:00",
+  "crps": {
+    "analytical_formula": "sigma * [z*(2*Phi(z)-1) + 2*phi(z) - 1/sqrt(pi)]",
+    "final_completion_policy": "Use analytical Gaussian CRPS for new Phase 16 onward comparisons while retaining legacy Phase 7 values unchanged and explicitly reconciling any numerical difference.",
+    "legacy_comparison": "outputs/v2_completion/phase15_crps_reconciliation.csv"
+  },
+  "environment": {
+    "joblib": "1.4.2",
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "platform": "macOS-26.5-x86_64-i386-64bit",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]",
+    "python_executable": "/opt/anaconda3/bin/python3",
+    "scikit_learn": "1.4.2",
+    "scipy": "1.13.1"
+  },
+  "features": {
+    "calendar_time": {
+      "days_per_year": 365.2425000000005,
+      "formula": "(target_date - origin_date).days / days_per_year",
+      "intercept_at_min_date": -8.240226474949917e-17,
+      "max_reconstruction_error": 3.1086244689504383e-15,
+      "origin_date": "2024-03-16T00:00:00",
+      "slope_per_day": 0.002737907006988504,
+      "status": "PASSED"
+    },
+    "deterministic_forecast_feature": "forecast_daily_max_c",
+    "full_fit_transformation_evidence": "outputs/v2_completion/phase15_feature_transformations.csv",
+    "ordered_raw_features": [
+      "calendar_time_years",
+      "seasonal_sin",
+      "seasonal_cos",
+      "forecast_daily_max_c"
+    ],
+    "seasonality": {
+      "candidate_errors": [
+        {
+          "formula": "(day_of_year-1)/365.2425",
+          "max_error": 9.575673587391975e-16,
+          "rmse": 2.3417895048628003e-16
+        },
+        {
+          "formula": "(day_of_year-1)/days_in_year",
+          "max_error": 0.012994668412945096,
+          "rmse": 0.004275559360857866
+        },
+        {
+          "formula": "(fixed_2001_day_of_year-1)/365",
+          "max_error": 0.016178289741985263,
+          "rmse": 0.007368226054757032
+        },
+        {
+          "formula": "day_of_year/365.2425",
+          "max_error": 0.017202527536425826,
+          "rmse": 0.012164050335702378
+        },
+        {
+          "formula": "fixed_2001_day_of_year/365",
+          "max_error": 0.021372823010176952,
+          "rmse": 0.0096319566429071
+        },
+        {
+          "formula": "day_of_year/days_in_year",
+          "max_error": 0.021372823010176952,
+          "rmse": 0.010704159904752894
+        }
+      ],
+      "formula": "(day_of_year-1)/365.2425",
+      "max_reconstruction_error": 9.575673587391975e-16,
+      "rmse": 2.3417895048628003e-16,
+      "seasonal_cos": "cos(2*pi*seasonal_position)",
+      "seasonal_sin": "sin(2*pi*seasonal_position)",
+      "status": "PASSED"
+    }
+  },
+  "git_branch": "edward-v2-gp-depth-completion",
+  "git_commit_before_phase15": "122faff500b9ceb6e0224f7e8decead723f0deaf",
+  "name": "Exact GP code-to-mathematics reconciliation",
+  "phase": 15,
+  "phase14_manifest": "outputs/v2_completion/phase14_baseline_manifest.json",
+  "response": {
+    "back_transformation": "software predictive mean and variance are returned on the original residual scale according to the fitted estimator's _y_train_mean and _y_train_std",
+    "normalisation_record": "outputs/v2_completion/phase15_full_fit_model_registry.csv",
+    "source_target": "HKO minus deterministic forecast residual"
+  },
+  "source_files": {
+    "feature_panel": "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv",
+    "full_fit_models": [
+      "models/v2/phase8_clean_gp/12h_prior_matern32_full_fit.joblib",
+      "models/v2/phase8_clean_gp/24h_prior_matern32_full_fit.joblib",
+      "models/v2/phase8_clean_gp/6h_prior_matern32_full_fit.joblib",
+      "models/v2/phase8_clean_gp/event_day_open_matern32_full_fit.joblib"
+    ],
+    "phase7_fit": "tools/v2/fit_gp_validation_distributions.py",
+    "phase8_full_fit": "tools/v2/build_phase8_clean_gp.py",
+    "validation_predictions": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "weather_residual_panel": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv"
+  },
+  "status": "PASSED",
+  "variance": {
+    "numerical_jitter": "GaussianProcessRegressor alpha parameter",
+    "software_semantics": "return_std variance equals full fitted-kernel posterior variance; the full-minus-latent identity equals the scaled WhiteKernel variance",
+    "statistical_white_noise": "WhiteKernel contribution in the fitted kernel",
+    "verification": "outputs/v2_completion/phase15_variance_reconciliation.csv"
+  }
+}

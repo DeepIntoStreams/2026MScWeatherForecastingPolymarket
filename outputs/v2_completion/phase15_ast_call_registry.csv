@@ -1,0 +1,109 @@
+source_file,line,call,keywords_json,source
+tools/v2/fit_gp_validation_distributions.py,271,ConstantKernel,"{""constant_value"": ""float(\n            kernel_specification[\n                \""initial_signal_variance\""\n            ]\n        )"", ""constant_value_bounds"": ""tuple(\n            kernel_specification[\n                \""signal_variance_bounds\""\n            ]\n        )""}","ConstantKernel(
+        constant_value=float(
+            kernel_specification[
+                ""initial_signal_variance""
+            ]
+        ),
+        constant_value_bounds=tuple(
+            kernel_specification[
+                ""signal_variance_bounds""
+            ]
+        ),
+    )"
+tools/v2/fit_gp_validation_distributions.py,318,WhiteKernel,"{""noise_level"": ""float(\n            kernel_specification[\n                \""initial_noise_variance\""\n            ]\n        )"", ""noise_level_bounds"": ""tuple(\n            kernel_specification[\n                \""noise_variance_bounds\""\n            ]\n        )""}","WhiteKernel(
+        noise_level=float(
+            kernel_specification[
+                ""initial_noise_variance""
+            ]
+        ),
+        noise_level_bounds=tuple(
+            kernel_specification[
+                ""noise_variance_bounds""
+            ]
+        ),
+    )"
+tools/v2/fit_gp_validation_distributions.py,404,GaussianProcessRegressor,"{""alpha"": ""float(\n            specification[\n                \""numerical_jitter\""\n            ]\n        )"", ""copy_X_train"": true, ""kernel"": ""kernel"", ""n_restarts_optimizer"": ""int(\n            specification[\n                \""optimizer_restarts\""\n            ]\n        )"", ""normalize_y"": ""bool(\n            specification[\n                \""normalise_training_target\""\n            ]\n        )"", ""optimizer"": ""specification[\n            \""optimizer\""\n        ]"", ""random_state"": ""int(\n            specification[\n                \""random_seed\""\n            ]\n        )""}","GaussianProcessRegressor(
+        kernel=kernel,
+        alpha=float(
+            specification[
+                ""numerical_jitter""
+            ]
+        ),
+        optimizer=specification[
+            ""optimizer""
+        ],
+        n_restarts_optimizer=int(
+            specification[
+                ""optimizer_restarts""
+            ]
+        ),
+        normalize_y=bool(
+            specification[
+                ""normalise_training_target""
+            ]
+        ),
+        copy_X_train=True,
+        random_state=int(
+            specification[
+                ""random_seed""
+            ]
+        ),
+    )"
+tools/v2/fit_gp_validation_distributions.py,285,RBF,"{""length_scale"": ""float(\n                kernel_specification[\n                    \""initial_length_scale\""\n                ]\n            )"", ""length_scale_bounds"": ""tuple(\n                kernel_specification[\n                    \""length_scale_bounds\""\n                ]\n            )""}","RBF(
+            length_scale=float(
+                kernel_specification[
+                    ""initial_length_scale""
+                ]
+            ),
+            length_scale_bounds=tuple(
+                kernel_specification[
+                    ""length_scale_bounds""
+                ]
+            ),
+        )"
+tools/v2/fit_gp_validation_distributions.py,298,Matern,"{""length_scale"": ""float(\n                kernel_specification[\n                    \""initial_length_scale\""\n                ]\n            )"", ""length_scale_bounds"": ""tuple(\n                kernel_specification[\n                    \""length_scale_bounds\""\n                ]\n            )"", ""nu"": ""float(\n                kernel_specification[\""nu\""]\n            )""}","Matern(
+            length_scale=float(
+                kernel_specification[
+                    ""initial_length_scale""
+                ]
+            ),
+            length_scale_bounds=tuple(
+                kernel_specification[
+                    ""length_scale_bounds""
+                ]
+            ),
+            nu=float(
+                kernel_specification[""nu""]
+            ),
+        )"
+tools/v2/build_phase8_clean_gp.py,996,StandardScaler,{},StandardScaler()
+tools/v2/build_phase8_clean_gp.py,1005,GaussianProcessRegressor,"{""alpha"": 1e-10, ""kernel"": ""kernel"", ""normalize_y"": true, ""optimizer"": null, ""random_state"": 20260728}","GaussianProcessRegressor(
+                kernel=kernel,
+                alpha=1e-10,
+                optimizer=None,
+                normalize_y=True,
+                random_state=20260728,
+            )"
+tools/v2/build_phase8_clean_gp.py,972,WhiteKernel,"{""noise_level"": ""float(\n                        parameter[\""noise_level\""]\n                    )"", ""noise_level_bounds"": ""fixed""}","WhiteKernel(
+                    noise_level=float(
+                        parameter[""noise_level""]
+                    ),
+                    noise_level_bounds=""fixed"",
+                )"
+tools/v2/build_phase8_clean_gp.py,956,ConstantKernel,"{""constant_value"": ""float(\n                            parameter[\""amplitude\""]\n                        )\n                        ** 2"", ""constant_value_bounds"": ""fixed""}","ConstantKernel(
+                    constant_value=(
+                        float(
+                            parameter[""amplitude""]
+                        )
+                        ** 2
+                    ),
+                    constant_value_bounds=""fixed"",
+                )"
+tools/v2/build_phase8_clean_gp.py,965,Matern,"{""length_scale"": ""float(\n                        parameter[\""length_scale\""]\n                    )"", ""length_scale_bounds"": ""fixed"", ""nu"": 1.5}","Matern(
+                    length_scale=float(
+                        parameter[""length_scale""]
+                    ),
+                    length_scale_bounds=""fixed"",
+                    nu=1.5,
+                )"
