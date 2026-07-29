@@ -1,0 +1,7 @@
+item,value,status,evidence
+source_commit,c5150fdd576f3757fcd374307367d19503fe9de9,VERIFIED,outputs/v2_completion/phase21_reproducibility_report.md
+source_branch,edward-v2-gp-depth-completion,VERIFIED,git branch --show-current
+phases_replayed,6,PASSED,outputs/v2_completion/phase21_reproducibility_report.md
+artifacts_compared,116,PASSED,outputs/v2_completion/phase21_artifact_comparison.csv
+failed_artifact_comparisons,0,PASSED,outputs/v2_completion/phase21_artifact_comparison.csv
+maximum_finite_replay_error,0.000e+00,PASSED,outputs/v2_completion/phase21_reproducibility_report.md

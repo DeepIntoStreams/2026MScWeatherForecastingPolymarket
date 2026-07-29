@@ -1,0 +1,77 @@
+{
+  "counts": {
+    "claims": 8,
+    "closed_gaps": 16,
+    "evidential_boundaries": 6,
+    "figures": 34,
+    "key_metrics": 23,
+    "open_gaps": 1,
+    "reports": 8,
+    "source_files": 211,
+    "tables": 83
+  },
+  "design_constraints": {
+    "date_is_uncertainty_unit": true,
+    "exact_common_support_preserved": true,
+    "june_not_used_for_development": true,
+    "no_kernel_reselection": true,
+    "no_missing_forecast_imputation": true,
+    "no_model_refit": true
+  },
+  "phase": 22,
+  "reports": [
+    {
+      "phase": 14,
+      "report": "outputs/v2_completion/phase14_baseline_report.md",
+      "sha256": "94137a0aa823856a07ea5a9e7304e41e1eb2dcf632ebe55f31eeae13577c0288",
+      "status": "PASSED"
+    },
+    {
+      "phase": 15,
+      "report": "outputs/v2_completion/phase15_reconciliation_report.md",
+      "sha256": "07ac9899ecb23574899c0f3a99ede19da07592257f316cd079064fb89fb7f110",
+      "status": "PASSED"
+    },
+    {
+      "phase": 16,
+      "report": "outputs/v2_completion/phase16_static_benchmark_report.md",
+      "sha256": "c1bd0c095441afef3c37a3410038938ce6fba4a4cde9ef6ae8f9d6185ccfb667",
+      "status": "PASSED"
+    },
+    {
+      "phase": 17,
+      "report": "outputs/v2_completion/phase17_error_missing_support_report.md",
+      "sha256": "5f2deb2e52459e7dfd45e8da9a01d8e7c1a7c35551acc1de1e0dddc290b70667",
+      "status": "PASSED"
+    },
+    {
+      "phase": 18,
+      "report": "outputs/v2_completion/phase18_gp_stability_report.md",
+      "sha256": "269e89e8ffa25acb08edc30bb7cf61a7ccae66c0ba14e90bb9e6e29f7b45ff7e",
+      "status": "PASSED"
+    },
+    {
+      "phase": 19,
+      "report": "outputs/v2_completion/phase19_predictive_diagnostics_report.md",
+      "sha256": "78fb2a71307aacb19704cce9fc3406c96bbee916950ace72f18a549792d583ea",
+      "status": "PASSED"
+    },
+    {
+      "phase": 20,
+      "report": "outputs/v2_completion/phase20_forecast_combination_report.md",
+      "sha256": "5c0f87412f3ff0dc5d652b104c3ce0ba1a3b383aa7181160073e8f3906ec5496",
+      "status": "PASSED"
+    },
+    {
+      "phase": 21,
+      "report": "outputs/v2_completion/phase21_reproducibility_report.md",
+      "sha256": "c6ac3e9c8c93c7fc934aca99ade9c0f74233e4688badf14bd107cdc86b273ca3",
+      "status": "PASSED"
+    }
+  ],
+  "source_branch": "edward-v2-gp-depth-completion",
+  "source_commit": "c5150fdd576f3757fcd374307367d19503fe9de9",
+  "source_commit_time": "2026-07-29T21:49:54+01:00",
+  "status": "PASSED",
+  "title": "Consolidated thesis evidence pack"
+}
