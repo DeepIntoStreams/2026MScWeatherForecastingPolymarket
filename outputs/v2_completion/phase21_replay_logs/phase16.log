@@ -1,0 +1,22 @@
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B /tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase16_static_benchmarks.py
+PHASE16_VALIDATION_COLUMN_MAP={"date": "target_date", "fold_id": "fold_id", "fold_number": "fold_number", "forecast": "forecast_daily_max_c", "legacy_crps": "crps_c", "mean": "temperature_predictive_mean_c", "model": "kernel", "outcome": "hko_daily_max_c", "residual": "residual_observed_c", "rule": "decision_rule", "std": "predictive_standard_deviation_c", "training_end": "training_end", "training_start": "training_start", "validation_end": "validation_end", "validation_start": "validation_start"}
+PHASE16_RESIDUAL_COLUMN_MAP={"date": "target_date", "forecast": "forecast_daily_max_c", "outcome": "hko_daily_max_c", "residual": "residual_c", "rule": "decision_rule"}
+PHASE16_STATIC_EVENT_MERGE={"books": 375, "canonical_columns": ["forecast_daily_max_c", "residual_mean_c", "residual_standard_deviation_c", "static_temperature_mean_c", "static_temperature_standard_deviation_c"], "dropped_overlapping_columns": ["forecast_daily_max_c"], "rows": 4125}
+PHASE16_EXACT_SUPPORT_PROBABILITY_COLUMNS={"gp_probability": "gp_event_probability", "market_raw_probability": "market_probability_raw"}
+PHASE16_STATUS=PASSED
+PHASE16_CHRONOLOGICAL_ROWS=5840
+PHASE16_VALIDATION_DATES=365
+PHASE16_STATIC_PARAMETER_ROWS=20
+PHASE16_STATIC_EVENT_ROWS=4125
+PHASE16_EXACT_STATIC_EVENT_ROWS=3850
+PHASE16_OVERALL_SCORES={"matern32": 0.8633399989580595, "raw_point": 1.7456849315068492, "rbf": 0.8775614684402, "static_gaussian": 0.9117545500469533}
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B -m unittest discover -s /tmp/v2_phase21_clean_replay_a9q7ff11/tests/v2_completion -p test_phase16_*.py -v
+test_chronological_predictions (test_phase16_chronology.Phase16ChronologyTest.test_chronological_predictions) ... ok
+test_event_score_reconciliation (test_phase16_event_scores.Phase16EventScoreTest.test_event_score_reconciliation) ... ok
+test_scores_and_pairs (test_phase16_scores.Phase16ScoreTest.test_scores_and_pairs) ... ok
+test_static_event_support (test_phase16_support.Phase16SupportTest.test_static_event_support) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.032s
+
+OK

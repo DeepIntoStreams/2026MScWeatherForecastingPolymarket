@@ -1,0 +1,20 @@
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B /tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase19_predictive_diagnostics.py
+PHASE19_COLUMN_MAP={"crps": "crps_c", "date": "target_date", "fold": "fold_id", "fold_number": "fold_number", "forecast": "forecast_daily_max_c", "model": "kernel", "outcome": "hko_daily_max_c", "pit": "pit_value", "predictive_mean": "temperature_predictive_mean_c", "predictive_std": "predictive_standard_deviation_c", "residual": "corrected_temperature_error_c", "rule": "decision_rule", "standardised_residual": "standardised_residual_error"}
+PHASE19_QUANTILE_COLUMNS={"0.01": "q01_c", "0.02": "q02_c", "0.03": "q03_c", "0.04": "q04_c", "0.05": "q05_c", "0.06": "q06_c", "0.07": "q07_c", "0.08": "q08_c", "0.09": "q09_c", "0.1": "q10_c", "0.11": "q11_c", "0.12": "q12_c", "0.13": "q13_c", "0.14": "q14_c", "0.15": "q15_c", "0.16": "q16_c", "0.17": "q17_c", "0.18": "q18_c", "0.19": "q19_c", "0.2": "q20_c", "0.21": "q21_c", "0.22": "q22_c", "0.23": "q23_c", "0.24": "q24_c", "0.25": "q25_c", "0.26": "q26_c", "0.27": "q27_c", "0.28": "q28_c", "0.29": "q29_c", "0.3": "q30_c", "0.31": "q31_c", "0.32": "q32_c", "0.33": "q33_c", "0.34": "q34_c", "0.35": "q35_c", "0.36": "q36_c", "0.37": "q37_c", "0.38": "q38_c", "0.39": "q39_c", "0.4": "q40_c", "0.41": "q41_c", "0.42": "q42_c", "0.43": "q43_c", "0.44": "q44_c", "0.45": "q45_c", "0.46": "q46_c", "0.47": "q47_c", "0.48": "q48_c", "0.49": "q49_c", "0.5": "q50_c", "0.51": "q51_c", "0.52": "q52_c", "0.53": "q53_c", "0.54": "q54_c", "0.55": "q55_c", "0.56": "q56_c", "0.57": "q57_c", "0.58": "q58_c", "0.59": "q59_c", "0.6": "q60_c", "0.61": "q61_c", "0.62": "q62_c", "0.63": "q63_c", "0.64": "q64_c", "0.65": "q65_c", "0.66": "q66_c", "0.67": "q67_c", "0.68": "q68_c", "0.69": "q69_c", "0.7": "q70_c", "0.71": "q71_c", "0.72": "q72_c", "0.73": "q73_c", "0.74": "q74_c", "0.75": "q75_c", "0.76": "q76_c", "0.77": "q77_c", "0.78": "q78_c", "0.79": "q79_c", "0.8": "q80_c", "0.81": "q81_c", "0.82": "q82_c", "0.83": "q83_c", "0.84": "q84_c", "0.85": "q85_c", "0.86": "q86_c", "0.87": "q87_c", "0.88": "q88_c", "0.89": "q89_c", "0.9": "q90_c", "0.91": "q91_c", "0.92": "q92_c", "0.93": "q93_c", "0.94": "q94_c", "0.95": "q95_c", "0.96": "q96_c", "0.97": "q97_c", "0.98": "q98_c", "0.99": "q99_c"}
+PHASE19_STORED_COVERAGE_COLUMNS={"0.5": "central_50_covered", "0.8": "central_80_covered", "0.9": "central_90_covered"}
+PHASE19_STATUS=PASSED
+PHASE19_VALIDATION_ROWS=2920
+PHASE19_VALIDATION_DATES=365
+PHASE19_COVERAGE_ROWS=150
+PHASE19_QUANTILE_CALIBRATION_ROWS=990
+PHASE19_ACF_ROWS=420
+PHASE19_VARIANCE_REGRESSION_COEFFICIENTS=22
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B -m unittest discover -s /tmp/v2_phase21_clean_replay_a9q7ff11/tests/v2_completion -p test_phase19_*.py -v
+test_calibration_dimensions_and_ranges (test_phase19_calibration.Phase19CalibrationTest.test_calibration_dimensions_and_ranges) ... ok
+test_dependence_and_variance_outputs (test_phase19_dependence.Phase19DependenceTest.test_dependence_and_variance_outputs) ... ok
+test_outputs_and_figures (test_phase19_outputs.Phase19OutputTest.test_outputs_and_figures) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.014s
+
+OK

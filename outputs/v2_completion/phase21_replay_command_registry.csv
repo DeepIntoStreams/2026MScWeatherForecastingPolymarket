@@ -1,0 +1,7 @@
+phase,engine,test_pattern,status,duration_seconds,log_path
+15,tools/v2_completion/build_phase15_gp_reconciliation.py,test_phase15_*.py,PASSED,1.957,outputs/v2_completion/phase21_replay_logs/phase15.log
+16,tools/v2_completion/build_phase16_static_benchmarks.py,test_phase16_*.py,PASSED,2.669,outputs/v2_completion/phase21_replay_logs/phase16.log
+17,tools/v2_completion/build_phase17_error_missing_support.py,test_phase17_*.py,PASSED,3.507,outputs/v2_completion/phase21_replay_logs/phase17.log
+18,tools/v2_completion/build_phase18_gp_stability.py,test_phase18_*.py,PASSED,14.092,outputs/v2_completion/phase21_replay_logs/phase18.log
+19,tools/v2_completion/build_phase19_predictive_diagnostics.py,test_phase19_*.py,PASSED,7.46,outputs/v2_completion/phase21_replay_logs/phase19.log
+20,tools/v2_completion/build_phase20_forecast_combination.py,test_phase20_*.py,PASSED,14.202,outputs/v2_completion/phase21_replay_logs/phase20.log

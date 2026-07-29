@@ -1,0 +1,23 @@
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B /tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase17_error_missing_support.py
+/tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase17_error_missing_support.py:864: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  .fillna(False)
+PHASE17_RESIDUAL_COLUMN_MAP={"date": "target_date", "forecast": "forecast_daily_max_c", "outcome": "hko_daily_max_c", "residual": "residual_c", "rule": "decision_rule"}
+PHASE17_PHASE16_COLUMN_MAP={"date": "target_date", "fold": "fold_id", "forecast": "forecast_daily_max_c", "model": "model", "outcome": "hko_daily_max_c", "rule": "decision_rule"}
+PHASE17_STATUS=PASSED
+PHASE17_WEATHER_ONLY_ROWS=2920
+PHASE17_WEATHER_ONLY_DATES=730
+PHASE17_RULE_SUMMARY_ROWS=4
+PHASE17_RULE_BLOCK_ROWS=16
+PHASE17_PAIRWISE_RULE_ROWS=6
+PHASE17_VARIANCE_SHARES={"date_by_rule_interaction": 0.08061212286990338, "decision_rule": 4.806289069355588e-05, "target_date": 0.919339814239403}
+PHASE17_MISSING_SUPPORT={"complete_absence_dates": 1, "development_missing": 36, "june_missing": 1, "missing_keys": 37, "partial_absence_dates": 16, "supported_keys": 375, "theoretical_keys": 412}
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B -m unittest discover -s /tmp/v2_phase21_clean_replay_a9q7ff11/tests/v2_completion -p test_phase17_*.py -v
+test_rule_error_outputs (test_phase17_deterministic_error.Phase17DeterministicErrorTest.test_rule_error_outputs) ... ok
+test_figures_exist (test_phase17_figures.Phase17FigureTest.test_figures_exist) ... ok
+test_missing_support_partition (test_phase17_missing_support.Phase17MissingSupportTest.test_missing_support_partition) ... ok
+test_pairwise_and_variance_outputs (test_phase17_structure.Phase17StructureTest.test_pairwise_and_variance_outputs) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.010s
+
+OK

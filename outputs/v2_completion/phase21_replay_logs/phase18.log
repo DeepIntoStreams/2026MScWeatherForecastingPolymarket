@@ -1,0 +1,30 @@
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B /tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase18_gp_stability.py
+/tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase18_gp_stability.py:2132: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  ].fillna(False).sum()
+/tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase18_gp_stability.py:2137: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  ].fillna(False).sum()
+PHASE18_PREDICTION_COLUMN_MAP={"absolute_error": "absolute_temperature_error_c", "crps": "crps_c", "date": "target_date", "fold": "fold_id", "fold_number": "fold_number", "model": "model", "rule": "decision_rule"}
+PHASE18_FOLD_REGISTRY_COLUMNS=["decision_rule", "kernel_order", "mean_crps_c", "model", "training_end", "training_start", "validation_block", "validation_dates", "validation_end", "validation_rows", "validation_start"]
+PHASE18_FULL_REGISTRY_COLUMNS=["decision_rule", "model_path", "model_sha256", "saved_object_class", "gpr_class", "pipeline_steps", "embedded_standard_scalers", "training_rows", "n_features", "normalize_y", "response_training_mean", "response_training_std", "alpha", "optimizer", "n_restarts_optimizer", "random_state", "copy_X_train", "kernel_initial", "kernel_fitted", "white_noise_level_normalised", "log_marginal_likelihood_value", "feature_scaling_max_error", "sklearn_version", "joblib_version", "status"]
+PHASE18_FEATURE_RESPONSE_COLLAPSE={"collapsed_dates": 730, "collapsed_unique_date_rule_keys": 2920, "decision_rules": 4, "duplicate_date_rule_keys": 2552, "duplicate_source_rows": 9116, "maximum_duplicate_target_spread": 0.0, "raw_feature_rows": 9484}
+PHASE18_STATUS=PASSED
+PHASE18_MODEL_ROWS=5840
+PHASE18_RULE_SCORE_ROWS=16
+PHASE18_BLOCK_SCORE_ROWS=16
+PHASE18_RULE_BLOCK_SCORE_ROWS=64
+PHASE18_PAIRED_ROWS=100
+PHASE18_FOLD_HYPERPARAMETER_ROWS=32
+PHASE18_REPLAY_MAX_ERROR=0.000000000000e+00
+PHASE18_FULL_HYPERPARAMETER_ROWS=4
+PHASE18_STABILITY_COUNTS={"matern_best_cells": 9, "matern_better_rbf_cells": 10, "matern_better_static_blocks": 3, "matern_better_static_cells": 12, "matern_better_static_rules": 4}
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B -m unittest discover -s /tmp/v2_phase21_clean_replay_a9q7ff11/tests/v2_completion -p test_phase18_*.py -v
+test_figures_exist (test_phase18_figures.Phase18FigureTest.test_figures_exist) ... ok
+test_hyperparameter_registry (test_phase18_hyperparameters.Phase18HyperparameterTest.test_hyperparameter_registry) ... ok
+test_paired_outputs_and_rankings (test_phase18_pairs.Phase18PairTest.test_paired_outputs_and_rankings) ... ok
+test_exact_replay_reconciles (test_phase18_replay.Phase18ReplayTest.test_exact_replay_reconciles) ... ok
+test_score_dimensions_and_support (test_phase18_scores.Phase18ScoreTest.test_score_dimensions_and_support) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.015s
+
+OK

@@ -1,0 +1,117 @@
+phase,relative_path,comparison_method,maximum_absolute_error,status,detail
+15,config/v2_completion/phase15_gp_implementation_spec.json,semantic_json,0.0,PASSED,substantive JSON content identical after excluding explicit provenance fields
+15,outputs/v2_completion/phase15_ast_call_registry.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_crps_reconciliation.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_feature_transformations.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_fold_model_registry.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_full_fit_model_registry.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_gap_updates.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_reconciliation_report.md,normalised_text,0.0,PASSED,normalised text identical
+15,outputs/v2_completion/phase15_source_evidence.csv,structured_csv,0.0,PASSED,byte-identical CSV
+15,outputs/v2_completion/phase15_variance_reconciliation.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,config/v2_completion/phase16_static_benchmark_spec.json,semantic_json,0.0,PASSED,substantive JSON content identical after excluding explicit provenance fields
+16,outputs/v2_completion/phase16_date_level_model_losses.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_gap_updates.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_model_scores_by_block.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_model_scores_by_rule.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_model_scores_overall.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_paired_model_differences.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_static_benchmark_report.md,normalised_text,0.0,PASSED,normalised text identical
+16,outputs/v2_completion/phase16_static_event_probability_scores.csv,structured_csv,0.0,PASSED,byte-identical CSV
+16,outputs/v2_completion/phase16_static_parameter_registry.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,config/v2_completion/phase17_error_missing_support_spec.json,semantic_json,0.0,PASSED,substantive JSON content identical after excluding explicit provenance fields
+17,outputs/v2_completion/phase17_error_by_validation_block.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_error_missing_support_report.md,normalised_text,0.0,PASSED,normalised text identical
+17,outputs/v2_completion/phase17_error_variance_decomposition.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_figures/phase17_missing_support_matrix.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+17,outputs/v2_completion/phase17_figures/phase17_missing_support_matrix.png,pixel_array,0.0,PASSED,PNG pixels identical
+17,outputs/v2_completion/phase17_figures/phase17_rule_error_boxplot.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+17,outputs/v2_completion/phase17_figures/phase17_rule_error_boxplot.png,pixel_array,0.0,PASSED,PNG pixels identical
+17,outputs/v2_completion/phase17_gap_updates.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_missing_key_registry.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_missing_pattern_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_pairwise_rule_differences.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_rule_error_correlations.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_rule_error_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_rule_rank_diagnostics.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_support_by_date.csv,structured_csv,0.0,PASSED,byte-identical CSV
+17,outputs/v2_completion/phase17_support_by_rule_period.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,config/v2_completion/phase18_gp_stability_spec.json,semantic_json,0.0,PASSED,substantive JSON content identical after excluding explicit provenance fields
+18,outputs/v2_completion/phase18_feature_response_duplicate_audit.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_figures/phase18_matern_crps_rule_block_heatmap.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+18,outputs/v2_completion/phase18_figures/phase18_matern_crps_rule_block_heatmap.png,pixel_array,0.0,PASSED,PNG pixels identical
+18,outputs/v2_completion/phase18_figures/phase18_matern_length_scale_stability.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+18,outputs/v2_completion/phase18_figures/phase18_matern_length_scale_stability.png,pixel_array,0.0,PASSED,PNG pixels identical
+18,outputs/v2_completion/phase18_figures/phase18_matern_minus_static_heatmap.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+18,outputs/v2_completion/phase18_figures/phase18_matern_minus_static_heatmap.png,pixel_array,0.0,PASSED,PNG pixels identical
+18,outputs/v2_completion/phase18_gap_updates.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_gp_fold_hyperparameters.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_gp_full_fit_hyperparameters.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_gp_hyperparameter_stability.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_gp_stability_report.md,normalised_text,0.0,PASSED,normalised text identical
+18,outputs/v2_completion/phase18_model_rank_stability.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_model_scores_by_block.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_model_scores_by_rule.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_model_scores_by_rule_block.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_paired_model_differences.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_replay_execution.log,execution_log_validation,0.0,PASSED,execution log regenerated without traceback
+18,outputs/v2_completion/phase18_replay_prediction_reconciliation.csv,structured_csv,0.0,PASSED,byte-identical CSV
+18,outputs/v2_completion/phase18_rule_block_rankings.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,config/v2_completion/phase19_predictive_diagnostics_spec.json,semantic_json,0.0,PASSED,substantive JSON content identical after excluding explicit provenance fields
+19,outputs/v2_completion/phase19_autocorrelation.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_coverage_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_cross_rule_residual_correlations.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_dependence_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_figures/phase19_central_coverage_errors.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+19,outputs/v2_completion/phase19_figures/phase19_central_coverage_errors.png,pixel_array,0.0,PASSED,PNG pixels identical
+19,outputs/v2_completion/phase19_figures/phase19_pit_histogram.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+19,outputs/v2_completion/phase19_figures/phase19_pit_histogram.png,pixel_array,0.0,PASSED,PNG pixels identical
+19,outputs/v2_completion/phase19_figures/phase19_quantile_calibration.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+19,outputs/v2_completion/phase19_figures/phase19_quantile_calibration.png,pixel_array,0.0,PASSED,PNG pixels identical
+19,outputs/v2_completion/phase19_figures/phase19_squared_standardised_residual_acf.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+19,outputs/v2_completion/phase19_figures/phase19_squared_standardised_residual_acf.png,pixel_array,0.0,PASSED,PNG pixels identical
+19,outputs/v2_completion/phase19_figures/phase19_standardised_residual_acf.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+19,outputs/v2_completion/phase19_figures/phase19_standardised_residual_acf.png,pixel_array,0.0,PASSED,PNG pixels identical
+19,outputs/v2_completion/phase19_figures/phase19_variance_by_sharpness_quartile.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+19,outputs/v2_completion/phase19_figures/phase19_variance_by_sharpness_quartile.png,pixel_array,0.0,PASSED,PNG pixels identical
+19,outputs/v2_completion/phase19_gap_updates.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_heteroskedasticity_quartiles.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_pit_histogram.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_pit_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_predictive_diagnostics_report.md,normalised_text,0.0,PASSED,normalised text identical
+19,outputs/v2_completion/phase19_quantile_calibration.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_quantile_calibration_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_reconciliation_checks.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_sharpness_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_standardised_residual_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_variance_regression_coefficients.csv,structured_csv,0.0,PASSED,byte-identical CSV
+19,outputs/v2_completion/phase19_variance_regression_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,config/v2_completion/phase20_forecast_combination_spec.json,semantic_json,0.0,PASSED,substantive JSON content identical after excluding explicit provenance fields
+20,outputs/v2_completion/phase20_book_discrepancy_panel.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_book_discrepancy_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_combination_weight_bootstrap.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_combination_weight_grid.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_combination_weight_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_date_score_panel.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_discrepancy_regression_coefficients.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_discrepancy_regression_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_event_discrepancy_panel.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_exact_common_support_event_panel.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_figures/phase20_june_score_comparison.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+20,outputs/v2_completion/phase20_figures/phase20_june_score_comparison.png,pixel_array,0.0,PASSED,PNG pixels identical
+20,outputs/v2_completion/phase20_figures/phase20_rank_discrepancy_event_day_open.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+20,outputs/v2_completion/phase20_figures/phase20_rank_discrepancy_event_day_open.png,pixel_array,0.0,PASSED,PNG pixels identical
+20,outputs/v2_completion/phase20_figures/phase20_total_variation_by_rule.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+20,outputs/v2_completion/phase20_figures/phase20_total_variation_by_rule.png,pixel_array,0.0,PASSED,PNG pixels identical
+20,outputs/v2_completion/phase20_figures/phase20_weight_bootstrap.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+20,outputs/v2_completion/phase20_figures/phase20_weight_bootstrap.png,pixel_array,0.0,PASSED,PNG pixels identical
+20,outputs/v2_completion/phase20_figures/phase20_weight_objective.pdf,pdf_presence,0.0,PASSED,non-empty PDF regenerated
+20,outputs/v2_completion/phase20_figures/phase20_weight_objective.png,pixel_array,0.0,PASSED,PNG pixels identical
+20,outputs/v2_completion/phase20_forecast_combination_report.md,normalised_text,0.0,PASSED,normalised text identical
+20,outputs/v2_completion/phase20_gap_updates.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_june_paired_differences.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_outcome_column_audit.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_probability_column_audit.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_rank_discrepancy_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_rule_specific_weight_diagnostics.csv,structured_csv,0.0,PASSED,byte-identical CSV
+20,outputs/v2_completion/phase20_score_summary.csv,structured_csv,0.0,PASSED,byte-identical CSV

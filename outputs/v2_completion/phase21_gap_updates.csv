@@ -1,0 +1,2 @@
+gap_id,gap,phase_closed,status,evidence
+G15,Clean-environment reproducibility,21,CLOSED,phase21_replay_command_registry.csv|phase21_artifact_comparison.csv|phase21_source_hash_inventory.csv|phase21_reproducibility_report.md

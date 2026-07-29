@@ -1,0 +1,86 @@
+relative_path,line_number,source_line
+tools/v2/build_phase10_gp_market_comparison.py,2120,"seed: int,"
+tools/v2/build_phase10_gp_market_comparison.py,2138,seed
+tools/v2/build_phase10_gp_market_comparison.py,2191,base_seed = int(
+tools/v2/build_phase10_gp_market_comparison.py,2193,"""bootstrap_seed"""
+tools/v2/build_phase10_gp_market_comparison.py,2326,seed_text = (
+tools/v2/build_phase10_gp_market_comparison.py,2332,seed_offset = sum(
+tools/v2/build_phase10_gp_market_comparison.py,2338,in enumerate(seed_text)
+tools/v2/build_phase10_gp_market_comparison.py,2346,base_seed
+tools/v2/build_phase10_gp_market_comparison.py,2347,+ seed_offset
+tools/v2/build_phase11_frozen_value_gap_trading.py,410,"seed: int,"
+tools/v2/build_phase11_frozen_value_gap_trading.py,470,seed
+tools/v2/build_phase11_frozen_value_gap_trading.py,1177,base_seed = int(
+tools/v2/build_phase11_frozen_value_gap_trading.py,1181,"""bootstrap_seed"""
+tools/v2/build_phase11_frozen_value_gap_trading.py,1260,base_seed
+tools/v2/build_phase12_robustness_attribution.py,2129,seed = int(
+tools/v2/build_phase12_robustness_attribution.py,2131,"""bootstrap_seed"""
+tools/v2/build_phase12_robustness_attribution.py,2159,seed
+tools/v2/build_phase12_robustness_attribution.py,2268,seed + 8191
+tools/v2/build_phase8_clean_gp.py,1010,"random_state=20260728,"
+tools/v2/fit_gp_validation_distributions.py,425,random_state=int(
+tools/v2/fit_gp_validation_distributions.py,427,"""random_seed"""
+tools/v2_completion/build_phase15_gp_reconciliation.py,163,"""optimiser"": re.compile(r""n_restarts_optimizer|optimizer|random_state|alpha\s*="", re.I),"
+tools/v2_completion/build_phase15_gp_reconciliation.py,839,"""random_state"": str(gpr.random_state),"
+tools/v2_completion/build_phase16_static_benchmarks.py,55,BOOTSTRAP_SEED = 20260729
+tools/v2_completion/build_phase16_static_benchmarks.py,660,"seed: int = BOOTSTRAP_SEED,"
+tools/v2_completion/build_phase16_static_benchmarks.py,665,rng = np.random.default_rng(seed)
+tools/v2_completion/build_phase16_static_benchmarks.py,710,seed=BOOTSTRAP_SEED
+tools/v2_completion/build_phase16_static_benchmarks.py,728,"""seed"": BOOTSTRAP_SEED"
+tools/v2_completion/build_phase16_static_benchmarks.py,1668,"""base_seed"": BOOTSTRAP_SEED,"
+tools/v2_completion/build_phase17_error_missing_support.py,75,BOOTSTRAP_SEED = 20260729
+tools/v2_completion/build_phase17_error_missing_support.py,294,"seed: int,"
+tools/v2_completion/build_phase17_error_missing_support.py,304,rng = np.random.default_rng(seed)
+tools/v2_completion/build_phase17_error_missing_support.py,344,"seed=BOOTSTRAP_SEED + sum(ord(c) for c in rule) + 1,"
+tools/v2_completion/build_phase17_error_missing_support.py,348,"seed=BOOTSTRAP_SEED + sum(ord(c) for c in rule) + 2,"
+tools/v2_completion/build_phase17_error_missing_support.py,476,seed=(
+tools/v2_completion/build_phase17_error_missing_support.py,477,BOOTSTRAP_SEED
+tools/v2_completion/build_phase17_error_missing_support.py,483,seed=(
+tools/v2_completion/build_phase17_error_missing_support.py,484,BOOTSTRAP_SEED
+tools/v2_completion/build_phase17_error_missing_support.py,1443,"""base_seed"": BOOTSTRAP_SEED,"
+tools/v2_completion/build_phase18_gp_stability.py,111,BOOTSTRAP_SEED = 20260729
+tools/v2_completion/build_phase18_gp_stability.py,275,"seed: int,"
+tools/v2_completion/build_phase18_gp_stability.py,289,rng = np.random.default_rng(seed)
+tools/v2_completion/build_phase18_gp_stability.py,575,seed = (
+tools/v2_completion/build_phase18_gp_stability.py,576,BOOTSTRAP_SEED
+tools/v2_completion/build_phase18_gp_stability.py,589,"seed=seed,"
+tools/v2_completion/build_phase18_gp_stability.py,610,"""seed"": seed,"
+tools/v2_completion/build_phase18_gp_stability.py,837,"""random_state"": _simple(getattr(self, ""random_state"", None)),"
+tools/v2_completion/build_phase18_gp_stability.py,1363,"""random_state"": record.get(""random_state""),"
+tools/v2_completion/build_phase18_gp_stability.py,2218,"""base_seed"": BOOTSTRAP_SEED,"
+tools/v2_completion/build_phase19_predictive_diagnostics.py,66,BOOTSTRAP_SEED = 20260729
+tools/v2_completion/build_phase19_predictive_diagnostics.py,712,def stable_seed(*parts: Any) -> int:
+tools/v2_completion/build_phase19_predictive_diagnostics.py,714,return BOOTSTRAP_SEED + sum(
+tools/v2_completion/build_phase19_predictive_diagnostics.py,722,"seed: int,"
+tools/v2_completion/build_phase19_predictive_diagnostics.py,736,rng = np.random.default_rng(seed)
+tools/v2_completion/build_phase19_predictive_diagnostics.py,861,seed=stable_seed(
+tools/v2_completion/build_phase19_predictive_diagnostics.py,1325,"seed: int,"
+tools/v2_completion/build_phase19_predictive_diagnostics.py,1343,rng = np.random.default_rng(seed)
+tools/v2_completion/build_phase19_predictive_diagnostics.py,1483,seed=stable_seed(
+tools/v2_completion/build_phase20_forecast_combination.py,78,BOOTSTRAP_SEED = 20260729
+tools/v2_completion/build_phase20_forecast_combination.py,1161,def stable_seed(*parts: Any) -> int:
+tools/v2_completion/build_phase20_forecast_combination.py,1163,return BOOTSTRAP_SEED + sum(
+tools/v2_completion/build_phase20_forecast_combination.py,1250,rng = np.random.default_rng(BOOTSTRAP_SEED)
+tools/v2_completion/build_phase20_forecast_combination.py,1302,"""seed"": BOOTSTRAP_SEED,"
+tools/v2_completion/build_phase20_forecast_combination.py,1342,"seed: int,"
+tools/v2_completion/build_phase20_forecast_combination.py,1348,rng = np.random.default_rng(seed)
+tools/v2_completion/build_phase20_forecast_combination.py,1482,seed=stable_seed(
+tools/v2_completion/build_phase20_forecast_combination.py,1757,"seed: int,"
+tools/v2_completion/build_phase20_forecast_combination.py,1767,"seed=seed,"
+tools/v2_completion/build_phase20_forecast_combination.py,1818,seed=stable_seed(
+tools/v2_completion/build_phase20_forecast_combination.py,1876,seed=stable_seed(
+tools/v2_completion/build_phase20_forecast_combination.py,2644,"""seed"": BOOTSTRAP_SEED,"
+tools/v2_completion/build_phase21_reproducibility.py,652,"""PYTHONHASHSEED"": ""0"","
+tools/v2_completion/build_phase21_reproducibility.py,843,def build_seed_registry() -> pd.DataFrame:
+tools/v2_completion/build_phase21_reproducibility.py,845,"r""(seed|random_state|PYTHONHASHSEED)"","
+tools/v2_completion/build_phase21_reproducibility.py,880,"""PYTHONHASHSEED=0; TZ=UTC; LC_ALL=C"""
+tools/v2_completion/build_phase21_reproducibility.py,1147,seeds = build_seed_registry()
+tools/v2_completion/build_phase21_reproducibility.py,1148,if seeds.empty:
+tools/v2_completion/build_phase21_reproducibility.py,1149,"fail(""No seed or random-state evidence was recorded."")"
+tools/v2_completion/build_phase21_reproducibility.py,1171,"OUT / ""phase21_random_seed_registry.csv"","
+tools/v2_completion/build_phase21_reproducibility.py,1172,"seeds,"
+tools/v2_completion/build_phase21_reproducibility.py,1260,"""PYTHONHASHSEED"": ""0"","
+tools/v2_completion/build_phase21_reproducibility.py,1275,"""seed_registry_rows"": len(seeds),"
+tools/v2_completion/build_phase21_reproducibility.py,1320,"""- Controlled process state: `PYTHONHASHSEED=0`, `TZ=UTC`, `LC_ALL=C` and `MPLBACKEND=Agg`."","
+tools/v2_completion/build_phase21_reproducibility.py,1340,"f""- Seed and random-state evidence rows: {len(seeds)}."","
+tools/v2_completion/reproduce_v2_completion.sh,0,PYTHONHASHSEED=0; TZ=UTC; LC_ALL=C

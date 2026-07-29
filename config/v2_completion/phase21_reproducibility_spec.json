@@ -1,0 +1,87 @@
+{
+  "artifacts_compared": 116,
+  "certified_branch": "edward-v2-gp-depth-completion",
+  "certified_commit": "d818553e12de5f6e33d6aa873e675658d236d622",
+  "closed_gaps": [
+    "G15"
+  ],
+  "core_package_versions": {
+    "joblib": "1.4.2",
+    "matplotlib": "3.8.4",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.4.2",
+    "scipy": "1.13.1"
+  },
+  "created_at_utc": "2026-07-29T20:35:18.585431+00:00",
+  "critical_source_files_hashed": 18,
+  "failed_artifact_comparisons": 0,
+  "figures": [
+    "outputs/v2_completion/phase21_figures/phase21_replay_artifact_counts.png",
+    "outputs/v2_completion/phase21_figures/phase21_replay_artifact_counts.pdf"
+  ],
+  "isolation": {
+    "controlled_environment": {
+      "LC_ALL": "C",
+      "MPLBACKEND": "Agg",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "TZ": "UTC"
+    },
+    "filesystem": "fresh local Git clone at the certified Phase 20 commit",
+    "network_used": false,
+    "python": "new virtual environment with --system-site-packages"
+  },
+  "name": "Clean-repository replay and reproducibility demonstration",
+  "phase": 21,
+  "phase_summary": [
+    {
+      "compared_artifacts": 10,
+      "maximum_finite_error": 0.0,
+      "phase": 15,
+      "status": "PASSED"
+    },
+    {
+      "compared_artifacts": 10,
+      "maximum_finite_error": 0.0,
+      "phase": 16,
+      "status": "PASSED"
+    },
+    {
+      "compared_artifacts": 17,
+      "maximum_finite_error": 0.0,
+      "phase": 17,
+      "status": "PASSED"
+    },
+    {
+      "compared_artifacts": 21,
+      "maximum_finite_error": 0.0,
+      "phase": 18,
+      "status": "PASSED"
+    },
+    {
+      "compared_artifacts": 29,
+      "maximum_finite_error": 0.0,
+      "phase": 19,
+      "status": "PASSED"
+    },
+    {
+      "compared_artifacts": 29,
+      "maximum_finite_error": 0.0,
+      "phase": 20,
+      "status": "PASSED"
+    }
+  ],
+  "phases_replayed": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "pip_check_passed": true,
+  "replay_commit": "d818553e12de5f6e33d6aa873e675658d236d622",
+  "seed_registry_rows": 85,
+  "status": "PASSED"
+}

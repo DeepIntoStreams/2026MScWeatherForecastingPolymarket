@@ -1,0 +1,19 @@
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B /tmp/v2_phase21_clean_replay_a9q7ff11/tools/v2_completion/build_phase15_gp_reconciliation.py
+PHASE15_VALIDATION_COLUMN_MAP={"block": "fold_id", "crps": "crps_c", "date": "target_date", "mean": "temperature_predictive_mean_c", "model": "kernel", "outcome": "hko_daily_max_c", "rule": "decision_rule", "std": "predictive_standard_deviation_c"}
+PHASE15_STATUS=PASSED
+PHASE15_FEATURE_PANEL=outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv
+PHASE15_FULL_MODELS=4
+PHASE15_FOLD_REGISTRY_ROWS=32
+PHASE15_MAX_SCALING_ERROR=2.665e-15
+PHASE15_MAX_MEAN_ERROR=0.000e+00
+PHASE15_MAX_VARIANCE_ERROR=2.220e-16
+PHASE15_MAX_NOISE_IDENTITY_ERROR=2.220e-16
+COMMAND=/tmp/v2_phase21_clean_replay_a9q7ff11/.phase21_venv/bin/python -B -m unittest discover -s /tmp/v2_phase21_clean_replay_a9q7ff11/tests/v2_completion -p test_phase15_*.py -v
+test_crps_registry (test_phase15_crps.Phase15CRPSTest.test_crps_registry) ... ok
+test_feature_reconciliation (test_phase15_features.Phase15FeatureTest.test_feature_reconciliation) ... ok
+test_variance_reconciliation (test_phase15_variance.Phase15VarianceTest.test_variance_reconciliation) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
