@@ -1,0 +1,17 @@
+first_model,second_model,metric,difference_definition,mean_difference,bootstrap_lower_95,bootstrap_upper_95,bootstrap_probability_difference_below_zero,dates,bootstrap_replications,bootstrap_unit,negative_difference_favours
+development_selected_pool,gp,binary_brier,first model score minus second model score,-0.006307816326641308,-0.00901126378263772,-0.0034917328431670787,1.0,30,10000,target_date,development_selected_pool
+development_selected_pool,gp,binary_log,first model score minus second model score,-0.024756738839140587,-0.03334446236285923,-0.016094234545231415,1.0,30,10000,target_date,development_selected_pool
+development_selected_pool,gp,categorical_log,first model score minus second model score,-0.22765525651595142,-0.3081041861079083,-0.15239343629663357,1.0,30,10000,target_date,development_selected_pool
+development_selected_pool,gp,multiclass_brier,first model score minus second model score,-0.06938597959305436,-0.09886814452139554,-0.038781721611123005,1.0,30,10000,target_date,development_selected_pool
+development_selected_pool,market_normalised,binary_brier,first model score minus second model score,0.0029385101941699124,0.0003015530814047967,0.005407851236150559,0.0154,30,10000,target_date,development_selected_pool
+development_selected_pool,market_normalised,binary_log,first model score minus second model score,0.013877924858091865,0.005987780648082961,0.020952769037797095,0.0004,30,10000,target_date,development_selected_pool
+development_selected_pool,market_normalised,categorical_log,first model score minus second model score,0.12968694905278433,0.060254084861398764,0.18908732248454824,0.0,30,10000,target_date,development_selected_pool
+development_selected_pool,market_normalised,multiclass_brier,first model score minus second model score,0.032323612135869075,0.0031274747849975152,0.05941047473328835,0.0149,30,10000,target_date,development_selected_pool
+equal_50_50_pool,gp,binary_brier,first model score minus second model score,-0.00620687325054761,-0.008850552891282892,-0.003427012091248941,1.0,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,gp,binary_log,first model score minus second model score,-0.02435028936471779,-0.0328225711114536,-0.01565915756762839,1.0,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,gp,categorical_log,first model score minus second model score,-0.2239321097623759,-0.3023993635753944,-0.14638106079547578,1.0,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,gp,multiclass_brier,first model score minus second model score,-0.06827560575602372,-0.09725240734993498,-0.038232784720025684,1.0,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,market_normalised,binary_brier,first model score minus second model score,0.0030394532702636094,0.00037722979510451215,0.0055529604425941055,0.0138,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,market_normalised,binary_log,first model score minus second model score,0.014284374332514645,0.006138933692244119,0.021422517221410066,0.0003,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,market_normalised,categorical_log,first model score minus second model score,0.13341009580635987,0.06272565139693828,0.19530584735818204,0.0002,30,10000,target_date,equal_50_50_pool
+equal_50_50_pool,market_normalised,multiclass_brier,first model score minus second model score,0.03343398597289971,0.0033401522640503067,0.06140382272654224,0.015,30,10000,target_date,equal_50_50_pool

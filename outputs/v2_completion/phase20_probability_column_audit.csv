@@ -1,0 +1,4 @@
+source,column,rows,minimum,maximum,mean_book_sum,maximum_absolute_book_sum_error,mean_absolute_book_sum_error,name_contains_normalised,name_contains_raw,selected,market_normalisation_applied
+gp,gp_event_probability,3850,7.881472287663429e-14,0.9034050336722346,0.9999999999999997,7.771561172376096e-16,3.939705704526984e-16,False,False,True,False
+market,market_probability_raw,3850,0.0005,0.875,1.04538,0.30000000000000004,0.053948571428571436,False,True,False,False
+market,market_probability_normalised,3850,0.0003859513701273,0.8561643835616438,0.9999999999999997,8.881784197001252e-16,4.837400321581039e-16,True,False,True,False

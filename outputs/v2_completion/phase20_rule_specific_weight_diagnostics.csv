@@ -1,0 +1,5 @@
+decision_rule,development_dates,development_books,selected_gp_weight,selected_market_weight,selected_categorical_log,gp_only_categorical_log,market_only_categorical_log,status
+24h_prior,55,55,0.432,0.5680000000000001,1.4678776452065367,1.5151222847773294,1.5039692694642524,diagnostic only; not used for primary June pool
+12h_prior,60,60,0.277,0.723,1.4598215430303876,1.5539933018175287,1.485179435219954,diagnostic only; not used for primary June pool
+6h_prior,58,58,0.327,0.673,1.3897136361860354,1.483685969702717,1.429373629662664,diagnostic only; not used for primary June pool
+event_day_open,63,63,0.475,0.525,1.3687379614698096,1.427574090039617,1.4343080244237296,diagnostic only; not used for primary June pool

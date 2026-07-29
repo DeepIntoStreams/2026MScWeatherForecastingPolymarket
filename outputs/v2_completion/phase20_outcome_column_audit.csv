@@ -1,0 +1,3 @@
+column,books,minimum_book_yes_count,maximum_book_yes_count,all_books_exactly_one_yes,selected
+derived_outcome,350,1.0,1.0,True,False
+realised_yes,350,1.0,1.0,True,True

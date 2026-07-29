@@ -1,0 +1,453 @@
+{
+  "closed_gaps": [
+    "G13",
+    "G14"
+  ],
+  "column_map": {
+    "date": "target_date",
+    "event_key": "contract_key",
+    "event_label": "event_label",
+    "forecast_daily_max_c": "forecast_daily_max_c",
+    "gp_probability": "gp_event_probability",
+    "gp_temperature_mean_c": "gp_temperature_mean_c",
+    "lower_bound": "lower_bound_c",
+    "market_requires_normalisation": "False",
+    "market_source_probability": "market_probability_normalised",
+    "outcome": "realised_yes",
+    "rule": "decision_rule",
+    "upper_bound": "upper_bound_c"
+  },
+  "combination_design": {
+    "june_oracle_weight": {
+      "gp_weight": 0.0,
+      "status": "post-hoc diagnostic only"
+    },
+    "june_used_for_selection": false,
+    "market_probability": "normalised complete-book Polymarket distribution",
+    "pool": "q_j(w) = w p_GP,j + (1-w) p_market,j",
+    "primary_selection_metric": "development-period date-balanced categorical log score",
+    "selected_gp_weight": 0.489,
+    "selected_market_weight": 0.511,
+    "selection_period": "weather-plus-market development dates only",
+    "weight_bootstrap": {
+      "replications": 5000,
+      "seed": 20260729,
+      "unit": "target_date"
+    },
+    "weight_grid": {
+      "increment": 0.001,
+      "maximum": 1.0,
+      "minimum": 0.0
+    }
+  },
+  "created_at_utc": "2026-07-29T17:49:45.250930+00:00",
+  "discrepancy_design": {
+    "book_metrics": [
+      "total_variation_distance",
+      "jensen_shannon_divergence",
+      "maximum_absolute_probability_gap",
+      "expected_rank_shift_market_minus_gp",
+      "modal_rank_shift_market_minus_gp",
+      "mode_disagreement",
+      "upper and lower mass shift relative to GP mode",
+      "realised-event probability difference"
+    ],
+    "causal_interpretation": false,
+    "contract_order_source": "event order where available; otherwise canonical interval bounds or parsed event label",
+    "event_metrics": [
+      "GP probability minus market probability",
+      "centred log-ratio of market probability to GP probability"
+    ],
+    "regression_covariance": "target-date cluster robust"
+  },
+  "environment": {
+    "matplotlib": "3.8.4",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "platform": "macOS-26.5-x86_64-i386-64bit",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]",
+    "scipy": "1.13.1"
+  },
+  "figures": [
+    "outputs/v2_completion/phase20_figures/phase20_weight_objective.png",
+    "outputs/v2_completion/phase20_figures/phase20_weight_objective.pdf",
+    "outputs/v2_completion/phase20_figures/phase20_weight_bootstrap.png",
+    "outputs/v2_completion/phase20_figures/phase20_weight_bootstrap.pdf",
+    "outputs/v2_completion/phase20_figures/phase20_june_score_comparison.png",
+    "outputs/v2_completion/phase20_figures/phase20_june_score_comparison.pdf",
+    "outputs/v2_completion/phase20_figures/phase20_total_variation_by_rule.png",
+    "outputs/v2_completion/phase20_figures/phase20_total_variation_by_rule.pdf",
+    "outputs/v2_completion/phase20_figures/phase20_rank_discrepancy_event_day_open.png",
+    "outputs/v2_completion/phase20_figures/phase20_rank_discrepancy_event_day_open.pdf"
+  ],
+  "git_branch": "edward-v2-gp-depth-completion",
+  "git_commit_before_phase20": "a6355d15f899c49a36be667aaea7af47697df248",
+  "headline_outputs": {
+    "discrepancy_headlines": [
+      {
+        "books": 114,
+        "bootstrap_lower_95": 0.29467915961705327,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.6524060858290956,
+        "dates": 30,
+        "mean": 0.47439199550686495,
+        "metric": "expected_rank_shift_market_minus_gp",
+        "scope": "sample_period",
+        "scope_value": "june_out_of_sample"
+      },
+      {
+        "books": 236,
+        "bootstrap_lower_95": 0.27005202639462916,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.5562929693539753,
+        "dates": 67,
+        "mean": 0.4146104270159401,
+        "metric": "expected_rank_shift_market_minus_gp",
+        "scope": "sample_period",
+        "scope_value": "weather_plus_market_development"
+      },
+      {
+        "books": 114,
+        "bootstrap_lower_95": 0.5166666666666667,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.7166666666666667,
+        "dates": 30,
+        "mean": 0.6166666666666667,
+        "metric": "mode_disagreement",
+        "scope": "sample_period",
+        "scope_value": "june_out_of_sample"
+      },
+      {
+        "books": 236,
+        "bootstrap_lower_95": 0.48507462686567165,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.6616915422885571,
+        "dates": 67,
+        "mean": 0.5733830845771144,
+        "metric": "mode_disagreement",
+        "scope": "sample_period",
+        "scope_value": "weather_plus_market_development"
+      },
+      {
+        "books": 114,
+        "bootstrap_lower_95": -0.12445020756950971,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": -0.06376718545963786,
+        "dates": 30,
+        "mean": -0.09450362266079458,
+        "metric": "realised_probability_difference_gp_minus_market",
+        "scope": "sample_period",
+        "scope_value": "june_out_of_sample"
+      },
+      {
+        "books": 236,
+        "bootstrap_lower_95": -0.058477463358299966,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": -0.002008908488812332,
+        "dates": 67,
+        "mean": -0.03029728849026165,
+        "metric": "realised_probability_difference_gp_minus_market",
+        "scope": "sample_period",
+        "scope_value": "weather_plus_market_development"
+      },
+      {
+        "books": 114,
+        "bootstrap_lower_95": 0.25077327940596156,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.30657643221973496,
+        "dates": 30,
+        "mean": 0.2786130359147641,
+        "metric": "total_variation_distance",
+        "scope": "sample_period",
+        "scope_value": "june_out_of_sample"
+      },
+      {
+        "books": 236,
+        "bootstrap_lower_95": 0.2708392542678018,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.3106956186276183,
+        "dates": 67,
+        "mean": 0.2906709607365065,
+        "metric": "total_variation_distance",
+        "scope": "sample_period",
+        "scope_value": "weather_plus_market_development"
+      }
+    ],
+    "discrepancy_regressions": [
+      {
+        "date_clusters": 97,
+        "inference": "target-date cluster-robust asymptotic normal and chi-square reference",
+        "joint_non_intercept_cluster_robust_p_value": 4.695610783171923e-05,
+        "joint_non_intercept_degrees_freedom": 6,
+        "joint_non_intercept_wald_statistic": 29.59351817546795,
+        "parameters": 7,
+        "r_squared": 0.1008458705570715,
+        "response": "expected_rank_shift_market_minus_gp",
+        "rows": 350,
+        "temperature_source": "gp_temperature_mean_c"
+      },
+      {
+        "date_clusters": 97,
+        "inference": "target-date cluster-robust asymptotic normal and chi-square reference",
+        "joint_non_intercept_cluster_robust_p_value": 2.8717431611500534e-05,
+        "joint_non_intercept_degrees_freedom": 6,
+        "joint_non_intercept_wald_statistic": 30.71605326992892,
+        "parameters": 7,
+        "r_squared": 0.08741786615490454,
+        "response": "total_variation_distance",
+        "rows": 350,
+        "temperature_source": "gp_temperature_mean_c"
+      }
+    ],
+    "june_paired_differences": [
+      {
+        "bootstrap_lower_95": -0.00901126378263772,
+        "bootstrap_probability_difference_below_zero": 1.0,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": -0.0034917328431670787,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": -0.006307816326641308,
+        "metric": "binary_brier",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "gp"
+      },
+      {
+        "bootstrap_lower_95": -0.03334446236285923,
+        "bootstrap_probability_difference_below_zero": 1.0,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": -0.016094234545231415,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": -0.024756738839140587,
+        "metric": "binary_log",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "gp"
+      },
+      {
+        "bootstrap_lower_95": -0.3081041861079083,
+        "bootstrap_probability_difference_below_zero": 1.0,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": -0.15239343629663357,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": -0.22765525651595142,
+        "metric": "categorical_log",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "gp"
+      },
+      {
+        "bootstrap_lower_95": -0.09886814452139554,
+        "bootstrap_probability_difference_below_zero": 1.0,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": -0.038781721611123005,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": -0.06938597959305436,
+        "metric": "multiclass_brier",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "gp"
+      },
+      {
+        "bootstrap_lower_95": 0.0003015530814047967,
+        "bootstrap_probability_difference_below_zero": 0.0154,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.005407851236150559,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": 0.0029385101941699124,
+        "metric": "binary_brier",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "market_normalised"
+      },
+      {
+        "bootstrap_lower_95": 0.005987780648082961,
+        "bootstrap_probability_difference_below_zero": 0.0004,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.020952769037797095,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": 0.013877924858091865,
+        "metric": "binary_log",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "market_normalised"
+      },
+      {
+        "bootstrap_lower_95": 0.060254084861398764,
+        "bootstrap_probability_difference_below_zero": 0.0,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.18908732248454824,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": 0.12968694905278433,
+        "metric": "categorical_log",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "market_normalised"
+      },
+      {
+        "bootstrap_lower_95": 0.0031274747849975152,
+        "bootstrap_probability_difference_below_zero": 0.0149,
+        "bootstrap_replications": 10000,
+        "bootstrap_unit": "target_date",
+        "bootstrap_upper_95": 0.05941047473328835,
+        "dates": 30,
+        "difference_definition": "first model score minus second model score",
+        "first_model": "development_selected_pool",
+        "mean_difference": 0.032323612135869075,
+        "metric": "multiclass_brier",
+        "negative_difference_favours": "development_selected_pool",
+        "second_model": "market_normalised"
+      }
+    ],
+    "june_scores": [
+      {
+        "binary_brier": 0.06819820102326088,
+        "binary_log": 0.22502944634300753,
+        "books": 114,
+        "categorical_log": 1.6182649763954429,
+        "dates": 30,
+        "model": "gp",
+        "multiclass_brier": 0.7501802112558695,
+        "sample_period": "june_out_of_sample",
+        "score_aggregation": "book score averaged within target date, then target dates equally weighted",
+        "selected_using": "not estimated"
+      },
+      {
+        "binary_brier": 0.05895187450244965,
+        "binary_log": 0.1863947826457751,
+        "books": 114,
+        "categorical_log": 1.260922770826707,
+        "dates": 30,
+        "model": "market_normalised",
+        "multiclass_brier": 0.6484706195269462,
+        "sample_period": "june_out_of_sample",
+        "score_aggregation": "book score averaged within target date, then target dates equally weighted",
+        "selected_using": "not estimated"
+      },
+      {
+        "binary_brier": 0.06199132777271326,
+        "binary_log": 0.20067915697828978,
+        "books": 114,
+        "categorical_log": 1.3943328666330668,
+        "dates": 30,
+        "model": "equal_50_50_pool",
+        "multiclass_brier": 0.6819046054998459,
+        "sample_period": "june_out_of_sample",
+        "score_aggregation": "book score averaged within target date, then target dates equally weighted",
+        "selected_using": "not estimated"
+      },
+      {
+        "binary_brier": 0.06189038469661956,
+        "binary_log": 0.20027270750386697,
+        "books": 114,
+        "categorical_log": 1.3906097198794911,
+        "dates": 30,
+        "model": "development_selected_pool",
+        "multiclass_brier": 0.6807942316628152,
+        "sample_period": "june_out_of_sample",
+        "score_aggregation": "book score averaged within target date, then target dates equally weighted",
+        "selected_using": "minimum development-period date-balanced categorical log score"
+      },
+      {
+        "binary_brier": 0.05895187450244965,
+        "binary_log": 0.1863947826457751,
+        "books": 114,
+        "categorical_log": 1.260922770826707,
+        "dates": 30,
+        "model": "june_oracle_pool_post_hoc",
+        "multiclass_brier": 0.6484706195269462,
+        "sample_period": "june_out_of_sample",
+        "score_aggregation": "book score averaged within target date, then target dates equally weighted",
+        "selected_using": "minimum June date-balanced categorical log score; diagnostic only"
+      }
+    ],
+    "weight_summary": [
+      {
+        "bootstrap_unit": "target_date",
+        "development_date_end": "2026-05-31",
+        "development_date_start": "2026-03-18",
+        "development_dates": 67,
+        "june_oracle_categorical_log_post_hoc": 1.260922770826707,
+        "june_oracle_gp_weight_post_hoc": 0.0,
+        "lower_95_gp_weight": 0.148,
+        "mean_gp_weight": 0.4852652,
+        "median_gp_weight": 0.484,
+        "primary_selection_metric": "categorical_log",
+        "probability_gp_weight_one": 0.0012,
+        "probability_gp_weight_zero": 0.0014,
+        "replications": 5000,
+        "seed": 20260729,
+        "selected_development_categorical_log": 1.4516542616263037,
+        "selected_gp_weight": 0.489,
+        "selected_market_weight": 0.511,
+        "unique_selected_weights": 819,
+        "upper_95_gp_weight": 0.8270249999999996,
+        "weight_grid_increment": 0.001
+      }
+    ]
+  },
+  "inputs": {
+    "config/v2_completion/phase19_predictive_diagnostics_spec.json": {
+      "rows": null,
+      "sha256": "5475c41384f269988a97535e301429536e9e7862ca8b980dd621d20c2a8499c0"
+    },
+    "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv": {
+      "rows": 3850,
+      "sha256": "3d795b8aa4d9261383c3ec559894401cb8d68936ef8354db6ab6e2aecd4a2f19"
+    },
+    "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_report.md": {
+      "rows": null,
+      "sha256": "c327fa3848a319c75ea69dc5cc558e6297de563477b1bcd961999e97194808ae"
+    },
+    "outputs/v2_completion/phase19_predictive_diagnostics_report.md": {
+      "rows": null,
+      "sha256": "78fb2a71307aacb19704cce9fc3406c96bbee916950ace72f18a549792d583ea"
+    }
+  },
+  "name": "Forecast combination and systematic GP-market discrepancy analysis",
+  "phase": 20,
+  "score_design": {
+    "aggregation": "book score averaged within target date, then target dates equally weighted",
+    "book_scores": [
+      "binary_brier",
+      "binary_log",
+      "categorical_log",
+      "multiclass_brier"
+    ],
+    "june_paired_bootstrap_replications": 10000,
+    "june_paired_bootstrap_unit": "target_date",
+    "probability_floor": 1e-12
+  },
+  "status": "PASSED",
+  "support": {
+    "books": 350,
+    "complete_books_only": true,
+    "dates": 97,
+    "decision_rules": 4,
+    "development_dates": 67,
+    "event_rows": 3850,
+    "june_dates": 30
+  }
+}

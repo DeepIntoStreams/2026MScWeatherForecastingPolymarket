@@ -1,0 +1,3 @@
+response,rows,date_clusters,parameters,r_squared,joint_non_intercept_wald_statistic,joint_non_intercept_degrees_freedom,joint_non_intercept_cluster_robust_p_value,temperature_source,inference
+expected_rank_shift_market_minus_gp,350,97,7,0.1008458705570715,29.59351817546795,6,4.695610783171923e-05,gp_temperature_mean_c,target-date cluster-robust asymptotic normal and chi-square reference
+total_variation_distance,350,97,7,0.08741786615490454,30.71605326992892,6,2.8717431611500534e-05,gp_temperature_mean_c,target-date cluster-robust asymptotic normal and chi-square reference
