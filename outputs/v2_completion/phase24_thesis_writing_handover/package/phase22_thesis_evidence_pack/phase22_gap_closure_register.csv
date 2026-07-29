@@ -1,0 +1,18 @@
+gap_id,description,closing_phase,status_after_phase22,evidence_report
+G01,Static Gaussian chronological benchmark,16,CLOSED,outputs/v2_completion/phase16_static_benchmark_report.md
+G02,Raw point forecast chronological benchmark,16,CLOSED,outputs/v2_completion/phase16_static_benchmark_report.md
+G03,Exact feature formulas and scaling,15,CLOSED,outputs/v2_completion/phase15_reconciliation_report.md
+G04,Exact response transformation,15,CLOSED,outputs/v2_completion/phase15_reconciliation_report.md
+G05,"Observation noise, WhiteKernel and numerical jitter",15,CLOSED,outputs/v2_completion/phase15_reconciliation_report.md
+G06,Gaussian CRPS implementation,15,CLOSED,outputs/v2_completion/phase15_reconciliation_report.md
+G07,Rule-specific deterministic error,17,CLOSED,outputs/v2_completion/phase17_error_missing_support_report.md
+G08,Rule and validation-block model results,18,CLOSED,outputs/v2_completion/phase18_gp_stability_report.md
+G09,GP hyperparameter stability,18,CLOSED,outputs/v2_completion/phase18_gp_stability_report.md
+G10,Predictive calibration and sharpness,19,CLOSED,outputs/v2_completion/phase19_predictive_diagnostics_report.md
+G11,Residual dependence and heteroskedasticity,19,CLOSED,outputs/v2_completion/phase19_predictive_diagnostics_report.md
+G12,Missing forecast support,17,CLOSED,outputs/v2_completion/phase17_error_missing_support_report.md
+G13,Systematic GP-market discrepancy structure,20,CLOSED,outputs/v2_completion/phase20_forecast_combination_report.md
+G14,Forecast combination,20,CLOSED,outputs/v2_completion/phase20_forecast_combination_report.md
+G15,Clean-environment reproducibility,21,CLOSED,outputs/v2_completion/phase21_reproducibility_report.md
+G16,Consolidated thesis evidence pack,22,CLOSED,outputs/v2_completion/phase22_thesis_evidence_pack/phase22_report.md
+G17,Independent final freeze,23,OPEN,

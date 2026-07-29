@@ -1,0 +1,7 @@
+boundary_id,topic,restriction,consequence,source
+B01,Forecast support,Do not impute the 37 unsupported market-period date-rule keys.,Use exact common support for every model-market and trading comparison.,outputs/v2_completion/phase17_error_missing_support_report.md
+B02,June separation,"Do not use June outcomes to fit the GP, select a kernel, choose the combination weight or tune the trading rule.",June remains the out-of-sample validation period.,outputs/v2_completion/phase20_forecast_combination_report.md
+B03,Dependence,Do not interpret nominal independent-row tests as definitive.,"Emphasise date-level bootstrap intervals, effect sizes and block results.",outputs/v2_completion/phase19_predictive_diagnostics_report.md
+B04,Market information,Do not claim that GP-market disagreement causally identifies private information.,Describe discrepancy patterns as systematic associations.,outputs/v2_completion/phase20_forecast_combination_report.md
+B05,Trading,Do not call the historical value-gap simulation live-executable arbitrage.,Report it as a limited economic diagnostic with explicit execution omissions.,Phase 11-12 certified evidence
+B06,Research scope,Do not restore CatBoost or broad AI-ensemble comparisons as a main contribution.,"Keep the thesis centred on deterministic IFS post-processing, Gaussian benchmarks, Gaussian processes, market comparison and disciplined diagnostics.",Supervisor-approved project focus

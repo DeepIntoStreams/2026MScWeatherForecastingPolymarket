@@ -1,0 +1,18 @@
+gap_id,description,status_before_phase23,status_after_phase23,closing_phase,closure_evidence
+G01,Static Gaussian chronological benchmark,CLOSED,CLOSED,16,outputs/v2_completion/phase16_static_benchmark_report.md
+G02,Raw point forecast chronological benchmark,CLOSED,CLOSED,16,outputs/v2_completion/phase16_static_benchmark_report.md
+G03,Exact feature formulas and scaling,CLOSED,CLOSED,15,outputs/v2_completion/phase15_reconciliation_report.md
+G04,Exact response transformation,CLOSED,CLOSED,15,outputs/v2_completion/phase15_reconciliation_report.md
+G05,"Observation noise, WhiteKernel and numerical jitter",CLOSED,CLOSED,15,outputs/v2_completion/phase15_reconciliation_report.md
+G06,Gaussian CRPS implementation,CLOSED,CLOSED,15,outputs/v2_completion/phase15_reconciliation_report.md
+G07,Rule-specific deterministic error,CLOSED,CLOSED,17,outputs/v2_completion/phase17_error_missing_support_report.md
+G08,Rule and validation-block model results,CLOSED,CLOSED,18,outputs/v2_completion/phase18_gp_stability_report.md
+G09,GP hyperparameter stability,CLOSED,CLOSED,18,outputs/v2_completion/phase18_gp_stability_report.md
+G10,Predictive calibration and sharpness,CLOSED,CLOSED,19,outputs/v2_completion/phase19_predictive_diagnostics_report.md
+G11,Residual dependence and heteroskedasticity,CLOSED,CLOSED,19,outputs/v2_completion/phase19_predictive_diagnostics_report.md
+G12,Missing forecast support,CLOSED,CLOSED,17,outputs/v2_completion/phase17_error_missing_support_report.md
+G13,Systematic GP-market discrepancy structure,CLOSED,CLOSED,20,outputs/v2_completion/phase20_forecast_combination_report.md
+G14,Forecast combination,CLOSED,CLOSED,20,outputs/v2_completion/phase20_forecast_combination_report.md
+G15,Clean-environment reproducibility,CLOSED,CLOSED,21,outputs/v2_completion/phase21_reproducibility_report.md
+G16,Consolidated thesis evidence pack,CLOSED,CLOSED,22,outputs/v2_completion/phase22_thesis_evidence_pack/phase22_report.md
+G17,Independent final freeze,OPEN,CLOSED,23,"Phase 23 independently reconciles the Phase 22 manifest, source inventory, key metrics, claims, boundaries and the Phase 21 clean replay before freezing the empirical branch."

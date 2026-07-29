@@ -1,0 +1,172 @@
+{
+  "config": {
+    "bytes": 591,
+    "relative_path": "config/v2_completion/phase24_thesis_handover_spec.json",
+    "sha256": "cc25667c4aa846755d18ac38288432018c44391fdfb033c9055ffe649e723d63"
+  },
+  "empirical_freeze_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "outputs": [
+    {
+      "bytes": 3560,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/FILE_MANIFEST.csv",
+      "sha256": "3050b43b9a75e4831977006ce06e37cf817e7c207a9b1b0992abd67ccf10a6a4"
+    },
+    {
+      "bytes": 2112,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/START_HERE.md",
+      "sha256": "d9beee69a5b349e6ec305a8f5a634d09f5f9fe86f66a69e4ca1d78441e0d1d5c"
+    },
+    {
+      "bytes": 2908,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_claim_register.csv",
+      "sha256": "d321cca2c15eaf04ec83187105d2d95ce32c02b4c7ff188eea60e428262ddc12"
+    },
+    {
+      "bytes": 2979,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_discussion_evidence.md",
+      "sha256": "15cc93c1b91b2348181c96ff976ea24d864325a741335821737a4db980f0c950"
+    },
+    {
+      "bytes": 9948,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md",
+      "sha256": "4a9560b42a8af9d861f24014679442dcf4800526cb1f8591d2fba6d52fc7c1df"
+    },
+    {
+      "bytes": 1442,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_evidential_boundaries.csv",
+      "sha256": "bc7869308449690d02d1fe45b58c99c95f177fb616e5cb51a6cef5248b970dd9"
+    },
+    {
+      "bytes": 8455,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_figure_inventory.csv",
+      "sha256": "db22e087b5519a83efeaddfe1ba0c1ac8c72b35597d16462613bc018baffef89"
+    },
+    {
+      "bytes": 1857,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_gap_closure_register.csv",
+      "sha256": "e14d4ab28b8ec8ee555986e9e44bc0bcec852f088eec6d012129654b3f678fa7"
+    },
+    {
+      "bytes": 9479,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_key_metrics.csv",
+      "sha256": "0be291ee6370754385e9bdb1e2758b2840750d46ba1aa1b803d1a205beb6de56"
+    },
+    {
+      "bytes": 3288,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_manifest.json",
+      "sha256": "4c6583bb286fd645059fb796462a099be216eb20d938a70c540bac37233a431f"
+    },
+    {
+      "bytes": 4140,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_methodology_evidence.md",
+      "sha256": "92d762ff75f51b7479f22cfe31a1f05d363b2fb838c142752133b8d7795bc14e"
+    },
+    {
+      "bytes": 2276,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_report.md",
+      "sha256": "6a25fdd1d370b5da34c4aaa5913aa87b5cbf6349597a63647073410ee59d14a1"
+    },
+    {
+      "bytes": 590,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_reproducibility_summary.csv",
+      "sha256": "4a30fae0c6df11f855dd7791c6f1a6bb2db7cbee9b4669bafff47a97620009d7"
+    },
+    {
+      "bytes": 3129,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_results_evidence.md",
+      "sha256": "00c8b91601d42bc0b7b2836a6ef33db6f026000cbb301c9954a93055898eed1f"
+    },
+    {
+      "bytes": 34457,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_source_inventory.csv",
+      "sha256": "6d09a4f1bec25031dc535bdaa4e4fdc0bf1cfdb92b9fb027823d780084ce98d6"
+    },
+    {
+      "bytes": 17220,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase22_thesis_evidence_pack/phase22_table_inventory.csv",
+      "sha256": "faa4dd71a35034285376bb11218d52c7a4b0ff2abdab03c8036800c02b8050e5"
+    },
+    {
+      "bytes": 24934,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_checksums.sha256",
+      "sha256": "f51a3ce6221b633532947491c18e35019746a900eebf4540ffd438578dea56d5"
+    },
+    {
+      "bytes": 37108,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_frozen_file_inventory.csv",
+      "sha256": "8f676cce15c3620ab59aecae86ca7b498a93b0fc2696835bd6d87d079eec00c4"
+    },
+    {
+      "bytes": 12138,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_frozen_key_metrics.csv",
+      "sha256": "3f9d88197d873a715ff1a1ce81699f848b079fd21176a73fdaeab773b64be806"
+    },
+    {
+      "bytes": 2175,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_gap_closure_register.csv",
+      "sha256": "268ece668009ab9d2813880a3a7ccbb76efcd215a7fe96c2c0086ccdd8964bd4"
+    },
+    {
+      "bytes": 2031,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_manifest.json",
+      "sha256": "7bbe16b7513f4c48c4596dacd8037a30bf6715bb1ddc7fd25620a2a6e0e14bd7"
+    },
+    {
+      "bytes": 1806,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_release_notes.md",
+      "sha256": "505b87fcac427282cfd7ecf9c21f6b997739c8ae7b8850db47fcdc20b4d6de22"
+    },
+    {
+      "bytes": 1358,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_report.md",
+      "sha256": "503ab1fdb497cc547ccf50e3ac2cead9859b5da37208c444c98b07c6880773b5"
+    },
+    {
+      "bytes": 2287,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_thesis_handover.md",
+      "sha256": "d5f5c8dbd3f449289698265d9e33f1ccb9001be9420c89c8331da8e838658029"
+    },
+    {
+      "bytes": 3610,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/phase23_final_freeze/phase23_validation_checks.csv",
+      "sha256": "f5ad7fcc80607a4d147b3286243d5e8c865e0468559865f175ba01b82ad8e6d9"
+    },
+    {
+      "bytes": 1325,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/reproducibility_support/REPRODUCIBILITY_V2.md",
+      "sha256": "b6c48e4de2e124b0825a4f7216de174485f5b63048e7da0208e246273727d74b"
+    },
+    {
+      "bytes": 241,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/reproducibility_support/environment-v2-completion.yml",
+      "sha256": "dc48de3e471ab3a40f83cde56b55a8acc2be724eff66722f1d1ff12444b5aeb7"
+    },
+    {
+      "bytes": 94,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/package/reproducibility_support/requirements-v2-completion.txt",
+      "sha256": "afc0711c975db3f5d6fe1eb8e132a03592f89898ee5370a8a3f248e229a7ff6d"
+    },
+    {
+      "bytes": 503,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/phase24_message_to_overleaf_chat.md",
+      "sha256": "9568b4a2ce3d093daba875b30739ccbc78ce99f1612fb70d6dd169d6a6f8b28e"
+    },
+    {
+      "bytes": 850,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/phase24_report.md",
+      "sha256": "30654cf758daa8e878fc6004786006fd36c07852c57634d14d63907df5b97f41"
+    },
+    {
+      "bytes": 72674,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/phase24_thesis_writing_handover.zip",
+      "sha256": "5e9e206050d01ffc9a2f83acf4904c389f11e18319a3eeed749295f2f723732b"
+    },
+    {
+      "bytes": 339,
+      "relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/phase24_validation_checks.csv",
+      "sha256": "2ca5f1e5c3b8885a84f170aec3baaf42b75fcda00fbf06a5ee7a8e5dd7903ff8"
+    }
+  ],
+  "phase": 24,
+  "status": "PASSED"
+}

@@ -1,0 +1,14 @@
+{
+  "empirical_freeze_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "empirical_freeze_tag": "v2-empirical-complete",
+  "handover_tag": "v2-thesis-handover-ready",
+  "non_empirical_phase": true,
+  "phase": 24,
+  "source_branch": "edward-v2-gp-depth-completion",
+  "status": "PASSED",
+  "title": "Thesis-writing handover and archive",
+  "validation_checks": 7,
+  "zip_bytes": 72674,
+  "zip_relative_path": "outputs/v2_completion/phase24_thesis_writing_handover/phase24_thesis_writing_handover.zip",
+  "zip_sha256": "5e9e206050d01ffc9a2f83acf4904c389f11e18319a3eeed749295f2f723732b"
+}

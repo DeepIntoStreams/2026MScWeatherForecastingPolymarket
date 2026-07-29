@@ -1,0 +1,13 @@
+name: 2026-msc-weather-v2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - pandas==2.2.2
+      - scipy==1.13.1
+      - scikit-learn==1.4.2
+      - matplotlib==3.8.4
+      - joblib==1.4.2

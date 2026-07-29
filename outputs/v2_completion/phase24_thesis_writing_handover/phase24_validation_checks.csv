@@ -1,0 +1,8 @@
+check_id,description,status,observed
+H01,Phase 23 report,PASSED,PASSED
+H02,Phase 23 validation checks,PASSED,13 passed
+H03,Phase 23 gaps,PASSED,17 closed
+H04,Phase 23 frozen metrics,PASSED,23 frozen
+H05,Runtime/model exclusions,PASSED,0 forbidden
+H06,ZIP integrity,PASSED,28 members
+H07,Required package members,PASSED,all present

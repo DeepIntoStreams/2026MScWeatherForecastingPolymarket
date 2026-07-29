@@ -1,0 +1,78 @@
+{
+  "config": {
+    "bytes": 2486,
+    "relative_path": "config/v2_completion/phase22_thesis_evidence_pack_spec.json",
+    "sha256": "840a2de946ee2693285779181ed399155d2fb90c82cca482d2d33337d9f7215c"
+  },
+  "outputs": [
+    {
+      "bytes": 2908,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_claim_register.csv",
+      "sha256": "d321cca2c15eaf04ec83187105d2d95ce32c02b4c7ff188eea60e428262ddc12"
+    },
+    {
+      "bytes": 2979,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_discussion_evidence.md",
+      "sha256": "15cc93c1b91b2348181c96ff976ea24d864325a741335821737a4db980f0c950"
+    },
+    {
+      "bytes": 9948,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md",
+      "sha256": "4a9560b42a8af9d861f24014679442dcf4800526cb1f8591d2fba6d52fc7c1df"
+    },
+    {
+      "bytes": 1442,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_evidential_boundaries.csv",
+      "sha256": "bc7869308449690d02d1fe45b58c99c95f177fb616e5cb51a6cef5248b970dd9"
+    },
+    {
+      "bytes": 8455,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_figure_inventory.csv",
+      "sha256": "db22e087b5519a83efeaddfe1ba0c1ac8c72b35597d16462613bc018baffef89"
+    },
+    {
+      "bytes": 1857,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_gap_closure_register.csv",
+      "sha256": "e14d4ab28b8ec8ee555986e9e44bc0bcec852f088eec6d012129654b3f678fa7"
+    },
+    {
+      "bytes": 9479,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_key_metrics.csv",
+      "sha256": "0be291ee6370754385e9bdb1e2758b2840750d46ba1aa1b803d1a205beb6de56"
+    },
+    {
+      "bytes": 4140,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_methodology_evidence.md",
+      "sha256": "92d762ff75f51b7479f22cfe31a1f05d363b2fb838c142752133b8d7795bc14e"
+    },
+    {
+      "bytes": 2276,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_report.md",
+      "sha256": "6a25fdd1d370b5da34c4aaa5913aa87b5cbf6349597a63647073410ee59d14a1"
+    },
+    {
+      "bytes": 590,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_reproducibility_summary.csv",
+      "sha256": "4a30fae0c6df11f855dd7791c6f1a6bb2db7cbee9b4669bafff47a97620009d7"
+    },
+    {
+      "bytes": 3129,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_results_evidence.md",
+      "sha256": "00c8b91601d42bc0b7b2836a6ef33db6f026000cbb301c9954a93055898eed1f"
+    },
+    {
+      "bytes": 34457,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_source_inventory.csv",
+      "sha256": "6d09a4f1bec25031dc535bdaa4e4fdc0bf1cfdb92b9fb027823d780084ce98d6"
+    },
+    {
+      "bytes": 17220,
+      "relative_path": "outputs/v2_completion/phase22_thesis_evidence_pack/phase22_table_inventory.csv",
+      "sha256": "faa4dd71a35034285376bb11218d52c7a4b0ff2abdab03c8036800c02b8050e5"
+    }
+  ],
+  "phase": 22,
+  "source_commit": "c5150fdd576f3757fcd374307367d19503fe9de9",
+  "source_commit_time": "2026-07-29T21:49:54+01:00",
+  "status": "PASSED"
+}
