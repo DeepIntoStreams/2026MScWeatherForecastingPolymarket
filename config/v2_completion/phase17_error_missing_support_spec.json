@@ -1,0 +1,87 @@
+{
+  "created_at_utc": "2026-07-29T14:14:12.448551+00:00",
+  "deterministic_error": {
+    "bootstrap": {
+      "base_seed": 20260729,
+      "interval": "2.5th and 97.5th percentiles",
+      "replications": 10000,
+      "unit": "target_date"
+    },
+    "decision_rules": [
+      "24h_prior",
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "rule_validation_block_rows": 16,
+    "sign_convention": "residual = HKO realised daily maximum minus deterministic forecast daily maximum",
+    "validation_dates": 365,
+    "variance_decomposition": "balanced two-way descriptive decomposition into date, decision-rule and date-by-rule interaction sums of squares",
+    "weather_only_dates": 730,
+    "weather_only_rows": 2920
+  },
+  "environment": {
+    "matplotlib": "3.8.4",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "platform": "macOS-26.5-x86_64-i386-64bit",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]",
+    "scipy": "1.13.1"
+  },
+  "figures": [
+    "outputs/v2_completion/phase17_figures/phase17_rule_error_boxplot.png",
+    "outputs/v2_completion/phase17_figures/phase17_rule_error_boxplot.pdf",
+    "outputs/v2_completion/phase17_figures/phase17_missing_support_matrix.png",
+    "outputs/v2_completion/phase17_figures/phase17_missing_support_matrix.pdf"
+  ],
+  "git_branch": "edward-v2-gp-depth-completion",
+  "git_commit_before_phase17": "5f1e3d48eed327a35c564be1ae41ec4199a87c54",
+  "inputs": {
+    "config/v2_completion/phase16_static_benchmark_spec.json": {
+      "rows": null,
+      "sha256": "3c7eb355b658d2e57b0e60860a7b32e27b7706a53e776fc539e5da470bf3db21"
+    },
+    "data/processed/18s_expanded_march_june_canonical_sample/18s_expanded_certified_contract_outcome_panel.csv": {
+      "rows": 1133,
+      "sha256": "5765e7b5befe0fc5af12df0bb0ce79bd406e831531d9acc7e500bd347300c2c7"
+    },
+    "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv": {
+      "rows": 375,
+      "sha256": "594729e6036db9bb6c1dc2e424430008031429dc6e9e17d84edbeec7a689cc1d"
+    },
+    "data/processed/v2/phase8_clean_gp/phase8_missing_forecast_support.csv": {
+      "rows": 37,
+      "sha256": "2a312aecb6d186848be81fd6549574797f31aef92e1c1d66755e32aeca3785fe"
+    },
+    "data/processed/v2_completion/phase16_chronological_raw_static_predictions.csv": {
+      "rows": 5840,
+      "sha256": "7f9aa997d18e429728c6a07007f082c0040922c0aee7575abe9b2fdf2aef06d7"
+    },
+    "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv": {
+      "rows": 2920,
+      "sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48"
+    },
+    "outputs/v2_completion/phase16_static_benchmark_report.md": {
+      "rows": null,
+      "sha256": "c1bd0c095441afef3c37a3410038938ce6fba4a4cde9ef6ae8f9d6185ccfb667"
+    }
+  },
+  "missing_support": {
+    "classification_source": "data/processed/v2/phase8_clean_gp/phase8_missing_forecast_support.csv",
+    "dates_with_any_support": 102,
+    "dates_with_complete_absence": 1,
+    "dates_with_complete_four_rule_support": 86,
+    "dates_with_partial_absence": 16,
+    "development_unsupported_keys": 36,
+    "forecast_supported_date_rule_keys": 375,
+    "forecast_supported_dates": 102,
+    "imputation_used": false,
+    "june_unsupported_keys": 1,
+    "settlement_dates": 103,
+    "theoretical_date_rule_keys": 412,
+    "unsupported_date_rule_keys": 37
+  },
+  "name": "Rule-specific deterministic error and missing-support analysis",
+  "phase": 17,
+  "status": "PASSED"
+}

@@ -1,0 +1,5 @@
+component,sum_squares,degrees_freedom,mean_square,share_of_total_sum_squares,grand_mean_error_c,dates,decision_rules,interpretation
+target_date,5824.5616575342465,729,7.989796512392656,0.919339814239403,1.4296575342465752,730,4,descriptive balanced two-way decomposition; the interaction term also contains remaining variation because there is one observation per date-rule cell
+decision_rule,0.30450684931507305,3,0.10150228310502435,4.806289069355588e-05,1.4296575342465752,730,4,descriptive balanced two-way decomposition; the interaction term also contains remaining variation because there is one observation per date-rule cell
+date_by_rule_interaction,510.72549315068557,2187,0.23352788895778948,0.08061212286990338,1.4296575342465752,730,4,descriptive balanced two-way decomposition; the interaction term also contains remaining variation because there is one observation per date-rule cell
+total,6335.591657534247,2919,2.17046648082708,1.0,1.4296575342465752,730,4,descriptive balanced two-way decomposition; the interaction term also contains remaining variation because there is one observation per date-rule cell

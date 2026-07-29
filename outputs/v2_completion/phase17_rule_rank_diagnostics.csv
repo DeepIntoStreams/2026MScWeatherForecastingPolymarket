@@ -1,0 +1,3 @@
+measure,dates,decision_rules,friedman_chi_square,degrees_freedom,p_value,kendall_w,status,caveat
+signed_error,730,4,8.56655348047652,3,0.03564499585566546,0.003911668255925351,DESCRIPTIVE_ONLY,"The standard Friedman reference distribution treats target dates as independent. Serial dependence is examined later, so this diagnostic is not used as stand-alone inferential evidence."
+absolute_error,730,4,26.22710997442507,3,8.548152612915174e-06,0.011975849303390443,DESCRIPTIVE_ONLY,"The standard Friedman reference distribution treats target dates as independent. Serial dependence is examined later, so this diagnostic is not used as stand-alone inferential evidence."

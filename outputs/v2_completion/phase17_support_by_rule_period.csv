@@ -1,0 +1,9 @@
+sample_period,decision_rule,theoretical_keys,supported_keys,missing_keys,support_rate
+june_out_of_sample,12h_prior,30,30,0,1.0
+june_out_of_sample,24h_prior,30,30,0,1.0
+june_out_of_sample,6h_prior,30,29,1,0.9666666666666667
+june_out_of_sample,event_day_open,30,30,0,1.0
+weather_plus_market_development,12h_prior,73,63,10,0.863013698630137
+weather_plus_market_development,24h_prior,73,66,7,0.9041095890410958
+weather_plus_market_development,6h_prior,73,62,11,0.8493150684931506
+weather_plus_market_development,event_day_open,73,65,8,0.8904109589041096
