@@ -1,0 +1,21 @@
+scope,scope_value,comparison,first_model,second_model,difference_definition,dates,mean_difference_c,bootstrap_lower_95_c,bootstrap_upper_95_c,bootstrap_probability_first_lower_crps,bootstrap_replications,bootstrap_unit,seed
+overall,all,static_minus_raw,static_gaussian,raw_point,first model CRPS minus second model CRPS,365,-0.8339303814598961,-0.9460811029157281,-0.7220887743667339,1.0,10000,target_date,20263639
+overall,all,rbf_minus_static,rbf,static_gaussian,first model CRPS minus second model CRPS,365,-0.03419308160675324,-0.05369205479032888,-0.015023298111255686,0.9999,10000,target_date,20263623
+overall,all,matern32_minus_static,matern32,static_gaussian,first model CRPS minus second model CRPS,365,-0.04841455108889371,-0.07080009513974907,-0.02640662349391627,1.0,10000,target_date,20264057
+overall,all,matern32_minus_rbf,matern32,rbf,first model CRPS minus second model CRPS,365,-0.014221469482140472,-0.020771433518214803,-0.00794632636902736,1.0,10000,target_date,20263723
+decision_rule,12h_prior,static_minus_raw,static_gaussian,raw_point,first model CRPS minus second model CRPS,365,-0.8255078265506494,-0.9425626066650565,-0.706377573758418,1.0,10000,target_date,20264804
+decision_rule,12h_prior,rbf_minus_static,rbf,static_gaussian,first model CRPS minus second model CRPS,365,-0.04140925430919776,-0.06535925613228602,-0.01801456881384205,0.9999,10000,target_date,20264788
+decision_rule,12h_prior,matern32_minus_static,matern32,static_gaussian,first model CRPS minus second model CRPS,365,-0.05458857911377256,-0.08000552124982045,-0.02857308516521391,1.0,10000,target_date,20265222
+decision_rule,12h_prior,matern32_minus_rbf,matern32,rbf,first model CRPS minus second model CRPS,365,-0.013179324804574821,-0.020339627521979393,-0.006270396056193241,1.0,10000,target_date,20264888
+decision_rule,24h_prior,static_minus_raw,static_gaussian,raw_point,first model CRPS minus second model CRPS,365,-0.8522999165416941,-0.9733517534933939,-0.7338383607287591,1.0,10000,target_date,20264807
+decision_rule,24h_prior,rbf_minus_static,rbf,static_gaussian,first model CRPS minus second model CRPS,365,-0.019500877613570305,-0.035057639419344276,-0.0046538610612288,0.9955,10000,target_date,20264791
+decision_rule,24h_prior,matern32_minus_static,matern32,static_gaussian,first model CRPS minus second model CRPS,365,-0.031093406119267766,-0.04739712556795395,-0.015499289954577269,1.0,10000,target_date,20265225
+decision_rule,24h_prior,matern32_minus_rbf,matern32,rbf,first model CRPS minus second model CRPS,365,-0.011592528505697452,-0.01573855704687719,-0.007724592242080218,1.0,10000,target_date,20264891
+decision_rule,6h_prior,static_minus_raw,static_gaussian,raw_point,first model CRPS minus second model CRPS,365,-0.8404859243705126,-0.9560096438559605,-0.7197130988432957,1.0,10000,target_date,20264759
+decision_rule,6h_prior,rbf_minus_static,rbf,static_gaussian,first model CRPS minus second model CRPS,365,-0.03376804694871673,-0.05746120356142527,-0.010272977440345606,0.9975,10000,target_date,20264743
+decision_rule,6h_prior,matern32_minus_static,matern32,static_gaussian,first model CRPS minus second model CRPS,365,-0.047461376740318514,-0.07376832874369786,-0.021866688551161678,1.0,10000,target_date,20265177
+decision_rule,6h_prior,matern32_minus_rbf,matern32,rbf,first model CRPS minus second model CRPS,365,-0.013693329791601785,-0.021242745611915533,-0.0062916609087194045,0.9999,10000,target_date,20264843
+decision_rule,event_day_open,static_minus_raw,static_gaussian,raw_point,first model CRPS minus second model CRPS,365,-0.8174278583767284,-0.9299908822335681,-0.705188090799107,1.0,10000,target_date,20265438
+decision_rule,event_day_open,rbf_minus_static,rbf,static_gaussian,first model CRPS minus second model CRPS,365,-0.04209414755552818,-0.06454437424580445,-0.02080206754505199,1.0,10000,target_date,20265422
+decision_rule,event_day_open,matern32_minus_static,matern32,static_gaussian,first model CRPS minus second model CRPS,365,-0.06051484238221602,-0.08714764482421251,-0.03406502348758226,1.0,10000,target_date,20265856
+decision_rule,event_day_open,matern32_minus_rbf,matern32,rbf,first model CRPS minus second model CRPS,365,-0.018420694826687848,-0.02938617327975286,-0.008077821238774876,0.9996,10000,target_date,20265522

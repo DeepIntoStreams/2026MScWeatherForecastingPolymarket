@@ -1,0 +1,17 @@
+support_scope,period,model,aggregation,dates,books,event_rows,mean_binary_brier,mean_binary_log,mean_categorical_log,mean_multiclass_brier
+exact_common_support,development,matern32_gp,equal target-date weight after averaging date-rule books within date,67,236,2596,0.0659688868963457,0.21240951180442538,1.5015222935543944,0.7256577558598027
+exact_common_support,development,polymarket,equal target-date weight after averaging date-rule books within date,67,236,2596,0.0672830816938037,0.21548248767660216,1.5197312892806765,0.7383610500427642
+exact_common_support,development,static_gaussian,equal target-date weight after averaging date-rule books within date,67,236,2596,0.06563976392088569,0.21028572060353712,1.480495205015944,0.7220374031297426
+exact_common_support,june,matern32_gp,equal target-date weight after averaging date-rule books within date,30,114,1254,0.06819820102326088,0.22502944634300753,1.6182649763954429,0.7501802112558694
+exact_common_support,june,polymarket,equal target-date weight after averaging date-rule books within date,30,114,1254,0.058874333838383835,0.18640138482668803,1.260922770826707,0.6484706195269462
+exact_common_support,june,static_gaussian,equal target-date weight after averaging date-rule books within date,30,114,1254,0.06826886635246257,0.22539282275871836,1.6218765740676144,0.7509575298770881
+exact_common_support,overall,matern32_gp,equal target-date weight after averaging date-rule books within date,97,350,3850,0.06665836549229884,0.21631258434213121,1.5376282779382235,0.7332420204152873
+exact_common_support,overall,polymarket,equal target-date weight after averaging date-rule books within date,97,350,3850,0.06468243802717902,0.2064883321560102,1.4396874175938819,0.7105598859657071
+exact_common_support,overall,static_gaussian,equal target-date weight after averaging date-rule books within date,97,350,3850,0.06645288838425997,0.21495802023916022,1.5242214016298625,0.7309817722268598
+forecast_supported,development,matern32_gp,equal target-date weight after averaging date-rule books within date,72,256,2816,0.06578754141646777,0.21218016669028994,1.4999288085711897,0.7236629555811455
+forecast_supported,development,static_gaussian,equal target-date weight after averaging date-rule books within date,72,256,2816,0.06548834945035548,0.21013529874294362,1.47941850495901,0.7203718439539105
+forecast_supported,june,matern32_gp,equal target-date weight after averaging date-rule books within date,30,119,1309,0.06788614885125895,0.22253138791451949,1.5927631119969152,0.7467476373638483
+forecast_supported,june,static_gaussian,equal target-date weight after averaging date-rule books within date,30,119,1309,0.06792492499796714,0.2224203504730537,1.591371247456835,0.7471741749776383
+forecast_supported,overall,matern32_gp,equal target-date weight after averaging date-rule books within date,102,375,4125,0.06640477889728871,0.21522464352094567,1.527233015461109,0.7304525678701758
+forecast_supported,overall,static_gaussian,equal target-date weight after averaging date-rule books within date,102,375,4125,0.0662049893173001,0.21374854925179954,1.512345782164253,0.7282548824903011
+phase9_legacy_forecast_supported,overall,matern32_gp,"equal date-rule-book weight, matching certified Phase 9",102,375,4125,0.06664734674031443,0.2162182727573849,1.5361157656557896,0.7331208141434588

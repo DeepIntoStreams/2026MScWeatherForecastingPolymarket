@@ -1,0 +1,77 @@
+{
+  "chronological_design": {
+    "aggregation": "average across rules within each target date, then average equally across target dates",
+    "bootstrap": {
+      "base_seed": 20260729,
+      "interval": "2.5th and 97.5th percentiles",
+      "replications": 10000,
+      "unit": "target_date"
+    },
+    "decision_rules": 4,
+    "gaussian_crps": "sigma * [z*(2*Phi(z)-1) + 2*phi(z) - 1/sqrt(pi)]",
+    "models": [
+      "raw_point",
+      "static_gaussian",
+      "rbf",
+      "matern32"
+    ],
+    "prediction_rows": 5840,
+    "raw_crps": "absolute error",
+    "static_mean": "sample mean of rule-specific residuals in the applicable expanding training history",
+    "static_standard_deviation": "sample standard deviation with denominator n-1",
+    "validation_dates": 365
+  },
+  "created_at_utc": "2026-07-29T13:56:31.360182+00:00",
+  "environment": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "platform": "macOS-26.5-x86_64-i386-64bit",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]",
+    "scikit_learn": "1.4.2",
+    "scipy": "1.13.1"
+  },
+  "full_history_static_fit": {
+    "exact_common_support_books": 350,
+    "exact_common_support_event_rows": 3850,
+    "forecast_supported_books": 375,
+    "forecast_supported_event_rows": 4125,
+    "june_data_used": false,
+    "market_data_used": false,
+    "training_dates_per_rule": 730
+  },
+  "git_branch": "edward-v2-gp-depth-completion",
+  "git_commit_before_phase16": "fc286bcf529eb0afe2be6e11e276f0bb925ad394",
+  "inputs": {
+    "config/v2_completion/phase15_gp_implementation_spec.json": {
+      "rows": null,
+      "sha256": "c672815fe6412dc8256b21052788e50f03d759c2857eb569958d6a94527cffc3"
+    },
+    "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv": {
+      "rows": 375,
+      "sha256": "594729e6036db9bb6c1dc2e424430008031429dc6e9e17d84edbeec7a689cc1d"
+    },
+    "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv": {
+      "rows": 2920,
+      "sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48"
+    },
+    "outputs/v2/diagnostics/07_gp_validation_predictions.csv": {
+      "rows": 2920,
+      "sha256": "6cf36d253393d4a752096a79b9113648bd74b69ed12f0e970c8c39346cbbf33e"
+    },
+    "outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv": {
+      "rows": 3850,
+      "sha256": "3d795b8aa4d9261383c3ec559894401cb8d68936ef8354db6ab6e2aecd4a2f19"
+    },
+    "outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv": {
+      "rows": 4125,
+      "sha256": "f2f0290ea18dc1858e069997f8949339f61ca11018665641ff606bd515596d34"
+    },
+    "outputs/v2_completion/phase15_crps_reconciliation.csv": {
+      "rows": 2,
+      "sha256": "cb9805f0bad08233409458c466adf65ccb20418a6091459ff9f7a7ffb8acd920"
+    }
+  },
+  "name": "Raw and static Gaussian chronological benchmarks",
+  "phase": 16,
+  "status": "PASSED"
+}
