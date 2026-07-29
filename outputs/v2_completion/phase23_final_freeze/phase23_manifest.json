@@ -1,0 +1,52 @@
+{
+  "config": {
+    "bytes": 896,
+    "relative_path": "config/v2_completion/phase23_final_freeze_spec.json",
+    "sha256": "d01aa81453ccff4e6fde3e4c90cd1b07b598eda546a352d0e008aa4e0f495abd"
+  },
+  "outputs": [
+    {
+      "bytes": 24934,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_checksums.sha256",
+      "sha256": "f51a3ce6221b633532947491c18e35019746a900eebf4540ffd438578dea56d5"
+    },
+    {
+      "bytes": 37108,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_frozen_file_inventory.csv",
+      "sha256": "8f676cce15c3620ab59aecae86ca7b498a93b0fc2696835bd6d87d079eec00c4"
+    },
+    {
+      "bytes": 12138,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_frozen_key_metrics.csv",
+      "sha256": "3f9d88197d873a715ff1a1ce81699f848b079fd21176a73fdaeab773b64be806"
+    },
+    {
+      "bytes": 2175,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_gap_closure_register.csv",
+      "sha256": "268ece668009ab9d2813880a3a7ccbb76efcd215a7fe96c2c0086ccdd8964bd4"
+    },
+    {
+      "bytes": 1806,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_release_notes.md",
+      "sha256": "505b87fcac427282cfd7ecf9c21f6b997739c8ae7b8850db47fcdc20b4d6de22"
+    },
+    {
+      "bytes": 1358,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_report.md",
+      "sha256": "503ab1fdb497cc547ccf50e3ac2cead9859b5da37208c444c98b07c6880773b5"
+    },
+    {
+      "bytes": 2287,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_thesis_handover.md",
+      "sha256": "d5f5c8dbd3f449289698265d9e33f1ccb9001be9420c89c8331da8e838658029"
+    },
+    {
+      "bytes": 3610,
+      "relative_path": "outputs/v2_completion/phase23_final_freeze/phase23_validation_checks.csv",
+      "sha256": "f5ad7fcc80607a4d147b3286243d5e8c865e0468559865f175ba01b82ad8e6d9"
+    }
+  ],
+  "phase": 23,
+  "phase22_commit": "45e9e51300e53bb2e0b637085d41650041e95cde",
+  "status": "PASSED"
+}
