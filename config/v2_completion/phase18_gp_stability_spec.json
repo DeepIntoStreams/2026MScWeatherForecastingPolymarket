@@ -1,0 +1,123 @@
+{
+  "comparison_design": {
+    "block_score_rows": 16,
+    "bootstrap": {
+      "base_seed": 20260729,
+      "interval": "2.5th and 97.5th percentiles",
+      "replications": 10000,
+      "unit": "target_date"
+    },
+    "decision_rules": [
+      "24h_prior",
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "models": [
+      "raw_point",
+      "static_gaussian",
+      "rbf",
+      "matern32"
+    ],
+    "paired_difference_rows": 100,
+    "prediction_rows": 5840,
+    "rule_block_score_rows": 64,
+    "rule_score_rows": 16,
+    "validation_blocks": 4,
+    "validation_dates": 365
+  },
+  "created_at_utc": "2026-07-29T16:31:09.816318+00:00",
+  "environment": {
+    "matplotlib": "3.8.4",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "platform": "macOS-26.5-x86_64-i386-64bit",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:14:12) [Clang 14.0.6 ]",
+    "scikit_learn": "1.4.2",
+    "scipy": "1.13.1"
+  },
+  "exact_phase7_replay": {
+    "certified_prediction_panel": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "execution_log": "outputs/v2_completion/phase18_replay_execution.log",
+    "feature_panel": "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv",
+    "maximum_absolute_prediction_reconciliation_error": 0.0,
+    "reconciled_numeric_columns": 119,
+    "replayed_fold_models": 32,
+    "source": "tools/v2/fit_gp_validation_distributions.py",
+    "status": "PASSED"
+  },
+  "figures": [
+    "outputs/v2_completion/phase18_figures/phase18_matern_crps_rule_block_heatmap.png",
+    "outputs/v2_completion/phase18_figures/phase18_matern_crps_rule_block_heatmap.pdf",
+    "outputs/v2_completion/phase18_figures/phase18_matern_minus_static_heatmap.png",
+    "outputs/v2_completion/phase18_figures/phase18_matern_minus_static_heatmap.pdf",
+    "outputs/v2_completion/phase18_figures/phase18_matern_length_scale_stability.png",
+    "outputs/v2_completion/phase18_figures/phase18_matern_length_scale_stability.pdf"
+  ],
+  "git_branch": "edward-v2-gp-depth-completion",
+  "git_commit_before_phase18": "711f4408b5b404d3facb7b51a3046f96a21035e9",
+  "headline_stability": {
+    "matern_best_rule_block_cells": 9,
+    "matern_better_than_rbf_rule_block_cells": 10,
+    "matern_better_than_static_blocks": 3,
+    "matern_better_than_static_rule_block_cells": 12,
+    "matern_better_than_static_rules": 4,
+    "matern_mean_rank": 1.625,
+    "matern_minus_rbf_overall": -0.014221469482140483,
+    "matern_minus_rbf_overall_lower_95": -0.02077143351821481,
+    "matern_minus_rbf_overall_upper_95": -0.007946326369027373,
+    "matern_minus_static_overall": -0.04841455108889371,
+    "matern_minus_static_overall_lower_95": -0.07080009513974907,
+    "matern_minus_static_overall_upper_95": -0.02640662349391628
+  },
+  "hyperparameter_stability": {
+    "fold_registry_rows": 32,
+    "full_registry_rows": 4,
+    "interpretation": "descriptive fold-to-fold stability; no new model selection or June refit",
+    "matern_full_fit_length_scale_within_fold_range_rules": 1,
+    "matern_full_fit_noise_level_within_fold_range_rules": 1,
+    "matern_maximum_rule_specific_length_scale_cv": 0.412957960795555,
+    "matern_maximum_rule_specific_noise_level_cv": 0.06423001888037223
+  },
+  "inputs": {
+    "config/v2_completion/phase15_gp_implementation_spec.json": {
+      "rows": null,
+      "sha256": "c672815fe6412dc8256b21052788e50f03d759c2857eb569958d6a94527cffc3"
+    },
+    "config/v2_completion/phase16_static_benchmark_spec.json": {
+      "rows": null,
+      "sha256": "3c7eb355b658d2e57b0e60860a7b32e27b7706a53e776fc539e5da470bf3db21"
+    },
+    "config/v2_completion/phase17_error_missing_support_spec.json": {
+      "rows": null,
+      "sha256": "41169eff4adee6cb46beb28bdd3543dbb1ed5892ccb4d3c348f48ce2e484763d"
+    },
+    "data/processed/v2_completion/phase16_chronological_raw_static_predictions.csv": {
+      "rows": 5840,
+      "sha256": "7f9aa997d18e429728c6a07007f082c0040922c0aee7575abe9b2fdf2aef06d7"
+    },
+    "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv": {
+      "rows": 9484,
+      "sha256": "e44685584b368f4cb062c982332cb2544abc187e21c6500afdccee3d91529e43"
+    },
+    "outputs/v2/diagnostics/07_gp_validation_predictions.csv": {
+      "rows": 2920,
+      "sha256": "6cf36d253393d4a752096a79b9113648bd74b69ed12f0e970c8c39346cbbf33e"
+    },
+    "outputs/v2_completion/phase15_fold_model_registry.csv": {
+      "rows": 32,
+      "sha256": "e78936556a72bf5a66be932bffe9603304ef7e4eb3e20d5921fe73c1af0b1e3f"
+    },
+    "outputs/v2_completion/phase15_full_fit_model_registry.csv": {
+      "rows": 4,
+      "sha256": "b381d5d74b304e68a873dfbb929d783ee114d0e272fe815f0b29cf55542d5df1"
+    },
+    "tools/v2/fit_gp_validation_distributions.py": {
+      "rows": null,
+      "sha256": "b1fb29e27982c479fc0cabcfcb6ea285955977191abded2170a5799585443c30"
+    }
+  },
+  "name": "Rule-specific, validation-block and GP hyperparameter stability analysis",
+  "phase": 18,
+  "status": "PASSED"
+}

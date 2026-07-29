@@ -1,0 +1,5 @@
+registry_source,source_row,fold_id,decision_rule,model,kernel_text,signal_amplitude,signal_variance,length_scale,noise_level,matern_nu,alpha,training_dates
+phase15_full,0,full,12h_prior,matern32,"0.703**2 * Matern(length_scale=0.983, nu=1.5) + WhiteKernel(noise_level=0.644)",0.703,0.49420899999999995,0.983,0.644,1.5,1e-10,730
+phase15_full,1,full,24h_prior,matern32,"0.65**2 * Matern(length_scale=0.477, nu=1.5) + WhiteKernel(noise_level=0.612)",0.65,0.42250000000000004,0.477,0.612,1.5,1e-10,730
+phase15_full,2,full,6h_prior,matern32,"0.703**2 * Matern(length_scale=1.02, nu=1.5) + WhiteKernel(noise_level=0.656)",0.703,0.49420899999999995,1.02,0.656,1.5,1e-10,730
+phase15_full,3,full,event_day_open,matern32,"0.69**2 * Matern(length_scale=0.969, nu=1.5) + WhiteKernel(noise_level=0.632)",0.69,0.4760999999999999,0.969,0.632,1.5,1e-10,730
