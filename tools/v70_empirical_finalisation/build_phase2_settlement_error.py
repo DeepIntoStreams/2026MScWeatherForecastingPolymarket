@@ -925,51 +925,117 @@ def validate_input(
             .agg(["mean", "std"])
             .reset_index()
         )
+        tolerance = 1e-10
         for row in residual_stats.to_dict("records"):
             rule = row["decision_rule"]
-            sub = static.loc[static["decision_rule"] == rule]
-            bias_values = sub["implied_bias_c"].dropna().unique()
-            sd_values = sub["predictive_sd_c"].dropna().unique()
-            if len(bias_values) != 1 or len(sd_values) != 1:
-                static_crosscheck_rows.append(
-                    {
-                        "decision_rule": rule,
-                        "passed": False,
-                        "detail": (
-                            f"unique_biases={len(bias_values)}, "
-                            f"unique_sds={len(sd_values)}"
-                        ),
-                    }
+            sub = static.loc[static["decision_rule"] == rule].copy()
+
+            bias_series = pd.to_numeric(
+                sub["implied_bias_c"], errors="coerce"
+            ).dropna()
+            sd_series = pd.to_numeric(
+                sub["predictive_sd_c"], errors="coerce"
+            ).dropna()
+
+            phase1_bias = (
+                float(bias_series.mean()) if not bias_series.empty else np.nan
+            )
+            phase1_sd = (
+                float(sd_series.mean()) if not sd_series.empty else np.nan
+            )
+            bias_spread = (
+                float(bias_series.max() - bias_series.min())
+                if not bias_series.empty else np.nan
+            )
+            sd_spread = (
+                float(sd_series.max() - sd_series.min())
+                if not sd_series.empty else np.nan
+            )
+
+            mean_difference = (
+                float(phase1_bias - row["mean"])
+                if np.isfinite(phase1_bias) else np.nan
+            )
+            sd_difference = (
+                float(phase1_sd - row["std"])
+                if np.isfinite(phase1_sd) else np.nan
+            )
+
+            passed = bool(
+                not bias_series.empty
+                and not sd_series.empty
+                and bias_spread <= tolerance
+                and sd_spread <= tolerance
+                and abs(mean_difference) <= tolerance
+                and abs(sd_difference) <= tolerance
+            )
+
+            detail_parts = []
+            if bias_series.empty:
+                detail_parts.append("no static bias values")
+            if sd_series.empty:
+                detail_parts.append("no static SD values")
+            if np.isfinite(bias_spread) and bias_spread > tolerance:
+                detail_parts.append(
+                    f"bias floating spread={bias_spread:.3e}"
                 )
-                continue
-            mean_difference = float(bias_values[0] - row["mean"])
-            sd_difference = float(sd_values[0] - row["std"])
+            if np.isfinite(sd_spread) and sd_spread > tolerance:
+                detail_parts.append(
+                    f"SD floating spread={sd_spread:.3e}"
+                )
+            if np.isfinite(mean_difference) and abs(mean_difference) > tolerance:
+                detail_parts.append(
+                    f"bias difference={mean_difference:.3e}"
+                )
+            if np.isfinite(sd_difference) and abs(sd_difference) > tolerance:
+                detail_parts.append(
+                    f"SD difference={sd_difference:.3e}"
+                )
+
             static_crosscheck_rows.append(
                 {
                     "decision_rule": rule,
-                    "phase1_static_bias_c": float(bias_values[0]),
+                    "phase1_static_bias_c": phase1_bias,
                     "phase2_residual_mean_c": float(row["mean"]),
                     "bias_difference_c": mean_difference,
-                    "phase1_static_sd_c": float(sd_values[0]),
+                    "within_rule_bias_spread_c": bias_spread,
+                    "phase1_static_sd_c": phase1_sd,
                     "phase2_residual_sd_c": float(row["std"]),
                     "sd_difference_c": sd_difference,
-                    "passed": (
-                        abs(mean_difference) <= 1e-10
-                        and abs(sd_difference) <= 1e-10
-                    ),
-                    "detail": "",
+                    "within_rule_sd_spread_c": sd_spread,
+                    "phase1_static_rows": int(len(sub)),
+                    "passed": passed,
+                    "detail": "; ".join(detail_parts),
                 }
             )
+
         crosscheck = pd.DataFrame(static_crosscheck_rows)
-        add(
-            "phase1_static_parameter_crosscheck",
-            bool(crosscheck["passed"].all()),
-            (
+        crosscheck_passed = bool(
+            not crosscheck.empty and crosscheck["passed"].all()
+        )
+
+        if crosscheck.empty:
+            crosscheck_detail = "crosscheck produced no rows"
+        else:
+            failed_rules = crosscheck.loc[
+                ~crosscheck["passed"], "decision_rule"
+            ].astype(str).tolist()
+            crosscheck_detail = (
                 f"max_abs_bias_difference="
                 f"{crosscheck['bias_difference_c'].abs().max():.3e}; "
                 f"max_abs_sd_difference="
-                f"{crosscheck['sd_difference_c'].abs().max():.3e}"
-            ),
+                f"{crosscheck['sd_difference_c'].abs().max():.3e}; "
+                f"max_within_rule_bias_spread="
+                f"{crosscheck['within_rule_bias_spread_c'].max():.3e}; "
+                f"max_within_rule_sd_spread="
+                f"{crosscheck['within_rule_sd_spread_c'].max():.3e}; "
+                f"failed_rules={failed_rules}"
+            )
+
+        add(
+            "phase1_static_parameter_crosscheck",
+            crosscheck_passed,
+            crosscheck_detail,
         )
     else:
         crosscheck = pd.DataFrame()
