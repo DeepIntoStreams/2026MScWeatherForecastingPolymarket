@@ -1,0 +1,8 @@
+figure,purpose,observational_unit
+phase2_figure_residual_histogram_gaussian.pdf,Main-text candidate: pooled residual distribution and fitted Gaussian,date-rule residual; four rules retained together in inference
+phase2_figure_residual_qq.pdf,Appendix candidate: Gaussian tail adequacy,date-rule residual
+phase2_figure_residual_boxplot_by_rule.pdf,Main/appendix candidate: rule-level residual spread,settlement date within rule
+phase2_figure_residual_ecdf_gaussian.pdf,Appendix candidate: whole-distribution Gaussian adequacy,date-rule residual
+phase2_figure_residual_over_time.pdf,Appendix candidate: temporal stability,settlement date within rule
+phase2_figure_residual_vs_forecast_level.pdf,Appendix candidate: forecast-level dependence,date-rule residual
+phase2_figure_gaussian_tail_mismatch.pdf,Appendix candidate: practical Gaussian tail mismatch,pooled date-rule residual

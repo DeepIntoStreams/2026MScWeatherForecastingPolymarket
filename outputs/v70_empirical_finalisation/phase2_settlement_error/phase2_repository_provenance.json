@@ -1,0 +1,18 @@
+{
+  "generated_utc": "2026-07-31T22:30:59.481552+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "78889d25c1c41c5e43173e8e281ca2888e83a5d1",
+  "frozen_ref": "v2-empirical-complete",
+  "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+  "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "weather_input": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+  "weather_input_sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48",
+  "phase1_root": "outputs/v70_empirical_finalisation/phase1_evidence_recovery",
+  "bootstrap_replications": 10000,
+  "bootstrap_seed": 20260731,
+  "moving_block_lengths": [
+    3,
+    5,
+    7
+  ]
+}

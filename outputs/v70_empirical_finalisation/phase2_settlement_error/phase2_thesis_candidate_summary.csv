@@ -1,0 +1,7 @@
+candidate_id,quantity,point_estimate,lower_95,upper_95,unit,preferred_location
+P2_MEAN,pooled mean HKO-minus-forecast residual,1.4296575342465752,1.32736301369863,1.5309246575342463,degrees Celsius,Results Section 6.2
+P2_SD,pooled residual standard deviation,1.4732503116670568,,,degrees Celsius,Results Section 6.2
+P2_MEDIAN,pooled residual median,1.400000000000002,1.2999999999999972,1.5,degrees Celsius,Results Section 6.2
+P2_UNDER,proportion of date-rule forecasts below HKO,0.8246575342465754,0.7996575342465754,0.8486301369863014,proportion,Results Section 6.2
+P2_GAUSSIAN_TAIL,largest empirical-minus-Gaussian tail difference: absolute_residual_above_threshold at 1.0°C,-0.03516436098511555,,,probability difference,Appendix/Discussion if material
+P2_INFLUENCE,maximum leave-one-date-out change in pooled mean,0.0066465603096752535,,,degrees Celsius,Robustness appendix

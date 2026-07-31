@@ -1,0 +1,174 @@
+{
+  "phase": "phase2_settlement_approximation_error",
+  "generated_utc": "2026-07-31T22:31:06.529177+00:00",
+  "provenance": {
+    "generated_utc": "2026-07-31T22:30:59.481552+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "78889d25c1c41c5e43173e8e281ca2888e83a5d1",
+    "frozen_ref": "v2-empirical-complete",
+    "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+    "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+    "weather_input": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+    "weather_input_sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48",
+    "phase1_root": "outputs/v70_empirical_finalisation/phase1_evidence_recovery",
+    "bootstrap_replications": 10000,
+    "bootstrap_seed": 20260731,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ]
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase2_figure_gaussian_tail_mismatch.pdf",
+      "size_bytes": 15711,
+      "sha256": "398d284601bd2104fa0fd0c3e797db1c1664eacc7e083199341f50f63475601c"
+    },
+    {
+      "relative_path": "figures/phase2_figure_residual_boxplot_by_rule.pdf",
+      "size_bytes": 15763,
+      "sha256": "89ddd33a4611d82f8345f0887a0981919cd5506c4bb05fa5bfb1dfc0bd1d3c15"
+    },
+    {
+      "relative_path": "figures/phase2_figure_residual_ecdf_gaussian.pdf",
+      "size_bytes": 16495,
+      "sha256": "aef2ab8abfda91c62b45f4addf72511aac5243b8c24b90ffa792bae08c9f98e7"
+    },
+    {
+      "relative_path": "figures/phase2_figure_residual_histogram_gaussian.pdf",
+      "size_bytes": 16416,
+      "sha256": "663fac4017510ead78c405bae2e957d6299985cba15fdfb8e51beb0ead015f4d"
+    },
+    {
+      "relative_path": "figures/phase2_figure_residual_over_time.pdf",
+      "size_bytes": 27140,
+      "sha256": "f81328781ddda8a572f7dbdb97a792c28cf806b77a8feb5279c6e9441b5f21d2"
+    },
+    {
+      "relative_path": "figures/phase2_figure_residual_qq.pdf",
+      "size_bytes": 30603,
+      "sha256": "8c0837057700906b37950324ac838830975034646dfe34c945e9a6c9a3a48db1"
+    },
+    {
+      "relative_path": "figures/phase2_figure_residual_vs_forecast_level.pdf",
+      "size_bytes": 31440,
+      "sha256": "b757c383be1b68af8fce9a22b43fada73f7acb87ce0d5d3f1ae5000a9f9a73f3"
+    },
+    {
+      "relative_path": "phase2_date_and_block_bootstrap_intervals.csv",
+      "size_bytes": 40746,
+      "sha256": "50341559345c027489df0a795beee172fb312c31db1bfd4a6171230f955fc471"
+    },
+    {
+      "relative_path": "phase2_empirical_vs_gaussian_exceedances.csv",
+      "size_bytes": 5711,
+      "sha256": "d8b4c43140b683f8dd3371e3feec3550105e595b471422cac7e388941275f919"
+    },
+    {
+      "relative_path": "phase2_empirical_vs_gaussian_quantiles.csv",
+      "size_bytes": 5488,
+      "sha256": "0c1c14f234176940056cfa70aad7286d78e8e9e0655dbeb4201e0c87ec66054b"
+    },
+    {
+      "relative_path": "phase2_existing_validation_block_residual_summary.csv",
+      "size_bytes": 2614,
+      "sha256": "fe297694d23104c203c1f777781a5e85dea91a7533d1116a66947934ee7367eb"
+    },
+    {
+      "relative_path": "phase2_figure_registry.csv",
+      "size_bytes": 878,
+      "sha256": "53b78a2750554ee62de49f242e6dc43389fbf91d239a4777db3c223f408d978c"
+    },
+    {
+      "relative_path": "phase2_gaussian_descriptive_diagnostics.csv",
+      "size_bytes": 2308,
+      "sha256": "f0a438db154edb37587a343402d87e75069caa33056a32f99ee2ef6f72059d33"
+    },
+    {
+      "relative_path": "phase2_integrity_checks.csv",
+      "size_bytes": 1647,
+      "sha256": "d216296caba5b528b45431d6f0205c4f20f51140a4fc20ffa6fb8780ee6876e8"
+    },
+    {
+      "relative_path": "phase2_leave_one_date_out_detail.csv.gz",
+      "size_bytes": 42355,
+      "sha256": "d517db0d2390759ef71b53451c0f43885eef998d616f07fcd54028cac3b64f87"
+    },
+    {
+      "relative_path": "phase2_leave_one_date_out_summary.csv",
+      "size_bytes": 745,
+      "sha256": "b1b7c99ceda08240bccdf191d7749106d41fcd152ef3e4b33bbe3c4d88234eb9"
+    },
+    {
+      "relative_path": "phase2_mean_zero_tests.csv",
+      "size_bytes": 4238,
+      "sha256": "98efb48e9352d68922fce731b4eaf50fa3cac6b6333ec7b30223d09a0fa9452b"
+    },
+    {
+      "relative_path": "phase2_phase17_summary_crosscheck.csv",
+      "size_bytes": 2217,
+      "sha256": "be4304807e0e00c50ff13699757a12a69b0a47f280a5a87181a74673926cfd51"
+    },
+    {
+      "relative_path": "phase2_phase1_static_parameter_crosscheck.csv",
+      "size_bytes": 867,
+      "sha256": "b4a15125dd980d0f4301c59b9824e43fbf59a741fac9bf2f3e69b6021cadea57"
+    },
+    {
+      "relative_path": "phase2_practical_exceedance_probabilities.csv",
+      "size_bytes": 3320,
+      "sha256": "a34627af872c62109f67a64646dd0e2f47de86f904b9d590cf695d9c803c5fc0"
+    },
+    {
+      "relative_path": "phase2_report.md",
+      "size_bytes": 8747,
+      "sha256": "3ac1ec013be92510ba5b9bdc929c193ec0d35bb6257dcc09eb64792a67e17f5f"
+    },
+    {
+      "relative_path": "phase2_repository_provenance.json",
+      "size_bytes": 731,
+      "sha256": "12faee0773ee3590dba5d5a89b5a028c5d62a76ddafa5ce367d87742f6ae2621"
+    },
+    {
+      "relative_path": "phase2_residual_summary.csv",
+      "size_bytes": 2390,
+      "sha256": "eaff16d1b114e032288fd59df0820306ef45766a9221b557602d0c65fd67b6a2"
+    },
+    {
+      "relative_path": "phase2_stability_by_chronological_block.csv",
+      "size_bytes": 10121,
+      "sha256": "2e2f8e6c951d06a764c1cbef77b731b53267af8ac00f144a2ed4538a5ee35d2c"
+    },
+    {
+      "relative_path": "phase2_stability_by_forecast_quartile.csv",
+      "size_bytes": 7862,
+      "sha256": "d5fa46fd73827ec5ab35aa86f30dbfc67f90bbcaf229cff00af8a7861db6561b"
+    },
+    {
+      "relative_path": "phase2_stability_by_quarter.csv",
+      "size_bytes": 9803,
+      "sha256": "14904067e18cd9f7c4deb38f6f30615f9a155b47ef21b7fce734a0999610d4a0"
+    },
+    {
+      "relative_path": "phase2_stability_by_season.csv",
+      "size_bytes": 9571,
+      "sha256": "610725461b510d1cd70e054d9d33082e9a596d34dc521c6d47d2930e66428d4b"
+    },
+    {
+      "relative_path": "phase2_stability_by_year.csv",
+      "size_bytes": 6941,
+      "sha256": "e549859fadaf332331777c2932f679f9d748d3a483ce433a19c1e9e7ea3e2bfd"
+    },
+    {
+      "relative_path": "phase2_stability_by_year_quarter.csv",
+      "size_bytes": 20992,
+      "sha256": "1f0219b2d6bac7d2d33f5b8c5436068c6381334f9c6d4f15169701fb4298f916"
+    },
+    {
+      "relative_path": "phase2_thesis_candidate_summary.csv",
+      "size_bytes": 878,
+      "sha256": "263fadf956eb71e24a4a0a722acb296a5e07363b70a8f1274235f8cd61f4aad5"
+    }
+  ]
+}
