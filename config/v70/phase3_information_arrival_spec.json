@@ -1,0 +1,99 @@
+{
+  "phase": "phase3_information_arrival",
+  "frozen_ref": "v2-empirical-complete",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "input_paths": {
+    "weather_residual_panel": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+    "gp_validation_predictions": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "static_parameter_registry": "outputs/v2_completion/phase16_static_parameter_registry.csv",
+    "phase16_model_scores_by_rule": "outputs/v2_completion/phase16_model_scores_by_rule.csv",
+    "phase16_model_scores_overall": "outputs/v2_completion/phase16_model_scores_overall.csv",
+    "phase16_date_level_model_losses": "outputs/v2_completion/phase16_date_level_model_losses.csv",
+    "phase1_completion": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_completion_status.csv",
+    "phase2_integrity": "outputs/v70_empirical_finalisation/phase2_settlement_error/phase2_integrity_checks.csv",
+    "phase2_summary": "outputs/v70_empirical_finalisation/phase2_settlement_error/phase2_residual_summary.csv"
+  },
+  "output_root": "outputs/v70_empirical_finalisation/phase3_information_arrival",
+  "expected": {
+    "weather_rows": 2920,
+    "weather_dates": 730,
+    "rules": [
+      "24h_prior",
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "rows_per_rule": 730,
+    "gp_rows": 2920,
+    "gp_validation_dates": 365,
+    "gp_kernels": [
+      "rbf",
+      "matern"
+    ],
+    "probabilistic_models": [
+      "raw",
+      "static",
+      "rbf",
+      "matern"
+    ]
+  },
+  "transitions": [
+    {
+      "transition": "24h_to_12h",
+      "early_rule": "24h_prior",
+      "late_rule": "12h_prior",
+      "transition_family": "adjacent"
+    },
+    {
+      "transition": "12h_to_6h",
+      "early_rule": "12h_prior",
+      "late_rule": "6h_prior",
+      "transition_family": "adjacent"
+    },
+    {
+      "transition": "6h_to_open",
+      "early_rule": "6h_prior",
+      "late_rule": "event_day_open",
+      "transition_family": "adjacent"
+    },
+    {
+      "transition": "24h_to_6h",
+      "early_rule": "24h_prior",
+      "late_rule": "6h_prior",
+      "transition_family": "cumulative"
+    },
+    {
+      "transition": "12h_to_open",
+      "early_rule": "12h_prior",
+      "late_rule": "event_day_open",
+      "transition_family": "cumulative"
+    },
+    {
+      "transition": "24h_to_open",
+      "early_rule": "24h_prior",
+      "late_rule": "event_day_open",
+      "transition_family": "endpoint"
+    }
+  ],
+  "bootstrap": {
+    "replications": 10000,
+    "seed": 20260801,
+    "confidence_level": 0.95,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "chunk_size": 500
+  },
+  "update_thresholds_c": [
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "numerical_tolerance": 1e-10,
+  "chronological_blocks": 4,
+  "figure_dpi": 180,
+  "interpretation_boundary": "The phase measures forecast revisions between historically admissible decision rules. It does not identify the causal effect of any specific new observation, because issue cycle, forecast state and elapsed lead time change jointly."
+}
