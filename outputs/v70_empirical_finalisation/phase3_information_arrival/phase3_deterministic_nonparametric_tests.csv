@@ -1,0 +1,7 @@
+transition,dates,nonzero_absolute_error_changes,dates_improved,dates_worsened,two_sided_sign_test_p_value,wilcoxon_signed_rank_statistic,wilcoxon_nominal_p_value,caveat
+24h_to_12h,730,619,350,269,0.0012839706594249842,84153.0,0.0055069844365975215,Descriptive paired tests; moving-block bootstrap is the dependence-aware sensitivity.
+12h_to_6h,730,43,19,24,0.542384011856484,407.5,0.42871906815845906,Descriptive paired tests; moving-block bootstrap is the dependence-aware sensitivity.
+6h_to_open,730,601,324,277,0.06051316857055537,81322.0,0.022955251251452962,Descriptive paired tests; moving-block bootstrap is the dependence-aware sensitivity.
+24h_to_6h,730,635,356,279,0.002534525491641405,90145.0,0.013657726986669892,Descriptive paired tests; moving-block bootstrap is the dependence-aware sensitivity.
+12h_to_open,730,633,336,297,0.1308855187352144,91802.0,0.04750972633508414,Descriptive paired tests; moving-block bootstrap is the dependence-aware sensitivity.
+24h_to_open,730,656,376,280,0.00020305600326029456,90605.5,0.0003302128777792913,Descriptive paired tests; moving-block bootstrap is the dependence-aware sensitivity.

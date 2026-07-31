@@ -1,0 +1,22 @@
+{
+  "generated_utc": "2026-07-31T23:02:25.039961+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "46b50a3a75a932f12c2316cea754d90fda30205a",
+  "frozen_ref": "v2-empirical-complete",
+  "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+  "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "weather_input": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+  "weather_sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48",
+  "gp_validation_input": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+  "gp_validation_sha256": "6cf36d253393d4a752096a79b9113648bd74b69ed12f0e970c8c39346cbbf33e",
+  "static_registry_input": "outputs/v2_completion/phase16_static_parameter_registry.csv",
+  "static_registry_sha256": "671d894138a36cbb529b212c5f6afb23133f9398629e6c5383de2b2839bb8a89",
+  "bootstrap_replications": 10000,
+  "bootstrap_seed": 20260801,
+  "moving_block_lengths": [
+    3,
+    5,
+    7
+  ],
+  "interpretation_boundary": "The phase measures forecast revisions between historically admissible decision rules. It does not identify the causal effect of any specific new observation, because issue cycle, forecast state and elapsed lead time change jointly."
+}

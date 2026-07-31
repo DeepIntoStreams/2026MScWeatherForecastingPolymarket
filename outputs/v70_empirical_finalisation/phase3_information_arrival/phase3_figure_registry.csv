@@ -1,0 +1,8 @@
+figure,purpose
+phase3_figure_mean_forecast_path.pdf,Main-text candidate: mean forecast path and persistent settlement gap
+phase3_figure_error_path_by_rule.pdf,Main-text candidate: precision improves more than mean displacement
+phase3_figure_absolute_error_improvement.pdf,Appendix candidate: heterogeneous benefit of each adjacent update
+phase3_figure_revision_vs_needed_correction.pdf,Appendix candidate: direction and magnitude of forecast revisions
+phase3_figure_crps_path_by_model_rule.pdf,Main/appendix candidate: whether later rules lower probabilistic loss
+phase3_figure_adjacent_crps_improvement.pdf,Appendix candidate: probabilistic effect of later decision rules
+phase3_figure_gp_distribution_revision.pdf,Appendix candidate: deterministic and conditional GP update channels

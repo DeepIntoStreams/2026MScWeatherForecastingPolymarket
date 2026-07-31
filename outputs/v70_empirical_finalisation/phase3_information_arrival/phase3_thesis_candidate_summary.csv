@@ -1,0 +1,9 @@
+candidate_id,quantity,point_estimate,lower_95,upper_95,unit,preferred_location
+P3_ENDPOINT_MAE,mean 24h-to-open absolute-error improvement,0.10424657534246576,0.05013698630136993,0.15918150684931515,degrees Celsius,Results: deterministic forecast revision
+P3_ENDPOINT_CORRECT,directionally correct 24h-to-open revisions among evaluable updates,0.6388888888888888,,,proportion,Appendix or discussion
+P3_CRPS_RAW,Raw point 24h-to-open mean CRPS improvement,0.14273972602739737,0.06520547945205485,0.22054794520547957,degrees Celsius CRPS,"Results or appendix, selected by materiality"
+P3_CRPS_STATIC,Static Gaussian 24h-to-open mean CRPS improvement,0.10786766786243158,0.05730058947031919,0.15782238017644004,degrees Celsius CRPS,"Results or appendix, selected by materiality"
+P3_CRPS_RBF,RBF GP 24h-to-open mean CRPS improvement,0.1304609378024658,0.07972302710008906,0.1823621182911507,degrees Celsius CRPS,"Results or appendix, selected by materiality"
+P3_CRPS_MATERN,Matérn-3/2 GP 24h-to-open mean CRPS improvement,0.13728910412849313,0.08752179855719179,0.18823819005413012,degrees Celsius CRPS,"Results or appendix, selected by materiality"
+P3_GP_SHIFT_RBF,"RBF GP mean absolute predictive-mean shift, 24h to open",0.6766035603813698,,,degrees Celsius,Appendix: information-set revision
+P3_GP_SHIFT_MATERN,"Matérn-3/2 GP mean absolute predictive-mean shift, 24h to open",0.6845529977490411,,,degrees Celsius,Appendix: information-set revision

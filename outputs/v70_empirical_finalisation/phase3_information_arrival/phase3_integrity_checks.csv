@@ -1,0 +1,39 @@
+check,passed,critical,detail
+weather_required_columns,True,True,missing=[]
+gp_required_columns,True,True,missing=[]
+static_registry_required_columns,True,True,missing=[]
+weather_expected_rows,True,True,rows=2920
+weather_expected_dates,True,True,dates=730
+weather_expected_rules,True,True,"rules=['12h_prior', '24h_prior', '6h_prior', 'event_day_open']"
+weather_rows_per_rule,True,True,"counts={'24h_prior': 730, '12h_prior': 730, '6h_prior': 730, 'event_day_open': 730}"
+weather_unique_keys,True,True,duplicates=0
+weather_residual_identity,True,True,max_error=8.882e-16
+weather_all_support_available,True,True,false_rows=0
+weather_all_complete_local_day,True,True,false_rows=0
+weather_all_issued_before_decision,True,True,false_rows=0
+weather_no_market_price_accessed,True,True,true_rows=0
+weather_no_outcome_accessed,True,True,true_rows=0
+weather_no_model_fitted,True,True,true_rows=0
+weather_no_model_selected,True,True,true_rows=0
+weather_no_calibration_selected,True,True,true_rows=0
+weather_no_trading_returns_calculated,True,True,true_rows=0
+gp_expected_rows,True,True,rows=2920
+gp_expected_dates,True,True,dates=365
+gp_expected_rules,True,True,"rules=['12h_prior', '24h_prior', '6h_prior', 'event_day_open']"
+gp_expected_kernels,True,True,"kernels=['matern', 'rbf']"
+gp_unique_date_rule_kernel,True,True,duplicates=0
+gp_residual_identity,True,True,max_error=5.773e-15
+gp_crps_finite_nonnegative,True,True,
+gp_sd_finite_positive,True,True,
+phase1_dependency,True,True,critical_failures=0
+phase2_dependency,True,True,critical_failures=0
+deterministic_transition_rows,True,True,rows=4380
+deterministic_transition_identity,True,True,max_error=8.882e-16
+probabilistic_loss_rows,True,True,rows=5840
+phase16_loss_crosscheck,True,True,max_abs_difference=5.886e-11
+gp_mean_shift_reconciliation,True,True,max_error=1.177e-14
+directional_bootstrap_point_reconciliation,True,True,
+rule_path_sample_sizes_explicit,True,True,deterministic_dates=[730]; probabilistic_dates=[365]
+bootstrap_methods_present,True,True,
+moving_block_lengths_present,True,True,
+figures_created,True,True,figures=7

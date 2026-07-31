@@ -1,0 +1,188 @@
+{
+  "phase": "phase3_information_arrival",
+  "generated_utc": "2026-07-31T23:02:35.024908+00:00",
+  "provenance": {
+    "generated_utc": "2026-07-31T23:02:25.039961+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "46b50a3a75a932f12c2316cea754d90fda30205a",
+    "frozen_ref": "v2-empirical-complete",
+    "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+    "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+    "weather_input": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+    "weather_sha256": "14425a244abe9374c8c7a97feef68b08be54fe48a3aa1e2b43ea41b515e9ee48",
+    "gp_validation_input": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "gp_validation_sha256": "6cf36d253393d4a752096a79b9113648bd74b69ed12f0e970c8c39346cbbf33e",
+    "static_registry_input": "outputs/v2_completion/phase16_static_parameter_registry.csv",
+    "static_registry_sha256": "671d894138a36cbb529b212c5f6afb23133f9398629e6c5383de2b2839bb8a89",
+    "bootstrap_replications": 10000,
+    "bootstrap_seed": 20260801,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "interpretation_boundary": "The phase measures forecast revisions between historically admissible decision rules. It does not identify the causal effect of any specific new observation, because issue cycle, forecast state and elapsed lead time change jointly."
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase3_figure_absolute_error_improvement.pdf",
+      "size_bytes": 15310,
+      "sha256": "c7deb8f60858bae9b7e5d1796592be834173dc7e3a8adac10ab241cbe17e5945"
+    },
+    {
+      "relative_path": "figures/phase3_figure_adjacent_crps_improvement.pdf",
+      "size_bytes": 17598,
+      "sha256": "d349c4dceb9043f10894a8617c9994510639edbad0b51f0847f55014f5778c1d"
+    },
+    {
+      "relative_path": "figures/phase3_figure_crps_path_by_model_rule.pdf",
+      "size_bytes": 19353,
+      "sha256": "7ba65fb0d08169c0fda523cfffe310edbe454395bcc8504496a3611422948c23"
+    },
+    {
+      "relative_path": "figures/phase3_figure_error_path_by_rule.pdf",
+      "size_bytes": 17182,
+      "sha256": "f83724b1dae7c3a225fac2230f26b65f21a1d4e1ba579bb3ced8d79c1d06c356"
+    },
+    {
+      "relative_path": "figures/phase3_figure_gp_distribution_revision.pdf",
+      "size_bytes": 17618,
+      "sha256": "155e24f35fe1b70cac16ce2bec091fc56d2bd839489756bf7a02561c422d6185"
+    },
+    {
+      "relative_path": "figures/phase3_figure_mean_forecast_path.pdf",
+      "size_bytes": 15992,
+      "sha256": "4c036c9f371bdb212b72d5b3875881d6dfc8232726ce80f2e9d960e23e91cb96"
+    },
+    {
+      "relative_path": "figures/phase3_figure_revision_vs_needed_correction.pdf",
+      "size_bytes": 16554,
+      "sha256": "1fdcf205fe80c5c8021b6a3f4d8a6018fcf1d562ae4513dbea81c967bc5dbf97"
+    },
+    {
+      "relative_path": "phase3_deterministic_bootstrap_intervals.csv",
+      "size_bytes": 23338,
+      "sha256": "5393120700fd83e525d98d43f9618c131660932957424a2efc9785be87dc367d"
+    },
+    {
+      "relative_path": "phase3_deterministic_bootstrap_tests.csv",
+      "size_bytes": 4407,
+      "sha256": "456971a17472532e50c2c807b679e63c8b1815ef13505ee742a70dd32b78ea1b"
+    },
+    {
+      "relative_path": "phase3_deterministic_nonparametric_tests.csv",
+      "size_bytes": 1139,
+      "sha256": "a97e05a181d1f2444aaaa136e36f9fb4dce7c24eca825700889774ea5d0ee059"
+    },
+    {
+      "relative_path": "phase3_deterministic_stability_by_chronological_block.csv",
+      "size_bytes": 3381,
+      "sha256": "fe2ea1c974c1dc470e5bba0bd88593899e7178de304377b7b9cabe418d65b67d"
+    },
+    {
+      "relative_path": "phase3_deterministic_stability_by_early_error_quartile.csv",
+      "size_bytes": 3755,
+      "sha256": "2b687498e2330050592787aa1338924b79f6ed6d047399dd9cd12f792639e075"
+    },
+    {
+      "relative_path": "phase3_deterministic_stability_by_season.csv",
+      "size_bytes": 3175,
+      "sha256": "406acfc86c9d7eb497fbc18552831b09a14aa6c5c35c673e64cbb2e4b6cea8ad"
+    },
+    {
+      "relative_path": "phase3_deterministic_stability_by_year.csv",
+      "size_bytes": 2424,
+      "sha256": "6f02ac7378d7796f7af03a1648e3ac99ef524ea191b19804fe0c5d0a8e8aac9a"
+    },
+    {
+      "relative_path": "phase3_deterministic_transition_panel.csv.gz",
+      "size_bytes": 142015,
+      "sha256": "92d77c45d9b37e5b35270c7a2908d7814506e9699369130736861db67436e0da"
+    },
+    {
+      "relative_path": "phase3_deterministic_transition_summary.csv",
+      "size_bytes": 3788,
+      "sha256": "60f77379b32f615b3374d1e630bd8f22c0ee46e4e1b79929d0f4adacef5bf20a"
+    },
+    {
+      "relative_path": "phase3_figure_registry.csv",
+      "size_bytes": 785,
+      "sha256": "157b95eb54dab0e4b6516621688157728477294b0be503a6117cc9f31cc3e018"
+    },
+    {
+      "relative_path": "phase3_gp_distribution_revision_panel.csv.gz",
+      "size_bytes": 222509,
+      "sha256": "b06ef6f7f9344e18318f7fab13f047fb63347f1ca0db0ca8f9f653856f36136e"
+    },
+    {
+      "relative_path": "phase3_gp_distribution_revision_summary.csv",
+      "size_bytes": 3166,
+      "sha256": "597195c30e31c2778bcd2c1ff6f26245c34b5965f8a09d83f5b1d11e04342118"
+    },
+    {
+      "relative_path": "phase3_integrity_checks.csv",
+      "size_bytes": 2084,
+      "sha256": "16d93b82ed66a16bcfbb07686cb080bf2d82c11383567fb15cd399d5e2ec8ed7"
+    },
+    {
+      "relative_path": "phase3_phase16_loss_crosscheck.csv",
+      "size_bytes": 2431,
+      "sha256": "2e1014dc609ebe7fff34c7b2e8babf30f2dba30bd2a1cf0874c1e0d0b2067dec"
+    },
+    {
+      "relative_path": "phase3_probabilistic_bootstrap_intervals.csv",
+      "size_bytes": 60514,
+      "sha256": "a2f677a13381c9558294c462c2ce949ea10f92029a3ac9e78ac5238e8cfc8382"
+    },
+    {
+      "relative_path": "phase3_probabilistic_bootstrap_tests.csv",
+      "size_bytes": 16661,
+      "sha256": "07f19b07bfad2ade39ed5dd77327f2d23fbd2eac0414be9f64d83eca701e5427"
+    },
+    {
+      "relative_path": "phase3_probabilistic_transition_panel.csv.gz",
+      "size_bytes": 202903,
+      "sha256": "5772b4d46fc5f75325297c30e951bf15938df6e6fad4ca9f87757d67555b29f2"
+    },
+    {
+      "relative_path": "phase3_probabilistic_transition_summary.csv",
+      "size_bytes": 5722,
+      "sha256": "44d13fa6f2c310b73089b9567be350f393d93c37b5dfc7439305a116fa463e9e"
+    },
+    {
+      "relative_path": "phase3_report.md",
+      "size_bytes": 10175,
+      "sha256": "edca71e44ba129004cbfd6852f752d20a7ea09ce547ab045b363a4ca3d94e1a9"
+    },
+    {
+      "relative_path": "phase3_repository_provenance.json",
+      "size_bytes": 1273,
+      "sha256": "faf99bda181c021ba4e39e670fa4efa3e5f2ec689fe66a624b77c2c1aa1dee34"
+    },
+    {
+      "relative_path": "phase3_revision_loss_relationships.csv",
+      "size_bytes": 4720,
+      "sha256": "3d5efed8c8601059897962fcd886093076600550be80e9874e55a222eb3b9a67"
+    },
+    {
+      "relative_path": "phase3_rule_path_summary.csv",
+      "size_bytes": 967,
+      "sha256": "51fe5b6a9a044ff38bd8fd6b21b756ea8a71aa1e60c90f4db929603bb6431c81"
+    },
+    {
+      "relative_path": "phase3_thesis_candidate_summary.csv",
+      "size_bytes": 1450,
+      "sha256": "dbc54147fd5f97b90cc88e801c50e3f0d2bfd4bf5bcdeaa1f8b44c38a6996fc5"
+    },
+    {
+      "relative_path": "phase3_validation_date_level_model_losses.csv",
+      "size_bytes": 51482,
+      "sha256": "c233b6645ef92b2d0e05486bf65febfb709ab4a8d3ed48e41ff20be2824db83d"
+    },
+    {
+      "relative_path": "phase3_validation_probabilistic_loss_panel.csv.gz",
+      "size_bytes": 119286,
+      "sha256": "2e4f568baf38722591844aa9d83ca468cfca88a9b8cbaa53b299f12051d8b7cf"
+    }
+  ]
+}
