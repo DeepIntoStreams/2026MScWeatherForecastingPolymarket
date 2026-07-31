@@ -1,0 +1,8 @@
+figure,purpose
+phase4_figure_mean_crps_by_model.pdf,Main-text candidate: raw-static-RBF-Matérn sequence
+phase4_figure_incremental_attribution.pdf,Main-text candidate: most value arises from static correction
+phase4_figure_paired_improvement_distributions.pdf,Appendix candidate: breadth and heterogeneity of gains
+phase4_figure_cumulative_improvement.pdf,Appendix candidate: temporal accumulation of small gains
+phase4_figure_rule_contrast_matrix.pdf,Main/appendix candidate: improvement across decision rules
+phase4_figure_block_heterogeneity.pdf,Main-text candidate: gains vary materially through time
+phase4_figure_improvement_concentration.pdf,Appendix candidate: whether mean gains are broad or concentrated

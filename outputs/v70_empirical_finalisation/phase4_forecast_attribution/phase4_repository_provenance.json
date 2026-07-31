@@ -1,0 +1,25 @@
+{
+  "generated_utc": "2026-07-31T23:20:23.646283+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "e689e275b541b3dec00a8edf66bca66bba86b2e9",
+  "frozen_ref": "v2-empirical-complete",
+  "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+  "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "phase3_loss_panel": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_probabilistic_loss_panel.csv.gz",
+  "phase3_loss_panel_sha256": "2e4f568baf38722591844aa9d83ca468cfca88a9b8cbaa53b299f12051d8b7cf",
+  "phase3_date_losses": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_date_level_model_losses.csv",
+  "phase3_date_losses_sha256": "c233b6645ef92b2d0e05486bf65febfb709ab4a8d3ed48e41ff20be2824db83d",
+  "bootstrap_replications": 10000,
+  "bootstrap_seed": 20260802,
+  "moving_block_lengths": [
+    3,
+    5,
+    7
+  ],
+  "stationary_mean_block_lengths": [
+    3,
+    5,
+    7
+  ],
+  "interpretation_boundary": "The ordered raw-static-RBF-Mat\u00e9rn sequence is an empirical attribution device, not a structural or causal decomposition. RBF and Mat\u00e9rn are alternative covariance specifications rather than nested models."
+}

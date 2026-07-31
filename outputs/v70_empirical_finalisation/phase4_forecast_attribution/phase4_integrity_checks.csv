@@ -1,0 +1,35 @@
+check,passed,critical,detail
+phase1_dependency,True,True,critical_failures=0
+phase2_dependency,True,True,critical_failures=0
+phase3_dependency,True,True,critical_failures=0
+loss_panel_required_columns,True,True,missing=[]
+date_loss_required_columns,True,True,missing=[]
+loss_panel_expected_rows,True,True,rows=5840
+date_loss_expected_rows,True,True,rows=1460
+expected_dates,True,True,panel_dates=365; date_loss_dates=365
+expected_models,True,True,"panel_models=['matern', 'raw', 'rbf', 'static']; date_models=['matern', 'raw', 'rbf', 'static']"
+expected_rules,True,True,"rules=['12h_prior', '24h_prior', '6h_prior', 'event_day_open']"
+loss_panel_unique_keys,True,True,duplicates=0
+date_loss_unique_keys,True,True,duplicates=0
+four_rules_per_date_model,True,True,bad_count_groups=0; bad_unique_groups=0
+crps_finite_nonnegative,True,True,
+date_loss_reconciliation,True,True,max_error=8.882e-16
+reference_mean_crps_raw,True,True,calculated=1.745684932; reference=1.745685000; difference=-6.849e-08
+reference_mean_crps_static,True,True,calculated=0.911754550; reference=0.911755000; difference=-4.500e-07
+reference_mean_crps_rbf,True,True,calculated=0.877561468; reference=0.877561000; difference=4.684e-07
+reference_mean_crps_matern,True,True,calculated=0.863339999; reference=0.863340000; difference=-1.041e-09
+phase3_phase16_crosscheck_passed,True,True,rows=24; failed=0
+validation_block_sizes,True,True,"actual=[91, 91, 91, 92]; expected=[91, 91, 91, 92]"
+date_contrast_panel_rows,True,True,rows=2190
+rule_contrast_panel_rows,True,True,rows=8760
+contrast_sign_identity,True,True,max_error=0.000e+00
+contrast_mean_reconciliation,True,True,max_error=1.110e-16
+ordinary_intervals_all_contrasts,True,True,"contrasts=['matern_minus_raw', 'matern_minus_rbf', 'matern_minus_static', 'rbf_minus_raw', 'rbf_minus_static', 'static_minus_raw']"
+moving_block_lengths_all_primary,True,True,
+stationary_bootstrap_lengths_all_primary,True,True,
+rule_interval_matrix_complete,True,True,
+block_interval_matrix_complete,True,True,
+ordered_attribution_reconciles,True,True,
+influence_all_contrasts,True,True,
+subgroup_outputs_present,True,True,"types=['decision_rule', 'deterministic_forecast_quartile', 'raw_absolute_error_quartile', 'season', 'static_correction_quartile', 'static_spread_quartile', 'validation_block']"
+figures_created,True,True,figures=7

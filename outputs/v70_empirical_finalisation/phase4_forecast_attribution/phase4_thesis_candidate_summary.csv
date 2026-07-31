@@ -1,0 +1,11 @@
+candidate_id,quantity,point_estimate,lower_95,upper_95,unit,preferred_location,moving_block_7_lower_95,moving_block_7_upper_95,model_better_fraction,top_5_absolute_contribution_share,maximum_leave_one_out_change_c
+P4_MEAN_RAW,Raw point mean date CRPS,1.7456849315068492,,,degrees Celsius CRPS,Results attribution table,,,,,
+P4_MEAN_STATIC,Static Gaussian mean date CRPS,0.9117545500469533,,,degrees Celsius CRPS,Results attribution table,,,,,
+P4_MEAN_RBF,RBF GP mean date CRPS,0.8775614684388354,,,degrees Celsius CRPS,Results attribution table,,,,,
+P4_MEAN_MATERN,Matérn-3/2 GP mean date CRPS,0.8633399989586301,,,degrees Celsius CRPS,Results attribution table,,,,,
+P4_CONTRAST_STATIC_MINUS_RAW,static_minus_raw mean paired loss difference,-0.8339303814598961,-0.946673147756632,-0.7204182534814287,degrees Celsius CRPS,Results and robustness,-1.0413222373212139,-0.6288085887202604,0.7041095890410959,0.027244145935189115,0.004902316696826947
+P4_CONTRAST_MATERN_MINUS_STATIC,matern_minus_static mean paired loss difference,-0.04841455108832304,-0.06996850246199533,-0.0273387923565425,degrees Celsius CRPS,Results and robustness,-0.08509452299021869,-0.01426279596333297,0.5589041095890411,0.10579156679125988,0.0031155955958519707
+P4_CONTRAST_MATERN_MINUS_RBF,matern_minus_rbf mean paired loss difference,-0.014221469480205487,-0.020528841774933214,-0.0079036960862911,degrees Celsius CRPS,Results and robustness,-0.02462954353922088,-0.004456383918571917,0.5671232876712329,0.07941480766917185,0.0008320431679802055
+P4_STAGE_RAW_TO_STATIC,raw_to_static share of total raw-to-Matérn reduction,0.9451296774057493,,,fraction,Results attribution interpretation,,,,,
+P4_STAGE_STATIC_TO_RBF,static_to_rbf share of total raw-to-Matérn reduction,0.038752510890914235,,,fraction,Results attribution interpretation,,,,,
+P4_STAGE_RBF_TO_MATERN,rbf_to_matern share of total raw-to-Matérn reduction,0.01611781170333646,,,fraction,Results attribution interpretation,,,,,

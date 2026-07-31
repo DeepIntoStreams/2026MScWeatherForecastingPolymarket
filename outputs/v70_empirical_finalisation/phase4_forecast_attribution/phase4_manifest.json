@@ -1,0 +1,186 @@
+{
+  "phase": "phase4_full_forecast_attribution",
+  "generated_utc": "2026-07-31T23:20:35.954053+00:00",
+  "provenance": {
+    "generated_utc": "2026-07-31T23:20:23.646283+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "e689e275b541b3dec00a8edf66bca66bba86b2e9",
+    "frozen_ref": "v2-empirical-complete",
+    "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+    "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+    "phase3_loss_panel": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_probabilistic_loss_panel.csv.gz",
+    "phase3_loss_panel_sha256": "2e4f568baf38722591844aa9d83ca468cfca88a9b8cbaa53b299f12051d8b7cf",
+    "phase3_date_losses": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_date_level_model_losses.csv",
+    "phase3_date_losses_sha256": "c233b6645ef92b2d0e05486bf65febfb709ab4a8d3ed48e41ff20be2824db83d",
+    "bootstrap_replications": 10000,
+    "bootstrap_seed": 20260802,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "stationary_mean_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "interpretation_boundary": "The ordered raw-static-RBF-Mat\u00e9rn sequence is an empirical attribution device, not a structural or causal decomposition. RBF and Mat\u00e9rn are alternative covariance specifications rather than nested models."
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase4_figure_block_heterogeneity.pdf",
+      "size_bytes": 17783,
+      "sha256": "bda2626437b8218a9dbec1f49bf80d1a3813ce2757c039f104ec8b04f40c24fc"
+    },
+    {
+      "relative_path": "figures/phase4_figure_cumulative_improvement.pdf",
+      "size_bytes": 20470,
+      "sha256": "ab2e5c46af1f23f0f7cdfd3b1901711b3f4206e3f5892edacf0eaa04d444f76e"
+    },
+    {
+      "relative_path": "figures/phase4_figure_improvement_concentration.pdf",
+      "size_bytes": 13818,
+      "sha256": "f46618e4de5b2efc4719b1506bf53b6a8063a38f549df558529713d16cfa9847"
+    },
+    {
+      "relative_path": "figures/phase4_figure_incremental_attribution.pdf",
+      "size_bytes": 15363,
+      "sha256": "c8a6a583fa7cbb2e2583e8bc11dcd250aef41c208caea12becefc68842569115"
+    },
+    {
+      "relative_path": "figures/phase4_figure_mean_crps_by_model.pdf",
+      "size_bytes": 15800,
+      "sha256": "af156182c392bf39cf72efcf2c3400fa72a4f985c50c8b207be8cd816fe2edaa"
+    },
+    {
+      "relative_path": "figures/phase4_figure_paired_improvement_distributions.pdf",
+      "size_bytes": 16018,
+      "sha256": "433efb4c9c59b739a923053b4b6e2a3add5921187cdcf0ea3443b796c2b5ba68"
+    },
+    {
+      "relative_path": "figures/phase4_figure_rule_contrast_matrix.pdf",
+      "size_bytes": 20543,
+      "sha256": "1e8d4b8a7b0e3a59596ed76b21ce028d8f13789848deb60a864c9f244ba01029"
+    },
+    {
+      "relative_path": "phase4_best_worst_dates.csv",
+      "size_bytes": 27102,
+      "sha256": "ca919dcc8f4976b32e01aa9ba37016809d168028cae51e9a477406999223fc18"
+    },
+    {
+      "relative_path": "phase4_block_contrast_summary.csv",
+      "size_bytes": 9522,
+      "sha256": "ff76b140ad08364cbe9a61f3a08e21182980be8cb3cc29e367fba7bc8147b485"
+    },
+    {
+      "relative_path": "phase4_date_feature_panel.csv",
+      "size_bytes": 70994,
+      "sha256": "06aeaa29cd1789e8e68e2f9a1ca1e365a4f562c4863e7a29f4088caf2eb646ae"
+    },
+    {
+      "relative_path": "phase4_date_level_contrast_panel.csv.gz",
+      "size_bytes": 76615,
+      "sha256": "7fa65023d642497dc3feaed303e894f2985097d5c60b56a1902c27826c4c415e"
+    },
+    {
+      "relative_path": "phase4_figure_registry.csv",
+      "size_bytes": 714,
+      "sha256": "cca96f1b7e9728323153479d71cd3030b90881c6acddf077be22e58f13b132b4"
+    },
+    {
+      "relative_path": "phase4_improvement_concentration.csv",
+      "size_bytes": 2397,
+      "sha256": "4e1928dc63581660c5d7367eca4a23f2babb936f6af84f6064e0a1e357a9a778"
+    },
+    {
+      "relative_path": "phase4_influence_scenarios.csv",
+      "size_bytes": 7347,
+      "sha256": "89e27a963b30740642ec247445336a467cad3cb7e2ed8cbf772c48ac3b5d31ee"
+    },
+    {
+      "relative_path": "phase4_integrity_checks.csv",
+      "size_bytes": 2339,
+      "sha256": "554d1f970e3a83616c4fa743fb187662698e851028a702a74dc6ae2f88296852"
+    },
+    {
+      "relative_path": "phase4_leave_one_date_out_detail.csv.gz",
+      "size_bytes": 56982,
+      "sha256": "c044ac28b84927e2e9221dbfcf47c64917ee76249f92a11c885503079cdb12e7"
+    },
+    {
+      "relative_path": "phase4_leave_one_date_out_summary.csv",
+      "size_bytes": 1159,
+      "sha256": "6021e4e96c904031cfef235524692d70f43bf4265c784b9d42753f502fb6fd9b"
+    },
+    {
+      "relative_path": "phase4_matern_value_subgroups.csv",
+      "size_bytes": 6098,
+      "sha256": "3c050fb7007e85439ff891f22d61c776b116a32da19a7e05af7047300866a327"
+    },
+    {
+      "relative_path": "phase4_model_score_summary.csv",
+      "size_bytes": 761,
+      "sha256": "ba0185d7f2d62e42c7af7f6d2f256792b693312bd6020fbe5cc8a62a32981baf"
+    },
+    {
+      "relative_path": "phase4_optional_phase18_inventory.csv",
+      "size_bytes": 2985,
+      "sha256": "42a314f5f13f1e16c53ada8cc0de3bcc46163bedc9297b90f9f7ef0f99db3150"
+    },
+    {
+      "relative_path": "phase4_ordered_attribution.csv",
+      "size_bytes": 1007,
+      "sha256": "4ecf5176dd14c4e5421aef081479e6bd2663a514202bc6c6d23a55f9c475cc45"
+    },
+    {
+      "relative_path": "phase4_overall_contrast_summary.csv",
+      "size_bytes": 2700,
+      "sha256": "29d5a4123251d5132e389f2a5099ff3317ab7ee5c831c47e38f7099fa6ca9001"
+    },
+    {
+      "relative_path": "phase4_paired_bootstrap_intervals.csv",
+      "size_bytes": 184934,
+      "sha256": "7525e32120477e1c3819079823a2abd7f072924b8a29f9749a2181ae345510b8"
+    },
+    {
+      "relative_path": "phase4_paired_bootstrap_tests.csv",
+      "size_bytes": 49841,
+      "sha256": "00d8ad067c8ad2a1acef49af53deeb3c5ba485a652da3459ffb421f0806904a6"
+    },
+    {
+      "relative_path": "phase4_report.md",
+      "size_bytes": 14026,
+      "sha256": "9a1ef7bf24971aeafcb17b72528b84b8b300c8b2466f9ddc3de006f4f0c7f5f7"
+    },
+    {
+      "relative_path": "phase4_repository_provenance.json",
+      "size_bytes": 1247,
+      "sha256": "84ccc471b3c66d7f3ac3c384f9a2425989e769a2315a6d72bfba923ce41e7a97"
+    },
+    {
+      "relative_path": "phase4_rule_by_block_contrast_summary.csv",
+      "size_bytes": 37440,
+      "sha256": "7b93293e933e198511cc9235aa1c348b768f4d26ac24c68cb4c2d5b48dd189a5"
+    },
+    {
+      "relative_path": "phase4_rule_contrast_summary.csv",
+      "size_bytes": 9463,
+      "sha256": "09ec318eae79dd5e621ad4805e679a90eab3417dd70cf4b94d99f5c009eed8fb"
+    },
+    {
+      "relative_path": "phase4_rule_level_contrast_panel.csv.gz",
+      "size_bytes": 236417,
+      "sha256": "1bbbb96bc200eee83cda3ecfccda3bcaa4fbd0705907986331f33f6f6a6daf5a"
+    },
+    {
+      "relative_path": "phase4_thesis_candidate_summary.csv",
+      "size_bytes": 1965,
+      "sha256": "c35a5bb24a6f819430083bbe1b1521b63b8b710983e46270048e9b3a61f4bdd7"
+    },
+    {
+      "relative_path": "phase4_validation_block_map.csv",
+      "size_bytes": 7227,
+      "sha256": "db754a7f080c65ce03b1365b2cea45806c67f7208b032499d32407635c5dc1d3"
+    }
+  ]
+}
