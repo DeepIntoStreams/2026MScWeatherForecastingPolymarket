@@ -598,7 +598,7 @@ def find_event_candidates(root: Path, files: Sequence[Path]) -> pd.DataFrame:
                 and not any(
                     token in str(c).lower()
                     for token in (
-                        "mass", "gap", "difference", "maximum",
+                        "mass", "gap", "difference", "minus", "maximum",
                         "minimum", "error", "count", "total",
                     )
                 )
@@ -1305,7 +1305,12 @@ def main() -> int:
         "working_branch": git(repo_root, "branch", "--show-current"),
         "working_head": git(repo_root, "rev-parse", "HEAD"),
         "frozen_ref": spec["frozen_ref"],
-        "frozen_head": git(repo_root, "rev-parse", spec["frozen_ref"]),
+        "frozen_tag_object": git(
+            repo_root, "rev-parse", spec["frozen_ref"]
+        ),
+        "frozen_commit": git(
+            repo_root, "rev-parse", f"{spec['frozen_ref']}^{{commit}}"
+        ),
         "frozen_root": str(frozen_root),
         "working_tree_clean_before_phase": git(repo_root, "status", "--short") == "",
     }
