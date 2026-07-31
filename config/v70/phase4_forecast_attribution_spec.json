@@ -1,0 +1,124 @@
+{
+  "phase": "phase4_full_forecast_attribution",
+  "frozen_ref": "v2-empirical-complete",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "input_paths": {
+    "phase1_completion": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_completion_status.csv",
+    "phase2_integrity": "outputs/v70_empirical_finalisation/phase2_settlement_error/phase2_integrity_checks.csv",
+    "phase3_integrity": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_integrity_checks.csv",
+    "phase3_loss_panel": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_probabilistic_loss_panel.csv.gz",
+    "phase3_date_losses": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_date_level_model_losses.csv",
+    "phase3_phase16_crosscheck": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_phase16_loss_crosscheck.csv",
+    "optional_frozen_phase18_root": "outputs/v2_completion"
+  },
+  "output_root": "outputs/v70_empirical_finalisation/phase4_forecast_attribution",
+  "expected": {
+    "validation_dates": 365,
+    "decision_rules": [
+      "24h_prior",
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "models": [
+      "raw",
+      "static",
+      "rbf",
+      "matern"
+    ],
+    "loss_panel_rows": 5840,
+    "date_loss_rows": 1460,
+    "rows_per_date_model": 4,
+    "chronological_block_sizes": [
+      91,
+      91,
+      91,
+      92
+    ],
+    "reference_mean_date_crps": {
+      "raw": 1.745685,
+      "static": 0.911755,
+      "rbf": 0.877561,
+      "matern": 0.86334
+    },
+    "reference_tolerance": 5e-06
+  },
+  "contrasts": [
+    {
+      "contrast": "static_minus_raw",
+      "model": "static",
+      "benchmark": "raw",
+      "primary": true,
+      "interpretation": "Value of local static residual correction"
+    },
+    {
+      "contrast": "rbf_minus_static",
+      "model": "rbf",
+      "benchmark": "static",
+      "primary": false,
+      "interpretation": "RBF conditional refinement beyond static correction"
+    },
+    {
+      "contrast": "matern_minus_static",
+      "model": "matern",
+      "benchmark": "static",
+      "primary": true,
+      "interpretation": "Selected Mat\u00e9rn conditional refinement beyond static correction"
+    },
+    {
+      "contrast": "matern_minus_rbf",
+      "model": "matern",
+      "benchmark": "rbf",
+      "primary": true,
+      "interpretation": "Selected Mat\u00e9rn versus alternative RBF covariance"
+    },
+    {
+      "contrast": "rbf_minus_raw",
+      "model": "rbf",
+      "benchmark": "raw",
+      "primary": false,
+      "interpretation": "Total RBF gain relative to deterministic point forecast"
+    },
+    {
+      "contrast": "matern_minus_raw",
+      "model": "matern",
+      "benchmark": "raw",
+      "primary": false,
+      "interpretation": "Total selected-model gain relative to deterministic point forecast"
+    }
+  ],
+  "bootstrap": {
+    "replications": 10000,
+    "seed": 20260802,
+    "confidence_level": 0.95,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "stationary_mean_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "chunk_size": 500
+  },
+  "influence": {
+    "top_k_values": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "best_worst_dates": 10,
+    "remove_extreme_counts": [
+      1,
+      5
+    ]
+  },
+  "chronological_blocks": 4,
+  "subgroup_quantiles": 4,
+  "figure_dpi": 180,
+  "numerical_tolerance": 1e-10,
+  "interpretation_boundary": "The ordered raw-static-RBF-Mat\u00e9rn sequence is an empirical attribution device, not a structural or causal decomposition. RBF and Mat\u00e9rn are alternative covariance specifications rather than nested models."
+}
