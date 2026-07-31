@@ -427,20 +427,99 @@ def validate_inputs(
         set(phase19) == set(config["phase19_files"]),
         f"files={len(phase19)}",
     )
-    reconciliation = phase19["phase19_reconciliation_checks.csv"]
+    reconciliation = phase19["phase19_reconciliation_checks.csv"].copy()
+
     if "passed" in reconciliation.columns:
-        passed = bool(bool_series(reconciliation["passed"]).all())
-        add(
-            "frozen_phase19_reconciliation_passed",
-            passed,
-            f"failed={int((~bool_series(reconciliation['passed'])).sum())}",
+        reconciliation_passed = bool_series(
+            reconciliation["passed"]
         )
+        reconciliation_detail = (
+            f"schema=passed; failed="
+            f"{int((~reconciliation_passed).sum())}"
+        )
+
+    elif "status" in reconciliation.columns:
+        status_normalised = (
+            reconciliation["status"]
+            .astype(str)
+            .str.strip()
+            .str.upper()
+        )
+        accepted_statuses = {
+            "PASS",
+            "PASSED",
+            "OK",
+            "SUCCESS",
+            "TRUE",
+        }
+        status_passed = status_normalised.isin(
+            accepted_statuses
+        )
+
+        if {
+            "maximum_absolute_error",
+            "tolerance",
+        }.issubset(reconciliation.columns):
+            maximum_error = pd.to_numeric(
+                reconciliation["maximum_absolute_error"],
+                errors="coerce",
+            )
+            tolerance_values = pd.to_numeric(
+                reconciliation["tolerance"],
+                errors="coerce",
+            )
+            numerical_fields_present = (
+                maximum_error.notna()
+                & tolerance_values.notna()
+            )
+            numerical_passed = (
+                ~numerical_fields_present
+                | (
+                    maximum_error
+                    <= tolerance_values
+                    + float(config["numerical_tolerance"])
+                )
+            )
+        else:
+            numerical_fields_present = pd.Series(
+                False,
+                index=reconciliation.index,
+            )
+            numerical_passed = pd.Series(
+                True,
+                index=reconciliation.index,
+            )
+
+        reconciliation_passed = (
+            status_passed & numerical_passed
+        )
+        reconciliation_detail = (
+            f"schema=status; statuses="
+            f"{sorted(status_normalised.unique().tolist())}; "
+            f"status_failures={int((~status_passed).sum())}; "
+            f"numerical_rows={int(numerical_fields_present.sum())}; "
+            f"numerical_failures={int((~numerical_passed).sum())}; "
+            f"failed={int((~reconciliation_passed).sum())}"
+        )
+
     else:
-        add(
-            "frozen_phase19_reconciliation_has_passed_column",
+        reconciliation_passed = pd.Series(
             False,
-            f"columns={list(reconciliation.columns)}",
+            index=reconciliation.index,
         )
+        reconciliation_detail = (
+            "unsupported_schema; "
+            f"columns={list(reconciliation.columns)}"
+        )
+
+    add(
+        "frozen_phase19_reconciliation_passed",
+        bool(
+            len(reconciliation_passed) > 0
+            and reconciliation_passed.all()
+        ),
+        reconciliation_detail,
+    )
 
     regression = phase19["phase19_variance_regression_summary.csv"]
     coefficients = phase19["phase19_variance_regression_coefficients.csv"]
