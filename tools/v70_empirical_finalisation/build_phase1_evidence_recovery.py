@@ -58,7 +58,11 @@ MODEL_CANDIDATES = [
 ]
 EVENT_CANDIDATES = [
     "event_index", "event_order", "event_rank", "event_id",
-    "contract_event_index", "contract_id"
+    "contract_event_index", "contract_id", "event_key",
+    "event_label", "event_name", "contract_name", "contract_label",
+    "outcome", "outcome_name", "bucket", "bucket_label",
+    "interval_label", "temperature_event", "market_event_id",
+    "condition_id", "token_id", "question", "market_question"
 ]
 PROBABILITY_CANDIDATES = [
     "event_probability", "probability", "p_model", "p_gp",
@@ -140,6 +144,71 @@ def choose(columns: Iterable[str], candidates: Sequence[str]) -> str | None:
         if candidate.lower() in lookup:
             return lookup[candidate.lower()]
     return None
+
+
+def infer_event_column(columns: Iterable[str]) -> str | None:
+    exact = choose(columns, EVENT_CANDIDATES)
+    if exact:
+        return exact
+
+    excluded_tokens = (
+        "date", "time", "probab", "price", "pnl", "score", "loss",
+        "mean", "variance", "std", "sd", "forecast", "observed",
+        "realised", "realized", "yes", "outcome_value",
+    )
+    preferred_tokens = (
+        "event", "contract", "outcome", "bucket", "interval",
+        "condition", "token", "question", "threshold", "range",
+    )
+    for column in columns:
+        lower = str(column).lower()
+        if any(token in lower for token in excluded_tokens):
+            continue
+        if any(token in lower for token in preferred_tokens):
+            return str(column)
+    return None
+
+
+def derive_event_key_series(
+    df: pd.DataFrame,
+    date_col: str,
+    rule_col: str | None,
+    source_path: str,
+) -> tuple[pd.Series, str]:
+    event_col = infer_event_column(df.columns)
+    if event_col:
+        return df[event_col].astype(str), event_col
+
+    lower_col = choose(df.columns, LOWER_CANDIDATES)
+    upper_col = choose(df.columns, UPPER_CANDIDATES)
+    if lower_col or upper_col:
+        lower = (
+            pd.to_numeric(df[lower_col], errors="coerce").astype("string")
+            if lower_col else pd.Series(["-inf"] * len(df), index=df.index, dtype="string")
+        )
+        upper = (
+            pd.to_numeric(df[upper_col], errors="coerce").astype("string")
+            if upper_col else pd.Series(["inf"] * len(df), index=df.index, dtype="string")
+        )
+        key = "bounds:[" + lower.fillna("-inf") + "," + upper.fillna("inf") + ")"
+        return key.astype(str), "__derived_from_bounds__"
+
+    group_cols = [date_col] + ([rule_col] if rule_col else [])
+    group_sizes = df.groupby(group_cols, dropna=False)[date_col].transform("size")
+    if not bool((group_sizes == 11).all()):
+        raise ValueError(
+            "Missing event identifier and cannot derive within-book order because "
+            f"not every group has 11 rows in {source_path}. "
+            f"Columns={list(map(str, df.columns))}; "
+            f"group_size_counts={group_sizes.value_counts(dropna=False).to_dict()}"
+        )
+    key = (
+        df.groupby(group_cols, sort=False, dropna=False)
+        .cumcount()
+        .add(1)
+        .map(lambda value: f"event_order_{int(value):02d}")
+    )
+    return key.astype(str), "__derived_within_book_order__"
 
 
 def infer_model_from_path(path: Path) -> str | None:
@@ -364,18 +433,24 @@ def canonical_date_rule(
     date_col = choose(df.columns, DATE_CANDIDATES)
     rule_col = choose(df.columns, RULE_CANDIDATES)
     if not date_col or not rule_col:
-        raise ValueError(f"Missing date/rule columns in {source_path}")
+        raise ValueError(
+            f"Missing date/rule columns in {source_path}. "
+            f"Columns={list(map(str, df.columns))}"
+        )
     out = pd.DataFrame(
         {
-            "settlement_date": pd.to_datetime(df[date_col], errors="coerce").dt.strftime("%Y-%m-%d"),
+            "settlement_date": pd.to_datetime(
+                df[date_col], errors="coerce"
+            ).dt.strftime("%Y-%m-%d"),
             "decision_rule": df[rule_col].astype(str),
         }
     )
     if include_event:
-        event_col = choose(df.columns, EVENT_CANDIDATES)
-        if not event_col:
-            raise ValueError(f"Missing event column in {source_path}")
-        out["event_key"] = df[event_col].astype(str)
+        event_key, strategy = derive_event_key_series(
+            df, date_col, rule_col, source_path
+        )
+        out["event_key"] = event_key
+        out["event_key_strategy"] = strategy
     out["source_path"] = source_path
     return out
 
@@ -459,15 +534,24 @@ def find_event_candidates(root: Path, files: Sequence[Path]) -> pd.DataFrame:
             continue
         date_col = choose(sample.columns, DATE_CANDIDATES)
         rule_col = choose(sample.columns, RULE_CANDIDATES)
-        event_col = choose(sample.columns, EVENT_CANDIDATES)
         model_col = choose(sample.columns, MODEL_CANDIDATES)
         prob_cols = [
             c for c in sample.columns
             if str(c).lower() in {x.lower() for x in PROBABILITY_CANDIDATES}
             or ("probab" in str(c).lower() and "total" not in str(c).lower())
         ]
-        if not (date_col and rule_col and event_col and prob_cols):
+        if not (date_col and rule_col and prob_cols):
             continue
+        try:
+            _, event_strategy = derive_event_key_series(
+                sample,
+                date_col,
+                rule_col,
+                path.relative_to(root).as_posix(),
+            )
+        except Exception:
+            continue
+        event_col = infer_event_column(sample.columns) or event_strategy
         for prob_col in prob_cols:
             rows.append(
                 {
@@ -476,6 +560,7 @@ def find_event_candidates(root: Path, files: Sequence[Path]) -> pd.DataFrame:
                     "date_column": date_col,
                     "rule_column": rule_col,
                     "event_column": event_col,
+                    "event_key_strategy": event_strategy,
                     "model_column": model_col or "",
                     "probability_column": prob_col,
                     "inferred_model": infer_model_from_path(path) or "",
@@ -497,14 +582,18 @@ def canonicalise_existing_event_books(
             df = read_table(path)
             date_col = row["date_column"]
             rule_col = row["rule_column"]
-            event_col = row["event_column"]
             prob_col = row["probability_column"]
             model_col = row["model_column"] or None
+            event_key, event_strategy = derive_event_key_series(
+                df, date_col, rule_col, row["relative_path"]
+            )
             out = pd.DataFrame(
                 {
-                    "settlement_date": pd.to_datetime(df[date_col], errors="coerce").dt.strftime("%Y-%m-%d"),
+                    "settlement_date": pd.to_datetime(
+                        df[date_col], errors="coerce"
+                    ).dt.strftime("%Y-%m-%d"),
                     "decision_rule": df[rule_col].astype(str),
-                    "event_key": df[event_col].astype(str),
+                    "event_key": event_key,
                     "probability": pd.to_numeric(df[prob_col], errors="coerce"),
                 }
             )
@@ -512,31 +601,41 @@ def canonicalise_existing_event_books(
                 out["model"] = df[model_col].map(normalise_model_name)
             else:
                 out["model"] = row["inferred_model"] or "unknown"
-            block_col = choose(df.columns, ["chronology_block", "period", "sample_period"])
-            if block_col:
-                out["period"] = df[block_col].astype(str)
-            else:
-                out["period"] = ""
+            block_col = choose(
+                df.columns, ["chronology_block", "period", "sample_period"]
+            )
+            out["period"] = df[block_col].astype(str) if block_col else ""
             out["source_path"] = row["relative_path"]
             out["source_probability_column"] = prob_col
+            out["event_key_strategy"] = event_strategy
             valid = out.dropna(subset=["settlement_date", "probability"]).copy()
             frames.append(valid)
 
             grouped = valid.groupby(
-                ["settlement_date", "decision_rule", "model"], dropna=False
+                ["settlement_date", "decision_rule", "model"],
+                dropna=False,
             )["probability"].agg(["count", "sum", "min", "max"]).reset_index()
             checks.append(
                 {
                     "relative_path": row["relative_path"],
                     "probability_column": prob_col,
+                    "event_key_strategy": event_strategy,
                     "rows": len(valid),
                     "books": len(grouped),
                     "books_with_11_events": int((grouped["count"] == 11).sum()),
-                    "books_mass_close_1": int(np.isclose(grouped["sum"], 1.0, atol=1e-8).sum()),
-                    "probabilities_in_unit_interval": bool(
-                        ((valid["probability"] >= -1e-12) & (valid["probability"] <= 1 + 1e-12)).all()
+                    "books_mass_close_1": int(
+                        np.isclose(grouped["sum"], 1.0, atol=1e-8).sum()
                     ),
-                    "max_mass_error": float((grouped["sum"] - 1.0).abs().max()) if len(grouped) else np.nan,
+                    "probabilities_in_unit_interval": bool(
+                        (
+                            (valid["probability"] >= -1e-12)
+                            & (valid["probability"] <= 1 + 1e-12)
+                        ).all()
+                    ),
+                    "max_mass_error": (
+                        float((grouped["sum"] - 1.0).abs().max())
+                        if len(grouped) else np.nan
+                    ),
                     "status": "READABLE",
                 }
             )
@@ -545,6 +644,7 @@ def canonicalise_existing_event_books(
                 {
                     "relative_path": row["relative_path"],
                     "probability_column": row["probability_column"],
+                    "event_key_strategy": row.get("event_key_strategy", ""),
                     "rows": 0,
                     "books": 0,
                     "books_with_11_events": 0,
@@ -624,7 +724,7 @@ def reconstruct_raw_static_books(
     market_rule = choose(market.columns, RULE_CANDIDATES)
     det_m = choose(market.columns, DETERMINISTIC_CANDIDATES)
     event_date = choose(events.columns, DATE_CANDIDATES)
-    event_key = choose(events.columns, EVENT_CANDIDATES)
+    event_key = infer_event_column(events.columns)
     lower_col = choose(events.columns, LOWER_CANDIDATES)
     upper_col = choose(events.columns, UPPER_CANDIDATES)
     lower_closed_col = choose(events.columns, LOWER_CLOSED_CANDIDATES)
@@ -635,7 +735,7 @@ def reconstruct_raw_static_books(
         "weather_deterministic": det_w, "weather_hko": hko_w,
         "market_date": market_date, "market_rule": market_rule,
         "market_deterministic": det_m, "event_date": event_date,
-        "event_key": event_key, "lower": lower_col, "upper": upper_col,
+        "lower": lower_col, "upper": upper_col,
     }
     missing_cols = [k for k, v in required.items() if v is None]
     if missing_cols:
@@ -660,7 +760,16 @@ def reconstruct_raw_static_books(
 
     e = events.copy()
     e["settlement_date"] = pd.to_datetime(e[event_date], errors="coerce").dt.strftime("%Y-%m-%d")
-    e["event_key"] = e[event_key].astype(str)
+    if event_key:
+        e["event_key"] = e[event_key].astype(str)
+    else:
+        lower_text = pd.to_numeric(
+            e[lower_col], errors="coerce"
+        ).astype("string").fillna("-inf")
+        upper_text = pd.to_numeric(
+            e[upper_col], errors="coerce"
+        ).astype("string").fillna("inf")
+        e["event_key"] = "bounds:[" + lower_text + "," + upper_text + ")"
     e["lower"] = pd.to_numeric(e[lower_col], errors="coerce")
     e["upper"] = pd.to_numeric(e[upper_col], errors="coerce")
     if lower_closed_col:

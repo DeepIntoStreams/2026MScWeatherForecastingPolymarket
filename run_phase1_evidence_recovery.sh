@@ -9,6 +9,12 @@ FROZEN_REF="v2-empirical-complete"
 WORKTREE="/tmp/2026MScWeatherForecastingPolymarket_v2_frozen"
 OUT="outputs/v70_empirical_finalisation/phase1_evidence_recovery"
 
+cleanup_phase1_worktree() {
+  git -C "$REPO" worktree remove --force "$WORKTREE" >/dev/null 2>&1 || true
+  rm -rf "$WORKTREE"
+}
+trap cleanup_phase1_worktree EXIT
+
 cd "$REPO"
 export GIT_PAGER=cat
 export PAGER=cat
