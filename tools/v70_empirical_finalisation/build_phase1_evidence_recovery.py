@@ -155,6 +155,8 @@ def infer_event_column(columns: Iterable[str]) -> str | None:
         "date", "time", "probab", "price", "pnl", "score", "loss",
         "mean", "variance", "std", "sd", "forecast", "observed",
         "realised", "realized", "yes", "outcome_value",
+        "count", "number", "total", "mass", "maximum", "minimum",
+        "difference", "gap", "error", "contracts",
     )
     preferred_tokens = (
         "event", "contract", "outcome", "bucket", "interval",
@@ -227,6 +229,34 @@ def infer_model_from_path(path: Path) -> str | None:
         if token in s:
             return label
     return None
+
+
+def infer_model_from_probability_column(
+    probability_column: str,
+    path: Path,
+) -> str:
+    column = str(probability_column).strip().lower()
+
+    if "matern" in column or "mat32" in column:
+        return "matern"
+    if "rbf" in column:
+        return "rbf"
+    if "static" in column:
+        return "static"
+    if "pool" in column or "blend" in column or "convex" in column:
+        return "pool"
+    if "raw" in column and "market" not in column:
+        return "raw"
+    if column.startswith("gp_") or column in {
+        "gp_probability",
+        "gp_event_probability",
+        "forecast_probability",
+    }:
+        return "matern"
+    if "market" in column:
+        return "market"
+
+    return infer_model_from_path(path) or "unknown"
 
 
 def normalise_model_name(value: Any) -> str:
@@ -524,24 +554,24 @@ def best_csv_candidate(
 
 def find_event_candidates(root: Path, files: Sequence[Path]) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
+    probability_names = {x.lower() for x in PROBABILITY_CANDIDATES}
+
     for path in files:
         suffixes = "".join(path.suffixes).lower()
         if not (suffixes.endswith(".csv") or suffixes.endswith(".csv.gz")):
             continue
+
         try:
             sample = read_table(path, nrows=5000)
         except Exception:
             continue
+
         date_col = choose(sample.columns, DATE_CANDIDATES)
         rule_col = choose(sample.columns, RULE_CANDIDATES)
         model_col = choose(sample.columns, MODEL_CANDIDATES)
-        prob_cols = [
-            c for c in sample.columns
-            if str(c).lower() in {x.lower() for x in PROBABILITY_CANDIDATES}
-            or ("probab" in str(c).lower() and "total" not in str(c).lower())
-        ]
-        if not (date_col and rule_col and prob_cols):
+        if not (date_col and rule_col):
             continue
+
         try:
             _, event_strategy = derive_event_key_series(
                 sample,
@@ -551,6 +581,30 @@ def find_event_candidates(root: Path, files: Sequence[Path]) -> pd.DataFrame:
             )
         except Exception:
             continue
+
+        group_sizes = sample.groupby(
+            [date_col, rule_col],
+            dropna=False,
+        )[date_col].size()
+
+        if group_sizes.empty or not bool((group_sizes == 11).all()):
+            continue
+
+        prob_cols = [
+            c for c in sample.columns
+            if str(c).lower() in probability_names
+            or (
+                "probab" in str(c).lower()
+                and not any(
+                    token in str(c).lower()
+                    for token in (
+                        "mass", "gap", "difference", "maximum",
+                        "minimum", "error", "count", "total",
+                    )
+                )
+            )
+        ]
+
         event_col = infer_event_column(sample.columns) or event_strategy
         for prob_col in prob_cols:
             rows.append(
@@ -563,9 +617,12 @@ def find_event_candidates(root: Path, files: Sequence[Path]) -> pd.DataFrame:
                     "event_key_strategy": event_strategy,
                     "model_column": model_col or "",
                     "probability_column": prob_col,
-                    "inferred_model": infer_model_from_path(path) or "",
+                    "inferred_model": infer_model_from_probability_column(
+                        str(prob_col), path
+                    ),
                 }
             )
+
     return pd.DataFrame(rows)
 
 
@@ -759,7 +816,9 @@ def reconstruct_raw_static_books(
     m = m.merge(stats, on="decision_rule", how="left", validate="many_to_one")
 
     e = events.copy()
-    e["settlement_date"] = pd.to_datetime(e[event_date], errors="coerce").dt.strftime("%Y-%m-%d")
+    e["settlement_date"] = pd.to_datetime(
+        e[event_date], errors="coerce"
+    ).dt.strftime("%Y-%m-%d")
     if event_key:
         e["event_key"] = e[event_key].astype(str)
     else:
@@ -770,6 +829,7 @@ def reconstruct_raw_static_books(
             e[upper_col], errors="coerce"
         ).astype("string").fillna("inf")
         e["event_key"] = "bounds:[" + lower_text + "," + upper_text + ")"
+
     e["lower"] = pd.to_numeric(e[lower_col], errors="coerce")
     e["upper"] = pd.to_numeric(e[upper_col], errors="coerce")
     if lower_closed_col:
@@ -781,8 +841,41 @@ def reconstruct_raw_static_books(
     else:
         e["upper_closed"] = False
 
+    event_definitions = (
+        e[
+            [
+                "settlement_date",
+                "event_key",
+                "lower",
+                "upper",
+                "lower_closed",
+                "upper_closed",
+            ]
+        ]
+        .drop_duplicates()
+        .sort_values(["settlement_date", "lower", "upper", "event_key"])
+    )
+
+    event_counts = event_definitions.groupby(
+        "settlement_date", dropna=False
+    )["event_key"].nunique()
+    bad_event_dates = event_counts[event_counts != 11]
+    if not bad_event_dates.empty:
+        return pd.DataFrame(), pd.DataFrame(
+            [
+                {
+                    "check": "certified_event_definitions",
+                    "passed": False,
+                    "detail": (
+                        "Expected 11 unique certified events per date; "
+                        f"bad_dates={bad_event_dates.to_dict()}"
+                    ),
+                }
+            ]
+        )
+
     merged = m.merge(
-        e[["settlement_date", "event_key", "lower", "upper", "lower_closed", "upper_closed"]],
+        event_definitions,
         on="settlement_date",
         how="inner",
         validate="many_to_many",
@@ -826,8 +919,19 @@ def reconstruct_raw_static_books(
         checks.extend([
             {
                 "check": "raw_static_books_nonempty",
-                "passed": True,
+                "passed": bool(len(out) > 0),
                 "detail": f"rows={len(out)}, books={len(grouped)}",
+            },
+            {
+                "check": "raw_static_expected_support",
+                "passed": bool(
+                    len(grouped) == 750
+                    and len(out) == 8250
+                ),
+                "detail": (
+                    f"rows={len(out)} expected=8250; "
+                    f"books={len(grouped)} expected=750"
+                ),
             },
             {
                 "check": "raw_static_11_events_per_book",
@@ -1267,6 +1371,9 @@ def main() -> int:
     event_checks.to_csv(out / "phase1_event_book_integrity_checks.csv", index=False)
 
     certified_events = find_certified_events(frozen_root, files)
+    if certified_events is None:
+        certified_events = phase9_file
+
     reconstructed, raw_static_checks = reconstruct_raw_static_books(
         frozen_root,
         weather_file,
