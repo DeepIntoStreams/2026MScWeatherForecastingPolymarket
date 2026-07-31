@@ -1,0 +1,11 @@
+item,passed,critical,detail
+weather residual panel,True,True,"{""dates"": 730, ""duplicate_keys"": 0, ""rows"": 2920, ""rules"": 4, ""source_path"": ""outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv"", ""status"": ""FOUND"", ""unique_keys"": 2920}"
+market prediction keys,True,True,"{""dates"": 102, ""duplicate_keys"": 0, ""rows"": 375, ""rules"": 4, ""source_path"": ""data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv"", ""status"": ""FOUND"", ""unique_keys"": 375}"
+phase9 event probability panel,True,True,"{""dates"": 102, ""duplicate_keys"": 0, ""rows"": 4125, ""rules"": 4, ""source_path"": ""outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv"", ""status"": ""FOUND"", ""unique_keys"": 4125}"
+phase10 exact support panel,True,True,"{""dates"": 97, ""duplicate_keys"": 0, ""rows"": 3850, ""rules"": 4, ""source_path"": ""outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv"", ""status"": ""FOUND"", ""unique_keys"": 3850}"
+GP implementation text evidence,True,True,matching lines=265
+serialised GP model evidence,True,False,registry rows=4
+raw event-book reconstruction,True,True,"models=['raw', 'static']"
+static event-book reconstruction,True,True,"models=['raw', 'static']"
+existing coherent GP/event-book evidence,True,True,"models=['market', 'matern']"
+RBF full-history market book recovered,False,False,"models=['market', 'matern', 'raw', 'static']"

@@ -1,0 +1,13 @@
+relative_path,probability_column,event_key_strategy,rows,books,books_with_11_events,books_mass_close_1,probabilities_in_unit_interval,max_mass_error,status
+outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv,gp_event_probability,event_label,3850,350,350,350,True,7.771561172376096e-16,READABLE
+outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv,market_probability_raw,event_label,3850,350,350,0,True,0.30000000000000004,READABLE
+outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv,market_probability_normalised,event_label,3850,350,350,350,True,8.881784197001252e-16,READABLE
+outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv,gp_event_probability,event_label,4125,375,375,375,True,7.771561172376096e-16,READABLE
+outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_june_out_of_sample_event_panel.csv,gp_event_probability,event_label,1309,119,119,119,True,7.771561172376096e-16,READABLE
+outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_weather_plus_market_event_panel.csv,gp_event_probability,event_label,2816,256,256,256,True,6.661338147750939e-16,READABLE
+outputs/v2_completion/phase20_event_discrepancy_panel.csv,gp_probability,event_key,3850,350,350,350,True,7.771561172376096e-16,READABLE
+outputs/v2_completion/phase20_event_discrepancy_panel.csv,market_source_probability,event_key,3850,350,350,350,True,8.881784197001252e-16,READABLE
+outputs/v2_completion/phase20_event_discrepancy_panel.csv,market_probability,event_key,3850,350,350,350,True,8.881784197001252e-16,READABLE
+outputs/v2_completion/phase20_exact_common_support_event_panel.csv,gp_probability,event_key,3850,350,350,350,True,7.771561172376096e-16,READABLE
+outputs/v2_completion/phase20_exact_common_support_event_panel.csv,market_source_probability,event_key,3850,350,350,350,True,8.881784197001252e-16,READABLE
+outputs/v2_completion/phase20_exact_common_support_event_panel.csv,market_probability,event_key,3850,350,350,350,True,8.881784197001252e-16,READABLE

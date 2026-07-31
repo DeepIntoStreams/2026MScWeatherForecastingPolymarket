@@ -1,0 +1,266 @@
+relative_path,line_number,text
+config/v2/gp_training_design_spec.json,24,"    ""squared_exponential_rbf"","
+config/v2/gp_training_design_spec.json,25,"    ""matern_three_halves"""
+config/v2/gp_validation_spec.json,16,"    ""rbf"": {"
+config/v2/gp_validation_spec.json,17,"      ""name"": ""squared_exponential_rbf"","
+config/v2/gp_validation_spec.json,21,"      ""length_scale_bounds"": [0.05, 10.0],"
+config/v2/gp_validation_spec.json,25,"    ""matern32"": {"
+config/v2/gp_validation_spec.json,26,"      ""name"": ""matern_three_halves"","
+config/v2/gp_validation_spec.json,31,"      ""length_scale_bounds"": [0.05, 10.0],"
+config/v2/gp_validation_spec.json,38,"  ""optimizer"": ""fmin_l_bfgs_b"","
+config/v2/gp_validation_spec.json,39,"  ""optimizer_restarts"": 0,"
+config/v2/gp_validation_spec.json,66,"  ""final_kernel_selection_permitted"": false"
+config/v2/phase1_scope.yaml,63,    - gaussian_process_matern32
+config/v2/phase1_scope.yaml,64,    - gaussian_process_rbf
+config/v2/phase8_clean_gp_spec.json,4,"  ""selected_kernel_family"": ""matern32"","
+config/v2/phase8_clean_gp_spec.json,28,"  ""fixed_phase7_kernel_parameters"": {"
+outputs/v2_completion/phase14_baseline_manifest.json,147,"      ""metric"": ""phase7_rbf_mean_date_crps_c"","
+outputs/v2_completion/phase14_baseline_manifest.json,158,"      ""metric"": ""phase7_matern32_mean_date_crps_c"","
+outputs/v2_completion/phase14_baseline_report.md,37,- phase7_rbf_mean_date_crps_c: PASSED — source `outputs/v2/diagnostics/07_gp_validation_predictions.csv`.
+outputs/v2_completion/phase14_baseline_report.md,38,- phase7_matern32_mean_date_crps_c: PASSED — source `outputs/v2/diagnostics/07_gp_validation_predictions.csv`.
+outputs/v2_completion/phase14_baseline_report.md,64,"- G05: Observation noise, WhiteKernel and jitter — OPEN."
+outputs/v2_completion/phase15_reconciliation_report.md,32,- Estimator: `sklearn.gaussian_process.GaussianProcessRegressor`.
+outputs/v2_completion/phase15_reconciliation_report.md,34,"- Exact `normalize_y`, response mean, response scale, `alpha`, optimiser, restarts, random state and kernels are in `phase15_full_fit_model_registry.csv`."
+outputs/v2_completion/phase15_reconciliation_report.md,39,- The latent variance was obtained by removing the WhiteKernel test-point diagonal while retaining the fitted observation covariance in conditioning.
+outputs/v2_completion/phase15_reconciliation_report.md,40,- The difference between full and latent variance equals the response-scale-adjusted WhiteKernel variance.
+outputs/v2_completion/phase15_reconciliation_report.md,49,- The comparison with the stored Phase 7 score is recorded separately for RBF and Matérn-3/2.
+outputs/v2_completion/phase15_reconciliation_report.md,56,"- G05: observation noise, WhiteKernel and numerical jitter."
+outputs/v2_completion/phase16_static_benchmark_report.md,9,"Phases 7 and 8 were originally constructed to compare RBF and Matérn-3/2 Gaussian-process covariance families. The static rule-specific Gaussian law was introduced later as the required attribution benchmark, but no same-support chronological output had yet been generated. Phase 16 now fits that benchmark on the identical expanding histories and validation observations rather than inferring or imputing a result."
+outputs/v2_completion/phase16_static_benchmark_report.md,16,"- Models: raw point forecast, static Gaussian, RBF GP and Matérn-3/2 GP."
+outputs/v2_completion/phase16_static_benchmark_report.md,27,"- RBF GP, analytical CRPS: 0.877561468 degrees Celsius."
+outputs/v2_completion/phase16_static_benchmark_report.md,29,"- RBF GP, frozen legacy Phase 7 CRPS: 0.877561468 degrees Celsius."
+outputs/v2_completion/phase16_static_benchmark_report.md,36,"- Matérn-3/2 minus RBF: -0.014221469 with 95% date-bootstrap interval [-0.020771434, -0.007946326]."
+outputs/v2_completion/phase18_gp_stability_report.md,9,"Phase 16 established the aggregate ordering of the raw point forecast, static Gaussian correction, RBF GP and Matérn-3/2 GP. Phase 18 tests whether that ordering is concentrated in a single decision rule or validation period and reconciles fold-specific GP hyperparameters with the saved full-history Matérn models."
+outputs/v2_completion/phase18_gp_stability_report.md,16,"- Models: raw point, static Gaussian, RBF GP and Matérn-3/2 GP."
+outputs/v2_completion/phase18_gp_stability_report.md,23,The fold-specific fitted model objects were not persisted in Phase 7. Phase 18 therefore reruns the original Phase 7 source in an isolated temporary copy of the repository while instrumenting scikit-learn's GaussianProcessRegressor.fit method. The replay does not alter the certified repository outputs.
+outputs/v2_completion/phase18_gp_stability_report.md,34,"- Matérn-3/2 minus RBF CRPS: -0.014221 °C with 95% date-bootstrap interval [-0.020771, -0.007946]."
+outputs/v2_completion/phase18_gp_stability_report.md,60,- Matérn-3/2 has lower mean CRPS than RBF in 10 of 16 rule-by-block cells.
+outputs/v2_completion/phase18_gp_stability_report.md,70,- Largest rule-specific Matérn WhiteKernel-noise coefficient of variation across folds: 0.064230.
+outputs/v2_completion/phase18_gp_stability_report.md,79,"Fold-to-fold movement in the fitted signal variance, length scale and WhiteKernel noise quantifies estimation sensitivity. The comparison with the four saved full-history models shows whether the final fitted parameters are consistent with the ranges observed under chronological validation."
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,15,- GP families: RBF and Matérn-3/2.
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,31,| RBF GP | 0.50000 | 0.44247 | -0.05753 | -0.10000 | -0.01370 | 1.93813 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,32,| RBF GP | 0.80000 | 0.76781 | -0.03219 | -0.06918 | 0.00342 | 3.68251 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,33,| RBF GP | 0.90000 | 0.86918 | -0.03082 | -0.06096 | -0.00274 | 4.72645 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,45,| RBF GP | 0.02304 | 0.02852 | 0.05603 | 0.01921 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,53,| RBF GP | 0.48090 | 0.09218 | 0.05697 | 1.16864 | 28.43836 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,62,| RBF GP | -0.07449 | 1.03053 | 1.03181 | -0.01001 | -0.13838 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,71,| RBF GP | 0.51476 | 0.32711 | 0.52365 | 0.21411 | 0.06124 | 0.29057 |
+outputs/v2_completion/phase19_predictive_diagnostics_report.md,80,| RBF GP | 0.02116 | 14.04781 | 10 | 0.17082 |
+outputs/v2_completion/phase21_package_freeze.txt,137,ipykernel @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_02wd6dgggf/croot/ipykernel_1705933834674/work
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_discussion_evidence.md,37,"The Matern model's undercoverage, serial dependence and remaining conditional"
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,71,The Matern-3/2 mean date CRPS is
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,75,for the RBF GP. The paired Matern-minus-static difference is
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,87,Matern model is preferable to RBF but still under-covers and retains dependence
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,191,"No. Matern improves CRPS and quantile calibration relative to RBF, but central"
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,217,"3. raw, static, RBF and Matern CRPS comparison;"
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,218,4. Matern-minus-static by rule and block;
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,230,2. rule-by-block Matern improvement;
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_empirical_instruction_book.md,249,- that the Matern advantage is uniform through time;
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_methodology_evidence.md,15,"rules and four validation blocks. Raw point, static Gaussian, RBF GP and"
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_methodology_evidence.md,16,Matern-3/2 GP predictions are evaluated on the same date-rule support. Target
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_methodology_evidence.md,52,The fitted covariance is a signal kernel plus WhiteKernel observation noise.
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_methodology_evidence.md,55,comparison. The Matern-3/2 and RBF families are compared chronologically; the
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_methodology_evidence.md,56,Matern family is retained because it has the lower mean date CRPS.
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_report.md,35,2. The Matern-3/2 GP improves further on the static correction in aggregate and
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_results_evidence.md,6,"ordering: raw point forecast, static Gaussian, RBF GP and Matern-3/2 GP. The key"
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_results_evidence.md,8,a large improvement over the uncorrected deterministic forecast. The Matern GP
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_results_evidence.md,13,the Matern GP beats the static Gaussian in all four decision rules but only three
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_results_evidence.md,34,the Matern GP. Quantile calibration is nevertheless better for Matern than RBF.
+outputs/v2_completion/phase22_thesis_evidence_pack/phase22_results_evidence.md,35,The correct conclusion is that the Matern GP is the better of the fitted GP
+outputs/v2_completion/phase23_final_freeze/phase23_release_notes.md,34,- Matern-3/2 GP mean date CRPS:
+outputs/v2_completion/phase23_final_freeze/phase23_release_notes.md,36,- Matern-3/2 minus static Gaussian CRPS:
+outputs/v2_completion/phase23_final_freeze/phase23_thesis_handover.md,26,Matern-3/2 GP then models conditional residual structure and improves on that
+tests/v2_completion/test_phase15_crps.py,16,"        self.assertEqual(labels, {""rbf"", ""matern32""})"
+tests/v2_completion/test_phase16_chronology.py,24,"            {""raw_point"", ""static_gaussian"", ""rbf"", ""matern32""},"
+tests/v2_completion/test_phase16_event_scores.py,21,"            & (frame[""model""] == ""matern32_gp"")"
+tests/v2_completion/test_phase16_event_scores.py,55,"                float(exact_june.loc[""matern32_gp"", column])"
+tests/v2_completion/test_phase16_scores.py,18,"            {""raw_point"", ""static_gaussian"", ""rbf"", ""matern32""},"
+tests/v2_completion/test_phase16_scores.py,22,"                float(scores.loc[""rbf"", ""legacy_mean_date_crps_c""]),"
+tests/v2_completion/test_phase16_scores.py,30,"                float(scores.loc[""matern32"", ""legacy_mean_date_crps_c""]),"
+tests/v2_completion/test_phase16_scores.py,46,"                ""rbf_minus_static"","
+tests/v2_completion/test_phase16_scores.py,47,"                ""matern32_minus_static"","
+tests/v2_completion/test_phase16_scores.py,48,"                ""matern32_minus_rbf"","
+tests/v2_completion/test_phase18_figures.py,13,"            / ""phase18_matern_crps_rule_block_heatmap.png"","
+tests/v2_completion/test_phase18_figures.py,16,"            / ""phase18_matern_crps_rule_block_heatmap.pdf"","
+tests/v2_completion/test_phase18_figures.py,19,"            / ""phase18_matern_minus_static_heatmap.png"","
+tests/v2_completion/test_phase18_figures.py,22,"            / ""phase18_matern_minus_static_heatmap.pdf"","
+tests/v2_completion/test_phase18_figures.py,25,"            / ""phase18_matern_length_scale_stability.png"","
+tests/v2_completion/test_phase18_figures.py,28,"            / ""phase18_matern_length_scale_stability.pdf"","
+tests/v2_completion/test_phase18_hyperparameters.py,32,"        self.assertEqual(set(folds[""model""]), {""rbf"", ""matern32""})"
+tests/v2_completion/test_phase18_hyperparameters.py,33,"        self.assertEqual(set(full[""model""]), {""matern32""})"
+tests/v2_completion/test_phase22_evidence_pack.py,52,"            ""Matern-3/2"","
+tools/v2/build_gp_training_design.py,607,"        ""covariance_kernel_candidate_1"""
+tools/v2/build_gp_training_design.py,608,"    ] = ""squared_exponential_rbf"""
+tools/v2/build_gp_training_design.py,611,"        ""covariance_kernel_candidate_2"""
+tools/v2/build_gp_training_design.py,612,"    ] = ""matern_three_halves"""
+tools/v2/build_gp_training_design.py,1138,"                    ""squared_exponential_rbf"""
+tools/v2/build_gp_training_design.py,1139,"                    ""|matern_three_halves"""
+tools/v2/build_gp_training_design.py,1236,"            ""squared_exponential_rbf"","
+tools/v2/build_gp_training_design.py,1237,"            ""matern_three_halves"","
+tools/v2/build_phase10_gp_market_comparison.py,2156,    alpha = (
+tools/v2/build_phase10_gp_market_comparison.py,2163,"            alpha,"
+tools/v2/build_phase10_gp_market_comparison.py,2164,"            1.0 - alpha,"
+tools/v2/build_phase11_frozen_value_gap_trading.py,493,    alpha = (
+tools/v2/build_phase11_frozen_value_gap_trading.py,502,"                alpha,"
+tools/v2/build_phase11_frozen_value_gap_trading.py,503,"                1.0 - alpha,"
+tools/v2/build_phase11_frozen_value_gap_trading.py,512,"                alpha,"
+tools/v2/build_phase11_frozen_value_gap_trading.py,513,"                1.0 - alpha,"
+tools/v2/build_phase8_clean_gp.py,17,from sklearn.gaussian_process import GaussianProcessRegressor
+tools/v2/build_phase8_clean_gp.py,19,"    ConstantKernel,"
+tools/v2/build_phase8_clean_gp.py,20,"    Matern,"
+tools/v2/build_phase8_clean_gp.py,21,"    WhiteKernel,"
+tools/v2/build_phase8_clean_gp.py,894,"        ""fixed_phase7_kernel_parameters"""
+tools/v2/build_phase8_clean_gp.py,956,                ConstantKernel(
+tools/v2/build_phase8_clean_gp.py,963,"                    constant_value_bounds=""fixed"","
+tools/v2/build_phase8_clean_gp.py,965,                * Matern(
+tools/v2/build_phase8_clean_gp.py,969,"                    length_scale_bounds=""fixed"","
+tools/v2/build_phase8_clean_gp.py,972,                + WhiteKernel(
+tools/v2/build_phase8_clean_gp.py,976,"                    noise_level_bounds=""fixed"","
+tools/v2/build_phase8_clean_gp.py,1005,            model = GaussianProcessRegressor(
+tools/v2/build_phase8_clean_gp.py,1007,"                alpha=1e-10,"
+tools/v2/build_phase8_clean_gp.py,1008,"                optimizer=None,"
+tools/v2/build_phase8_clean_gp.py,1009,"                normalize_y=True,"
+tools/v2/build_phase8_clean_gp.py,1102,"                / f""{rule}_matern32_full_fit.joblib"""
+tools/v2/build_phase8_clean_gp.py,1117,"                    ""fixed_kernel_parameters"":"
+tools/v2/build_phase8_clean_gp.py,1126,"                    ""kernel_family"": ""matern32"","
+tools/v2/build_phase8_clean_gp.py,1146,"                        str(model.kernel_),"
+tools/v2/build_phase8_clean_gp.py,1310,"            ""selected_kernel_family"":"
+tools/v2/build_phase8_clean_gp.py,1311,"                ""matern32"","
+tools/v2/build_phase9_gp_event_probabilities.py,2012,        alpha = (
+tools/v2/build_phase9_gp_event_probabilities.py,2020,                alpha
+tools/v2/build_phase9_gp_event_probabilities.py,2028,                1.0 - alpha
+tools/v2/fit_gp_validation_distributions.py,16,from sklearn.gaussian_process import GaussianProcessRegressor
+tools/v2/fit_gp_validation_distributions.py,18,"    ConstantKernel,"
+tools/v2/fit_gp_validation_distributions.py,19,"    Matern,"
+tools/v2/fit_gp_validation_distributions.py,20,"    RBF,"
+tools/v2/fit_gp_validation_distributions.py,21,"    WhiteKernel,"
+tools/v2/fit_gp_validation_distributions.py,66,"    ""07_gp_kernel_paired_date_comparison.csv"""
+tools/v2/fit_gp_validation_distributions.py,72,"    ""07_gp_kernel_rule_summary.csv"""
+tools/v2/fit_gp_validation_distributions.py,81,KERNEL_SUMMARY_PATH = (
+tools/v2/fit_gp_validation_distributions.py,84,"    ""07_gp_kernel_validation_summary.csv"""
+tools/v2/fit_gp_validation_distributions.py,108,KERNEL_ORDER = {
+tools/v2/fit_gp_validation_distributions.py,109,"    ""rbf"": 1,"
+tools/v2/fit_gp_validation_distributions.py,110,"    ""matern32"": 2,"
+tools/v2/fit_gp_validation_distributions.py,262,"    kernel_key: str,"
+tools/v2/fit_gp_validation_distributions.py,265,    kernel_specification = (
+tools/v2/fit_gp_validation_distributions.py,268,        ][kernel_key]
+tools/v2/fit_gp_validation_distributions.py,271,    signal = ConstantKernel(
+tools/v2/fit_gp_validation_distributions.py,273,            kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,277,        constant_value_bounds=tuple(
+tools/v2/fit_gp_validation_distributions.py,278,            kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,284,"    if kernel_key == ""rbf"":"
+tools/v2/fit_gp_validation_distributions.py,285,        covariance = RBF(
+tools/v2/fit_gp_validation_distributions.py,287,                kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,291,            length_scale_bounds=tuple(
+tools/v2/fit_gp_validation_distributions.py,292,                kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,293,"                    ""length_scale_bounds"""
+tools/v2/fit_gp_validation_distributions.py,297,"    elif kernel_key == ""matern32"":"
+tools/v2/fit_gp_validation_distributions.py,298,        covariance = Matern(
+tools/v2/fit_gp_validation_distributions.py,300,                kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,304,            length_scale_bounds=tuple(
+tools/v2/fit_gp_validation_distributions.py,305,                kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,306,"                    ""length_scale_bounds"""
+tools/v2/fit_gp_validation_distributions.py,310,"                kernel_specification[""nu""]"
+tools/v2/fit_gp_validation_distributions.py,315,"            f""Unknown kernel: {kernel_key}"""
+tools/v2/fit_gp_validation_distributions.py,318,    noise = WhiteKernel(
+tools/v2/fit_gp_validation_distributions.py,320,            kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,324,        noise_level_bounds=tuple(
+tools/v2/fit_gp_validation_distributions.py,325,            kernel_specification[
+tools/v2/fit_gp_validation_distributions.py,377,"    kernel_key: str,"
+tools/v2/fit_gp_validation_distributions.py,400,"        kernel_key=kernel_key,"
+tools/v2/fit_gp_validation_distributions.py,404,    model = GaussianProcessRegressor(
+tools/v2/fit_gp_validation_distributions.py,406,        alpha=float(
+tools/v2/fit_gp_validation_distributions.py,411,        optimizer=specification[
+tools/v2/fit_gp_validation_distributions.py,412,"            ""optimizer"""
+tools/v2/fit_gp_validation_distributions.py,414,        n_restarts_optimizer=int(
+tools/v2/fit_gp_validation_distributions.py,416,"                ""optimizer_restarts"""
+tools/v2/fit_gp_validation_distributions.py,419,        normalize_y=bool(
+tools/v2/fit_gp_validation_distributions.py,526,            model.kernel_
+tools/v2/fit_gp_validation_distributions.py,533,"        f""{kernel_key}"""
+tools/v2/fit_gp_validation_distributions.py,557,    ] = kernel_key
+tools/v2/fit_gp_validation_distributions.py,560,"        ""kernel_order"""
+tools/v2/fit_gp_validation_distributions.py,561,    ] = KERNEL_ORDER[
+tools/v2/fit_gp_validation_distributions.py,562,        kernel_key
+tools/v2/fit_gp_validation_distributions.py,667,"        ""kernel"": kernel_key,"
+tools/v2/fit_gp_validation_distributions.py,668,"        ""kernel_order"": ("
+tools/v2/fit_gp_validation_distributions.py,669,            KERNEL_ORDER[
+tools/v2/fit_gp_validation_distributions.py,670,                kernel_key
+tools/v2/fit_gp_validation_distributions.py,714,"        ""log_marginal_likelihood"": float("
+tools/v2/fit_gp_validation_distributions.py,715,            model.log_marginal_likelihood_value_
+tools/v2/fit_gp_validation_distributions.py,720,"        ""optimizer_warning_count"": int("
+tools/v2/fit_gp_validation_distributions.py,723,"        ""optimizer_warnings"": ("
+tools/v2/fit_gp_validation_distributions.py,727,            model.kernel_
+tools/v2/fit_gp_validation_distributions.py,868,        * len(KERNEL_ORDER)
+tools/v2/fit_gp_validation_distributions.py,940,            for kernel_key in KERNEL_ORDER:
+tools/v2/fit_gp_validation_distributions.py,948,"                    f""{kernel_key}"""
+tools/v2/fit_gp_validation_distributions.py,958,"                        kernel_key=kernel_key,"
+tools/v2/fit_gp_validation_distributions.py,986,"            ""kernel_order"","
+tools/v2/fit_gp_validation_distributions.py,995,"            ""kernel_order"","
+tools/v2/fit_gp_validation_distributions.py,1005,"                ""kernel_order"","
+tools/v2/fit_gp_validation_distributions.py,1051,"            ""rbf"": ""rbf_mean_crps_c"","
+tools/v2/fit_gp_validation_distributions.py,1052,"            ""matern32"": ("
+tools/v2/fit_gp_validation_distributions.py,1053,"                ""matern32_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1059,"        ""rbf_minus_matern32_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1062,"            ""rbf_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1065,"            ""matern32_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1073,"            ""rbf_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1076,"            ""matern32_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1078,"        ""rbf"","
+tools/v2/fit_gp_validation_distributions.py,1081,"                ""matern32_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1084,"                ""rbf_mean_crps_c"""
+tools/v2/fit_gp_validation_distributions.py,1086,"            ""matern32"","
+tools/v2/fit_gp_validation_distributions.py,1091,    kernel_summary_records = []
+tools/v2/fit_gp_validation_distributions.py,1093,    for kernel_key in KERNEL_ORDER:
+tools/v2/fit_gp_validation_distributions.py,1094,        kernel_rows = predictions.loc[
+tools/v2/fit_gp_validation_distributions.py,1097,            ].eq(kernel_key)
+tools/v2/fit_gp_validation_distributions.py,1100,        kernel_dates = date_scores.loc[
+tools/v2/fit_gp_validation_distributions.py,1103,            ].eq(kernel_key)
+tools/v2/fit_gp_validation_distributions.py,1106,        raw_error = kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1110,        corrected_error = kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1114,        kernel_summary_records.append(
+tools/v2/fit_gp_validation_distributions.py,1116,"                ""kernel"": kernel_key,"
+tools/v2/fit_gp_validation_distributions.py,1117,"                ""kernel_order"": ("
+tools/v2/fit_gp_validation_distributions.py,1118,                    KERNEL_ORDER[
+tools/v2/fit_gp_validation_distributions.py,1119,                        kernel_key
+tools/v2/fit_gp_validation_distributions.py,1123,                    kernel_dates[
+tools/v2/fit_gp_validation_distributions.py,1128,                    len(kernel_rows)
+tools/v2/fit_gp_validation_distributions.py,1134,                        kernel_key
+tools/v2/fit_gp_validation_distributions.py,1138,                    kernel_dates[
+tools/v2/fit_gp_validation_distributions.py,1143,                    kernel_dates[
+tools/v2/fit_gp_validation_distributions.py,1148,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1153,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1188,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1193,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1198,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1203,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1208,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1213,                    kernel_rows[
+tools/v2/fit_gp_validation_distributions.py,1219,"                ""mean_log_marginal_likelihood"": float("
+tools/v2/fit_gp_validation_distributions.py,1223,"                        ].eq(kernel_key),"
+tools/v2/fit_gp_validation_distributions.py,1224,"                        ""log_marginal_likelihood"","
+tools/v2/fit_gp_validation_distributions.py,1227,"                ""total_optimizer_warnings"": int("
+tools/v2/fit_gp_validation_distributions.py,1231,"                        ].eq(kernel_key),"
+tools/v2/fit_gp_validation_distributions.py,1232,"                        ""optimizer_warning_count"","
+tools/v2/fit_gp_validation_distributions.py,1236,"                ""final_kernel_selected"": False,"
+tools/v2/fit_gp_validation_distributions.py,1240,    kernel_summary = pd.DataFrame(
+tools/v2/fit_gp_validation_distributions.py,1241,        kernel_summary_records
+tools/v2/fit_gp_validation_distributions.py,1244,    kernel_summary[
+tools/v2/fit_gp_validation_distributions.py,1247,        kernel_summary[
+tools/v2/fit_gp_validation_distributions.py,1261,"                ""kernel_order"","
+tools/v2/fit_gp_validation_distributions.py,1423,"                    ""rbf"","
+tools/v2/fit_gp_validation_distributions.py,1424,"                    ""matern32"","
+tools/v2/fit_gp_validation_distributions.py,1644,"                ""final_kernel_not_selected"""
+tools/v2/fit_gp_validation_distributions.py,1648,                not kernel_summary[
+tools/v2/fit_gp_validation_distributions.py,1649,"                    ""final_kernel_selected"""
+tools/v2/fit_gp_validation_distributions.py,1744,"        kernel_summary,"
+tools/v2/fit_gp_validation_distributions.py,1745,"        KERNEL_SUMMARY_PATH,"
+tools/v2/fit_gp_validation_distributions.py,1755,"        KERNEL_SUMMARY_PATH,"
+tools/v2/fit_gp_validation_distributions.py,1759,        kernel_summary.sort_values(
+tools/v2/fit_gp_validation_distributions.py,1762,"                ""kernel_order"","
+tools/v2/fit_gp_validation_distributions.py,1797,"            ""rbf"","
+tools/v2/fit_gp_validation_distributions.py,1798,"            ""matern32"","
+tools/v2/fit_gp_validation_distributions.py,1821,"        ""kernel_hyperparameters_estimated_by"": ("
+tools/v2/fit_gp_validation_distributions.py,1822,"            ""log_marginal_likelihood"""
+tools/v2/fit_gp_validation_distributions.py,1824,"        ""optimizer_restarts"": 0,"
+tools/v2/fit_gp_validation_distributions.py,1832,"        ""final_kernel_selected"": False,"
+tools/v2/fit_gp_validation_distributions.py,1886,        kernel_summary.to_string(

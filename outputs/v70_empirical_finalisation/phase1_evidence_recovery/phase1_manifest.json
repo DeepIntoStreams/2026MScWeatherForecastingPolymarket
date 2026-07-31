@@ -1,0 +1,107 @@
+{
+  "phase": "phase1_evidence_recovery",
+  "generated_utc": "2026-07-31T22:04:28.167645+00:00",
+  "provenance": {
+    "generated_utc": "2026-07-31T22:04:26.153081+00:00",
+    "repo_root": "/Users/edwardlee/Desktop/2026MScWeatherForecastingPolymarket",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_head": "c0055d91a684a9bac33d429e18ad364c4f925233",
+    "frozen_ref": "v2-empirical-complete",
+    "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+    "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+    "frozen_root": "/private/tmp/2026MScWeatherForecastingPolymarket_v2_frozen",
+    "working_tree_clean_before_phase": true
+  },
+  "files": [
+    {
+      "relative_path": "phase1_canonical_existing_event_books.csv.gz",
+      "size_bytes": 610604,
+      "sha256": "4cfccb175646b68f2542877df7cc885da330664492cf13c7116aff8c5dd58609"
+    },
+    {
+      "relative_path": "phase1_completion_status.csv",
+      "size_bytes": 1501,
+      "sha256": "99c0080b7341675a64c0285c8ee0dacf0f7b98b88738a159baf29864fc57d3ed"
+    },
+    {
+      "relative_path": "phase1_event_book_candidate_inventory.csv",
+      "size_bytes": 2073,
+      "sha256": "5b4db7198231a007d84335a3ba9db2c8b75a8c929912425f86cccbeeb95d8ac7"
+    },
+    {
+      "relative_path": "phase1_event_book_integrity_checks.csv",
+      "size_bytes": 2134,
+      "sha256": "7f41b65d989313a0eee6aaeb49e27cda16080fd898cc0e1097f1ec53b2c63079"
+    },
+    {
+      "relative_path": "phase1_file_inventory.csv",
+      "size_bytes": 49446,
+      "sha256": "3359c902a76ff7eda62d3a94e9e5e4c6d845dfb6629d0795636dbba38f5ef53a"
+    },
+    {
+      "relative_path": "phase1_gp_model_registry.csv",
+      "size_bytes": 1647,
+      "sha256": "d029660fbe3b55208324cbb6c216336c3be02c1aca87d9a0570fb68ccf182971"
+    },
+    {
+      "relative_path": "phase1_gp_text_evidence.csv",
+      "size_bytes": 26724,
+      "sha256": "1ca47167c7ce134513f3db638d18cb8ed1b0a4dc005f937bf509e1d32ebd428e"
+    },
+    {
+      "relative_path": "phase1_master_event_book_keys.csv",
+      "size_bytes": 819018,
+      "sha256": "857398ac5851948e5ba8d9ed623b70f1f8329aacd47f61f3d74eeda27c3c013f"
+    },
+    {
+      "relative_path": "phase1_master_exact_support_keys.csv",
+      "size_bytes": 753093,
+      "sha256": "4709ab8f71bab3dc5d949c06e26090eda7d7600e09424fada3d163d297a0ad0c"
+    },
+    {
+      "relative_path": "phase1_master_key_summary.csv",
+      "size_bytes": 707,
+      "sha256": "3f39e1813d061aceb194a97e7ca7c5774f6f3295ac990fc5a08dff74f0aabdfb"
+    },
+    {
+      "relative_path": "phase1_master_market_prediction_keys.csv",
+      "size_bytes": 36051,
+      "sha256": "f7b68ef2e285a712e45fec637cd6e8fc285feea2a98ad08a31e741bcc348aacc"
+    },
+    {
+      "relative_path": "phase1_master_trade_date_keys.csv",
+      "size_bytes": 41370,
+      "sha256": "94be4a969390866b5c01228179b57abf3da95d84d79349cb26cf83fd52c92c29"
+    },
+    {
+      "relative_path": "phase1_master_weather_keys.csv",
+      "size_bytes": 259922,
+      "sha256": "c019a66c0049a859747a1a9abadae779cb197cae74dbed3371cc825c868bd8af"
+    },
+    {
+      "relative_path": "phase1_raw_static_event_book_checks.csv",
+      "size_bytes": 296,
+      "sha256": "695203144b880105bef17c1eaa1589f1aee5e3cc7e4d77e259007a5c182c3649"
+    },
+    {
+      "relative_path": "phase1_reconstructed_raw_static_event_books.csv.gz",
+      "size_bytes": 89620,
+      "sha256": "990fd417094e1ddf3ef0fafee4829bef182365faa5d645e465fdc5315d125401"
+    },
+    {
+      "relative_path": "phase1_report.md",
+      "size_bytes": 10827,
+      "sha256": "de1380ab3827d6485326f7c8077a822ee2de71ddeb1748d90f4586e35eaa8bfa"
+    },
+    {
+      "relative_path": "phase1_repository_provenance.json",
+      "size_bytes": 549,
+      "sha256": "eaea9075e7a432ef22de63cc2d60674de0e90decba6631ebf2bb637e86480d56"
+    },
+    {
+      "relative_path": "phase1_schema_inventory.csv",
+      "size_bytes": 80286,
+      "sha256": "a3df59767e26f12e09b56032389ff6e7b5de19ec76d62794198098a89e9c9eab"
+    }
+  ]
+}

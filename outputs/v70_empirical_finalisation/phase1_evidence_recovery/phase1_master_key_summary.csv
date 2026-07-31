@@ -1,0 +1,6 @@
+object,status,source_path,rows,unique_keys,duplicate_keys,dates,rules
+weather,FOUND,outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv,2920,2920,0,730,4
+market_predictions,FOUND,data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv,375,375,0,102,4
+phase9_event_books,FOUND,outputs/v2/diagnostics/phase9_gp_event_probabilities/phase9_gp_contract_event_probability_panel.csv,4125,4125,0,102,4
+phase10_exact_support,FOUND,outputs/v2/diagnostics/phase10_gp_market_comparison/phase10_exact_common_support_event_panel.csv,3850,3850,0,97,4
+phase11_trade_ledger,FOUND,outputs/v2/diagnostics/phase11_frozen_value_gap_trading/phase11_reference_cost_trade_ledger.csv,350,350,0,97,4

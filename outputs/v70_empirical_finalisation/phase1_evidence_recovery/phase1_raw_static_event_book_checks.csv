@@ -1,0 +1,6 @@
+check,passed,detail
+raw_static_books_nonempty,True,"rows=8250, books=750"
+raw_static_expected_support,True,rows=8250 expected=8250; books=750 expected=750
+raw_static_11_events_per_book,True,bad_books=0
+raw_static_mass_closure,True,max_error=0.000e+00
+raw_static_probabilities_unit_interval,True,
