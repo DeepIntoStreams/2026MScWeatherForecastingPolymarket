@@ -528,6 +528,10 @@ def deterministic_summary(panel: pd.DataFrame) -> pd.DataFrame:
                     group["absolute_forecast_revision_c"].quantile(0.90)
                 ),
                 "update_rate": float(group["update_occurred"].mean()),
+                "nonzero_update_count": int(group["update_occurred"].sum()),
+                "directionally_evaluable_update_count": int(
+                    correct_updates.notna().sum()
+                ),
                 "mean_early_residual_c": float(group["early_residual_c"].mean()),
                 "mean_late_residual_c": float(group["late_residual_c"].mean()),
                 "early_mae_c": float(group["early_absolute_error_c"].mean()),
@@ -648,6 +652,7 @@ def bootstrap_transition_metrics(
             correct_raw = pd.to_numeric(
                 group["directionally_correct_update"], errors="coerce"
             ).to_numpy(dtype=float)
+            directionally_evaluable = update & np.isfinite(correct_raw)
 
             point_estimates = {
                 "mean_forecast_revision_c": float(np.mean(revision)),
@@ -662,8 +667,8 @@ def bootstrap_transition_metrics(
                 ),
                 "improved_date_fraction": float(np.mean(improved)),
                 "directionally_correct_fraction_among_updates": float(
-                    np.nanmean(correct_raw[update])
-                ) if np.any(update) else np.nan,
+                    np.mean(correct_raw[directionally_evaluable])
+                ) if np.any(directionally_evaluable) else np.nan,
             }
             test_values = absolute_improvement
         else:
@@ -732,15 +737,15 @@ def bootstrap_transition_metrics(
                         improved[indices].mean(axis=1)
                     )
 
-                    sampled_update = update[indices]
+                    sampled_evaluable = directionally_evaluable[indices]
                     sampled_correct = np.nan_to_num(
                         correct_raw[indices],
                         nan=0.0,
                     )
                     numerator = (
-                        sampled_correct * sampled_update
+                        sampled_correct * sampled_evaluable
                     ).sum(axis=1)
-                    denominator = sampled_update.sum(axis=1)
+                    denominator = sampled_evaluable.sum(axis=1)
                     correct_fraction = np.divide(
                         numerator,
                         denominator,
@@ -1521,7 +1526,7 @@ def rule_path_summary(
     weather_summary = (
         weather.groupby("decision_rule", as_index=False)
         .agg(
-            dates=("target_date", "nunique"),
+            deterministic_dates=("target_date", "nunique"),
             mean_deterministic_forecast_c=("forecast_daily_max_c", "mean"),
             mean_hko_settlement_c=("hko_daily_max_c", "mean"),
             mean_residual_c=("residual_c", "mean"),
@@ -1532,6 +1537,17 @@ def rule_path_summary(
             ),
         )
     )
+
+    probabilistic_dates = (
+        loss_panel.groupby("decision_rule", as_index=False)
+        .agg(
+            probabilistic_validation_dates=(
+                "target_date",
+                "nunique",
+            )
+        )
+    )
+
     crps_summary = (
         loss_panel.groupby(["model", "decision_rule"], as_index=False)
         .agg(mean_crps_c=("crps_c", "mean"))
@@ -1544,11 +1560,21 @@ def rule_path_summary(
         else f"{column}_mean_crps_c"
         for column in crps_summary.columns
     ]
-    result = weather_summary.merge(
-        crps_summary,
-        on="decision_rule",
-        how="left",
-        validate="one_to_one",
+
+    result = (
+        weather_summary
+        .merge(
+            probabilistic_dates,
+            on="decision_rule",
+            how="left",
+            validate="one_to_one",
+        )
+        .merge(
+            crps_summary,
+            on="decision_rule",
+            how="left",
+            validate="one_to_one",
+        )
     )
     result["decision_rule_order"] = result["decision_rule"].map(
         {rule: index for index, rule in enumerate(RULE_ORDER)}
@@ -1633,7 +1659,7 @@ def make_figures(
     fig, ax = plt.subplots(figsize=(8.0, 5.0))
     ax.boxplot(data, labels=transition_order, showfliers=True)
     ax.axhline(0.0, linestyle="--", linewidth=1)
-    ax.set_ylabel("Earlier MAE minus later MAE (°C)")
+    ax.set_ylabel("Earlier absolute error minus later absolute error (°C)")
     ax.set_title("Date-level absolute-error change after forecast revision")
     fig.tight_layout()
     path = output_dir / "phase3_figure_absolute_error_improvement.pdf"
@@ -1802,7 +1828,7 @@ def thesis_candidate_summary(
     rows.append(
         {
             "candidate_id": "P3_ENDPOINT_CORRECT",
-            "quantity": "directionally correct 24h-to-open revisions among updates",
+            "quantity": "directionally correct 24h-to-open revisions among evaluable updates",
             "point_estimate": endpoint[
                 "directionally_correct_fraction_among_updates"
             ],
@@ -1943,9 +1969,11 @@ def write_report(
         ),
         "",
         (
-            f"Among dates with a non-zero revision, "
+            f"Among the "
+            f"{int(endpoint['directionally_evaluable_update_count'])} "
+            f"non-zero revisions for which a correction direction is defined, "
             f"{100 * endpoint['directionally_correct_fraction_among_updates']:.2f}% "
-            f"of revisions move towards the eventual HKO settlement value."
+            f"move towards the eventual HKO settlement value."
         ),
         "",
         "## Out-of-sample CRPS revision",
@@ -2381,6 +2409,58 @@ def main() -> int:
             "detail": (
                 f"max_error="
                 f"{gp_revision_panel['mean_shift_reconciliation_error_c'].abs().max():.3e}"
+            ),
+        },
+        {
+            "check": "directional_bootstrap_point_reconciliation",
+            "passed": bool(
+                np.allclose(
+                    deterministic_bootstrap.loc[
+                        (
+                            deterministic_bootstrap["metric"]
+                            == "directionally_correct_fraction_among_updates"
+                        )
+                        & (
+                            deterministic_bootstrap["bootstrap_method"]
+                            == "ordinary_date"
+                        ),
+                        ["transition", "point_estimate"],
+                    ]
+                    .sort_values("transition")
+                    ["point_estimate"]
+                    .to_numpy(dtype=float),
+                    deterministic_summary_frame[
+                        [
+                            "transition",
+                            "directionally_correct_fraction_among_updates",
+                        ]
+                    ]
+                    .sort_values("transition")
+                    ["directionally_correct_fraction_among_updates"]
+                    .to_numpy(dtype=float),
+                    atol=config["numerical_tolerance"],
+                    rtol=0.0,
+                    equal_nan=True,
+                )
+            ),
+            "critical": True,
+            "detail": "",
+        },
+        {
+            "check": "rule_path_sample_sizes_explicit",
+            "passed": bool(
+                (rule_summary["deterministic_dates"] == 730).all()
+                and (
+                    rule_summary["probabilistic_validation_dates"]
+                    == 365
+                ).all()
+            ),
+            "critical": True,
+            "detail": (
+                f"deterministic_dates="
+                f"{sorted(rule_summary['deterministic_dates'].unique())}; "
+                f"probabilistic_dates="
+                f"{sorted(rule_summary['probabilistic_validation_dates'].unique())}"
             ),
         },
         {
