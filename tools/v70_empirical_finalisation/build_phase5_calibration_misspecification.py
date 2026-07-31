@@ -214,8 +214,24 @@ def rowwise_lag1_correlation(sampled: np.ndarray) -> np.ndarray:
     array = np.asarray(sampled, dtype=float)
     if array.ndim != 2 or array.shape[1] < 3:
         return np.full(array.shape[0], np.nan)
-    x = array[:, :-1]
-    y = array[:, 1:]
+    return rowwise_pair_correlation(
+        array[:, :-1],
+        array[:, 1:],
+    )
+
+
+def rowwise_pair_correlation(
+    first: np.ndarray,
+    second: np.ndarray,
+) -> np.ndarray:
+    x = np.asarray(first, dtype=float)
+    y = np.asarray(second, dtype=float)
+    if x.ndim != 2 or y.ndim != 2 or x.shape != y.shape:
+        raise ValueError(
+            "Lag-pair correlation requires two equal two-dimensional arrays"
+        )
+    if x.shape[1] < 2:
+        return np.full(x.shape[0], np.nan)
     x_centered = x - x.mean(axis=1, keepdims=True)
     y_centered = y - y.mean(axis=1, keepdims=True)
     numerator = np.sum(x_centered * y_centered, axis=1)
@@ -226,8 +242,47 @@ def rowwise_lag1_correlation(sampled: np.ndarray) -> np.ndarray:
     return np.divide(
         numerator,
         denominator,
-        out=np.full(array.shape[0], np.nan, dtype=float),
+        out=np.full(x.shape[0], np.nan, dtype=float),
         where=denominator > 0,
+    )
+
+
+def moving_block_lag_pair_indices(
+    n: int,
+    block_length: int,
+    replications: int,
+    rng: np.random.Generator,
+) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Resample genuine lag-one pairs from circular consecutive blocks.
+
+    A block of `block_length` observations contributes
+    `block_length - 1` genuine adjacent-date pairs. Pairs across joins between
+    independently sampled blocks are deliberately excluded.
+    """
+    if n < 3:
+        raise ValueError("At least three observations are required")
+    if block_length < 2:
+        raise ValueError("block_length must be at least two")
+
+    pairs_per_block = block_length - 1
+    required_pairs = n - 1
+    blocks_needed = int(math.ceil(required_pairs / pairs_per_block))
+
+    starts = rng.integers(
+        0,
+        n,
+        size=(replications, blocks_needed),
+    )
+    offsets = np.arange(pairs_per_block, dtype=np.int64)
+    first = (
+        starts[:, :, None] + offsets[None, None, :]
+    ) % n
+    second = (first + 1) % n
+
+    return (
+        first.reshape(replications, -1)[:, :required_pairs],
+        second.reshape(replications, -1)[:, :required_pairs],
     )
 
 
@@ -1309,17 +1364,27 @@ def dependence_block_bootstrap(
                     completed = 0
                     while completed < reps:
                         current = min(chunk_size, reps - completed)
-                        indices = moving_block_indices(
-                            len(values), block, current, rng
+                        first_indices, second_indices = (
+                            moving_block_lag_pair_indices(
+                                len(values),
+                                block,
+                                current,
+                                rng,
+                            )
                         )
-                        sampled = values[indices]
                         parts.append(
-                            rowwise_lag1_correlation(sampled)
+                            rowwise_pair_correlation(
+                                values[first_indices],
+                                values[second_indices],
+                            )
                         )
                         completed += current
                     distribution = np.concatenate(parts)
                     lower, upper = percentile_interval(
                         distribution, confidence
+                    )
+                    bootstrap_mean = float(
+                        np.nanmean(distribution)
                     )
                     interval_rows.append(
                         {
@@ -1331,14 +1396,18 @@ def dependence_block_bootstrap(
                             "lag_days": 1,
                             "point_autocorrelation": point,
                             "bootstrap_method": (
-                                "circular_moving_block"
+                                "circular_moving_block_lag_pairs"
                             ),
                             "block_length_days": block,
+                            "lag_pairs_per_replication": len(values) - 1,
+                            "artificial_block_join_pairs_excluded": True,
+                            "bootstrap_mean": bootstrap_mean,
+                            "bootstrap_bias": bootstrap_mean - point,
                             "bootstrap_lower_95": lower,
                             "bootstrap_upper_95": upper,
                             "bootstrap_replications": reps,
                             "seed": local_seed,
-                            "bootstrap_unit": "settlement_date",
+                            "bootstrap_unit": "settlement_date_lag_pair",
                         }
                     )
                 summary_rows.append(
@@ -1983,7 +2052,7 @@ def thesis_ready_table(
                 "secondary_value": point["ljung_box_q14"],
                 "secondary_label": "Ljung-Box Q(14)",
                 "aggregation": "365 date means across rules",
-                "interpretation": "Moving-block interval, b=7",
+                "interpretation": "Moving-block lag-pair interval, b=7",
             }
         )
 
@@ -2486,7 +2555,7 @@ def write_report(
                 (
                     f"Lag-one correlation: "
                     f"**{point['lag1_autocorrelation']:.6f}**. "
-                    "Circular moving-block 95% intervals: "
+                    "Circular moving-block lag-pair 95% intervals: "
                     + "; ".join(
                         (
                             f"b={int(row['block_length_days'])}: "
@@ -2600,6 +2669,23 @@ def self_test() -> None:
     correlations = rowwise_lag1_correlation(synthetic)
     assert correlations.shape == (2,)
     assert np.all(np.isfinite(correlations))
+
+    paired = rowwise_pair_correlation(
+        synthetic[:, :-1],
+        synthetic[:, 1:],
+    )
+    assert np.allclose(correlations, paired)
+
+    rng = np.random.default_rng(123)
+    first, second = moving_block_lag_pair_indices(
+        20,
+        5,
+        7,
+        rng,
+    )
+    assert first.shape == (7, 19)
+    assert second.shape == (7, 19)
+    assert np.all(second == (first + 1) % 20)
 
     values = np.arange(30, dtype=float)
     assert abs(autocorrelation(values, 1) - 1.0) < 1e-12
@@ -3092,6 +3178,44 @@ def main() -> int:
                 .unique()
             )
             == set(config["bootstrap"]["moving_block_lengths"]),
+            "critical": True,
+            "detail": "",
+        },
+        {
+            "check": "dependence_lag_pair_bootstrap_method",
+            "passed": set(
+                dependence_intervals["bootstrap_method"].unique()
+            )
+            == {"circular_moving_block_lag_pairs"}
+            and bool(
+                dependence_intervals[
+                    "artificial_block_join_pairs_excluded"
+                ].astype(bool).all()
+            ),
+            "critical": True,
+            "detail": (
+                f"methods="
+                f"{sorted(dependence_intervals['bootstrap_method'].unique())}"
+            ),
+        },
+        {
+            "check": "dependence_interval_finite",
+            "passed": bool(
+                np.isfinite(
+                    dependence_intervals[
+                        [
+                            "point_autocorrelation",
+                            "bootstrap_mean",
+                            "bootstrap_lower_95",
+                            "bootstrap_upper_95",
+                        ]
+                    ].to_numpy(dtype=float)
+                ).all()
+                and (
+                    dependence_intervals["bootstrap_lower_95"]
+                    <= dependence_intervals["bootstrap_upper_95"]
+                ).all()
+            ),
             "critical": True,
             "detail": "",
         },
