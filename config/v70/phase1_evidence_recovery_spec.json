@@ -1,0 +1,37 @@
+{
+  "phase": "phase1_evidence_recovery",
+  "frozen_ref": "v2-empirical-complete",
+  "expected_frozen_commit_prefix": "1b09000",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "output_root": "outputs/v70_empirical_finalisation/phase1_evidence_recovery",
+  "expected": {
+    "weather_rows": 2920,
+    "weather_dates": 730,
+    "decision_rules": 4,
+    "market_prediction_keys": 375,
+    "phase9_event_rows": 4125,
+    "phase9_books": 375,
+    "phase10_event_rows": 3850,
+    "phase10_books": 350,
+    "phase10_dates": 97,
+    "events_per_book": 11,
+    "june_dates": 30,
+    "reference_cost": 0.01,
+    "reference_trades": 16
+  },
+  "priority_paths": {
+    "weather_residual_panel": "outputs/v2/diagnostics/05_weather_only_forecast_residual_panel.csv",
+    "gp_fold_matrix": "outputs/v2/diagnostics/06_gp_fold_matrix_panel.csv",
+    "gp_validation_predictions": "outputs/v2/diagnostics/07_gp_validation_predictions.csv",
+    "phase8_market_predictions": "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv",
+    "phase8_weather_training": "data/processed/v2/phase8_clean_gp/phase8_weather_only_training_panel.csv",
+    "phase8_market_training": "data/processed/v2/phase8_clean_gp/phase8_weather_plus_market_training_panel.csv",
+    "phase8_june": "data/processed/v2/phase8_clean_gp/phase8_june_out_of_sample_panel.csv",
+    "phase9_dir": "outputs/v2/diagnostics/phase9_gp_event_probabilities",
+    "phase10_dir": "outputs/v2/diagnostics/phase10_gp_market_comparison",
+    "phase11_dir": "outputs/v2/diagnostics/phase11_frozen_value_gap_trading",
+    "phase12_dir": "outputs/v2/diagnostics/phase12_robustness_attribution",
+    "phase13_dir": "outputs/v2/diagnostics/phase13_verified_evidence_pack",
+    "phase15_23_root": "outputs/v2_completion"
+  }
+}
