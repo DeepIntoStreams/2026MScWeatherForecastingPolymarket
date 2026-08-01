@@ -28,6 +28,10 @@ def test_frozen_specification():
     assert data["expected"]["events_per_book"] == 11
     assert data["expected"]["development_dates"] == 67
     assert data["expected"]["june_external_dates"] == 30
+    assert data["input_paths"]["frozen_exact_support_panel"] == (
+        "outputs/v2_completion/"
+        "phase20_exact_common_support_event_panel.csv"
+    )
     assert data["bootstrap"]["replications"] == 10000
     assert data["bootstrap"]["moving_block_lengths"] == [3, 5, 7]
     assert len(data["transitions"]) == 4

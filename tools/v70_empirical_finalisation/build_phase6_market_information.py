@@ -321,6 +321,7 @@ def standardise_event_books(
         frame,
         [
             "event_label",
+            "event_key",
             "contract_label",
             "outcome_label",
             "market_outcome",
@@ -331,7 +332,9 @@ def standardise_event_books(
         frame,
         [
             "event_lower_bound_c",
+            "event_lower_c",
             "lower_bound_c",
+            "lower_bound",
             "lower_c",
             "event_lower",
         ],
@@ -340,7 +343,9 @@ def standardise_event_books(
         frame,
         [
             "event_upper_bound_c",
+            "event_upper_c",
             "upper_bound_c",
+            "upper_bound",
             "upper_c",
             "event_upper",
         ],
@@ -489,6 +494,119 @@ def standardise_event_books(
     )
     result["source_file"] = source_name
     return result.drop(columns=["_event_sort_value"])
+
+
+def standardise_frozen_exact_support_panel(
+    frame: pd.DataFrame,
+    source_name: str,
+) -> pd.DataFrame:
+    # Convert the frozen Phase 20 exact-support panel to canonical long form.
+    #
+    # market_source_probability is the raw market value used by binary
+    # scores. market_probability is the within-book normalised market value
+    # used by categorical scores.
+    required = {
+        "target_date",
+        "decision_rule",
+        "gp_probability",
+        "market_source_probability",
+        "market_probability",
+        "realised_yes",
+        "contract_rank",
+    }
+    missing = sorted(required - set(frame.columns))
+    if missing:
+        raise ValueError(
+            f"{source_name}: missing frozen exact-support columns {missing}; "
+            f"columns={list(frame.columns)}"
+        )
+
+    event_label = (
+        frame["event_key"]
+        if "event_key" in frame.columns
+        else frame["event_label"]
+    )
+    lower_bound = (
+        frame["lower_bound"]
+        if "lower_bound" in frame.columns
+        else pd.Series(np.nan, index=frame.index)
+    )
+    upper_bound = (
+        frame["upper_bound"]
+        if "upper_bound" in frame.columns
+        else pd.Series(np.nan, index=frame.index)
+    )
+
+    common = pd.DataFrame({
+        "target_date": pd.to_datetime(
+            frame["target_date"],
+            errors="coerce",
+        ).dt.strftime("%Y-%m-%d"),
+        "decision_rule": frame["decision_rule"].map(normalise_rule),
+        "outcome": pd.to_numeric(
+            frame["realised_yes"],
+            errors="coerce",
+        ),
+        "event_order_source": pd.to_numeric(
+            frame["contract_rank"],
+            errors="coerce",
+        ),
+        "event_label": event_label,
+        "event_lower_bound_c": pd.to_numeric(
+            lower_bound,
+            errors="coerce",
+        ),
+        "event_upper_bound_c": pd.to_numeric(
+            upper_bound,
+            errors="coerce",
+        ),
+        "market_record_timestamp_utc": np.nan,
+        "decision_timestamp_utc": np.nan,
+    })
+
+    matern = common.copy()
+    matern["model"] = "matern"
+    matern["probability_raw"] = pd.to_numeric(
+        frame["gp_probability"],
+        errors="coerce",
+    )
+    matern["probability_source_normalised"] = matern[
+        "probability_raw"
+    ]
+
+    market = common.copy()
+    market["model"] = "market"
+    market["probability_raw"] = pd.to_numeric(
+        frame["market_source_probability"],
+        errors="coerce",
+    )
+    market["probability_source_normalised"] = pd.to_numeric(
+        frame["market_probability"],
+        errors="coerce",
+    )
+
+    result = pd.concat([matern, market], ignore_index=True)
+    result["event_order"] = pd.to_numeric(
+        result["event_order_source"],
+        errors="coerce",
+    ).astype("Int64")
+    result["source_file"] = source_name
+
+    invalid = (
+        result["target_date"].isna()
+        | ~result["decision_rule"].isin(RULE_ORDER)
+        | result["event_order"].isna()
+        | result["probability_raw"].isna()
+        | result["outcome"].isna()
+    )
+    if invalid.any():
+        sample = result.loc[invalid].head(5).to_dict("records")
+        raise ValueError(
+            f"{source_name}: invalid canonical rows={int(invalid.sum())}; "
+            f"sample={sample}"
+        )
+
+    return result
 
 
 def standardise_exact_keys(frame: pd.DataFrame) -> pd.DataFrame:
@@ -2436,6 +2554,38 @@ def self_test() -> None:
     ].isna().all()
     assert len(standardised_long) == 11
 
+    frozen_wide = pd.DataFrame({
+        "target_date": ["2026-06-01"] * 11,
+        "decision_rule": ["event_day_open"] * 11,
+        "gp_probability": [1 / 11] * 11,
+        "market_source_probability": [0.09] * 11,
+        "market_probability": [1 / 11] * 11,
+        "realised_yes": [0] * 5 + [1] + [0] * 5,
+        "lower_bound": [-np.inf] + list(range(15, 24)) + [24],
+        "upper_bound": [15] + list(range(16, 25)) + [np.inf],
+        "event_key": [f"event_{index}" for index in range(1, 12)],
+        "contract_rank": list(range(1, 12)),
+    })
+    frozen_long = standardise_frozen_exact_support_panel(
+        frozen_wide,
+        "self_test_phase20_exact.csv",
+    )
+    assert len(frozen_long) == 22
+    assert set(frozen_long["model"]) == {"matern", "market"}
+    assert frozen_long["event_order"].notna().all()
+    assert frozen_long["outcome"].sum() == 2
+    market_rows = frozen_long.loc[
+        frozen_long["model"] == "market"
+    ]
+    assert np.allclose(
+        market_rows["probability_raw"],
+        0.09,
+    )
+    assert np.allclose(
+        market_rows["probability_source_normalised"],
+        1 / 11,
+    )
+
     synthetic = pd.DataFrame({
         "target_date": ["2026-06-01"] * 22,
         "decision_rule": ["event_day_open"] * 22,
@@ -2511,12 +2661,18 @@ def main() -> int:
             "detail": detail,
         })
 
-    existing_path = repo_root / inputs["phase1_existing_event_books"]
+    frozen_exact_path = (
+        frozen_root / inputs["frozen_exact_support_panel"]
+    )
     reconstructed_path = repo_root / inputs[
         "phase1_reconstructed_event_books"
     ]
     exact_keys_path = repo_root / inputs["phase1_exact_support_keys"]
-    for path in [existing_path, reconstructed_path, exact_keys_path]:
+    for path in [
+        frozen_exact_path,
+        reconstructed_path,
+        exact_keys_path,
+    ]:
         if not path.is_file():
             raise FileNotFoundError(path)
 
@@ -2531,8 +2687,15 @@ def main() -> int:
             "rev-parse",
             f"{config['frozen_ref']}^{{commit}}",
         ),
-        "existing_event_books": inputs["phase1_existing_event_books"],
-        "existing_event_books_sha256": sha256_file(existing_path),
+        "frozen_exact_support_panel": inputs[
+            "frozen_exact_support_panel"
+        ],
+        "frozen_exact_support_panel_sha256": sha256_file(
+            frozen_exact_path
+        ),
+        "frozen_exact_support_role": (
+            "authoritative selected-Matern and market exact-support books"
+        ),
         "reconstructed_event_books": inputs[
             "phase1_reconstructed_event_books"
         ],
@@ -2555,17 +2718,19 @@ def main() -> int:
         encoding="utf-8",
     )
 
-    existing_raw = read_table(existing_path)
+    frozen_exact_raw = read_table(frozen_exact_path)
     reconstructed_raw = read_table(reconstructed_path)
     exact_keys_raw = read_table(exact_keys_path)
 
     source_inventory = pd.DataFrame([
         {
-            "source": "existing_event_books",
-            "path": inputs["phase1_existing_event_books"],
-            "rows": len(existing_raw),
-            "columns": len(existing_raw.columns),
-            "column_names": "|".join(map(str, existing_raw.columns)),
+            "source": "frozen_exact_support_panel",
+            "path": inputs["frozen_exact_support_panel"],
+            "rows": len(frozen_exact_raw),
+            "columns": len(frozen_exact_raw.columns),
+            "column_names": "|".join(
+                map(str, frozen_exact_raw.columns)
+            ),
         },
         {
             "source": "reconstructed_event_books",
@@ -2587,9 +2752,9 @@ def main() -> int:
         index=False,
     )
 
-    existing = standardise_event_books(
-        existing_raw,
-        existing_path.name,
+    existing = standardise_frozen_exact_support_panel(
+        frozen_exact_raw,
+        frozen_exact_path.name,
     )
     reconstructed = standardise_event_books(
         reconstructed_raw,

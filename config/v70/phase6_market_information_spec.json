@@ -11,7 +11,8 @@
     "phase2_integrity": "outputs/v70_empirical_finalisation/phase2_settlement_error/phase2_integrity_checks.csv",
     "phase3_integrity": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_integrity_checks.csv",
     "phase4_integrity": "outputs/v70_empirical_finalisation/phase4_forecast_attribution/phase4_integrity_checks.csv",
-    "phase5_integrity": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification/phase5_integrity_checks.csv"
+    "phase5_integrity": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification/phase5_integrity_checks.csv",
+    "frozen_exact_support_panel": "outputs/v2_completion/phase20_exact_common_support_event_panel.csv"
   },
   "output_root": "outputs/v70_empirical_finalisation/phase6_market_information",
   "expected": {
