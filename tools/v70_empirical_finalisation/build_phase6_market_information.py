@@ -2963,6 +2963,75 @@ def main() -> int:
                 ),
             })
 
+    legacy_reference_rows: list[dict[str, Any]] = []
+    for metric, legacy_value in config.get(
+        "legacy_june_reference_model_minus_market",
+        {},
+    ).items():
+        row = score_summary.loc[
+            (score_summary["scope_type"] == "overall")
+            & (score_summary["split"] == "june_external")
+            & (score_summary["model"] == "matern")
+            & (score_summary["metric"] == metric)
+        ]
+        if row.empty:
+            calculated = np.nan
+            difference = np.nan
+            status = "summary_row_missing"
+        else:
+            calculated = float(
+                row["mean_model_minus_market"].iloc[0]
+            )
+            difference = calculated - float(legacy_value)
+            status = (
+                "legacy_value_differs_from_authoritative_recomputation"
+                if abs(difference)
+                > float(config["reference_tolerance"])
+                else "legacy_value_matches_within_tolerance"
+            )
+        legacy_reference_rows.append({
+            "metric": metric,
+            "authoritative_recomputed_value": calculated,
+            "legacy_reference_value": float(legacy_value),
+            "difference_authoritative_minus_legacy": difference,
+            "status": status,
+            "critical": False,
+            "interpretation": (
+                "The authoritative recomputation is used in Phase 6. "
+                "The legacy scalar is preserved only for audit."
+            ),
+        })
+
+    legacy_reference_reconciliation = pd.DataFrame(
+        legacy_reference_rows
+    )
+    legacy_reference_reconciliation.to_csv(
+        out / "phase6_legacy_reference_reconciliation.csv",
+        index=False,
+    )
+
+    if legacy_reference_rows:
+        binary_legacy = [
+            row
+            for row in legacy_reference_rows
+            if row["metric"] == "binary_brier"
+        ]
+        if binary_legacy:
+            row = binary_legacy[0]
+            reference_checks.append({
+                "check": "legacy_june_binary_brier_reference_registered",
+                "passed": True,
+                "critical": False,
+                "detail": (
+                    f"authoritative="
+                    f"{row['authoritative_recomputed_value']:.9f}; "
+                    f"legacy={row['legacy_reference_value']:.9f}; "
+                    f"difference="
+                    f"{row['difference_authoritative_minus_legacy']:.3e}; "
+                    f"status={row['status']}"
+                ),
+            })
+
     output_checks = [
         {
             "check": "book_score_rows",

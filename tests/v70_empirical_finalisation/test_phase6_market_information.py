@@ -32,6 +32,14 @@ def test_frozen_specification():
         "outputs/v2_completion/"
         "phase20_exact_common_support_event_panel.csv"
     )
+    assert abs(
+        data["june_reference_model_minus_market"]["binary_brier"]
+        - 0.009246327
+    ) < 1e-12
+    assert abs(
+        data["legacy_june_reference_model_minus_market"]["binary_brier"]
+        - 0.009324
+    ) < 1e-12
     assert data["bootstrap"]["replications"] == 10000
     assert data["bootstrap"]["moving_block_lengths"] == [3, 5, 7]
     assert len(data["transitions"]) == 4

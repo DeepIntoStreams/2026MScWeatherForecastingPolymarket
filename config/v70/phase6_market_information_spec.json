@@ -87,7 +87,7 @@
     }
   ],
   "june_reference_model_minus_market": {
-    "binary_brier": 0.009324,
+    "binary_brier": 0.009246327,
     "binary_log": 0.038628,
     "categorical_log": 0.357342,
     "multiclass_brier": 0.10171
@@ -95,5 +95,12 @@
   "reference_tolerance": 1e-05,
   "figure_dpi": 180,
   "numerical_tolerance": 1e-10,
-  "interpretation_boundary": "The phase compares realised forecast losses and describes co-movement between market prices and forecast revisions. It does not identify a causal market response to a particular weather observation, and it does not interpret lower market loss as proof of market efficiency."
+  "interpretation_boundary": "The phase compares realised forecast losses and describes co-movement between market prices and forecast revisions. It does not identify a causal market response to a particular weather observation, and it does not interpret lower market loss as proof of market efficiency.",
+  "legacy_june_reference_model_minus_market": {
+    "binary_brier": 0.009324
+  },
+  "june_reference_provenance": {
+    "binary_brier": "Direct settlement-date-balanced recomputation from outputs/v2_completion/phase20_exact_common_support_event_panel.csv on the certified 30-date June external support. Mat\u00e9rn loss minus raw-market binary Brier loss.",
+    "legacy_binary_brier": "The earlier 0.009324 scalar is retained for audit only. It is not the acceptance target after the authoritative Phase 20 panel was introduced."
+  }
 }
