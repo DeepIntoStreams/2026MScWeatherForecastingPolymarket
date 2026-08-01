@@ -1,0 +1,98 @@
+{
+  "phase": "phase7_trading_sensitivity_and_attribution",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "input_paths": {
+    "phase1_completion": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_completion_status.csv",
+    "phase2_integrity": "outputs/v70_empirical_finalisation/phase2_settlement_error/phase2_integrity_checks.csv",
+    "phase3_integrity": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_integrity_checks.csv",
+    "phase4_integrity": "outputs/v70_empirical_finalisation/phase4_forecast_attribution/phase4_integrity_checks.csv",
+    "phase5_integrity": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification/phase5_integrity_checks.csv",
+    "phase5_selected_matern_panel": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification/phase5_selected_matern_diagnostic_panel.csv.gz",
+    "phase6_integrity": "outputs/v70_empirical_finalisation/phase6_market_information/phase6_integrity_checks.csv",
+    "phase6_exact_support_panel": "outputs/v70_empirical_finalisation/phase6_market_information/phase6_exact_support_event_panel.csv.gz",
+    "phase8_market_period_predictions": "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv"
+  },
+  "output_root": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity",
+  "expected": {
+    "exact_support_dates": 97,
+    "exact_support_books": 350,
+    "events_per_book": 11,
+    "event_rows": 15400,
+    "candidate_models": [
+      "raw",
+      "static",
+      "matern"
+    ],
+    "candidate_rows": 1050,
+    "development_dates": 67,
+    "june_external_dates": 30,
+    "selected_model": "matern",
+    "selected_rule": "event_day_open",
+    "selected_threshold": 0.12,
+    "selected_cost": 0.01,
+    "june_selected_trades": 16,
+    "june_selected_winning_trades": 1,
+    "june_selected_gross_pnl": 0.1835,
+    "june_selected_net_pnl": 0.0235,
+    "june_break_even_cost": 0.01146875
+  },
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "threshold_grid": {
+    "start": 0.0,
+    "stop": 0.25,
+    "step": 0.01
+  },
+  "transaction_cost_grid": [
+    0.0,
+    0.0025,
+    0.005,
+    0.01,
+    0.015,
+    0.02,
+    0.03
+  ],
+  "reference_cost_sensitivity": {
+    "0.0": 0.1835,
+    "0.005": 0.1035,
+    "0.01": 0.0235,
+    "0.02": -0.1365
+  },
+  "minimum_development_trades": 10,
+  "bootstrap": {
+    "replications": 10000,
+    "seed": 20260805,
+    "confidence_level": 0.95,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "chunk_size": 500
+  },
+  "mean_shift_grid_c": [
+    -1.0,
+    -0.5,
+    -0.25,
+    -0.1,
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "finite_difference_steps_c": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "probability_clip": 1e-12,
+  "numerical_tolerance": 1e-10,
+  "probability_reconciliation_tolerance": 2e-06,
+  "figure_dpi": 180,
+  "interpretation_boundary": "The analysis evaluates a fixed historical one-share long-YES rule. It does not establish executable profitability, market impact, available depth, or causal forecast-to-price transmission. Temperature-mean perturbations describe local decision sensitivity under a frozen predictive scale and frozen market prices."
+}
