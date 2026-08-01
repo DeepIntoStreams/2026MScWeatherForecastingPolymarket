@@ -1,0 +1,157 @@
+{
+  "phase": "phase9_exploratory_trading_laboratory",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "frozen_tag": "v70-empirical-synthesis-complete",
+  "output_root": "outputs/v70_empirical_finalisation/phase9_exploratory_trading",
+  "inputs": {
+    "phase6_integrity": "outputs/v70_empirical_finalisation/phase6_market_information/phase6_integrity_checks.csv",
+    "phase6_event_panel": "outputs/v70_empirical_finalisation/phase6_market_information/phase6_exact_support_event_panel.csv.gz",
+    "phase7_integrity": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity/phase7_integrity_checks.csv",
+    "phase7_benchmark_daily": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity/phase7_selected_policy_daily_panel.csv",
+    "phase7_shifted_events": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity/phase7_shifted_event_probability_panel.csv.gz",
+    "phase8_completion": "outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_completion_status.csv",
+    "phase8_integrity": "outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_integrity_checks.csv"
+  },
+  "models": [
+    "raw",
+    "static",
+    "matern"
+  ],
+  "decision_rules": [
+    "24h_prior",
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "rule_filters": [
+    {
+      "decision_rule": "24h_prior",
+      "filter": "none"
+    },
+    {
+      "decision_rule": "12h_prior",
+      "filter": "none"
+    },
+    {
+      "decision_rule": "6h_prior",
+      "filter": "none"
+    },
+    {
+      "decision_rule": "event_day_open",
+      "filter": "none"
+    },
+    {
+      "decision_rule": "event_day_open",
+      "filter": "confirm_6h"
+    },
+    {
+      "decision_rule": "event_day_open",
+      "filter": "confirm_12h"
+    },
+    {
+      "decision_rule": "event_day_open",
+      "filter": "widening_from_24h"
+    }
+  ],
+  "side_modes": [
+    "long_only",
+    "short_only",
+    "long_short"
+  ],
+  "selection_counts": [
+    1,
+    2,
+    3,
+    5,
+    11
+  ],
+  "sizing_rules": [
+    "one_share",
+    "equal_budget",
+    "edge_weighted",
+    "quarter_kelly"
+  ],
+  "ranking_signals": [
+    "edge",
+    "roi",
+    "logit_gap"
+  ],
+  "probability_edge_thresholds": [
+    0.01,
+    0.02,
+    0.03,
+    0.04,
+    0.05,
+    0.06,
+    0.07,
+    0.08,
+    0.09,
+    0.1,
+    0.12,
+    0.15,
+    0.18,
+    0.2,
+    0.25
+  ],
+  "stability_filters": [
+    "none",
+    "robust_0.10c",
+    "robust_0.25c"
+  ],
+  "primary_cost": 0.01,
+  "cost_grid": [
+    0.0,
+    0.0025,
+    0.005,
+    0.01,
+    0.015,
+    0.02,
+    0.03
+  ],
+  "position_caps": {
+    "quarter_kelly_single_position_cap": 0.25,
+    "quarter_kelly_daily_gross_cap": 1.0
+  },
+  "validation": {
+    "outer_initial_dates": 37,
+    "outer_blocks": 5,
+    "outer_block_dates": 12,
+    "inner_blocks": 3,
+    "inner_min_block_dates": 6,
+    "minimum_inner_positions": 12,
+    "minimum_inner_active_dates": 8,
+    "minimum_positive_inner_blocks": 2,
+    "minimum_outer_total_positions": 20
+  },
+  "selection_objectives": {
+    "robust_sharpe": {
+      "pooled_sharpe_weight": 1.0,
+      "block_sharpe_dispersion_penalty": 0.25,
+      "negative_mean_penalty": 2.0
+    },
+    "pure_sharpe": {},
+    "mean_pnl": {}
+  },
+  "primary_selection_objective": "robust_sharpe",
+  "bootstrap": {
+    "replications": 10000,
+    "reality_check_replications": 3000,
+    "seed": 20260801,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "confidence_level": 0.95
+  },
+  "multiple_testing": {
+    "pbo_slices": 10,
+    "pbo_top_strategies": 500,
+    "reality_check_top_strategies": 100
+  },
+  "tail_probability": 0.05,
+  "numerical_tolerance": 1e-10,
+  "probability_clip": 1e-08,
+  "figure_dpi": 180,
+  "interpretation_boundary": "Phase 9 is post hoc exploratory research. June is no longer an untouched holdout for new strategy selection. Long-only trades use observed raw YES prices. Short positions are synthetic short-YES positions under parity and must not be described as executable long-NO trades unless actual NO prices are later recovered. The objective is to search aggressively but transparently for robust monetisable structure, not to conceal unsuccessful trials."
+}
