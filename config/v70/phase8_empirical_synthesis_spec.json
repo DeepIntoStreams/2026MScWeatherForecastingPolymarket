@@ -1,0 +1,141 @@
+{
+  "phase": "phase8_final_empirical_synthesis",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "output_root": "outputs/v70_empirical_finalisation/phase8_empirical_synthesis",
+  "phase_roots": {
+    "phase1": "outputs/v70_empirical_finalisation/phase1_evidence_recovery",
+    "phase2": "outputs/v70_empirical_finalisation/phase2_settlement_error",
+    "phase3": "outputs/v70_empirical_finalisation/phase3_information_arrival",
+    "phase4": "outputs/v70_empirical_finalisation/phase4_forecast_attribution",
+    "phase5": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification",
+    "phase6": "outputs/v70_empirical_finalisation/phase6_market_information",
+    "phase7": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity"
+  },
+  "dependency_files": {
+    "phase1": "phase1_completion_status.csv",
+    "phase2": "phase2_integrity_checks.csv",
+    "phase3": "phase3_integrity_checks.csv",
+    "phase4": "phase4_integrity_checks.csv",
+    "phase5": "phase5_integrity_checks.csv",
+    "phase6": "phase6_integrity_checks.csv",
+    "phase7": "phase7_integrity_checks.csv"
+  },
+  "manifest_files": {
+    "phase1": "phase1_manifest.json",
+    "phase2": "phase2_manifest.json",
+    "phase3": "phase3_manifest.json",
+    "phase4": "phase4_manifest.json",
+    "phase5": "phase5_manifest.json",
+    "phase6": "phase6_manifest.json",
+    "phase7": "phase7_manifest.json"
+  },
+  "candidate_summary_files": {
+    "phase2": "phase2_thesis_candidate_summary.csv",
+    "phase3": "phase3_thesis_candidate_summary.csv",
+    "phase4": "phase4_thesis_candidate_summary.csv",
+    "phase5": "phase5_thesis_candidate_summary.csv",
+    "phase6": "phase6_thesis_candidate_summary.csv",
+    "phase7": "phase7_thesis_candidate_summary.csv"
+  },
+  "supplementary_files": {
+    "phase1_key_summary": "phase1_master_key_summary.csv",
+    "phase1_gp_registry": "phase1_gp_model_registry.csv",
+    "phase4_model_summary": "phase4_model_score_summary.csv",
+    "phase5_diagnostic_table": "phase5_thesis_ready_diagnostic_table.csv",
+    "phase6_market_age_status": "phase6_market_record_age_status.csv",
+    "phase7_hko_status": "phase7_market_period_hko_availability.csv",
+    "phase7_policy_summary": "phase7_selected_policy_summary.csv",
+    "phase7_cost_sensitivity": "phase7_selected_policy_cost_sensitivity.csv",
+    "phase7_model_attribution": "phase7_common_policy_model_summary.csv",
+    "phase7_mean_shift": "phase7_mean_shift_strategy_sensitivity.csv",
+    "phase7_concentration": "phase7_trade_concentration_summary.csv"
+  },
+  "figure_shortlist": [
+    {
+      "phase": "phase2",
+      "source": "figures/phase2_figure_residual_histogram_gaussian.pdf",
+      "destination": "phase8_residual_distribution.pdf",
+      "placement": "appendix_or_main_if_space",
+      "purpose": "Show the systematic settlement discrepancy and Gaussian approximation."
+    },
+    {
+      "phase": "phase4",
+      "source": "figures/phase4_figure_incremental_attribution.pdf",
+      "destination": "phase8_forecast_attribution.pdf",
+      "placement": "main",
+      "purpose": "Show the dominant raw-to-static gain and smaller GP increments."
+    },
+    {
+      "phase": "phase5",
+      "source": "figures/phase5_figure_selected_matern_coverage.pdf",
+      "destination": "phase8_predictive_coverage.pdf",
+      "placement": "appendix_or_main_if_space",
+      "purpose": "Show mild undercoverage of the selected predictive law."
+    },
+    {
+      "phase": "phase6",
+      "source": "figures/phase6_figure_realised_probability_scatter.pdf",
+      "destination": "phase8_market_realised_probability.pdf",
+      "placement": "main",
+      "purpose": "Show how the market and Mat\u00e9rn law differ on realised-event mass."
+    },
+    {
+      "phase": "phase6",
+      "source": "figures/phase6_figure_total_variation_by_rule.pdf",
+      "destination": "phase8_market_total_variation.pdf",
+      "placement": "appendix",
+      "purpose": "Show material probability-book disagreement across decision rules."
+    },
+    {
+      "phase": "phase7",
+      "source": "figures/phase7_figure_mean_shift_pnl_sensitivity.pdf",
+      "destination": "phase8_mean_shift_pnl_sensitivity.pdf",
+      "placement": "main",
+      "purpose": "Show Wei Pan's delta-like forecast-to-PnL sensitivity."
+    },
+    {
+      "phase": "phase7",
+      "source": "figures/phase7_figure_june_trade_waterfall.pdf",
+      "destination": "phase8_june_trade_concentration.pdf",
+      "placement": "appendix",
+      "purpose": "Show the concentration and fragility of the June PnL."
+    }
+  ],
+  "expected": {
+    "weather_dates": 730,
+    "weather_rows": 2920,
+    "market_prediction_keys": 375,
+    "exact_support_dates": 97,
+    "exact_support_books": 350,
+    "exact_support_event_rows": 3850,
+    "raw_mean_crps": 1.745685,
+    "static_mean_crps": 0.911755,
+    "rbf_mean_crps": 0.877561,
+    "matern_mean_crps": 0.86334,
+    "matern_minus_static": -0.048415,
+    "matern_minus_rbf": -0.014221,
+    "june_binary_brier_difference": 0.009323867,
+    "june_binary_log_difference": 0.038628062,
+    "june_categorical_log_difference": 0.357342206,
+    "june_multiclass_brier_difference": 0.101709592,
+    "selected_rule": "event_day_open",
+    "selected_threshold": 0.12,
+    "selected_cost": 0.01,
+    "june_trade_count": 16,
+    "june_winning_trades": 1,
+    "june_net_pnl": 0.0235,
+    "june_raw_signal_pnl": -1.8075,
+    "june_static_signal_pnl": 0.0235,
+    "june_matern_signal_pnl": 0.0235
+  },
+  "numerical_tolerance": 2e-06,
+  "strict_tolerance": 1e-10,
+  "no_refit_boundary": [
+    "Do not refit the GP.",
+    "Do not alter the selected Mat\u00e9rn kernel.",
+    "Do not reselect the pool weight.",
+    "Do not reselect the trading rule or threshold using June.",
+    "Do not impute missing forecast or market support.",
+    "Do not introduce a new model family into the frozen comparison."
+  ]
+}
