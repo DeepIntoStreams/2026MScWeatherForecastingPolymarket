@@ -459,6 +459,42 @@ def build_candidate_panel(
             for column, value in zip(stable_index, key_values)
         }
         for column in metadata_columns:
+            if column == "event_label":
+                label_candidates = group.loc[
+                    group[column].notna(),
+                    ["model", column],
+                ].copy()
+                if label_candidates.empty:
+                    row[column] = np.nan
+                    row["event_label_variant_count"] = 0
+                else:
+                    label_candidates[column] = (
+                        label_candidates[column].astype(str)
+                    )
+                    row["event_label_variant_count"] = int(
+                        label_candidates[column].nunique()
+                    )
+                    label_priority = {
+                        "market": 0,
+                        "matern": 1,
+                        "static": 2,
+                        "raw": 3,
+                    }
+                    label_candidates["_label_priority"] = (
+                        label_candidates["model"]
+                        .map(label_priority)
+                        .fillna(9)
+                    )
+                    label_candidates["_label_length"] = (
+                        label_candidates[column].str.len()
+                    )
+                    preferred = label_candidates.sort_values(
+                        ["_label_priority", "_label_length"],
+                        ascending=[True, False],
+                    ).iloc[0]
+                    row[column] = preferred[column]
+                continue
+
             nonmissing = group[column].dropna()
             unique_values = pd.unique(nonmissing)
             if len(unique_values) > 1:
@@ -2276,9 +2312,13 @@ def self_test() -> None:
                 "split": "june_external",
                 "event_order": event_order,
                 "event_label": (
-                    f"event_{event_order}"
-                    if model in {"matern", "market"}
-                    else np.nan
+                    f"Will event {event_order} settle Yes?"
+                    if model == "market"
+                    else (
+                        f"canonical_event_{event_order}"
+                        if model == "matern"
+                        else np.nan
+                    )
                 ),
                 "event_lower_bound_c": float(event_order - 1),
                 "event_upper_bound_c": float(event_order),
@@ -2315,6 +2355,12 @@ def self_test() -> None:
         ].iloc[0]
         == 2
     )
+    assert asymmetric_candidates["event_label"].str.startswith(
+        "Will event"
+    ).all()
+    assert (
+        asymmetric_candidates["event_label_variant_count"] == 2
+    ).all()
 
     market_predictions = pd.DataFrame({
         "target_date": ["2026-06-01", "2026-06-02"],
