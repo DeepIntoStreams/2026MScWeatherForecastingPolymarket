@@ -474,25 +474,69 @@ def build_candidate_panel(
                     row["event_label_variant_count"] = int(
                         label_candidates[column].nunique()
                     )
+                    label_text = label_candidates[column].str.strip()
+                    label_candidates["_is_hex_identifier"] = (
+                        label_text.str.fullmatch(
+                            r"0x[0-9a-fA-F]{32,}"
+                        )
+                        .fillna(False)
+                    )
+                    label_candidates["_is_human_readable"] = (
+                        (
+                            label_text.str.contains(
+                                r"\s",
+                                regex=True,
+                                na=False,
+                            )
+                            & (
+                                label_text.str.contains(
+                                    r"\?",
+                                    regex=True,
+                                    na=False,
+                                )
+                                | label_text.str.match(
+                                    r"(?i)^(will|what|is|does|the)\b",
+                                    na=False,
+                                )
+                            )
+                        )
+                        | label_text.str.contains(
+                            "highest temperature",
+                            case=False,
+                            regex=False,
+                            na=False,
+                        )
+                    )
                     label_priority = {
-                        "market": 0,
-                        "matern": 1,
-                        "static": 2,
-                        "raw": 3,
+                        "raw": 0,
+                        "static": 1,
+                        "market": 2,
+                        "matern": 3,
                     }
-                    label_candidates["_label_priority"] = (
+                    label_candidates["_source_priority"] = (
                         label_candidates["model"]
                         .map(label_priority)
                         .fillna(9)
                     )
                     label_candidates["_label_length"] = (
-                        label_candidates[column].str.len()
+                        label_text.str.len()
                     )
                     preferred = label_candidates.sort_values(
-                        ["_label_priority", "_label_length"],
-                        ascending=[True, False],
+                        [
+                            "_is_human_readable",
+                            "_is_hex_identifier",
+                            "_label_length",
+                            "_source_priority",
+                        ],
+                        ascending=[False, True, False, True],
                     ).iloc[0]
                     row[column] = preferred[column]
+                    row["event_label_selected_from_model"] = (
+                        preferred["model"]
+                    )
+                    row["event_label_is_hex_identifier"] = bool(
+                        preferred["_is_hex_identifier"]
+                    )
                 continue
 
             nonmissing = group[column].dropna()
@@ -2243,7 +2287,7 @@ def write_report(
         "- Main text: selected rule, June point estimate, uncertainty interval and cost reversal.",
         "- Main text: raw/static/Matérn common-policy attribution.",
         "- Main text or appendix: mean-shift PnL sensitivity requested from a risk-management perspective.",
-        "- Appendix: full threshold-cost surface, block bootstrap, concentration, error quartiles and model-specific policies.",
+        "- Appendix: full threshold-cost surface, block bootstrap, concentration, signal and probability-sensitivity quartiles, and model-specific policies. Exact temperature-error quartiles require recovered market-period HKO values.",
         "- State explicitly that predictive information, market outperformance and trading profitability are distinct claims.",
         "",
     ]
@@ -2313,11 +2357,10 @@ def self_test() -> None:
                 "event_order": event_order,
                 "event_label": (
                     f"Will event {event_order} settle Yes?"
-                    if model == "market"
+                    if model in {"raw", "static"}
                     else (
-                        f"canonical_event_{event_order}"
-                        if model == "matern"
-                        else np.nan
+                        "0x"
+                        + f"{event_order:064x}"
                     )
                 ),
                 "event_lower_bound_c": float(event_order - 1),
@@ -2361,6 +2404,14 @@ def self_test() -> None:
     assert (
         asymmetric_candidates["event_label_variant_count"] == 2
     ).all()
+    assert (
+        asymmetric_candidates["event_label_selected_from_model"]
+        .isin({"raw", "static"})
+        .all()
+    )
+    assert not asymmetric_candidates[
+        "event_label_is_hex_identifier"
+    ].any()
 
     market_predictions = pd.DataFrame({
         "target_date": ["2026-06-01", "2026-06-02"],
@@ -3001,7 +3052,13 @@ def main() -> int:
             ),
         },
         {
-            "check": "deterministic_forecast_crosscheck",
+            "check": (
+                "deterministic_forecast_crosscheck"
+                if not weather[
+                    "forecast_daily_max_crosscheck_difference_c"
+                ].dropna().empty
+                else "deterministic_forecast_crosscheck_unavailable_registered"
+            ),
             "passed": bool(
                 weather[
                     "forecast_daily_max_crosscheck_difference_c"
@@ -3013,10 +3070,26 @@ def main() -> int:
                     <= 1e-10
                 )
             ),
-            "critical": True,
+            "critical": bool(
+                not weather[
+                    "forecast_daily_max_crosscheck_difference_c"
+                ].dropna().empty
+            ),
             "detail": (
-                "maximum_difference="
-                f"{weather['forecast_daily_max_crosscheck_difference_c'].dropna().abs().max() if not weather['forecast_daily_max_crosscheck_difference_c'].dropna().empty else float('nan'):.3e}"
+                (
+                    "available_rows="
+                    f"{len(weather['forecast_daily_max_crosscheck_difference_c'].dropna())}; "
+                    "maximum_difference="
+                    f"{weather['forecast_daily_max_crosscheck_difference_c'].dropna().abs().max():.3e}"
+                )
+                if not weather[
+                    "forecast_daily_max_crosscheck_difference_c"
+                ].dropna().empty
+                else (
+                    "available_rows=0; status=unavailable; "
+                    "reason=Phase 5 validation support ends before the "
+                    "Phase 8 market-prediction period"
+                )
             ),
         },
         {
