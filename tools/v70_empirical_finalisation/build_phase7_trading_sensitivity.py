@@ -396,28 +396,101 @@ def build_candidate_panel(
     panel: pd.DataFrame,
     config: Mapping[str, Any],
 ) -> pd.DataFrame:
-    index = [
+    # Use only the certified event key in the probability pivot. Descriptive
+    # metadata can legitimately be absent for reconstructed raw/static rows.
+    stable_index = [
         "target_date",
         "decision_rule",
         "split",
         "event_order",
-        "event_label",
-        "event_lower_bound_c",
-        "event_upper_bound_c",
-        "outcome",
     ]
-    available_index = [column for column in index if column in panel.columns]
-    pivot = panel.pivot_table(
-        index=available_index,
-        columns="model",
-        values=["probability_raw", "probability_normalised"],
-        aggfunc="first",
+    missing_stable = [
+        column for column in stable_index if column not in panel.columns
+    ]
+    if missing_stable:
+        raise ValueError(
+            f"Candidate panel missing stable key columns: {missing_stable}"
+        )
+
+    duplicate_counts = (
+        panel.groupby(stable_index + ["model"], dropna=False)
+        .size()
     )
-    pivot.columns = [
+    if int((duplicate_counts != 1).sum()) > 0:
+        bad = duplicate_counts.loc[duplicate_counts != 1]
+        raise ValueError(
+            "Candidate probability panel is not unique on the certified "
+            f"event-model key. Bad keys={len(bad)}"
+        )
+
+    probability_pivot = panel.pivot(
+        index=stable_index,
+        columns="model",
+        values=[
+            "probability_raw",
+            "probability_normalised",
+        ],
+    )
+    probability_pivot.columns = [
         f"{quantity}_{model}"
-        for quantity, model in pivot.columns
+        for quantity, model in probability_pivot.columns
     ]
-    pivot = pivot.reset_index()
+    probability_pivot = probability_pivot.reset_index()
+
+    metadata_columns = [
+        column
+        for column in [
+            "event_label",
+            "event_lower_bound_c",
+            "event_upper_bound_c",
+            "outcome",
+        ]
+        if column in panel.columns
+    ]
+
+    metadata_rows: list[dict[str, Any]] = []
+    for key_values, group in panel.groupby(
+        stable_index,
+        sort=False,
+        dropna=False,
+    ):
+        row = {
+            column: value
+            for column, value in zip(stable_index, key_values)
+        }
+        for column in metadata_columns:
+            nonmissing = group[column].dropna()
+            unique_values = pd.unique(nonmissing)
+            if len(unique_values) > 1:
+                numeric = pd.to_numeric(
+                    pd.Series(unique_values),
+                    errors="coerce",
+                )
+                if (
+                    numeric.notna().all()
+                    and float(numeric.max() - numeric.min())
+                    <= float(config["numerical_tolerance"])
+                ):
+                    row[column] = float(numeric.iloc[0])
+                else:
+                    raise ValueError(
+                        "Inconsistent event metadata on certified key "
+                        f"{row}: column={column}; "
+                        f"values={list(unique_values)}"
+                    )
+            elif len(unique_values) == 1:
+                row[column] = unique_values[0]
+            else:
+                row[column] = np.nan
+        metadata_rows.append(row)
+
+    metadata = pd.DataFrame(metadata_rows)
+    pivot = probability_pivot.merge(
+        metadata,
+        on=stable_index,
+        how="left",
+        validate="one_to_one",
+    )
 
     required = [
         "probability_raw_market",
@@ -429,6 +502,21 @@ def build_candidate_panel(
     missing = [column for column in required if column not in pivot.columns]
     if missing:
         raise ValueError(f"Candidate pivot missing columns: {missing}")
+
+    bad_nonfinite: dict[str, int] = {}
+    for column in required:
+        values = pd.to_numeric(
+            pivot[column],
+            errors="coerce",
+        ).to_numpy(dtype=float)
+        count = int((~np.isfinite(values)).sum())
+        if count > 0:
+            bad_nonfinite[column] = count
+    if bad_nonfinite:
+        raise ValueError(
+            "Candidate pivot contains non-finite probabilities: "
+            f"{bad_nonfinite}"
+        )
 
     pieces: list[pd.DataFrame] = []
     for model in MODEL_ORDER:
@@ -447,11 +535,31 @@ def build_candidate_panel(
             frame["model_probability"]
             - frame["market_probability_raw"]
         )
-        selected_index = frame.groupby(
-            ["target_date", "decision_rule"],
-            sort=False,
-        )["signal_gap"].idxmax()
-        selected = frame.loc[selected_index].copy()
+
+        if not np.isfinite(
+            frame["signal_gap"].to_numpy(dtype=float)
+        ).all():
+            raise ValueError(
+                f"Non-finite signal gaps remain for model={model}"
+            )
+
+        selected_index = (
+            frame.groupby(
+                ["target_date", "decision_rule"],
+                sort=False,
+            )["signal_gap"]
+            .idxmax()
+        )
+        if selected_index.isna().any():
+            raise ValueError(
+                f"Could not select a candidate event for model={model}; "
+                f"books_with_missing_selection="
+                f"{int(selected_index.isna().sum())}"
+            )
+
+        selected = frame.loc[
+            selected_index.astype(int).to_numpy()
+        ].copy()
         selected["gross_pnl_if_traded"] = (
             selected["outcome"]
             - selected["market_probability_raw"]
@@ -469,7 +577,6 @@ def build_candidate_panel(
     return result.sort_values(
         ["model_order", "target_date", "rule_order"]
     ).reset_index(drop=True)
-
 
 def build_threshold_cost_surface(
     candidates: pd.DataFrame,
@@ -2158,6 +2265,55 @@ def self_test() -> None:
             }
         }),
         np.round(np.arange(0.0, 0.251, 0.01), 2),
+    )
+
+    asymmetric_rows: list[dict[str, Any]] = []
+    for model in ["raw", "static", "matern", "market"]:
+        for event_order in range(1, 4):
+            asymmetric_rows.append({
+                "target_date": "2026-06-01",
+                "decision_rule": "event_day_open",
+                "split": "june_external",
+                "event_order": event_order,
+                "event_label": (
+                    f"event_{event_order}"
+                    if model in {"matern", "market"}
+                    else np.nan
+                ),
+                "event_lower_bound_c": float(event_order - 1),
+                "event_upper_bound_c": float(event_order),
+                "outcome": 1.0 if event_order == 2 else 0.0,
+                "model": model,
+                "probability_raw": (
+                    [0.2, 0.5, 0.3][event_order - 1]
+                    if model == "market"
+                    else [0.1, 0.6, 0.3][event_order - 1]
+                ),
+                "probability_normalised": {
+                    "raw": [0.1, 0.6, 0.3],
+                    "static": [0.15, 0.55, 0.3],
+                    "matern": [0.2, 0.65, 0.15],
+                    "market": [0.2, 0.5, 0.3],
+                }[model][event_order - 1],
+            })
+    asymmetric_panel = pd.DataFrame(asymmetric_rows)
+    asymmetric_candidates = build_candidate_panel(
+        asymmetric_panel,
+        {"numerical_tolerance": 1e-10},
+    )
+    assert len(asymmetric_candidates) == 3
+    assert set(asymmetric_candidates["signal_model"]) == {
+        "raw",
+        "static",
+        "matern",
+    }
+    assert asymmetric_candidates["signal_gap"].notna().all()
+    assert (
+        asymmetric_candidates.loc[
+            asymmetric_candidates["signal_model"] == "matern",
+            "event_order",
+        ].iloc[0]
+        == 2
     )
 
     market_predictions = pd.DataFrame({
