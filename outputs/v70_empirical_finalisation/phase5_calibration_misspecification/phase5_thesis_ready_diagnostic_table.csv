@@ -1,0 +1,18 @@
+diagnostic,reference_or_nominal,estimate,lower_95,upper_95,secondary_value,secondary_label,aggregation,interpretation
+50% central coverage,0.5,0.4602739726027397,0.4178082191780822,0.5027397260273972,1.9624239636103489,mean interval width (°C),"all 1,460 date-rule rows; date bootstrap",Undercoverage
+80% central coverage,0.8,0.7828767123287671,0.7472602739726028,0.8191780821917808,3.728666747116557,mean interval width (°C),"all 1,460 date-rule rows; date bootstrap",Undercoverage
+90% central coverage,0.9,0.8808219178082192,0.8527397260273972,0.9089041095890411,4.785691959325668,mean interval width (°C),"all 1,460 date-rule rows; date bootstrap",Undercoverage
+standardised residual mean,0.0,-0.050806920950575915,,,,,365 date means across four rules,Gaussian reference diagnostic
+standardised residual standard_deviation,1.0,1.0049642022113114,,,,,365 date means across four rules,Gaussian reference diagnostic
+standardised residual rmse,1.0,1.0048718307781301,,,,,365 date means across four rules,Gaussian reference diagnostic
+standardised residual skewness,0.0,-0.036591264092909,,,,,365 date means across four rules,Gaussian reference diagnostic
+standardised residual excess_kurtosis,0.0,-0.0851212610247778,,,,,365 date means across four rules,Gaussian reference diagnostic
+integrated_absolute_calibration_error,0.0,0.015588764355887644,,,,,"99 quantile points, 1%-99%",Smaller absolute value is better
+root_mean_squared_calibration_error,0.0,0.018825506425436043,,,,,"99 quantile points, 1%-99%",Smaller absolute value is better
+maximum_absolute_calibration_error,0.0,0.032465753424657545,,,,,"99 quantile points, 1%-99%",Smaller absolute value is better
+mean_signed_calibration_error,0.0,0.012439463124394626,,,,,"99 quantile points, 1%-99%",Smaller absolute value is better
+mean PIT,0.5,0.48757695472860396,,,0.034307128785752816,KS statistic,"1,460 date-rule PIT values",Uniform PIT reference
+PIT variance,0.08333333333333333,0.08915746166983668,,,0.5113982428040402,CvM statistic,"1,460 date-rule PIT values",Uniform PIT reference
+standardised_residual lag-one correlation,0.0,0.5097679178714232,0.3981875232498344,0.5878080119407294,329.42189874747015,Ljung-Box Q(14),365 date means across rules,"Moving-block lag-pair interval, b=7"
+squared_standardised_residual lag-one correlation,0.0,0.2382560017614505,0.09922320633431865,0.3478253431276328,49.989185473250856,Ljung-Box Q(14),365 date means across rules,"Moving-block lag-pair interval, b=7"
+conditional-variance joint Wald test,0.05,0.0100106116582999,,,0.0270958362006404,auxiliary R²,365 date clusters,"Wald=23.206174, df=10"

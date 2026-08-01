@@ -1,0 +1,276 @@
+{
+  "phase": "phase5_calibration_misspecification",
+  "generated_utc": "2026-07-31T23:56:24.957756+00:00",
+  "provenance": {
+    "generated_utc": "2026-07-31T23:56:03.408935+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "53ab58adba2395b2ac86df66b62a92855fddae7f",
+    "frozen_ref": "v2-empirical-complete",
+    "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+    "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+    "phase3_loss_panel": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_probabilistic_loss_panel.csv.gz",
+    "phase3_loss_panel_sha256": "2e4f568baf38722591844aa9d83ca468cfca88a9b8cbaa53b299f12051d8b7cf",
+    "phase19_source_hashes": {
+      "phase19_coverage_summary.csv": "f3ada723671d45501918e7a9ac5d482db0aecc001dd4f57aab6c80918b8d3dc5",
+      "phase19_standardised_residual_summary.csv": "fa816688352250ccb0e016aa93f408ee62ac197d5a17e138cecd1b90a1c116ca",
+      "phase19_autocorrelation.csv": "fb2c48e8c6e7c88d671a632f1a951dcfdcaa0d10717b86ac832e85a460667eb4",
+      "phase19_cross_rule_residual_correlations.csv": "e854ca20a80fde1a9e6190014d28ce8b5d69c5cbcf3f82c72a61186376cbccec",
+      "phase19_dependence_summary.csv": "6772fdc55d800262e48c0fd80ad15edc421c368e38603b1fb87c3676bfe82b11",
+      "phase19_pit_summary.csv": "33916bd0c436d34ee96646e028ad483c86245db4cf13dd3847fd883d43c5a04b",
+      "phase19_pit_histogram.csv": "d7b42ac64978a36b31da0ce4b4085a1a29e979153fe0e53ab6861e0d7b76fbf4",
+      "phase19_quantile_calibration.csv": "c2503dab44afa690e2d71e391dd22db0daa973a1173154e411388e7542e467aa",
+      "phase19_quantile_calibration_summary.csv": "eb4058e09dfa29d1470d9f86ba4368ad9616d16f2c41820faf2a9481682bd36e",
+      "phase19_sharpness_summary.csv": "a9f795967e49802b5324c6a0ea60cbd30cb24072979188c7b261c0df7a0a6aba",
+      "phase19_heteroskedasticity_quartiles.csv": "d395798040cd19e849aabf679358af521a4a41fcebda1b827f3be0824228f2d5",
+      "phase19_variance_regression_summary.csv": "809a27bbfec9141ddf82e9fa7ca72f9628db7ee58ccee058bbb6833da9570e1f",
+      "phase19_variance_regression_coefficients.csv": "6a39d81a5040393cd977516d82a17c2c08a88681d3f91df19413bdeb01d780c1",
+      "phase19_reconciliation_checks.csv": "83da2f160f645bb06c5de4be7177c37799afee0d454818c17c0c2fa2ad6fe11d"
+    },
+    "bootstrap_replications": 10000,
+    "bootstrap_seed": 20260803,
+    "moving_block_lengths": [
+      3,
+      5,
+      7,
+      14
+    ],
+    "interpretation_boundary": "The diagnostics assess the adequacy of the frozen Gaussian predictive law. They do not trigger model reselection, refitting, a new covariance search, or any use of market outcomes in weather-model estimation."
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase5_figure_normal_qq.pdf",
+      "size_bytes": 30435,
+      "sha256": "9ca9305ff52e2f9c5a91eb2970dbcfdc2c3f483e595f39127024b313f4e28fdc"
+    },
+    {
+      "relative_path": "figures/phase5_figure_pit_histogram.pdf",
+      "size_bytes": 12570,
+      "sha256": "def723adc05ff47b4e593bbcb247747e98bdd742187af131bc37278b9cd8d0e9"
+    },
+    {
+      "relative_path": "figures/phase5_figure_quantile_calibration.pdf",
+      "size_bytes": 13318,
+      "sha256": "d23a8968dd5b48363d31aceca4f112aa34d639f8b7fd104c9900d6bfa15148c6"
+    },
+    {
+      "relative_path": "figures/phase5_figure_selected_matern_coverage.pdf",
+      "size_bytes": 13579,
+      "sha256": "5f57b5e41d65b3bff9a7b1a290ad522b4a0c87f0ffb7b25943a65cc540c64679"
+    },
+    {
+      "relative_path": "figures/phase5_figure_squared_residual_acf.pdf",
+      "size_bytes": 19048,
+      "sha256": "f87a46bee907687fc7c75bad85a45802feffe4c860a1bb2b6aaf1949274b80c4"
+    },
+    {
+      "relative_path": "figures/phase5_figure_standardised_residual_acf.pdf",
+      "size_bytes": 18812,
+      "sha256": "6fde4d31373352837908c8b049bd8748a941116d31d77131a63ec9b3aee9f82b"
+    },
+    {
+      "relative_path": "figures/phase5_figure_variance_by_sharpness_quartile.pdf",
+      "size_bytes": 13622,
+      "sha256": "98af8acdcda04b9b266899d98ff4cc2a96e4cbc2035fc5d1828d92f9dc66b8a1"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_autocorrelation.csv",
+      "size_bytes": 34490,
+      "sha256": "fa59236cf61953cc1f88acff4bbd00f393c3d5f8c082bcf7b71f5783876122d2"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_coverage_summary.csv",
+      "size_bytes": 33777,
+      "sha256": "90822ac1349254a63dc2ead0643464c0337f93aa94c4b9e5e5f7c0c8cb8db515"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_cross_rule_residual_correlations.csv",
+      "size_bytes": 1920,
+      "sha256": "cea35e0686ca333bc8c0e0f4cd6b404981fb17c34232ab7fa516858aa84ca6cb"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_dependence_summary.csv",
+      "size_bytes": 5589,
+      "sha256": "514e7c6dab30478ee214c759fdc3558bd4422a498a787bc5b283b0901007b3ef"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_heteroskedasticity_quartiles.csv",
+      "size_bytes": 21916,
+      "sha256": "46d120d1ba67cb0931711e40a1325cdebe91f6fefb6411122de76cdb59c35d28"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_pit_histogram.csv",
+      "size_bytes": 16504,
+      "sha256": "bde75ec0986f6657a115995b87685db1bd808936ab83eba80e53674389a04166"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_pit_summary.csv",
+      "size_bytes": 5973,
+      "sha256": "a53fe26e77292683bb450c65e18c3c4d347443f39d44486df6892ce012d866d1"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_quantile_calibration.csv",
+      "size_bytes": 113063,
+      "sha256": "83db8ec8b039db44194320e60c8fd1dc66199e8c9b5c2cb3c92ba6274f688b97"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_quantile_calibration_summary.csv",
+      "size_bytes": 1922,
+      "sha256": "13d57a9a0e2ad3d11c1092945fd0866cd02d7b2430014cfeeba6e3602b907960"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_reconciliation_checks.csv",
+      "size_bytes": 1047,
+      "sha256": "a19e743ec6395bbaddf984ad29d3d59b477f03aff94b801e24bca0d074b0a1a2"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_sharpness_summary.csv",
+      "size_bytes": 10043,
+      "sha256": "680789e7182ca4f9dce3de43ca8ced63e6809444385301c34cfaf7d23ed5271c"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_standardised_residual_summary.csv",
+      "size_bytes": 14946,
+      "sha256": "eb2b6f9e6e75db0fc12c301812a4984662197da4bd6dd4261238d0d63cdf845c"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_variance_regression_coefficients.csv",
+      "size_bytes": 3402,
+      "sha256": "1045c0721908b55ca0c965f541b897d438b1a2401b157ea7ffe4bd49ba95d4f7"
+    },
+    {
+      "relative_path": "frozen_phase19_extracts/phase19_variance_regression_summary.csv",
+      "size_bytes": 521,
+      "sha256": "aacb0bd11d5d69acb643f9cc662eb31ecf376b9aa6066d58635d5875cfc44b4c"
+    },
+    {
+      "relative_path": "phase5_autocorrelation.csv",
+      "size_bytes": 35074,
+      "sha256": "cc5dc68e4bc1d0a5289be152662c2360dfbc234999de566cbd0930aa950a3095"
+    },
+    {
+      "relative_path": "phase5_coverage_bootstrap_tests.csv",
+      "size_bytes": 28615,
+      "sha256": "619b4f5b3fe78fbe6a3da1e2f56c7d86e708bdb39170fae6c6842bcf872c7f65"
+    },
+    {
+      "relative_path": "phase5_coverage_width_bootstrap_intervals.csv",
+      "size_bytes": 50700,
+      "sha256": "6dc16d0fe4387a82bcd8df6fff14f2f568f0ca997b8ac22db29df9d19d73a71b"
+    },
+    {
+      "relative_path": "phase5_coverage_width_summary.csv",
+      "size_bytes": 8662,
+      "sha256": "be67da822c5b285102e561155a10a2146bea3b21a6dbac2c28e3293e3906dfd7"
+    },
+    {
+      "relative_path": "phase5_cross_rule_correlations.csv",
+      "size_bytes": 5549,
+      "sha256": "e05decf7fea17f5bc49f9d4419ed6bd384b111bb9fddde2193f41b48a82b4b28"
+    },
+    {
+      "relative_path": "phase5_dependence_summary.csv",
+      "size_bytes": 7660,
+      "sha256": "1744745986977a5b928b22a39672243aa8fe4fbc0d44544089c519a532dd0600"
+    },
+    {
+      "relative_path": "phase5_figure_registry.csv",
+      "size_bytes": 619,
+      "sha256": "8af45ec7582cdddf5f0a8211d7364378128b9691ae10672aad760542dde41223"
+    },
+    {
+      "relative_path": "phase5_frozen_direct_reconciliation.csv",
+      "size_bytes": 4033,
+      "sha256": "10e3894e1e0ec8685d1bf175fc7e22d4c9c5511fa9d9a0838beb98fa20ffa11e"
+    },
+    {
+      "relative_path": "phase5_frozen_phase19_extract_registry.csv",
+      "size_bytes": 2364,
+      "sha256": "1aa061140eb150c1fa69098dff4473f9199bcff035cefc15b0a46353f3c3a21e"
+    },
+    {
+      "relative_path": "phase5_gp_date_level_diagnostic_panel.csv.gz",
+      "size_bytes": 64046,
+      "sha256": "11f35db3f68bcbc6b7f1f6da65689d90e443c7d86b20670f485acb876179f7cd"
+    },
+    {
+      "relative_path": "phase5_gp_diagnostic_panel.csv.gz",
+      "size_bytes": 420909,
+      "sha256": "e8a214983c0a370be897a954052a08c36e6a30ed81967dbd1aef030f86fa941e"
+    },
+    {
+      "relative_path": "phase5_integrity_checks.csv",
+      "size_bytes": 4210,
+      "sha256": "828521877bdc8c4d6f598bfa362b3ab4dce6dc54b61e82c31345aee300aa8328"
+    },
+    {
+      "relative_path": "phase5_lag1_moving_block_intervals.csv",
+      "size_bytes": 29820,
+      "sha256": "f2eb1c93d445aa2a3d99c25b2046393dc5ef9371b3e5c40e8782eb2d02279a06"
+    },
+    {
+      "relative_path": "phase5_pit_histogram.csv",
+      "size_bytes": 9708,
+      "sha256": "1a046f9d747065efc9e33985ebdeaeebac7b61777c6babe8174610413cde780b"
+    },
+    {
+      "relative_path": "phase5_pit_summary.csv",
+      "size_bytes": 3572,
+      "sha256": "81d012dd1462c3651ffa41d9ec2768334bc6a7b3934c0283ae447d1563cb3fbf"
+    },
+    {
+      "relative_path": "phase5_quantile_calibration_curve.csv",
+      "size_bytes": 123707,
+      "sha256": "124f868369d8b780b272235f1c9429bda9b49569afdb86dbd50f642dc7ef8b41"
+    },
+    {
+      "relative_path": "phase5_quantile_calibration_summary.csv",
+      "size_bytes": 2121,
+      "sha256": "c9c9a63b7a415e7a3a7c05d8d921f16cd51fb568f7f5ac46b9ec97044f23de8c"
+    },
+    {
+      "relative_path": "phase5_report.md",
+      "size_bytes": 30818,
+      "sha256": "802024f5d46ab04b2affedc9ecc982b77068f46b0c9d9641c36bf76272773c44"
+    },
+    {
+      "relative_path": "phase5_repository_provenance.json",
+      "size_bytes": 2525,
+      "sha256": "c81bc0b8e993c5edca06af77feea5697e3992c4daf6bc74e2080a99de1db50d7"
+    },
+    {
+      "relative_path": "phase5_selected_matern_diagnostic_panel.csv.gz",
+      "size_bytes": 215459,
+      "sha256": "2d1fd039f2e3a3fec1a09b07b7713a9bc269a0da23cd3fc98592945424f4739f"
+    },
+    {
+      "relative_path": "phase5_sharpness_quartile_diagnostics.csv",
+      "size_bytes": 7851,
+      "sha256": "596c846f6482e774c147fb17e9c2c463bbec8c815bb8e603d9481240257c477d"
+    },
+    {
+      "relative_path": "phase5_standardised_residual_summary.csv",
+      "size_bytes": 6319,
+      "sha256": "6eeba33347aa223c626d50f35bca78316b10466ef6dab3e71d6ac0418aa68604"
+    },
+    {
+      "relative_path": "phase5_thesis_candidate_summary.csv",
+      "size_bytes": 980,
+      "sha256": "a64fb8e4d7eb64f819076f903103a53976a31165649b8cddb4149d315622a184"
+    },
+    {
+      "relative_path": "phase5_thesis_ready_diagnostic_table.csv",
+      "size_bytes": 2603,
+      "sha256": "90df4af5839ff648a44e922abc6d4dbdb5433419495571b4520d3aed47c1e974"
+    },
+    {
+      "relative_path": "phase5_variance_regression_coefficients.csv",
+      "size_bytes": 3380,
+      "sha256": "bb670e99ebb01f164b96241683b2b83c7de42101cfe98febb5344f6211192439"
+    },
+    {
+      "relative_path": "phase5_variance_regression_summary.csv",
+      "size_bytes": 519,
+      "sha256": "5e8efcf5c0927e3b87e0ba282dfb1cb567ebafa5acd7613c356dee8f4fe4e6fd"
+    }
+  ]
+}

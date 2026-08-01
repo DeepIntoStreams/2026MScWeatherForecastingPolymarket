@@ -1,0 +1,8 @@
+figure,purpose
+phase5_figure_selected_matern_coverage.pdf,Main-text candidate: selected-model central coverage
+phase5_figure_quantile_calibration.pdf,Appendix candidate: 1%-99% quantile calibration
+phase5_figure_pit_histogram.pdf,Appendix candidate: PIT shape
+phase5_figure_normal_qq.pdf,Appendix candidate: Gaussian marginal-shape diagnostic
+phase5_figure_standardised_residual_acf.pdf,Main/appendix candidate: residual serial dependence
+phase5_figure_squared_residual_acf.pdf,Appendix candidate: variance persistence
+phase5_figure_variance_by_sharpness_quartile.pdf,Appendix candidate: conditional-variance structure

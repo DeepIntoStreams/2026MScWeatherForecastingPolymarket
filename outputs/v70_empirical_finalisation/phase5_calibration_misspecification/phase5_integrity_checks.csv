@@ -1,0 +1,57 @@
+check,passed,critical,detail
+phase1_dependency,True,True,critical_failures=0
+phase2_dependency,True,True,critical_failures=0
+phase3_dependency,True,True,critical_failures=0
+phase4_dependency,True,True,critical_failures=0
+loss_panel_required_columns,True,True,missing=[]
+gp_expected_rows,True,True,rows=2920
+gp_expected_dates,True,True,dates=365
+gp_expected_models,True,True,"models=['matern', 'rbf']"
+gp_expected_rules,True,True,"rules=['12h_prior', '24h_prior', '6h_prior', 'event_day_open']"
+rows_per_model,True,True,"counts={'matern': 1460, 'rbf': 1460}"
+rows_per_rule_model,True,True,"counts={('matern', '12h_prior'): 365, ('matern', '24h_prior'): 365, ('matern', '6h_prior'): 365, ('matern', 'event_day_open'): 365, ('rbf', '12h_prior'): 365, ('rbf', '24h_prior'): 365, ('rbf', '6h_prior'): 365, ('rbf', 'event_day_open'): 365}"
+gp_unique_keys,True,True,duplicates=0
+gp_numeric_finite,True,True,
+gp_predictive_sd_positive,True,True,minimum_sd=1.209151014
+gp_crps_nonnegative,True,True,minimum_crps=0.287894229
+all_phase19_files_loaded,True,True,files=14
+frozen_phase19_reconciliation_passed,True,True,schema=status; statuses=['PASSED']; status_failures=0; numerical_rows=8; numerical_failures=0; failed=0
+phase19_variance_regression_rows,True,True,rows=2
+phase19_variance_coefficient_rows,True,True,rows=22
+reference_rbf_integrated_absolute_calibration_error,True,True,calculated=0.02303999; reference=0.02304000
+reference_rbf_root_mean_squared_calibration_error,True,True,calculated=0.02851606; reference=0.02852000
+reference_rbf_maximum_absolute_calibration_error,True,True,calculated=0.05602740; reference=0.05603000
+reference_rbf_mean_signed_calibration_error,True,True,calculated=0.01921267; reference=0.01921000
+reference_rbf_mean_pit,True,True,calculated=0.48089561; reference=0.48090000
+reference_rbf_variance_pit,True,True,calculated=0.09218008; reference=0.09218000
+reference_rbf_z_mean,True,True,calculated=-0.07449412; reference=-0.07449000
+reference_rbf_z_standard_deviation,True,True,calculated=1.03052681; reference=1.03053000
+reference_rbf_z_rmse,True,True,calculated=1.03180683; reference=1.03181000
+reference_rbf_z_skewness,True,True,calculated=-0.01000549; reference=-0.01001000
+reference_rbf_z_excess_kurtosis,True,True,calculated=-0.13838071; reference=-0.13838000
+reference_matern_integrated_absolute_calibration_error,True,True,calculated=0.01558876; reference=0.01559000
+reference_matern_root_mean_squared_calibration_error,True,True,calculated=0.01882551; reference=0.01883000
+reference_matern_maximum_absolute_calibration_error,True,True,calculated=0.03246575; reference=0.03247000
+reference_matern_mean_signed_calibration_error,True,True,calculated=0.01243946; reference=0.01244000
+reference_matern_mean_pit,True,True,calculated=0.48757695; reference=0.48758000
+reference_matern_variance_pit,True,True,calculated=0.08915746; reference=0.08916000
+reference_matern_z_mean,True,True,calculated=-0.05080692; reference=-0.05081000
+reference_matern_z_standard_deviation,True,True,calculated=1.00496420; reference=1.00496000
+reference_matern_z_rmse,True,True,calculated=1.00487183; reference=1.00487000
+reference_matern_z_skewness,True,True,calculated=-0.03659126; reference=-0.03659000
+reference_matern_z_excess_kurtosis,True,True,calculated=-0.08512126; reference=-0.08512000
+reference_matern_variance_r_squared,True,True,calculated=0.02709584; reference=0.02710000
+reference_matern_variance_wald,True,True,calculated=23.20617431; reference=23.20617000
+reference_matern_variance_df,True,True,calculated=10; reference=10
+reference_matern_variance_p_value,True,True,calculated=0.01001061; reference=0.01001000
+diagnostic_panel_rows,True,True,rows=2920
+selected_matern_rows,True,True,rows=1460
+coverage_bootstrap_methods,True,True,"methods=['circular_moving_block', 'ordinary_date']"
+coverage_block_lengths,True,True,
+dependence_block_lengths,True,True,
+dependence_lag_pair_bootstrap_method,True,True,methods=['circular_moving_block_lag_pairs']
+dependence_interval_finite,True,True,
+quantile_grid_complete,True,True,
+variance_coefficients_complete,True,True,rows=22
+figures_created,True,True,figures=7
+coverage_reconciliation_review_register,True,False,coverage_rows_requiring_review=0

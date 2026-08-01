@@ -1,0 +1,3 @@
+model,response,rows,date_clusters,parameters,r_squared,joint_non_intercept_wald_statistic,joint_non_intercept_degrees_freedom,joint_non_intercept_cluster_robust_p_value,inference
+rbf,squared_standardised_residual,1460,365,11,0.0211573238653394,14.047808878704483,10,0.1708220460933773,date-cluster-robust asymptotic normal and chi-square reference
+matern32,squared_standardised_residual,1460,365,11,0.0270958362006404,23.20617431204104,10,0.0100106116582999,date-cluster-robust asymptotic normal and chi-square reference

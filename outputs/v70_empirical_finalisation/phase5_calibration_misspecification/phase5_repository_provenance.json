@@ -1,0 +1,35 @@
+{
+  "generated_utc": "2026-07-31T23:56:03.408935+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "53ab58adba2395b2ac86df66b62a92855fddae7f",
+  "frozen_ref": "v2-empirical-complete",
+  "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+  "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "phase3_loss_panel": "outputs/v70_empirical_finalisation/phase3_information_arrival/phase3_validation_probabilistic_loss_panel.csv.gz",
+  "phase3_loss_panel_sha256": "2e4f568baf38722591844aa9d83ca468cfca88a9b8cbaa53b299f12051d8b7cf",
+  "phase19_source_hashes": {
+    "phase19_coverage_summary.csv": "f3ada723671d45501918e7a9ac5d482db0aecc001dd4f57aab6c80918b8d3dc5",
+    "phase19_standardised_residual_summary.csv": "fa816688352250ccb0e016aa93f408ee62ac197d5a17e138cecd1b90a1c116ca",
+    "phase19_autocorrelation.csv": "fb2c48e8c6e7c88d671a632f1a951dcfdcaa0d10717b86ac832e85a460667eb4",
+    "phase19_cross_rule_residual_correlations.csv": "e854ca20a80fde1a9e6190014d28ce8b5d69c5cbcf3f82c72a61186376cbccec",
+    "phase19_dependence_summary.csv": "6772fdc55d800262e48c0fd80ad15edc421c368e38603b1fb87c3676bfe82b11",
+    "phase19_pit_summary.csv": "33916bd0c436d34ee96646e028ad483c86245db4cf13dd3847fd883d43c5a04b",
+    "phase19_pit_histogram.csv": "d7b42ac64978a36b31da0ce4b4085a1a29e979153fe0e53ab6861e0d7b76fbf4",
+    "phase19_quantile_calibration.csv": "c2503dab44afa690e2d71e391dd22db0daa973a1173154e411388e7542e467aa",
+    "phase19_quantile_calibration_summary.csv": "eb4058e09dfa29d1470d9f86ba4368ad9616d16f2c41820faf2a9481682bd36e",
+    "phase19_sharpness_summary.csv": "a9f795967e49802b5324c6a0ea60cbd30cb24072979188c7b261c0df7a0a6aba",
+    "phase19_heteroskedasticity_quartiles.csv": "d395798040cd19e849aabf679358af521a4a41fcebda1b827f3be0824228f2d5",
+    "phase19_variance_regression_summary.csv": "809a27bbfec9141ddf82e9fa7ca72f9628db7ee58ccee058bbb6833da9570e1f",
+    "phase19_variance_regression_coefficients.csv": "6a39d81a5040393cd977516d82a17c2c08a88681d3f91df19413bdeb01d780c1",
+    "phase19_reconciliation_checks.csv": "83da2f160f645bb06c5de4be7177c37799afee0d454818c17c0c2fa2ad6fe11d"
+  },
+  "bootstrap_replications": 10000,
+  "bootstrap_seed": 20260803,
+  "moving_block_lengths": [
+    3,
+    5,
+    7,
+    14
+  ],
+  "interpretation_boundary": "The diagnostics assess the adequacy of the frozen Gaussian predictive law. They do not trigger model reselection, refitting, a new covariance search, or any use of market outcomes in weather-model estimation."
+}

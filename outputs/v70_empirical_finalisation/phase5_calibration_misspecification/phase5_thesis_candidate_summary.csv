@@ -1,0 +1,7 @@
+candidate_id,quantity,point_estimate,secondary_value,secondary_quantity,preferred_location,lower_95,upper_95
+P5_COVERAGE_50,50% central coverage,0.4602739726027397,1.9624239636103489,mean interval width (°C),Results distributional adequacy table,,
+P5_COVERAGE_80,80% central coverage,0.7828767123287671,3.728666747116557,mean interval width (°C),Results distributional adequacy table,,
+P5_COVERAGE_90,90% central coverage,0.8808219178082192,4.785691959325668,mean interval width (°C),Results distributional adequacy table,,
+P5_LAG1_Z,standardised_residual lag-one correlation,0.5097679178714232,,,Results or diagnostic appendix,0.3981875232498344,0.5878080119407294
+P5_LAG1_Z2,squared_standardised_residual lag-one correlation,0.2382560017614505,,,Results or diagnostic appendix,0.09922320633431865,0.3478253431276328
+P5_VARIANCE_WALD,conditional-variance joint cluster-robust p-value,0.0100106116582999,0.0270958362006404,auxiliary R²,Results distributional adequacy table,,
