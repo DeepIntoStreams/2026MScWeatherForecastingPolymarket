@@ -1,0 +1,2 @@
+market_prediction_rows,rows_with_exact_hko,coverage_fraction,sources,exact_error_analysis_available,interpretation
+375,0,0.0,unavailable,False,Exact temperature-error diagnostics are computed only where an actual HKO value is present. No interval midpoint proxy is used.

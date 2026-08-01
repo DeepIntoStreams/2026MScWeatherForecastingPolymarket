@@ -1,0 +1,4 @@
+signal_model,selected_rule,selected_threshold,transaction_cost,development_trade_count,development_total_net_pnl,development_mean_daily_net_pnl,development_standard_error,selection_score_mean_minus_se
+raw,12h_prior,0.25,0.01,60,-0.5454999999999999,-0.009091666666666665,0.03925751662825001,-0.04834918329491667
+static,24h_prior,0.13,0.01,20,2.9379999999999997,0.053418181818181816,0.036369902742900036,0.01704827907528178
+matern,event_day_open,0.12,0.01,42,4.494999999999999,0.07134920634920634,0.03905251468983363,0.03229669165937271

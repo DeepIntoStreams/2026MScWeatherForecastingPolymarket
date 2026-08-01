@@ -1,0 +1,225 @@
+{
+  "phase": "phase7_trading_sensitivity_and_attribution",
+  "generated_utc": "2026-08-01T03:22:59.439576+00:00",
+  "provenance": {
+    "generated_utc": "2026-08-01T03:22:49.236958+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "60d7d6cd0546b6794680624ac666022996eb2d35",
+    "phase6_exact_support_panel": "outputs/v70_empirical_finalisation/phase6_market_information/phase6_exact_support_event_panel.csv.gz",
+    "phase6_exact_support_panel_sha256": "734e908279a8f2e06befd09b85a7dcb7b4e3615c51c5e6ac45b96d7c04cb370b",
+    "phase5_selected_matern_panel": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification/phase5_selected_matern_diagnostic_panel.csv.gz",
+    "phase5_selected_matern_panel_sha256": "2d1fd039f2e3a3fec1a09b07b7713a9bc269a0da23cd3fc98592945424f4739f",
+    "phase8_market_period_predictions": "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv",
+    "phase8_market_period_predictions_sha256": "594729e6036db9bb6c1dc2e424430008031429dc6e9e17d84edbeec7a689cc1d",
+    "bootstrap_replications": 10000,
+    "bootstrap_seed": 20260805,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "interpretation_boundary": "The analysis evaluates a fixed historical one-share long-YES rule. It does not establish executable profitability, market impact, available depth, or causal forecast-to-price transmission. Temperature-mean perturbations describe local decision sensitivity under a frozen predictive scale and frozen market prices."
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase7_figure_development_threshold_selection.pdf",
+      "size_bytes": 13883,
+      "sha256": "fed584e64249d65afec97b40f39a005a8238dcb8f6d92ab402e1b600858ba05d"
+    },
+    {
+      "relative_path": "figures/phase7_figure_june_equity_curve.pdf",
+      "size_bytes": 14813,
+      "sha256": "5bcd6ea05931c419ea2ffbdd22a18a4e5d44beb03dc95444d163956986d7cbc2"
+    },
+    {
+      "relative_path": "figures/phase7_figure_june_trade_waterfall.pdf",
+      "size_bytes": 12956,
+      "sha256": "ef82e9eb468bc16b3c74af9779ca1c8b3a418f29e59e49898e6859543aae58e2"
+    },
+    {
+      "relative_path": "figures/phase7_figure_mean_shift_pnl_sensitivity.pdf",
+      "size_bytes": 15373,
+      "sha256": "f718514c010f78e27f3fcf15352a7c517a9f197fcd693d709b6c20a0e8609e1d"
+    },
+    {
+      "relative_path": "figures/phase7_figure_model_pnl_attribution.pdf",
+      "size_bytes": 12714,
+      "sha256": "5a13ee5a03ae029944bf3ab1442a250f03d4e245248a0650bbfd6f83f61ff3ae"
+    },
+    {
+      "relative_path": "figures/phase7_figure_probability_delta.pdf",
+      "size_bytes": 14904,
+      "sha256": "836394a3cfb4c8279902f6fa8228eddf97082ea956aad4c6d6498580c8d934de"
+    },
+    {
+      "relative_path": "figures/phase7_figure_threshold_cost_surface.pdf",
+      "size_bytes": 21554,
+      "sha256": "33c30f4e5416c2cc1869abcbeda7276af47b55b5cee27537d236884f01a82680"
+    },
+    {
+      "relative_path": "phase7_candidate_trade_panel.csv.gz",
+      "size_bytes": 57933,
+      "sha256": "58b4e065aae1e58f7ddadd7b7f71ee9bb51c469bbd76f91ac0df7615952307a1"
+    },
+    {
+      "relative_path": "phase7_common_policy_attribution_bootstrap.csv",
+      "size_bytes": 5088,
+      "sha256": "e4a8c6ed8d4886a5577aeea1a8c11e992d4ceec194b5039b2a9bd1019a859969"
+    },
+    {
+      "relative_path": "phase7_common_policy_attribution_panel.csv",
+      "size_bytes": 15595,
+      "sha256": "bece32d0bcdb94fb5fa8b03f0913e19ede927bc2344691b084f07488fca1b0f1"
+    },
+    {
+      "relative_path": "phase7_common_policy_model_panels.csv.gz",
+      "size_bytes": 20834,
+      "sha256": "b65a7506edcb43009912e10ead905fe4d041eb3d39c70bef3a49af999ea129d8"
+    },
+    {
+      "relative_path": "phase7_common_policy_model_summary.csv",
+      "size_bytes": 2819,
+      "sha256": "ec739afd0ed8d452e364550a13fb1985488018cae9c669dca6373850eb98410d"
+    },
+    {
+      "relative_path": "phase7_development_rule_threshold_selection.csv",
+      "size_bytes": 2517,
+      "sha256": "1d64f645b291acb96bd4cd88ff718e79ac9a1293bf0dcb079f33205f21d0f553"
+    },
+    {
+      "relative_path": "phase7_error_pnl_relationships.csv",
+      "size_bytes": 1787,
+      "sha256": "08468f0378c10c2ef79ba887728006a7dfb07929a43b5aa8c4053fb5868cbfef"
+    },
+    {
+      "relative_path": "phase7_figure_registry.csv",
+      "size_bytes": 692,
+      "sha256": "8c9acc83542efc41331443e9361b176a36e58a2ae84aba9c569e9e9f8bc6ba31"
+    },
+    {
+      "relative_path": "phase7_finite_difference_pnl_sensitivity.csv",
+      "size_bytes": 1178,
+      "sha256": "5802098a4efec41d0867d35417abcf765561440629057e333a03c5c355be780b"
+    },
+    {
+      "relative_path": "phase7_integrity_checks.csv",
+      "size_bytes": 2390,
+      "sha256": "25dd035342cc1b4c76ccc2713d3c5d1142c6a6d9f56d325abcf27288346b376e"
+    },
+    {
+      "relative_path": "phase7_leave_one_trade_out_influence.csv",
+      "size_bytes": 3358,
+      "sha256": "02bec5a596e9625531ed642313dda1c51059ce6e6fbc07020d1c736f0cfc2afa"
+    },
+    {
+      "relative_path": "phase7_market_period_hko_availability.csv",
+      "size_bytes": 271,
+      "sha256": "2f51b86c5f6644c64dd7edf367ef2ac3ec2d0ac4e4bc8776400f39b396758ed8"
+    },
+    {
+      "relative_path": "phase7_market_period_predictive_law_panel.csv",
+      "size_bytes": 33368,
+      "sha256": "a7e7235b402bf26ba1c15764481f2381a78b1cf22bbd3c87cb4f235d1695f902"
+    },
+    {
+      "relative_path": "phase7_mean_shift_policy_panel.csv.gz",
+      "size_bytes": 23390,
+      "sha256": "3a1fe8a08a12bada09358338395c2ebbefe6e225800befe4c5b7735c39699276"
+    },
+    {
+      "relative_path": "phase7_mean_shift_strategy_sensitivity.csv",
+      "size_bytes": 8119,
+      "sha256": "57d0197f509e92b93a49f99eeb09c54e8a06d7c697cfcc1e48512e561f77e1f7"
+    },
+    {
+      "relative_path": "phase7_model_specific_external_summary.csv",
+      "size_bytes": 2685,
+      "sha256": "997aaea1d99d216920d9602cc840c79ccfcc4d47b0e5112de01df8e82c70d4a9"
+    },
+    {
+      "relative_path": "phase7_model_specific_policy_panels.csv.gz",
+      "size_bytes": 19630,
+      "sha256": "483daf3d7f9d33ebee2e7bf9b440c9048a7d4628a88266de3ab51326eadbd200"
+    },
+    {
+      "relative_path": "phase7_model_specific_selected_policies.csv",
+      "size_bytes": 535,
+      "sha256": "45ac3a2ef235201794bcf65b78db234bf4dc6eb54d89b50ceb51760a6ff06c07"
+    },
+    {
+      "relative_path": "phase7_probability_delta_gamma_panel.csv.gz",
+      "size_bytes": 226552,
+      "sha256": "b15ab9378a56e1a9eda92862a9152a17a1949050216fa164e0a1c1c40a1d632c"
+    },
+    {
+      "relative_path": "phase7_report.md",
+      "size_bytes": 44550,
+      "sha256": "4e02da44be089d42561723957206083c10b20ccd53f2176a43cf2239a05d6835"
+    },
+    {
+      "relative_path": "phase7_repository_provenance.json",
+      "size_bytes": 1378,
+      "sha256": "6b436858e8c5bc192580b4c4ef463ebdf5b4d96b529bbbb68a366bf64e95ec2b"
+    },
+    {
+      "relative_path": "phase7_selected_policy_bootstrap_intervals.csv",
+      "size_bytes": 2140,
+      "sha256": "cd5f7f3993d7eb2346efc738db77e3d938b47d34cabb48576aa1f4afd56868af"
+    },
+    {
+      "relative_path": "phase7_selected_policy_cost_sensitivity.csv",
+      "size_bytes": 5767,
+      "sha256": "db2f571b4dca4e5183ae4581e4f0d30d1e8b35ea7be34335ddd91a7823c1e54b"
+    },
+    {
+      "relative_path": "phase7_selected_policy_daily_panel.csv",
+      "size_bytes": 41000,
+      "sha256": "4916ce1f093f9ea6697ceda89b12c3816333857c4fa8c0df5b3206b4875d8e26"
+    },
+    {
+      "relative_path": "phase7_selected_policy_error_sensitivity_panel.csv",
+      "size_bytes": 54819,
+      "sha256": "a96d2eb59b83a61881d6c3058103c40b6eb1324a2c963ea1bc3c6a4b97dd2074"
+    },
+    {
+      "relative_path": "phase7_selected_policy_ordinary_bootstrap_distribution.csv.gz",
+      "size_bytes": 221318,
+      "sha256": "80ee2ae9d33728fb0881517df4503144d90ecdabc33520e1972386afa61f9caf"
+    },
+    {
+      "relative_path": "phase7_selected_policy_summary.csv",
+      "size_bytes": 1299,
+      "sha256": "946f6c14186f205883d90badfa89b8be95d6d7537aeb42149de0839ae57e7b78"
+    },
+    {
+      "relative_path": "phase7_shifted_candidate_panel.csv.gz",
+      "size_bytes": 132937,
+      "sha256": "7942fb0f658b5da1f307a70ce20f57251cd608e7234b9208641b7b5c11e12cf2"
+    },
+    {
+      "relative_path": "phase7_shifted_event_probability_panel.csv.gz",
+      "size_bytes": 1005253,
+      "sha256": "06448a6d1f23eddacbdc9c56473e6267ae921571938116510f1dad0602bee474"
+    },
+    {
+      "relative_path": "phase7_thesis_candidate_summary.csv",
+      "size_bytes": 3024,
+      "sha256": "262aad844f9bb22d779ec108b8f1a0896e16f587bb47418dc61f7c43ed36ac83"
+    },
+    {
+      "relative_path": "phase7_threshold_cost_surface.csv.gz",
+      "size_bytes": 201836,
+      "sha256": "9355d8ac6e19c1f2e9b7b342842eda5affeb487ea25bc0eb9a86843d73629835"
+    },
+    {
+      "relative_path": "phase7_trade_concentration_summary.csv",
+      "size_bytes": 671,
+      "sha256": "8cd98b2e0e500b46c3cd729c9ebdd38ae9c3e6468b87a68896cd0f87ce88320d"
+    },
+    {
+      "relative_path": "phase7_trade_subgroup_attribution.csv",
+      "size_bytes": 2285,
+      "sha256": "21273a71f05578dc1d263b1a233aceb731ad13bb9bea717d5da210cf3635c957"
+    }
+  ]
+}

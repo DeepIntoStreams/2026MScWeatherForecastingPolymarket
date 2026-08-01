@@ -1,0 +1,28 @@
+candidate_id,quantity,point_estimate,lower_95,upper_95,preferred_location,secondary_value,secondary_quantity
+P7_JUNE_TRADE_COUNT,trade_count,16.0,,,Results trading sensitivity,,
+P7_JUNE_WINNING_TRADES,winning_trades,1.0,,,Results trading sensitivity,,
+P7_JUNE_TOTAL_GROSS_PNL,total_gross_pnl,0.18349999999999989,,,Results trading sensitivity,,
+P7_JUNE_TOTAL_NET_PNL,total_net_pnl,0.023499999999999917,-1.232025,2.1705374999999996,Results trading sensitivity,,
+P7_JUNE_RETURN_ON_ENTRY_CASH,return_on_entry_cash,0.024065540194572365,,,Results trading sensitivity,,
+P7_JUNE_MAXIMUM_DRAWDOWN,maximum_drawdown,0.7964999999999999,,,Results trading sensitivity,,
+P7_JUNE_BREAK_EVEN_COST_PER_TRADE,break_even_cost_per_trade,0.011468749999999993,,,Results trading sensitivity,,
+P7_JUNE_TOP1_CONCENTRATION,top one absolute PnL contribution share,0.5063633901976713,,,Results risk attribution,,
+P7_COST_0_0000,June total net PnL at cost 0.0000,0.18349999999999989,,,Results cost sensitivity,,
+P7_COST_0_0025,June total net PnL at cost 0.0025,0.14350000000000002,,,Results cost sensitivity,,
+P7_COST_0_0050,June total net PnL at cost 0.0050,0.10349999999999998,,,Results cost sensitivity,,
+P7_COST_0_0100,June total net PnL at cost 0.0100,0.023499999999999917,,,Results cost sensitivity,,
+P7_COST_0_0150,June total net PnL at cost 0.0150,-0.05650000000000015,,,Results cost sensitivity,,
+P7_COST_0_0200,June total net PnL at cost 0.0200,-0.13650000000000012,,,Results cost sensitivity,,
+P7_COST_0_0300,June total net PnL at cost 0.0300,-0.2965,,,Results cost sensitivity,,
+P7_SHIFT_M1_00,June net PnL under -1.00°C mean shift,-0.2655,,,Results sensitivity or appendix,27.0,trade count
+P7_SHIFT_M0_50,June net PnL under -0.50°C mean shift,-0.16900000000000004,,,Results sensitivity or appendix,21.0,trade count
+P7_SHIFT_M0_25,June net PnL under -0.25°C mean shift,0.0814999999999999,,,Results sensitivity or appendix,17.0,trade count
+P7_SHIFT_M0_10,June net PnL under -0.10°C mean shift,0.023499999999999917,,,Results sensitivity or appendix,16.0,trade count
+P7_SHIFT_P0_00,June net PnL under +0.00°C mean shift,0.023499999999999917,,,Results sensitivity or appendix,16.0,trade count
+P7_SHIFT_P0_10,June net PnL under +0.10°C mean shift,-0.06850000000000006,,,Results sensitivity or appendix,16.0,trade count
+P7_SHIFT_P0_25,June net PnL under +0.25°C mean shift,-1.1395000000000002,,,Results sensitivity or appendix,15.0,trade count
+P7_SHIFT_P0_50,June net PnL under +0.50°C mean shift,-1.0985,,,Results sensitivity or appendix,15.0,trade count
+P7_SHIFT_P1_00,June net PnL under +1.00°C mean shift,-1.2140000000000002,,,Results sensitivity or appendix,16.0,trade count
+P7_ATTR_RAW,June common-policy PnL using raw signal,-1.8075,,,Results trading attribution,30.0,trade count
+P7_ATTR_STATIC,June common-policy PnL using static signal,0.023499999999999917,,,Results trading attribution,16.0,trade count
+P7_ATTR_MATERN,June common-policy PnL using matern signal,0.023499999999999917,,,Results trading attribution,16.0,trade count

@@ -1,0 +1,35 @@
+check,passed,critical,detail
+phase1_dependency,True,True,critical_failures=0
+phase2_dependency,True,True,critical_failures=0
+phase3_dependency,True,True,critical_failures=0
+phase4_dependency,True,True,critical_failures=0
+phase5_dependency,True,True,critical_failures=0
+phase6_dependency,True,True,critical_failures=0
+phase6_required_columns,True,True,missing=[]
+phase6_event_rows,True,True,rows=15400
+phase6_exact_dates,True,True,dates=97
+phase6_models,True,True,"models=['market', 'matern', 'raw', 'static']"
+phase6_books_per_model,True,True,"counts={'market': 350, 'matern': 350, 'raw': 350, 'static': 350}"
+market_raw_values_not_pre_normalised,True,True,mean_sum=1.045380; minimum_sum=0.869000; maximum_sum=1.300000
+candidate_rows,True,True,rows=1050
+development_selects_event_day_open,True,True,calculated=event_day_open; reference=event_day_open
+development_selects_threshold_012,True,True,calculated=0.120000
+june_selected_trade_count,True,True,calculated=16
+june_selected_winning_trades,True,True,calculated=1
+june_selected_gross_pnl,True,True,calculated=0.183500000
+june_selected_net_pnl,True,True,calculated=0.023500000
+june_break_even_cost,True,True,calculated=0.011468750
+zero_shift_reproduces_frozen_matern_probabilities,True,True,maximum_error=3.331e-16
+june_cost_sensitivity_0_0000,True,True,calculated=0.183500000; reference=0.183500000
+june_cost_sensitivity_0_0050,True,True,calculated=0.103500000; reference=0.103500000
+june_cost_sensitivity_0_0100,True,True,calculated=0.023500000; reference=0.023500000
+june_cost_sensitivity_0_0200,True,True,calculated=-0.136500000; reference=-0.136500000
+market_period_predictive_law_join_complete,True,True,books=350
+market_period_hko_availability_registered,True,False,available_rows=0; total_rows=375; sources=['unavailable']
+deterministic_forecast_crosscheck_unavailable_registered,True,False,available_rows=0; status=unavailable; reason=Phase 5 validation support ends before the Phase 8 market-prediction period
+threshold_cost_surface_complete,True,True,rows=4368
+pnl_bootstrap_methods,True,True,"methods=['circular_moving_block', 'ordinary_date']"
+june_pnl_interval_contains_zero,True,True,"interval=[-1.232025,2.170537]"
+mean_shift_grid_complete,True,True,"shifts=[-1.0, -0.5, -0.25, -0.1, 0.0, 0.1, 0.25, 0.5, 1.0]"
+attribution_models_complete,True,True,"models=['matern', 'raw', 'static']"
+figures_created,True,True,figures=7

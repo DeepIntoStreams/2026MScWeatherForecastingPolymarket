@@ -1,0 +1,19 @@
+{
+  "generated_utc": "2026-08-01T03:22:49.236958+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "60d7d6cd0546b6794680624ac666022996eb2d35",
+  "phase6_exact_support_panel": "outputs/v70_empirical_finalisation/phase6_market_information/phase6_exact_support_event_panel.csv.gz",
+  "phase6_exact_support_panel_sha256": "734e908279a8f2e06befd09b85a7dcb7b4e3615c51c5e6ac45b96d7c04cb370b",
+  "phase5_selected_matern_panel": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification/phase5_selected_matern_diagnostic_panel.csv.gz",
+  "phase5_selected_matern_panel_sha256": "2d1fd039f2e3a3fec1a09b07b7713a9bc269a0da23cd3fc98592945424f4739f",
+  "phase8_market_period_predictions": "data/processed/v2/phase8_clean_gp/phase8_gp_market_period_predictions.csv",
+  "phase8_market_period_predictions_sha256": "594729e6036db9bb6c1dc2e424430008031429dc6e9e17d84edbeec7a689cc1d",
+  "bootstrap_replications": 10000,
+  "bootstrap_seed": 20260805,
+  "moving_block_lengths": [
+    3,
+    5,
+    7
+  ],
+  "interpretation_boundary": "The analysis evaluates a fixed historical one-share long-YES rule. It does not establish executable profitability, market impact, available depth, or causal forecast-to-price transmission. Temperature-mean perturbations describe local decision sensitivity under a frozen predictive scale and frozen market prices."
+}

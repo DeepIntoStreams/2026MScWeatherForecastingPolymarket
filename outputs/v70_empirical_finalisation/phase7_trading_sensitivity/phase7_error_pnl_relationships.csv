@@ -1,0 +1,9 @@
+split,predictor,trades,pearson_correlation,pearson_nominal_p_value,spearman_correlation,spearman_nominal_p_value,interpretation
+development,signal_gap,42,-0.0445239828779996,0.7794934414077985,0.04303951540969692,0.7866712701350431,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+development,market_probability_raw,42,0.13069812857501942,0.4093680367049137,-0.45145335910937523,0.0026914944606422787,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+development,probability_delta_per_c,42,0.14148024759555805,0.3714645307173655,-0.07075988126678986,0.656105747061442,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+development,probability_gamma_per_c2,42,0.03730035613626622,0.8145810998703946,0.18066870027912324,0.25221559418843487,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+june_external,signal_gap,16,-0.16266034291001488,0.5472449182390198,0.03829164682931409,0.8880338394958089,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+june_external,market_probability_raw,16,-0.05426247307312544,0.8418019076947418,-0.8672566371681416,1.3612030341094733e-05,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+june_external,probability_delta_per_c,16,-0.1680534313890546,0.5338528756892601,-0.49190038619195786,0.05294651216294433,Descriptive small-sample association; not causal and not adjusted for threshold selection.
+june_external,probability_gamma_per_c2,16,0.1804541915724899,0.5036303073321153,0.6038298153853375,0.013251771450438196,Descriptive small-sample association; not causal and not adjusted for threshold selection.
