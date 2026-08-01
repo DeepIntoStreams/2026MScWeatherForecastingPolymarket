@@ -1,0 +1,2 @@
+strategies_considered,benchmark,observed_max_mean_pnl_advantage,moving_block_length,bootstrap_replications,white_reality_check_p_value,reject_no_superior_strategy_at_5pct
+100,phase7_frozen_strategy,0.010324742378647786,5,3000,0.4786666666666667,False

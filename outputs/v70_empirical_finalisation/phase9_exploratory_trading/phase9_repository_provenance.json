@@ -1,0 +1,11 @@
+{
+  "generated_utc": "2026-08-01T04:52:52.446306+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "8b843942e705c678b2bfe35b20c43c626049e105",
+  "frozen_tag": "v70-empirical-synthesis-complete",
+  "frozen_tag_commit": "cf5146d6a11022178548cea6187e8d075b9d174d",
+  "head_descends_from_frozen_tag": true,
+  "exploratory": true,
+  "primary_cost": 0.01,
+  "interpretation_boundary": "Phase 9 is post hoc exploratory research. June is no longer an untouched holdout for new strategy selection. Long-only trades use observed raw YES prices. Short positions are synthetic short-YES positions under parity and must not be described as executable long-NO trades unless actual NO prices are later recovered. The objective is to search aggressively but transparently for robust monetisable structure, not to conceal unsuccessful trials."
+}

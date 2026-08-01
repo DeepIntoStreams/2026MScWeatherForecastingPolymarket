@@ -1,0 +1,6 @@
+candidate_id,quantity,point_estimate,preferred_location
+P9_PRIMARY_OUTER_TOTAL_PNL,Primary nested walk-forward total net PnL,3.6310158781707287,Appendix unless robust
+P9_PRIMARY_OUTER_SHARPE,Primary nested walk-forward settlement-date Sharpe,0.1973995089698211,Appendix unless robust
+P9_ORACLE_FULL_SAMPLE_SHARPE,Highest full-sample registered-strategy Sharpe,0.4042017163472133,Exploratory appendix only
+P9_PBO,Probability of backtest overfitting,0.7380952380952381,Appendix
+P9_REALITY_CHECK_P,White reality-check p-value,0.4786666666666667,Appendix

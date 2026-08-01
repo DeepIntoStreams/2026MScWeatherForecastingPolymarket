@@ -1,0 +1,2 @@
+phase,passed,critical_failures,strategy_count,primary_outer_total_pnl,primary_outer_sharpe,oracle_full_sample_sharpe,exploratory,frozen_phase1_8_unchanged,generated_utc
+phase9_exploratory_trading_laboratory,True,0,94500,3.6310158781707287,0.1973995089698211,0.4042017163472133,True,True,2026-08-01T05:00:55.736913+00:00

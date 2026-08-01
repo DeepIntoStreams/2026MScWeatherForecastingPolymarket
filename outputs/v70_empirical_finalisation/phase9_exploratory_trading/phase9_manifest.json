@@ -1,0 +1,207 @@
+{
+  "phase": "phase9_exploratory_trading_laboratory",
+  "generated_utc": "2026-08-01T05:00:55.795965+00:00",
+  "provenance": {
+    "generated_utc": "2026-08-01T04:52:52.446306+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "8b843942e705c678b2bfe35b20c43c626049e105",
+    "frozen_tag": "v70-empirical-synthesis-complete",
+    "frozen_tag_commit": "cf5146d6a11022178548cea6187e8d075b9d174d",
+    "head_descends_from_frozen_tag": true,
+    "exploratory": true,
+    "primary_cost": 0.01,
+    "interpretation_boundary": "Phase 9 is post hoc exploratory research. June is no longer an untouched holdout for new strategy selection. Long-only trades use observed raw YES prices. Short positions are synthetic short-YES positions under parity and must not be described as executable long-NO trades unless actual NO prices are later recovered. The objective is to search aggressively but transparently for robust monetisable structure, not to conceal unsuccessful trials."
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase9_best_strategy_waterfall.pdf",
+      "size_bytes": 12376,
+      "sha256": "69697cfc3b497e0e836ba4da146d193eb71e696a92710cdcf547f096d0739c76"
+    },
+    {
+      "relative_path": "figures/phase9_nested_walkforward_equity.pdf",
+      "size_bytes": 15244,
+      "sha256": "1036dc09e9ec1cfa7b0572ade4066007d4cbd7593280e27ffa5a13d44bce7199"
+    },
+    {
+      "relative_path": "figures/phase9_outer_block_pnl.pdf",
+      "size_bytes": 12074,
+      "sha256": "b34bc94381f5d8954604f7dae39aaa1ead9080fd97428ebb61d1fc97778aba51"
+    },
+    {
+      "relative_path": "figures/phase9_parameter_stability.pdf",
+      "size_bytes": 17215,
+      "sha256": "2c99f79851e5ff4a87288fcdb7e378e29c379cec69a5b12ed4d4a40efa8efd72"
+    },
+    {
+      "relative_path": "figures/phase9_selector_sharpe.pdf",
+      "size_bytes": 11736,
+      "sha256": "8900ee401c5d36190652fb07aeeff05db03a6a89a33ee4d91d68dbe043416b30"
+    },
+    {
+      "relative_path": "figures/phase9_sharpe_cost_sensitivity.pdf",
+      "size_bytes": 12291,
+      "sha256": "c18647896fad7e85259a53809fb1cd4c5e3b96a4f3a939fa15dae61f0bc5c7f1"
+    },
+    {
+      "relative_path": "figures/phase9_sharpe_drawdown_frontier.pdf",
+      "size_bytes": 488879,
+      "sha256": "a5bb6034ddcdbca0248732a168fe627a9e229f49332f2990dde9e519c691739c"
+    },
+    {
+      "relative_path": "phase9_all_strategy_results.csv.gz",
+      "size_bytes": 5522350,
+      "sha256": "9b22ea398eda33696a35806decd2e731bd6e8ebab21af035233425fe0be7a83e"
+    },
+    {
+      "relative_path": "phase9_backtest_overfitting_detail.csv.gz",
+      "size_bytes": 9502,
+      "sha256": "e9c72a018e9c3836ae56ed9bbb46963b2ff237b9416b7805702aea1b629d06f4"
+    },
+    {
+      "relative_path": "phase9_backtest_overfitting_probability.csv",
+      "size_bytes": 76,
+      "sha256": "b08049299897b109e8878268b7895e02856df0e35b641c396e9998263c3d8e72"
+    },
+    {
+      "relative_path": "phase9_best_strategy_parameter_sensitivity.csv",
+      "size_bytes": 29634,
+      "sha256": "d0122467d5869ece70ea47bed722f02f6ddcc34b85b1be6bbed70f77b8083609"
+    },
+    {
+      "relative_path": "phase9_block_stability.csv",
+      "size_bytes": 968,
+      "sha256": "2691e3329cf7ea05de398509709ff7d983f96be53b2e424b8bb5dd6cbc95f400"
+    },
+    {
+      "relative_path": "phase9_candidate_hierarchy.csv",
+      "size_bytes": 695,
+      "sha256": "db9a172a28ad50c025fb936bea63cd1691f5682924674b1a23e8df18ef70d589"
+    },
+    {
+      "relative_path": "phase9_candidate_strategy_summary.csv",
+      "size_bytes": 1520,
+      "sha256": "f9a3aaf8905303a4baeefe062a87da7f1c8772a8551e698b50a904897ab7a6f3"
+    },
+    {
+      "relative_path": "phase9_candidate_trade_ledger.csv.gz",
+      "size_bytes": 8855,
+      "sha256": "a7d835f2280e5c53b4774adc62c420d8a9bac355b7e9c0b2b4b04bc8193b54c2"
+    },
+    {
+      "relative_path": "phase9_claims_boundary.csv",
+      "size_bytes": 728,
+      "sha256": "65267062ea5e8ec7557cd92b79c05ba21d0a6eca2ab6d27147b937896dbd23b3"
+    },
+    {
+      "relative_path": "phase9_completion_status.csv",
+      "size_bytes": 320,
+      "sha256": "3049dd0d7de6e57b1002814989efe0ce30d5231d1e88acc194cb47b274e41264"
+    },
+    {
+      "relative_path": "phase9_cost_sensitivity.csv",
+      "size_bytes": 1646,
+      "sha256": "5dbd2f3a02424ce79490fa3aaaaaeb0ea2fcf86f0baece5fc589521af9254645"
+    },
+    {
+      "relative_path": "phase9_cost_sensitivity_trade_ledger.csv.gz",
+      "size_bytes": 1728,
+      "sha256": "2c58e9cba2f2a96902b54473038d5b7447d87d45f658bdd7f3a4b53213a7146d"
+    },
+    {
+      "relative_path": "phase9_deflated_sharpe.csv",
+      "size_bytes": 9469,
+      "sha256": "36c035abb3693230941d744f2ad358e9b5fc7627e4280c68f592c703fc12a8f1"
+    },
+    {
+      "relative_path": "phase9_dependency_checks.csv",
+      "size_bytes": 462,
+      "sha256": "ed8909923f1b28f4dd554b12337a0367b44639451582b195a9969f216d823571"
+    },
+    {
+      "relative_path": "phase9_figure_registry.csv",
+      "size_bytes": 412,
+      "sha256": "02922cd75771e6b01e9dc64c8a0fbe1d3a709c7d34b8f3045b49c6492b6a6b09"
+    },
+    {
+      "relative_path": "phase9_inner_selection_results.csv.gz",
+      "size_bytes": 158632,
+      "sha256": "68d4e1ef6e54a09482054d2bcbce2f9a36e37a4919fe1846f7b1ef33282da252"
+    },
+    {
+      "relative_path": "phase9_integrity_checks.csv",
+      "size_bytes": 1005,
+      "sha256": "2afce030a055bc64ceecfa5654a92575b9cab3c03fbc7fc747f3c14dcb0d9edd"
+    },
+    {
+      "relative_path": "phase9_observed_vs_synthetic_short_comparison.csv",
+      "size_bytes": 1169,
+      "sha256": "40cde00de0c9cdcbfa2f82844227cb1c85382f1ccfb63d0d47f29c6aae6b30ef"
+    },
+    {
+      "relative_path": "phase9_outer_walkforward_bootstrap.csv",
+      "size_bytes": 1004,
+      "sha256": "baa2f9e9d79adfad3a6f782ccd678316278784bc0cb7353044cbb2e1cd2e6814"
+    },
+    {
+      "relative_path": "phase9_outer_walkforward_daily_pnl.csv.gz",
+      "size_bytes": 2288,
+      "sha256": "f4c9fae51a31252e58c01b6010abd9a730183526923115a7ea4d5f0ee1a44ec3"
+    },
+    {
+      "relative_path": "phase9_outer_walkforward_summary.csv",
+      "size_bytes": 1171,
+      "sha256": "fb106caa86b78833df0f9d825bd28244b33f7ea7353bc779dce4f09ea9a7597d"
+    },
+    {
+      "relative_path": "phase9_reality_check_results.csv",
+      "size_bytes": 251,
+      "sha256": "55d80fa3be78acf517462e8584816732194dba6f5bbb19a7f4ffd27aa3b6be41"
+    },
+    {
+      "relative_path": "phase9_report.md",
+      "size_bytes": 14366,
+      "sha256": "234252ee63e883ba8d5bfea8322b1cb2b46df1e7b77c2e7e705b0b4a90feb4db"
+    },
+    {
+      "relative_path": "phase9_repository_provenance.json",
+      "size_bytes": 864,
+      "sha256": "0aa3b4217904ba4dc8aa8c47ba5457439dedd4fb104510f06f7a860886109ee6"
+    },
+    {
+      "relative_path": "phase9_sharpe_leaderboard.csv",
+      "size_bytes": 387081,
+      "sha256": "f5f56e3df0cf4428d6626a81b6595d48c6ac875d509febd817d531d8492ffc9a"
+    },
+    {
+      "relative_path": "phase9_stability_input_status.csv",
+      "size_bytes": 81,
+      "sha256": "e8416bd22e4108ee8e43ac75f4f1b6e722a86e35a21b8477a87eeea388fafe0c"
+    },
+    {
+      "relative_path": "phase9_strategy_daily_matrices.npz",
+      "size_bytes": 4843342,
+      "sha256": "0e6fc7890453b6ddc8a8462516ac0211abea05927a740bea8be701e83da0fde3"
+    },
+    {
+      "relative_path": "phase9_strategy_registry.csv",
+      "size_bytes": 10380527,
+      "sha256": "f1da748001ea8a9212e61ba64216f8404f49cc1934129cbf2820189852d12206"
+    },
+    {
+      "relative_path": "phase9_thesis_candidate_summary.csv",
+      "size_bytes": 551,
+      "sha256": "bcbc83d0ef5325d66ea2bc1f68d26d2112a238d3529bbbdc7bb66a012a90ba0e"
+    },
+    {
+      "relative_path": "phase9_trade_concentration.csv",
+      "size_bytes": 287,
+      "sha256": "daad0e7059f88f2a518654a25578e2dd835a64117d283df01bca81f17c7bc84f"
+    },
+    {
+      "relative_path": "phase9_trade_opportunity_panel.csv.gz",
+      "size_bytes": 300553,
+      "sha256": "01b14d5e2652496cceae1a421fbbaca1c5ee50a2285ca03ef7fbd1c00466665b"
+    }
+  ]
+}

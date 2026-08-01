@@ -1,0 +1,8 @@
+figure,purpose
+phase9_nested_walkforward_equity.pdf,Primary nested out-of-sample performance
+phase9_selector_sharpe.pdf,Selector comparison
+phase9_sharpe_cost_sensitivity.pdf,Cost robustness
+phase9_outer_block_pnl.pdf,Temporal stability
+phase9_sharpe_drawdown_frontier.pdf,Risk-return frontier
+phase9_best_strategy_waterfall.pdf,Concentration and fragility
+phase9_parameter_stability.pdf,Neighbourhood stability

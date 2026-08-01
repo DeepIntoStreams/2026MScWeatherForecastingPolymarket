@@ -1,0 +1,5 @@
+claim_id,status,safe_wording,restriction
+P9_C01,supported_exploratory,The pre-registered nested walk-forward selector produced total net PnL 3.631016 and settlement-date Sharpe 0.197400.,Post hoc Phase 9 extension; not untouched external validation.
+P9_C02,in_sample_upper_bound,"The highest full-sample Sharpe among 94,500 registered strategies was 0.404202.","Must be accompanied by DSR, PBO and reality-check results."
+P9_C03,observed_price_track,The best long-only observed-price strategy had Sharpe 0.273550 and net PnL 9.128000.,Still selected post hoc on the full sample.
+P9_C04,synthetic_short_boundary,Short-inclusive results use a synthetic short-YES payoff under parity.,Do not call these executable long-NO results.

@@ -1,0 +1,7 @@
+check,passed,critical,detail
+phase6_dependency,True,True,critical_failures=0
+phase7_dependency,True,True,critical_failures=0
+phase8_dependency,True,True,critical_failures=0
+phase8_completion_dependency,True,True,rows=1
+working_branch,True,True,current=edward-v70-empirical-finalisation; expected=edward-v70-empirical-finalisation
+frozen_tag_is_ancestor,True,True,tag_commit=cf5146d6a11022178548cea6187e8d075b9d174d; head=8b843942e705c678b2bfe35b20c43c626049e105
