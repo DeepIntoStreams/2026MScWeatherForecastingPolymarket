@@ -394,8 +394,11 @@ def standardise_event_books(
                 "probability_raw": working[probability_col],
             }
         )
-        if normalised_col is not None:
-            result["probability_source_normalised"] = working[normalised_col]
+        result["probability_source_normalised"] = (
+            working[normalised_col]
+            if normalised_col is not None
+            else np.nan
+        )
         for output, source in [
             ("outcome", outcome_col),
             ("event_order_source", event_order_col),
@@ -2414,6 +2417,24 @@ def self_test() -> None:
     clusters = np.repeat(np.arange(10), 2)
     regression = cluster_robust_regression(x, y, clusters)
     assert abs(regression["slope_delta_market_on_delta_matern"] - 0.5) < 1e-12
+
+    long_without_normalised = pd.DataFrame({
+        "target_date": ["2026-06-01"] * 11,
+        "decision_rule": ["event_day_open"] * 11,
+        "model": ["market"] * 11,
+        "event_order": list(range(1, 12)),
+        "event_probability": [1 / 11] * 11,
+        "outcome": [0] * 5 + [1] + [0] * 5,
+    })
+    standardised_long = standardise_event_books(
+        long_without_normalised,
+        "self_test_long_without_normalised.csv",
+    )
+    assert "probability_source_normalised" in standardised_long.columns
+    assert standardised_long[
+        "probability_source_normalised"
+    ].isna().all()
+    assert len(standardised_long) == 11
 
     synthetic = pd.DataFrame({
         "target_date": ["2026-06-01"] * 22,
