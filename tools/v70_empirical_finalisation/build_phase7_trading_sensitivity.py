@@ -967,14 +967,11 @@ def prepare_weather_panel(
     validation_panel: pd.DataFrame,
 ) -> pd.DataFrame:
     """
-    Combine the full-history market-period GP law with realised HKO outcomes.
+    Prepare the market-period predictive law and register HKO availability.
 
-    The market event probabilities were generated from the full-history
-    Phase 8 Matérn predictions, not from the chronological validation law.
-    Therefore gp_temperature_mean_c and gp_temperature_std_c are the
-    authoritative mean and scale for the probability perturbation analysis.
-    The Phase 5 panel supplies realised HKO values and an independent
-    deterministic-forecast cross-check.
+    The Phase 8 mean and scale are authoritative for probability perturbation.
+    Exact HKO values are used only when genuinely available. No settlement-bin
+    midpoint or other proxy is substituted for a missing realised temperature.
     """
     required_market = {
         "target_date",
@@ -991,54 +988,98 @@ def prepare_weather_panel(
             f"Phase 8 market prediction panel missing {missing_market}"
         )
 
-    required_validation = {
-        "target_date",
-        "decision_rule",
-        "hko_daily_max_c",
-    }
-    missing_validation = sorted(
-        required_validation - set(validation_panel.columns)
-    )
-    if missing_validation:
-        raise ValueError(
-            f"Phase 5 validation panel missing {missing_validation}"
-        )
-
     market = market_predictions.copy()
     market["target_date"] = pd.to_datetime(
         market["target_date"], errors="coerce"
     ).dt.strftime("%Y-%m-%d")
-    market = market[
-        [
-            "target_date",
-            "decision_rule",
-            "forecast_daily_max_c",
-            "gp_temperature_mean_c",
-            "gp_temperature_std_c",
-        ]
-    ].drop_duplicates(["target_date", "decision_rule"])
+    market_columns = [
+        "target_date",
+        "decision_rule",
+        "forecast_daily_max_c",
+        "gp_temperature_mean_c",
+        "gp_temperature_std_c",
+    ]
+
+    market_hko_candidates = [
+        "hko_daily_max_c",
+        "realised_hko_daily_max_c",
+        "realized_hko_daily_max_c",
+        "observed_daily_max_c",
+        "actual_daily_max_c",
+    ]
+    market_hko_column = next(
+        (
+            column
+            for column in market_hko_candidates
+            if column in market.columns
+        ),
+        None,
+    )
+    if market_hko_column is not None:
+        market_columns.append(market_hko_column)
+
+    market = market[market_columns].drop_duplicates(
+        ["target_date", "decision_rule"]
+    )
     market = market.rename(columns={
         "gp_temperature_mean_c": "temperature_predictive_mean_c",
         "gp_temperature_std_c": "predictive_standard_deviation_c",
     })
+    if (
+        market_hko_column is not None
+        and market_hko_column != "hko_daily_max_c"
+    ):
+        market = market.rename(columns={
+            market_hko_column: "hko_daily_max_c",
+        })
 
     validation = validation_panel.copy()
     validation["target_date"] = pd.to_datetime(
         validation["target_date"], errors="coerce"
     ).dt.strftime("%Y-%m-%d")
-    validation_columns = [
-        "target_date",
-        "decision_rule",
+
+    validation_hko_candidates = [
         "hko_daily_max_c",
+        "realised_hko_daily_max_c",
+        "realized_hko_daily_max_c",
+        "observed_daily_max_c",
+        "actual_daily_max_c",
     ]
+    validation_hko_column = next(
+        (
+            column
+            for column in validation_hko_candidates
+            if column in validation.columns
+        ),
+        None,
+    )
+
+    validation_columns = ["target_date", "decision_rule"]
+    if validation_hko_column is not None:
+        validation_columns.append(validation_hko_column)
     if "forecast_daily_max_c" in validation.columns:
         validation_columns.append("forecast_daily_max_c")
+
     validation = validation[
         validation_columns
     ].drop_duplicates(["target_date", "decision_rule"])
+    rename_validation: dict[str, str] = {}
+    if (
+        validation_hko_column is not None
+        and validation_hko_column != "hko_daily_max_c"
+    ):
+        rename_validation[
+            validation_hko_column
+        ] = "hko_daily_max_c"
     if "forecast_daily_max_c" in validation.columns:
-        validation = validation.rename(columns={
-            "forecast_daily_max_c": "validation_forecast_daily_max_c",
+        rename_validation[
+            "forecast_daily_max_c"
+        ] = "validation_forecast_daily_max_c"
+    validation = validation.rename(columns=rename_validation)
+
+    if "hko_daily_max_c" in market.columns:
+        market = market.rename(columns={
+            "hko_daily_max_c": "market_panel_hko_daily_max_c",
         })
 
     result = market.merge(
@@ -1047,6 +1088,43 @@ def prepare_weather_panel(
         how="left",
         validate="one_to_one",
     )
+
+    if "market_panel_hko_daily_max_c" in result.columns:
+        market_hko = pd.to_numeric(
+            result["market_panel_hko_daily_max_c"],
+            errors="coerce",
+        )
+        validation_hko = (
+            pd.to_numeric(
+                result["hko_daily_max_c"],
+                errors="coerce",
+            )
+            if "hko_daily_max_c" in result.columns
+            else pd.Series(np.nan, index=result.index)
+        )
+        result["hko_daily_max_c"] = (
+            market_hko.combine_first(validation_hko)
+        )
+        result["realised_hko_source"] = np.select(
+            [market_hko.notna(), validation_hko.notna()],
+            [
+                "phase8_market_prediction_panel",
+                "phase5_validation_panel",
+            ],
+            default="unavailable",
+        )
+    elif "hko_daily_max_c" not in result.columns:
+        result["hko_daily_max_c"] = np.nan
+        result["realised_hko_source"] = "unavailable"
+    else:
+        result["realised_hko_source"] = np.where(
+            pd.to_numeric(
+                result["hko_daily_max_c"],
+                errors="coerce",
+            ).notna(),
+            "phase5_validation_panel",
+            "unavailable",
+        )
 
     numeric = [
         "forecast_daily_max_c",
@@ -1061,14 +1139,9 @@ def prepare_weather_panel(
             result[column], errors="coerce"
         )
 
-    if result["hko_daily_max_c"].isna().any():
-        missing = result.loc[
-            result["hko_daily_max_c"].isna(),
-            ["target_date", "decision_rule"],
-        ]
-        raise ValueError(
-            f"Realised HKO values missing for {len(missing)} market predictions"
-        )
+    result["realised_hko_available"] = (
+        result["hko_daily_max_c"].notna()
+    )
 
     if "validation_forecast_daily_max_c" in result.columns:
         result["forecast_daily_max_crosscheck_difference_c"] = (
@@ -1090,6 +1163,7 @@ def prepare_weather_panel(
         result["matern_mean_error_c"]
         / result["predictive_standard_deviation_c"]
     )
+
     return result
 
 def normal_cdf(value: np.ndarray) -> np.ndarray:
@@ -1999,6 +2073,17 @@ def write_report(
         "",
         concentration.to_markdown(index=False),
         "",
+        "## Exact market-period HKO availability",
+        "",
+        (
+            "Exact realised HKO temperatures are used only when present in an "
+            "authoritative input panel. Where they are unavailable, Phase 7 "
+            "does not manufacture a midpoint proxy. The probability delta, "
+            "gamma, mean-shift strategy and realised contract PnL remain fully "
+            "identified from the predictive law, event bounds, market prices "
+            "and certified settlement outcomes."
+        ),
+        "",
         "## Temperature-mean perturbation",
         "",
         shift_summary.to_markdown(index=False),
@@ -2073,6 +2158,40 @@ def self_test() -> None:
             }
         }),
         np.round(np.arange(0.0, 0.251, 0.01), 2),
+    )
+
+    market_predictions = pd.DataFrame({
+        "target_date": ["2026-06-01", "2026-06-02"],
+        "decision_rule": ["event_day_open", "event_day_open"],
+        "forecast_daily_max_c": [30.0, 31.0],
+        "gp_temperature_mean_c": [30.5, 31.5],
+        "gp_temperature_std_c": [1.2, 1.3],
+    })
+    nonoverlapping_validation = pd.DataFrame({
+        "target_date": ["2026-03-01"],
+        "decision_rule": ["event_day_open"],
+        "hko_daily_max_c": [25.0],
+        "forecast_daily_max_c": [24.5],
+    })
+    prepared = prepare_weather_panel(
+        market_predictions,
+        nonoverlapping_validation,
+    )
+    assert len(prepared) == 2
+    assert prepared["hko_daily_max_c"].isna().all()
+    assert not prepared["realised_hko_available"].any()
+    assert prepared["temperature_predictive_mean_c"].notna().all()
+
+    market_predictions_with_hko = market_predictions.copy()
+    market_predictions_with_hko["hko_daily_max_c"] = [30.2, 31.4]
+    prepared_with_hko = prepare_weather_panel(
+        market_predictions_with_hko,
+        nonoverlapping_validation,
+    )
+    assert prepared_with_hko["realised_hko_available"].all()
+    assert np.allclose(
+        prepared_with_hko["hko_daily_max_c"],
+        [30.2, 31.4],
     )
 
     synthetic = pd.DataFrame({
@@ -2265,6 +2384,32 @@ def main() -> int:
     )
     weather.to_csv(
         out / "phase7_market_period_predictive_law_panel.csv",
+        index=False,
+    )
+    pd.DataFrame([{
+        "market_prediction_rows": len(weather),
+        "rows_with_exact_hko": int(
+            weather["realised_hko_available"].sum()
+        ),
+        "coverage_fraction": float(
+            weather["realised_hko_available"].mean()
+        ),
+        "sources": "|".join(
+            sorted(
+                weather["realised_hko_source"]
+                .astype(str)
+                .unique()
+            )
+        ),
+        "exact_error_analysis_available": bool(
+            weather["realised_hko_available"].any()
+        ),
+        "interpretation": (
+            "Exact temperature-error diagnostics are computed only where "
+            "an actual HKO value is present. No interval midpoint proxy is used."
+        ),
+    }]).to_csv(
+        out / "phase7_market_period_hko_availability.csv",
         index=False,
     )
     candidates = build_candidate_panel(panel, config)
@@ -2630,7 +2775,7 @@ def main() -> int:
     ].iloc[0]
     output_checks = [
         {
-            "check": "phase5_weather_join_complete",
+            "check": "market_period_predictive_law_join_complete",
             "passed": len(
                 probability_sensitivity[
                     ["target_date", "decision_rule"]
@@ -2641,6 +2786,16 @@ def main() -> int:
             "detail": (
                 f"books="
                 f"{len(probability_sensitivity[['target_date','decision_rule']].drop_duplicates())}"
+            ),
+        },
+        {
+            "check": "market_period_hko_availability_registered",
+            "passed": True,
+            "critical": False,
+            "detail": (
+                f"available_rows={int(weather['realised_hko_available'].sum())}; "
+                f"total_rows={len(weather)}; "
+                f"sources={sorted(weather['realised_hko_source'].astype(str).unique())}"
             ),
         },
         {
