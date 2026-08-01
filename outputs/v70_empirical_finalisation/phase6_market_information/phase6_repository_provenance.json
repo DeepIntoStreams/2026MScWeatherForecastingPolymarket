@@ -1,0 +1,26 @@
+{
+  "generated_utc": "2026-08-01T02:05:48.548552+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "14fd19dcb333f4883890d347904d231f25a50491",
+  "frozen_ref": "v2-empirical-complete",
+  "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+  "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+  "frozen_exact_support_panel": "outputs/v2_completion/phase20_exact_common_support_event_panel.csv",
+  "frozen_exact_support_panel_sha256": "73261a14cf4338ff68bbc6402eaada0bdaeb906bc360bf70411054a09b98b189",
+  "frozen_exact_support_role": "authoritative selected-Matern, outcomes, event order and normalised market exact-support books",
+  "raw_market_probability_inventory": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_canonical_existing_event_books.csv.gz",
+  "raw_market_probability_inventory_sha256": "4cfccb175646b68f2542877df7cc885da330664492cf13c7116aff8c5dd58609",
+  "raw_market_probability_role": "true unnormalised market_probability_raw values for binary scores",
+  "reconstructed_event_books": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_reconstructed_raw_static_event_books.csv.gz",
+  "reconstructed_event_books_sha256": "990fd417094e1ddf3ef0fafee4829bef182365faa5d645e465fdc5315d125401",
+  "exact_support_keys": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_master_exact_support_keys.csv",
+  "exact_support_keys_sha256": "4709ab8f71bab3dc5d949c06e26090eda7d7600e09424fada3d163d297a0ad0c",
+  "bootstrap_replications": 10000,
+  "bootstrap_seed": 20260804,
+  "moving_block_lengths": [
+    3,
+    5,
+    7
+  ],
+  "interpretation_boundary": "The phase compares realised forecast losses and describes co-movement between market prices and forecast revisions. It does not identify a causal market response to a particular weather observation, and it does not interpret lower market loss as proof of market efficiency."
+}

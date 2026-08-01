@@ -1,0 +1,37 @@
+check,passed,critical,detail
+phase1_dependency,True,True,critical_failures=0
+phase2_dependency,True,True,critical_failures=0
+phase3_dependency,True,True,critical_failures=0
+phase4_dependency,True,True,critical_failures=0
+phase5_dependency,True,True,critical_failures=0
+exact_support_key_count,True,True,keys=350
+exact_support_date_count,True,True,dates=97
+required_models_present,True,True,"models=['market', 'matern', 'raw', 'static']"
+event_rows_per_model,True,True,"counts={'market': 3850, 'matern': 3850, 'raw': 3850, 'static': 3850}"
+events_per_book,True,True,bad_events=0; bad_rows=0
+one_winner_per_book,True,True,minimum=1.000000000000; maximum=1.000000000000
+probabilities_finite_bounded,True,True,minimum=0.000000000000; maximum=1.000000000000
+normalised_books_sum_to_one,True,True,maximum_error=2.220e-16
+books_per_model,True,True,"counts={'market': 350, 'matern': 350, 'raw': 350, 'static': 350}"
+development_date_count,True,True,"counts={'development': 67, 'june_external': 30}"
+june_external_date_count,True,True,"counts={'development': 67, 'june_external': 30}"
+unique_event_keys,True,True,duplicates=0
+raw_market_probability_rows_recovered,True,True,rows=3850
+raw_market_probability_books_recovered,True,True,books=350
+raw_market_normalisation_reconciles,True,True,maximum_error=1.110e-16
+raw_market_books_not_pre_normalised,True,True,mean_sum=1.045380; minimum_sum=0.869000; maximum_sum=1.300000
+june_reference_binary_brier,True,True,calculated=0.009323867; reference=0.009323867; difference=-3.469e-18
+june_reference_binary_log,True,True,calculated=0.038628062; reference=0.038628062; difference=0.000e+00
+june_reference_categorical_log,True,True,calculated=0.357342206; reference=0.357342206; difference=-3.886e-16
+june_reference_multiclass_brier,True,True,calculated=0.101709592; reference=0.101709592; difference=0.000e+00
+legacy_june_binary_brier_reference_registered,True,False,authoritative=0.009323867; legacy=0.009246327; difference=7.754e-05; status=legacy_value_differs_from_authoritative_recomputation
+book_score_rows,True,True,rows=1400
+date_score_rows,True,True,rows=388
+score_metrics_complete,True,True,"metrics=['binary_brier', 'binary_log', 'categorical_log', 'multiclass_brier']"
+score_bootstrap_methods,True,True,"methods=['circular_moving_block', 'ordinary_date']"
+score_moving_block_lengths,True,True,
+disagreement_rows,True,True,rows=350
+transition_panels_nonempty,True,True,event_rows=3586; book_rows=326
+transition_probability_mass_conserved,True,True,
+market_age_registered,True,False,available=False; coverage=0.000000
+figures_created,True,True,figures=7

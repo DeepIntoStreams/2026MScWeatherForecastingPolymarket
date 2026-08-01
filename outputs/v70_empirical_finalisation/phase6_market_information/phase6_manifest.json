@@ -1,0 +1,212 @@
+{
+  "phase": "phase6_market_information_content",
+  "generated_utc": "2026-08-01T02:05:56.163637+00:00",
+  "provenance": {
+    "generated_utc": "2026-08-01T02:05:48.548552+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "14fd19dcb333f4883890d347904d231f25a50491",
+    "frozen_ref": "v2-empirical-complete",
+    "frozen_tag_object": "5d48edb55074f4018d842482bab9f7bf4ab1c01e",
+    "frozen_commit": "1b0900086c315588b0dc41225e41c2b5f2189bfa",
+    "frozen_exact_support_panel": "outputs/v2_completion/phase20_exact_common_support_event_panel.csv",
+    "frozen_exact_support_panel_sha256": "73261a14cf4338ff68bbc6402eaada0bdaeb906bc360bf70411054a09b98b189",
+    "frozen_exact_support_role": "authoritative selected-Matern, outcomes, event order and normalised market exact-support books",
+    "raw_market_probability_inventory": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_canonical_existing_event_books.csv.gz",
+    "raw_market_probability_inventory_sha256": "4cfccb175646b68f2542877df7cc885da330664492cf13c7116aff8c5dd58609",
+    "raw_market_probability_role": "true unnormalised market_probability_raw values for binary scores",
+    "reconstructed_event_books": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_reconstructed_raw_static_event_books.csv.gz",
+    "reconstructed_event_books_sha256": "990fd417094e1ddf3ef0fafee4829bef182365faa5d645e465fdc5315d125401",
+    "exact_support_keys": "outputs/v70_empirical_finalisation/phase1_evidence_recovery/phase1_master_exact_support_keys.csv",
+    "exact_support_keys_sha256": "4709ab8f71bab3dc5d949c06e26090eda7d7600e09424fada3d163d297a0ad0c",
+    "bootstrap_replications": 10000,
+    "bootstrap_seed": 20260804,
+    "moving_block_lengths": [
+      3,
+      5,
+      7
+    ],
+    "interpretation_boundary": "The phase compares realised forecast losses and describes co-movement between market prices and forecast revisions. It does not identify a causal market response to a particular weather observation, and it does not interpret lower market loss as proof of market efficiency."
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase6_figure_expected_rank_shift_over_time.pdf",
+      "size_bytes": 16405,
+      "sha256": "75c33e1fb235b59a3ea1e8181fb05ca2ddad8e79619a7c0e62e4794442999523"
+    },
+    {
+      "relative_path": "figures/phase6_figure_june_score_differences.pdf",
+      "size_bytes": 12627,
+      "sha256": "20fe3a1f3cf045d0e3a7cc4f4552747a89f71533a457b26277c0806e2be365ba"
+    },
+    {
+      "relative_path": "figures/phase6_figure_market_movement_towards_update.pdf",
+      "size_bytes": 13622,
+      "sha256": "029382627aceec56caf13fda4a7747dbe01dd9d007fce999f6c42c72c134649a"
+    },
+    {
+      "relative_path": "figures/phase6_figure_market_probability_sum.pdf",
+      "size_bytes": 14672,
+      "sha256": "e252c7aa16ddf92a8b8ea42bbd3e5d5510c89b53c97fd55b04a0a3879312ca93"
+    },
+    {
+      "relative_path": "figures/phase6_figure_paired_categorical_log_differences.pdf",
+      "size_bytes": 14866,
+      "sha256": "1d1ba01db31ecc95ebca05df1ae3a8a98bfdf6b5e6395fb2949fb83791561ed1"
+    },
+    {
+      "relative_path": "figures/phase6_figure_realised_probability_scatter.pdf",
+      "size_bytes": 18137,
+      "sha256": "b4cd46cfcb6a6b6c34d2239a23fd7c8378f2f99947a85717673509badeb3ee6d"
+    },
+    {
+      "relative_path": "figures/phase6_figure_total_variation_by_rule.pdf",
+      "size_bytes": 15273,
+      "sha256": "2029316e6a1461c024bd4c0a1101014f99d5cc7da96753b08a96d7b59ea16326"
+    },
+    {
+      "relative_path": "phase6_book_score_panel.csv",
+      "size_bytes": 246858,
+      "sha256": "7281389f84ba4bf1978dc4873e8f8d9c4abf1aca422701346251221b9dc50052"
+    },
+    {
+      "relative_path": "phase6_book_transition_panel.csv",
+      "size_bytes": 89043,
+      "sha256": "66e1c98645b1225335c1d0ec001db4fcb89489ef2d845e88b4c616aa52769f07"
+    },
+    {
+      "relative_path": "phase6_date_balanced_score_panel.csv",
+      "size_bytes": 47083,
+      "sha256": "37e30d1d58be41a9315d0993e5634fee6457c21298e742d053cd331bc30001fe"
+    },
+    {
+      "relative_path": "phase6_date_score_comparison_panel.csv",
+      "size_bytes": 75470,
+      "sha256": "5dbc9a75053977100cc0f33ea8edc527b6d324aa4832929412883fb2f53c301d"
+    },
+    {
+      "relative_path": "phase6_disagreement_bootstrap_intervals.csv",
+      "size_bytes": 86044,
+      "sha256": "743b568e01c9fe7c210f26eaee6a8806f74bcfac2aeeb4aca2cd804b88b30ef1"
+    },
+    {
+      "relative_path": "phase6_disagreement_summary.csv",
+      "size_bytes": 18660,
+      "sha256": "4c8a5243c324e7a7192b44badac6605c6a0b59eba121d1408723512fdccae0a9"
+    },
+    {
+      "relative_path": "phase6_duplicate_resolution_audit.csv",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "relative_path": "phase6_event_transition_panel.csv.gz",
+      "size_bytes": 212026,
+      "sha256": "7304e875c14602c14be18afd4ed0f038b7d62528e375793033b702f6a52e2d65"
+    },
+    {
+      "relative_path": "phase6_exact_support_event_panel.csv.gz",
+      "size_bytes": 325684,
+      "sha256": "734e908279a8f2e06befd09b85a7dcb7b4e3615c51c5e6ac45b96d7c04cb370b"
+    },
+    {
+      "relative_path": "phase6_figure_registry.csv",
+      "size_bytes": 758,
+      "sha256": "42fbdf27f9992fc99ddd15e138866f93ee7996b19872d0f065fe12ec55c2a111"
+    },
+    {
+      "relative_path": "phase6_integrity_checks.csv",
+      "size_bytes": 2597,
+      "sha256": "321666f4895d58ea514dd10286ad0498e06c647f470304c1f4bcd58145d55760"
+    },
+    {
+      "relative_path": "phase6_legacy_reference_reconciliation.csv",
+      "size_bytes": 357,
+      "sha256": "5d5f7fe76c282e03709181916379defabb9fa21dc4ba8fc5aa89d444df162ddc"
+    },
+    {
+      "relative_path": "phase6_market_probability_reconciliation.csv.gz",
+      "size_bytes": 88339,
+      "sha256": "10febe448442a3bfa5b0ab39d43c3c026e2dd6f9023fa039524905caf8964e45"
+    },
+    {
+      "relative_path": "phase6_market_raw_probability_sum_summary.csv",
+      "size_bytes": 19436,
+      "sha256": "abdceb8ea55ac2673732c615cdc88650b30b0151a37ea9b16470ef81cd1d1d6e"
+    },
+    {
+      "relative_path": "phase6_market_record_age_panel.csv",
+      "size_bytes": 33017,
+      "sha256": "d808d25a8ce763950dcd580926f3048cf804867642c8fc0b8ace7f03ca594b13"
+    },
+    {
+      "relative_path": "phase6_market_record_age_sensitivity.csv",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "relative_path": "phase6_market_record_age_status.csv",
+      "size_bytes": 201,
+      "sha256": "f7ec872551d9cd6d67388452e6a7d94c492cd4a971878a12d314db9a84999f60"
+    },
+    {
+      "relative_path": "phase6_market_record_age_summary.csv",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "relative_path": "phase6_market_update_regressions.csv",
+      "size_bytes": 3426,
+      "sha256": "c8c7e65729a29e55ac8d05b3d9e1a97ebecedc19143211a001e6a75534708a6c"
+    },
+    {
+      "relative_path": "phase6_matern_market_disagreement_panel.csv",
+      "size_bytes": 75992,
+      "sha256": "32b10ef556a151c55a1ecfd191681468ff0d5eeee84632a15c9ca51267a63147"
+    },
+    {
+      "relative_path": "phase6_report.md",
+      "size_bytes": 19024,
+      "sha256": "a279db22f8ea5c0fa5c7e140b18a8fe42954a0028eefa5b9fdddb015801a4cf5"
+    },
+    {
+      "relative_path": "phase6_repository_provenance.json",
+      "size_bytes": 1947,
+      "sha256": "50ae879ae222b1de6cb3ea7d151ff8f7905e4a7ba17d97670ad5df055ff3d241"
+    },
+    {
+      "relative_path": "phase6_score_bootstrap_intervals.csv",
+      "size_bytes": 132082,
+      "sha256": "941feaa32c6f18bdffc93dddd0bfd6ba5d75e7b7d0e8bdebaf97f6af9104b2d8"
+    },
+    {
+      "relative_path": "phase6_score_bootstrap_tests.csv",
+      "size_bytes": 132407,
+      "sha256": "d9579a69133390fe9ff8f1b53c518fa5b1d6838e41e7033da988ef2d38a484fa"
+    },
+    {
+      "relative_path": "phase6_score_comparison_summary.csv",
+      "size_bytes": 26261,
+      "sha256": "6b22f2b54d8f35269057ecc90aa13803e06eca5df45a1c091913f27ab6513cc6"
+    },
+    {
+      "relative_path": "phase6_source_inventory.csv",
+      "size_bytes": 1188,
+      "sha256": "5acad6ffbe8e59146981c1a7a5e0f5a8b0af3e9a1325b481b005ede1dacb0f40"
+    },
+    {
+      "relative_path": "phase6_thesis_candidate_summary.csv",
+      "size_bytes": 2265,
+      "sha256": "54f90488efa9d04fe02e1ca549943e2783e1a29af72be1ae48d989bb412700c8"
+    },
+    {
+      "relative_path": "phase6_transition_bootstrap_intervals.csv",
+      "size_bytes": 53739,
+      "sha256": "28ef9ea4f419bac085aef7827e737ed269c613b69fe912e01916afa4d81c8701"
+    },
+    {
+      "relative_path": "phase6_transition_summary.csv",
+      "size_bytes": 11883,
+      "sha256": "4d20d0e405055bbe55b0dc797266a995174164073faa99ea647829a6792bdf63"
+    }
+  ]
+}

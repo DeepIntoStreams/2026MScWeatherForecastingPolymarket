@@ -1,0 +1,2 @@
+metric,authoritative_recomputed_value,legacy_reference_value,difference_authoritative_minus_legacy,status,critical,interpretation
+binary_brier,0.009323867184877028,0.009246327,7.754018487702782e-05,legacy_value_differs_from_authoritative_recomputation,False,The authoritative recomputation is used in Phase 6. The legacy scalar is preserved only for audit.

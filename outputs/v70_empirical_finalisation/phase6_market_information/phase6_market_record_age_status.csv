@@ -1,0 +1,2 @@
+market_age_available,books,books_with_age,coverage_fraction,timestamp_columns_present,decision_cutoff_source
+False,350,0,0.0,False,source timestamp where available; otherwise deterministic rule cutoff

@@ -1,0 +1,16 @@
+candidate_id,quantity,point_estimate,lower_95,upper_95,preferred_location
+P6_JUNE_BINARY_BRIER,June Matérn minus market Binary Brier,0.009323867184877028,0.0038082770324959687,0.014558109361561346,Results exact-support market comparison
+P6_JUNE_BINARY_LOG,June Matérn minus market Binary log,0.03862806151631949,0.021931054759880535,0.054178762177392405,Results exact-support market comparison
+P6_JUNE_CATEGORICAL_LOG,June Matérn minus market Categorical log,0.3573422055687354,0.21203729222654194,0.4939119277883643,Results exact-support market comparison
+P6_JUNE_MULTICLASS_BRIER,June Matérn minus market Multiclass Brier,0.1017095917289234,0.04231821948789283,0.15811715786897548,Results exact-support market comparison
+P6_DEVELOPMENT_TOTAL_VARIATION_MARKET_MATERN,development total_variation_market_matern,0.29067096073650656,,,Results disagreement interpretation
+P6_DEVELOPMENT_EXPECTED_RANK_MARKET_MINUS_MATERN,development expected_rank_market_minus_matern,0.41461042701593975,,,Results disagreement interpretation
+P6_DEVELOPMENT_REALISED_EVENT_PROBABILITY_MARKET_MINUS_MATERN,development realised_event_probability_market_minus_matern,0.030297288490261594,,,Results disagreement interpretation
+P6_JUNE_EXTERNAL_TOTAL_VARIATION_MARKET_MATERN,june_external total_variation_market_matern,0.278613035914764,,,Results disagreement interpretation
+P6_JUNE_EXTERNAL_EXPECTED_RANK_MARKET_MINUS_MATERN,june_external expected_rank_market_minus_matern,0.47439199550686445,,,Results disagreement interpretation
+P6_JUNE_EXTERNAL_REALISED_EVENT_PROBABILITY_MARKET_MINUS_MATERN,june_external realised_event_probability_market_minus_matern,0.09450362266079454,,,Results disagreement interpretation
+P6_MOVE_24H_TO_12H,24h_to_12h mean market movement towards updated Matérn,-0.009315976082329314,,,Appendix or discussion
+P6_MOVE_12H_TO_6H,12h_to_6h mean market movement towards updated Matérn,-0.04158377023618814,,,Appendix or discussion
+P6_MOVE_6H_TO_OPEN,6h_to_open mean market movement towards updated Matérn,-0.028481940170635312,,,Appendix or discussion
+P6_MOVE_24H_TO_OPEN,24h_to_open mean market movement towards updated Matérn,-0.0741866252060234,,,Appendix or discussion
+P6_MARKET_AGE_STATUS,market-record age coverage fraction,0.0,,,Reproducibility register
