@@ -32,13 +32,20 @@ def test_frozen_specification():
         "outputs/v2_completion/"
         "phase20_exact_common_support_event_panel.csv"
     )
+    assert data["input_paths"]["phase1_existing_event_books"].endswith(
+        "phase1_canonical_existing_event_books.csv.gz"
+    )
     assert abs(
         data["june_reference_model_minus_market"]["binary_brier"]
-        - 0.009246327
+        - 0.009323867184877032
+    ) < 1e-12
+    assert abs(
+        data["june_reference_model_minus_market"]["binary_log"]
+        - 0.03862806151631949
     ) < 1e-12
     assert abs(
         data["legacy_june_reference_model_minus_market"]["binary_brier"]
-        - 0.009324
+        - 0.009246327
     ) < 1e-12
     assert data["bootstrap"]["replications"] == 10000
     assert data["bootstrap"]["moving_block_lengths"] == [3, 5, 7]

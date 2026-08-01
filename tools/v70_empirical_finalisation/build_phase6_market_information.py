@@ -502,9 +502,10 @@ def standardise_frozen_exact_support_panel(
 ) -> pd.DataFrame:
     # Convert the frozen Phase 20 exact-support panel to canonical long form.
     #
-    # market_source_probability is the raw market value used by binary
-    # scores. market_probability is the within-book normalised market value
-    # used by categorical scores.
+    # Phase 20 supplies the certified event ordering, outcomes, selected
+    # Matérn probabilities and within-book normalised market law. The true
+    # unnormalised market YES values used by binary scores are attached later
+    # from the Phase 10 inventory.
     required = {
         "target_date",
         "decision_rule",
@@ -607,6 +608,179 @@ def standardise_frozen_exact_support_panel(
         )
 
     return result
+
+
+def recover_true_raw_market_probabilities(
+    frame: pd.DataFrame,
+    source_name: str,
+) -> pd.DataFrame:
+    """Recover the unnormalised market YES values used by binary scores.
+
+    The frozen Phase 20 panel retains the within-book normalised market law in
+    both `market_source_probability` and `market_probability`. The Phase 1
+    evidence inventory separately retains the exact Phase 10
+    `market_probability_raw` values. Event labels are converted to their
+    temperature order before joining to the certified Phase 20 contract rank.
+    """
+    required = {
+        "settlement_date",
+        "decision_rule",
+        "event_key",
+        "probability",
+        "model",
+        "source_probability_column",
+    }
+    missing = sorted(required - set(frame.columns))
+    if missing:
+        raise ValueError(
+            f"{source_name}: missing raw-market inventory columns {missing}; "
+            f"columns={list(frame.columns)}"
+        )
+
+    selected = frame.loc[
+        (frame["model"].map(normalise_model) == "market")
+        & (
+            frame["source_probability_column"]
+            .astype(str)
+            .str.strip()
+            .str.lower()
+            == "market_probability_raw"
+        )
+    ].copy()
+    if selected.empty:
+        raise ValueError(
+            f"{source_name}: no market_probability_raw rows were found"
+        )
+
+    result = pd.DataFrame({
+        "target_date": pd.to_datetime(
+            selected["settlement_date"],
+            errors="coerce",
+        ).dt.strftime("%Y-%m-%d"),
+        "decision_rule": selected["decision_rule"].map(
+            normalise_rule
+        ),
+        "event_label_raw_market": selected["event_key"],
+        "market_probability_raw_recovered": pd.to_numeric(
+            selected["probability"],
+            errors="coerce",
+        ),
+        "raw_market_source_path": selected["source_path"]
+        if "source_path" in selected.columns
+        else source_name,
+    })
+    result["_event_sort_value"] = result[
+        "event_label_raw_market"
+    ].map(parse_event_order_from_label)
+    invalid = (
+        result["target_date"].isna()
+        | ~result["decision_rule"].isin(RULE_ORDER)
+        | result["market_probability_raw_recovered"].isna()
+        | result["_event_sort_value"].isna()
+    )
+    if invalid.any():
+        raise ValueError(
+            f"{source_name}: invalid recovered raw-market rows="
+            f"{int(invalid.sum())}; "
+            f"sample={result.loc[invalid].head(5).to_dict('records')}"
+        )
+
+    result["event_order"] = (
+        result.groupby(["target_date", "decision_rule"])[
+            "_event_sort_value"
+        ]
+        .rank(method="dense")
+        .astype("Int64")
+    )
+    key = ["target_date", "decision_rule", "event_order"]
+    duplicates = int(result.duplicated(key).sum())
+    if duplicates:
+        raise ValueError(
+            f"{source_name}: duplicate recovered raw-market keys={duplicates}"
+        )
+
+    return result.drop(columns=["_event_sort_value"]).sort_values(key)
+
+
+def attach_true_raw_market_probabilities(
+    frozen_panel: pd.DataFrame,
+    recovered_raw: pd.DataFrame,
+    tolerance: float,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Attach true raw market values and certify normalisation."""
+    result = frozen_panel.merge(
+        recovered_raw,
+        on=["target_date", "decision_rule", "event_order"],
+        how="left",
+        validate="many_to_one",
+    )
+    market_mask = result["model"] == "market"
+    missing = int(
+        result.loc[
+            market_mask,
+            "market_probability_raw_recovered",
+        ].isna().sum()
+    )
+    if missing:
+        raise ValueError(
+            f"Recovered raw market probabilities missing for {missing} rows"
+        )
+
+    market = result.loc[market_mask].copy()
+    market["recovered_raw_book_sum"] = (
+        market.groupby(["target_date", "decision_rule"])[
+            "market_probability_raw_recovered"
+        ].transform("sum")
+    )
+    market["recovered_probability_normalised"] = (
+        market["market_probability_raw_recovered"]
+        / market["recovered_raw_book_sum"]
+    )
+    market["normalisation_absolute_error"] = (
+        market["recovered_probability_normalised"]
+        - market["probability_source_normalised"]
+    ).abs()
+    maximum_error = float(
+        market["normalisation_absolute_error"].max()
+    )
+    if maximum_error > tolerance:
+        raise ValueError(
+            "Recovered raw market probabilities do not reconcile with the "
+            f"frozen normalised law; maximum error={maximum_error:.3e}"
+        )
+
+    result.loc[market_mask, "probability_raw"] = result.loc[
+        market_mask,
+        "market_probability_raw_recovered",
+    ].to_numpy()
+
+    reconciliation = market[[
+        "target_date",
+        "decision_rule",
+        "event_order",
+        "event_label_raw_market",
+        "market_probability_raw_recovered",
+        "probability_source_normalised",
+        "recovered_raw_book_sum",
+        "recovered_probability_normalised",
+        "normalisation_absolute_error",
+        "raw_market_source_path",
+    ]].copy()
+    book_summary = (
+        reconciliation.groupby(
+            ["target_date", "decision_rule"],
+            as_index=False,
+        )
+        .agg(
+            raw_probability_sum=("recovered_raw_book_sum", "first"),
+            maximum_normalisation_error=(
+                "normalisation_absolute_error",
+                "max",
+            ),
+            events=("event_order", "size"),
+        )
+    )
+    return result, reconciliation, book_summary
 
 
 def standardise_exact_keys(frame: pd.DataFrame) -> pd.DataFrame:
@@ -2554,6 +2728,29 @@ def self_test() -> None:
     ].isna().all()
     assert len(standardised_long) == 11
 
+    raw_inventory_test = pd.DataFrame({
+        "settlement_date": ["2026-06-01"] * 3,
+        "decision_rule": ["event_day_open"] * 3,
+        "event_key": [
+            "Will the highest temperature be 20°C or below?",
+            "Will the highest temperature be 21°C?",
+            "Will the highest temperature be 22°C or higher?",
+        ],
+        "probability": [0.20, 0.50, 0.35],
+        "model": ["market"] * 3,
+        "source_probability_column": ["market_probability_raw"] * 3,
+        "source_path": ["phase10.csv"] * 3,
+    })
+    recovered_test = recover_true_raw_market_probabilities(
+        raw_inventory_test,
+        "self_test_raw_market_inventory.csv",
+    )
+    assert recovered_test["event_order"].tolist() == [1, 2, 3]
+    assert np.allclose(
+        recovered_test["market_probability_raw_recovered"],
+        [0.20, 0.50, 0.35],
+    )
+
     frozen_wide = pd.DataFrame({
         "target_date": ["2026-06-01"] * 11,
         "decision_rule": ["event_day_open"] * 11,
@@ -2664,12 +2861,16 @@ def main() -> int:
     frozen_exact_path = (
         frozen_root / inputs["frozen_exact_support_panel"]
     )
+    raw_market_inventory_path = repo_root / inputs[
+        "phase1_existing_event_books"
+    ]
     reconstructed_path = repo_root / inputs[
         "phase1_reconstructed_event_books"
     ]
     exact_keys_path = repo_root / inputs["phase1_exact_support_keys"]
     for path in [
         frozen_exact_path,
+        raw_market_inventory_path,
         reconstructed_path,
         exact_keys_path,
     ]:
@@ -2694,7 +2895,17 @@ def main() -> int:
             frozen_exact_path
         ),
         "frozen_exact_support_role": (
-            "authoritative selected-Matern and market exact-support books"
+            "authoritative selected-Matern, outcomes, event order and "
+            "normalised market exact-support books"
+        ),
+        "raw_market_probability_inventory": inputs[
+            "phase1_existing_event_books"
+        ],
+        "raw_market_probability_inventory_sha256": sha256_file(
+            raw_market_inventory_path
+        ),
+        "raw_market_probability_role": (
+            "true unnormalised market_probability_raw values for binary scores"
         ),
         "reconstructed_event_books": inputs[
             "phase1_reconstructed_event_books"
@@ -2719,6 +2930,7 @@ def main() -> int:
     )
 
     frozen_exact_raw = read_table(frozen_exact_path)
+    raw_market_inventory_raw = read_table(raw_market_inventory_path)
     reconstructed_raw = read_table(reconstructed_path)
     exact_keys_raw = read_table(exact_keys_path)
 
@@ -2730,6 +2942,15 @@ def main() -> int:
             "columns": len(frozen_exact_raw.columns),
             "column_names": "|".join(
                 map(str, frozen_exact_raw.columns)
+            ),
+        },
+        {
+            "source": "raw_market_probability_inventory",
+            "path": inputs["phase1_existing_event_books"],
+            "rows": len(raw_market_inventory_raw),
+            "columns": len(raw_market_inventory_raw.columns),
+            "column_names": "|".join(
+                map(str, raw_market_inventory_raw.columns)
             ),
         },
         {
@@ -2756,6 +2977,28 @@ def main() -> int:
         frozen_exact_raw,
         frozen_exact_path.name,
     )
+    recovered_raw_market = recover_true_raw_market_probabilities(
+        raw_market_inventory_raw,
+        raw_market_inventory_path.name,
+    )
+    (
+        existing,
+        market_probability_reconciliation,
+        market_book_probability_sums,
+    ) = attach_true_raw_market_probabilities(
+        existing,
+        recovered_raw_market,
+        float(config["numerical_tolerance"]),
+    )
+    market_probability_reconciliation.to_csv(
+        out / "phase6_market_probability_reconciliation.csv.gz",
+        index=False,
+        compression="gzip",
+    )
+    market_book_probability_sums.to_csv(
+        out / "phase6_market_raw_probability_sum_summary.csv",
+        index=False,
+    )
     reconstructed = standardise_event_books(
         reconstructed_raw,
         reconstructed_path.name,
@@ -2779,8 +3022,63 @@ def main() -> int:
     )
 
     panel_checks = validate_panel(panel, exact_keys, config)
+    raw_market_checks = pd.DataFrame([
+        {
+            "check": "raw_market_probability_rows_recovered",
+            "passed": len(recovered_raw_market)
+            == config["expected"]["event_rows_per_model"],
+            "critical": True,
+            "detail": f"rows={len(recovered_raw_market)}",
+        },
+        {
+            "check": "raw_market_probability_books_recovered",
+            "passed": len(market_book_probability_sums)
+            == config["expected"]["exact_support_books"],
+            "critical": True,
+            "detail": f"books={len(market_book_probability_sums)}",
+        },
+        {
+            "check": "raw_market_normalisation_reconciles",
+            "passed": float(
+                market_probability_reconciliation[
+                    "normalisation_absolute_error"
+                ].max()
+            )
+            <= float(config["numerical_tolerance"]),
+            "critical": True,
+            "detail": (
+                f"maximum_error="
+                f"{float(market_probability_reconciliation['normalisation_absolute_error'].max()):.3e}"
+            ),
+        },
+        {
+            "check": "raw_market_books_not_pre_normalised",
+            "passed": bool(
+                (
+                    market_book_probability_sums[
+                        "raw_probability_sum"
+                    ]
+                    - 1.0
+                ).abs().max()
+                > 1e-6
+            ),
+            "critical": True,
+            "detail": (
+                f"mean_sum="
+                f"{market_book_probability_sums['raw_probability_sum'].mean():.6f}; "
+                f"minimum_sum="
+                f"{market_book_probability_sums['raw_probability_sum'].min():.6f}; "
+                f"maximum_sum="
+                f"{market_book_probability_sums['raw_probability_sum'].max():.6f}"
+            ),
+        },
+    ])
     initial_checks = pd.concat(
-        [pd.DataFrame(dependency_rows), panel_checks],
+        [
+            pd.DataFrame(dependency_rows),
+            panel_checks,
+            raw_market_checks,
+        ],
         ignore_index=True,
     )
     initial_checks.to_csv(
