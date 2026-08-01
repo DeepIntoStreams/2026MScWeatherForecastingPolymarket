@@ -1,0 +1,8 @@
+phase,manifest_present,records,missing_files,size_mismatches,hash_mismatches,passed
+phase1,True,18,0,0,0,True
+phase2,True,30,0,0,0,True
+phase3,True,32,0,0,0,True
+phase4,True,31,0,0,0,True
+phase5,True,47,0,0,0,True
+phase6,True,36,0,0,0,True
+phase7,True,40,0,0,0,True

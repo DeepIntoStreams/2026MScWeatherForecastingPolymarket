@@ -1,0 +1,33 @@
+check,passed,critical,detail
+all_phase_dependencies,True,True,critical_rows=14
+all_phase_manifests,True,True,phases_passed=7/7
+candidate_ids_unique,True,True,rows=72; unique_ids=72
+support_weather_rows,True,True,calculated=2920; reference=2920
+support_weather_dates,True,True,calculated=730; reference=730
+support_market_predictions_unique_keys,True,True,calculated=375; reference=375
+support_phase10_exact_support_rows,True,True,calculated=3850; reference=3850
+support_phase10_exact_support_dates,True,True,calculated=97; reference=97
+support_phase11_trade_ledger_rows,True,True,calculated=350; reference=350
+reference_p4_mean_raw,True,True,calculated=1.745684932; reference=1.745685000
+reference_p4_mean_static,True,True,calculated=0.911754550; reference=0.911755000
+reference_p4_mean_rbf,True,True,calculated=0.877561468; reference=0.877561000
+reference_p4_mean_matern,True,True,calculated=0.863339999; reference=0.863340000
+reference_p4_contrast_matern_minus_static,True,True,calculated=-0.048414551; reference=-0.048415000
+reference_p4_contrast_matern_minus_rbf,True,True,calculated=-0.014221469; reference=-0.014221000
+reference_p6_june_binary_brier,True,True,calculated=0.009323867; reference=0.009323867
+reference_p6_june_binary_log,True,True,calculated=0.038628062; reference=0.038628062
+reference_p6_june_categorical_log,True,True,calculated=0.357342206; reference=0.357342206
+reference_p6_june_multiclass_brier,True,True,calculated=0.101709592; reference=0.101709592
+reference_p7_june_trade_count,True,True,calculated=16.000000000; reference=16.000000000
+reference_p7_june_winning_trades,True,True,calculated=1.000000000; reference=1.000000000
+reference_p7_june_total_net_pnl,True,True,calculated=0.023500000; reference=0.023500000
+reference_p7_attr_raw,True,True,calculated=-1.807500000; reference=-1.807500000
+reference_p7_attr_static,True,True,calculated=0.023500000; reference=0.023500000
+reference_p7_attr_matern,True,True,calculated=0.023500000; reference=0.023500000
+forecast_loss_ladder,True,True,"raw_static_rbf_matern=[1.7456849315068492, 0.9117545500469532, 0.8775614684388354, 0.8633399989586301]"
+june_market_advantage_all_scores,True,True,all four point estimates and ordinary lower bounds exceed zero
+june_pnl_interval_contains_zero,True,True,"interval=(-1.232025, 2.1705375)"
+june_static_equals_matern_fixed_policy,True,True,static=0.023500000; matern=0.023500000
+figure_shortlist_complete,True,True,figures=7/7
+market_age_limitation_registered,True,False,"rows=1; columns=['market_age_available', 'books', 'books_with_age', 'coverage_fraction', 'timestamp_columns_present', 'decision_cutoff_source']"
+market_period_hko_limitation_registered,True,False,rows_with_exact_hko=0

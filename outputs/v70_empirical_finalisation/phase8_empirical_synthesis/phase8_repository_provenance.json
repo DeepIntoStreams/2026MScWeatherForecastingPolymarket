@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-08-01T03:45:46.856773+00:00",
+  "working_branch": "edward-v70-empirical-finalisation",
+  "working_commit": "63534484fad31eb8becc71be11d6669fca257d21",
+  "remote_alignment": "0\t1",
+  "no_refit": true,
+  "phase_roots": {
+    "phase1": "outputs/v70_empirical_finalisation/phase1_evidence_recovery",
+    "phase2": "outputs/v70_empirical_finalisation/phase2_settlement_error",
+    "phase3": "outputs/v70_empirical_finalisation/phase3_information_arrival",
+    "phase4": "outputs/v70_empirical_finalisation/phase4_forecast_attribution",
+    "phase5": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification",
+    "phase6": "outputs/v70_empirical_finalisation/phase6_market_information",
+    "phase7": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity"
+  }
+}

@@ -1,0 +1,5 @@
+source_path,kernel_,n_restarts_optimizer,alpha,normalize_y,log_marginal_likelihood_value_,random_state,decision_rule
+models/v2/phase8_clean_gp/12h_prior_matern32_full_fit.joblib,"0.703**2 * Matern(length_scale=0.983, nu=1.5) + WhiteKernel(noise_level=0.644)",0,1e-10,True,-937.5582609392856,20260728,12h_prior
+models/v2/phase8_clean_gp/24h_prior_matern32_full_fit.joblib,"0.65**2 * Matern(length_scale=0.477, nu=1.5) + WhiteKernel(noise_level=0.612)",0,1e-10,True,-951.889386245448,20260728,24h_prior
+models/v2/phase8_clean_gp/6h_prior_matern32_full_fit.joblib,"0.703**2 * Matern(length_scale=1.02, nu=1.5) + WhiteKernel(noise_level=0.656)",0,1e-10,True,-942.0972127882558,20260728,6h_prior
+models/v2/phase8_clean_gp/event_day_open_matern32_full_fit.joblib,"0.69**2 * Matern(length_scale=0.969, nu=1.5) + WhiteKernel(noise_level=0.632)",0,1e-10,True,-931.525722165112,20260728,event_day_open

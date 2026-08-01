@@ -1,0 +1,8 @@
+result,estimate,lower_95,upper_95,direction_convention,interpretation,evidence_id
+June Matérn minus market binary Brier,0.009323867184877,0.0038082770324959,0.0145581093615613,positive favours market,Positive values indicate lower realised market loss.,P6_JUNE_BINARY_BRIER
+June Matérn minus market binary log,0.0386280615163194,0.0219310547598805,0.0541787621773924,positive favours market,Positive values indicate lower realised market loss.,P6_JUNE_BINARY_LOG
+June Matérn minus market categorical log,0.3573422055687354,0.2120372922265419,0.4939119277883643,positive favours market,Positive values indicate lower realised market loss.,P6_JUNE_CATEGORICAL_LOG
+June Matérn minus market multiclass Brier,0.1017095917289234,0.0423182194878928,0.1581171578689754,positive favours market,Positive values indicate lower realised market loss.,P6_JUNE_MULTICLASS_BRIER
+June market-Matérn total variation,0.278613035914764,,,,The two probability books differ materially.,P6_JUNE_EXTERNAL_TOTAL_VARIATION_MARKET_MATERN
+"June expected-rank shift, market minus Matérn",0.4743919955068644,,,positive means warmer market rank,Positive values indicate a warmer market distribution.,P6_JUNE_EXTERNAL_EXPECTED_RANK_MARKET_MINUS_MATERN
+"June realised-event probability, market minus Matérn",0.0945036226607945,,,positive favours market realised-event mass,The market assigned more probability to the event that settled Yes.,P6_JUNE_EXTERNAL_REALISED_EVENT_PROBABILITY_MARKET_MINUS_MATERN

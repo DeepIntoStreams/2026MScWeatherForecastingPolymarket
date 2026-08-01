@@ -1,0 +1,85 @@
+% Auto-generated Phase 8 table drafts. Review captions and placement.
+
+\begin{table}[htbp]
+\centering
+\caption{Settlement correction and probabilistic forecast attribution.}
+\label{tab:phase8_weather_attribution}
+\small
+\begin{tabular}{p{0.43\textwidth}rrp{0.31\textwidth}}
+\toprule
+Quantity & Estimate & 95\% interval & Interpretation \\
+\midrule
+Mean HKO-minus-deterministic residual (°C) & 1.4297 & [1.3274, 1.5309] & The deterministic forecast is systematically colder than the HKO settlement maximum. \\
+Proportion of deterministic forecasts below HKO & 0.8247 & [0.7997, 0.8486] & The cold discrepancy occurs on a large majority of date-rule observations. \\
+24h-to-open MAE improvement (°C) & 0.1042 & [0.0501, 0.1592] & Later information modestly improves point accuracy while the settlement discrepancy persists. \\
+Raw point mean date CRPS & 1.7457 & -- & Uncorrected deterministic benchmark. \\
+Static Gaussian mean date CRPS & 0.9118 & -- & Most of the raw-to-Matérn improvement is achieved by local rule-specific correction. \\
+RBF GP mean date CRPS & 0.8776 & -- & Conditional GP structure adds a smaller refinement. \\
+Matérn-3/2 GP mean date CRPS & 0.8633 & -- & Best retained weather-only predictive law. \\
+Matérn minus static paired CRPS & -0.0484 & [-0.0700, -0.0273] & Negative values favour Matérn; the incremental improvement is smaller than the static correction. \\
+Matérn minus RBF paired CRPS & -0.0142 & [-0.0205, -0.0079] & Negative values favour Matérn; the kernel increment is modest. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Distributional adequacy of the selected Matérn predictive law.}
+\label{tab:phase8_diagnostics}
+\small
+\begin{tabular}{p{0.43\textwidth}rrp{0.31\textwidth}}
+\toprule
+Quantity & Estimate & 95\% interval & Interpretation \\
+\midrule
+Empirical 50\% central coverage & 0.4603 & -- & Close to but below nominal coverage. \\
+Empirical 80\% central coverage & 0.7829 & -- & Mild undercoverage. \\
+Empirical 90\% central coverage & 0.8808 & -- & Mild undercoverage. \\
+Lag-one standardised-residual correlation & 0.5098 & [0.3982, 0.5878] & Residual serial dependence remains after postprocessing. \\
+Lag-one squared-standardised-residual correlation & 0.2383 & [0.0992, 0.3478] & Conditional scale dependence remains. \\
+Conditional-variance joint p-value & 0.0100 & -- & The homoskedastic Gaussian observation law remains misspecified. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{June exact-support comparison between the Matérn law and Polymarket.}
+\label{tab:phase8_market}
+\small
+\begin{tabular}{p{0.43\textwidth}rrp{0.31\textwidth}}
+\toprule
+Quantity & Estimate & 95\% interval & Interpretation \\
+\midrule
+June Matérn minus market binary Brier & 0.0093 & [0.0038, 0.0146] & Positive values indicate lower realised market loss. \\
+June Matérn minus market binary log & 0.0386 & [0.0219, 0.0542] & Positive values indicate lower realised market loss. \\
+June Matérn minus market categorical log & 0.3573 & [0.2120, 0.4939] & Positive values indicate lower realised market loss. \\
+June Matérn minus market multiclass Brier & 0.1017 & [0.0423, 0.1581] & Positive values indicate lower realised market loss. \\
+June market-Matérn total variation & 0.2786 & -- & The two probability books differ materially. \\
+June expected-rank shift, market minus Matérn & 0.4744 & -- & Positive values indicate a warmer market distribution. \\
+June realised-event probability, market minus Matérn & 0.0945 & -- & The market assigned more probability to the event that settled Yes. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Frozen-policy trading sensitivity and attribution.}
+\label{tab:phase8_trading}
+\small
+\begin{tabular}{p{0.43\textwidth}rrp{0.31\textwidth}}
+\toprule
+Quantity & Estimate & 95\% interval & Interpretation \\
+\midrule
+June executed trades & 16.0000 & -- & Frozen event-day-open policy at h=0.12. \\
+June winning trades & 1.0000 & -- & The result is concentrated in one profitable trade. \\
+June net PnL at one-cent cost & 0.0235 & [-1.2320, 2.1705] & The point estimate is slightly positive, but its interval includes zero widely. \\
+June return on entry cash & 0.0241 & -- & A descriptive historical ratio, not evidence of executable return. \\
+June maximum drawdown & 0.7965 & -- & Chronological date-level path risk. \\
+June break-even cost per trade & 0.0115 & -- & The apparent edge disappears above approximately 1.15 cents per trade. \\
+Largest-trade absolute contribution share & 0.5064 & -- & The PnL is highly concentrated. \\
+June common-policy PnL using raw signal & -1.8075 & -- & Raw deterministic probabilities perform poorly under the fixed policy. \\
+June common-policy PnL using static signal & 0.0235 & -- & Static local settlement correction closes the realised raw-to-Matérn trading gap. \\
+June common-policy PnL using Matérn signal & 0.0235 & -- & No incremental June PnL over static under the fixed policy. \\
+\bottomrule
+\end{tabular}
+\end{table}

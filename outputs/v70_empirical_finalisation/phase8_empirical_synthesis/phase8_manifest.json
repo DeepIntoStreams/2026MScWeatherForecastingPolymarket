@@ -1,0 +1,162 @@
+{
+  "phase": "phase8_final_empirical_synthesis",
+  "generated_utc": "2026-08-01T03:45:47.191274+00:00",
+  "provenance": {
+    "generated_utc": "2026-08-01T03:45:46.856773+00:00",
+    "working_branch": "edward-v70-empirical-finalisation",
+    "working_commit": "63534484fad31eb8becc71be11d6669fca257d21",
+    "remote_alignment": "0\t1",
+    "no_refit": true,
+    "phase_roots": {
+      "phase1": "outputs/v70_empirical_finalisation/phase1_evidence_recovery",
+      "phase2": "outputs/v70_empirical_finalisation/phase2_settlement_error",
+      "phase3": "outputs/v70_empirical_finalisation/phase3_information_arrival",
+      "phase4": "outputs/v70_empirical_finalisation/phase4_forecast_attribution",
+      "phase5": "outputs/v70_empirical_finalisation/phase5_calibration_misspecification",
+      "phase6": "outputs/v70_empirical_finalisation/phase6_market_information",
+      "phase7": "outputs/v70_empirical_finalisation/phase7_trading_sensitivity"
+    }
+  },
+  "files": [
+    {
+      "relative_path": "figures/phase8_forecast_attribution.pdf",
+      "size_bytes": 15363,
+      "sha256": "c8a6a583fa7cbb2e2583e8bc11dcd250aef41c208caea12becefc68842569115"
+    },
+    {
+      "relative_path": "figures/phase8_june_trade_concentration.pdf",
+      "size_bytes": 12956,
+      "sha256": "ef82e9eb468bc16b3c74af9779ca1c8b3a418f29e59e49898e6859543aae58e2"
+    },
+    {
+      "relative_path": "figures/phase8_market_realised_probability.pdf",
+      "size_bytes": 18137,
+      "sha256": "b4cd46cfcb6a6b6c34d2239a23fd7c8378f2f99947a85717673509badeb3ee6d"
+    },
+    {
+      "relative_path": "figures/phase8_market_total_variation.pdf",
+      "size_bytes": 15273,
+      "sha256": "2029316e6a1461c024bd4c0a1101014f99d5cc7da96753b08a96d7b59ea16326"
+    },
+    {
+      "relative_path": "figures/phase8_mean_shift_pnl_sensitivity.pdf",
+      "size_bytes": 15373,
+      "sha256": "f718514c010f78e27f3fcf15352a7c517a9f197fcd693d709b6c20a0e8609e1d"
+    },
+    {
+      "relative_path": "figures/phase8_predictive_coverage.pdf",
+      "size_bytes": 13579,
+      "sha256": "5f57b5e41d65b3bff9a7b1a290ad522b4a0c87f0ffb7b25943a65cc540c64679"
+    },
+    {
+      "relative_path": "figures/phase8_residual_distribution.pdf",
+      "size_bytes": 16416,
+      "sha256": "663fac4017510ead78c405bae2e957d6299985cba15fdfb8e51beb0ead015f4d"
+    },
+    {
+      "relative_path": "phase8_claims_register.csv",
+      "size_bytes": 3837,
+      "sha256": "12075dda085274eb42efbf59e1f6748053415979ab29b6f86e703469f0754e4e"
+    },
+    {
+      "relative_path": "phase8_completion_status.csv",
+      "size_bytes": 258,
+      "sha256": "8c14d9e3038ccf6f2423389fe7a31c0167d829be53cd0de6770cec6e2bd98e72"
+    },
+    {
+      "relative_path": "phase8_dependency_audit.csv",
+      "size_bytes": 3184,
+      "sha256": "61724d5bb0ff5789c1d5085e187102b8f07171f47402e309306ff0a32da32467"
+    },
+    {
+      "relative_path": "phase8_diagnostic_results_table.csv",
+      "size_bytes": 826,
+      "sha256": "de2a3f6f5bdf7425869f37998f0b8ac835bd81325eb75e2487006aea01500d5d"
+    },
+    {
+      "relative_path": "phase8_evidence_inventory.csv.gz",
+      "size_bytes": 13759,
+      "sha256": "2007ccc4af389a943cdd5d7939ed7df46d93565b6b7823d17796a974178902c0"
+    },
+    {
+      "relative_path": "phase8_figure_shortlist.csv",
+      "size_bytes": 2223,
+      "sha256": "2a28de7af56783c48a8215d9ec9d6c205d3207f9fc1d37971c3874f2f4ea0555"
+    },
+    {
+      "relative_path": "phase8_gp_implementation_summary.csv",
+      "size_bytes": 892,
+      "sha256": "be1c605f67ed2d16a78ccb92d80c253a521e97d9db43e19a3d2c19ab6b48d5aa"
+    },
+    {
+      "relative_path": "phase8_integrity_checks.csv",
+      "size_bytes": 2702,
+      "sha256": "28d7691b799c6a01f1a921ff6912d1cc1a451abdef15a6f6f37e2f43b28f095b"
+    },
+    {
+      "relative_path": "phase8_limitations_register.csv",
+      "size_bytes": 2329,
+      "sha256": "1e2ea097f5702f40f7075910b6bb42b5b8d2b8714f242633227af91c1bd73240"
+    },
+    {
+      "relative_path": "phase8_main_results_table.csv",
+      "size_bytes": 8641,
+      "sha256": "5e220608485df57ce134a6246ea1b9d3844fe6fe906590ff2578f42673dd278d"
+    },
+    {
+      "relative_path": "phase8_market_results_table.csv",
+      "size_bytes": 1479,
+      "sha256": "8154fb5c1443c3f44e0c066687e372debe8f7b23b8c7ee3e2bcf8c0c07a350b6"
+    },
+    {
+      "relative_path": "phase8_master_results_long.csv",
+      "size_bytes": 17276,
+      "sha256": "b5b3655434c085e64c71ec820b3ec994d2a02d7a78c0a3b9e1b6d436d01ebdd7"
+    },
+    {
+      "relative_path": "phase8_overleaf_numbers.tex",
+      "size_bytes": 1206,
+      "sha256": "404808b939ba2d48888ce6f3e4efee995aa0236af9f2804a22cfae93ba7aaac5"
+    },
+    {
+      "relative_path": "phase8_overleaf_tables.tex",
+      "size_bytes": 5066,
+      "sha256": "acf94c07e86645564b2043a1e88a6d9d3353b49c64c14a02733815ca77085234"
+    },
+    {
+      "relative_path": "phase8_phase_manifest_audit.csv.gz",
+      "size_bytes": 13677,
+      "sha256": "9b717418c1e622ab2964387c15ca9992f6170e5ceff61a967a8c095ad5756099"
+    },
+    {
+      "relative_path": "phase8_phase_manifest_summary.csv",
+      "size_bytes": 266,
+      "sha256": "09fa74c22457655a192991e0af31851c65215a30cea2d7484c6bc759852b068e"
+    },
+    {
+      "relative_path": "phase8_report.md",
+      "size_bytes": 32714,
+      "sha256": "cc294accf5563f22bcf4490b9cf5c6e67dbb429e4b9c1d7f9ace75c4875db847"
+    },
+    {
+      "relative_path": "phase8_repository_provenance.json",
+      "size_bytes": 809,
+      "sha256": "0f635976e3e966c7a6813730aa8ec8711a10f3c0cf119b7c328ee25d784d5869"
+    },
+    {
+      "relative_path": "phase8_thesis_insertion_ledger.csv",
+      "size_bytes": 1870,
+      "sha256": "b36050c448023bf7c37d715eee81a9bfe9ce4e559edad03b3d0f56ae1d7eec6d"
+    },
+    {
+      "relative_path": "phase8_trading_results_table.csv",
+      "size_bytes": 1417,
+      "sha256": "e4d0a849d33ea60420396c25214e76f374c5cae8429649e76ba9c17414095e48"
+    },
+    {
+      "relative_path": "phase8_weather_results_table.csv",
+      "size_bytes": 1658,
+      "sha256": "296532654a4fd6d65bbf2962651a0181af97b9e327ca63e3f7eb1f0052e188d2"
+    }
+  ]
+}

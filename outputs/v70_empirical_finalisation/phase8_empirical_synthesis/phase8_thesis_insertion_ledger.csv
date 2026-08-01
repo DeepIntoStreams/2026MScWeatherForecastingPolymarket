@@ -1,0 +1,13 @@
+item_id,type,source_output,recommended_location,priority,action
+I01,table,phase8_weather_results_table.csv,Results: settlement error and forecast attribution,main,"Condense to raw, static, RBF, Matérn means and two paired contrasts."
+I02,table,phase8_diagnostic_results_table.csv,Results: distributional adequacy,main_or_appendix,"Report coverage, lag correlations and variance test compactly."
+I03,table,phase8_market_results_table.csv,Results: exact-support market comparison,main,Keep the four June score contrasts and one disagreement statistic.
+I04,table,phase8_trading_results_table.csv,Results: trading sensitivity and attribution,main,"Keep frozen policy, interval, cost reversal and raw/static/Matérn attribution."
+I05,figure,figures/phase8_forecast_attribution.pdf,Results: forecast attribution,main,Use instead of several overlapping forecast-score figures.
+I06,figure,figures/phase8_market_realised_probability.pdf,Results: market information,main,Use to explain the market's June realised-event advantage.
+I07,figure,figures/phase8_mean_shift_pnl_sensitivity.pdf,Results: forecast-risk sensitivity,main,Use as the principal response to Wei Pan's PnL-sensitivity suggestion.
+I08,figure,figures/phase8_june_trade_concentration.pdf,Appendix,appendix,Support the fragility conclusion without overcrowding the main chapter.
+I09,register,phase8_claims_register.csv,Private writing control,binding,Use safe wording and avoid all listed overstatements.
+I10,register,phase8_limitations_register.csv,Discussion and reproducibility appendix,binding,Resolve only by evidence recovery; never by assumption.
+I11,latex,phase8_overleaf_numbers.tex,Overleaf numerical source,supporting,Use macros or manually transfer verified values.
+I12,latex,phase8_overleaf_tables.tex,Overleaf Results chapter,supporting,Adapt table captions and labels to the final chapter structure.

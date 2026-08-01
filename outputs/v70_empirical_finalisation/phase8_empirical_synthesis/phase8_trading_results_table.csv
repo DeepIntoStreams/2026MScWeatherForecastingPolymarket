@@ -1,0 +1,11 @@
+result,estimate,lower_95,upper_95,direction_convention,interpretation,evidence_id
+June executed trades,16.0,,,,Frozen event-day-open policy at h=0.12.,P7_JUNE_TRADE_COUNT
+June winning trades,1.0,,,,The result is concentrated in one profitable trade.,P7_JUNE_WINNING_TRADES
+June net PnL at one-cent cost,0.0234999999999999,-1.232025,2.1705375,,"The point estimate is slightly positive, but its interval includes zero widely.",P7_JUNE_TOTAL_NET_PNL
+June return on entry cash,0.0240655401945723,,,,"A descriptive historical ratio, not evidence of executable return.",P7_JUNE_RETURN_ON_ENTRY_CASH
+June maximum drawdown,0.7964999999999999,,,,Chronological date-level path risk.,P7_JUNE_MAXIMUM_DRAWDOWN
+June break-even cost per trade,0.0114687499999999,,,,The apparent edge disappears above approximately 1.15 cents per trade.,P7_JUNE_BREAK_EVEN_COST_PER_TRADE
+Largest-trade absolute contribution share,0.5063633901976713,,,,The PnL is highly concentrated.,P7_JUNE_TOP1_CONCENTRATION
+June common-policy PnL using raw signal,-1.8075,,,,Raw deterministic probabilities perform poorly under the fixed policy.,P7_ATTR_RAW
+June common-policy PnL using static signal,0.0234999999999999,,,,Static local settlement correction closes the realised raw-to-Matérn trading gap.,P7_ATTR_STATIC
+June common-policy PnL using Matérn signal,0.0234999999999999,,,,No incremental June PnL over static under the fixed policy.,P7_ATTR_MATERN

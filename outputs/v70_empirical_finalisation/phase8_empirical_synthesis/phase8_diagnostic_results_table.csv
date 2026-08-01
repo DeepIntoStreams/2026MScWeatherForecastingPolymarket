@@ -1,0 +1,7 @@
+result,estimate,lower_95,upper_95,direction_convention,interpretation,evidence_id
+Empirical 50% central coverage,0.4602739726027397,,,,Close to but below nominal coverage.,P5_COVERAGE_50
+Empirical 80% central coverage,0.7828767123287671,,,,Mild undercoverage.,P5_COVERAGE_80
+Empirical 90% central coverage,0.8808219178082192,,,,Mild undercoverage.,P5_COVERAGE_90
+Lag-one standardised-residual correlation,0.5097679178714232,0.3981875232498344,0.5878080119407294,,Residual serial dependence remains after postprocessing.,P5_LAG1_Z
+Lag-one squared-standardised-residual correlation,0.2382560017614505,0.0992232063343186,0.3478253431276328,,Conditional scale dependence remains.,P5_LAG1_Z2
+Conditional-variance joint p-value,0.0100106116582999,,,,The homoskedastic Gaussian observation law remains misspecified.,P5_VARIANCE_WALD

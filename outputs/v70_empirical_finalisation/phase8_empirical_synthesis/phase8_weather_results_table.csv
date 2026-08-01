@@ -1,0 +1,10 @@
+result,estimate,lower_95,upper_95,direction_convention,interpretation,evidence_id
+Mean HKO-minus-deterministic residual (°C),1.4296575342465752,1.32736301369863,1.5309246575342463,positive means HKO is warmer,The deterministic forecast is systematically colder than the HKO settlement maximum.,P2_MEAN
+Proportion of deterministic forecasts below HKO,0.8246575342465754,0.7996575342465754,0.8486301369863014,,The cold discrepancy occurs on a large majority of date-rule observations.,P2_UNDER
+24h-to-open MAE improvement (°C),0.1042465753424657,0.0501369863013699,0.1591815068493151,positive means later forecast is better,Later information modestly improves point accuracy while the settlement discrepancy persists.,P3_ENDPOINT_MAE
+Raw point mean date CRPS,1.7456849315068492,,,,Uncorrected deterministic benchmark.,P4_MEAN_RAW
+Static Gaussian mean date CRPS,0.9117545500469532,,,,Most of the raw-to-Matérn improvement is achieved by local rule-specific correction.,P4_MEAN_STATIC
+RBF GP mean date CRPS,0.8775614684388354,,,,Conditional GP structure adds a smaller refinement.,P4_MEAN_RBF
+Matérn-3/2 GP mean date CRPS,0.8633399989586301,,,,Best retained weather-only predictive law.,P4_MEAN_MATERN
+Matérn minus static paired CRPS,-0.048414551088323,-0.0699685024619953,-0.0273387923565425,negative favours Matérn,Negative values favour Matérn; the incremental improvement is smaller than the static correction.,P4_CONTRAST_MATERN_MINUS_STATIC
+Matérn minus RBF paired CRPS,-0.0142214694802054,-0.0205288417749332,-0.0079036960862911,negative favours Matérn,Negative values favour Matérn; the kernel increment is modest.,P4_CONTRAST_MATERN_MINUS_RBF
