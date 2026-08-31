@@ -1,0 +1,4 @@
+domain,period,raw,static,selected_gp,direction,static_share_of_raw_to_gp_improvement,static_captures_at_least_90pct,interpretation
+weather_continuous_crps,weather_history_chronological_validation,1.7856519743,0.9454445049,0.9089451170,lower_better,0.9583676259,True,Static correction captures most of the raw-to-GP improvement.
+weather_market_total_variation,external_validation,0.8681170573,0.2967861985,0.2991644139,lower_better,1.0041799883,True,Static correction slightly exceeds the selected GP on this metric.
+fixed_policy_net_pnl,external_validation,-0.2980000000,2.2810000000,2.4510000000,higher_better,0.9381593307,True,Static correction captures most of the raw-to-GP improvement.

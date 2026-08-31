@@ -1,0 +1,27 @@
+{
+  "common_support_rule_diagnostic": "12h_prior",
+  "development_reselection_after_pending_target": false,
+  "evidence_register_sha256": "bebcb3cc8a84b1f80817b85b1a2ea0d48351ef84d7727d18d81280ed0816daf8",
+  "external_gp_net_pnl_currently": 2.451,
+  "external_gp_settlement_date_sharpe": 0.1938578189,
+  "external_gp_trades_currently": 12,
+  "external_threshold_neighbourhood_max_pnl": 2.527,
+  "external_threshold_neighbourhood_min_pnl": 0.952,
+  "market_tv_static_share_raw_to_gp_improvement": 1.0041799883128901,
+  "pending_external_target_dates": [
+    "2026-08-31"
+  ],
+  "pool_weight_gp": 0.188,
+  "primary_rule_selection": "24h_prior",
+  "reproducibility_manifest_sha256": "481667fad18a2689fbe0c89f7225d10a5cba85ec46cddf7b736a86809bcf7ff6",
+  "result_ledger_sha256": "ea7e6e84b2e3c87a7ffbe0e1766099cfc7455897f471c0111f437a81ca1d904e",
+  "rule_selection_support_sensitive": true,
+  "stage": "steps_56_70",
+  "status": "PASS",
+  "trading_rule": "24h_prior",
+  "trading_static_share_raw_to_gp_improvement": 0.9381593306656967,
+  "trading_threshold": 0.15,
+  "upstream_steps_1_55_frozen": true,
+  "weather_kernel": "matern32",
+  "weather_static_share_raw_to_gp_improvement": 0.9583676258504108
+}

@@ -1,0 +1,2 @@
+baseline_reference_cost,baseline_total_net_pnl,maximum_tested_cost,pnl_at_maximum_tested_cost,positive_at_maximum_tested_cost,gross_break_even_cost_per_trade,maximum_tested_cost_fraction_of_break_even,interpretation
+0.0100000000,2.4510000000,0.0500000000,1.9710000000,True,0.2142500000,0.2333722287,Reduced-form implementation-cost sensitivity; not evidence about realised historical spreads or executable capacity.

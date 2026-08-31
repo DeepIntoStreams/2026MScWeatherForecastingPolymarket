@@ -1,0 +1,5 @@
+estimand,source_a,source_b,point_total_pnl,ordinary_lower_95,ordinary_upper_95,block7_lower_95,block7_upper_95,classification,safe_interpretation
+method_level,selected_gp,,2.4510000000,-0.3805375000,6.1612500000,0.3019250000,5.1620000000,dependence_sensitive,Inferential conclusion changes with the resampling treatment of serial dependence.
+paired_pnl_difference,static,raw,2.5790000000,-3.4010875000,8.2010125000,-3.1966125000,8.0335250000,unresolved,"Point estimate has a direction, but both interval treatments do not exclude zero."
+paired_pnl_difference,selected_gp,static,0.1700000000,0.0000000000,0.4250000000,0.0000000000,0.4250000000,unresolved,"Point estimate has a direction, but both interval treatments do not exclude zero."
+paired_pnl_difference,selected_gp,raw,2.7490000000,-3.0660250000,8.4575625000,-3.0980875000,8.2422375000,unresolved,"Point estimate has a direction, but both interval treatments do not exclude zero."

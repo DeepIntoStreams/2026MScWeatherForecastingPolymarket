@@ -1,0 +1,14 @@
+recommended_location,stage,path,purpose,exists
+main_text,weather,outputs/final_pipeline/weather/models/chronological_crps_attribution.png,Weather-model attribution: deterministic to probabilistic correction.,True
+appendix,weather,outputs/final_pipeline/weather/models/selected_gp_coverage.png,Selected-GP calibration/coverage diagnostic.,True
+appendix,weather,outputs/final_pipeline/weather/models/selected_gp_pit_histogram.png,Selected-GP PIT diagnostic.,True
+main_text,market,outputs/final_pipeline/market/total_variation_by_period.png,Raw/static/GP probability-book distance from Polymarket.,True
+main_text,market,outputs/final_pipeline/market/external_proper_scores.png,External proper-score comparison.,True
+appendix,market,outputs/final_pipeline/market/market_book_probability_sum.png,Market-book normalisation diagnostic.,True
+main_text,trading,outputs/final_pipeline/trading/external_cumulative_pnl_attribution.png,Frozen raw/static/GP PnL attribution.,True
+main_text,trading,outputs/final_pipeline/trading/external_predictive_mean_stress.png,Nonlinear forecast-risk transmission.,True
+appendix,trading,outputs/final_pipeline/trading/development_threshold_selection.png,Development-only threshold/rule selection.,True
+appendix,trading,outputs/final_pipeline/trading/external_forecast_error_vs_pnl.png,Exploratory error-to-PnL diagnostic.,True
+appendix,synthesis,outputs/final_pipeline/synthesis/external_threshold_neighbourhood.png,External threshold neighbourhood; diagnostic only.,True
+appendix,synthesis,outputs/final_pipeline/synthesis/external_monthly_pnl.png,July/August calendar stability.,True
+main_text_candidate,synthesis,outputs/final_pipeline/synthesis/cross_stage_static_share.png,Share of raw-to-GP improvement captured by the static correction.,True

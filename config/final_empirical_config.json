@@ -362,6 +362,28 @@
       "start": "2024-03-16"
     }
   },
+  "robustness_synthesis": {
+    "common_support_rule_diagnostic_used_for_selection": false,
+    "cross_stage_static_share": {
+      "market_total_variation": 1.0041799883128901,
+      "trading_pnl": 0.9381593306656967,
+      "weather_crps": 0.9583676258504108
+    },
+    "external_threshold_diagnostic_used_for_selection": false,
+    "frozen_pool_weight_gp": 0.188,
+    "frozen_trading_rule": "24h_prior",
+    "frozen_trading_threshold": 0.15,
+    "frozen_weather_kernel": "matern32",
+    "new_model_selection": false,
+    "new_trading_policy_selection": false,
+    "pending_external_target_dates": [
+      "2026-08-31"
+    ],
+    "pending_target_refresh_can_reselect_development_choices": false,
+    "rule_support_composition_sensitive": true,
+    "stage": "steps_56_70",
+    "upstream_core_frozen": true
+  },
   "schema_version": "1.0",
   "sensitivity": {
     "probability_sensitivity": [

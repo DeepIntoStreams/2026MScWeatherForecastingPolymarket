@@ -1,0 +1,3 @@
+selection_basis,selected_rule,selected_threshold,conservative_score,development_dates,changes_frozen_policy,interpretation,rule_selection_support_sensitive
+prespecified_rule_specific_support,24h_prior,0.1500000000,0.0063680112,90,False,Primary frozen policy; each rule uses its own complete development support.,True
+common_all_rule_dates_diagnostic,12h_prior,0.1100000000,0.0130207897,90,False,Non-selection robustness diagnostic on the intersection of dates supporting all four rules.,True

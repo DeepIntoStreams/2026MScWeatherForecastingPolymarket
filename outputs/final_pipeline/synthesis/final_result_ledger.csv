@@ -1,0 +1,38 @@
+result_id,stage,period,metric,value,units,direction,source_file,note
+W01,weather,historical_chronological_validation,raw_mean_date_crps,1.7856519743,degC,lower_better,outputs/final_pipeline/audit/weather_models_summary.json,
+W02,weather,historical_chronological_validation,static_mean_date_crps,0.9454445049,degC,lower_better,outputs/final_pipeline/audit/weather_models_summary.json,
+W03,weather,historical_chronological_validation,selected_gp_mean_date_crps,0.9089451170,degC,lower_better,outputs/final_pipeline/audit/weather_models_summary.json,Selected kernel=matern32
+W04,weather,historical_chronological_validation,static_share_raw_to_gp_crps_improvement,0.9583676259,share,higher_better,outputs/final_pipeline/audit/weather_models_summary.json,
+M01,market,march_august,certified_market_dates,167.0000000000,dates,descriptive,outputs/final_pipeline/audit/market_stage_summary.json,
+M02,market,march_august,exact_common_dates,163.0000000000,dates,descriptive,outputs/final_pipeline/audit/market_stage_summary.json,
+M03,market,development,convex_pool_gp_weight,0.1880000000,weight,descriptive,outputs/final_pipeline/market/convex_pool_selection.json,Selected on March-June categorical log loss only.
+M04,market,external,raw_date_balanced_total_variation,0.8681170573,probability,lower_better,outputs/final_pipeline/market/total_variation_summary.csv,
+M05,market,external,static_date_balanced_total_variation,0.2967861985,probability,lower_better,outputs/final_pipeline/market/total_variation_summary.csv,
+M06,market,external,selected_gp_date_balanced_total_variation,0.2991644139,probability,lower_better,outputs/final_pipeline/market/total_variation_summary.csv,
+M07,market,external,static_categorical_log,1.7224600671,loss,lower_better,outputs/final_pipeline/market/exact_support_score_summary.csv,
+M08,market,external,selected_gp_categorical_log,1.7282097163,loss,lower_better,outputs/final_pipeline/market/exact_support_score_summary.csv,
+M09,market,external,market_categorical_log,1.6030634514,loss,lower_better,outputs/final_pipeline/market/exact_support_score_summary.csv,
+M10,market,external,pool_categorical_log,1.5809013491,loss,lower_better,outputs/final_pipeline/market/exact_support_score_summary.csv,
+M11,market,external,pool_minus_market_categorical_log,-0.0221621022,loss_difference,lower_better,outputs/final_pipeline/market/paired_score_bootstrap.csv,"Block7 95% interval [-0.075690, 0.023768]"
+T01,trading,development,selected_rule,,category,descriptive,outputs/final_pipeline/trading/selected_trading_policy.json,24h_prior
+T02,trading,development,selected_threshold,0.1500000000,probability,descriptive,outputs/final_pipeline/trading/selected_trading_policy.json,
+T03,trading,external,raw_total_net_pnl,-0.2980000000,pnl_per_one_share_policy,higher_better,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T04,trading,external,static_total_net_pnl,2.2810000000,pnl_per_one_share_policy,higher_better,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T05,trading,external,selected_gp_total_net_pnl,2.4510000000,pnl_per_one_share_policy,higher_better,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T06,trading,external,selected_gp_trade_count,12.0000000000,trades,descriptive,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T07,trading,external,selected_gp_settlement_date_sharpe,0.1938578189,nonannualised_ratio,higher_better,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T08,trading,external,selected_gp_maximum_drawdown,0.2540000000,pnl,lower_better,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T09,trading,external,static_share_raw_to_gp_pnl_improvement,0.9381593307,share,higher_better,outputs/final_pipeline/trading/trading_risk_summary.csv,
+T10,trading,external,selected_gp_total_pnl_ordinary_date_lower95,-0.3805375000,pnl,diagnostic,outputs/final_pipeline/trading/trading_bootstrap_summary.csv,Upper95=6.161250
+T11,trading,external,selected_gp_total_pnl_circular_block7_lower95,0.3019250000,pnl,diagnostic,outputs/final_pipeline/trading/trading_bootstrap_summary.csv,Upper95=5.162000
+T12,trading,external,gross_break_even_cost_per_trade,0.2142500000,probability_price,descriptive,outputs/final_pipeline/synthesis/cost_robustness_summary.csv,Reduced-form price-proxy experiment.
+R01,robustness,development,common_support_best_rule,,category,diagnostic,outputs/final_pipeline/synthesis/rule_support_robustness.csv,12h_prior
+R02,robustness,external,threshold_plusminus_005_min_total_net_pnl,0.9520000000,pnl,diagnostic,data/processed/final_pipeline/synthesis/external_threshold_neighbourhood.csv,
+R03,robustness,external,threshold_plusminus_005_max_total_net_pnl,2.5270000000,pnl,diagnostic,data/processed/final_pipeline/synthesis/external_threshold_neighbourhood.csv,
+R_MONTH_2026_07,robustness,2026-07,selected_gp_monthly_net_pnl,1.6450000000,pnl,diagnostic,data/processed/final_pipeline/synthesis/external_monthly_method_performance.csv,
+R_MONTH_2026_08,robustness,2026-08,selected_gp_monthly_net_pnl,0.8060000000,pnl,diagnostic,data/processed/final_pipeline/synthesis/external_monthly_method_performance.csv,
+R_TOP0,robustness,external,pnl_after_removing_top_0_positive_trades,2.4510000000,pnl,diagnostic,outputs/final_pipeline/synthesis/external_gp_top_winner_removal.csv,
+R_TOP1,robustness,external,pnl_after_removing_top_1_positive_trades,1.4720000000,pnl,diagnostic,outputs/final_pipeline/synthesis/external_gp_top_winner_removal.csv,
+R_TOP2,robustness,external,pnl_after_removing_top_2_positive_trades,0.5270000000,pnl,diagnostic,outputs/final_pipeline/synthesis/external_gp_top_winner_removal.csv,
+R_TOP3,robustness,external,pnl_after_removing_top_3_positive_trades,-0.3930000000,pnl,diagnostic,outputs/final_pipeline/synthesis/external_gp_top_winner_removal.csv,
+R04,forecast_risk,external,spearman_abs_gp_error_vs_pnl,-0.3280756070,rho,diagnostic,outputs/final_pipeline/synthesis/forecast_risk_synthesis.csv,Exploratory; nominal p=0.010495; not multiplicity-adjusted.
