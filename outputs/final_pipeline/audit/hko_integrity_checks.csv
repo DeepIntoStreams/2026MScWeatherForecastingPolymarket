@@ -1,0 +1,10 @@
+check,passed,observed,expected,notes
+expected_calendar_count,True,899,899,
+no_extra_dates,True,0,0,
+no_archive_duplicate_dates,True,0,0,
+one_decimal_precision,True,True,True,
+plausible_temperature_range,True,14.3 to 36.9,-10 to 50 C,
+historical_reference_count,True,730,730,
+historical_overlap_exact,True,0,0,
+official_source_overlap_exact,True,0,0,
+target_period_completeness,True,898,898 while 31 Aug pending,2026-08-31
