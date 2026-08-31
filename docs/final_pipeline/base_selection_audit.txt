@@ -1,0 +1,22 @@
+FINAL EMPIRICAL BASE-SELECTION AUDIT
+
+Selected base commit:
+commit=df97ea793cb5d608460ce582187cf66c379ec720
+date=Sat Aug 1 06:09:45 2026 +0100
+subject=Complete V70 Phase 9 exploratory trading laboratory
+refs=HEAD -> final-march-august-reproducible-pipeline, origin/edward-v70-empirical-finalisation, edward-v86-jul-aug-extension, edward-v70-empirical-finalisation
+
+Reason:
+newest commit containing certified V2 GP core + later audited Phase-8 synthesis
+
+Certified V2 GP files:
+config/v2/phase8_clean_gp_spec.json
+tools/v2/build_phase8_clean_gp.py
+
+Later audited Phase-8 files visible at selected base:
+outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_main_results_table.csv
+outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_market_results_table.csv
+outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_overleaf_numbers.tex
+outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_report.md
+outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_trading_results_table.csv
+outputs/v70_empirical_finalisation/phase8_empirical_synthesis/phase8_weather_results_table.csv

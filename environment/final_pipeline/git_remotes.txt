@@ -1,0 +1,2 @@
+origin	https://github.com/DeepIntoStreams/2026MScWeatherForecastingPolymarket.git (fetch)
+origin	https://github.com/DeepIntoStreams/2026MScWeatherForecastingPolymarket.git (push)

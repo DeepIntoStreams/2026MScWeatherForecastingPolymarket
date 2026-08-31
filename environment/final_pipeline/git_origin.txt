@@ -1,0 +1,5 @@
+setup_utc=2026-08-31T09:01:03Z
+final_branch=final-march-august-reproducible-pipeline
+base_commit=df97ea793cb5d608460ce582187cf66c379ec720
+base_reason=newest commit containing certified V2 GP core + later audited Phase-8 synthesis
+initial_head=df97ea793cb5d608460ce582187cf66c379ec720

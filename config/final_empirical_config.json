@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0",
+  "project": "MSc Financial Mathematics Dissertation - Weather Forecasting and Polymarket",
+  "pipeline_name": "Final March-August Reproducible Empirical Pipeline",
+  "status": "pre_external_validation_empirical_contract",
+
+  "timezone": "Asia/Hong_Kong",
+
+  "data_splits": {
+    "weather_initial_estimation": {
+      "start": "2024-03-16",
+      "end": "2025-03-15",
+      "calendar_dates": 365
+    },
+    "weather_chronological_validation": {
+      "start": "2025-03-16",
+      "end": "2026-03-15",
+      "calendar_dates": 365,
+      "validation_blocks_days": [91, 91, 91, 92]
+    },
+    "weather_full_pre_market_history": {
+      "start": "2024-03-16",
+      "end": "2026-03-15",
+      "calendar_dates": 730
+    },
+    "market_development": {
+      "start": "2026-03-16",
+      "end": "2026-06-30",
+      "calendar_dates": 107
+    },
+    "external_validation": {
+      "start": "2026-07-01",
+      "end": "2026-08-31",
+      "calendar_dates": 62
+    },
+    "full_market_period": {
+      "start": "2026-03-16",
+      "end": "2026-08-31",
+      "calendar_dates": 169
+    }
+  },
+
+  "weather": {
+    "target": {
+      "source": "Hong Kong Observatory Daily Extract",
+      "field": "Absolute Daily Maximum Temperature",
+      "unit": "degC",
+      "precision": "0.1 degC",
+      "integer_rounding": false
+    },
+
+    "forecast": {
+      "system": "ECMWF IFS deterministic forecast",
+      "delivery_interface": "Open-Meteo historical/archive interface",
+      "variable": "2m_temperature",
+      "target_transform": "Hong Kong-local daily maximum temperature"
+    },
+
+    "decision_rules": [
+      "24h",
+      "12h",
+      "6h",
+      "event_day_open"
+    ],
+
+    "residual_definition": "HKO_observed_daily_max_minus_ECMWF_deterministic_daily_max",
+
+    "model_hierarchy": {
+      "core": [
+        "raw_deterministic",
+        "static_gaussian",
+        "matern32_gp"
+      ],
+      "weather_selection_benchmark": [
+        "rbf_gp"
+      ]
+    },
+
+    "selection": {
+      "split_type": "chronological",
+      "primary_metric": "CRPS",
+      "random_cross_validation": false,
+      "polymarket_data_allowed": false
+    },
+
+    "gp": {
+      "response": "forecast_residual",
+      "features": [
+        "calendar_trend",
+        "annual_sine",
+        "annual_cosine",
+        "deterministic_max_temperature"
+      ],
+      "separate_model_per_decision_rule": true,
+      "standardisation_from_training_information_only": true,
+      "matern_nu": 1.5,
+      "isotropic_length_scale_within_each_decision_rule": true,
+      "event_probabilities_use_future_observation_predictive_variance": true
+    }
+  },
+
+  "polymarket": {
+    "metadata_source": "Polymarket Gamma",
+    "historical_price_source": "Polymarket CLOB historical YES-token prices",
+    "settlement_family": "Hong Kong Observatory daily maximum temperature",
+    "event_book_size": 11,
+
+    "probability_conventions": {
+      "weather_books_sum_to_one_by_construction": true,
+      "retain_raw_market_yes_prices": true,
+      "retain_normalised_market_categorical_book": true,
+      "binary_scores_use_raw_market_yes_prices": true,
+      "categorical_scores_use_normalised_market_book": true
+    },
+
+    "scores": [
+      "binary_brier",
+      "binary_log_loss",
+      "categorical_log_loss",
+      "multiclass_brier"
+    ],
+
+    "distribution_distance": [
+      "total_variation"
+    ]
+  },
+
+  "convex_pool": {
+    "components": [
+      "matern32_gp",
+      "normalised_polymarket"
+    ],
+    "selection_sample": "market_development",
+    "selection_metric": "categorical_log_loss",
+    "weight_grid": {
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.001
+    },
+    "external_validation_reselection_allowed": false
+  },
+
+  "trading": {
+    "primary_decision_rule": "event_day_open",
+    "signal": "weather_event_probability_minus_raw_market_yes_probability",
+    "weather_signal_models": [
+      "raw_deterministic",
+      "static_gaussian",
+      "matern32_gp"
+    ],
+
+    "position_type": "long_yes_only",
+    "maximum_positions_per_settlement_date": 1,
+    "position_size": 1.0,
+
+    "transaction_cost_per_trade": 0.01,
+
+    "threshold_selection_sample": "market_development",
+    "threshold_grid": {
+      "min": 0.0,
+      "max": 0.30,
+      "step": 0.01
+    },
+
+    "threshold_selection_rule": "largest_threshold_with_mean_pnl_within_one_standard_error_of_the_development_maximum",
+
+    "external_validation_reselection_allowed": false,
+
+    "explicitly_out_of_scope": [
+      "dynamic_position_sizing",
+      "kelly_sizing",
+      "multi_contract_portfolio_optimisation",
+      "long_short_extension",
+      "dynamic_thresholds"
+    ]
+  },
+
+  "inference": {
+    "primary_resampling_unit": "settlement_date",
+    "bootstrap_repetitions": 10000,
+    "random_seed": 20260831,
+
+    "moving_block_bootstrap": {
+      "primary_use": "trading_pnl_uncertainty",
+      "block_length_days": 7
+    }
+  },
+
+  "sensitivity": {
+    "temperature_mean_shifts_degC": [
+      -0.25,
+      -0.10,
+      0.0,
+      0.10,
+      0.25
+    ],
+    "probability_sensitivity": [
+      "delta",
+      "gamma"
+    ]
+  },
+
+  "governance": {
+    "historical_outputs_role": "audit_reference_only",
+
+    "july_august_must_not_be_used_for": [
+      "weather_training",
+      "weather_model_selection",
+      "convex_pool_weight_selection",
+      "trading_threshold_selection"
+    ],
+
+    "exploratory_analysis_may_not_modify_external_test_policy": true,
+
+    "main_thesis_inclusion_rule": "include_only_results_that_materially_support_or_qualify_the_core_research_story",
+
+    "methodological_complexity_rule": "add_complexity_only_when_it_materially_improves_identification_interpretation_or_robustness"
+  }
+}

@@ -81,3 +81,55 @@ outputs/final_figures/*
 !outputs/final_figures/*.pdf
 !outputs/final_figures/*.svg
 # END CANONICAL OUTPUT POLICY
+
+###############################################################################
+# FINAL MSc REPRODUCIBLE PIPELINE
+#
+# Keep empirical data ignored, but permit directory documentation/placeholders
+# required for the examiner-facing final pipeline.
+###############################################################################
+
+# Re-open data hierarchy only so selected final-pipeline metadata can be tracked.
+!data/
+
+# Preserve the default policy that data children are ignored unless explicitly
+# reopened below.
+data/*
+
+# --------------------------- RAW DATA ----------------------------------------
+!data/raw/
+data/raw/*
+
+!data/raw/FINAL_PIPELINE_README.md
+
+!data/raw/hko/
+data/raw/hko/*
+!data/raw/hko/.gitkeep
+
+!data/raw/ecmwf/
+data/raw/ecmwf/*
+!data/raw/ecmwf/.gitkeep
+
+!data/raw/polymarket/
+data/raw/polymarket/*
+!data/raw/polymarket/.gitkeep
+
+# ------------------------- INTERIM DATA --------------------------------------
+!data/interim/
+data/interim/*
+
+!data/interim/final_pipeline/
+data/interim/final_pipeline/*
+!data/interim/final_pipeline/README.md
+
+# ------------------------ PROCESSED DATA -------------------------------------
+!data/processed/
+data/processed/*
+
+!data/processed/final_pipeline/
+data/processed/final_pipeline/*
+!data/processed/final_pipeline/README.md
+
+###############################################################################
+# END FINAL MSc REPRODUCIBLE PIPELINE EXCEPTIONS
+###############################################################################
