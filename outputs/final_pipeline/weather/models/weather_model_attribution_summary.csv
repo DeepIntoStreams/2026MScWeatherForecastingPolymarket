@@ -1,0 +1,5 @@
+model,mean_date_crps_c,selected_gp
+raw,1.7856519743,False
+static,0.9454445049,False
+rbf,0.9194478417,False
+matern32,0.9089451170,True

@@ -1,0 +1,28 @@
+{
+  "attribution_shares": {
+    "raw_static_share_of_raw_to_selected": 0.9583676258504108,
+    "rbf_matern_share_of_raw_to_selected": 0.011979745118280996,
+    "static_rbf_share_of_raw_to_selected": 0.029652629031308254
+  },
+  "block_sizes": [
+    91,
+    91,
+    91,
+    92
+  ],
+  "external_validation_used_for_selection": false,
+  "market_prices_used_for_selection": false,
+  "mean_date_crps_c": {
+    "matern32": 0.9089451169571919,
+    "raw": 1.7856519742883377,
+    "rbf": 0.9194478416514682,
+    "static": 0.9454445048611128
+  },
+  "selected_kernel": "matern32",
+  "selection_criterion": "mean date-balanced closed-form Gaussian CRPS",
+  "selection_source": "weather_history_chronological_validation_only",
+  "trading_pnl_used_for_selection": false,
+  "validation_calendar_dates": 365,
+  "validation_calendar_end": "2026-03-15",
+  "validation_calendar_start": "2025-03-16"
+}

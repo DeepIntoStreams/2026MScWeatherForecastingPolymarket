@@ -95,6 +95,105 @@
     ],
     "settlement_family": "Hong Kong Observatory daily maximum temperature"
   },
+  "probabilistic_weather_models": {
+    "comparators": [
+      "raw deterministic point law",
+      "static rule-specific Gaussian residual law",
+      "RBF GP",
+      "Mat\u00e9rn-3/2 GP"
+    ],
+    "feature_standardisation": "training-history StandardScaler separately by decision rule",
+    "features": {
+      "calendar_time_years": "days since 2024-03-16 / 365.2425",
+      "forecast_level": "forecast_daily_max_c",
+      "seasonal_cos": "cos(2*pi*seasonal_position)",
+      "seasonal_position": "(Gregorian day-of-year - 1) / 365.2425",
+      "seasonal_sin": "sin(2*pi*seasonal_position)"
+    },
+    "final_prediction_fit": {
+      "prediction_period": "2026-03-16 to 2026-08-31",
+      "refit_during_market_period": false,
+      "training_period": "2024-03-16 to 2026-03-15 weather history only",
+      "unsupported_forecast_imputation": false
+    },
+    "gp": {
+      "candidate_covariances": [
+        "RBF",
+        "Mat\u00e9rn-3/2"
+      ],
+      "constant_bounds": [
+        0.01,
+        100.0
+      ],
+      "constant_initial": 1.0,
+      "estimator": "sklearn.gaussian_process.GaussianProcessRegressor",
+      "isotropic_length_scale": true,
+      "jitter": 1e-08,
+      "kernel_form": "ConstantKernel * covariance + WhiteKernel",
+      "length_bounds": [
+        0.05,
+        10.0
+      ],
+      "length_initial": 1.0,
+      "optimizer": "fmin_l_bfgs_b",
+      "optimizer_restarts": 0,
+      "prediction_column_schema": {
+        "matern32": "matern_*",
+        "rbf": "rbf_*"
+      },
+      "predictive_variance": "future-observation variance with WhiteKernel included once",
+      "random_state": 20260721,
+      "selected_kernel": "matern32",
+      "white_noise_bounds": [
+        0.001,
+        10.0
+      ],
+      "white_noise_initial": 0.25
+    },
+    "response": "hko_daily_max_c - forecast_daily_max_c",
+    "response_standardisation": "training-history mean and population standard deviation",
+    "selection": {
+      "criterion": "aggregate date-balanced closed-form Gaussian CRPS",
+      "external_validation_used": false,
+      "market_data_used": false,
+      "mean_date_crps_c": {
+        "matern32": 0.9089451169571919,
+        "raw": 1.7856519742883377,
+        "rbf": 0.9194478416514682,
+        "static": 0.9454445048611128
+      },
+      "source": "weather-history chronological validation only",
+      "trading_pnl_used": false
+    },
+    "static_gaussian": {
+      "location": "training residual mean",
+      "scale": "training residual population standard deviation"
+    },
+    "uncertainty": {
+      "base_seed": 20260731,
+      "moving_block_bootstrap_reps": 10000,
+      "moving_block_lengths": [
+        3,
+        5,
+        7
+      ],
+      "ordinary_date_bootstrap_reps": 10000
+    },
+    "validation_design": {
+      "initial_training_end": "2025-03-15",
+      "initial_training_start": "2024-03-16",
+      "resampling_unit": "settlement date",
+      "training_window": "expanding",
+      "validation_block_sizes": [
+        91,
+        91,
+        91,
+        92
+      ],
+      "validation_end": "2026-03-15",
+      "validation_start": "2025-03-16"
+    }
+  },
   "project": "MSc Financial Mathematics Dissertation - Weather Forecasting and Polymarket",
   "residual_analysis": {
     "external_validation": {

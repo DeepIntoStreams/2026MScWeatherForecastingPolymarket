@@ -1,0 +1,83 @@
+{
+  "attribution_shares": {
+    "raw_static_share_of_raw_to_selected": 0.9583676258504108,
+    "rbf_matern_share_of_raw_to_selected": 0.011979745118280996,
+    "static_rbf_share_of_raw_to_selected": 0.029652629031308254
+  },
+  "august_31_target_pending": true,
+  "bootstrap_replications": 10000,
+  "candidate_kernels": [
+    "rbf",
+    "matern32"
+  ],
+  "constant_bounds": [
+    0.01,
+    100.0
+  ],
+  "constant_initial": 1.0,
+  "crps": "closed-form Gaussian CRPS",
+  "external_forecast_distribution_rows": 248,
+  "external_scored_rows_currently": 244,
+  "feature_columns": [
+    "calendar_time_years",
+    "seasonal_sin_exact",
+    "seasonal_cos_exact",
+    "forecast_daily_max_c"
+  ],
+  "feature_formula": {
+    "calendar_time_years": "days since 2024-03-16 / 365.2425",
+    "forecast_daily_max_c": "admissible ECMWF HKT local-day maximum",
+    "seasonal_cos_exact": "cos(2*pi*seasonal_position)",
+    "seasonal_position": "(Gregorian day-of-year - 1) / 365.2425",
+    "seasonal_sin_exact": "sin(2*pi*seasonal_position)"
+  },
+  "frozen_mar_aug_prediction_rows": 672,
+  "frozen_predictions_sha256": "2429e8a62465c4cb53670bff1c7daf282717dcb373f4243484abe8351c6898a5",
+  "full_history_gp_fits": 8,
+  "generated_utc": "2026-08-31T11:59:39.575339+00:00",
+  "gp_estimator": "sklearn GaussianProcessRegressor",
+  "initial_training_calendar_dates": 365,
+  "input_standardisation": "rule-specific StandardScaler fitted on current training history only",
+  "jitter": 1e-08,
+  "length_bounds": [
+    0.05,
+    10.0
+  ],
+  "length_initial": 1.0,
+  "mean_date_crps_c": {
+    "matern32": 0.9089451169571919,
+    "raw": 1.7856519742883377,
+    "rbf": 0.9194478416514682,
+    "static": 0.9454445048611128
+  },
+  "moving_block_lengths": [
+    3,
+    5,
+    7
+  ],
+  "noise_bounds": [
+    0.001,
+    10.0
+  ],
+  "noise_initial": 0.25,
+  "optimizer": "fmin_l_bfgs_b",
+  "optimizer_restarts": 0,
+  "predictive_variance": "future-observation variance; WhiteKernel included once",
+  "random_state": 20260721,
+  "response_standardisation": "training residual mean and population standard deviation fitted on current training history only",
+  "selected_kernel": "matern32",
+  "static_gaussian_scale": "training residual population standard deviation (Gaussian MLE convention)",
+  "status": "PASS",
+  "validation_block_sizes": [
+    91,
+    91,
+    91,
+    92
+  ],
+  "validation_calendar_dates": 365,
+  "validation_dates_with_support": 363,
+  "validation_gp_fits": 32,
+  "validation_prediction_rows": 1325,
+  "validation_predictions_sha256": "f877a90a089d1b9eab08998319f871777cee2db0adc181a0592307db7719af57",
+  "weather_model_stage": "steps_16_23"
+}

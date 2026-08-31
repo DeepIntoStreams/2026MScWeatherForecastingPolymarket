@@ -1,0 +1,16 @@
+check,passed,observed,expected,notes
+validation_calendar_dates,True,365,365,
+validation_prediction_rows_equal_usable_rows,True,1325,1325,same support for raw/static/RBF/Matérn
+validation_unique_date_rule_keys,True,0,0,
+validation_gp_fit_count,True,32,32,4 blocks x 4 rules x 2 kernels
+training_precedes_validation,True,1,1,
+date_loss_rows_match_dates_with_validation_support,True,363,363,
+selected_kernel_is_gp_candidate,True,matern32,rbf or matern32,selected only by weather-history date-balanced CRPS
+raw_crps_equals_absolute_error,True,0.0,0,Dirac forecast CRPS identity
+all_gaussian_sds_positive,True,1,1,
+variance_software_manual_match,True,0.0,0,
+white_noise_enters_once,True,1.1102230246251565e-16,0,observation variance - latent variance = WhiteKernel variance
+full_history_fit_count,True,8,8,4 rules x 2 kernels
+full_predictions_match_supported_mar_aug,True,672,672,no unsupported forecast is imputed
+external_forecast_distributions_complete,True,248,248,forecast distributions exist even while 31 Aug HKO target is pending
+coverage_levels_complete,True,4,4,

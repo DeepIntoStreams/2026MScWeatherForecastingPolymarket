@@ -1,0 +1,13 @@
+{
+  "manual_latent_variance_celsius": 0.6895135737822458,
+  "manual_latent_variance_standardised": 0.2826481811096013,
+  "manual_observation_variance_celsius": 2.2513693602502602,
+  "manual_observation_variance_standardised": 0.9228903953116174,
+  "noise_identity_error": 1.1102230246251565e-16,
+  "observation_minus_latent_standardised": 0.6402422142020161,
+  "software_minus_manual_observation": 0.0,
+  "software_observation_variance_celsius": 2.2513693602502602,
+  "software_observation_variance_standardised": 0.9228903953116174,
+  "white_noise_variance_celsius": 1.5618557864680143,
+  "white_noise_variance_standardised": 0.640242214202016
+}
