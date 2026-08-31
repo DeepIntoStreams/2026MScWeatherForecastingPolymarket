@@ -1,0 +1,19 @@
+{
+  "clob_price_history_endpoint": "https://clob.polymarket.com/prices-history",
+  "event_date_source": "visible market slug/question/event title; API closing date not used as contract date",
+  "gamma_closed_states_queried": [
+    true,
+    false
+  ],
+  "gamma_endpoint": "https://gamma-api.polymarket.com/events/keyset",
+  "gamma_query_period": "end_date_min=2026-03-14; end_date_max=2026-09-03",
+  "interior_rule": "k\u00b0C -> [k,k+1)",
+  "lower_endpoint_rule": "k\u00b0C or below -> (-infinity, k+1)",
+  "price_history_fidelity_minutes": 60,
+  "price_history_window_days": 7,
+  "price_selection_rule": "latest recovered YES-token observation no later than decision cutoff",
+  "retrieved_utc": "2026-08-31T13:09:28.067327+00:00",
+  "settlement_family": "HKO Daily Extract one-decimal",
+  "temperature_boundary_source": "visible groupItemTitle/question/slug; groupItemThreshold retained only as metadata",
+  "upper_rule": "K\u00b0C or higher -> [K,infinity)"
+}

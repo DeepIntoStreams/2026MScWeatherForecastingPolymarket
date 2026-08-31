@@ -95,6 +95,83 @@
     ],
     "settlement_family": "Hong Kong Observatory daily maximum temperature"
   },
+  "polymarket_event_book": {
+    "common_support": {
+      "market_imputation": false,
+      "requires_complete_market_book": true,
+      "requires_hko_target_for_scoring": true,
+      "requires_weather_distribution": true,
+      "weather_imputation": false
+    },
+    "convex_pool": {
+      "external_validation_used": false,
+      "formula": "q = w*p_selected_gp + (1-w)*p_market_normalised",
+      "grid": "0 to 1 inclusive by 0.001",
+      "selection_metric": "date-balanced categorical log loss",
+      "selection_period": "2026-03-16 to 2026-06-30",
+      "trading_pnl_used": false,
+      "weight_gp": 0.172,
+      "weight_market": 0.8280000000000001
+    },
+    "decision_rules": [
+      "24h_prior",
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "event_mapping": {
+      "interior": "k\u00b0C -> [k,k+1)",
+      "lower_endpoint": "k\u00b0C or below -> (-infinity,k+1)",
+      "upper_tail": "K\u00b0C or higher -> [K,infinity)"
+    },
+    "final_observed_support": {
+      "certified_contract_rows": 1826,
+      "certified_market_dates": 166,
+      "complete_market_books": 632,
+      "exact_common_books": 632,
+      "exact_common_dates": 162,
+      "score_ready_dates": 161
+    },
+    "group_item_threshold_used_as_celsius": false,
+    "market_probabilities": {
+      "binary_scores": "raw event-level YES value",
+      "categorical_scores": "normalised eleven-event YES book",
+      "total_variation": "normalised eleven-event YES book",
+      "trading_future_stage": "raw event-level YES value"
+    },
+    "metadata_discovery": {
+      "endpoint": "Polymarket Gamma /events/keyset",
+      "event_end_date_max": "2026-09-03T23:59:59Z",
+      "event_end_date_min": "2026-03-14T00:00:00Z",
+      "final_admissibility": "local code verifies Hong Kong temperature wording, HKO Daily Extract settlement family, target date, eleven-contract partition and YES-token availability",
+      "nested_markets_used": true,
+      "page_limit": 500,
+      "pagination": "next_cursor -> after_cursor",
+      "server_side_title_search": "Hong Kong",
+      "title_search_is_final_admissibility_rule": false
+    },
+    "paired_inference": {
+      "moving_block_bootstrap_reps": 10000,
+      "moving_block_length": 7,
+      "ordinary_bootstrap_reps": 10000,
+      "resampling_unit": "settlement date",
+      "seed": 20260831
+    },
+    "period": {
+      "development_end": "2026-06-30",
+      "end": "2026-08-31",
+      "external_start": "2026-07-01",
+      "start": "2026-03-16"
+    },
+    "price_history": {
+      "fidelity_minutes": 60,
+      "later_record_substitution": false,
+      "selection": "latest recovered YES-token observation no later than decision cutoff",
+      "window_days": 7
+    },
+    "price_source": "Polymarket CLOB /prices-history",
+    "settlement_family": "HKO Daily Extract one-decimal"
+  },
   "probabilistic_weather_models": {
     "comparators": [
       "raw deterministic point law",

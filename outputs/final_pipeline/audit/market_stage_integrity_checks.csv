@@ -1,0 +1,19 @@
+check,passed,observed,expected,notes
+gamma_candidates_nonempty,True,1879.0,>0,
+certified_contract_universe_nonempty,True,1826.0,>0,
+all_certified_dates_have_11_contracts,True,1.0,1,
+all_known_target_dates_have_one_winner,True,1.0,1,
+price_history_nonempty,True,64815.0,>0,
+all_selected_market_prices_in_unit_interval,True,1.0,1,
+market_no_lookahead,True,1.0,1,
+nonnegative_market_record_age,True,0.0,0,
+some_complete_market_books,True,632.0,>0,
+weather_probability_books_have_11_events,True,1.0,1,
+weather_probability_mass,True,1.1102230246251565e-16,<1e-10,
+exact_common_support_nonempty,True,6952.0,>0,
+exact_common_books_have_11_rows,True,1.0,1,
+external_exact_support_exists,True,1.0,1,
+pool_weight_in_unit_interval,True,0.172,"[0,1]",selected on March–June only
+development_scores_exist,True,4.0,>0,
+external_scores_exist,True,4.0,>0,31 Aug may remain target-pending
+support_summary_has_three_period_rows,True,3.0,3,

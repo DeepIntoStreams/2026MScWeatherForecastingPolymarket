@@ -1,0 +1,12 @@
+{
+  "external_validation_used": false,
+  "grid_end": 1.0,
+  "grid_start": 0.0,
+  "grid_step": 0.001,
+  "selected_weather_source": "weather-selected GP",
+  "selection_metric": "date-balanced categorical log loss",
+  "selection_period": "2026-03-16 to 2026-06-30",
+  "trading_pnl_used": false,
+  "weight_gp": 0.172,
+  "weight_market": 0.8280000000000001
+}

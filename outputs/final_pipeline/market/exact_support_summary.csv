@@ -1,0 +1,4 @@
+analysis_period,certified_contract_rows,certified_market_dates,theoretical_market_cells,market_price_cells,complete_market_books,complete_market_dates,weather_event_rows,exact_common_event_rows,exact_common_books,exact_common_dates,score_ready_books,score_ready_dates
+market_development,1144,104,4576,4274,385,100,4532,4235,385,100,385,100
+external_validation,682,62,2728,2717,247,62,2728,2717,247,62,243,61
+all_market_period,1826,166,7304,6991,632,162,7260,6952,632,162,628,161
