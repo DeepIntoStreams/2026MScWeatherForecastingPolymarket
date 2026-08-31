@@ -1,0 +1,10 @@
+comparison,category,dates,share
+raw_vs_static,different_selected_contract,36,0.5901639344
+raw_vs_static,same_contract_activation_diff,21,0.3442622951
+raw_vs_static,same_contract_same_activation,4,0.0655737705
+static_vs_selected_gp,joint_abstention,47,0.7704918033
+static_vs_selected_gp,same_contract_same_activation,12,0.1967213115
+static_vs_selected_gp,same_contract_activation_diff,2,0.0327868852
+raw_vs_selected_gp,different_selected_contract,39,0.6393442623
+raw_vs_selected_gp,same_contract_activation_diff,18,0.2950819672
+raw_vs_selected_gp,same_contract_same_activation,4,0.0655737705

@@ -1,0 +1,3 @@
+analysis_period,all_exact_books,all_exact_dates,selected_rule,selected_rule_books,selected_rule_dates,selected_rule_settled_dates,selected_rule_pending_dates,selected_gp_trade_count_all_dates,selected_gp_settled_trade_count
+market_development,389,101,24h_prior,90,90,90,0,15,15
+external_validation,247,62,24h_prior,61,61,60,1,12,12

@@ -51,6 +51,49 @@
       "start": "2024-03-16"
     }
   },
+  "fixed_policy_trading": {
+    "convex_pool_used": false,
+    "current_external_pending_target_dates": [
+      "2026-08-31"
+    ],
+    "development_period": {
+      "end": "2026-06-30",
+      "start": "2026-03-16"
+    },
+    "equal_gap_tie_break": "lowest certified event rank",
+    "external_period": {
+      "end": "2026-08-31",
+      "start": "2026-07-01"
+    },
+    "external_used_in_selection": false,
+    "forecast_risk": {
+      "gp_retraining_under_shock": false,
+      "local_probability_sensitivity": "analytic predictive-mean delta and gamma",
+      "strategy_reselection_under_shock": true,
+      "stress": "additive fitted selected-GP settlement-mean shift with predictive scale, fitted parameters, market records, rule, threshold and cost fixed",
+      "stress_range_c": [
+        -2.0,
+        2.0
+      ]
+    },
+    "market_entry_proxy": "raw event-level historical YES record",
+    "minimum_development_trades": 10,
+    "positions": "at most one long YES share per settlement date",
+    "raw_static_reoptimised": false,
+    "reference_cost_per_share": 0.01,
+    "rule_selection": "maximise mean(h*)-SE(h*) with tie order 24h,12h,6h,event-day-open",
+    "selected_rule": "24h_prior",
+    "selected_threshold": 0.15,
+    "selection_probability": "selected GP event probability",
+    "threshold_grid": "0.00 to 0.25 inclusive by 0.01",
+    "threshold_selection": "largest eligible threshold whose mean development daily PnL lies within one ordinary SE of the best threshold mean for that decision rule",
+    "uncertainty": {
+      "moving_block_bootstrap_reps": 10000,
+      "moving_block_length": 7,
+      "ordinary_bootstrap_reps": 10000,
+      "resampling_unit": "settlement date"
+    }
+  },
   "governance": {
     "exploratory_analysis_may_not_modify_external_test_policy": true,
     "historical_outputs_role": "audit_reference_only",

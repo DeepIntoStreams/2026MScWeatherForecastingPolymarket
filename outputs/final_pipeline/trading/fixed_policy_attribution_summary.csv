@@ -1,0 +1,8 @@
+quantity,value
+external_net_pnl_raw,-0.2980000000
+external_net_pnl_static,2.2810000000
+external_net_pnl_selected_gp,2.4510000000
+static_minus_raw_external_net_pnl,2.5790000000
+selected_gp_minus_static_external_net_pnl,0.1700000000
+selected_gp_minus_raw_external_net_pnl,2.7490000000
+raw_to_gp_pnl_gap_closed_by_static,0.9381593307
