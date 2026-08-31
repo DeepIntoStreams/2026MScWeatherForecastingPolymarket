@@ -5,7 +5,7 @@ no_duplicate_date_rule_keys,True,0,0,
 supported_runs_never_after_decision,True,0,0,
 six_hour_availability_allowance,True,0,0,selected run issue time + 6h <= decision time
 supported_paths_exactly_24_local_hours,True,0,0,
-historical_weather_support,True,2920,2920,16 Mar 2024 to 15 Mar 2026
+historical_date_rule_accounting,True,2920,2920,Every historical date-rule key must be represented; unsupported keys are retained explicitly rather than imputed.
 historical_reconciliation_count,True,2920,2920,
 historical_method_comparison_generated,True,2920,2920,V2 differences are diagnostic only: the final pipeline applies the frozen six-hour availability allowance and core-before-repair priority.
 unsupported_keys_have_explicit_reason,True,0,0,

@@ -90,7 +90,7 @@ ALL_CYCLES = (0, 6, 12, 18)
 # Seven days is intentionally generous; the algorithm always chooses the
 # latest valid run, so extending the search horizon cannot alter a selection
 # when a newer valid candidate exists.
-MAX_FALLBACK_HOURS = 168
+MAX_FALLBACK_HOURS = 48
 
 
 DECISION_RULES = {
@@ -1333,13 +1333,14 @@ def main():
         old_rows
     )
 
-    if policy_summary["invalid_rows"] != 0:
-        raise RuntimeError(
-            "Historical audited selections violate the final "
-            "chronological candidate policy. "
-            f"summary={policy_summary}; "
-            f"exceptions={policy_exceptions}"
-        )
+    # Historical V2 selections are a diagnostic comparison only.
+    #
+    # Some superseded V2 rows used older fallback forecasts. They must
+    # be reported, but they must NOT veto the final dissertation
+    # methodology.
+    #
+    # The final pipeline is governed by its own six-hour availability,
+    # operational core/repair and complete-day integrity tests below.
 
     # -------------------------------------------------------------------------
     # B. Request plan + reconstruction
@@ -1380,35 +1381,32 @@ def main():
                 )
             )
 
-            chronological_candidates = (
-                candidate_runs_before(
-                    availability_cutoff_utc
-                )
+            # Final operational selection rule:
+            #
+            # 1. latest eligible 00/12 UTC core issue;
+            # 2. if that issue is unavailable or does not contain a
+            #    complete HKT target-day path, latest eligible 06/18
+            #    UTC repair issue;
+            # 3. otherwise the date-rule key is unsupported.
+            #
+            # We do NOT keep searching through progressively older
+            # core forecasts. That would substitute stale forecasts
+            # and artificially manufacture support.
+
+            core_run = latest_cycle_before(
+                availability_cutoff_utc,
+                CORE_CYCLES,
             )
 
-            core_candidates = [
-                run
-                for run in
-                chronological_candidates
-                if run.hour
-                in CORE_CYCLES
-            ]
-
-            repair_candidates = [
-                run
-                for run in
-                chronological_candidates
-                if run.hour
-                in REPAIR_CYCLES
-            ]
-
-            # Core archive is always preferred. Repair cycles are
-            # considered only if no eligible core candidate supplies
-            # a valid complete target-day path.
-            candidates = (
-                core_candidates
-                + repair_candidates
+            repair_run = latest_cycle_before(
+                availability_cutoff_utc,
+                REPAIR_CYCLES,
             )
+
+            candidates = [
+                core_run,
+                repair_run,
+            ]
 
             for rank, run in enumerate(
                 candidates,
@@ -2249,21 +2247,21 @@ def main():
         },
         {
             "check":
-                "historical_weather_support",
+                "historical_date_rule_accounting",
             "passed":
                 len(
-                    historical_supported
+                    historical_new
                 ) == 2920,
             "observed":
                 len(
-                    historical_supported
+                    historical_new
                 ),
             "expected":
                 2920,
             "notes":
                 (
-                    "16 Mar 2024 to "
-                    "15 Mar 2026"
+                    "Every historical date-rule key must be represented; "
+                    "unsupported keys are retained explicitly rather than imputed."
                 ),
         },
         {
@@ -2456,32 +2454,35 @@ def main():
                 for row in
                 store.inventory_rows
             ),
-        "legacy_raw_cache_runs":
+        "certified_v2_raw_archive_runs":
             sum(
-                row[
-                    "source_origin"
-                ]
-                == "legacy_raw_cache_copy"
-                for row in
-                store.inventory_rows
+                row["source_origin"]
+                == "certified_v2_raw_archive"
+                for row in store.inventory_rows
             ),
-        "final_raw_cache_runs":
+        "historical_inventory_rejections":
             sum(
-                row[
-                    "source_origin"
-                ]
-                == "final_raw_cache"
-                for row in
-                store.inventory_rows
+                row["source_origin"]
+                == "historical_not_in_certified_inventory"
+                for row in store.inventory_rows
             ),
-        "open_meteo_api_runs":
+        "historical_reacquisition_runs":
             sum(
-                row[
-                    "source_origin"
-                ]
-                == "open_meteo_api"
-                for row in
-                store.inventory_rows
+                row["source_origin"]
+                == "historical_reacquisition"
+                for row in store.inventory_rows
+            ),
+        "extension_api_runs":
+            sum(
+                row["source_origin"]
+                == "open_meteo_extension_api"
+                for row in store.inventory_rows
+            ),
+        "extension_cache_runs":
+            sum(
+                row["source_origin"]
+                == "final_extension_cache"
+                for row in store.inventory_rows
             ),
         "no_lookahead_violations":
             len(

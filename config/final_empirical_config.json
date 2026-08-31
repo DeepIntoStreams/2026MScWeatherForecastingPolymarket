@@ -159,14 +159,17 @@
       "eligibility_rule": "run_init_utc + 6 hours <= decision_time_utc",
       "endpoint": "https://single-runs-api.open-meteo.com/v1/forecast",
       "forecast_hours": 240,
+      "historical_v2_comparison_role": "diagnostic only; earlier V2 selections do not define final-method acceptance",
       "historical_v2_reconciliation": "diagnostic only because the final methodology supersedes the earlier V2 issue-time implementation",
       "latitude": 22.3019444444,
       "longitude": 114.1741666667,
       "model_identifier": "ecmwf_ifs",
+      "multi_day_stale_fallback": false,
       "repair_cycles_utc": [
         6,
         18
       ],
+      "selection_rule": "after imposing the six-hour availability allowance, attempt only the latest eligible 00/12 UTC core issue; if it is unavailable or lacks a complete 24-hour Hong Kong local-day path, attempt only the latest eligible 06/18 UTC repair issue; if neither succeeds, retain the date-rule key as unsupported",
       "system": "ECMWF IFS deterministic forecast",
       "target_transform": "maximum of exactly 24 nonmissing distinct Hong Kong-local hourly temperature_2m values",
       "temperature_unit": "celsius",

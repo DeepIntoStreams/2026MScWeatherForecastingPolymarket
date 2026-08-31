@@ -44,18 +44,22 @@ The allowance is applied before forecast selection.
 
 ## Core and repair cycles
 
-The primary archive consists of the 00 UTC and 12 UTC ECMWF cycles.
+The primary forecast for each date-rule pair is the latest eligible 00 UTC or
+12 UTC core issue after imposing the six-hour interface-availability allowance.
 
-For a date and forecast time:
+Only that operationally latest core candidate is attempted as the primary
+forecast.
 
-1. identify eligible 00/12 UTC issues under the six-hour allowance;
-2. retain only issues producing a complete Hong Kong local-day path;
-3. select the latest valid core issue;
-4. consult 06/18 UTC repair cycles only when no valid core path exists.
+If the primary core issue is unavailable or does not contain a complete Hong
+Kong target-day path, the latest eligible 06 UTC or 18 UTC issue is attempted
+as a repair.
 
-The repair cycles therefore extend empirical support; they are not a second
-forecast model and are not bulk-selected merely because they are chronologically
-newer.
+If neither candidate supplies a valid path, the date-rule key is unsupported.
+
+The implementation does not keep moving backwards through increasingly old
+core forecasts. This prevents stale forecasts from manufacturing support and
+preserves the no-imputation principle.
+
 
 ## Complete local-day path
 

@@ -132,6 +132,58 @@ class TestFinalECMWF(unittest.TestCase):
                 ),
             )
 
+    def test_selected_run_age_is_operational(self):
+        for r in self.rows:
+            if (
+                r["support_available"]
+                != "True"
+            ):
+                continue
+
+            age = float(
+                r[
+                    "run_age_hours_at_decision"
+                ]
+            )
+
+            # Under the frozen four-cycle geometry plus the six-hour
+            # availability allowance, the latest primary or repair
+            # candidate must be operationally recent. A five-day-old
+            # fallback is not admissible.
+            self.assertGreaterEqual(
+                age,
+                6.0,
+            )
+
+            self.assertLessEqual(
+                age,
+                16.0,
+                msg=(
+                    r["target_date"]
+                    + " "
+                    + r["decision_rule"]
+                ),
+            )
+
+    def test_candidate_rank_is_core_or_single_repair(self):
+        for r in self.rows:
+            if (
+                r["support_available"]
+                != "True"
+            ):
+                continue
+
+            rank = int(
+                r[
+                    "selected_candidate_rank"
+                ]
+            )
+
+            self.assertIn(
+                rank,
+                {1, 2},
+            )
+
     def test_complete_hkt_local_day(self):
         for r in self.rows:
             if (
@@ -168,7 +220,7 @@ class TestFinalECMWF(unittest.TestCase):
                 "True",
             )
 
-    def test_weather_history_support(self):
+    def test_weather_history_accounting(self):
         rows = [
             r
             for r in self.rows
@@ -185,13 +237,26 @@ class TestFinalECMWF(unittest.TestCase):
             2920,
         )
 
-        self.assertTrue(
-            all(
-                r["support_available"]
-                == "True"
-                for r in rows
+        keys = [
+            (
+                r["target_date"],
+                r["decision_rule"],
             )
+            for r in rows
+        ]
+
+        self.assertEqual(
+            len(keys),
+            len(set(keys)),
         )
+
+        for r in rows:
+            if r["support_available"] != "True":
+                self.assertTrue(
+                    bool(
+                        r["unsupported_reason"]
+                    )
+                )
 
     def test_v2_reconciliation_is_complete_but_diagnostic(self):
         with RECON.open(

@@ -1,26 +1,39 @@
 # ECMWF timing-method reconciliation
 
-The final empirical rebuild identified a discrepancy between the earlier V2
-production support selector and the methodology frozen in the later dissertation
-versions.
+The final empirical rebuild identified an implementation difference between the
+earlier V2 forecast-support selector and the methodology frozen for the final
+dissertation pipeline.
 
-The V2 production selector retained the latest complete-day forecast whose run
-initialisation was no later than the decision time.
+## Earlier V2 implementation
 
-The final dissertation methodology explicitly imposes a six-hour
-interface-availability allowance and a core-before-repair cycle priority.
+The historical V2 panel occasionally retained older fallback forecasts. Its
+observed selected-run ages range from 4 to 52 hours at the corresponding
+decision time.
 
-The final March–August pipeline therefore implements the dissertation
-methodology:
+Those selections remain useful as an audit reference, but they do not define the
+final March-August pipeline.
 
-1. issue time plus six hours must not exceed the decision time;
-2. eligible 00/12 UTC core cycles are preferred;
-3. 06/18 UTC cycles are admitted only when no valid core path is available;
-4. the selected path must contain the complete 24-hour Hong Kong local day.
+## Final methodology
 
-The old 2,920-row V2 weather panel is retained only to quantify the effect of
-this methodological reconciliation. It is not used to force the new processed
-forecasts to reproduce superseded selections.
+The final empirical pipeline implements the dissertation methodology directly:
 
-This prevents the final empirical pipeline from silently back-fitting its
-implementation to previously reported numbers.
+1. impose the six-hour interface-availability allowance;
+2. identify the latest eligible 00/12 UTC core issue;
+3. attempt that operationally latest core issue;
+4. if it is unavailable or lacks a complete Hong Kong local-day path, attempt
+   the latest eligible 06/18 UTC repair issue;
+5. if neither succeeds, retain the date-rule key as unsupported;
+6. never substitute progressively older forecasts to manufacture support.
+
+Thus every supported selected run is operationally recent under the fixed
+decision-time geometry.
+
+## Role of the historical V2 panel
+
+The 2,920 historical V2 date-rule observations are retained only to quantify
+the consequence of the methodological reconciliation.
+
+The final pipeline does not require old and new selected runs or deterministic
+daily maxima to be identical.
+
+No old processed forecast is used to construct the new final panel.
