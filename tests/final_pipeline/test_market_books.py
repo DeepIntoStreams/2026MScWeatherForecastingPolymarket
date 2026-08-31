@@ -392,6 +392,176 @@ class TestFinalMarketStage(
         )
 
 
+
+
+class TestChronologyResolution(unittest.TestCase):
+
+    def test_may19_chronology_resolution(self):
+        import pandas as pd
+        from pathlib import Path
+
+        universe = pd.read_csv(
+            Path(
+                "data/processed/final_pipeline/market/"
+                "polymarket_contract_universe.csv"
+            ),
+            dtype={
+                "parent_event_id":
+                    "string",
+
+                "market_id":
+                    "string",
+            },
+        )
+
+        audit = pd.read_csv(
+            Path(
+                "outputs/final_pipeline/market/"
+                "contract_book_chronology_audit.csv"
+            ),
+            dtype={
+                "parent_event_id":
+                    "string",
+            },
+        )
+
+        dates = set(
+            universe[
+                "event_date"
+            ].astype(str)
+        )
+
+        expected = set(
+            pd.date_range(
+                "2026-03-16",
+                "2026-08-31",
+            ).strftime(
+                "%Y-%m-%d"
+            )
+        )
+
+        self.assertEqual(
+            expected - dates,
+            {
+                "2026-03-20",
+                "2026-03-31",
+            },
+        )
+
+        self.assertEqual(
+            len(
+                dates
+            ),
+            167,
+        )
+
+        may = universe[
+            universe[
+                "event_date"
+            ]
+            .astype(str)
+            .eq(
+                "2026-05-19"
+            )
+        ]
+
+        self.assertEqual(
+            len(
+                may
+            ),
+            11,
+        )
+
+        self.assertEqual(
+            set(
+                may[
+                    "parent_event_id"
+                ].astype(str)
+            ),
+            {
+                "493669"
+            },
+        )
+
+        self.assertEqual(
+            set(
+                may[
+                    "market_id"
+                ].astype(int)
+            ),
+            set(
+                range(
+                    2281866,
+                    2281877,
+                )
+            ),
+        )
+
+        may_audit = audit[
+            audit[
+                "event_date"
+            ]
+            .astype(str)
+            .eq(
+                "2026-05-19"
+            )
+        ]
+
+        selected = may_audit[
+            may_audit[
+                "selected"
+            ]
+            .astype(str)
+            .str.lower()
+            .eq(
+                "true"
+            )
+        ]
+
+        self.assertEqual(
+            len(
+                selected
+            ),
+            1,
+        )
+
+        self.assertEqual(
+            str(
+                selected.iloc[0][
+                    "parent_event_id"
+                ]
+            ),
+            "493669",
+        )
+
+        late = may_audit[
+            may_audit[
+                "parent_event_id"
+            ]
+            .astype(str)
+            .eq(
+                "503637"
+            )
+        ]
+
+        self.assertEqual(
+            len(
+                late
+            ),
+            1,
+        )
+
+        self.assertEqual(
+            str(
+                late.iloc[0][
+                    "created_by_event_day_open"
+                ]
+            ).lower(),
+            "false",
+        )
+
+
+
 if __name__ == "__main__":
     unittest.main(
         verbosity=2

@@ -12,7 +12,7 @@
   "price_history_fidelity_minutes": 60,
   "price_history_window_days": 7,
   "price_selection_rule": "latest recovered YES-token observation no later than decision cutoff",
-  "retrieved_utc": "2026-08-31T13:09:28.067327+00:00",
+  "retrieved_utc": "2026-08-31T14:20:45.017264+00:00",
   "settlement_family": "HKO Daily Extract one-decimal",
   "temperature_boundary_source": "visible groupItemTitle/question/slug; groupItemThreshold retained only as metadata",
   "upper_rule": "K\u00b0C or higher -> [K,infinity)"

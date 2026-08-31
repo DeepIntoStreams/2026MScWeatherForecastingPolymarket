@@ -880,6 +880,33 @@ def discover_gamma_markets():
                 or ""
             )
 
+            market_copy[
+                "_discovery_parent_event_created_at"
+            ] = str(
+                event.get(
+                    "createdAt"
+                )
+                or ""
+            )
+
+            market_copy[
+                "_discovery_parent_event_start_date"
+            ] = str(
+                event.get(
+                    "startDate"
+                )
+                or ""
+            )
+
+            market_copy[
+                "_discovery_parent_event_end_date"
+            ] = str(
+                event.get(
+                    "endDate"
+                )
+                or ""
+            )
+
             flattened.append(
                 market_copy
             )
@@ -1476,7 +1503,38 @@ def candidate_rows_from_gamma(
 
         rows.append(
             {
-                "market_id":
+    
+            "parent_event_id":
+                market.get(
+                    "_discovery_parent_event_id"
+                ),
+
+            "parent_event_slug":
+                market.get(
+                    "_discovery_parent_event_slug"
+                ),
+
+            "parent_event_title":
+                market.get(
+                    "_discovery_parent_event_title"
+                ),
+
+            "parent_event_created_at":
+                market.get(
+                    "_discovery_parent_event_created_at"
+                ),
+
+            "parent_event_start_date":
+                market.get(
+                    "_discovery_parent_event_start_date"
+                ),
+
+            "parent_event_end_date":
+                market.get(
+                    "_discovery_parent_event_end_date"
+                ),
+
+            "market_id":
                     str(
                         market.get(
                             "id"
@@ -1774,11 +1832,263 @@ def partition_status(
     )
 
 
+def resolve_duplicate_parent_books(
+    hko: pd.DataFrame,
+    *,
+    event_date,
+):
+    """
+    Resolve multiple complete HKO highest-temperature books for one date.
+
+    This is used only when the date-level HKO candidate set is not already
+    a single valid eleven-contract partition.
+
+    A parent book is eligible for duplicate resolution when:
+
+      1. it is itself a valid eleven-event partition; and
+      2. its parent event had been created by event-day open.
+
+    Event-day open is the latest of the four analysed decision cutoffs.
+    Earlier decision rules remain protected independently because their
+    market observations are selected only from records no later than their
+    own cutoff.
+
+    If exactly one eligible complete parent book exists, retain it.
+    Otherwise the date remains excluded rather than resolving ambiguity
+    arbitrarily.
+    """
+
+    required = [
+        "parent_event_id",
+        "parent_event_slug",
+        "parent_event_created_at",
+    ]
+
+    missing = [
+        c
+        for c in required
+        if c not in hko.columns
+    ]
+
+    if missing:
+        raise RuntimeError(
+            "Chronological duplicate-book resolution requires: "
+            + repr(missing)
+        )
+
+    target_open = pd.Timestamp(
+        event_date
+    )
+
+    if target_open.tzinfo is None:
+        target_open = target_open.tz_localize(
+            "Asia/Hong_Kong"
+        )
+    else:
+        target_open = target_open.tz_convert(
+            "Asia/Hong_Kong"
+        )
+
+    event_day_open_utc = (
+        target_open.tz_convert(
+            "UTC"
+        )
+    )
+
+    eligible_books = []
+    audit_rows = []
+
+    for parent_id, book in hko.groupby(
+        "parent_event_id",
+        dropna=False,
+    ):
+        book = book.copy()
+
+        structural_ok, detail = (
+            partition_status(
+                book
+            )
+        )
+
+        created = pd.to_datetime(
+            book[
+                "parent_event_created_at"
+            ],
+            utc=True,
+            errors="coerce",
+        )
+
+        unique_created = (
+            created
+            .dropna()
+            .drop_duplicates()
+        )
+
+        if len(unique_created) == 1:
+            parent_created = (
+                unique_created.iloc[0]
+            )
+        else:
+            parent_created = pd.NaT
+
+        slug_values = (
+            book[
+                "parent_event_slug"
+            ]
+            .dropna()
+            .astype(str)
+        )
+
+        parent_slug = (
+            slug_values.iloc[0]
+            if len(slug_values)
+            else ""
+        )
+
+        created_by_open = bool(
+            pd.notna(
+                parent_created
+            )
+            and (
+                parent_created
+                <= event_day_open_utc
+            )
+        )
+
+        eligible = bool(
+            structural_ok
+            and created_by_open
+        )
+
+        audit_rows.append(
+            {
+                "event_date":
+                    str(
+                        event_date
+                    ),
+
+                "parent_event_id":
+                    str(
+                        parent_id
+                    ),
+
+                "parent_event_slug":
+                    parent_slug,
+
+                "parent_event_created_at":
+                    (
+                        parent_created.isoformat()
+                        if pd.notna(
+                            parent_created
+                        )
+                        else ""
+                    ),
+
+                "event_day_open_utc":
+                    event_day_open_utc.isoformat(),
+
+                "contract_rows":
+                    len(
+                        book
+                    ),
+
+                "structurally_complete":
+                    structural_ok,
+
+                "partition_detail":
+                    detail,
+
+                "created_by_event_day_open":
+                    created_by_open,
+
+                "eligible_complete_book":
+                    eligible,
+
+                "selected":
+                    False,
+            }
+        )
+
+        if eligible:
+            eligible_books.append(
+                (
+                    str(
+                        parent_id
+                    ),
+                    parent_created,
+                    book,
+                )
+            )
+
+    if len(eligible_books) == 1:
+        (
+            selected_parent,
+            selected_created,
+            selected_book,
+        ) = eligible_books[0]
+
+        for row in audit_rows:
+            if (
+                row[
+                    "parent_event_id"
+                ]
+                == selected_parent
+            ):
+                row[
+                    "selected"
+                ] = True
+
+        selected_book = (
+            selected_book.copy()
+        )
+
+        selected_book[
+            "book_selection_rule"
+        ] = (
+            "chronology_resolved_unique_complete_parent_book"
+        )
+
+        selected_book[
+            "selected_parent_event_id"
+        ] = selected_parent
+
+        selected_book[
+            "selected_parent_event_created_at"
+        ] = selected_created.isoformat()
+
+        return (
+            selected_book,
+            audit_rows,
+            "unique_complete_parent_book_created_by_event_day_open",
+        )
+
+    if len(eligible_books) == 0:
+        return (
+            None,
+            audit_rows,
+            "no_complete_parent_book_created_by_event_day_open",
+        )
+
+    return (
+        None,
+        audit_rows,
+        (
+            "multiple_complete_parent_books_created_by_event_day_open="
+            + str(
+                len(
+                    eligible_books
+                )
+            )
+        ),
+    )
+
+
 def certify_contract_universe(
     candidates: pd.DataFrame,
 ):
     issues = []
     retained = []
+    chronology_audit = []
 
     candidates = candidates.copy()
 
@@ -1809,20 +2119,28 @@ def certify_contract_universe(
                     {
                         "issue":
                             "unparsed_contract_date",
+
                         "event_date":
                             "",
+
                         "market_id":
                             row[
                                 "market_id"
                             ],
+
                         "market_slug":
                             row[
                                 "market_slug"
                             ],
+
                         "detail":
-                            "Contract date could not be parsed from visible market metadata.",
+                            (
+                                "Contract date could not be parsed "
+                                "from visible market metadata."
+                            ),
                     }
                 )
+
             continue
 
         hko = group[
@@ -1838,29 +2156,101 @@ def certify_contract_universe(
             )
         )
 
-        if not structural_ok:
-            issues.append(
-                {
-                    "issue":
-                        "date_not_certified",
-                    "event_date":
-                        event_date,
-                    "market_id":
-                        "",
-                    "market_slug":
-                        "",
-                    "detail":
-                        detail,
-                }
+        # --------------------------------------------------------------
+        # Ordinary case: exactly one valid HKO eleven-event book.
+        # Preserve the original certification behaviour.
+        # --------------------------------------------------------------
+
+        if structural_ok:
+            hko[
+                "book_certified"
+            ] = True
+
+            hko[
+                "book_selection_rule"
+            ] = (
+                "direct_complete_11_event_partition"
             )
+
+            if (
+                "parent_event_id"
+                in hko.columns
+            ):
+                parent_ids = (
+                    hko[
+                        "parent_event_id"
+                    ]
+                    .dropna()
+                    .astype(str)
+                    .unique()
+                )
+
+                hko[
+                    "selected_parent_event_id"
+                ] = (
+                    parent_ids[0]
+                    if len(
+                        parent_ids
+                    ) == 1
+                    else ""
+                )
+
+            retained.append(
+                hko
+            )
+
             continue
 
-        hko[
-            "book_certified"
-        ] = True
+        # --------------------------------------------------------------
+        # Non-standard case: there may be multiple complete parent books.
+        # Resolve only through contemporaneous parent-event chronology.
+        # --------------------------------------------------------------
 
-        retained.append(
-            hko
+        (
+            selected,
+            audit_rows,
+            chronology_detail,
+        ) = resolve_duplicate_parent_books(
+            hko,
+            event_date=event_date,
+        )
+
+        chronology_audit.extend(
+            audit_rows
+        )
+
+        if selected is not None:
+            selected[
+                "book_certified"
+            ] = True
+
+            retained.append(
+                selected
+            )
+
+            continue
+
+        issues.append(
+            {
+                "issue":
+                    "date_not_certified",
+
+                "event_date":
+                    event_date,
+
+                "market_id":
+                    "",
+
+                "market_slug":
+                    "",
+
+                "detail":
+                    (
+                        detail
+                        + "; chronology_resolution="
+                        + chronology_detail
+                    ),
+            }
         )
 
     if not retained:
@@ -1907,6 +2297,21 @@ def certify_contract_universe(
 
     issue_df = pd.DataFrame(
         issues
+    )
+
+    chronology_df = pd.DataFrame(
+        chronology_audit
+    )
+
+    OUTPUT_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    chronology_df.to_csv(
+        OUTPUT_DIR
+        / "contract_book_chronology_audit.csv",
+        index=False,
     )
 
     return (
@@ -5626,6 +6031,9 @@ def build_integrity_checks(
 # =============================================================================
 # MAIN
 # =============================================================================
+
+
+
 
 
 def main():

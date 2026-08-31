@@ -110,8 +110,8 @@
       "selection_metric": "date-balanced categorical log loss",
       "selection_period": "2026-03-16 to 2026-06-30",
       "trading_pnl_used": false,
-      "weight_gp": 0.172,
-      "weight_market": 0.8280000000000001
+      "weight_gp": 0.188,
+      "weight_market": 0.812
     },
     "decision_rules": [
       "24h_prior",
@@ -119,18 +119,31 @@
       "6h_prior",
       "event_day_open"
     ],
+    "duplicate_book_resolution": {
+      "ambiguous_date_rule": "partition candidates by parent event; retain only the unique complete parent book created by event-day open",
+      "earlier_decision_protection": "each decision snapshot still selects only market records no later than its own cutoff",
+      "genuine_market_coverage_gaps": [
+        "2026-03-20",
+        "2026-03-31"
+      ],
+      "manual_market_id_preference": false,
+      "manual_slug_preference": false,
+      "may_19_late_parent_event_id": "503637",
+      "may_19_selected_parent_event_id": "493669",
+      "ordinary_case": "directly certify a unique complete eleven-event HKO partition"
+    },
     "event_mapping": {
       "interior": "k\u00b0C -> [k,k+1)",
       "lower_endpoint": "k\u00b0C or below -> (-infinity,k+1)",
       "upper_tail": "K\u00b0C or higher -> [K,infinity)"
     },
     "final_observed_support": {
-      "certified_contract_rows": 1826,
-      "certified_market_dates": 166,
-      "complete_market_books": 632,
-      "exact_common_books": 632,
-      "exact_common_dates": 162,
-      "score_ready_dates": 161
+      "certified_contract_rows": 1837,
+      "certified_market_dates": 167,
+      "complete_market_books": 636,
+      "exact_common_books": 636,
+      "exact_common_dates": 163,
+      "score_ready_dates": 162
     },
     "group_item_threshold_used_as_celsius": false,
     "market_probabilities": {

@@ -1,10 +1,10 @@
 analysis_period,source,date_balanced_tv,raw_distance_closure,dates
-market_development,raw,0.8662021863,0.0000000000,100
-market_development,static,0.2793876941,0.6774567203,100
-market_development,selected_gp,0.2858449590,0.6700020348,100
+market_development,raw,0.8662289126,0.0000000000,101
+market_development,static,0.2782686941,0.6787584782,101
+market_development,selected_gp,0.2847338684,0.6712948919,101
 external_validation,raw,0.8681170573,0.0000000000,62
 external_validation,static,0.2967861985,0.6581265211,62
 external_validation,selected_gp,0.2991644139,0.6553870110,62
-all_exact_support,raw,0.8669350382,0.0000000000,162
-all_exact_support,static,0.2860463809,0.6700486561,162
-all_exact_support,selected_gp,0.2909425281,0.6644010043,162
+all_exact_support,raw,0.8669471026,0.0000000000,163
+all_exact_support,static,0.2853121620,0.6709001493,163
+all_exact_support,selected_gp,0.2902227876,0.6652358758,163

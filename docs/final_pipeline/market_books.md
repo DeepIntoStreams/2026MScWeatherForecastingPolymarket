@@ -235,3 +235,37 @@ This stage answers whether settlement-aware weather probabilities:
 4. retain their conclusions on July-August external data.
 
 Trading profitability is deliberately deferred to the next pipeline stage.
+
+### Chronological certification of duplicate event books
+
+Multiple Gamma parent events can occasionally describe the same HKO
+highest-temperature settlement date. The pipeline does not choose between
+such books from present-day slug appearance, market identifiers, or the
+current API ordering, since those criteria could encode hindsight.
+
+The ordinary case is unchanged: if the HKO candidates for a date already
+form one valid eleven-event partition, that partition is certified directly.
+
+Chronological resolution is invoked only when the date-level candidates do
+not themselves form one unique eleven-event partition. Each parent event is
+then checked separately. A parent book is eligible only if (i) it is itself
+a complete eleven-event HKO partition and (ii) its parent event had been
+created by event-day open, the latest of the four analysed decision cutoffs.
+If exactly one parent book is eligible, it is retained. If none or more than
+one are eligible, the date remains excluded.
+
+This date-level rule does not relax the no-look-ahead requirement at earlier
+decision times. The 24-hour, 12-hour, 6-hour and event-day-open market
+snapshots continue to use only price observations recorded no later than
+their own decision cutoff.
+
+For 19 May 2026, two complete highest-temperature parent books are visible
+in the present Gamma representation. Parent event 493669 was created on
+17 May and is therefore contemporaneously admissible. Parent event 503637
+was created only after event-day open and is inadmissible for all four
+historical decision rules. The earlier parent book is consequently retained
+without using slug prefixes or later market outcomes.
+
+No exact Gamma parent event or binary market was recovered for 20 March
+2026 or 31 March 2026. These two dates are treated as genuine market-
+coverage gaps and are not imputed.

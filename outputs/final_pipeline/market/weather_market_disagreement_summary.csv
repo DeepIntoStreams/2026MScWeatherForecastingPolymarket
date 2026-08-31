@@ -1,4 +1,4 @@
 analysis_period,books,dates,mean_market_minus_gp_expected_rank,mean_market_minus_gp_winner_probability
-market_development,385,100,0.4118918002,0.0603328348
+market_development,389,101,0.4104370348,0.0591166021
 external_validation,247,62,0.2456962487,0.0640879152
-all_exact_support,632,162,0.3469387919,0.0617858357
+all_exact_support,636,163,0.3464575156,0.0610280405
