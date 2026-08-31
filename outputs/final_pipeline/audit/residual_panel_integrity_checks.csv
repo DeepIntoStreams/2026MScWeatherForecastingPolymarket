@@ -1,0 +1,22 @@
+check,passed,observed,expected,notes
+master_date_rule_keys,True,3596,3596,899 dates x 4 forecast times
+no_duplicate_date_rule_keys,True,0,0,
+weather_history_theoretical_keys,True,2920,2920,730 dates x 4
+market_development_theoretical_keys,True,428,428,16 Mar to 30 Jun 2026
+external_validation_theoretical_keys,True,248,248,1 Jul to 31 Aug 2026
+ecmwf_supported_key_count,True,3398,3398,
+hko_current_state_valid,True,"[""2026-08-31""]","[""2026-08-31""]",PENDING_FINAL_DATE
+weather_history_usable_keys,True,2726,2726,
+market_development_usable_keys,True,424,424,
+external_validation_usable_keys,True,244,244,31 Aug target pending
+total_residual_usable_keys,True,3394,3394,
+residual_formula,True,0.0,0,residual = HKO - forecast
+forecast_error_formula,True,0.0,0,forecast_error = forecast - HKO
+unusable_rows_have_no_residual,True,0,0,
+usable_rows_have_complete_residual_fields,True,0,0,
+training_sample_manifest_count,True,2726,2726,
+development_sample_manifest_count,True,424,424,
+external_sample_manifest_count,True,244,244,
+no_external_rows_in_training_sample,True,0,0,split leakage check
+seasonal_features_finite,True,1,1,
+deterministic_error_summary_complete,True,20,20,5 periods x 4 forecast times

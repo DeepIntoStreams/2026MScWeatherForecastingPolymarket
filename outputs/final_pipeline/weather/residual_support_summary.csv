@@ -1,0 +1,13 @@
+empirical_period,decision_rule,theoretical_keys,forecast_supported_keys,forecast_unsupported_keys,hko_available_keys,target_pending_keys,residual_usable_keys,usable_unique_dates
+weather_history,24h_prior,730,682,48,730,0,682,682
+weather_history,12h_prior,730,681,49,730,0,681,681
+weather_history,6h_prior,730,681,49,730,0,681,681
+weather_history,event_day_open,730,682,48,730,0,682,682
+market_development,24h_prior,107,106,1,107,0,106,106
+market_development,12h_prior,107,106,1,107,0,106,106
+market_development,6h_prior,107,106,1,107,0,106,106
+market_development,event_day_open,107,106,1,107,0,106,106
+external_validation,24h_prior,62,62,0,61,1,61,61
+external_validation,12h_prior,62,62,0,61,1,61,61
+external_validation,6h_prior,62,62,0,61,1,61,61
+external_validation,event_day_open,62,62,0,61,1,61,61

@@ -96,6 +96,40 @@
     "settlement_family": "Hong Kong Observatory daily maximum temperature"
   },
   "project": "MSc Financial Mathematics Dissertation - Weather Forecasting and Polymarket",
+  "residual_analysis": {
+    "external_validation": {
+      "end": "2026-08-31",
+      "role": "untouched external validation",
+      "start": "2026-07-01"
+    },
+    "forecast_error_definition": "forecast_daily_max_c - hko_daily_max_c",
+    "gp_raw_features": [
+      "forecast_daily_max_c",
+      "seasonal_sin",
+      "seasonal_cos",
+      "calendar_day_index"
+    ],
+    "gp_response": "residual_c",
+    "market_development": {
+      "end": "2026-06-30",
+      "role": "methodology and market development",
+      "start": "2026-03-16"
+    },
+    "missing_target_imputation": false,
+    "residual_definition": "hko_daily_max_c - forecast_daily_max_c",
+    "sample_files": {
+      "external_validation": "data/processed/final_pipeline/residual_samples/external_validation.csv",
+      "market_development": "data/processed/final_pipeline/residual_samples/market_development.csv",
+      "weather_history": "data/processed/final_pipeline/residual_samples/weather_history_training.csv"
+    },
+    "standardisation": "later inside training fold only",
+    "unsupported_forecast_imputation": false,
+    "weather_history_training": {
+      "end": "2026-03-15",
+      "role": "weather-only residual training",
+      "start": "2024-03-16"
+    }
+  },
   "schema_version": "1.0",
   "sensitivity": {
     "probability_sensitivity": [
