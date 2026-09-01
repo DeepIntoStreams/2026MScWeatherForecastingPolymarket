@@ -1,0 +1,17 @@
+empirical_period,strategy,model,cost_per_position,positions,gross_pre_cost_pnl,total_cost,net_pnl,is_frozen_baseline_cost,stage2_positions,stage2_total_net_pnl,pnl_difference,positions_match,passed
+external_validation,fixed_settlement,matern32,0.01,12,2.571,0.12,2.451,True,12,2.451,0.0,True,True
+external_validation,fixed_settlement,raw,0.01,61,1.0070000000000001,0.61,0.39700000000000013,True,61,0.3970000000000001,5.551115123125783e-17,True,True
+external_validation,fixed_settlement,rbf,0.01,14,2.421,0.14,2.2809999999999997,True,14,2.281,-4.440892098500626e-16,True,True
+external_validation,fixed_settlement,static,0.01,14,2.421,0.14,2.2809999999999997,True,14,2.281,-4.440892098500626e-16,True,True
+market_development,fixed_settlement,matern32,0.01,15,2.6215,0.15,2.4715000000000003,True,15,2.4715,4.440892098500626e-16,True,True
+market_development,fixed_settlement,raw,0.01,90,-7.3065,0.9,-8.2065,True,90,-8.2065,0.0,True,True
+market_development,fixed_settlement,rbf,0.01,15,2.6410000000000005,0.15,2.4910000000000005,True,15,2.491,4.440892098500626e-16,True,True
+market_development,fixed_settlement,static,0.01,14,2.1460000000000004,0.14,2.0060000000000002,True,14,2.006,4.440892098500626e-16,True,True
+external_validation,taec11,matern32,0.02,383,2.3049999999999997,7.66,-5.355,True,383,-5.355,0.0,True,True
+external_validation,taec11,raw,0.02,365,1.0390000000000004,7.3,-6.260999999999999,True,365,-6.261,8.881784197001252e-16,True,True
+external_validation,taec11,rbf,0.02,387,1.7065000000000001,7.74,-6.0335,True,387,-6.033500000000001,8.881784197001252e-16,True,True
+external_validation,taec11,static,0.02,380,2.2505,7.6000000000000005,-5.349500000000001,True,380,-5.349500000000001,0.0,True,True
+market_development,taec11,matern32,0.02,515,5.003500000000001,10.3,-5.2965,True,515,-5.296500000000001,8.881784197001252e-16,True,True
+market_development,taec11,raw,0.02,500,-1.6639999999999988,10.0,-11.663999999999998,True,500,-11.664,1.7763568394002505e-15,True,True
+market_development,taec11,rbf,0.02,514,4.972000000000001,10.28,-5.307999999999998,True,514,-5.308000000000001,2.6645352591003757e-15,True,True
+market_development,taec11,static,0.02,502,5.824000000000001,10.040000000000001,-4.216,True,502,-4.216000000000001,8.881784197001252e-16,True,True

@@ -1,0 +1,383 @@
+{
+  "diagnostic_best_taec_thresholds_do_not_reselect_policy": [
+    {
+      "model": "matern32",
+      "net_pnl": 0.6259999999999996,
+      "positions": 134,
+      "threshold": 0.1
+    },
+    {
+      "model": "raw",
+      "net_pnl": -3.1315,
+      "positions": 215,
+      "threshold": 0.15
+    },
+    {
+      "model": "rbf",
+      "net_pnl": 0.6289999999999996,
+      "positions": 134,
+      "threshold": 0.1
+    },
+    {
+      "model": "static",
+      "net_pnl": 0.6889999999999998,
+      "positions": 134,
+      "threshold": 0.1
+    }
+  ],
+  "execution_caveat": "TAEC remains a snapshot-price mark-to-market study because historical executable bid/ask quotes are unavailable. Cost and open-only-exit sensitivity quantify, but cannot eliminate, this limitation.",
+  "external_cost_break_even": [
+    {
+      "baseline_cost_exceeds_break_even": false,
+      "baseline_cost_minus_break_even": -0.20425000000000001,
+      "baseline_cost_per_position": 0.01,
+      "baseline_net_pnl": 2.451,
+      "break_even_cost_per_position": 0.21425000000000002,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 2.571,
+      "model": "matern32",
+      "positions": 12,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_cost_exceeds_break_even": false,
+      "baseline_cost_minus_break_even": -0.006508196721311478,
+      "baseline_cost_per_position": 0.01,
+      "baseline_net_pnl": 0.39700000000000013,
+      "break_even_cost_per_position": 0.01650819672131148,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 1.0070000000000001,
+      "model": "raw",
+      "positions": 61,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_cost_exceeds_break_even": false,
+      "baseline_cost_minus_break_even": -0.1629285714285714,
+      "baseline_cost_per_position": 0.01,
+      "baseline_net_pnl": 2.2809999999999997,
+      "break_even_cost_per_position": 0.1729285714285714,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 2.421,
+      "model": "rbf",
+      "positions": 14,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_cost_exceeds_break_even": false,
+      "baseline_cost_minus_break_even": -0.1629285714285714,
+      "baseline_cost_per_position": 0.01,
+      "baseline_net_pnl": 2.2809999999999997,
+      "break_even_cost_per_position": 0.1729285714285714,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 2.421,
+      "model": "static",
+      "positions": 14,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_cost_exceeds_break_even": true,
+      "baseline_cost_minus_break_even": 0.013981723237597912,
+      "baseline_cost_per_position": 0.02,
+      "baseline_net_pnl": -5.355,
+      "break_even_cost_per_position": 0.006018276762402088,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 2.3049999999999997,
+      "model": "matern32",
+      "positions": 383,
+      "strategy": "taec11"
+    },
+    {
+      "baseline_cost_exceeds_break_even": true,
+      "baseline_cost_minus_break_even": 0.017153424657534246,
+      "baseline_cost_per_position": 0.02,
+      "baseline_net_pnl": -6.260999999999999,
+      "break_even_cost_per_position": 0.0028465753424657546,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 1.0390000000000004,
+      "model": "raw",
+      "positions": 365,
+      "strategy": "taec11"
+    },
+    {
+      "baseline_cost_exceeds_break_even": true,
+      "baseline_cost_minus_break_even": 0.015590439276485788,
+      "baseline_cost_per_position": 0.02,
+      "baseline_net_pnl": -6.0335,
+      "break_even_cost_per_position": 0.004409560723514212,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 1.7065000000000001,
+      "model": "rbf",
+      "positions": 387,
+      "strategy": "taec11"
+    },
+    {
+      "baseline_cost_exceeds_break_even": true,
+      "baseline_cost_minus_break_even": 0.01407763157894737,
+      "baseline_cost_per_position": 0.02,
+      "baseline_net_pnl": -5.349500000000001,
+      "break_even_cost_per_position": 0.005922368421052632,
+      "empirical_period": "external_validation",
+      "gross_pre_cost_pnl": 2.2505,
+      "model": "static",
+      "positions": 380,
+      "strategy": "taec11"
+    }
+  ],
+  "external_open_only_execution": [
+    {
+      "baseline_early_exit_net_pnl": -5.355000000000001,
+      "empirical_period": "external_validation",
+      "execution_interpretation": "All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.",
+      "model": "matern32",
+      "open_only_gross_pre_cost_pnl": 3.910999999999999,
+      "open_only_minus_baseline": 1.6060000000000008,
+      "open_only_net_pnl": -3.7490000000000014,
+      "positions": 383
+    },
+    {
+      "baseline_early_exit_net_pnl": -6.261,
+      "empirical_period": "external_validation",
+      "execution_interpretation": "All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.",
+      "model": "raw",
+      "open_only_gross_pre_cost_pnl": 1.0390000000000001,
+      "open_only_minus_baseline": -8.528334288770978e-16,
+      "open_only_net_pnl": -6.261,
+      "positions": 365
+    },
+    {
+      "baseline_early_exit_net_pnl": -6.033500000000001,
+      "empirical_period": "external_validation",
+      "execution_interpretation": "All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.",
+      "model": "rbf",
+      "open_only_gross_pre_cost_pnl": 3.2264999999999997,
+      "open_only_minus_baseline": 1.5200000000000002,
+      "open_only_net_pnl": -4.5135000000000005,
+      "positions": 387
+    },
+    {
+      "baseline_early_exit_net_pnl": -5.349500000000001,
+      "empirical_period": "external_validation",
+      "execution_interpretation": "All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.",
+      "model": "static",
+      "open_only_gross_pre_cost_pnl": 3.9844999999999997,
+      "open_only_minus_baseline": 1.7340000000000007,
+      "open_only_net_pnl": -3.6155000000000004,
+      "positions": 380
+    }
+  ],
+  "external_seven_observation_deletion": [
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": 2.4510000000000005,
+      "max_remaining_total_pnl": 2.6205000000000003,
+      "mean_remaining_total_pnl": 2.1390545454545458,
+      "min_remaining_total_pnl": 1.4720000000000004,
+      "model": "matern32",
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_sign_preserved_all_windows": false,
+      "baseline_total_pnl": 0.39700000000000096,
+      "max_remaining_total_pnl": 1.552000000000001,
+      "mean_remaining_total_pnl": 0.44379090909091,
+      "min_remaining_total_pnl": -2.042999999999999,
+      "model": "raw",
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": 2.2810000000000006,
+      "max_remaining_total_pnl": 2.4505000000000003,
+      "mean_remaining_total_pnl": 1.9906909090909095,
+      "min_remaining_total_pnl": 1.3020000000000005,
+      "model": "rbf",
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": 2.2810000000000006,
+      "max_remaining_total_pnl": 2.4505000000000003,
+      "mean_remaining_total_pnl": 1.9906909090909095,
+      "min_remaining_total_pnl": 1.3020000000000005,
+      "model": "static",
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": -5.3549999999999995,
+      "max_remaining_total_pnl": -3.7549999999999994,
+      "mean_remaining_total_pnl": -4.833309090909091,
+      "min_remaining_total_pnl": -6.525499999999999,
+      "model": "matern32",
+      "strategy": "taec11"
+    },
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": -6.260999999999999,
+      "max_remaining_total_pnl": -4.5555,
+      "mean_remaining_total_pnl": -5.508645454545453,
+      "min_remaining_total_pnl": -6.5569999999999995,
+      "model": "raw",
+      "strategy": "taec11"
+    },
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": -6.0335,
+      "max_remaining_total_pnl": -4.3085,
+      "mean_remaining_total_pnl": -5.453927272727272,
+      "min_remaining_total_pnl": -7.254,
+      "model": "rbf",
+      "strategy": "taec11"
+    },
+    {
+      "baseline_sign_preserved_all_windows": true,
+      "baseline_total_pnl": -5.349499999999999,
+      "max_remaining_total_pnl": -3.6245,
+      "mean_remaining_total_pnl": -4.849663636363636,
+      "min_remaining_total_pnl": -6.674999999999999,
+      "model": "static",
+      "strategy": "taec11"
+    }
+  ],
+  "frozen_policy_guards": {
+    "external_diagnostics_may_reselect": false,
+    "fixed_cost": 0.01,
+    "primary_bootstrap_block_length": 7,
+    "taec_round_trip_cost": 0.02,
+    "taec_threshold": 0.02
+  },
+  "inference_status": "EXPLORATORY_EXTENSION",
+  "next_stage": "final thesis-value pruning, examiner-facing audit, reproducibility closure and submission-ready release",
+  "stage": 5,
+  "stage_name": "robustness_execution_reality_cost_concentration_and_support",
+  "status": "PASS",
+  "taec_minus_fixed_seven_observation_deletion": [
+    {
+      "baseline_taec_minus_fixed": -6.658000000000001,
+      "max_after_deleting_any_7_observation_block": -4.323499999999999,
+      "min_after_deleting_any_7_observation_block": -6.937000000000001,
+      "model": "raw",
+      "taec_remains_worse_for_every_deletion_window": true
+    },
+    {
+      "baseline_taec_minus_fixed": -7.6305,
+      "max_after_deleting_any_7_observation_block": -5.049,
+      "min_after_deleting_any_7_observation_block": -8.998500000000002,
+      "model": "static",
+      "taec_remains_worse_for_every_deletion_window": true
+    },
+    {
+      "baseline_taec_minus_fixed": -8.314499999999999,
+      "max_after_deleting_any_7_observation_block": -5.6945,
+      "min_after_deleting_any_7_observation_block": -9.577500000000002,
+      "model": "rbf",
+      "taec_remains_worse_for_every_deletion_window": true
+    },
+    {
+      "baseline_taec_minus_fixed": -7.806,
+      "max_after_deleting_any_7_observation_block": -5.4159999999999995,
+      "min_after_deleting_any_7_observation_block": -9.019,
+      "model": "matern32",
+      "taec_remains_worse_for_every_deletion_window": true
+    }
+  ],
+  "temperature_perturbation": [
+    {
+      "baseline_total_pnl": 2.451,
+      "local_plus_minus_0_25_max_pnl": 2.527,
+      "local_plus_minus_0_25_min_pnl": 2.281,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.8869047619047619,
+      "min_local_position_jaccard": 0.8571428571428571,
+      "model": "matern32",
+      "plus_minus_1_max_pnl": 0.5799999999999997,
+      "plus_minus_1_min_pnl": -0.4725,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_total_pnl": 0.3970000000000003,
+      "local_plus_minus_0_25_max_pnl": 1.5029999999999997,
+      "local_plus_minus_0_25_min_pnl": -1.689,
+      "local_sign_preserved": false,
+      "mean_local_position_jaccard": 0.6595588235294118,
+      "min_local_position_jaccard": 0.525,
+      "model": "raw",
+      "plus_minus_1_max_pnl": 3.399,
+      "plus_minus_1_min_pnl": -2.099,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_total_pnl": 2.281,
+      "local_plus_minus_0_25_max_pnl": 2.527,
+      "local_plus_minus_0_25_min_pnl": 1.2185,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.7261904761904762,
+      "min_local_position_jaccard": 0.6666666666666666,
+      "model": "rbf",
+      "plus_minus_1_max_pnl": 0.5799999999999997,
+      "plus_minus_1_min_pnl": -0.4475,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_total_pnl": 2.281,
+      "local_plus_minus_0_25_max_pnl": 2.451,
+      "local_plus_minus_0_25_min_pnl": 2.096,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.8660714285714286,
+      "min_local_position_jaccard": 0.8571428571428571,
+      "model": "static",
+      "plus_minus_1_max_pnl": 0.545,
+      "plus_minus_1_min_pnl": -0.6695,
+      "strategy": "fixed_settlement"
+    },
+    {
+      "baseline_total_pnl": -5.355,
+      "local_plus_minus_0_25_max_pnl": -5.3675000000000015,
+      "local_plus_minus_0_25_min_pnl": -5.4495000000000005,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.8473732276728687,
+      "min_local_position_jaccard": 0.8463356973995272,
+      "model": "matern32",
+      "plus_minus_1_max_pnl": -4.842500000000001,
+      "plus_minus_1_min_pnl": -7.219000000000001,
+      "strategy": "taec11"
+    },
+    {
+      "baseline_total_pnl": -6.261,
+      "local_plus_minus_0_25_max_pnl": -5.774,
+      "local_plus_minus_0_25_min_pnl": -7.290500000000001,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.8808204356832785,
+      "min_local_position_jaccard": 0.830423940149626,
+      "model": "raw",
+      "plus_minus_1_max_pnl": -6.635,
+      "plus_minus_1_min_pnl": -8.1265,
+      "strategy": "taec11"
+    },
+    {
+      "baseline_total_pnl": -6.0335,
+      "local_plus_minus_0_25_max_pnl": -5.224500000000001,
+      "local_plus_minus_0_25_min_pnl": -5.530500000000002,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.8321256038647343,
+      "min_local_position_jaccard": 0.8309178743961353,
+      "model": "rbf",
+      "plus_minus_1_max_pnl": -4.4645,
+      "plus_minus_1_min_pnl": -7.304,
+      "strategy": "taec11"
+    },
+    {
+      "baseline_total_pnl": -5.349500000000001,
+      "local_plus_minus_0_25_max_pnl": -5.1645,
+      "local_plus_minus_0_25_min_pnl": -5.910000000000001,
+      "local_sign_preserved": true,
+      "mean_local_position_jaccard": 0.828907629402472,
+      "min_local_position_jaccard": 0.8284313725490197,
+      "model": "static",
+      "plus_minus_1_max_pnl": -4.384000000000001,
+      "plus_minus_1_min_pnl": -7.427000000000001,
+      "strategy": "taec11"
+    }
+  ]
+}

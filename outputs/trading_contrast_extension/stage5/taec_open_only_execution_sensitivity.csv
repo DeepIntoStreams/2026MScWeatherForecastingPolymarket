@@ -1,0 +1,9 @@
+empirical_period,model,positions,baseline_early_exit_net_pnl,open_only_net_pnl,open_only_minus_baseline,open_only_gross_pre_cost_pnl,execution_interpretation
+external_validation,matern32,383,-5.355000000000001,-3.7490000000000014,1.6060000000000008,3.910999999999999,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+external_validation,raw,365,-6.261,-6.261,-8.528334288770978e-16,1.0390000000000001,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+external_validation,rbf,387,-6.033500000000001,-4.5135000000000005,1.5200000000000002,3.2264999999999997,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+external_validation,static,380,-5.349500000000001,-3.6155000000000004,1.7340000000000007,3.9844999999999997,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+market_development,matern32,515,-5.296500000000002,-4.369500000000001,0.9270000000000007,5.9304999999999986,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+market_development,raw,500,-11.664000000000001,-11.664000000000001,1.251169307048272e-16,-1.6640000000000001,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+market_development,rbf,514,-5.308000000000002,-5.416,-0.10799999999999954,4.863999999999999,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.
+market_development,static,502,-4.216000000000001,-3.899500000000001,0.3165000000000006,6.140499999999999,All baseline TAEC positions are forced to event-day-open exit; no early target-hit exit.

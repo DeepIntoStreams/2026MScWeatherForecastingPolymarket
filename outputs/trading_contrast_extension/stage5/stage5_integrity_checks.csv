@@ -1,0 +1,10 @@
+check,passed,observed,expected,note
+baseline_cost_reproduction,True,2.6645352591003757e-15,<=1e-10,
+baseline_threshold_reproduction,True,1.7763568394002505e-15,<=1e-10,
+cost_grid_contains_baselines,True,"[0.0, 0.0025, 0.005, 0.0075, 0.01, 0.015, 0.02, 0.025, 0.03, 0.04, 0.05]","(0.01, 0.02)",
+threshold_grid_contains_frozen_baseline,True,"[0.01, 0.015, 0.02, 0.025, 0.03, 0.04, 0.05, 0.075, 0.1, 0.15]",0.02,External threshold variants are diagnostic only and cannot replace the frozen 0.02 policy.
+external_concentration_rows,True,8,8,
+external_months,True,"['2026-07', '2026-08']","['2026-07', '2026-08']",
+block_length_grid,True,"[3, 5, 7, 10, 14]","[3, 5, 7, 10, 14]",Primary Stage-4 block length remains 7; this is sensitivity analysis only.
+paired_deletion_models,True,4,4,
+perturbation_portfolios,True,8,8,

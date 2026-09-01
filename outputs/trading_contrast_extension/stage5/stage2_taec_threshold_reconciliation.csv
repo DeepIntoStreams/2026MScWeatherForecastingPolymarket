@@ -1,0 +1,9 @@
+empirical_period,model,threshold,positions,active_dates,yes_positions,no_positions,target_hits,gross_pre_cost_pnl,total_cost,net_pnl,is_frozen_baseline_threshold,diagnostic_only_no_reselection,stage2_positions,stage2_total_net_pnl,positions_match,pnl_difference,passed
+market_development,raw,0.02,500,90,90,410,0,-1.6640000000000001,10.0,-11.664000000000001,True,True,500,-11.664,True,-1.7763568394002505e-15,True
+external_validation,raw,0.02,365,61,61,304,0,1.0390000000000001,7.3,-6.261,True,True,365,-6.261,True,0.0,True
+market_development,static,0.02,502,90,260,242,125,5.824,10.040000000000001,-4.216000000000001,True,True,502,-4.216000000000001,True,0.0,True
+external_validation,static,0.02,380,61,206,174,72,2.2504999999999993,7.6000000000000005,-5.349500000000001,True,True,380,-5.349500000000001,True,0.0,True
+market_development,rbf,0.02,514,90,268,246,121,4.9719999999999995,10.28,-5.308000000000001,True,True,514,-5.308000000000001,True,0.0,True
+external_validation,rbf,0.02,387,61,213,174,69,1.7064999999999995,7.74,-6.0335,True,True,387,-6.033500000000001,True,8.881784197001252e-16,True
+market_development,matern32,0.02,515,90,272,243,117,5.003499999999999,10.3,-5.296500000000002,True,True,515,-5.296500000000001,True,-8.881784197001252e-16,True
+external_validation,matern32,0.02,383,61,211,172,75,2.304999999999999,7.66,-5.355,True,True,383,-5.355,True,0.0,True
