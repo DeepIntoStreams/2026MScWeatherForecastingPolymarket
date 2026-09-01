@@ -26,3 +26,5 @@ Reproducibility note: the clean-clone launcher reconstructs the pre-Stage-2 gene
 Canonical-output note: Stage 2-5 committed artefacts were regenerated once from the clean pre-Stage-2 output state and reconciled against the previous release at 1e-10 tolerance for all headline scientific quantities. This canonicalisation changes output generation state only, not the empirical specification or thesis conclusions.
 
 Final manifest-scope note: the scientific-equivalence comparison is a Stage-6 closure audit and is stored outside the Stage-2-to-Stage-5 replay surface. This changes no empirical result or specification.
+
+Final clean-clone canonicalisation: the committed Stage 2-5 artefacts were generated inside a fresh Git clone after two independent clean clones were shown to reproduce identical semantic outputs. Headline scientific quantities were reconciled to the preceding release at 1e-10 tolerance. No empirical specification changed.
