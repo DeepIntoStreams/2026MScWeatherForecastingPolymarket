@@ -202,5 +202,22 @@ class TestTradingContrastStage2(unittest.TestCase):
         )
 
 
+    def test_rbf_distinct_from_static(self):
+        diff = (
+            self.panel["p_rbf"].astype(float)
+            - self.panel["p_static"].astype(float)
+        ).abs()
+
+        self.assertGreater(
+            int((diff > 1e-12).sum()),
+            0,
+        )
+
+        self.assertGreater(
+            float(diff.max()),
+            1e-12,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

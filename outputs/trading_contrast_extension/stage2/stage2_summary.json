@@ -87,13 +87,13 @@
       "total_net_pnl": -8.2065
     },
     {
-      "active_dates": 14,
+      "active_dates": 15,
       "dates": 90,
       "empirical_period": "market_development",
       "model": "rbf",
-      "positions": 14,
-      "total_entry_capital": 1.994,
-      "total_net_pnl": 2.006
+      "positions": 15,
+      "total_entry_capital": 1.509,
+      "total_net_pnl": 2.4909999999999997
     },
     {
       "active_dates": 14,
@@ -113,6 +113,9 @@
     "matern32"
   ],
   "next_stage": "complete risk, capital-efficiency, convergence and Greek-like analytics for all eight portfolios",
+  "rbf_provenance_status": "EXPLICIT_FROZEN_RBF_REPAIRED_AND_DISTINCT",
+  "rbf_static_max_abs_probability_difference": 0.2551941978498634,
+  "rbf_static_rows_different_gt_1e_12": 6995,
   "stage": 2,
   "stage_name": "canonical_four_model_probability_panel_and_strategy_ledgers",
   "status": "PASS",
@@ -156,15 +159,15 @@
       "active_dates": 61,
       "dates": 61,
       "empirical_period": "external_validation",
-      "forced_open_positions": 308,
-      "mean_gap_closed_fraction": -0.010111644896166522,
+      "forced_open_positions": 318,
+      "mean_gap_closed_fraction": -0.07576944863789234,
       "model": "rbf",
       "no_positions": 174,
-      "positions": 380,
-      "target_hit_positions": 72,
-      "total_entry_capital": 142.85150000000002,
-      "total_net_pnl": -5.349500000000001,
-      "yes_positions": 206
+      "positions": 387,
+      "target_hit_positions": 69,
+      "total_entry_capital": 142.06,
+      "total_net_pnl": -6.033500000000001,
+      "yes_positions": 213
     },
     {
       "active_dates": 61,
@@ -212,15 +215,15 @@
       "active_dates": 90,
       "dates": 90,
       "empirical_period": "market_development",
-      "forced_open_positions": 377,
-      "mean_gap_closed_fraction": 0.1343093362938547,
+      "forced_open_positions": 393,
+      "mean_gap_closed_fraction": 0.152064142969418,
       "model": "rbf",
-      "no_positions": 242,
-      "positions": 502,
-      "target_hit_positions": 125,
-      "total_entry_capital": 201.497,
-      "total_net_pnl": -4.216000000000001,
-      "yes_positions": 260
+      "no_positions": 246,
+      "positions": 514,
+      "target_hit_positions": 121,
+      "total_entry_capital": 203.235,
+      "total_net_pnl": -5.308000000000001,
+      "yes_positions": 268
     },
     {
       "active_dates": 90,

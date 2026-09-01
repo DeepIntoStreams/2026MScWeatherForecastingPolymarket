@@ -1,0 +1,38 @@
+{
+  "direct_probability_models": [
+    "matern32",
+    "raw",
+    "static"
+  ],
+  "max_abs_rbf_minus_static": 3.3881317890172014e-21,
+  "mean_abs_rbf_minus_static": 1.9831542287108792e-24,
+  "prediction_parameter_specs": {
+    "matern32": {
+      "format": "wide",
+      "mean_col": "selected_gp_mean_c",
+      "sd_col": "selected_gp_sd_c",
+      "table": "event_panel"
+    },
+    "raw": {
+      "format": "wide",
+      "mean_col": "raw_temperature_c",
+      "sd_col": "p_raw",
+      "table": "event_panel"
+    },
+    "rbf": {
+      "format": "wide",
+      "mean_col": "static_mean_c",
+      "sd_col": "static_sd_c",
+      "table": "event_panel"
+    },
+    "static": {
+      "format": "wide",
+      "mean_col": "static_mean_c",
+      "sd_col": "static_sd_c",
+      "table": "event_panel"
+    }
+  },
+  "rows": 6996,
+  "rows_different_gt_1e_12": 0,
+  "rows_different_gt_1e_8": 0
+}
