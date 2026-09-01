@@ -1,0 +1,97 @@
+{
+  "bootstrap_repetitions": 10000,
+  "confidence_level": 0.95,
+  "dependence_sensitive_claims": [
+    {
+      "comparison": "Sharpe(TAEC) - Sharpe(Fixed), static",
+      "estimate": -0.5021613593655843,
+      "family": "risk_adjusted_sharpe_difference",
+      "holm_p": 0.049795020497950204,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction.",
+      "mbb_p_two_sided": 0.019598040195980403
+    }
+  ],
+  "external_common_support_dates": 61,
+  "inference_status": "EXPLORATORY_EXTENSION",
+  "multiplicity": "Holm family-wise correction within each pre-specified family; the two within-strategy model families are corrected separately.",
+  "next_stage": "cost, concentration, support, execution-proxy and perturbation robustness; then thesis-value pruning",
+  "primary_method": "7-consecutive-common-support-date moving-block bootstrap",
+  "resolved_after_holm": [
+    {
+      "comparison": "taec11:raw vs 0",
+      "estimate": -6.260999999999999,
+      "family": "portfolio_profitability",
+      "holm_p": 0.0007999200079992001,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "static - rbf",
+      "estimate": 0.6840000000000002,
+      "family": "within_strategy_model_pairwise",
+      "holm_p": 0.041995800419958006,
+      "interpretation": "Statistically resolved positive effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "TAEC - Fixed (raw)",
+      "estimate": -6.658000000000001,
+      "family": "taec_minus_fixed_by_model",
+      "holm_p": 0.0007999200079992001,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "TAEC - Fixed (static)",
+      "estimate": -7.6305,
+      "family": "taec_minus_fixed_by_model",
+      "holm_p": 0.003999600039996,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "TAEC - Fixed (rbf)",
+      "estimate": -8.314499999999999,
+      "family": "taec_minus_fixed_by_model",
+      "holm_p": 0.0032996700329967006,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "TAEC - Fixed (matern32)",
+      "estimate": -7.806,
+      "family": "taec_minus_fixed_by_model",
+      "holm_p": 0.003999600039996,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "Sharpe(TAEC) - Sharpe(Fixed), raw",
+      "estimate": -0.5092618118519898,
+      "family": "risk_adjusted_sharpe_difference",
+      "holm_p": 0.0023997600239976003,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "Sharpe(TAEC) - Sharpe(Fixed), static",
+      "estimate": -0.5021613593655843,
+      "family": "risk_adjusted_sharpe_difference",
+      "holm_p": 0.049795020497950204,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "Sharpe(TAEC) - Sharpe(Fixed), rbf",
+      "estimate": -0.5551154229104318,
+      "family": "risk_adjusted_sharpe_difference",
+      "holm_p": 0.049795020497950204,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    },
+    {
+      "comparison": "Sharpe(TAEC) - Sharpe(Fixed), matern32",
+      "estimate": -0.537050087310835,
+      "family": "risk_adjusted_sharpe_difference",
+      "holm_p": 0.049795020497950204,
+      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+    }
+  ],
+  "sampling_unit": "settlement_date",
+  "secondary_method": "ordinary settlement-date bootstrap",
+  "stage": 4,
+  "stage_name": "common_support_bootstrap_inference_and_multiplicity_control",
+  "status": "PASS",
+  "tail_metric_policy": "VaR, expected shortfall and maximum drawdown receive bootstrap uncertainty intervals but no conventional significance claims."
+}

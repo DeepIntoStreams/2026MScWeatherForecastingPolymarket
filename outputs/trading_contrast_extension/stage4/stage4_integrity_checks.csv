@@ -1,0 +1,12 @@
+check,passed,observed,expected,note
+external_common_support_61_dates,True,61,61,
+external_common_support_8_portfolios,True,488,488,
+bootstrap_reps,True,10000,10000,
+block_length,True,7,7,Seven consecutive common-support settlement-date observations; one missing external calendar date is not imputed.
+profitability_family_size,True,8,8,
+within_strategy_pairwise_family_sizes,True,"{'fixed_settlement': 6, 'taec11': 6}","{'fixed_settlement': 6, 'taec11': 6}",
+taec_fixed_family_size,True,4,4,
+sharpe_family_size,True,4,4,
+convergence_family_size,True,4,4,
+holm_adjusted_probabilities_valid,True,all,"[0,1]",
+stage3_point_estimate_reconciliation,True,8.881784197001252e-16,<=1e-10,
