@@ -99,3 +99,8 @@ VaR, expected shortfall and maximum drawdown are accompanied by bootstrap uncert
 ## Next stage
 
 Stage 5 examines transaction-cost break-even levels, concentration, support, execution-proxy sensitivity and robustness of the aggressive-strategy findings before the final thesis-value pruning and release audit.
+
+
+## Inferential presentation clarification
+
+Mean-effect confidence intervals are centred-bootstrap 95% intervals obtained by inverting the same two-sided null distribution used for the corresponding moving-block or ordinary bootstrap test. This avoids presenting a percentile interval that can exclude zero while the associated centred-bootstrap two-sided test does not reject. Claims that are significant under the primary moving-block/Holm procedure but not under ordinary resampling are explicitly labelled dependence-sensitive rather than unconditionally resolved.

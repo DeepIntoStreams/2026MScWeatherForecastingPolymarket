@@ -240,6 +240,95 @@ class TestTradingContrastStage4(
             )
 
 
+    def test_mean_test_ci_pvalue_coherence(self):
+        frames = [
+            self.profit,
+            self.pairwise,
+            self.strategy,
+            self.conv,
+        ]
+
+        for x in frames:
+            for _, row in x.iterrows():
+                p = float(
+                    row[
+                        "mbb_p_two_sided"
+                    ]
+                )
+
+                lo = float(
+                    row[
+                        "mbb_ci95_total_lower"
+                    ]
+                )
+
+                hi = float(
+                    row[
+                        "mbb_ci95_total_upper"
+                    ]
+                )
+
+                excludes_zero = (
+                    lo > 0
+                    or hi < 0
+                )
+
+                if p < 0.05:
+                    self.assertTrue(
+                        excludes_zero
+                    )
+                else:
+                    self.assertFalse(
+                        excludes_zero
+                    )
+
+    def test_dependence_sensitive_claim_wording(self):
+        claims = pd.read_csv(
+            OUT
+            / "stage4_inference_claims_register.csv"
+        )
+
+        sensitive = claims.loc[
+            claims[
+                "dependence_sensitive_5pct"
+            ]
+        ]
+
+        for _, row in sensitive.iterrows():
+            self.assertIn(
+                "dependence-sensitive",
+                str(
+                    row[
+                        "interpretation"
+                    ]
+                ).lower(),
+            )
+
+    def test_pairwise_claims_have_strategy_context(self):
+        claims = pd.read_csv(
+            OUT
+            / "stage4_inference_claims_register.csv"
+        )
+
+        pairwise = claims.loc[
+            claims[
+                "family"
+            ]
+            == "within_strategy_model_pairwise"
+        ]
+
+        self.assertTrue(
+            pairwise[
+                "comparison"
+            ].str.startswith(
+                (
+                    "fixed_settlement:",
+                    "taec11:",
+                )
+            ).all()
+        )
+
+
 if __name__ == "__main__":
     unittest.main(
         verbosity=2

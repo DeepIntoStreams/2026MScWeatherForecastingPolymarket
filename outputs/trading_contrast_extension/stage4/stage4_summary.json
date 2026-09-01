@@ -7,12 +7,13 @@
       "estimate": -0.5021613593655843,
       "family": "risk_adjusted_sharpe_difference",
       "holm_p": 0.049795020497950204,
-      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction.",
+      "interpretation": "The primary 7-date moving-block bootstrap with Holm correction indicates a negative effect, but the conclusion is dependence-sensitive because the ordinary-bootstrap significance classification differs.",
       "mbb_p_two_sided": 0.019598040195980403
     }
   ],
   "external_common_support_dates": 61,
   "inference_status": "EXPLORATORY_EXTENSION",
+  "mean_test_interval_method": "95% symmetric centred-bootstrap interval obtained by inverting the same two-sided null distribution used for the corresponding mean test",
   "multiplicity": "Holm family-wise correction within each pre-specified family; the two within-strategy model families are corrected separately.",
   "next_stage": "cost, concentration, support, execution-proxy and perturbation robustness; then thesis-value pruning",
   "primary_method": "7-consecutive-common-support-date moving-block bootstrap",
@@ -25,7 +26,7 @@
       "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
     },
     {
-      "comparison": "static - rbf",
+      "comparison": "taec11: static - rbf",
       "estimate": 0.6840000000000002,
       "family": "within_strategy_model_pairwise",
       "holm_p": 0.041995800419958006,
@@ -71,7 +72,7 @@
       "estimate": -0.5021613593655843,
       "family": "risk_adjusted_sharpe_difference",
       "holm_p": 0.049795020497950204,
-      "interpretation": "Statistically resolved negative effect under the 7-date moving-block bootstrap after Holm correction."
+      "interpretation": "The primary 7-date moving-block bootstrap with Holm correction indicates a negative effect, but the conclusion is dependence-sensitive because the ordinary-bootstrap significance classification differs."
     },
     {
       "comparison": "Sharpe(TAEC) - Sharpe(Fixed), rbf",

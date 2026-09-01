@@ -232,10 +232,6 @@ def mean_test(
         axis=1,
     )
 
-    ci_mean = percentile_interval(
-        boot_means
-    )
-
     centered = (
         x
         - observed_mean
@@ -246,6 +242,24 @@ def mean_test(
             idx
         ],
         axis=1,
+    )
+
+    # Invert the same centred two-sided bootstrap null distribution used
+    # for the test. This keeps the 95% interval and p-value coherent.
+    critical = float(
+        np.quantile(
+            np.abs(
+                null_means
+            ),
+            1.0 - ALPHA,
+        )
+    )
+
+    ci_mean = (
+        observed_mean
+        - critical,
+        observed_mean
+        + critical,
     )
 
     p_two = (
@@ -1710,30 +1724,46 @@ def interpretation(
         ]
     )
 
-    if bool(
+    primary_reject = bool(
         row[
             "holm_reject_5pct"
         ]
-    ):
-        direction = (
-            "positive"
-            if estimate > 0
-            else "negative"
-        )
+    )
 
-        return (
-            f"Statistically resolved {direction} effect under the "
-            "7-date moving-block bootstrap after Holm correction."
-        )
-
-    if bool(
+    dependence_sensitive = bool(
         row[
             "dependence_sensitive_5pct"
         ]
+    )
+
+    direction = (
+        "positive"
+        if estimate > 0
+        else "negative"
+    )
+
+    if (
+        primary_reject
+        and dependence_sensitive
     ):
         return (
-            "Inference is dependence-sensitive: ordinary and moving-block "
-            "bootstrap significance classifications differ."
+            f"The primary 7-date moving-block bootstrap with Holm correction "
+            f"indicates a {direction} effect, but the conclusion is "
+            "dependence-sensitive because the ordinary-bootstrap significance "
+            "classification differs."
+        )
+
+    if dependence_sensitive:
+        return (
+            "Not statistically resolved under the primary moving-block/Holm "
+            "procedure; inference is dependence-sensitive because the ordinary "
+            "bootstrap significance classification differs."
+        )
+
+    if primary_reject:
+        return (
+            f"Statistically resolved {direction} effect under the "
+            "7-date moving-block bootstrap after Holm correction."
         )
 
     return (
@@ -1818,6 +1848,23 @@ def claims_register(
         ),
     ]:
         for _, r in frame.iterrows():
+            comparison = str(
+                r[
+                    "comparison"
+                ]
+            )
+
+            if (
+                r[
+                    "family"
+                ]
+                == "within_strategy_model_pairwise"
+            ):
+                comparison = (
+                    f"{r['strategy']}: "
+                    + comparison
+                )
+
             rows.append(
                 {
                     "family":
@@ -1825,9 +1872,7 @@ def claims_register(
                             "family"
                         ],
                     "comparison":
-                        r[
-                            "comparison"
-                        ],
+                        comparison,
                     "estimate":
                         r[
                             estimate_col
@@ -2688,6 +2733,12 @@ def main() -> None:
             BOOTSTRAP_REPS,
         "confidence_level":
             0.95,
+        "mean_test_interval_method":
+            (
+                "95% symmetric centred-bootstrap interval obtained by "
+                "inverting the same two-sided null distribution used for "
+                "the corresponding mean test"
+            ),
         "multiplicity":
             (
                 "Holm family-wise correction within each pre-specified family; "
