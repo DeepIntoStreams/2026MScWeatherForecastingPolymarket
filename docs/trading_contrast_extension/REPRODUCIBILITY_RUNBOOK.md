@@ -67,3 +67,30 @@ The final committed Stage 2-5 artefacts therefore use the same environment state
 as the examiner-facing clean-clone replay. This is a reproducibility
 canonicalisation only; no model, probability rule, strategy, threshold, cost,
 test family or thesis conclusion was reselected.
+
+## Final audit-contract correction: generated ignored gzip artefacts
+
+The final clean-clone discrepancy was not a scientific or model-reconstruction
+difference. The unified manifest diff showed that the recurrent additions were
+generated `.csv.gz` artefacts such as the canonical four-model event panel,
+TAEC position ledger and Greek exposure ledgers.
+
+These files are reproducibly generated but are ignored/untracked repository
+artefacts. A fresh clone therefore does not contain them *before* replay, while
+the replay correctly creates them. Comparing the pre-replay filesystem manifest
+of a fresh clone with its post-replay filesystem manifest is consequently an
+invalid reproducibility criterion: the two file universes are intentionally
+different.
+
+The final audit uses two complementary checks instead:
+
+1. a Git-tracked canonical semantic manifest records the complete expected
+   Stage 2-5 replay universe, including generated ignored `.csv.gz` files;
+2. after replay, the complete regenerated semantic universe must match that
+   canonical manifest exactly, while every Git-tracked Stage 2-5 artefact must
+   also remain byte-identical according to `git diff`.
+
+Two independent fresh clones are required to agree exactly before the canonical
+semantic manifest is frozen. This treats generated-but-ignored files correctly
+without force-committing large derived artefacts and without weakening the
+scientific reproducibility standard.

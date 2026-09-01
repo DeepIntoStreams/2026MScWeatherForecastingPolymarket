@@ -28,3 +28,5 @@ Canonical-output note: Stage 2-5 committed artefacts were regenerated once from 
 Final manifest-scope note: the scientific-equivalence comparison is a Stage-6 closure audit and is stored outside the Stage-2-to-Stage-5 replay surface. This changes no empirical result or specification.
 
 Final clean-clone canonicalisation: the committed Stage 2-5 artefacts were generated inside a fresh Git clone after two independent clean clones were shown to reproduce identical semantic outputs. Headline scientific quantities were reconciled to the preceding release at 1e-10 tolerance. No empirical specification changed.
+
+Final audit-contract note: reproducibility now distinguishes Git-tracked release artefacts from deterministic generated-but-ignored `.csv.gz` files. The latter are verified against a clean-replay semantic manifest rather than incorrectly required to exist in a fresh clone before replay. No empirical specification or result changed.

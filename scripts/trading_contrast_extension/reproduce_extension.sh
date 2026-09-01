@@ -11,11 +11,12 @@ fi
 ROOT="$(git rev-parse --show-toplevel)"
 cd "$ROOT"
 
-TMP_BEFORE="$(mktemp)"
-TMP_AFTER="$(mktemp)"
-PRESERVE_DIR="$(mktemp -d)"
-
 EXT_OUT="outputs/trading_contrast_extension"
+EXPECTED_MANIFEST="$EXT_OUT/release/stage2_5_clean_replay_semantic_manifest.sha256"
+
+PRESERVE_DIR="$(mktemp -d)"
+EXPECTED_SNAPSHOT="$(mktemp)"
+ACTUAL_MANIFEST="$(mktemp)"
 
 restore_preserved () {
     for name in stage6 thesis release; do
@@ -28,27 +29,28 @@ restore_preserved () {
 
 cleanup () {
     restore_preserved || true
-    rm -f "$TMP_BEFORE" "$TMP_AFTER"
     rm -rf "$PRESERVE_DIR"
+    rm -f "$EXPECTED_SNAPSHOT" "$ACTUAL_MANIFEST"
 }
 
 trap cleanup EXIT
 
 semantic_manifest () {
-    python3 - "$1" <<'PY'
+    local target="$1"
+
+    python3 - "$target" <<'PY'
 from pathlib import Path
 import gzip
 import hashlib
 import sys
 
-out = Path("outputs/trading_contrast_extension")
 target = Path(sys.argv[1])
 
 roots = [
-    out / "stage2",
-    out / "stage3",
-    out / "stage4",
-    out / "stage5",
+    Path("outputs/trading_contrast_extension/stage2"),
+    Path("outputs/trading_contrast_extension/stage3"),
+    Path("outputs/trading_contrast_extension/stage4"),
+    Path("outputs/trading_contrast_extension/stage5"),
 ]
 
 rows = []
@@ -78,20 +80,23 @@ for root in roots:
 
 target.write_text(
     "".join(
-        f"{sha}  {path}\n"
-        for path, sha in rows
+        f"{sha}  {rel}\n"
+        for rel, sha in rows
     )
 )
 PY
 }
 
 if [ "$MODE" = "audit" ]; then
-    semantic_manifest "$TMP_BEFORE"
+    if [ ! -f "$EXPECTED_MANIFEST" ]; then
+        echo "ERROR: expected clean-replay semantic manifest is missing:"
+        echo "$EXPECTED_MANIFEST"
+        exit 1
+    fi
+
+    cp "$EXPECTED_MANIFEST" "$EXPECTED_SNAPSHOT"
 fi
 
-# Stage 2 originally ran after Stage 1, before later generated extension
-# outputs existed. Its repository-aware schema discovery must not see its
-# own downstream outputs during a clean replay.
 for name in stage6 thesis release; do
     if [ -e "$EXT_OUT/$name" ]; then
         cp -a "$EXT_OUT/$name" "$PRESERVE_DIR/$name"
@@ -129,28 +134,25 @@ python3 tests/trading_contrast_extension/test_stage5.py
 python3 tests/trading_contrast_extension/test_stage6.py
 
 if [ "$MODE" = "audit" ]; then
-    semantic_manifest "$TMP_AFTER"
+    semantic_manifest "$ACTUAL_MANIFEST"
 
-    if ! diff -u "$TMP_BEFORE" "$TMP_AFTER"; then
-        echo "ERROR: semantic output manifest changed under replay."
+    if ! diff -u "$EXPECTED_SNAPSHOT" "$ACTUAL_MANIFEST"; then
+        echo "ERROR: regenerated Stage 2-5 semantic manifest does not match the canonical clean-replay manifest."
         exit 1
     fi
 
-    DIRTY_NON_GZIP="$(
-        git status --porcelain \
-        | sed 's/^...//' \
-        | grep '^outputs/trading_contrast_extension/' \
-        | grep -vE '\.gz$' \
-        || true
-    )"
-
-    if [ -n "$DIRTY_NON_GZIP" ]; then
-        echo "ERROR: non-gzip extension outputs changed under replay:"
-        echo "$DIRTY_NON_GZIP"
+    if ! git diff --exit-code -- \
+        "$EXT_OUT/stage2" \
+        "$EXT_OUT/stage3" \
+        "$EXT_OUT/stage4" \
+        "$EXT_OUT/stage5"
+    then
+        echo "ERROR: a Git-tracked Stage 2-5 artefact changed under replay."
         exit 1
     fi
 
-    echo "PASS: clean-generated-state semantic replay is deterministic."
+    echo "PASS: regenerated Stage 2-5 semantic universe matches the canonical clean-replay manifest."
+    echo "PASS: all Git-tracked Stage 2-5 artefacts are byte-identical after replay."
 fi
 
 echo "PASS: trading contrast extension reproduction completed."
