@@ -1,0 +1,15 @@
+claim_id,destination,priority,claim,safe_use
+TC1,MAIN_RESULTS,1,The conservative fixed strategy remains the primary trading policy; the multi-contract TAEC-11 strategy is an exploratory stress-test extension and does not replace it.,True
+TC2,MAIN_RESULTS,1,"On the 61-date external support, Fixed Matérn earns positive net PnL, while TAEC-11 Matérn is negative after costs.",True
+TC3,MAIN_RESULTS,1,"TAEC-minus-Fixed external PnL is negative for Raw, Static, RBF and Matérn and remains statistically resolved under the primary moving-block/Holm procedure.",True
+TC4,MAIN_RESULTS,1,"TAEC losses are primarily a turnover/friction result: gross pre-cost convergence PnL is positive for each model, but its per-position break-even cost lies far below the frozen 0.02 round-trip cost.",True
+TC5,DISCUSSION,1,Positive pre-cost TAEC convergence point estimates are not statistically resolved after dependence-aware inference and must not be described as proven market convergence.,True
+TC6,DISCUSSION,1,Forcing every TAEC position to event-day-open exit improves the probabilistic-model TAEC PnL but leaves it negative at the frozen cost assumption.,True
+TC7,DISCUSSION,1,TAEC remains worse than Fixed after deleting every possible seven-observation block from the 61-date external sample.,True
+TC8,DISCUSSION,2,Local temperature perturbations reveal a nonlinear mapping from forecast location to trading decisions and PnL; the Greek-like diagnostics are finite-difference forecast-risk sensitivities rather than option-pricing Greeks.,True
+TC9,APPENDIX,2,"Full eight-portfolio Sharpe, Sortino, VaR, expected shortfall, drawdown, capital-efficiency and Greek exposure tables.",True
+TC10,APPENDIX,2,Alternative TAEC discrepancy thresholds are diagnostic only and do not reselect the frozen 0.02 strategy.,True
+TC11,APPENDIX,3,"Alternative moving-block lengths, monthly splits, concentration and leave-one-date-out results are robustness diagnostics.",True
+TC12,DO_NOT_USE_AS_PRIMARY,3,The ex-post best TAEC threshold must not be presented as a selected or validated trading rule.,False
+TC13,DO_NOT_USE_AS_PRIMARY,3,Raw deterministic finite-difference Greek magnitudes are discontinuous diagnostics and should not be interpreted as smooth derivatives.,False
+TC14,DO_NOT_USE_AS_PRIMARY,3,TAEC snapshot prices are not executable historical bid/ask fills; results must not be described as a live-trading backtest.,False

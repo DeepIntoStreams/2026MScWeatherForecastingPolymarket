@@ -1,0 +1,14 @@
+\begin{table}
+\caption{External robustness of the exploratory TAEC-11 strategy relative to the fixed policy.}
+\label{tab:taec-robustness}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & TAEC-Fixed PnL & CI lower & CI upper & Holm p & TAEC break-even cost & Open-only TAEC PnL & Best TAEC-Fixed after deleting 7 \\
+\midrule
+raw & -6.658 & -9.972 & -3.344 & 0.001 & 0.003 & -6.261 & -4.323 \\
+static & -7.630 & -12.373 & -2.888 & 0.004 & 0.006 & -3.615 & -5.049 \\
+rbf & -8.314 & -12.970 & -3.659 & 0.003 & 0.004 & -4.514 & -5.694 \\
+matern32 & -7.806 & -12.187 & -3.425 & 0.004 & 0.006 & -3.749 & -5.416 \\
+\bottomrule
+\end{tabular}
+\end{table}

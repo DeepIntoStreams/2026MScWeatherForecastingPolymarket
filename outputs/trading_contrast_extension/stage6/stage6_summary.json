@@ -1,0 +1,32 @@
+{
+  "appendix_claims": 3,
+  "authoritative_numbers": "outputs/trading_contrast_extension/thesis/generated/numbers.tex",
+  "discussion_claims": 4,
+  "do_not_use_as_primary": 3,
+  "execution_caveat": "TAEC uses market snapshot probabilities rather than historical executable bid/ask fills.",
+  "extension_status": "FINAL_EXPLORATORY_TRADING_EXTENSION",
+  "external_common_support_dates": 61,
+  "external_data_used_for_reselection": false,
+  "greek_caveat": "Delta/Gamma are finite-difference forecast-risk sensitivities to temperature-location perturbations, not Black-Scholes Greeks.",
+  "main_results_claims": 4,
+  "new_empirical_modelling_after_stage5": false,
+  "primary_fixed_policy_unchanged": true,
+  "safe_headline": "The conservative fixed policy dominates the exploratory multi-contract TAEC strategy externally; the aggressive strategy's small positive pre-cost convergence is overwhelmed by turnover costs and is not statistically resolved.",
+  "stage": 6,
+  "stage_name": "thesis_pruning_reproducibility_examiner_audit_and_final_release",
+  "status": "PASS",
+  "status_note": "No further empirical model, threshold or strategy is permitted after this closure.",
+  "taec_policy_status": "exploratory contrast; not a replacement policy",
+  "thesis_figures": [
+    "external_cumulative_pnl_fixed_settlement.png",
+    "external_cumulative_pnl_taec11.png",
+    "external_taec_cost_sensitivity.png",
+    "external_taec_minus_fixed_mbb_intervals.png",
+    "external_taec_open_only_execution_sensitivity.png"
+  ],
+  "thesis_tables": [
+    "external_strategy_model_comparison.tex",
+    "greek_like_risk_summary.tex",
+    "taec_robustness_summary.tex"
+  ]
+}

@@ -1,0 +1,8 @@
+check,passed,observed,expected
+all_prior_stages_pass,True,"2,3,4,5 PASS",PASS
+main_claims_safe,True,all,True
+do_not_use_primary_present,True,3,>=3
+thesis_tables,True,3,>=3
+thesis_figures,True,5,>=5
+numbers_tex,True,True,True
+external_diagnostics_do_not_reselect,True,False,False

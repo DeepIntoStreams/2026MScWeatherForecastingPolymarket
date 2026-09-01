@@ -1,0 +1,18 @@
+\begin{table}
+\caption{External trading performance for the conservative fixed policy and exploratory TAEC-11 strategy.}
+\label{tab:trading-contrast-external}
+\begin{tabular}{llrrrrrrr}
+\toprule
+Strategy & Model & Positions & Net PnL & Pre-cost PnL & Costs & Sharpe & ES95 loss & Max drawdown \\
+\midrule
+fixed\_settlement & matern32 & 12 & 2.451 & 2.571 & 0.120 & 0.192 & 0.068 & 0.254 \\
+fixed\_settlement & raw & 61 & 0.397 & 1.007 & 0.610 & 0.020 & 0.330 & 2.543 \\
+fixed\_settlement & rbf & 14 & 2.281 & 2.421 & 0.140 & 0.178 & 0.079 & 0.339 \\
+fixed\_settlement & static & 14 & 2.281 & 2.421 & 0.140 & 0.178 & 0.079 & 0.339 \\
+taec11 & matern32 & 383 & -5.355 & 2.305 & 7.660 & -0.345 & 0.498 & 5.355 \\
+taec11 & raw & 365 & -6.261 & 1.039 & 7.300 & -0.489 & 0.476 & 7.068 \\
+taec11 & rbf & 387 & -6.034 & 1.706 & 7.740 & -0.377 & 0.560 & 6.033 \\
+taec11 & static & 380 & -5.349 & 2.251 & 7.600 & -0.324 & 0.560 & 5.349 \\
+\bottomrule
+\end{tabular}
+\end{table}

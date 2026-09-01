@@ -1,0 +1,18 @@
+\begin{table}
+\caption{Finite-difference forecast-risk sensitivities at the primary 0.25 degree C perturbation.}
+\label{tab:greek-like-risk}
+\begin{tabular}{llrrrr}
+\toprule
+Strategy & Model & Mean gross |Delta| & Mean |net Delta| & Mean gross |Gamma| & Mean |net Gamma| \\
+\midrule
+fixed\_settlement & matern32 & 0.014 & 0.014 & 0.013 & 0.013 \\
+fixed\_settlement & raw & 0.852 & 0.852 & 6.820 & 6.820 \\
+fixed\_settlement & rbf & 0.015 & 0.015 & 0.016 & 0.016 \\
+fixed\_settlement & static & 0.016 & 0.016 & 0.017 & 0.017 \\
+taec11 & matern32 & 0.388 & 0.306 & 0.262 & 0.138 \\
+taec11 & raw & 1.475 & 1.475 & 11.803 & 11.803 \\
+taec11 & rbf & 0.395 & 0.311 & 0.270 & 0.137 \\
+taec11 & static & 0.401 & 0.325 & 0.279 & 0.136 \\
+\bottomrule
+\end{tabular}
+\end{table}
