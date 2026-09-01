@@ -886,69 +886,66 @@ settlement refresh.
 
 
 def build_manifest():
-    include_roots = [
-        Path("config"),
-        Path("environment/final_pipeline"),
-        Path("src/final_pipeline"),
-        Path("tests/final_pipeline"),
-        Path("scripts/final_pipeline"),
-        Path("docs/final_pipeline"),
-        Path("data/processed/final_pipeline"),
-        Path("outputs/final_pipeline/audit"),
-        Path("outputs/final_pipeline/weather"),
-        Path("outputs/final_pipeline/market"),
-        Path("outputs/final_pipeline/trading"),
-        Path("outputs/final_pipeline/synthesis"),
-        Path("outputs/final_pipeline/reporting"),
-        Path("outputs/final_pipeline/thesis"),
-    ]
+    """Build the release manifest from Git-tracked files only."""
 
-    root_files = [
-        Path("README.md"),
-        STATUS_MD,
-    ]
+    include_prefixes = (
+        "config/",
+        "environment/final_pipeline/",
+        "src/final_pipeline/",
+        "tests/final_pipeline/",
+        "scripts/final_pipeline/",
+        "docs/final_pipeline/",
+        "data/processed/final_pipeline/",
+        "outputs/final_pipeline/audit/",
+        "outputs/final_pipeline/weather/",
+        "outputs/final_pipeline/market/",
+        "outputs/final_pipeline/trading/",
+        "outputs/final_pipeline/synthesis/",
+        "outputs/final_pipeline/reporting/",
+        "outputs/final_pipeline/thesis/",
+    )
+
+    include_exact = {
+        "README.md",
+        "FINAL_PIPELINE_STATUS.md",
+    }
+
+    tracked = subprocess.check_output(
+        ["git", "ls-files"],
+        text=True,
+    ).splitlines()
 
     files = []
 
-    for path in root_files:
-        if path.exists():
-            files.append(path)
+    for item in tracked:
+        item = item.strip()
 
-    for root in include_roots:
-        if not root.exists():
+        if not item:
             continue
 
-        for path in root.rglob("*"):
-            if path.is_file():
-                files.append(path)
+        if item in include_exact or item.startswith(include_prefixes):
+            p = Path(item)
 
-    unique = sorted(
-        {
-            str(path):
-                path
-            for path in files
-        }.values(),
+            if p.exists() and p.is_file():
+                files.append(p)
+
+    files = sorted(
+        files,
         key=lambda p: str(p),
     )
 
     rows = []
 
-    for path in unique:
+    for p in files:
         rows.append(
             {
-                "path":
-                    str(path),
-
-                "bytes":
-                    path.stat().st_size,
-
-                "sha256":
-                    sha256(path),
+                "path": str(p),
+                "bytes": p.stat().st_size,
+                "sha256": sha256(p),
             }
         )
 
     return pd.DataFrame(rows)
-
 
 def main():
     RELEASE_DIR.mkdir(

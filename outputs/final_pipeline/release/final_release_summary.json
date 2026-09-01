@@ -12,7 +12,7 @@
   "permitted_future_empirical_change": "31-August target-dependent refresh only",
   "pool_weight_gp": 0.188,
   "recommended_tag": "msc-final-pipeline-rc-pre-aug31",
-  "release_manifest_files": 277,
+  "release_manifest_files": 258,
   "release_state": "RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT",
   "stage": "original_master_plan_steps_91_102",
   "status": "PASS",
