@@ -177,5 +177,28 @@ class TestTradingContrastStage6(unittest.TestCase):
         )
 
 
+    def test_clean_replay_semantic_manifest_exists(self):
+        self.assertTrue(
+            Path(
+                "outputs/trading_contrast_extension/release/"
+                "stage2_5_clean_replay_semantic_manifest.sha256"
+            ).exists()
+        )
+
+    def test_replay_uses_canonical_semantic_manifest(self):
+        script = Path(
+            "scripts/trading_contrast_extension/reproduce_extension.sh"
+        ).read_text()
+
+        self.assertIn(
+            "stage2_5_clean_replay_semantic_manifest.sha256",
+            script,
+        )
+        self.assertIn(
+            "regenerated Stage 2-5 semantic universe matches",
+            script,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
