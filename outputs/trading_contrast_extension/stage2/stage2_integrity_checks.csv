@@ -1,0 +1,13 @@
+check,passed,observed,expected,note
+canonical_rows_match_final_event_panel,True,6996,6996,
+canonical_dates,True,163,163,
+four_models_present,True,"['p_raw', 'p_static', 'p_rbf', 'p_matern32']","['p_raw', 'p_static', 'p_rbf', 'p_matern32']",
+probability_books_sum_to_one,True,all,all,
+fixed_external_dates_61_each_model,True,"[{'model': 'matern32', 'dates': 61}, {'model': 'raw', 'dates': 61}, {'model': 'rbf', 'dates': 61}, {'model': 'static', 'dates': 61}]",61,
+fixed_development_dates_90_each_model,True,"[{'model': 'matern32', 'dates': 90}, {'model': 'raw', 'dates': 90}, {'model': 'rbf', 'dates': 90}, {'model': 'static', 'dates': 90}]",90,
+baseline_raw_static_matern_reproduced,True,"[{'model': 'raw', 'period': 'external_validation', 'absolute_difference': 2.7755575615628914e-16, 'passed': True}, {'model': 'static', 'period': 'external_validation', 'absolute_difference': 0.0, 'passed': True}, {'model': 'matern32', 'period': 'external_validation', 'absolute_difference': 0.0, 'passed': True}]",all passed,
+taec_external_dates_61_each_model,True,"[{'model': 'matern32', 'dates': 61}, {'model': 'raw', 'dates': 61}, {'model': 'rbf', 'dates': 61}, {'model': 'static', 'dates': 61}]",61,
+taec_development_dates_90_each_model,True,"[{'model': 'matern32', 'dates': 90}, {'model': 'raw', 'dates': 90}, {'model': 'rbf', 'dates': 90}, {'model': 'static', 'dates': 90}]",90,
+taec_max_11_positions,True,9,<=11,
+taec_no_settlement_in_pnl,True,PnL is signed market probability move minus 0.02 round-trip cost,no realised_event term,
+taec_all_exits_pre_event,True,"['12h_prior', '6h_prior', 'event_day_open']","['12h_prior', '6h_prior', 'event_day_open']",

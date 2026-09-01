@@ -1,0 +1,39 @@
+{
+  "bound_source": "lower_bound_c|upper_bound_c",
+  "contract_key_columns": [
+    "yes_token_id"
+  ],
+  "direct_probability_models": [
+    "matern32",
+    "raw",
+    "static"
+  ],
+  "market_column": "market_raw_yes",
+  "prediction_parameter_specs": {
+    "matern32": {
+      "format": "wide",
+      "mean_col": "selected_gp_mean_c",
+      "sd_col": "selected_gp_sd_c",
+      "table": "event_panel"
+    },
+    "raw": {
+      "format": "wide",
+      "mean_col": "raw_temperature_c",
+      "sd_col": "p_raw",
+      "table": "event_panel"
+    },
+    "rbf": {
+      "format": "wide",
+      "mean_col": "static_mean_c",
+      "sd_col": "static_sd_c",
+      "table": "event_panel"
+    },
+    "static": {
+      "format": "wide",
+      "mean_col": "static_mean_c",
+      "sd_col": "static_sd_c",
+      "table": "event_panel"
+    }
+  },
+  "winner_column": "Y"
+}

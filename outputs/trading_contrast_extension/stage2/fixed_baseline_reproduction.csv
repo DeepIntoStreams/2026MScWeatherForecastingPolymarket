@@ -1,0 +1,4 @@
+model,period,benchmark_source,expected_pnl,observed_pnl,absolute_difference,passed
+raw,external_validation,numbers.tex,0.397,0.3970000000000003,2.7755575615628914e-16,True
+static,external_validation,numbers.tex,2.281,2.281,0.0,True
+matern32,external_validation,numbers.tex,2.451,2.451,0.0,True

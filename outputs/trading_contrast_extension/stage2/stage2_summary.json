@@ -1,0 +1,240 @@
+{
+  "baseline_reproduction": [
+    {
+      "absolute_difference": 2.7755575615628914e-16,
+      "benchmark_source": "numbers.tex",
+      "expected_pnl": 0.397,
+      "model": "raw",
+      "observed_pnl": 0.3970000000000003,
+      "passed": true,
+      "period": "external_validation"
+    },
+    {
+      "absolute_difference": 0.0,
+      "benchmark_source": "numbers.tex",
+      "expected_pnl": 2.281,
+      "model": "static",
+      "observed_pnl": 2.281,
+      "passed": true,
+      "period": "external_validation"
+    },
+    {
+      "absolute_difference": 0.0,
+      "benchmark_source": "numbers.tex",
+      "expected_pnl": 2.451,
+      "model": "matern32",
+      "observed_pnl": 2.451,
+      "passed": true,
+      "period": "external_validation"
+    }
+  ],
+  "canonical_dates": 163,
+  "canonical_event_rows": 6996,
+  "fixed_entry_rule": "24h_prior",
+  "fixed_summary": [
+    {
+      "active_dates": 12,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "model": "matern32",
+      "positions": 12,
+      "total_entry_capital": 0.549,
+      "total_net_pnl": 2.4509999999999996
+    },
+    {
+      "active_dates": 61,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "model": "raw",
+      "positions": 61,
+      "total_entry_capital": 7.603,
+      "total_net_pnl": 0.3970000000000001
+    },
+    {
+      "active_dates": 14,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "model": "rbf",
+      "positions": 14,
+      "total_entry_capital": 0.719,
+      "total_net_pnl": 2.2809999999999997
+    },
+    {
+      "active_dates": 14,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "model": "static",
+      "positions": 14,
+      "total_entry_capital": 0.719,
+      "total_net_pnl": 2.2809999999999997
+    },
+    {
+      "active_dates": 15,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "model": "matern32",
+      "positions": 15,
+      "total_entry_capital": 1.5285,
+      "total_net_pnl": 2.4715
+    },
+    {
+      "active_dates": 90,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "model": "raw",
+      "positions": 90,
+      "total_entry_capital": 13.2065,
+      "total_net_pnl": -8.2065
+    },
+    {
+      "active_dates": 14,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "model": "rbf",
+      "positions": 14,
+      "total_entry_capital": 1.994,
+      "total_net_pnl": 2.006
+    },
+    {
+      "active_dates": 14,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "model": "static",
+      "positions": 14,
+      "total_entry_capital": 1.994,
+      "total_net_pnl": 2.006
+    }
+  ],
+  "fixed_threshold": 0.15,
+  "models": [
+    "raw",
+    "static",
+    "rbf",
+    "matern32"
+  ],
+  "next_stage": "complete risk, capital-efficiency, convergence and Greek-like analytics for all eight portfolios",
+  "stage": 2,
+  "stage_name": "canonical_four_model_probability_panel_and_strategy_ledgers",
+  "status": "PASS",
+  "taec_entry_rule": "24h_prior",
+  "taec_exit_checkpoints": [
+    "12h_prior",
+    "6h_prior",
+    "event_day_open"
+  ],
+  "taec_round_trip_cost": 0.02,
+  "taec_summary": [
+    {
+      "active_dates": 61,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "forced_open_positions": 308,
+      "mean_gap_closed_fraction": -0.012067042327218894,
+      "model": "matern32",
+      "no_positions": 172,
+      "positions": 383,
+      "target_hit_positions": 75,
+      "total_entry_capital": 140.2765,
+      "total_net_pnl": -5.355,
+      "yes_positions": 211
+    },
+    {
+      "active_dates": 61,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "forced_open_positions": 365,
+      "mean_gap_closed_fraction": 0.024590410456399547,
+      "model": "raw",
+      "no_positions": 304,
+      "positions": 365,
+      "target_hit_positions": 0,
+      "total_entry_capital": 258.89050000000003,
+      "total_net_pnl": -6.261,
+      "yes_positions": 61
+    },
+    {
+      "active_dates": 61,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "forced_open_positions": 308,
+      "mean_gap_closed_fraction": -0.010111644896166522,
+      "model": "rbf",
+      "no_positions": 174,
+      "positions": 380,
+      "target_hit_positions": 72,
+      "total_entry_capital": 142.85150000000002,
+      "total_net_pnl": -5.349500000000001,
+      "yes_positions": 206
+    },
+    {
+      "active_dates": 61,
+      "dates": 61,
+      "empirical_period": "external_validation",
+      "forced_open_positions": 308,
+      "mean_gap_closed_fraction": -0.010111644896166366,
+      "model": "static",
+      "no_positions": 174,
+      "positions": 380,
+      "target_hit_positions": 72,
+      "total_entry_capital": 142.85150000000002,
+      "total_net_pnl": -5.349500000000001,
+      "yes_positions": 206
+    },
+    {
+      "active_dates": 90,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "forced_open_positions": 398,
+      "mean_gap_closed_fraction": 0.15531557033451926,
+      "model": "matern32",
+      "no_positions": 243,
+      "positions": 515,
+      "target_hit_positions": 117,
+      "total_entry_capital": 200.729,
+      "total_net_pnl": -5.296500000000001,
+      "yes_positions": 272
+    },
+    {
+      "active_dates": 90,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "forced_open_positions": 500,
+      "mean_gap_closed_fraction": 0.03976598402730946,
+      "model": "raw",
+      "no_positions": 410,
+      "positions": 500,
+      "target_hit_positions": 0,
+      "total_entry_capital": 346.30150000000003,
+      "total_net_pnl": -11.664,
+      "yes_positions": 90
+    },
+    {
+      "active_dates": 90,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "forced_open_positions": 377,
+      "mean_gap_closed_fraction": 0.1343093362938547,
+      "model": "rbf",
+      "no_positions": 242,
+      "positions": 502,
+      "target_hit_positions": 125,
+      "total_entry_capital": 201.497,
+      "total_net_pnl": -4.216000000000001,
+      "yes_positions": 260
+    },
+    {
+      "active_dates": 90,
+      "dates": 90,
+      "empirical_period": "market_development",
+      "forced_open_positions": 377,
+      "mean_gap_closed_fraction": 0.13430933629385464,
+      "model": "static",
+      "no_positions": 242,
+      "positions": 502,
+      "target_hit_positions": 125,
+      "total_entry_capital": 201.497,
+      "total_net_pnl": -4.216000000000001,
+      "yes_positions": 260
+    }
+  ]
+}
