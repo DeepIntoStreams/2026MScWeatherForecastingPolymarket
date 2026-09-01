@@ -11,7 +11,9 @@
   "original_final_pipeline_tag": "msc-final-pipeline-final",
   "recommended_tag": "msc-trading-contrast-extension-final",
   "release_state": "FINAL_EXTENSION_RELEASE_COMPLETE",
+  "replay_manifest_scope": "Stages 2-5 generated outputs only; Stage-6 closure audits are preserved and verified separately.",
   "safe_headline": "The conservative fixed policy dominates the exploratory multi-contract TAEC strategy externally; the aggressive strategy's small positive pre-cost convergence is overwhelmed by turnover costs and is not statistically resolved.",
+  "scientific_equivalence_audit": "outputs/trading_contrast_extension/stage6/canonical_rebuild_scientific_equivalence.csv",
   "scientific_equivalence_tolerance": 1e-10,
   "status": "PASS",
   "taec_is_exploratory": true

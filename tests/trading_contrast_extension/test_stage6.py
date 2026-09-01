@@ -162,6 +162,20 @@ class TestTradingContrastStage6(unittest.TestCase):
             script,
         )
 
+    def test_scientific_equivalence_audit_is_stage6_closure_artifact(self):
+        self.assertTrue(
+            Path(
+                "outputs/trading_contrast_extension/stage6/"
+                "canonical_rebuild_scientific_equivalence.csv"
+            ).exists()
+        )
+        self.assertFalse(
+            Path(
+                "outputs/trading_contrast_extension/stage5/"
+                "canonical_rebuild_scientific_equivalence.csv"
+            ).exists()
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
