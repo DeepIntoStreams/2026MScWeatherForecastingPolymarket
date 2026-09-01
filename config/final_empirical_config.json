@@ -51,6 +51,24 @@
       "start": "2024-03-16"
     }
   },
+  "final_closure": {
+    "examiner_entry_point": "docs/final_pipeline/EXAMINER_README.md",
+    "external_data_used_for_reselection": false,
+    "new_empirical_modeling": false,
+    "one_command_audit": "bash scripts/final_pipeline/reproduce_final_pipeline.sh audit",
+    "one_command_full": "bash scripts/final_pipeline/reproduce_final_pipeline.sh full",
+    "original_master_plan_steps": "91-102",
+    "pending_target_dates": [
+      "2026-08-31"
+    ],
+    "permitted_future_empirical_change": "31-August target-dependent refresh only",
+    "pool_weight_gp": 0.188,
+    "release_state": "RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT",
+    "steps_1_90_frozen": true,
+    "trading_rule": "24h_prior",
+    "trading_threshold": 0.15,
+    "weather_kernel": "matern32"
+  },
   "final_reporting": {
     "external_data_used_for_selection": false,
     "historical_must_match_failures": 0,

@@ -1,0 +1,24 @@
+{
+  "appendix_only_claims": 3,
+  "claims_total": 17,
+  "core_questions": 7,
+  "excluded_primary_claims": 2,
+  "external_data_used_for_reselection": false,
+  "main_or_discussion_claims": 12,
+  "new_empirical_modeling": false,
+  "pending_target_dates": [
+    "2026-08-31"
+  ],
+  "permitted_future_empirical_change": "31-August target-dependent refresh only",
+  "pool_weight_gp": 0.188,
+  "recommended_tag": "msc-final-pipeline-rc-pre-aug31",
+  "release_manifest_files": 277,
+  "release_state": "RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT",
+  "stage": "original_master_plan_steps_91_102",
+  "status": "PASS",
+  "steps_1_90_frozen": true,
+  "three_layer_audit_checks": 7,
+  "trading_rule": "24h_prior",
+  "trading_threshold": 0.15,
+  "weather_kernel": "matern32"
+}

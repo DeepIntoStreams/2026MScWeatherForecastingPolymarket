@@ -39,3 +39,35 @@ final implementation is rebuilt. It is not an authoritative input into the submi
 March-August results.
 
 See `docs/final_pipeline/authoritative_scope.md` for the precise source policy.
+
+<!-- FINAL_PIPELINE_ENTRY_START -->
+
+## Final March--August MSc empirical pipeline
+
+The authoritative dissertation empirical implementation is on branch
+`final-march-august-reproducible-pipeline`.
+
+Current release state: **RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT**.
+
+Examiner entry point:
+
+`docs/final_pipeline/EXAMINER_README.md`
+
+One-command audit replay:
+
+```bash
+bash scripts/final_pipeline/reproduce_final_pipeline.sh audit
+```
+
+The final empirical source hierarchy is:
+
+1. `outputs/final_pipeline/thesis/generated/numbers.tex`
+2. `outputs/final_pipeline/thesis/tables/`
+3. `outputs/final_pipeline/reporting/final_thesis_claims_register.csv`
+4. authoritative CSV/JSON outputs under `outputs/final_pipeline/`
+5. pipeline implementation under `src/final_pipeline/`
+
+Do not use historical branches or obsolete pre-final outputs as thesis
+numerical sources.
+
+<!-- FINAL_PIPELINE_ENTRY_END -->

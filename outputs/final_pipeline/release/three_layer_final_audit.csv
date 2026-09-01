@@ -1,0 +1,8 @@
+layer,check,passed,interpretation
+data,all_upstream_stage_statuses_pass,True,All frozen empirical stages report PASS.
+data,only_expected_external_target_may_be_pending,True,The only permitted unresolved target is 31 August 2026.
+methodology,development_selectors_frozen,True,"Matérn-3/2, pool weight 0.188, 24h_prior and h=0.15 remain frozen."
+methodology,external_not_used_for_selection,True,July-August remains external evaluation.
+methodology,all_integrity_check_files_pass,True,"Market, trading, synthesis and reporting integrity gates all pass."
+results,authoritative_numbers_file_complete,True,Headline scalar values are centrally generated.
+results,stale_pre_final_signatures_absent_from_thesis_outputs,True,Old event_day_open / w=0.489 values are not present in thesis-facing generated TeX.
