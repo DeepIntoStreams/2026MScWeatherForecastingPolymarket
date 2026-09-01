@@ -1,0 +1,32 @@
+{
+  "fixed_strategy_reporting": [
+    "selected-contract Delta and Gamma",
+    "portfolio Delta and Gamma",
+    "full-policy PnL perturbation under +/-0.25C, +/-0.5C, +/-1.0C",
+    "activation/contract-switch diagnostics"
+  ],
+  "interpretation_guard": "These are local forecast-probability sensitivities and empirical PnL perturbation diagnostics, not Black-Scholes Greeks.",
+  "no_side_identity": {
+    "delta_no": "-delta_yes",
+    "gamma_no": "-gamma_yes"
+  },
+  "portfolio_delta": "sum signed side exposure times contract probability Delta",
+  "portfolio_gamma": "sum signed side exposure times contract probability Gamma",
+  "primary_temperature_step_c": 0.25,
+  "probability_delta": "Delta_j=[q_j(mu+h)-q_j(mu-h)]/(2h)",
+  "probability_gamma": "Gamma_j=[q_j(mu+h)-2q_j(mu)+q_j(mu-h)]/h^2",
+  "purpose": "Greek-like sensitivity analysis links temperature-forecast risk to event probabilities, model-market edge and portfolio exposure.",
+  "robustness_steps_c": [
+    0.5,
+    1.0
+  ],
+  "taec11_reporting": [
+    "gross absolute Delta",
+    "net signed Delta",
+    "gross absolute Gamma",
+    "net signed Gamma",
+    "Delta/Gamma by YES versus NO side",
+    "edge sensitivity to temperature perturbations",
+    "position entry/exit instability under perturbations"
+  ]
+}

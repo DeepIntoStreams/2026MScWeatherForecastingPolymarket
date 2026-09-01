@@ -1,0 +1,12 @@
+check,passed,observed,expected,note
+baseline_release_is_final,True,FINAL_RELEASE_COMPLETE,FINAL_RELEASE_COMPLETE,
+no_pending_targets,True,[],[],
+frozen_kernel,True,matern32,matern32,
+frozen_pool_weight,True,0.188,0.188,
+frozen_fixed_rule,True,24h_prior,24h_prior,
+frozen_fixed_threshold,True,0.15,0.15,
+pre_event_market_series_feasible,True,B_SNAPSHOT_PRICE_PROXY,A_EXECUTABLE_BID_ASK or B_SNAPSHOT_PRICE_PROXY,
+strategy_protocol.json_exists,True,True,True,
+greek_risk_protocol.json_exists,True,True,True,
+risk_analytics_protocol.json_exists,True,True,True,
+statistical_inference_protocol.json_exists,True,True,True,

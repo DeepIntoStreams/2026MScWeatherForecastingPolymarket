@@ -1,0 +1,17 @@
+{
+  "base_commit": "1946a9536338c69902d8d9126f5e719fbaa5c5f7",
+  "base_tag": "msc-final-pipeline-final",
+  "baseline_hashes": {
+    "outputs/final_pipeline/audit/reporting_stage_summary.json": "4ee0315e07fa46e9a803d1fc0937f0ec1828434560d2d5952ad2fbc416b83122",
+    "outputs/final_pipeline/release/final_release_summary.json": "f7b0b590f08b2c53220f45b2d561fcae25cb1d526f89332124fe38f3aa174c2f",
+    "outputs/final_pipeline/thesis/generated/numbers.tex": "2ca1554d9189a5982b09075c19a05a2cdd0c6cc43bea8a6a364d36d77d765989"
+  },
+  "immutable_baseline": true,
+  "pending_target_dates": [],
+  "pool_weight_gp": 0.188,
+  "reference_cost_per_execution": 0.01,
+  "release_state": "FINAL_RELEASE_COMPLETE",
+  "trading_rule": "24h_prior",
+  "trading_threshold": 0.15,
+  "weather_kernel": "matern32"
+}

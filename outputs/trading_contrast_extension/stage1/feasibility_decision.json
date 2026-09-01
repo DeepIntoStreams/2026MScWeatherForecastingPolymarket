@@ -1,0 +1,13 @@
+{
+  "bid_ask_candidate_files": [],
+  "execution_note": "No complete bid/ask candidate was detected, but authoritative market probability/price snapshots exist. TAEC can be implemented as a conservative mark-to-market convergence backtest with 0.01 cost per execution (0.02 round trip), explicitly labelled as a snapshot-price execution proxy.",
+  "execution_tier": "B_SNAPSHOT_PRICE_PROXY",
+  "four_model_detection": {
+    "matern_or_selected_gp_event_probability_detected": true,
+    "raw_event_probability_detected": false,
+    "rbf_in_event_panel_detected": false,
+    "rbf_somewhere_in_final_pipeline_detected": true,
+    "static_event_probability_detected": false
+  },
+  "four_model_status": "REQUIRES_STAGE2_DERIVATION_OR_SCHEMA_MAPPING"
+}

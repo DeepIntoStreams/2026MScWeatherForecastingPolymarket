@@ -1,0 +1,19 @@
+{
+  "columns": {
+    "ask": [],
+    "bid": [],
+    "market": [
+      "market_raw_yes"
+    ],
+    "matern": [
+      "p_selected_gp",
+      "selected_gp_mean_c",
+      "selected_gp_sd_c"
+    ],
+    "raw": [],
+    "rbf": [],
+    "static": []
+  },
+  "event_key_used_for_support_audit": "_support_event_index",
+  "event_panel": "data/processed/final_pipeline/market/exact_common_event_panel.csv.gz"
+}

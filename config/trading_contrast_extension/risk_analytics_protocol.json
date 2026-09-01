@@ -1,0 +1,53 @@
+{
+  "applies_to_all_eight_model_strategy_portfolios": true,
+  "capital_efficiency": [
+    "cumulative_entry_capital",
+    "roi_on_entry_capital",
+    "mean_capital_per_active_date",
+    "max_capital_per_date"
+  ],
+  "performance": [
+    "total_net_pnl",
+    "mean_daily_pnl",
+    "median_daily_pnl",
+    "gross_profit",
+    "gross_loss",
+    "profit_factor"
+  ],
+  "risk": [
+    "daily_pnl_sd",
+    "nonannualised_sharpe",
+    "sortino",
+    "empirical_var_95",
+    "empirical_expected_shortfall_95",
+    "worst_daily_loss",
+    "maximum_drawdown",
+    "drawdown_duration"
+  ],
+  "taec_specific": [
+    "mean_gap_closed_fraction",
+    "median_gap_closed_fraction",
+    "convergence_rate",
+    "divergence_rate",
+    "forced_open_exit_rate",
+    "exit_12h_share",
+    "exit_6h_share",
+    "exit_open_share"
+  ],
+  "trading_structure": [
+    "active_dates",
+    "position_count",
+    "mean_positions_per_active_date",
+    "max_positions_per_date",
+    "yes_position_share",
+    "no_position_share",
+    "turnover",
+    "transaction_cost",
+    "win_rate",
+    "mean_gain",
+    "mean_loss",
+    "top1_day_pnl_share",
+    "top3_day_pnl_share",
+    "largest_gross_exposure"
+  ]
+}

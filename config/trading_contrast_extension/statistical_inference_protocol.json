@@ -1,0 +1,30 @@
+{
+  "confidence_level": 0.95,
+  "families": {
+    "market_convergence": {
+      "metric": "date-aggregated signed movement toward the frozen 24h model probability",
+      "tests": 4
+    },
+    "portfolio_profitability": {
+      "objects": "2 strategies x 4 models",
+      "tests": 8
+    },
+    "risk_adjusted_sharpe_difference": {
+      "tests": 4
+    },
+    "taec_minus_fixed_by_model": {
+      "tests": 4
+    },
+    "within_strategy_model_pairwise": {
+      "strategies": 2,
+      "tests_per_strategy": 6
+    }
+  },
+  "multiplicity": "Holm correction within each pre-specified family",
+  "primary_dependence_method": "7_day_moving_block_bootstrap",
+  "reason": "TAEC11 was conceived after the core March-August study was observed; therefore July-August is not described as a pristine confirmatory holdout.",
+  "sampling_unit": "settlement_date",
+  "secondary_method": "ordinary_date_bootstrap",
+  "status": "EXPLORATORY_INFERENCE",
+  "tail_metric_guard": "VaR, expected shortfall and maximum drawdown are primarily descriptive with bootstrap uncertainty; do not overstate conventional significance."
+}

@@ -1,0 +1,50 @@
+{
+  "common_entry_rule": "24h_prior",
+  "extension_name": "fixed_vs_two_sided_all_edge_convergence",
+  "models": [
+    "raw",
+    "static",
+    "rbf",
+    "matern32"
+  ],
+  "reference_cost_per_execution": 0.01,
+  "status": "PRE_SPECIFIED_BEFORE_EXTENSION_RESULTS",
+  "strategy_1_fixed_settlement": {
+    "contract_selection": "single_largest_model_minus_raw_market_yes_gap",
+    "cost_legs": 1,
+    "direction": "long_yes_only",
+    "entry_time": "24h_prior",
+    "exit": "settlement",
+    "maximum_positions_per_date": 1,
+    "must_reproduce_existing_raw_static_matern": true,
+    "name": "fixed_settlement",
+    "rbf_uses_same_rule_without_tuning": true,
+    "threshold": 0.15
+  },
+  "strategy_2_taec11": {
+    "cost_legs": 2,
+    "directions": {
+      "model_yes_above_market": "long_yes",
+      "model_yes_below_market": "long_no"
+    },
+    "entry_rule_if_bid_ask": "take the single side with positive model-implied convergence value after executable entry and round-trip costs",
+    "entry_rule_if_snapshot_proxy": "abs(model_yes_probability - market_yes_price) > 2 * cost_per_execution",
+    "entry_time": "24h_prior",
+    "execution_tier_from_stage1": "B_SNAPSHOT_PRICE_PROXY",
+    "exit_checkpoints_in_order": [
+      "12h_prior",
+      "6h_prior",
+      "event_day_open"
+    ],
+    "exit_rule_long_no": "exit at first checkpoint where market YES reaches/falls below the frozen 24h model YES probability; otherwise force open exit",
+    "exit_rule_long_yes": "exit at first checkpoint where market YES reaches/exceeds the frozen 24h model YES probability; otherwise force open exit",
+    "forecast_probability_frozen_at_entry": true,
+    "maximum_positions_per_date": 11,
+    "name": "TAEC11_two_sided_all_edge_convergence",
+    "no_exit_threshold_search": true,
+    "no_model_specific_tuning": true,
+    "no_parameter_search": true,
+    "settlement_exposure": false,
+    "short_no_interpretation": "Synthetic short NO is economically equivalent to long YES and is not counted as a second signal; equivalent execution routes may be compared only if historical executable quotes permit."
+  }
+}

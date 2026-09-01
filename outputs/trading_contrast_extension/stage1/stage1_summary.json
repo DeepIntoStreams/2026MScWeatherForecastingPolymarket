@@ -1,0 +1,26 @@
+{
+  "base_commit": "1946a9536338c69902d8d9126f5e719fbaa5c5f7",
+  "base_tag": "msc-final-pipeline-final",
+  "execution_tier": "B_SNAPSHOT_PRICE_PROXY",
+  "exploratory_inference_declared": true,
+  "fixed_strategy_frozen": true,
+  "four_checkpoint_support": [
+    {
+      "dates": 62,
+      "dates_with_all_11_contracts_all_four_checkpoints": 61,
+      "period": "external_validation"
+    },
+    {
+      "dates": 101,
+      "dates_with_all_11_contracts_all_four_checkpoints": 90,
+      "period": "market_development"
+    }
+  ],
+  "four_model_status": "REQUIRES_STAGE2_DERIVATION_OR_SCHEMA_MAPPING",
+  "greek_like_risk_pre_specified": true,
+  "next_stage": "build canonical four-model probability panel, executable/proxy price panel, fixed ledgers and TAEC11 ledgers",
+  "stage": 1,
+  "stage_name": "baseline_freeze_data_feasibility_and_preregistration",
+  "status": "PASS",
+  "taec11_pre_specified": true
+}
