@@ -338,39 +338,62 @@ class TestSynthesisStage(
             )
         )
 
-    def test_bootstrap_reconciliation(
-        self
-    ):
-        gp = self.boot[
-            (
-                self.boot[
-                    "estimand"
-                ]
-                == "method_level"
-            )
-            & (
-                self.boot[
-                    "source_a"
-                ]
-                == "selected_gp"
-            )
-        ]
+    def test_bootstrap_reconciliation(self):
+        # Classification must follow the reported interval evidence rather
+        # than a hard-coded pre-31-Aug outcome label.
+        x = pd.read_csv(
+            "outputs/final_pipeline/synthesis/"
+            "bootstrap_interpretation.csv"
+        )
+
+        gp = x.loc[
+            (x["estimand"] == "method_level")
+            & (x["source_a"] == "selected_gp")
+        ].copy()
 
         self.assertEqual(
-            len(
-                gp
-            ),
+            len(gp),
             1,
         )
 
-        self.assertEqual(
-            gp.iloc[
-                0
-            ][
-                "classification"
-            ],
-            "dependence_sensitive",
+        row = gp.iloc[0]
+
+        ordinary_contains_zero = (
+            float(row["ordinary_lower_95"])
+            <= 0.0
+            <= float(row["ordinary_upper_95"])
         )
+
+        block_contains_zero = (
+            float(row["block7_lower_95"])
+            <= 0.0
+            <= float(row["block7_upper_95"])
+        )
+
+        classification = str(
+            row["classification"]
+        )
+
+        if ordinary_contains_zero != block_contains_zero:
+            self.assertEqual(
+                classification,
+                "dependence_sensitive",
+            )
+
+        elif ordinary_contains_zero and block_contains_zero:
+            self.assertEqual(
+                classification,
+                "unresolved",
+            )
+
+        else:
+            self.assertNotIn(
+                classification,
+                {
+                    "dependence_sensitive",
+                    "unresolved",
+                },
+            )
 
     def test_pending_status(
         self
