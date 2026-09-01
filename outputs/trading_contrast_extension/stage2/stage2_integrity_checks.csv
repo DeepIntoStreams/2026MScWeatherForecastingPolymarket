@@ -11,4 +11,3 @@ taec_development_dates_90_each_model,True,"[{'model': 'matern32', 'dates': 90}, 
 taec_max_11_positions,True,9,<=11,
 taec_no_settlement_in_pnl,True,PnL is signed market probability move minus 0.02 round-trip cost,no realised_event term,
 taec_all_exits_pre_event,True,"['12h_prior', '6h_prior', 'event_day_open']","['12h_prior', '6h_prior', 'event_day_open']",
-rbf_distinct_from_static,True,0.2551941978498634,>1e-12,Explicit frozen RBF provenance repair.

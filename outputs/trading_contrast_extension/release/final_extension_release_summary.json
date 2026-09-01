@@ -1,6 +1,7 @@
 {
   "authoritative_numbers": "outputs/trading_contrast_extension/thesis/generated/numbers.tex",
   "branch": "final-trading-contrast-extension",
+  "canonical_clean_state_outputs": true,
   "clean_generated_state_replay": true,
   "external_common_support_dates": 61,
   "external_data_used_for_reselection": false,
@@ -10,8 +11,8 @@
   "original_final_pipeline_tag": "msc-final-pipeline-final",
   "recommended_tag": "msc-trading-contrast-extension-final",
   "release_state": "FINAL_EXTENSION_RELEASE_COMPLETE",
-  "replay_root_cause_repaired": "Stage-2 repository-aware discovery is run with only Stage-1 generated extension outputs visible.",
   "safe_headline": "The conservative fixed policy dominates the exploratory multi-contract TAEC strategy externally; the aggressive strategy's small positive pre-cost convergence is overwhelmed by turnover costs and is not statistically resolved.",
+  "scientific_equivalence_tolerance": 1e-10,
   "status": "PASS",
   "taec_is_exploratory": true
 }

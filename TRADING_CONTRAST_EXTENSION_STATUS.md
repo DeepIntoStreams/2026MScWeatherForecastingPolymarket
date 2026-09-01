@@ -21,3 +21,6 @@ No new empirical model, threshold, strategy or selection rule is permitted after
 
 
 Reproducibility note: the clean-clone launcher reconstructs the pre-Stage-2 generated-output state before replay so repository-aware Stage-2 schema discovery cannot read its own later outputs. This is a release-engineering safeguard only and changes no empirical specification.
+
+
+Canonical-output note: Stage 2-5 committed artefacts were regenerated once from the clean pre-Stage-2 output state and reconciled against the previous release at 1e-10 tolerance for all headline scientific quantities. This canonicalisation changes output generation state only, not the empirical specification or thesis conclusions.

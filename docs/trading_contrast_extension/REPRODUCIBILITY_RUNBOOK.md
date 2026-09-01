@@ -31,3 +31,11 @@ This is necessary because the Stage-2 builder performs repository-aware schema d
 The replay therefore records the committed Stage 2-5 semantic manifest, temporarily preserves closure artefacts, removes post-Stage-1 generated extension outputs, rebuilds Stage 2 with the explicit frozen RBF provenance repair, reruns Stages 3-5, restores the closure artefacts, reruns all regression tests, and requires the Stage 2-5 semantic manifest to match the committed release.
 
 This is a release-engineering safeguard only. It changes no model, probability, strategy, threshold, cost assumption, statistical test or thesis result.
+
+## Canonical clean-state output release
+
+The first clean-clone audit showed that the previously committed Stage 2-5 artefacts were not byte/semantic-canonical relative to a genuine pre-Stage-2 replay state. The cause was output-state-dependent repository discovery, not a change in the scientific specification.
+
+The final release therefore canonicalises the committed Stage 2-5 generated artefacts to the outputs obtained from the clean Stage-1-only replay state. Before accepting that canonicalisation, the release script compares the headline Stage 2 trading summaries, Stage 3 external risk/performance measures, Stage 4 inference, and Stage 5 break-even/support diagnostics against the pre-canonicalisation release and requires equality within 1e-10.
+
+Thus the final committed artefacts and the clean-clone replay now share the same generation state, while the scientific results remain unchanged.
