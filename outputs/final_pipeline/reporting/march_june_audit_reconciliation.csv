@@ -1,0 +1,13 @@
+metric,audited_old_value,current_value,reconciliation_class,reconciliation_pass,reason
+weather_raw_crps,1.745685,1.7856519742883377,expected_change,True,"The two-year target calendar is retained, but the final pipeline rebuilt the deterministic ECMWF input panel under the certified chronological core-repair selection policy. The earlier raw CRPS is therefore a historical benchmark, not a must-match invariant."
+weather_static_crps,0.911755,0.9454445048611128,expected_change,True,"The target calendar is retained, but the deterministic forecast inputs feeding the residual distribution changed under the final certified ECMWF chronology. The earlier static CRPS is therefore expected to change."
+weather_rbf_crps,0.877561,0.9194478416514682,expected_change,True,The final chronological weather reconstruction changed the underlying forecast-error panel. The earlier RBF CRPS is retained as a historical comparison rather than a must-match invariant.
+weather_matern32_crps,0.86334,0.9089451169571919,expected_change,True,The final chronological weather reconstruction changed the underlying forecast-error panel. The earlier Matérn-3/2 CRPS is retained as a historical comparison; selection of Matérn-3/2 remains the invariant.
+weather_selected_kernel,matern32,matern32,must_match,True,The final selected weather kernel remains Matérn-3/2.
+exact_common_dates,97,101,expected_change,True,Market reconstruction and chronology were rebuilt; June now belongs to development.
+exact_common_books,350,389,expected_change,True,Improved market-event recovery and final March-June development support changed the exact common book inventory.
+exact_common_event_rows,3850,4279,expected_change,True,Eleven-event books change mechanically with the rebuilt support inventory.
+pool_weight_gp,0.489,0.188,expected_change,True,Old weight used March-May development. Final weight uses March-June development.
+trading_rule,event_day_open,24h_prior,expected_change,True,Trading selection was rerun from zero on the final March-June development sample.
+trading_threshold,0.12,0.15,expected_change,True,Threshold was reselected under the final March-June one-SE procedure.
+external_trading_net_pnl,0.0235,2.451,not_comparable,True,Old value was June-only under the old policy; current value is July-August under the final frozen policy.

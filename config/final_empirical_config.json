@@ -51,6 +51,24 @@
       "start": "2024-03-16"
     }
   },
+  "final_reporting": {
+    "external_data_used_for_selection": false,
+    "historical_must_match_failures": 0,
+    "historical_weather_kernel_selection_is_invariant": true,
+    "historical_weather_score_classification": "expected_change_after_final_certified_ecmwf_chronology_reconstruction",
+    "historical_weather_scores_are_must_match": false,
+    "new_model_fitted": false,
+    "numbers_tex": "outputs/final_pipeline/thesis/generated/numbers.tex",
+    "original_master_plan_steps": "81-90",
+    "pending_target_dates": [
+      "2026-08-31"
+    ],
+    "pool_weight_gp": 0.188,
+    "trading_rule": "24h_prior",
+    "trading_threshold": 0.15,
+    "upstream_empirical_core_frozen": true,
+    "weather_kernel": "matern32"
+  },
   "fixed_policy_trading": {
     "convex_pool_used": false,
     "current_external_pending_target_dates": [

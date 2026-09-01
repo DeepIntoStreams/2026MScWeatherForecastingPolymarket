@@ -1,0 +1,22 @@
+{
+  "claims_rows": 17,
+  "curated_main_figures": 6,
+  "development_selector_changed": false,
+  "external_data_used_for_selection": false,
+  "manifest_rows": 164,
+  "must_match_benchmark_metrics": 1,
+  "must_match_failures": 0,
+  "new_model_fitted": false,
+  "numbers_tex": "outputs/final_pipeline/thesis/generated/numbers.tex",
+  "pending_target_dates": [
+    "2026-08-31"
+  ],
+  "sample_size_rows": 5,
+  "selected_pool_weight_gp": 0.188,
+  "selected_trading_rule": "24h_prior",
+  "selected_trading_threshold": 0.15,
+  "selected_weather_kernel": "matern32",
+  "stage": "original_master_plan_steps_81_90",
+  "status": "PASS",
+  "steps_1_80_frozen": true
+}

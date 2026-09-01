@@ -1,0 +1,7 @@
+source,destination,purpose
+outputs/final_pipeline/weather/models/chronological_crps_attribution.png,outputs/final_pipeline/thesis/figures/chronological_crps_attribution.png,Weather-model attribution: deterministic to probabilistic correction.
+outputs/final_pipeline/market/total_variation_by_period.png,outputs/final_pipeline/thesis/figures/total_variation_by_period.png,Raw/static/GP probability-book distance from Polymarket.
+outputs/final_pipeline/market/external_proper_scores.png,outputs/final_pipeline/thesis/figures/external_proper_scores.png,External proper-score comparison.
+outputs/final_pipeline/trading/external_cumulative_pnl_attribution.png,outputs/final_pipeline/thesis/figures/external_cumulative_pnl_attribution.png,Frozen raw/static/GP PnL attribution.
+outputs/final_pipeline/trading/external_predictive_mean_stress.png,outputs/final_pipeline/thesis/figures/external_predictive_mean_stress.png,Nonlinear forecast-risk transmission.
+outputs/final_pipeline/synthesis/cross_stage_static_share.png,outputs/final_pipeline/thesis/figures/cross_stage_static_share.png,Share of raw-to-GP improvement captured by the static correction.
