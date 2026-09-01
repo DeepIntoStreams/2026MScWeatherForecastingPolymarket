@@ -13,7 +13,26 @@ cd "$ROOT"
 
 TMP_BEFORE="$(mktemp)"
 TMP_AFTER="$(mktemp)"
-trap 'rm -f "$TMP_BEFORE" "$TMP_AFTER"' EXIT
+PRESERVE_DIR="$(mktemp -d)"
+
+EXT_OUT="outputs/trading_contrast_extension"
+
+restore_preserved () {
+    for name in stage6 thesis release; do
+        if [ -e "$PRESERVE_DIR/$name" ]; then
+            rm -rf "$EXT_OUT/$name"
+            cp -a "$PRESERVE_DIR/$name" "$EXT_OUT/$name"
+        fi
+    done
+}
+
+cleanup () {
+    restore_preserved || true
+    rm -f "$TMP_BEFORE" "$TMP_AFTER"
+    rm -rf "$PRESERVE_DIR"
+}
+
+trap cleanup EXIT
 
 semantic_manifest () {
     python3 - "$1" <<'PY'
@@ -70,10 +89,38 @@ if [ "$MODE" = "audit" ]; then
     semantic_manifest "$TMP_BEFORE"
 fi
 
+# Stage 2 originally ran after Stage 1, before later generated extension
+# outputs existed. Its repository-aware schema discovery must not see its
+# own downstream outputs during a clean replay.
+for name in stage6 thesis release; do
+    if [ -e "$EXT_OUT/$name" ]; then
+        cp -a "$EXT_OUT/$name" "$PRESERVE_DIR/$name"
+    fi
+done
+
+rm -rf \
+    "$EXT_OUT/stage2" \
+    "$EXT_OUT/stage3" \
+    "$EXT_OUT/stage4" \
+    "$EXT_OUT/stage5" \
+    "$EXT_OUT/stage6" \
+    "$EXT_OUT/thesis" \
+    "$EXT_OUT/release"
+
+mkdir -p \
+    "$EXT_OUT/stage2" \
+    "$EXT_OUT/stage3" \
+    "$EXT_OUT/stage4" \
+    "$EXT_OUT/stage5"
+
+echo "PASS: replay starts from Stage-1-only generated extension state."
+
 python3 -m src.trading_contrast_extension.stage2_corrected_rebuild
 python3 -m src.trading_contrast_extension.stage3
 python3 -m src.trading_contrast_extension.stage4
 python3 -m src.trading_contrast_extension.stage5
+
+restore_preserved
 
 python3 tests/trading_contrast_extension/test_stage2.py
 python3 tests/trading_contrast_extension/test_stage3.py
@@ -89,14 +136,11 @@ if [ "$MODE" = "audit" ]; then
         exit 1
     fi
 
-    # Compressed files may have container-level gzip metadata differences.
-    # All non-gzip tracked outputs must remain byte-identical.
     DIRTY_NON_GZIP="$(
         git status --porcelain \
         | sed 's/^...//' \
         | grep '^outputs/trading_contrast_extension/' \
         | grep -vE '\.gz$' \
-        | grep -v '^outputs/trading_contrast_extension/release/' \
         || true
     )"
 
@@ -106,7 +150,7 @@ if [ "$MODE" = "audit" ]; then
         exit 1
     fi
 
-    echo "PASS: semantic clean-clone replay is deterministic."
+    echo "PASS: clean-generated-state semantic replay is deterministic."
 fi
 
 echo "PASS: trading contrast extension reproduction completed."

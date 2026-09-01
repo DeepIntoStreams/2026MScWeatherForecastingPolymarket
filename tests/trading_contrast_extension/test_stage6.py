@@ -140,5 +140,28 @@ class TestTradingContrastStage6(unittest.TestCase):
             )
 
 
+    def test_replay_recreates_pre_stage2_generated_state(self):
+        script = Path(
+            "scripts/trading_contrast_extension/reproduce_extension.sh"
+        ).read_text()
+
+        self.assertIn(
+            '"$EXT_OUT/stage2"',
+            script,
+        )
+        self.assertIn(
+            '"$EXT_OUT/stage6"',
+            script,
+        )
+        self.assertIn(
+            '"$EXT_OUT/release"',
+            script,
+        )
+        self.assertIn(
+            "PASS: replay starts from Stage-1-only generated extension state.",
+            script,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

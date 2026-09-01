@@ -18,3 +18,6 @@ Stages:
 - Stage 6: thesis pruning, reproducibility and release closure — complete
 
 No new empirical model, threshold, strategy or selection rule is permitted after Stage 6.
+
+
+Reproducibility note: the clean-clone launcher reconstructs the pre-Stage-2 generated-output state before replay so repository-aware Stage-2 schema discovery cannot read its own later outputs. This is a release-engineering safeguard only and changes no empirical specification.
