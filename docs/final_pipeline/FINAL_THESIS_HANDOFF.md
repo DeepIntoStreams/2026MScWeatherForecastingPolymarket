@@ -26,7 +26,7 @@ The development-selected convex pool uses GP weight 0.188 and market weight 0.81
 
 ### Q6. Does the weather signal translate into external economic value?
 
-Under the frozen policy, raw/static/GP external PnL is -0.298, 2.281 and 2.451; GP executes 12 trades with non-annualised Sharpe 0.194.
+Under the frozen policy, raw/static/GP external PnL is 0.397, 2.281 and 2.451; GP executes 12 trades with non-annualised Sharpe 0.192.
 
 ### Q7. How robust and nonlinear is the forecast-to-trading link?
 
@@ -34,7 +34,7 @@ PnL inference is dependence-sensitive, rule selection has a support-composition 
 
 ## Pruning discipline
 
-- Main/discussion claims retained: 12
+- Main/discussion claims retained: 11
 - Appendix-only claims retained: 3
 - Claims excluded from primary results: 2
 

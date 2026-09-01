@@ -7,13 +7,13 @@ full_strategy_mean_shift,0.0000000000,2.4510000000,0.0000000000,Total net PnL; s
 full_strategy_mean_shift,0.1000000000,2.4510000000,0.0000000000,Total net PnL; secondary value is activation-switch fraction.
 full_strategy_mean_shift,0.2500000000,2.5270000000,0.0163934426,Total net PnL; secondary value is activation-switch fraction.
 full_strategy_mean_shift,0.5000000000,1.6715000000,0.1475409836,Total net PnL; secondary value is activation-switch fraction.
-full_strategy_mean_shift,1.0000000000,-0.4075000000,0.3442622951,Total net PnL; secondary value is activation-switch fraction.
+full_strategy_mean_shift,1.0000000000,-0.4725000000,0.3442622951,Total net PnL; secondary value is activation-switch fraction.
 finite_portfolio_slope,0.1000000000,0.8500000000,,Central finite PnL slope; not a classical global delta.
 finite_portfolio_slope,0.2500000000,0.4920000000,,Central finite PnL slope; not a classical global delta.
 finite_portfolio_slope,0.5000000000,0.5180000000,,Central finite PnL slope; not a classical global delta.
-finite_portfolio_slope,1.0000000000,-0.4937500000,,Central finite PnL slope; not a classical global delta.
-absolute_gp_error_bin,1.0000000000,1.8415000000,0.2560283962,Total PnL by ascending absolute GP mean-error quartile.
-absolute_gp_error_bin,2.0000000000,0.9790000000,0.6053821295,Total PnL by ascending absolute GP mean-error quartile.
-absolute_gp_error_bin,3.0000000000,-0.1180000000,1.1791976847,Total PnL by ascending absolute GP mean-error quartile.
+finite_portfolio_slope,1.0000000000,-0.5262500000,,Central finite PnL slope; not a classical global delta.
+absolute_gp_error_bin,1.0000000000,1.8415000000,0.2683422988,Total PnL by ascending absolute GP mean-error quartile.
+absolute_gp_error_bin,2.0000000000,0.9790000000,0.6307930908,Total PnL by ascending absolute GP mean-error quartile.
+absolute_gp_error_bin,3.0000000000,-0.1180000000,1.1948725233,Total PnL by ascending absolute GP mean-error quartile.
 absolute_gp_error_bin,4.0000000000,-0.2515000000,2.2464225666,Total PnL by ascending absolute GP mean-error quartile.
-exploratory_spearman_abs_gp_error_vs_pnl,60.0000000000,-0.3280756070,0.0104954930,Exploratory association only; nominal p-value is not multiplicity-adjusted.
+exploratory_spearman_abs_gp_error_vs_pnl,61.0000000000,-0.3262433816,0.0102892536,Exploratory association only; nominal p-value is not multiplicity-adjusted.

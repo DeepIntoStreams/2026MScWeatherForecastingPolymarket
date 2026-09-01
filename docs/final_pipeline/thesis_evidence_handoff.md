@@ -30,22 +30,22 @@ It is a writing aid, not an additional empirical model.
    not statistically resolved.
 
 4. **The economic attribution is consistent with the forecasting attribution.**
-   External fixed-policy net PnL is `-0.298` for raw,
+   External fixed-policy net PnL is `0.397` for raw,
    `2.281` for static and
    `2.451` for the selected GP. The static
-   correction therefore accounts for `93.8%` of the
+   correction therefore accounts for `91.7%` of the
    raw-to-GP PnL improvement.
 
 5. **The frozen GP policy is positive in point estimate but inference must be qualified.**
    It executes `12` trades over
-   `60` currently settled external dates,
+   `61` currently settled external dates,
    producing net PnL `2.451` and non-annualised
-   settlement-date Sharpe `0.194`.
+   settlement-date Sharpe `0.192`.
    The ordinary bootstrap interval is
-   `[-0.381, 6.161]`;
+   `[-0.379, 6.211]`;
    the block-7 interval is
-   `[0.302, 5.162]`.
-   This is classified as `dependence_sensitive`.
+   `[-0.087, 5.164]`.
+   This is classified as `unresolved`.
 
 6. **Rule selection has a support-composition caveat.**
    The prespecified procedure selects `24h_prior` on its own
@@ -95,9 +95,9 @@ Do not make primary claims from:
 
 ## Current 31 August status
 
-`PENDING_EXTERNAL_TARGET`
+`COMPLETE`
 
-Pending dates: `['2026-08-31']`.
+Pending dates: `[]`.
 
 When the official target is available, update the target and rerun downstream
 scores/trading/synthesis. Do not reselect the weather kernel, pool weight,

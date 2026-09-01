@@ -7,7 +7,7 @@ market_development,24h_prior,107,106,1,107,0,106,106
 market_development,12h_prior,107,106,1,107,0,106,106
 market_development,6h_prior,107,106,1,107,0,106,106
 market_development,event_day_open,107,106,1,107,0,106,106
-external_validation,24h_prior,62,62,0,61,1,61,61
-external_validation,12h_prior,62,62,0,61,1,61,61
-external_validation,6h_prior,62,62,0,61,1,61,61
-external_validation,event_day_open,62,62,0,61,1,61,61
+external_validation,24h_prior,62,62,0,62,0,62,62
+external_validation,12h_prior,62,62,0,62,0,62,62
+external_validation,6h_prior,62,62,0,62,0,62,62
+external_validation,event_day_open,62,62,0,62,0,62,62

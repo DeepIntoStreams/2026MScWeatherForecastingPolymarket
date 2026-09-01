@@ -4,7 +4,7 @@
   "forecast_error_definition": "forecast_daily_max_c - hko_daily_max_c",
   "forecast_supported_keys": 3398,
   "forecast_unsupported_keys": 198,
-  "generated_utc": "2026-08-31T11:29:45.173505+00:00",
+  "generated_utc": "2026-09-01T07:25:41.240368+00:00",
   "gp_raw_feature_columns": [
     "forecast_daily_max_c",
     "seasonal_sin",
@@ -12,18 +12,18 @@
     "calendar_day_index"
   ],
   "gp_response_column": "residual_c",
-  "hko_available_keys": 3592,
-  "hko_status": "PENDING_FINAL_DATE",
+  "hko_available_keys": 3596,
+  "hko_status": "COMPLETE",
   "master_panel": "data/processed/final_pipeline/weather_residual_panel.csv",
-  "master_panel_sha256": "610a6e153959d98fdb33fe1de48bfc196202be8c36a3f732305f997798f796bf",
+  "master_panel_sha256": "e58286d936e85bb2fbc02759833d40e7d3d3271438dfe9c641ee4d3eb4cf603d",
   "monthly_error_summary": "outputs/final_pipeline/weather/deterministic_monthly_error_summary.csv",
   "pairwise_rule_comparison": "outputs/final_pipeline/weather/deterministic_pairwise_rule_comparison.csv",
   "period_counts": {
     "external_validation": {
       "forecast_supported_keys": 248,
-      "residual_usable_keys": 244,
+      "residual_usable_keys": 248,
       "theoretical_keys": 248,
-      "usable_dates": 61
+      "usable_dates": 62
     },
     "market_development": {
       "forecast_supported_keys": 424,
@@ -41,34 +41,32 @@
   "period_end": "2026-08-31",
   "period_start": "2024-03-16",
   "residual_definition": "hko_daily_max_c - forecast_daily_max_c",
-  "residual_usable_keys": 3394,
+  "residual_usable_keys": 3398,
   "rule_counts": {
     "12h_prior": {
       "forecast_supported_keys": 849,
-      "residual_usable_keys": 848,
+      "residual_usable_keys": 849,
       "theoretical_keys": 899
     },
     "24h_prior": {
       "forecast_supported_keys": 850,
-      "residual_usable_keys": 849,
+      "residual_usable_keys": 850,
       "theoretical_keys": 899
     },
     "6h_prior": {
       "forecast_supported_keys": 849,
-      "residual_usable_keys": 848,
+      "residual_usable_keys": 849,
       "theoretical_keys": 899
     },
     "event_day_open": {
       "forecast_supported_keys": 850,
-      "residual_usable_keys": 849,
+      "residual_usable_keys": 850,
       "theoretical_keys": 899
     }
   },
   "sample_manifest": "data/processed/final_pipeline/residual_sample_manifest.csv",
-  "status": "PASS_PENDING_HKO_FINAL_DATE",
-  "target_pending_dates": [
-    "2026-08-31"
-  ],
-  "target_pending_keys": 4,
+  "status": "PASS",
+  "target_pending_dates": [],
+  "target_pending_keys": 0,
   "theoretical_date_rule_keys": 3596
 }

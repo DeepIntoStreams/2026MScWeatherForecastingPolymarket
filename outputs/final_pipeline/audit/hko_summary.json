@@ -1,29 +1,27 @@
 {
   "canonical_csv": "data/processed/final_pipeline/hko_daily_max_temperature.csv",
-  "canonical_csv_sha256": "a804917e9db4a5ce148909dc56fb9124fcf8bc964fa15fb7f407ea03df51bc06",
-  "daily_extract_accepted_rows": 30,
+  "canonical_csv_sha256": "6d7f52cdaac8f198d59a104a278138790bfb08b68564039662c72a55e2becd57",
+  "daily_extract_accepted_rows": 31,
   "daily_extract_provisional_dates_skipped": [],
   "dataset": "HKO Absolute Daily Maximum Temperature",
   "end_date": "2026-08-31",
   "expected_calendar_dates": 899,
   "first_observed_date": "2024-03-16",
-  "generated_utc": "2026-08-31T10:05:03.860380+00:00",
+  "generated_utc": "2026-09-01T07:25:38.769804+00:00",
   "historical_overlap_mismatches": 0,
   "historical_overlap_reference_dates": 730,
-  "hong_kong_run_date": "2026-08-31",
-  "last_observed_date": "2026-08-30",
+  "hong_kong_run_date": "2026-09-01",
+  "last_observed_date": "2026-08-31",
   "maximum_temperature_c": 36.9,
   "minimum_temperature_c": 14.3,
-  "missing_dates": [
-    "2026-08-31"
-  ],
-  "observed_dates": 898,
+  "missing_dates": [],
+  "observed_dates": 899,
   "official_source_overlap_dates": 0,
   "official_source_overlap_mismatches": 0,
   "source_counts": {
     "HKO_CLMMAXT_OPEN_DATA": 868,
-    "HKO_DAILY_EXTRACT_CURRENT_MONTH": 30
+    "HKO_DAILY_EXTRACT_CURRENT_MONTH": 31
   },
   "start_date": "2024-03-16",
-  "status": "PENDING_FINAL_DATE"
+  "status": "COMPLETE"
 }

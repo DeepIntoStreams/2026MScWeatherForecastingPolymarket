@@ -52,18 +52,22 @@
     }
   },
   "final_closure": {
+    "bootstrap_reconciliation_final_classification": "unresolved",
+    "bootstrap_reconciliation_note": "After the final 31-Aug settlement, both ordinary and block-7 selected-GP 95% bootstrap intervals include zero; the final classification is therefore unresolved.",
     "examiner_entry_point": "docs/final_pipeline/EXAMINER_README.md",
     "external_data_used_for_reselection": false,
+    "final_settlement_date": "2026-08-31",
+    "final_settlement_event": "29C_interior_bin_[29,30)",
+    "final_settlement_hko_daily_max_c": 29.5,
+    "final_settlement_refresh_completed": true,
     "new_empirical_modeling": false,
     "one_command_audit": "bash scripts/final_pipeline/reproduce_final_pipeline.sh audit",
     "one_command_full": "bash scripts/final_pipeline/reproduce_final_pipeline.sh full",
     "original_master_plan_steps": "91-102",
-    "pending_target_dates": [
-      "2026-08-31"
-    ],
-    "permitted_future_empirical_change": "31-August target-dependent refresh only",
+    "pending_target_dates": [],
+    "permitted_future_empirical_change": "none",
     "pool_weight_gp": 0.188,
-    "release_state": "RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT",
+    "release_state": "FINAL_RELEASE_COMPLETE",
     "steps_1_90_frozen": true,
     "trading_rule": "24h_prior",
     "trading_threshold": 0.15,
@@ -78,9 +82,7 @@
     "new_model_fitted": false,
     "numbers_tex": "outputs/final_pipeline/thesis/generated/numbers.tex",
     "original_master_plan_steps": "81-90",
-    "pending_target_dates": [
-      "2026-08-31"
-    ],
+    "pending_target_dates": [],
     "pool_weight_gp": 0.188,
     "trading_rule": "24h_prior",
     "trading_threshold": 0.15,

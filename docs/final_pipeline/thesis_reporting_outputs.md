@@ -30,4 +30,4 @@ table exists.
 
 ## 31 August
 
-The official 31 August HKO target is still pending. Target-dependent external values generated here must be refreshed after settlement. Development-selected quantities remain frozen.
+No external settlement target is pending.

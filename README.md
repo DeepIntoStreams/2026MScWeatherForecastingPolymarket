@@ -47,7 +47,7 @@ See `docs/final_pipeline/authoritative_scope.md` for the precise source policy.
 The authoritative dissertation empirical implementation is on branch
 `final-march-august-reproducible-pipeline`.
 
-Current release state: **RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT**.
+Current release state: **FINAL_RELEASE_COMPLETE**.
 
 Examiner entry point:
 

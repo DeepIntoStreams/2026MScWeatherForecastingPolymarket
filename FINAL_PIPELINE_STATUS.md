@@ -1,6 +1,6 @@
 # Final empirical pipeline status
 
-**State:** RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT
+**State:** FINAL_RELEASE_COMPLETE
 
 **Branch:** `final-march-august-reproducible-pipeline`
 
@@ -13,7 +13,7 @@ Frozen development selections:
 - trading probability-gap threshold: 0.15;
 - reference cost: 0.01.
 
-Pending external targets: `['2026-08-31']`.
+Pending external targets: `[]`.
 
 No further empirical model development is authorised in this branch.
 The only permitted target-dependent update is the controlled 31-August

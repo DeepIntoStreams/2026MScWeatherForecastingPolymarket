@@ -2,9 +2,9 @@
 
 ## Status
 
-RELEASE_CANDIDATE_PENDING_2026_08_31_SETTLEMENT
+FINAL_RELEASE_COMPLETE
 
-31 August 2026 remains pending in target-dependent external outputs.
+All March-August settlement targets are complete.
 
 ## Start here
 

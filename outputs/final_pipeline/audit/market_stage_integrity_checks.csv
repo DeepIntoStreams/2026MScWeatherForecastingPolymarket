@@ -1,5 +1,5 @@
 check,passed,observed,expected,notes
-gamma_candidates_nonempty,True,1879.0,>0,
+gamma_candidates_nonempty,True,1890.0,>0,
 certified_contract_universe_nonempty,True,1837.0,>0,
 all_certified_dates_have_11_contracts,True,1.0,1,
 all_known_target_dates_have_one_winner,True,1.0,1,
