@@ -1,73 +1,91 @@
 # MSc Weather Forecasting and Polymarket
 
-## Final reproducible empirical branch
+This repository contains the code and outputs used for the empirical analysis in my MSc Financial Mathematics dissertation.
 
-This branch contains the final empirical pipeline accompanying the MSc Financial
-Mathematics dissertation.
+The analysis uses Hong Kong Observatory daily maximum temperature observations, ECMWF deterministic forecasts and historical Polymarket prices. The weather history covers 16 March 2024 to 15 March 2026. The market development period covers 16 March to 30 June 2026, followed by external evaluation from 1 July to 31 August 2026.
 
-**Authoritative empirical period**
+## Main folders
 
-- weather history: 16 March 2024 to 15 March 2026;
-- market development: 16 March 2026 to 30 June 2026;
-- untouched external validation: 1 July 2026 to 31 August 2026.
+The final weather, market comparison and trading pipeline is contained in:
 
-## Core empirical sequence
+```text
+config/final_empirical_config.json
+src/final_pipeline/
+scripts/final_pipeline/
+outputs/final_pipeline/
+docs/final_pipeline/
+```
 
-HKO observations
-→ ECMWF deterministic forecasts
-→ forecast residuals
-→ Static Gaussian / GP post-processing
-→ eleven-contract temperature probabilities
-→ Polymarket comparison
-→ market-development selection
-→ untouched July-August validation
-→ simple trading attribution
-→ robustness
-→ thesis-ready tables and figures.
+The additional comparison between the conservative and multi-contract trading strategies is contained in:
 
-## Authoritative locations
+```text
+config/trading_contrast_extension/
+src/trading_contrast_extension/
+scripts/trading_contrast_extension/
+outputs/trading_contrast_extension/
+docs/trading_contrast_extension/
+```
 
-- empirical contract: `config/final_empirical_config.json`
-- code: `src/final_pipeline/`
-- methodology: `docs/final_pipeline/methodology.md`
-- data dictionary: `docs/final_pipeline/data_dictionary.md`
-- reproducibility: `docs/final_pipeline/reproducibility.md`
-- generated outputs: `outputs/final_pipeline/`
+Other directories contain earlier project work and are not needed to reproduce the final results.
 
-Older repository material is retained only as historical/audit evidence while the
-final implementation is rebuilt. It is not an authoritative input into the submitted
-March-August results.
+## Environment
 
-See `docs/final_pipeline/authoritative_scope.md` for the precise source policy.
+The Python environment is recorded in:
 
-<!-- FINAL_PIPELINE_ENTRY_START -->
+```text
+environment-v2-completion.yml
+requirements-v2-completion.txt
+```
 
-## Final March--August MSc empirical pipeline
+Using Conda:
 
-The authoritative dissertation empirical implementation is on branch
-`final-march-august-reproducible-pipeline`.
+```bash
+conda env create -f environment-v2-completion.yml
+conda activate 2026-msc-weather-v2
+```
 
-Current release state: **FINAL_RELEASE_COMPLETE**.
+## Reproduction
 
-Examiner entry point:
-
-`docs/final_pipeline/EXAMINER_README.md`
-
-One-command audit replay:
+From the repository root, run the main pipeline checks with:
 
 ```bash
 bash scripts/final_pipeline/reproduce_final_pipeline.sh audit
 ```
 
-The final empirical source hierarchy is:
+Run the trading comparison checks with:
 
-1. `outputs/final_pipeline/thesis/generated/numbers.tex`
-2. `outputs/final_pipeline/thesis/tables/`
-3. `outputs/final_pipeline/reporting/final_thesis_claims_register.csv`
-4. authoritative CSV/JSON outputs under `outputs/final_pipeline/`
-5. pipeline implementation under `src/final_pipeline/`
+```bash
+bash scripts/trading_contrast_extension/reproduce_extension.sh audit
+```
 
-Do not use historical branches or obsolete pre-final outputs as thesis
-numerical sources.
+A full rebuild of the main pipeline is available with:
 
-<!-- FINAL_PIPELINE_ENTRY_END -->
+```bash
+bash scripts/final_pipeline/reproduce_final_pipeline.sh full
+```
+
+The full rebuild may require access to the external data sources used in the project.
+
+## Main outputs
+
+The main dissertation outputs are stored in:
+
+```text
+outputs/final_pipeline/thesis/generated/numbers.tex
+outputs/final_pipeline/thesis/tables/
+outputs/final_pipeline/reporting/final_thesis_claims_register.csv
+outputs/trading_contrast_extension/thesis/
+```
+
+Some trading output filenames retain earlier internal labels. `fixed` refers to the conservative strategy and `taec` refers to the multi-contract strategy.
+
+## Version references
+
+The main empirical versions are recorded by the following Git tags:
+
+```text
+msc-final-pipeline-final
+msc-trading-contrast-extension-final
+```
+
+The first tag records the completed March to August empirical pipeline. The second records the completed trading comparison.
