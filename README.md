@@ -4,7 +4,7 @@ This repository contains the code and outputs used for the empirical analysis in
 
 The analysis uses Hong Kong Observatory daily maximum temperature observations, ECMWF deterministic forecasts and historical Polymarket prices. The weather history covers 16 March 2024 to 15 March 2026. The market development period covers 16 March to 30 June 2026, followed by external evaluation from 1 July to 31 August 2026.
 
-## Main folders
+## Repository structure
 
 The final weather, market comparison and trading pipeline is contained in:
 
@@ -26,7 +26,9 @@ outputs/trading_contrast_extension/
 docs/trading_contrast_extension/
 ```
 
-Other directories contain earlier project work and are not required to reproduce the reported results.
+Supporting files used by the final analysis are stored under `data/`, `models/`, `environment/` and `tests/`.
+
+The remaining notebooks, tools and earlier phase scripts record earlier stages of the project and are not required to reproduce the reported results.
 
 ## Environment
 
