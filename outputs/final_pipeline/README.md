@@ -1,13 +1,15 @@
-# Final pipeline outputs
+# Main pipeline outputs
 
-Output families:
+The output directories are:
 
 - `audit/`
 - `weather/`
 - `market/`
 - `trading/`
 - `robustness/`
+- `synthesis/`
+- `reporting/`
 - `thesis/`
+- `release/`
 
-Only outputs reproducibly generated from `src/final_pipeline/` may be cited as final
-thesis evidence.
+The numerical outputs used in the dissertation are under `thesis/` and `reporting/`.

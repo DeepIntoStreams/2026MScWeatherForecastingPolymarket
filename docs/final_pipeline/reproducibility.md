@@ -1,48 +1,33 @@
-# Reproducibility specification
+# Reproducibility
 
-The final submitted empirical release must satisfy the following conditions.
+The reported main pipeline results are generated through `src/final_pipeline/` and the corresponding scripts under `scripts/final_pipeline/`.
 
-## Single authoritative execution path
+The recorded version is:
 
-All submitted empirical tables, figures and headline numbers must ultimately be
-generated through `src/final_pipeline/`.
+```text
+msc-final-pipeline-final
+```
 
-Historical outputs may be used only for reconciliation.
+The pipeline does not rely on notebook kernel state, manually edited result files, user-specific absolute paths or future information entering historical decision rules.
 
-## No hidden state
+The main environment files are:
 
-The final reproduction must not depend on:
+```text
+environment-v2-completion.yml
+requirements-v2-completion.txt
+```
 
-- Jupyter kernel state;
-- manually edited result CSVs;
-- hard-coded user-specific absolute paths;
-- unpublished local files;
-- a different Git branch;
-- future information entering a historical decision rule.
+To check the recorded outputs:
 
-## Environment
+```bash
+git checkout msc-final-pipeline-final
+bash scripts/final_pipeline/reproduce_final_pipeline.sh audit
+```
 
-The final branch records:
+A full rebuild is available with:
 
-- source/base commit;
-- branch;
-- Python executable and version;
-- installed Python packages;
-- operating-system snapshot;
-- repository remotes;
-- UTC setup timestamp.
+```bash
+bash scripts/final_pipeline/reproduce_final_pipeline.sh full
+```
 
-The dependency snapshot produced during initialisation is provisional and will be
-reduced to the minimal final dependency set after the completed pipeline has run
-successfully from a clean environment.
-
-## Final acceptance target
-
-The completed project should expose a short top-level reproduction command, ideally:
-
-`python -m src.final_pipeline.run_all`
-
-or an equivalent `make reproduce` target.
-
-That command will be implemented only after the individual empirical stages have
-been rebuilt and audited.
+The full rebuild may require access to the original external data sources.

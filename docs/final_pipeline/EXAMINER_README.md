@@ -1,12 +1,8 @@
-# Examiner entry point — final empirical pipeline
+# Main empirical pipeline
 
-## Status
+The main March to August analysis is organised under `src/final_pipeline/`, with configuration, scripts, documentation and outputs in the corresponding `final_pipeline` directories.
 
-FINAL_RELEASE_COMPLETE
-
-All March-August settlement targets are complete.
-
-## Start here
+## Suggested reading order
 
 1. `config/final_empirical_config.json`
 2. `docs/final_pipeline/methodology.md`
@@ -14,31 +10,20 @@ All March-August settlement targets are complete.
 4. `docs/final_pipeline/market_books.md`
 5. `docs/final_pipeline/trading.md`
 6. `docs/final_pipeline/synthesis.md`
-7. `docs/final_pipeline/FINAL_THESIS_HANDOFF.md`
 
-## Reproduce / verify
+## Reproduction
 
-Fast deterministic audit:
+The recorded version is tagged `msc-final-pipeline-final`.
 
 ```bash
+git checkout msc-final-pipeline-final
 bash scripts/final_pipeline/reproduce_final_pipeline.sh audit
 ```
 
-Full rebuild:
+The main numerical outputs are stored in:
 
-```bash
-bash scripts/final_pipeline/reproduce_final_pipeline.sh full
+```text
+outputs/final_pipeline/thesis/generated/numbers.tex
+outputs/final_pipeline/thesis/tables/
+outputs/final_pipeline/reporting/final_thesis_claims_register.csv
 ```
-
-The full rebuild may require live access to the original official/public
-data endpoints. The audit mode verifies the committed empirical artefacts,
-tests, frozen selections and thesis-facing reporting layer.
-
-## Numerical source of truth
-
-Use:
-
-`outputs/final_pipeline/thesis/generated/numbers.tex`
-
-The branch deliberately preserves historical audit outputs, but old values
-must not be used in place of the final reporting layer.

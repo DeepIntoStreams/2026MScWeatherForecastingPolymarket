@@ -1,20 +1,24 @@
-# Final empirical pipeline status
+# Main empirical pipeline
 
-**State:** FINAL_RELEASE_COMPLETE
+The main empirical pipeline is complete through 31 August 2026.
 
-**Branch:** `final-march-august-reproducible-pipeline`
+The reported configuration uses:
 
-Frozen development selections:
+- Matérn-3/2 as the selected Gaussian process kernel;
+- linear probability pool weights of 0.188 for the Gaussian process and 0.812 for Polymarket;
+- the 24-hour decision rule for the conservative trading strategy;
+- a probability gap threshold of 0.15;
+- a reference transaction cost of 0.01 per share.
 
-- weather kernel: Matérn-3/2;
-- convex-pool GP weight: 0.188;
-- convex-pool market weight: 0.812;
-- trading decision rule: 24h prior;
-- trading probability-gap threshold: 0.15;
-- reference cost: 0.01.
+The recorded version is tagged:
 
-Pending external targets: `[]`.
+```text
+msc-final-pipeline-final
+```
 
-No further empirical model development is authorised in this branch.
-The only permitted target-dependent update is the controlled 31-August
-settlement refresh.
+The corresponding check is:
+
+```bash
+git checkout msc-final-pipeline-final
+bash scripts/final_pipeline/reproduce_final_pipeline.sh audit
+```

@@ -1,4 +1,4 @@
-# MSc Weather Forecasting and Polymarket
+# Weather Forecasting and Polymarket Trading
 
 This repository contains the code and outputs used for the empirical analysis in my MSc Financial Mathematics dissertation.
 
@@ -26,7 +26,7 @@ outputs/trading_contrast_extension/
 docs/trading_contrast_extension/
 ```
 
-Other directories contain earlier project work and are not needed to reproduce the final results.
+Other directories contain earlier project work and are not required to reproduce the reported results.
 
 ## Environment
 
@@ -44,31 +44,40 @@ conda env create -f environment-v2-completion.yml
 conda activate 2026-msc-weather-v2
 ```
 
-## Reproduction
+## Reproducing the reported results
 
-From the repository root, run the main pipeline checks with:
+The exact recorded versions are kept as Git tags.
+
+For the main March to August pipeline:
 
 ```bash
+git checkout msc-final-pipeline-final
 bash scripts/final_pipeline/reproduce_final_pipeline.sh audit
 ```
 
-Run the trading comparison checks with:
+For the trading strategy comparison:
 
 ```bash
+git checkout msc-trading-contrast-extension-final
 bash scripts/trading_contrast_extension/reproduce_extension.sh audit
 ```
 
-A full rebuild of the main pipeline is available with:
+A full rebuild of the main pipeline is available from the first tag:
 
 ```bash
+git checkout msc-final-pipeline-final
 bash scripts/final_pipeline/reproduce_final_pipeline.sh full
 ```
 
-The full rebuild may require access to the external data sources used in the project.
+The full rebuild may require access to the original external data sources. Return to the current repository view with:
+
+```bash
+git switch main
+```
 
 ## Main outputs
 
-The main dissertation outputs are stored in:
+The main numerical outputs are stored in:
 
 ```text
 outputs/final_pipeline/thesis/generated/numbers.tex
@@ -77,15 +86,19 @@ outputs/final_pipeline/reporting/final_thesis_claims_register.csv
 outputs/trading_contrast_extension/thesis/
 ```
 
-Some trading output filenames retain earlier internal labels. `fixed` refers to the conservative strategy and `taec` refers to the multi-contract strategy.
+Further figures, tables and intermediate outputs are stored under the corresponding output directories.
+
+## Data sources
+
+The analysis uses Hong Kong Observatory observations, ECMWF forecast data and historical Polymarket market data. Some source data may be subject to the terms of the original provider.
 
 ## Version references
 
-The main empirical versions are recorded by the following Git tags:
+The two main empirical versions used in the dissertation are:
 
 ```text
 msc-final-pipeline-final
 msc-trading-contrast-extension-final
 ```
 
-The first tag records the completed March to August empirical pipeline. The second records the completed trading comparison.
+The first records the completed March to August empirical pipeline. The second records the completed trading strategy comparison.
